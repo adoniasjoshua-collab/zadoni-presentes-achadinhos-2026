@@ -51,6 +51,7 @@
     if (!filtro || filtro === "todos" || filtro.startsWith("todos")) return "todos";
     if (filtro.includes("buqu") || filtro.includes("flor")) return "buques";
     if (filtro.includes("kit") || filtro.includes("romant")) return "kits";
+    if (filtro.includes("mimo")) return "mimos";
     if (filtro.includes("cesta")) return "cestas";
     if (filtro.includes("perfume")) return "perfumes";
     if (filtro.includes("promo") || filtro.includes("destaque")) return "promocoes";
@@ -195,6 +196,7 @@
     if (!filtro || filtro === "todos") return true;
     if (filtro.includes("buqu")) return categoriaProduto.includes("flor") || nome.includes("buque");
     if (filtro.includes("kit")) return categoriaProduto.includes("kit") || nome.includes("kit");
+    if (filtro.includes("mimo")) return categoriaProduto.includes("mimo") || nome.includes("mimo");
     if (filtro.includes("perfume")) return categoriaProduto.includes("perfume") || nome.includes("perfume");
     if (filtro.includes("promo")) return Boolean(produto.destaque);
     if (filtro.includes("data") || filtro.includes("especial")) {

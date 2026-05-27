@@ -153,6 +153,66 @@ const produtosLocais = [
     imagem: "assets/img/cestas-femininas/kit-vela-presente-especial.jpg",
     destaque: false,
     whatsappMensagem: "Ola! Quero informacoes sobre o Kit Vela Presente Especial."
+  },
+  {
+    id: 19,
+    nome: "Mimo Carinho Especial",
+    categoria: "Mimos",
+    descricao: "Opcao afetiva e acessivel para surpreender com carinho sem esperar uma data especial.",
+    preco: 59.90,
+    imagem: "assets/img/mimos-rapidos/mimo-carinho-especial.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Mimo Carinho Especial."
+  },
+  {
+    id: 20,
+    nome: "Mimo Coca-Cola Criativo",
+    categoria: "Mimos",
+    descricao: "Mimo jovem e divertido com bebida, doces e acabamento pronto para presentear.",
+    preco: 69.90,
+    imagem: "assets/img/mimos-rapidos/mimo-coca-cola-criativo.jpg",
+    destaque: false,
+    whatsappMensagem: "Ola! Quero informacoes sobre o Mimo Coca-Cola Criativo."
+  },
+  {
+    id: 21,
+    nome: "Mimo Ferrero Elegante",
+    categoria: "Mimos",
+    descricao: "Mimo com toque premium para quem quer presentear com chocolate e visual sofisticado.",
+    preco: 79.90,
+    imagem: "assets/img/mimos-rapidos/mimo-ferrero-elegante.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Mimo Ferrero Elegante."
+  },
+  {
+    id: 22,
+    nome: "Cone Ferrero Presente Charmoso",
+    categoria: "Mimos",
+    descricao: "Cone presenteavel com proposta elegante, ideal para lembrancas rapidas e marcantes.",
+    preco: 69.90,
+    imagem: "assets/img/mimos-rapidos/cone-ferrero-presente-charmoso.jpg",
+    destaque: false,
+    whatsappMensagem: "Ola! Quero informacoes sobre o Cone Ferrero Presente Charmoso."
+  },
+  {
+    id: 23,
+    nome: "Cestinha Virginia Mimo Delicado",
+    categoria: "Cestas",
+    descricao: "Cestinha delicada com composicao pronta para aniversarios, agradecimentos e surpresas.",
+    preco: 89.90,
+    imagem: "assets/img/mimos-rapidos/cestinha-virginia-mimo-delicado.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse na Cestinha Virginia Mimo Delicado."
+  },
+  {
+    id: 24,
+    nome: "Kit Ferrari Presente Premium",
+    categoria: "Kits",
+    descricao: "Kit masculino com presenca forte, ideal para presente sofisticado e memoravel.",
+    preco: 159.90,
+    imagem: "assets/img/mimos-rapidos/kit-ferrari-presente-premium.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Quero informacoes sobre o Kit Ferrari Presente Premium."
   }
 ];
 
