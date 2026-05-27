@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Achadinhos selecionados com perfumes Hinode, utilidades do Mercado Livre e opcoes de ecobikes.">
+    <meta name="keywords" content="achadinhos, Mercado Livre, Hinode, perfumes, utilidades, ecobikes">
+    <meta name="author" content="Zadoni Presentes">
+    <title>Achadinhos úteis para o dia a dia</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .affiliate-hero {
+            background: #12343b;
+            color: white;
+            padding: var(--espaco-xxl) var(--espaco-md);
+        }
+
+        .affiliate-hero .container {
+            display: grid;
+            gap: var(--espaco-xl);
+            align-items: center;
+        }
+
+        .affiliate-hero h1 {
+            color: white;
+            max-width: 760px;
+            margin-bottom: var(--espaco-md);
+        }
+
+        .affiliate-hero p {
+            color: rgba(255, 255, 255, 0.88);
+            max-width: 720px;
+            font-size: 1.05rem;
+        }
+
+        .affiliate-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--espaco-sm);
+            margin-bottom: var(--espaco-xl);
+        }
+
+        .category-filter {
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+            background: white;
+            color: var(--cor-texto);
+            padding: var(--espaco-sm) var(--espaco-md);
+            font-weight: 700;
+        }
+
+        .category-filter.active,
+        .category-filter:hover {
+            background: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+            color: white;
+        }
+
+        .affiliate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--espaco-lg);
+        }
+
+        .affiliate-card {
+            background: white;
+            border: 1px solid var(--cor-borda);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            box-shadow: var(--sombra-leve);
+            transition: transform var(--transicao-normal), box-shadow var(--transicao-normal);
+        }
+
+        .affiliate-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .affiliate-image {
+            display: grid;
+            place-items: center;
+            aspect-ratio: 4 / 3;
+            background: #fff7fb;
+            overflow: hidden;
+        }
+
+        .affiliate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .affiliate-content {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: var(--espaco-lg);
+        }
+
+        .affiliate-category {
+            color: var(--cor-destaque);
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--espaco-sm);
+            text-transform: uppercase;
+        }
+
+        .affiliate-content h2 {
+            color: var(--cor-primaria);
+            font-size: 1.15rem;
+            line-height: 1.25;
+            margin-bottom: var(--espaco-sm);
+            padding-bottom: 0;
+        }
+
+        .affiliate-content h2::after {
+            display: none;
+        }
+
+        .affiliate-benefit {
+            flex: 1;
+            font-size: 0.92rem;
+        }
+
+        .affiliate-price {
+            width: fit-content;
+            border-radius: 999px;
+            background: #fff0f6;
+            color: var(--cor-destaque);
+            font-family: var(--fonte-corpo);
+            font-size: 0.92rem;
+            font-weight: 850;
+            margin: var(--espaco-sm) 0 var(--espaco-md);
+            padding: 0.35rem 0.7rem;
+        }
+
+        .affiliate-empty {
+            display: none;
+            border: 1px dashed var(--cor-borda);
+            border-radius: 8px;
+            padding: var(--espaco-xl);
+            text-align: center;
+            color: var(--cor-texto-leve);
+        }
+
+        @media (min-width: 768px) {
+            .affiliate-hero {
+                padding: calc(var(--espaco-xxl) * 1.4) var(--espaco-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span>Zadoni</span>
+                </div>
+
+                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                    &#9776;
+                </button>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="presentes-canaa.html">Presentes</a></li>
+                        <li><a href="achadinhos.html">Achadinhos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="affiliate-hero">
+            <div class="container">
+                <div>
+                    <h1>Achadinhos úteis para o dia a dia</h1>
+                    <p>Uma seleção nacional de produtos práticos encontrados no Mercado Livre, organizada para quem quer resolver pequenas necessidades da rotina com boas ideias.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Categorias</h2>
+                <div class="affiliate-toolbar" id="affiliate-categories" aria-label="Filtrar por categoria">
+                    <button class="category-filter active" type="button" data-category="Todos">Todos</button>
+                    <button class="category-filter" type="button" data-category="Perfumes">Perfumes Hinode</button>
+                    <button class="category-filter" type="button" data-category="Utilidades">Utilidades</button>
+                    <button class="category-filter" type="button" data-category="Ecobikes">Ecobikes</button>
+                </div>
+
+                <div class="affiliate-grid" id="affiliate-products"></div>
+                <p class="affiliate-empty" id="affiliate-empty">Nenhum achadinho encontrado nessa categoria.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre a Zadoni</h3>
+                    <p>Curadoria de presentes locais e achadinhos úteis para compras nacionais.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="presentes-canaa.html">Presentes</a></li>
+                        <li><a href="achadinhos.html">Achadinhos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Aviso</h3>
+                    <p>Preços são aproximados e podem mudar no site externo. Confira as condições diretamente no Mercado Livre antes de comprar.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zadoni Presentes. Links externos sujeitos às regras de cada marketplace.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/data/produtos.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

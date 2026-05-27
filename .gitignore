@@ -1,0 +1,16 @@
+Thumbs.db
+.DS_Store
+desktop.ini
+*.log
+.env
+.env.*
+node_modules/
+.vscode/
+
+# Arquivos fonte/originais mantidos localmente, fora do deploy
+assets/img/originais/
+assets/img/cestas-feminas/
+assets/img/achadinhos/ACHADINHOS MERCADO LIVRE.png
+assets/img/achadinhos/ECOBIKET.png
+assets/img/cestas-masculinas/CESTA CARINHO.jpeg
+assets/img/cestas-masculinas/HINODE ACHADINHOS.png
