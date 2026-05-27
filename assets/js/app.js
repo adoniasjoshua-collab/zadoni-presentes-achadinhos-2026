@@ -37,6 +37,38 @@
     });
   }
 
+  function criarUrlAbsoluta(caminho) {
+    if (!caminho) return "";
+    if (/^https?:\/\//i.test(caminho)) return caminho;
+
+    return new URL(caminho, window.location.href).href;
+  }
+
+  function montarResumoWhatsApp(produto) {
+    if (!produto) {
+      return "Ola! Quero ajuda para escolher um presente na Zadoni.";
+    }
+
+    var linhas = [
+      "Ola! Quero este presente:",
+      "",
+      "Produto: " + produto.nome,
+      "Categoria: " + produto.categoria,
+      "Valor aproximado: " + formatarPreco(produto.preco),
+      "Resumo: " + produto.descricao
+    ];
+
+    var imagemUrl = criarUrlAbsoluta(produto.imagem);
+    if (imagemUrl) {
+      linhas.push("Imagem: " + imagemUrl);
+    }
+
+    linhas.push("");
+    linhas.push("Pode me informar disponibilidade, formas de pagamento e entrega em Canaa dos Carajas?");
+
+    return linhas.join("\n");
+  }
+
   function obterParametroUrl(nome) {
     try {
       return new URLSearchParams(window.location.search).get(nome) || "";
@@ -72,9 +104,7 @@
   }
 
   function gerarLinkWhatsApp(produto) {
-    var mensagem = produto && produto.whatsappMensagem
-      ? produto.whatsappMensagem
-      : "Ola! Tenho interesse no produto " + (produto ? produto.nome : "Zadoni") + ".";
+    var mensagem = montarResumoWhatsApp(produto);
 
     return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(mensagem);
   }
@@ -146,7 +176,7 @@
     whatsapp.href = gerarLinkWhatsApp(produto);
     whatsapp.target = "_blank";
     whatsapp.rel = "noopener noreferrer";
-    whatsapp.textContent = "Pedir no WhatsApp";
+    whatsapp.textContent = "Quero este presente";
     whatsapp.addEventListener("click", function () {
       trackWhatsAppClick(produto);
     });
