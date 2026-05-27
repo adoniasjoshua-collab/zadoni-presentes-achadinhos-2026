@@ -37,6 +37,39 @@
     });
   }
 
+  function obterParametroUrl(nome) {
+    try {
+      return new URLSearchParams(window.location.search).get(nome) || "";
+    } catch (error) {
+      return "";
+    }
+  }
+
+  function normalizarCategoriaProdutos(categoria) {
+    var filtro = removerAcentos(categoria).replace(/[-_]+/g, " ");
+
+    if (!filtro || filtro === "todos" || filtro.startsWith("todos")) return "todos";
+    if (filtro.includes("buqu") || filtro.includes("flor")) return "buques";
+    if (filtro.includes("kit") || filtro.includes("romant")) return "kits";
+    if (filtro.includes("cesta")) return "cestas";
+    if (filtro.includes("perfume")) return "perfumes";
+    if (filtro.includes("promo") || filtro.includes("destaque")) return "promocoes";
+    if (filtro.includes("data") || filtro.includes("especial")) return "datas especiais";
+
+    return categoria;
+  }
+
+  function normalizarCategoriaAchadinhos(categoria) {
+    var filtro = removerAcentos(categoria).replace(/[-_]+/g, " ");
+
+    if (!filtro || filtro === "todos" || filtro.startsWith("todos")) return "Todos";
+    if (filtro.includes("perfume") || filtro.includes("hinode")) return "Perfumes";
+    if (filtro.includes("util")) return "Utilidades";
+    if (filtro.includes("eco") || filtro.includes("bike")) return "Ecobikes";
+
+    return categoria;
+  }
+
   function gerarLinkWhatsApp(produto) {
     var mensagem = produto && produto.whatsappMensagem
       ? produto.whatsappMensagem
@@ -164,6 +197,12 @@
     if (filtro.includes("kit")) return categoriaProduto.includes("kit") || nome.includes("kit");
     if (filtro.includes("perfume")) return categoriaProduto.includes("perfume") || nome.includes("perfume");
     if (filtro.includes("promo")) return Boolean(produto.destaque);
+    if (filtro.includes("data") || filtro.includes("especial")) {
+      return Boolean(produto.destaque) ||
+        categoriaProduto.includes("flor") ||
+        categoriaProduto.includes("kit") ||
+        categoriaProduto.includes("cesta");
+    }
 
     return categoriaProduto.includes(filtro) || nome.includes(filtro) || descricao.includes(filtro);
   }
@@ -181,6 +220,7 @@
 
   function filtrarProdutos(categoria, event) {
     event = event || window.event;
+    categoria = normalizarCategoriaProdutos(categoria);
 
     var produtos = getProdutosLocais();
     var filtrados = produtos.filter(function (produto) {
@@ -199,7 +239,21 @@
 
   function carregarProdutosLocais() {
     if (!document.getElementById("produtos-container")) return;
-    renderizarProdutosLocais(getProdutosLocais());
+
+    var categoriaInicial = normalizarCategoriaProdutos(obterParametroUrl("categoria"));
+    var produtos = getProdutosLocais();
+    var lista = categoriaInicial === "todos"
+      ? produtos
+      : produtos.filter(function (produto) {
+        return categoriaCombina(produto, categoriaInicial);
+      });
+
+    renderizarProdutosLocais(lista);
+
+    document.querySelectorAll(".filtro-btn").forEach(function (botao) {
+      var texto = normalizarCategoriaProdutos(botao.textContent);
+      botao.classList.toggle("ativo", texto === categoriaInicial);
+    });
   }
 
   function criarCardAchadinho(produto) {
@@ -275,6 +329,7 @@
   }
 
   function filtrarAchadinhos(categoria, event) {
+    categoria = normalizarCategoriaAchadinhos(categoria);
     var filtro = removerAcentos(categoria);
     var lista = getAchadinhos().filter(function (produto) {
       return filtro === "todos" || removerAcentos(produto.categoria) === filtro;
@@ -293,9 +348,16 @@
   function carregarAchadinhos() {
     if (!document.getElementById("affiliate-products") && !document.getElementById("achadinhos-container")) return;
 
-    renderizarAchadinhos(getAchadinhos());
+    var categoriaInicial = normalizarCategoriaAchadinhos(obterParametroUrl("categoria"));
+    var filtro = removerAcentos(categoriaInicial);
+    var lista = getAchadinhos().filter(function (produto) {
+      return filtro === "todos" || removerAcentos(produto.categoria) === filtro;
+    });
+
+    renderizarAchadinhos(lista);
 
     document.querySelectorAll(".category-filter").forEach(function (botao) {
+      botao.classList.toggle("active", botao.dataset.category === categoriaInicial);
       botao.addEventListener("click", function (event) {
         filtrarAchadinhos(botao.dataset.category || botao.textContent, event);
       });
