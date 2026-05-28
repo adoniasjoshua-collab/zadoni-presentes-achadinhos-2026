@@ -209,7 +209,7 @@ const produtosLocais = [
     nome: "Kit Ferrari Presente Premium",
     categoria: "Kits",
     descricao: "Kit masculino com presenca forte, ideal para presente sofisticado e memoravel.",
-    preco: 159.90,
+    preco: 297.00,
     imagem: "assets/optimized/products/kit-ferrari-presente-premium.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Quero informacoes sobre o Kit Ferrari Presente Premium."
