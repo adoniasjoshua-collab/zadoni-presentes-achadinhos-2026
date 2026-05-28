@@ -9,7 +9,11 @@ node_modules/
 
 # Arquivos fonte/originais mantidos localmente, fora do deploy
 assets/img/originais/
+assets/img/achadinhos/
 assets/img/cestas-feminas/
+assets/img/cestas-femininas/
+assets/img/cestas-masculinas/
+assets/img/mimos-rapidos/
 assets/img/Mimos rapidos/
 assets/img/achadinhos/ACHADINHOS MERCADO LIVRE.png
 assets/img/achadinhos/ECOBIKET.png

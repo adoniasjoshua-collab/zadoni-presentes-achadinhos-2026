@@ -120,7 +120,7 @@
     return "🎁";
   }
 
-  function criarImagemProduto(produto, classe) {
+  function criarImagemProduto(produto, classe, prioridade) {
     var wrapper = document.createElement("div");
     wrapper.className = classe;
 
@@ -128,7 +128,12 @@
       var img = document.createElement("img");
       img.src = produto.imagem;
       img.alt = produto.nome;
-      img.loading = "lazy";
+      img.width = 720;
+      img.height = 900;
+      img.decoding = "async";
+      img.loading = prioridade ? "eager" : "lazy";
+      img.fetchPriority = prioridade ? "high" : "low";
+      img.sizes = "(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px";
       img.onerror = function () {
         wrapper.textContent = obterEmojiProduto(produto);
         wrapper.classList.add("imagem-placeholder");
@@ -141,12 +146,12 @@
     return wrapper;
   }
 
-  function criarCardProdutoLocal(produto) {
+  function criarCardProdutoLocal(produto, index) {
     var card = document.createElement("article");
     card.className = "produto-card";
     card.dataset.produtoId = produto.id;
 
-    var imagem = criarImagemProduto(produto, "produto-imagem");
+    var imagem = criarImagemProduto(produto, "produto-imagem", index < 2);
 
     var categoria = document.createElement("span");
     categoria.className = "produto-categoria";
@@ -210,7 +215,7 @@
     if (vazio) vazio.style.display = "none";
 
     lista.forEach(function (produto, index) {
-      var card = criarCardProdutoLocal(produto);
+      var card = criarCardProdutoLocal(produto, index);
       card.style.animation = "fadeIn 0.45s ease both";
       card.style.animationDelay = (index * 0.04) + "s";
       container.appendChild(card);
@@ -288,13 +293,13 @@
     });
   }
 
-  function criarCardAchadinho(produto) {
+  function criarCardAchadinho(produto, index) {
     var card = document.createElement("article");
     card.className = "affiliate-card";
     card.dataset.produtoId = produto.id;
     card.dataset.category = produto.categoria;
 
-    var imagem = criarImagemProduto(produto, "affiliate-image");
+    var imagem = criarImagemProduto(produto, "affiliate-image", index < 2);
 
     var conteudo = document.createElement("div");
     conteudo.className = "affiliate-content";
@@ -353,7 +358,7 @@
     if (vazio) vazio.style.display = "none";
 
     lista.forEach(function (produto, index) {
-      var card = criarCardAchadinho(produto);
+      var card = criarCardAchadinho(produto, index);
       card.style.animation = "fadeIn 0.45s ease both";
       card.style.animationDelay = (index * 0.04) + "s";
       container.appendChild(card);
@@ -516,6 +521,27 @@
     });
   }
 
+  function inicializarVideosSobDemanda() {
+    document.querySelectorAll("[data-youtube-id]").forEach(function (botao) {
+      if (botao.dataset.initialized === "true") return;
+      botao.dataset.initialized = "true";
+
+      botao.addEventListener("click", function () {
+        var videoId = botao.dataset.youtubeId;
+        if (!videoId) return;
+
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
+        iframe.title = botao.dataset.title || "Video Zadoni Presentes";
+        iframe.loading = "lazy";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.allowFullscreen = true;
+
+        botao.replaceWith(iframe);
+      });
+    });
+  }
+
   function criarCompatibilidadeLegado() {
     var achadinhosCompat = getAchadinhos().map(function (produto) {
       return {
@@ -557,17 +583,9 @@
     exporFuncoesGlobais();
     criarCompatibilidadeLegado();
     inicializarMenuMobile();
+    inicializarVideosSobDemanda();
     carregarProdutosLocais();
     carregarAchadinhos();
-
-    // Garante que este arquivo continue sendo a fonte principal mesmo se
-    // alguma pagina antiga ainda tiver scripts inline registrados no DOMContentLoaded.
-    setTimeout(function () {
-      exporFuncoesGlobais();
-      criarCompatibilidadeLegado();
-      carregarProdutosLocais();
-      carregarAchadinhos();
-    }, 0);
   }
 
   function exporFuncoesGlobais() {

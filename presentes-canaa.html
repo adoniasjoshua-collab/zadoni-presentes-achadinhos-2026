@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Presentes em Canaã dos Carajás - Buquês, kits románticos e perfumes. Entrega rápida em Canaã. Peça agora no WhatsApp!">
-    <meta name="keywords" content="presentes Canaã dos Carajás, buquês Canaã, kits románticos, perfumes, presentear hoje, Zadoni">
+    <meta name="description" content="Presentes em Canaã dos Carajás: buquês, cestas, kits românticos e mimos com atendimento rápido pelo WhatsApp.">
+    <meta name="keywords" content="presentes Canaã dos Carajás, buquês Canaã, kits românticos, cestas, mimos, presentear hoje, Zadoni">
     <meta name="author" content="Zadoni Presentes">
     
     <!-- SEO Local -->
     <meta name="geo.placename" content="Canaã dos Carajás, Pará">
     <meta name="geo.region" content="BR-PA">
     
-    <title>Presentes em Canaã dos Carajás | Buquês, Kits e Perfumes | Zadoni Presentes</title>
+    <meta property="og:title" content="Presentes em Canaã dos Carajás | Zadoni Presentes">
+    <meta property="og:description" content="Escolha buquês, cestas, kits e mimos para presentear hoje em Canaã dos Carajás.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://zadonipresentes.com.br/presentes-canaa.html">
+    <meta property="og:image" content="https://zadonipresentes.com.br/assets/optimized/products/buque-te-amo-romantico.jpg">
+    <link rel="canonical" href="https://zadonipresentes.com.br/presentes-canaa.html">
+    <link rel="preload" as="image" href="assets/optimized/products/buque-te-amo-romantico.jpg" fetchpriority="high">
+    
+    <title>Presentes em Canaã dos Carajás | Buquês, Cestas e Kits | Zadoni Presentes</title>
     
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -240,8 +249,7 @@
        class="whatsapp-float" 
        title="Conversar no WhatsApp"
        target="_blank"
-       rel="noopener noreferrer"
-       style="position: fixed; bottom: 30px; right: 20px; width: 60px; height: 60px; background-color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; text-decoration: none; box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; z-index: 999; animation: pulse-whatsapp 2s infinite;">
+       rel="noopener noreferrer">
         💬
     </a>
     
@@ -406,7 +414,7 @@
             <div class="video-trail-grid">
                 <article class="video-card">
                     <div class="video-frame">
-                        <iframe src="https://www.youtube.com/embed/hHdzIx81dns" title="Depoimento local Zadoni" loading="lazy" allowfullscreen></iframe>
+                        <button class="video-load" type="button" data-youtube-id="hHdzIx81dns" data-title="Depoimento local Zadoni">Assistir vídeo</button>
                     </div>
                     <h3>Depoimento local</h3>
                     <p>Cliente local falando da experiência.</p>
@@ -414,7 +422,7 @@
 
                 <article class="video-card">
                     <div class="video-frame">
-                        <iframe src="https://www.youtube.com/embed/N1yTlkabFhQ" title="Mais historias Zadoni" loading="lazy" allowfullscreen></iframe>
+                        <button class="video-load" type="button" data-youtube-id="N1yTlkabFhQ" data-title="Mais histórias Zadoni">Assistir vídeo</button>
                     </div>
                     <h3>Mais histórias Zadoni</h3>
                     <p>Registros reais da loja.</p>
@@ -422,7 +430,7 @@
 
                 <article class="video-card">
                     <div class="video-frame">
-                        <iframe src="https://www.youtube.com/embed/DCfSxgiVpTY" title="O romantismo tomou conta" loading="lazy" allowfullscreen></iframe>
+                        <button class="video-load" type="button" data-youtube-id="DCfSxgiVpTY" data-title="O romantismo tomou conta">Assistir vídeo</button>
                     </div>
                     <h3>O romantismo tomou conta</h3>
                     <p>Presentes que viram memória.</p>
@@ -475,228 +483,8 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="assets/data/produtos.js"></script>
-    <script src="assets/js/app.js"></script>
-    
-    <!-- SCRIPT DE CONTROLE DE PÁGINA -->
-    <script>
-        // Dados de categorias para produtos
-        const CATEGORIAS = {
-            'buquês': ['flores', 'buquê', 'tulipa', 'rosa'],
-            'kits': ['kit', 'romântico', 'presente'],
-            'perfumes': ['perfume', 'colônia', 'aroma'],
-            'promoções': ['promoção', 'desconto', 'oferta']
-        };
-
-        /**
-         * Renderizar produtos na página
-         * @param {array} produtos - Array de produtos a renderizar
-         */
-        function renderizarProdutosCanaa(produtos) {
-            const container = document.getElementById('produtos-container');
-            const semProdutos = document.getElementById('sem-produtos');
-
-            container.innerHTML = '';
-
-            if (produtos.length === 0) {
-                container.style.display = 'none';
-                semProdutos.style.display = 'block';
-                return;
-            }
-
-            semProdutos.style.display = 'none';
-            container.style.display = 'grid';
-
-            produtos.forEach((produto, index) => {
-                const card = document.createElement('div');
-                card.className = 'produto-card';
-                card.style.animation = `fadeIn 0.5s ease forwards`;
-                card.style.animationDelay = `${index * 0.05}s`;
-
-                // Determinar se tem desconto
-                const temDesconto = produto.precoOriginal && produto.preco < produto.precoOriginal;
-                const precoHTML = temDesconto 
-                    ? `<div class="produto-preco">
-                        R$ ${produto.preco.toFixed(2).replace('.', ',')}
-                        <span style="font-size: 0.8rem; color: #999; text-decoration: line-through; margin-left: 8px;">
-                          R$ ${produto.precoOriginal.toFixed(2).replace('.', ',')}
-                        </span>
-                      </div>`
-                    : `<div class="produto-preco">R$ ${produto.preco.toFixed(2).replace('.', ',')}</div>`;
-
-                const linkWhatsApp = gerarLinkWhatsApp(produto);
-
-                card.innerHTML = `
-                    <div class="produto-imagem">
-                        🎁
-                        <span class="produto-categoria">${produto.categoria || 'Presente'}</span>
-                    </div>
-                    <div class="produto-content">
-                        <h3 class="produto-nome">${produto.nome}</h3>
-                        <p class="produto-descricao">${produto.descricao || 'Presente especial para você'}</p>
-                        ${precoHTML}
-                        <div class="produto-acoes">
-                            <a href="${linkWhatsApp}" 
-                               class="btn-whatsapp-produto" 
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               onclick="trackWhatsAppClick('${produto.nome}', ${produto.preco})">
-                                Quero este presente
-                            </a>
-                        </div>
-                    </div>
-                `;
-
-                container.appendChild(card);
-            });
-        }
-
-        /**
-         * Filtrar produtos por categoria
-         * @param {string} categoria - Categoria a filtrar
-         */
-        function filtrarProdutos(categoria) {
-            // Atualizar botões ativos
-            document.querySelectorAll('.filtro-btn').forEach(btn => {
-                btn.classList.remove('ativo');
-            });
-            event.target.classList.add('ativo');
-
-            // Coletar todos os produtos
-            let todosProdutos = [];
-            for (const cat in PRODUTOS) {
-                todosProdutos.push(...PRODUTOS[cat]);
-            }
-
-            // Filtrar
-            if (categoria === 'todos') {
-                renderizarProdutosCanaa(todosProdutos);
-            } else {
-                const termos = CATEGORIAS[categoria] || [];
-                const filtrados = todosProdutos.filter(p => {
-                    const nome = p.nome.toLowerCase();
-                    const descricao = (p.descricao || '').toLowerCase();
-                    const tags = (p.tags || []).map(t => t.toLowerCase());
-                    
-                    return termos.some(termo => 
-                        nome.includes(termo) || 
-                        descricao.includes(termo) || 
-                        tags.some(tag => tag.includes(termo))
-                    );
-                });
-                
-                renderizarProdutosCanaa(filtrados);
-            }
-
-            // Rastrear filtro
-            rastrearEvento('filtro_categoria', {
-                categoria: categoria,
-                page: 'presentes-canaa'
-            });
-        }
-
-        /**
-         * Rastrear clique em WhatsApp
-         * PREPARADO PARA INTEGRAÇÃO COM:
-         * - Meta Pixel
-         * - Google Analytics 4
-         * - Google Tag Manager
-         * - Hotjar
-         * 
-         * @param {string} produtoNome - Nome do produto
-         * @param {number} preco - Preço do produto
-         */
-        function trackWhatsAppClick(produtoNome, preco) {
-            // [ Meta Pixel ] - Descomentar quando integrado
-            // fbq('track', 'ViewContent', {
-            //     content_name: produtoNome,
-            //     content_ids: [produtoNome],
-            //     value: preco,
-            //     currency: 'BRL'
-            // });
-
-            // [ Google Analytics 4 ] - Descomentar quando integrado
-            // gtag('event', 'view_item', {
-            //     items: [{
-            //         id: produtoNome,
-            //         name: produtoNome,
-            //         price: preco
-            //     }]
-            // });
-
-            // [ GTM - Google Tag Manager ] - Descomentar quando integrado
-            // dataLayer.push({
-            //     'event': 'whatsapp_click',
-            //     'produto_nome': produtoNome,
-            //     'preco': preco,
-            //     'pagina': 'presentes-canaa'
-            // });
-
-            // [ Hotjar ] - Descomentar quando integrado
-            // hj('event', 'whatsapp_click_' + produtoNome);
-
-            console.log('📊 WhatsApp Click Rastreado:', {
-                produto: produtoNome,
-                preco: preco,
-                timestamp: new Date().toISOString()
-            });
-
-            // Rastrear com função global
-            rastrearEvento('whatsapp_click_produto', {
-                produto_nome: produtoNome,
-                preco: preco,
-                pagina: 'presentes-canaa'
-            });
-        }
-
-        /**
-         * Inicializar página
-         */
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('🎁 Página Presentes Canaã carregada');
-            
-            // Renderizar todos os produtos inicialmente
-            let todosProdutos = [];
-            for (const cat in PRODUTOS) {
-                todosProdutos.push(...PRODUTOS[cat]);
-            }
-            
-            renderizarProdutosCanaa(todosProdutos);
-
-            // Atualizar contador de filtro
-            const contador = todosProdutos.length;
-            document.querySelector('.filtro-btn').textContent = `Todos (${contador})`;
-
-            // Rastrear visualização da página
-            rastrearEvento('view_page', {
-                page: 'presentes-canaa',
-                title: 'Presentes em Canaã dos Carajás'
-            });
-        });
-    </script>
-
-    <!-- Animação CSS inline para fade-in -->
-    <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes pulse-whatsapp {
-            0%, 100% {
-                box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            }
-            50% {
-                box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6);
-            }
-        }
-    </style>
+    <script src="assets/data/produtos.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
 
 </body>
 </html>
