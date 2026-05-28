@@ -179,7 +179,7 @@ const produtosLocais = [
     nome: "Mimo Ferrero Elegante",
     categoria: "Mimos",
     descricao: "Mimo com toque premium para quem quer presentear com chocolate e visual sofisticado.",
-    preco: 79.90,
+    preco: 39.00,
     imagem: "assets/optimized/products/mimo-ferrero-elegante.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Mimo Ferrero Elegante."
