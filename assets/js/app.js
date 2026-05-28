@@ -48,7 +48,7 @@
     var total = Number(produto && produto.preco ? produto.preco : 0);
 
     (adicionais || []).forEach(function (adicional) {
-      total += Number(adicional.preco || 0);
+      total += Number(adicional.preco || 0) * Number(adicional.quantidade || 1);
     });
 
     return total;
@@ -74,7 +74,12 @@
       linhas.push("");
       linhas.push("Adicionais opcionais:");
       adicionais.forEach(function (adicional) {
-        linhas.push("- " + adicional.nome + " (+" + formatarPreco(adicional.preco) + ")");
+        var quantidade = Number(adicional.quantidade || 1);
+        var detalheQuantidade = quantidade > 1 ? quantidade + "x " : "";
+        var subtotal = Number(adicional.preco || 0) * quantidade;
+        var observacao = adicional.observacao ? " - " + adicional.observacao : "";
+
+        linhas.push("- " + detalheQuantidade + adicional.nome + " (+" + formatarPreco(subtotal) + ")" + observacao);
       });
       linhas.push("Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionais)));
     }
@@ -176,11 +181,24 @@
   function obterAdicionaisSelecionados(card, produto) {
     if (!produtoTemAdicionais(produto)) return [];
 
-    return Array.prototype.slice.call(card.querySelectorAll(".produto-adicional-check:checked"))
+    var selecionados = Array.prototype.slice.call(card.querySelectorAll(".produto-adicional-check:checked"))
       .map(function (checkbox) {
-        return produto.adicionaisOpcionais[Number(checkbox.dataset.adicionalIndex)];
+        var adicional = produto.adicionaisOpcionais[Number(checkbox.dataset.adicionalIndex)];
+        return adicional ? Object.assign({}, adicional, { quantidade: 1 }) : null;
       })
       .filter(Boolean);
+
+    Array.prototype.slice.call(card.querySelectorAll(".produto-adicional-quantidade")).forEach(function (input) {
+      var quantidade = Number(input.value || 0);
+      if (quantidade <= 0) return;
+
+      var adicional = produto.adicionaisOpcionais[Number(input.dataset.adicionalIndex)];
+      if (adicional) {
+        selecionados.push(Object.assign({}, adicional, { quantidade: quantidade }));
+      }
+    });
+
+    return selecionados;
   }
 
   function criarAdicionaisProduto(produto, onChange) {
@@ -195,6 +213,29 @@
     wrapper.appendChild(titulo);
 
     produto.adicionaisOpcionais.forEach(function (adicional, index) {
+      if (adicional.tipo === "quantidade") {
+        var linhaQuantidade = document.createElement("label");
+        linhaQuantidade.className = "produto-adicional produto-adicional-com-quantidade";
+
+        var inputQuantidade = document.createElement("input");
+        inputQuantidade.className = "produto-adicional-quantidade";
+        inputQuantidade.type = "number";
+        inputQuantidade.min = "0";
+        inputQuantidade.max = "10";
+        inputQuantidade.step = "1";
+        inputQuantidade.value = "0";
+        inputQuantidade.inputMode = "numeric";
+        inputQuantidade.dataset.adicionalIndex = String(index);
+        inputQuantidade.addEventListener("input", onChange);
+
+        var textoQuantidade = document.createElement("span");
+        textoQuantidade.textContent = adicional.nome + " +" + formatarPreco(adicional.preco) + " por " + (adicional.unidade || "unidade");
+
+        linhaQuantidade.append(inputQuantidade, textoQuantidade);
+        wrapper.appendChild(linhaQuantidade);
+        return;
+      }
+
       var label = document.createElement("label");
       label.className = "produto-adicional";
 
@@ -205,7 +246,7 @@
       checkbox.addEventListener("change", onChange);
 
       var texto = document.createElement("span");
-      texto.textContent = adicional.nome + " +" + formatarPreco(adicional.preco);
+      texto.textContent = adicional.nome + " +" + formatarPreco(adicional.preco) + (adicional.observacao ? " · " + adicional.observacao : "");
 
       label.append(checkbox, texto);
       wrapper.appendChild(label);
@@ -241,6 +282,10 @@
     preco.className = "produto-preco";
     preco.textContent = formatarPreco(produto.preco);
 
+    var totalEstimado = document.createElement("p");
+    totalEstimado.className = "produto-total-estimado";
+    totalEstimado.textContent = "Total estimado: " + formatarPreco(produto.preco);
+
     var acoes = document.createElement("div");
     acoes.className = "produto-acoes";
 
@@ -251,7 +296,9 @@
     whatsapp.rel = "noopener noreferrer";
     whatsapp.textContent = "Quero este presente";
     function atualizarLinkWhatsApp() {
-      whatsapp.href = gerarLinkWhatsApp(produto, obterAdicionaisSelecionados(card, produto));
+      var adicionaisSelecionados = obterAdicionaisSelecionados(card, produto);
+      whatsapp.href = gerarLinkWhatsApp(produto, adicionaisSelecionados);
+      totalEstimado.textContent = "Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionaisSelecionados));
     }
 
     var adicionais = criarAdicionaisProduto(produto, atualizarLinkWhatsApp);
@@ -267,7 +314,10 @@
 
     acoes.appendChild(whatsapp);
     conteudo.append(nome, descricao, preco);
-    if (adicionais) conteudo.appendChild(adicionais);
+    if (adicionais) {
+      conteudo.append(adicionais, totalEstimado);
+      atualizarLinkWhatsApp();
+    }
     conteudo.appendChild(acoes);
     card.append(imagem, conteudo);
 

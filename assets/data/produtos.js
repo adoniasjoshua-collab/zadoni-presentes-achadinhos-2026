@@ -18,6 +18,35 @@ const adicionaisBuques = [
     id: "ursinho-chaveiro",
     nome: "Ursinho de pelúcia chaveiro",
     preco: 27.00
+  },
+  {
+    id: "cartao-personalizado",
+    nome: "Cartão impresso ou escrito à mão",
+    preco: 15.00
+  },
+  {
+    id: "foto-impressa",
+    nome: "Foto impressa",
+    preco: 15.00,
+    tipo: "quantidade",
+    unidade: "foto"
+  },
+  {
+    id: "body-splash-winpink",
+    nome: "Body Splash Winpink",
+    preco: 78.00
+  },
+  {
+    id: "perfume-bolso-amakha",
+    nome: "Perfume de bolso Amakha Paris 15 ml",
+    preco: 47.00,
+    observacao: "Fragrância a escolher"
+  },
+  {
+    id: "perfume-hinode-100ml",
+    nome: "Perfume Hinode 100 ml",
+    preco: 189.00,
+    observacao: "A partir de R$ 189,00"
   }
 ];
 

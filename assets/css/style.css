@@ -726,11 +726,34 @@ header {
   cursor: pointer;
 }
 
-.produto-adicional input {
+.produto-adicional input[type="checkbox"] {
   width: 18px;
   height: 18px;
   margin: 0.05rem 0 0;
   accent-color: var(--cor-destaque);
+}
+
+.produto-adicional-com-quantidade {
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+}
+
+.produto-adicional-quantidade {
+  width: 48px;
+  min-height: 34px;
+  border: 1px solid rgba(217, 54, 127, 0.22);
+  border-radius: 8px;
+  color: var(--cor-primaria-escura);
+  font: inherit;
+  font-weight: 800;
+  text-align: center;
+}
+
+.produto-total-estimado {
+  margin: 0 0 var(--espaco-md);
+  color: var(--cor-primaria-escura);
+  font-size: 0.9rem;
+  font-weight: 900;
 }
 
 .product-actions,
