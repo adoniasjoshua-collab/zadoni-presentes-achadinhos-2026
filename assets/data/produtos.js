@@ -50,6 +50,55 @@ const adicionaisBuques = [
   }
 ];
 
+const adicionaisCestas = [
+  {
+    id: "chocolate-extra",
+    nome: "Chocolate extra",
+    preco: 25.00,
+    observacao: "Opcao a escolher"
+  },
+  {
+    id: "ferrero-rocher-cesta",
+    nome: "Ferrero Rocher",
+    preco: 35.00
+  },
+  {
+    id: "petisco-premium",
+    nome: "Petisco premium",
+    preco: 28.00,
+    observacao: "Salgado, castanhas ou snack"
+  },
+  {
+    id: "bebida-especial",
+    nome: "Bebida especial",
+    preco: 32.00,
+    observacao: "Refrigerante, suco ou similar"
+  },
+  {
+    id: "caneca-presente",
+    nome: "Caneca para presente",
+    preco: 39.00
+  },
+  {
+    id: "cartao-personalizado-cesta",
+    nome: "Cartao impresso ou escrito a mao",
+    preco: 15.00
+  },
+  {
+    id: "foto-impressa-cesta",
+    nome: "Foto impressa",
+    preco: 15.00,
+    tipo: "quantidade",
+    unidade: "foto"
+  },
+  {
+    id: "item-beleza",
+    nome: "Item de beleza ou autocuidado",
+    preco: 47.00,
+    observacao: "Produto conforme disponibilidade"
+  }
+];
+
 const produtosLocais = [
   {
     id: 1,
@@ -91,6 +140,7 @@ const produtosLocais = [
     preco: 239.90,
     imagem: "assets/optimized/products/cesta-masculina-vinho-bella-vista.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Quero informacoes sobre a Cesta Masculina Vinho Bella Vista."
   },
   {
@@ -101,6 +151,7 @@ const produtosLocais = [
     preco: 169.90,
     imagem: "assets/optimized/products/cesta-masculina-azul-classica.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Tenho interesse na Cesta Masculina Azul Classica."
   },
   {
@@ -111,6 +162,7 @@ const produtosLocais = [
     preco: 219.90,
     imagem: "assets/optimized/products/cesta-masculina-gourmet-dourada.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Gostaria de saber mais sobre a Cesta Masculina Gourmet Dourada."
   },
   {
@@ -121,6 +173,7 @@ const produtosLocais = [
     preco: 179.90,
     imagem: "assets/optimized/products/cesta-masculina-verde-artesanal.jpg",
     destaque: false,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Tenho interesse na Cesta Masculina Verde Artesanal."
   },
   {
@@ -131,6 +184,7 @@ const produtosLocais = [
     preco: 189.90,
     imagem: "assets/optimized/products/cesta-feminina-delicada.webp",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Tenho interesse na Cesta Feminina Delicada."
   },
   {
@@ -141,6 +195,7 @@ const produtosLocais = [
     preco: 249.90,
     imagem: "assets/optimized/products/cesta-masculina-vinho-e-petiscos.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Tenho interesse na Cesta Masculina Vinho e Petiscos."
   },
   {
@@ -193,6 +248,7 @@ const produtosLocais = [
     preco: 199.90,
     imagem: "assets/optimized/products/cesta-cafe-da-manha-especial.webp",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Gostaria de saber mais sobre a Cesta Cafe da Manha Especial."
   },
   {
@@ -253,6 +309,7 @@ const produtosLocais = [
     preco: 139.00,
     imagem: "assets/optimized/products/cestinha-virginia-mimo-delicado.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Tenho interesse na Cestinha Virginia Mimo Delicado."
   },
   {

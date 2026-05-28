@@ -178,6 +178,16 @@
       produto.adicionaisOpcionais.length > 0;
   }
 
+  function obterTituloAdicionais(produto) {
+    var categoria = removerAcentos(produto && produto.categoria);
+    var nome = removerAcentos(produto && produto.nome);
+
+    if (categoria.includes("cesta") || nome.includes("cesta")) return "Monte sua cesta:";
+    if (categoria.includes("flor") || nome.includes("buque")) return "Adicionar ao buque:";
+
+    return "Personalize seu presente:";
+  }
+
   function obterAdicionaisSelecionados(card, produto) {
     if (!produtoTemAdicionais(produto)) return [];
 
@@ -209,7 +219,7 @@
 
     var titulo = document.createElement("p");
     titulo.className = "produto-adicionais-titulo";
-    titulo.textContent = "Adicionar ao buquê:";
+    titulo.textContent = obterTituloAdicionais(produto);
     wrapper.appendChild(titulo);
 
     produto.adicionaisOpcionais.forEach(function (adicional, index) {
