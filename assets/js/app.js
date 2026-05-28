@@ -44,19 +44,40 @@
     return new URL(caminho, window.location.href).href;
   }
 
-  function montarResumoWhatsApp(produto) {
+  function calcularTotalProduto(produto, adicionais) {
+    var total = Number(produto && produto.preco ? produto.preco : 0);
+
+    (adicionais || []).forEach(function (adicional) {
+      total += Number(adicional.preco || 0);
+    });
+
+    return total;
+  }
+
+  function montarResumoWhatsApp(produto, adicionais) {
     if (!produto) {
       return "Ola! Quero ajuda para escolher um presente na Zadoni.";
     }
+
+    adicionais = adicionais || [];
 
     var linhas = [
       "Ola! Quero este presente:",
       "",
       "Produto: " + produto.nome,
       "Categoria: " + produto.categoria,
-      "Valor aproximado: " + formatarPreco(produto.preco),
+      "Valor do produto: " + formatarPreco(produto.preco),
       "Resumo: " + produto.descricao
     ];
+
+    if (adicionais.length) {
+      linhas.push("");
+      linhas.push("Adicionais opcionais:");
+      adicionais.forEach(function (adicional) {
+        linhas.push("- " + adicional.nome + " (+" + formatarPreco(adicional.preco) + ")");
+      });
+      linhas.push("Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionais)));
+    }
 
     var imagemUrl = criarUrlAbsoluta(produto.imagem);
     if (imagemUrl) {
@@ -103,8 +124,8 @@
     return categoria;
   }
 
-  function gerarLinkWhatsApp(produto) {
-    var mensagem = montarResumoWhatsApp(produto);
+  function gerarLinkWhatsApp(produto, adicionais) {
+    var mensagem = montarResumoWhatsApp(produto, adicionais);
 
     return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(mensagem);
   }
@@ -146,6 +167,53 @@
     return wrapper;
   }
 
+  function produtoTemAdicionais(produto) {
+    return produto &&
+      Array.isArray(produto.adicionaisOpcionais) &&
+      produto.adicionaisOpcionais.length > 0;
+  }
+
+  function obterAdicionaisSelecionados(card, produto) {
+    if (!produtoTemAdicionais(produto)) return [];
+
+    return Array.prototype.slice.call(card.querySelectorAll(".produto-adicional-check:checked"))
+      .map(function (checkbox) {
+        return produto.adicionaisOpcionais[Number(checkbox.dataset.adicionalIndex)];
+      })
+      .filter(Boolean);
+  }
+
+  function criarAdicionaisProduto(produto, onChange) {
+    if (!produtoTemAdicionais(produto)) return null;
+
+    var wrapper = document.createElement("div");
+    wrapper.className = "produto-adicionais";
+
+    var titulo = document.createElement("p");
+    titulo.className = "produto-adicionais-titulo";
+    titulo.textContent = "Adicionar ao buquê:";
+    wrapper.appendChild(titulo);
+
+    produto.adicionaisOpcionais.forEach(function (adicional, index) {
+      var label = document.createElement("label");
+      label.className = "produto-adicional";
+
+      var checkbox = document.createElement("input");
+      checkbox.className = "produto-adicional-check";
+      checkbox.type = "checkbox";
+      checkbox.dataset.adicionalIndex = String(index);
+      checkbox.addEventListener("change", onChange);
+
+      var texto = document.createElement("span");
+      texto.textContent = adicional.nome + " +" + formatarPreco(adicional.preco);
+
+      label.append(checkbox, texto);
+      wrapper.appendChild(label);
+    });
+
+    return wrapper;
+  }
+
   function criarCardProdutoLocal(produto, index) {
     var card = document.createElement("article");
     card.className = "produto-card";
@@ -182,7 +250,14 @@
     whatsapp.target = "_blank";
     whatsapp.rel = "noopener noreferrer";
     whatsapp.textContent = "Quero este presente";
+    function atualizarLinkWhatsApp() {
+      whatsapp.href = gerarLinkWhatsApp(produto, obterAdicionaisSelecionados(card, produto));
+    }
+
+    var adicionais = criarAdicionaisProduto(produto, atualizarLinkWhatsApp);
+
     whatsapp.addEventListener("click", function () {
+      atualizarLinkWhatsApp();
       trackWhatsAppClick(produto);
     });
 
@@ -191,7 +266,9 @@
     }, { once: true });
 
     acoes.appendChild(whatsapp);
-    conteudo.append(nome, descricao, preco, acoes);
+    conteudo.append(nome, descricao, preco);
+    if (adicionais) conteudo.appendChild(adicionais);
+    conteudo.appendChild(acoes);
     card.append(imagem, conteudo);
 
     return card;

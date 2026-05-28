@@ -698,6 +698,41 @@ header {
   font-weight: 900;
 }
 
+.produto-adicionais {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0 0 var(--espaco-md);
+  padding: 0.75rem;
+  border: 1px solid rgba(217, 54, 127, 0.16);
+  border-radius: 8px;
+  background: #fff7fc;
+}
+
+.produto-adicionais-titulo {
+  margin: 0 0 0.1rem;
+  color: var(--cor-primaria-escura);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.produto-adicional {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 0.5rem;
+  align-items: start;
+  color: var(--cor-texto);
+  font-size: 0.82rem;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.produto-adicional input {
+  width: 18px;
+  height: 18px;
+  margin: 0.05rem 0 0;
+  accent-color: var(--cor-destaque);
+}
+
 .product-actions,
 .produto-acoes {
   display: grid;

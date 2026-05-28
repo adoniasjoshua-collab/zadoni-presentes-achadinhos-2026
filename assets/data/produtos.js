@@ -3,6 +3,24 @@
  * Dados ficticios organizados para edicao rapida.
  */
 
+const adicionaisBuques = [
+  {
+    id: "ferrero-rocher",
+    nome: "Ferrero Rocher",
+    preco: 35.00
+  },
+  {
+    id: "caixinha-tres-ferrero",
+    nome: "Caixinha com 3 Ferrero Rocher",
+    preco: 22.00
+  },
+  {
+    id: "ursinho-chaveiro",
+    nome: "Ursinho de pelúcia chaveiro",
+    preco: 27.00
+  }
+];
+
 const produtosLocais = [
   {
     id: 1,
@@ -12,6 +30,7 @@ const produtosLocais = [
     preco: 189.00,
     imagem: "assets/optimized/products/buque-te-amo-romantico.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Tenho interesse no Buque Romantico. Pode me passar mais informacoes?"
   },
   {
@@ -22,6 +41,7 @@ const produtosLocais = [
     preco: 119.90,
     imagem: "assets/optimized/products/buque-na-xicara-premium.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Gostaria de saber mais sobre o Buque na xicara."
   },
   {
@@ -122,6 +142,7 @@ const produtosLocais = [
     preco: 149.00,
     imagem: "assets/optimized/products/buque-te-amo-mae.jpg",
     destaque: false,
+    adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Quero informacoes sobre o Buque Declaracao de Amor."
   },
   {
@@ -132,6 +153,7 @@ const produtosLocais = [
     preco: 189.00,
     imagem: "assets/optimized/products/buque-te-amo-romantico.jpg",
     destaque: true,
+    adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Tenho interesse no Buque Te Amo Romantico."
   },
   {
