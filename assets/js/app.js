@@ -658,27 +658,6 @@
     });
   }
 
-  function inicializarVideosSobDemanda() {
-    document.querySelectorAll("[data-youtube-id]").forEach(function (botao) {
-      if (botao.dataset.initialized === "true") return;
-      botao.dataset.initialized = "true";
-
-      botao.addEventListener("click", function () {
-        var videoId = botao.dataset.youtubeId;
-        if (!videoId) return;
-
-        var iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube.com/embed/" + encodeURIComponent(videoId) + "?autoplay=1&rel=0";
-        iframe.title = botao.dataset.title || "Video Zadoni Presentes";
-        iframe.loading = "lazy";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-        iframe.allowFullscreen = true;
-
-        botao.replaceWith(iframe);
-      });
-    });
-  }
-
   function criarCompatibilidadeLegado() {
     var achadinhosCompat = getAchadinhos().map(function (produto) {
       return {
@@ -720,7 +699,6 @@
     exporFuncoesGlobais();
     criarCompatibilidadeLegado();
     inicializarMenuMobile();
-    inicializarVideosSobDemanda();
     carregarProdutosLocais();
     carregarAchadinhos();
   }

@@ -513,24 +513,24 @@ header {
   font-size: 1.05rem;
 }
 
-.video-trail {
+.comentarios-clientes {
   background: #ffffff;
   content-visibility: auto;
-  contain-intrinsic-size: 720px;
+  contain-intrinsic-size: 760px;
 }
 
-.video-trail-header {
+.comentarios-header {
   max-width: 760px;
   margin-bottom: var(--espaco-xl);
 }
 
-.video-trail-grid {
+.comentarios-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: var(--espaco-lg);
 }
 
-.video-card {
+.comentario-card {
   overflow: hidden;
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
@@ -538,50 +538,26 @@ header {
   box-shadow: var(--sombra-leve);
 }
 
-.video-frame {
+.comentario-foto {
   aspect-ratio: 9 / 16;
-  background: var(--cor-fundo-alt);
+  background: #fff7fb;
 }
 
-.video-frame iframe,
-.video-load {
+.comentario-foto img {
   width: 100%;
   height: 100%;
-  border: 0;
   display: block;
+  object-fit: contain;
 }
 
-.video-load {
-  display: grid;
-  place-items: center;
-  padding: var(--espaco-lg);
-  background: linear-gradient(135deg, #4f1d38, #d9367f);
-  color: white;
-  font: inherit;
-  font-weight: 850;
-  text-align: center;
-  cursor: pointer;
-}
-
-.video-load::before {
-  content: "▶";
-  display: grid;
-  place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: var(--espaco-sm);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.video-card h3 {
+.comentario-card h3 {
   padding: var(--espaco-md) var(--espaco-md) 0;
   color: var(--cor-primaria-escura);
   font-family: var(--fonte-corpo);
   font-size: 1rem;
 }
 
-.video-card p {
+.comentario-card p {
   padding: 0 var(--espaco-md) var(--espaco-md);
   font-size: 0.9rem;
   margin: 0;
@@ -1030,7 +1006,7 @@ select:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .video-trail-grid {
+  .comentarios-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1090,7 +1066,7 @@ select:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .video-trail-grid {
+  .comentarios-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1118,7 +1094,7 @@ select:focus {
   .produto-card,
   .affiliate-card,
   .card,
-  .video-card {
+  .comentario-card {
     box-shadow: 0 6px 18px rgba(79, 29, 56, 0.08);
   }
 
