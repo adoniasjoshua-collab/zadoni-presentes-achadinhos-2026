@@ -296,7 +296,7 @@ const produtosLocais = [
     nome: "Cone Ferrero Presente Charmoso",
     categoria: "Mimos",
     descricao: "Cone presenteavel com proposta elegante, ideal para lembrancas rapidas e marcantes.",
-    preco: 69.90,
+    preco: 89.00,
     imagem: "assets/optimized/products/cone-ferrero-presente-charmoso.jpg",
     destaque: false,
     whatsappMensagem: "Ola! Quero informacoes sobre o Cone Ferrero Presente Charmoso."
@@ -321,6 +321,36 @@ const produtosLocais = [
     imagem: "assets/optimized/products/kit-ferrari-presente-premium.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Quero informacoes sobre o Kit Ferrari Presente Premium."
+  },
+  {
+    id: 25,
+    nome: "Jarro Flores Naturais Vermelho",
+    categoria: "Mimos",
+    descricao: "Jarro com flores naturais em box vermelho, laco especial e mensagem afetiva para presentear com charme.",
+    preco: 75.00,
+    imagem: "assets/optimized/products/jarro-flores-naturais-vermelho.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Jarro Flores Naturais Vermelho."
+  },
+  {
+    id: 26,
+    nome: "Jarro Flor Natural Laco Vermelho",
+    categoria: "Mimos",
+    descricao: "Jarro com flor natural vermelha, embalagem delicada e laco vermelho pronto para presente.",
+    preco: 89.00,
+    imagem: "assets/optimized/products/jarro-flor-natural-laco-vermelho.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laco Vermelho."
+  },
+  {
+    id: 27,
+    nome: "Jarro Flor Natural Laco Rosa",
+    categoria: "Mimos",
+    descricao: "Jarro com flor natural rosa, embalagem delicada e laco pink para um mimo cheio de carinho.",
+    preco: 89.00,
+    imagem: "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laco Rosa."
   }
 ];
 
