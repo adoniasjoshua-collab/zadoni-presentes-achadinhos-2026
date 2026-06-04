@@ -351,6 +351,99 @@ const produtosLocais = [
     imagem: "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laco Rosa."
+  },
+  {
+    id: 28,
+    nome: "Perfume de Bolso Asadiyy 15ml",
+    categoria: "Perfumes",
+    descricao: "Fragrancia masculina ambarada e marcante, inspirada no Asad. Ideal para quem gosta de perfume intenso, elegante e com presenca.",
+    preco: 47.00,
+    imagem: "assets/optimized/products/perfume-asadiyy-amakha-15ml.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Asadiyy 15ml. Quais fragrancias estao disponiveis?"
+  },
+  {
+    id: 29,
+    nome: "Perfume de Bolso Chic Woman 15ml",
+    categoria: "Perfumes",
+    descricao: "Fragrancia feminina sofisticada, inspirada no Coco Mademoiselle. Uma opcao elegante para presente romantico e uso diario.",
+    preco: 47.00,
+    imagem: "assets/optimized/products/perfume-chic-woman-amakha-15ml.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Chic Woman 15ml. Voce pode me passar disponibilidade?"
+  },
+  {
+    id: 30,
+    nome: "Perfume de Bolso Fortune 15ml",
+    categoria: "Perfumes",
+    descricao: "Fragrancia masculina amadeirada, inspirada no 1 Million. Combina presenca, estilo e praticidade para levar no bolso.",
+    preco: 47.00,
+    imagem: "assets/optimized/products/perfume-fortune-amakha-15ml.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Fortune 15ml. Ainda tem disponivel?"
+  },
+  {
+    id: 31,
+    nome: "Perfume de Bolso Zaya 15ml",
+    categoria: "Perfumes",
+    descricao: "Fragrancia feminina ambarada gourmand, inspirada no Yara. Doce, envolvente e perfeita para encontros e momentos especiais.",
+    preco: 47.00,
+    imagem: "assets/optimized/products/perfume-zaya-amakha-15ml.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Zaya 15ml. Pode me falar mais sobre essa fragrancia?"
+  },
+  {
+    id: 32,
+    nome: "Perfume de Bolso 521 Vip Rose 15ml",
+    categoria: "Perfumes",
+    descricao: "Fragrancia feminina floral frutada, inspirada no 212 Vip Rose. Leve, charmosa e marcante para presentear no Dia dos Namorados.",
+    preco: 47.00,
+    imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso 521 Vip Rose 15ml. Quero saber as opcoes para presente."
+  },
+  {
+    id: 33,
+    nome: "Cesta Romantica com Vinho San Martin",
+    categoria: "Cestas",
+    descricao: "Cesta romantica com vinho, chocolates, Ferrero Rocher, caneca e detalhe de coracao para uma surpresa marcante.",
+    preco: 249.90,
+    imagem: "assets/optimized/products/cesta-romantica-vinho-san-martin.jpg",
+    destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
+    whatsappMensagem: "Ola! Tenho interesse na Cesta Romantica com Vinho San Martin. Pode me passar disponibilidade?"
+  },
+  {
+    id: 34,
+    nome: "Buque Rosa Pretty Flower",
+    categoria: "Flores",
+    descricao: "Buque delicado em tons de rosa, com embalagem Pretty Flower Studio e visual elegante para presente romantico.",
+    preco: 149.00,
+    imagem: "assets/optimized/products/buque-rosa-pretty-flower.jpg",
+    destaque: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Rosa Pretty Flower. Pode me passar mais informacoes?"
+  },
+  {
+    id: 35,
+    nome: "Buque Rosas Vermelhas Premium",
+    categoria: "Flores",
+    descricao: "Buque premium com rosas vermelhas, acabamento preto e visual intenso para declaracoes especiais.",
+    preco: 189.00,
+    imagem: "assets/optimized/products/buque-rosas-vermelhas-premium.jpg",
+    destaque: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Rosas Vermelhas Premium. Quero saber disponibilidade."
+  },
+  {
+    id: 36,
+    nome: "Mimo Amor Perfeito com Trufas",
+    categoria: "Mimos",
+    descricao: "Mimo afetivo com trufas, pelucia, flor e embalagem Amor Perfeito para presentear com carinho.",
+    preco: 119.90,
+    imagem: "assets/optimized/products/mimo-amor-perfeito-trufas-pelucia.jpg",
+    destaque: true,
+    whatsappMensagem: "Ola! Tenho interesse no Mimo Amor Perfeito com Trufas. Pode me passar disponibilidade?"
   }
 ];
 

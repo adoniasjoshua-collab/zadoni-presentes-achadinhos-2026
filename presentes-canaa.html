@@ -37,6 +37,92 @@
             font-weight: 600;
             margin-bottom: 16px;
         }
+
+        .authority-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.18);
+            color: white;
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .hero-hook {
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.55;
+        }
+
+        .perfume-spotlight {
+            padding: 34px 20px;
+            background: #fff8fb;
+            border-bottom: 1px solid rgba(217, 70, 166, 0.14);
+        }
+
+        .perfume-spotlight-content {
+            display: grid;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .perfume-spotlight h2 {
+            margin-bottom: 12px;
+            padding-bottom: 0;
+            font-size: clamp(1.45rem, 4vw, 2.05rem);
+        }
+
+        .perfume-spotlight h2::after {
+            display: none;
+        }
+
+        .perfume-spotlight p {
+            max-width: 780px;
+            margin-bottom: 0;
+            color: #5f4b57;
+        }
+
+        .perfume-benefits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .perfume-benefits span {
+            display: inline-flex;
+            align-items: center;
+            min-height: 36px;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #ffffff;
+            color: #7a2f55;
+            font-size: 0.9rem;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(122, 47, 85, 0.08);
+        }
+
+        .perfume-spotlight-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            width: fit-content;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: #7a2f55;
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 10px 24px rgba(122, 47, 85, 0.18);
+        }
+
+        @media (min-width: 760px) {
+            .perfume-spotlight-content {
+                grid-template-columns: minmax(0, 1fr) auto;
+            }
+        }
         
         .filtros-container {
             display: flex;
@@ -331,9 +417,27 @@
     <!-- HERO HIPERLOCAL -->
     <section class="hero-hiperlocal">
         <div class="container">
-            <div class="local-badge">📍 Disponível em Canaã dos Carajás</div>
-            <h1>Buquês, kits e perfumes para presentear hoje em Canaã</h1>
-            <p>Escolha o presente perfeito e receba rapidinho! 🚀</p>
+            <div class="authority-badge">Mais de 3 mil clientes já confiaram na Zadoni</div>
+            <div class="local-badge">📍 Dia dos Namorados em Canaã dos Carajás</div>
+            <h1>Encontre o presente perfeito para surpreender no dia 12</h1>
+            <p class="hero-hook">O Dia dos Namorados está chegando. Escolha buquês, kits, perfumes e mimos especiais com atendimento local da Zadoni Presentes em Canaã dos Carajás.</p>
+        </div>
+    </section>
+
+    <!-- PERFUMES DE BOLSO -->
+    <section class="perfume-spotlight" aria-labelledby="perfumes-bolso-title">
+        <div class="container perfume-spotlight-content">
+            <div>
+                <h2 id="perfumes-bolso-title">Perfumes de bolso com cheiro de perfume caro</h2>
+                <p>Fragrâncias Amakha Paris de 15ml, alta fixação e inspiração em grandes perfumes internacionais. Uma escolha estratégica para o Dia dos Namorados: elegante, prática, marcante e fácil de levar na bolsa ou no bolso.</p>
+                <div class="perfume-benefits" aria-label="Benefícios dos perfumes de bolso">
+                    <span>Alta fixação</span>
+                    <span>Frasco 15ml</span>
+                    <span>Presente pronto</span>
+                    <span>Atendimento em Canaã</span>
+                </div>
+            </div>
+            <a class="perfume-spotlight-cta" href="presentes-canaa.html?categoria=perfumes#produtos-container">Ver perfumes</a>
         </div>
     </section>
 
@@ -360,7 +464,7 @@
                         Cestas
                     </button>
                     <button class="filtro-btn" onclick="filtrarProdutos('perfumes')">
-                        💜 Perfumes
+                        💜 Perfumes de Bolso
                     </button>
                     <button class="filtro-btn" onclick="filtrarProdutos('promoções')">
                         🤑 Promoções
@@ -527,7 +631,7 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="assets/data/produtos.js?v=20260601-2" defer></script>
+    <script src="assets/data/produtos.js?v=20260604-1" defer></script>
     <script src="assets/js/app.js?v=20260528-3" defer></script>
 
 </body>
