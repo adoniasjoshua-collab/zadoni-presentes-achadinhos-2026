@@ -1,12 +1,12 @@
 # Catalogo Zadoni Presentes
 
-Site catalogo da Zadoni Presentes, criado para apresentar produtos locais em Canaa dos Carajas e preparar a evolucao futura para achadinhos Brasil, rastreamento de conversoes e integracao com Supabase.
+Site catalogo da Zadoni Presentes, criado para apresentar produtos locais em Canaa dos Carajas, com foco em presentes, buques, kits, perfumes e cestas vendidos pela loja.
 
 ## Objetivo
 
 O projeto tem como foco principal funcionar como um catalogo local simples, rapido e comercial para Canaa dos Carajas, permitindo que clientes vejam presentes, buques, kits, perfumes e cestas, e iniciem o atendimento pelo WhatsApp.
 
-A estrutura tambem deixa espaco para uma expansao nacional com achadinhos afiliados, alem de uma futura camada de dados com Supabase e painel administrativo.
+A estrutura tambem deixa espaco para uma futura camada de dados com Supabase e painel administrativo.
 
 ## Stack
 
@@ -22,7 +22,6 @@ A estrutura tambem deixa espaco para uma expansao nacional com achadinhos afilia
 zadoni-catalogo/
 |-- index.html
 |-- presentes-canaa.html
-|-- achadinhos.html
 |-- assets/
 |   |-- css/
 |   |   `-- style.css
@@ -48,7 +47,6 @@ Abra o arquivo `index.html` diretamente no navegador.
 5. Publique e teste as paginas principais:
    - `index.html`
    - `presentes-canaa.html`
-   - `achadinhos.html`
 
 ## Dados dos Produtos
 
@@ -58,10 +56,9 @@ Os produtos ficam no arquivo:
 assets/data/produtos.js
 ```
 
-Atualmente existem dois arrays principais:
+Atualmente existe um array principal:
 
 - `produtosLocais`: produtos vendidos localmente pela Zadoni.
-- `achadinhos`: produtos afiliados ou de curadoria nacional.
 
 ## Checklist Futuro
 

@@ -1,6 +1,6 @@
 /**
  * Zadoni - app.js
- * Renderizacao de produtos locais, achadinhos afiliados e eventos de tracking.
+ * Renderizacao de produtos locais e eventos de tracking.
  */
 
 (function () {
@@ -13,12 +13,6 @@
   function getProdutosLocais() {
     return typeof produtosLocais !== "undefined" && Array.isArray(produtosLocais)
       ? produtosLocais
-      : [];
-  }
-
-  function getAchadinhos() {
-    return typeof achadinhos !== "undefined" && Array.isArray(achadinhos)
-      ? achadinhos
       : [];
   }
 
@@ -42,6 +36,21 @@
     if (/^https?:\/\//i.test(caminho)) return caminho;
 
     return new URL(caminho, window.location.href).href;
+  }
+
+  function criarSlug(texto) {
+    return removerAcentos(texto)
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
+  }
+
+  function obterSrcsetWebp(caminho) {
+    if (!caminho || !/\.(jpe?g|png|webp)$/i.test(caminho)) return "";
+
+    var base = caminho.replace(/\.(jpe?g|png|webp)$/i, "");
+    var responsivo = base.replace("assets/optimized/products/", "assets/optimized/products/responsive/");
+
+    return responsivo + "-480.webp 480w, " + responsivo + "-720.webp 720w";
   }
 
   function calcularTotalProduto(produto, adicionais) {
@@ -118,21 +127,17 @@
     return categoria;
   }
 
-  function normalizarCategoriaAchadinhos(categoria) {
-    var filtro = removerAcentos(categoria).replace(/[-_]+/g, " ");
-
-    if (!filtro || filtro === "todos" || filtro.startsWith("todos")) return "Todos";
-    if (filtro.includes("perfume") || filtro.includes("hinode")) return "Perfumes";
-    if (filtro.includes("util")) return "Utilidades";
-    if (filtro.includes("eco") || filtro.includes("bike")) return "Ecobikes";
-
-    return categoria;
-  }
-
   function gerarLinkWhatsApp(produto, adicionais) {
     var mensagem = montarResumoWhatsApp(produto, adicionais);
+    var params = new URLSearchParams({
+      text: mensagem,
+      utm_source: "site",
+      utm_medium: "whatsapp",
+      utm_campaign: "seo_local",
+      utm_content: produto ? "produto_" + criarSlug(produto.nome) : "catalogo"
+    });
 
-    return "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(mensagem);
+    return "https://wa.me/" + CONFIG.whatsappNumber + "?" + params.toString();
   }
 
   function obterEmojiProduto(produto) {
@@ -151,6 +156,17 @@
     wrapper.className = classe;
 
     if (produto.imagem) {
+      var picture = document.createElement("picture");
+      var srcsetWebp = obterSrcsetWebp(produto.imagem);
+
+      if (srcsetWebp) {
+        var source = document.createElement("source");
+        source.type = "image/webp";
+        source.srcset = srcsetWebp;
+        source.sizes = "(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px";
+        picture.appendChild(source);
+      }
+
       var img = document.createElement("img");
       img.src = produto.imagem;
       img.alt = produto.nome;
@@ -164,7 +180,8 @@
         wrapper.textContent = obterEmojiProduto(produto);
         wrapper.classList.add("imagem-placeholder");
       };
-      wrapper.appendChild(img);
+      picture.appendChild(img);
+      wrapper.appendChild(picture);
     } else {
       wrapper.textContent = obterEmojiProduto(produto);
     }
@@ -268,7 +285,9 @@
   function criarCardProdutoLocal(produto, index) {
     var card = document.createElement("article");
     card.className = "produto-card";
+    card.id = "produto-" + produto.id;
     card.dataset.produtoId = produto.id;
+    card.dataset.category = normalizarCategoriaProdutos(produto.categoria);
 
     var imagem = criarImagemProduto(produto, "produto-imagem", index < 2);
 
@@ -304,6 +323,9 @@
     whatsapp.href = gerarLinkWhatsApp(produto);
     whatsapp.target = "_blank";
     whatsapp.rel = "noopener noreferrer";
+    whatsapp.dataset.track = "whatsapp";
+    whatsapp.dataset.produtoId = String(produto.id);
+    whatsapp.setAttribute("aria-label", "Chamar no WhatsApp sobre " + produto.nome);
     whatsapp.textContent = "Quero este presente";
     function atualizarLinkWhatsApp() {
       var adicionaisSelecionados = obterAdicionaisSelecionados(card, produto);
@@ -315,10 +337,12 @@
 
     whatsapp.addEventListener("click", function () {
       atualizarLinkWhatsApp();
-      trackWhatsAppClick(produto);
     });
 
     card.addEventListener("mouseenter", function () {
+      trackViewContent(produto);
+    }, { once: true });
+    card.addEventListener("focusin", function () {
       trackViewContent(produto);
     }, { once: true });
 
@@ -344,7 +368,14 @@
 
     if (!lista.length) {
       container.style.display = "none";
-      if (vazio) vazio.style.display = "block";
+      if (vazio) {
+        if (!vazio.dataset.initialized) {
+          vazio.innerHTML = "<h3>Nenhum produto encontrado</h3><p>Tente outra categoria ou fale conosco no WhatsApp.</p><a href=\"" + gerarLinkWhatsApp(null) + "\" target=\"_blank\" rel=\"noopener noreferrer\" data-track=\"whatsapp\">Conversar no WhatsApp</a>";
+          vazio.dataset.initialized = "true";
+          inicializarTrackingLinks();
+        }
+        vazio.style.display = "block";
+      }
       return;
     }
 
@@ -357,6 +388,8 @@
       card.style.animationDelay = (index * 0.04) + "s";
       container.appendChild(card);
     });
+
+    inicializarTrackingLinks();
   }
 
   function categoriaCombina(produto, categoria) {
@@ -388,7 +421,7 @@
     });
 
     if (elementoAtivo) {
-      elementoAtivo.classList.add(elementoAtivo.classList.contains("category-filter") ? "active" : "ativo");
+      elementoAtivo.classList.add("ativo");
     }
   }
 
@@ -404,7 +437,7 @@
     atualizarBotaoAtivo(".filtro-btn", event && event.target ? event.target : null);
     renderizarProdutosLocais(filtrados);
 
-    rastrearEvento("filter_products", {
+    rastrearEvento("select_category", {
       categoria: categoria,
       total_resultados: filtrados.length,
       pagina: "presentes-canaa"
@@ -430,135 +463,11 @@
     });
   }
 
-  function criarCardAchadinho(produto, index) {
-    var card = document.createElement("article");
-    card.className = "affiliate-card";
-    card.dataset.produtoId = produto.id;
-    card.dataset.category = produto.categoria;
-
-    var imagem = criarImagemProduto(produto, "affiliate-image", index < 2);
-
-    var conteudo = document.createElement("div");
-    conteudo.className = "affiliate-content";
-
-    var categoria = document.createElement("span");
-    categoria.className = "affiliate-category";
-    categoria.textContent = produto.categoria;
-
-    var nome = document.createElement("h2");
-    nome.textContent = produto.nome;
-
-    var descricao = document.createElement("p");
-    descricao.className = "affiliate-benefit";
-    descricao.textContent = produto.descricao;
-
-    var preco = document.createElement("p");
-    preco.className = "affiliate-price";
-    preco.textContent = produto.preco > 0
-      ? "Preco aprox. " + formatarPreco(produto.preco)
-      : "Ofertas selecionadas";
-
-    var link = document.createElement("a");
-    link.className = "btn btn-primary btn-block";
-    link.href = produto.linkAfiliado;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer sponsored";
-    link.textContent = "Ver ofertas";
-    link.addEventListener("click", function (event) {
-      event.preventDefault();
-      abrirLinkAfiliado(produto);
-    });
-
-    card.addEventListener("mouseenter", function () {
-      trackViewContent(produto);
-    }, { once: true });
-
-    conteudo.append(categoria, nome, descricao, preco, link);
-    card.append(imagem, conteudo);
-
-    return card;
-  }
-
-  function renderizarAchadinhos(lista) {
-    var container = document.getElementById("affiliate-products") || document.getElementById("achadinhos-container");
-    var vazio = document.getElementById("affiliate-empty");
-
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    if (!lista.length) {
-      if (vazio) vazio.style.display = "block";
-      return;
-    }
-
-    if (vazio) vazio.style.display = "none";
-
-    lista.forEach(function (produto, index) {
-      var card = criarCardAchadinho(produto, index);
-      card.style.animation = "fadeIn 0.45s ease both";
-      card.style.animationDelay = (index * 0.04) + "s";
-      container.appendChild(card);
-    });
-  }
-
-  function filtrarAchadinhos(categoria, event) {
-    categoria = normalizarCategoriaAchadinhos(categoria);
-    var filtro = removerAcentos(categoria);
-    var lista = getAchadinhos().filter(function (produto) {
-      return filtro === "todos" || removerAcentos(produto.categoria) === filtro;
-    });
-
-    atualizarBotaoAtivo(".category-filter", event && event.target ? event.target : null);
-    renderizarAchadinhos(lista);
-
-    rastrearEvento("filter_affiliate_products", {
-      categoria: categoria,
-      total_resultados: lista.length,
-      pagina: "achadinhos"
-    });
-  }
-
-  function carregarAchadinhos() {
-    if (!document.getElementById("affiliate-products") && !document.getElementById("achadinhos-container")) return;
-
-    var categoriaInicial = normalizarCategoriaAchadinhos(obterParametroUrl("categoria"));
-    var filtro = removerAcentos(categoriaInicial);
-    var lista = getAchadinhos().filter(function (produto) {
-      return filtro === "todos" || removerAcentos(produto.categoria) === filtro;
-    });
-
-    renderizarAchadinhos(lista);
-
-    document.querySelectorAll(".category-filter").forEach(function (botao) {
-      botao.classList.toggle("active", botao.dataset.category === categoriaInicial);
-      botao.addEventListener("click", function (event) {
-        filtrarAchadinhos(botao.dataset.category || botao.textContent, event);
-      });
-    });
-  }
-
-  function abrirLinkAfiliado(produto) {
-    if (!produto || !produto.linkAfiliado) return;
-
-    trackAffiliateClick(produto);
-
-    var novaAba = window.open(produto.linkAfiliado, "_blank", "noopener,noreferrer");
-    if (novaAba) {
-      novaAba.opener = null;
-    }
-  }
-
   function rastrearEvento(nomeEvento, parametros) {
     var dados = parametros || {};
 
-    // Google Tag Manager:
-    // Descomente quando o GTM estiver instalado no site.
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push({
-    //   event: nomeEvento,
-    //   ...dados
-    // });
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({ event: nomeEvento }, dados));
 
     console.log("[tracking]", nomeEvento, dados);
   }
@@ -579,61 +488,51 @@
   function trackWhatsAppClick(produtoOuNome, preco) {
     var produto = normalizarProdutoParaTracking(produtoOuNome, preco);
 
-    // Google Tag Manager:
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push({
-    //   event: "whatsapp_click",
-    //   produto_id: produto.id,
-    //   produto_nome: produto.nome,
-    //   categoria: produto.categoria,
-    //   valor: produto.preco
-    // });
-
-    rastrearEvento("whatsapp_click", {
+    rastrearEvento("click_whatsapp", {
       produto_id: produto.id,
       produto_nome: produto.nome,
       categoria: produto.categoria,
       valor: produto.preco
-    });
-  }
-
-  function trackAffiliateClick(produto) {
-    // Google Tag Manager:
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push({
-    //   event: "affiliate_click",
-    //   produto_id: produto.id,
-    //   produto_nome: produto.nome,
-    //   categoria: produto.categoria,
-    //   valor: produto.preco,
-    //   link_afiliado: produto.linkAfiliado
-    // });
-
-    rastrearEvento("affiliate_click", {
-      produto_id: produto.id,
-      produto_nome: produto.nome,
-      categoria: produto.categoria,
-      valor: produto.preco,
-      link_afiliado: produto.linkAfiliado
     });
   }
 
   function trackViewContent(produto) {
-    // Google Tag Manager:
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push({
-    //   event: "view_content",
-    //   produto_id: produto.id,
-    //   produto_nome: produto.nome,
-    //   categoria: produto.categoria,
-    //   valor: produto.preco
-    // });
-
-    rastrearEvento("view_content", {
+    rastrearEvento("view_product", {
       produto_id: produto.id,
       produto_nome: produto.nome,
       categoria: produto.categoria,
       valor: produto.preco
+    });
+  }
+
+  function trackInstagramClick(link) {
+    rastrearEvento("click_instagram", {
+      url: link && link.href ? link.href : ""
+    });
+  }
+
+  function inicializarTrackingLinks() {
+    document.querySelectorAll("[data-track='whatsapp']").forEach(function (link) {
+      if (link.dataset.trackingInitialized === "true") return;
+      link.dataset.trackingInitialized = "true";
+
+      link.addEventListener("click", function () {
+        var produtoId = Number(link.dataset.produtoId || 0);
+        var produto = getProdutosLocais().find(function (item) {
+          return Number(item.id) === produtoId;
+        });
+
+        trackWhatsAppClick(produto || "WhatsApp", produto ? produto.preco : 0);
+      });
+    });
+
+    document.querySelectorAll("[data-track='instagram']").forEach(function (link) {
+      if (link.dataset.trackingInitialized === "true") return;
+      link.dataset.trackingInitialized = "true";
+
+      link.addEventListener("click", function () {
+        trackInstagramClick(link);
+      });
     });
   }
 
@@ -659,39 +558,14 @@
   }
 
   function criarCompatibilidadeLegado() {
-    var achadinhosCompat = getAchadinhos().map(function (produto) {
-      return {
-        id: produto.id,
-        nome: produto.nome,
-        categoria: produto.categoria,
-        descricao: produto.descricao,
-        beneficio: produto.descricao,
-        preco: produto.preco,
-        precoAproximado: produto.preco,
-        imagem: produto.imagem,
-        link: produto.linkAfiliado,
-        linkAfiliado: produto.linkAfiliado
-      };
-    });
-
     if (location.pathname.includes("presentes-canaa")) {
       window.PRODUTOS = { produtosLocais: getProdutosLocais() };
       return;
     }
 
-    if (location.pathname.includes("achadinhos")) {
-      window.PRODUTOS = {
-        achadinhos: achadinhosCompat,
-        achadinhosAfiliados: achadinhosCompat
-      };
-      return;
-    }
-
     window.PRODUTOS = {
       produtosLocais: getProdutosLocais(),
-      presentesCanaa: getProdutosLocais(),
-      achadinhos: achadinhosCompat,
-      achadinhosAfiliados: achadinhosCompat
+      presentesCanaa: getProdutosLocais()
     };
   }
 
@@ -700,7 +574,7 @@
     criarCompatibilidadeLegado();
     inicializarMenuMobile();
     carregarProdutosLocais();
-    carregarAchadinhos();
+    inicializarTrackingLinks();
   }
 
   function exporFuncoesGlobais() {
@@ -708,11 +582,9 @@
     window.gerarLinkWhatsApp = gerarLinkWhatsApp;
     window.filtrarProdutos = filtrarProdutos;
     window.carregarProdutosLocais = carregarProdutosLocais;
-    window.carregarAchadinhos = carregarAchadinhos;
-    window.abrirLinkAfiliado = abrirLinkAfiliado;
     window.rastrearEvento = rastrearEvento;
     window.trackWhatsAppClick = trackWhatsAppClick;
-    window.trackAffiliateClick = trackAffiliateClick;
+    window.trackInstagramClick = trackInstagramClick;
     window.trackViewContent = trackViewContent;
   }
 
