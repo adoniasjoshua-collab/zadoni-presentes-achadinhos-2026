@@ -446,33 +446,3 @@ const produtosLocais = [
     whatsappMensagem: "Ola! Tenho interesse no Mimo Amor Perfeito com Trufas. Pode me passar disponibilidade?"
   }
 ];
-
-const achadinhos = [
-  {
-    id: 100,
-    nome: "Perfumes Hinode",
-    categoria: "Perfumes",
-    descricao: "Fragrancias Hinode originais, boas para uso pessoal e presentes especiais.",
-    preco: 0,
-    imagem: "assets/optimized/products/achadinhos-hinode-perfumes.jpg",
-    linkAfiliado: "https://gestaolinkbr.lovable.app/r/2x06fj"
-  },
-  {
-    id: 99,
-    nome: "Utilidades Mercado Livre",
-    categoria: "Utilidades",
-    descricao: "Selecao de achadinhos uteis, presentes e ofertas praticas para o dia a dia.",
-    preco: 0,
-    imagem: "assets/optimized/products/achadinhos-mercado-livre-ofertas.jpg",
-    linkAfiliado: "https://meli.la/1e7FrVH"
-  },
-  {
-    id: 101,
-    nome: "Ecobikes Mercado Livre",
-    categoria: "Ecobikes",
-    descricao: "Opcoes de mobilidade eletrica e bicicletas para quem busca praticidade.",
-    preco: 0,
-    imagem: "assets/optimized/products/ecobikes-mercado-livre-mobilidade-eletrica.jpg",
-    linkAfiliado: "https://www.mercadolivre.com.br/bicicleta-eletrica-ecobikes-sport-500w-48v-aro-14-scooter/p/MLB66143453?pdp_filters=item_id%3AMLB6525972478&matt_tool=38524122#origin=share&sid=share&wid=MLB6525972478&action=copy"
-  }
-];

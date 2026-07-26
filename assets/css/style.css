@@ -288,8 +288,7 @@ header {
 }
 
 .hero,
-.hero-hiperlocal,
-.affiliate-hero {
+.hero-hiperlocal {
   position: relative;
   overflow: hidden;
   padding: clamp(4rem, 12vw, 7rem) 0;
@@ -300,8 +299,7 @@ header {
 }
 
 .hero::before,
-.hero-hiperlocal::before,
-.affiliate-hero::before {
+.hero-hiperlocal::before {
   position: absolute;
   inset: auto -8rem -12rem auto;
   width: 24rem;
@@ -312,22 +310,19 @@ header {
 }
 
 .hero-content,
-.hero-hiperlocal .container,
-.affiliate-hero .container {
+.hero-hiperlocal .container {
   position: relative;
   z-index: 1;
 }
 
 .hero h1,
-.hero-hiperlocal h1,
-.affiliate-hero h1 {
+.hero-hiperlocal h1 {
   color: #ffffff;
   margin-bottom: var(--espaco-md);
 }
 
 .hero p,
-.hero-hiperlocal p,
-.affiliate-hero p {
+.hero-hiperlocal p {
   max-width: 720px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.05rem;
@@ -358,8 +353,7 @@ header {
 .btn-outline,
 .btn-whatsapp,
 .btn-whatsapp-produto,
-.filtro-btn,
-.category-filter {
+.filtro-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -380,14 +374,12 @@ header {
 .btn-outline:hover,
 .btn-whatsapp:hover,
 .btn-whatsapp-produto:hover,
-.filtro-btn:hover,
-.category-filter:hover {
+.filtro-btn:hover {
   transform: translateY(-2px);
 }
 
 .btn-primary,
-.filtro-btn.ativo,
-.category-filter.active {
+.filtro-btn.ativo {
   background: linear-gradient(135deg, var(--cor-destaque), #b02f77);
   color: #ffffff;
   box-shadow: 0 12px 26px rgba(217, 54, 127, 0.28);
@@ -450,8 +442,7 @@ header {
 
 .category-card,
 .product-card,
-.produto-card,
-.affiliate-card {
+.produto-card {
   overflow: hidden;
   border: 1px solid rgba(234, 221, 229, 0.9);
   border-radius: var(--raio);
@@ -462,8 +453,7 @@ header {
 
 .category-card:hover,
 .product-card:hover,
-.produto-card:hover,
-.affiliate-card:hover {
+.produto-card:hover {
   border-color: rgba(217, 54, 127, 0.28);
   box-shadow: var(--sombra-media);
   transform: translateY(-5px);
@@ -740,95 +730,33 @@ header {
   margin-top: auto;
 }
 
-.filtros-container,
-.affiliate-toolbar {
+.filtros-container {
   display: flex;
   flex-wrap: wrap;
   gap: var(--espaco-sm);
   margin: var(--espaco-lg) 0 var(--espaco-xl);
 }
 
-.filtro-btn,
-.category-filter {
+.filtro-btn {
   border: 1px solid var(--cor-borda);
   background: #ffffff;
   color: var(--cor-primaria);
   box-shadow: none;
 }
 
-.produtos-grid,
-.affiliate-grid {
+.produtos-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--espaco-lg);
 }
 
-.sem-produtos,
-.affiliate-empty {
+.sem-produtos {
   border: 1px dashed var(--cor-borda);
   border-radius: var(--raio);
   background: #ffffff;
   padding: var(--espaco-xl);
   color: var(--cor-texto-leve);
   text-align: center;
-}
-
-.affiliate-image {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 4 / 3;
-  background: #fff7fb;
-  overflow: hidden;
-}
-
-.affiliate-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.affiliate-content {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: var(--espaco-lg);
-}
-
-.affiliate-category {
-  color: var(--cor-destaque);
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  margin-bottom: var(--espaco-sm);
-  text-transform: uppercase;
-}
-
-.affiliate-content h2 {
-  color: var(--cor-primaria-escura);
-  font-size: 1.12rem;
-  margin-bottom: var(--espaco-sm);
-  padding: 0;
-}
-
-.affiliate-content h2::after {
-  display: none;
-}
-
-.affiliate-benefit {
-  flex: 1;
-  font-size: 0.95rem;
-}
-
-.affiliate-price {
-  width: fit-content;
-  border-radius: 999px;
-  background: #fff0f6;
-  color: var(--cor-destaque);
-  font-family: var(--fonte-corpo);
-  font-size: 0.92rem;
-  font-weight: 850;
-  margin: var(--espaco-sm) 0 var(--espaco-md);
-  padding: 0.35rem 0.7rem;
 }
 
 .banner {
@@ -996,8 +924,7 @@ select:focus {
   }
 
   .grid-2,
-  .produtos-grid,
-  .affiliate-grid {
+  .produtos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1053,8 +980,7 @@ select:focus {
   }
 
   .grid-3,
-  .produtos-grid,
-  .affiliate-grid {
+  .produtos-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1084,22 +1010,19 @@ select:focus {
   }
 
   .hero p,
-  .hero-hiperlocal p,
-  .affiliate-hero p {
+  .hero-hiperlocal p {
     font-size: 1.18rem;
   }
 }
 
 @media (max-width: 767px) {
   .produto-card,
-  .affiliate-card,
   .card,
   .comentario-card {
     box-shadow: 0 6px 18px rgba(79, 29, 56, 0.08);
   }
 
   .produto-card:hover,
-  .affiliate-card:hover,
   .card:hover,
   .category-card:hover {
     transform: none;
