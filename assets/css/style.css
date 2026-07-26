@@ -71,6 +71,24 @@ a {
   text-decoration: none;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2000;
+  transform: translateY(-140%);
+  border-radius: var(--raio);
+  background: #ffffff;
+  color: var(--cor-primaria-escura);
+  padding: 0.7rem 1rem;
+  font-weight: 800;
+  box-shadow: var(--sombra-media);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 button,
 input,
 textarea,
@@ -288,7 +306,8 @@ header {
 }
 
 .hero,
-.hero-hiperlocal {
+.hero-hiperlocal,
+.seo-hero {
   position: relative;
   overflow: hidden;
   padding: clamp(4rem, 12vw, 7rem) 0;
@@ -299,7 +318,8 @@ header {
 }
 
 .hero::before,
-.hero-hiperlocal::before {
+.hero-hiperlocal::before,
+.seo-hero::before {
   position: absolute;
   inset: auto -8rem -12rem auto;
   width: 24rem;
@@ -310,19 +330,22 @@ header {
 }
 
 .hero-content,
-.hero-hiperlocal .container {
+.hero-hiperlocal .container,
+.seo-hero .container {
   position: relative;
   z-index: 1;
 }
 
 .hero h1,
-.hero-hiperlocal h1 {
+.hero-hiperlocal h1,
+.seo-hero h1 {
   color: #ffffff;
   margin-bottom: var(--espaco-md);
 }
 
 .hero p,
-.hero-hiperlocal p {
+.hero-hiperlocal p,
+.seo-hero p {
   max-width: 720px;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.05rem;
@@ -332,6 +355,27 @@ header {
   display: grid;
   gap: var(--espaco-md);
   margin-top: var(--espaco-lg);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin-bottom: var(--espaco-lg);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.breadcrumbs a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.hero-hook {
+  max-width: 760px;
+  line-height: 1.55;
 }
 
 .local-badge {
@@ -480,6 +524,76 @@ header {
   color: var(--cor-primaria);
 }
 
+.seo-copy,
+.seo-category-nav,
+.seo-products,
+.seo-faq,
+.seo-cta {
+  background: #ffffff;
+}
+
+.seo-copy p,
+.seo-cta p {
+  max-width: 860px;
+}
+
+.seo-category-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+}
+
+.seo-category-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border: 1px solid rgba(217, 54, 127, 0.22);
+  border-radius: var(--raio);
+  background: #ffffff;
+  color: var(--cor-primaria);
+  padding: 0.7rem 0.95rem;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(79, 29, 56, 0.06);
+}
+
+.local-info-grid,
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaco-lg);
+}
+
+.local-info-grid article,
+.faq-grid details {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: #ffffff;
+  padding: var(--espaco-lg);
+  box-shadow: var(--sombra-leve);
+}
+
+.faq-grid summary {
+  color: var(--cor-primaria-escura);
+  cursor: pointer;
+  font-weight: 850;
+}
+
+.faq-grid p {
+  margin: var(--espaco-md) 0 0;
+}
+
+.seo-cta {
+  background:
+    linear-gradient(135deg, rgba(122, 47, 85, 0.94), rgba(217, 54, 127, 0.86)),
+    var(--cor-primaria);
+  color: #ffffff;
+}
+
+.seo-cta h2,
+.seo-cta p {
+  color: #ffffff;
+}
+
 .social-proof {
   border-radius: var(--raio);
   background: #ffffff;
@@ -576,6 +690,16 @@ header {
   text-align: center;
 }
 
+.produto-imagem-link {
+  color: inherit;
+}
+
+.produto-imagem picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .product-image img,
 .produto-imagem img {
   width: 100%;
@@ -608,6 +732,17 @@ header {
   flex: 1;
   flex-direction: column;
   padding: var(--espaco-lg);
+}
+
+.produto-nome a:focus-visible,
+.produto-imagem-link:focus-visible,
+.seo-category-links a:focus-visible,
+.btn:focus-visible,
+.btn-whatsapp-produto:focus-visible,
+.whatsapp-float:focus-visible,
+.filtro-btn:focus-visible {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 3px;
 }
 
 .product-category {
@@ -937,6 +1072,11 @@ select:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .local-info-grid,
+  .faq-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .product-actions,
   .produto-acoes {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -993,6 +1133,10 @@ select:focus {
   }
 
   .comentarios-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .local-info-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 

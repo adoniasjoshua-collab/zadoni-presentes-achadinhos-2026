@@ -396,7 +396,7 @@ const produtosLocais = [
     id: 32,
     nome: "Perfume de Bolso 521 Vip Rose 15ml",
     categoria: "Perfumes",
-    descricao: "Fragrancia feminina floral frutada, inspirada no 212 Vip Rose. Leve, charmosa e marcante para presentear no Dia dos Namorados.",
+    descricao: "Fragrancia feminina floral frutada, inspirada no 212 Vip Rose. Leve, charmosa e marcante para complementar presentes romanticos.",
     preco: 47.00,
     imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg",
     destaque: true,
