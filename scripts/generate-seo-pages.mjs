@@ -203,7 +203,16 @@ function faqSchema(faqs) {
 }
 
 function head({ title, description, canonical, image, type = "website", prefix = "" }) {
-  return `<meta charset="UTF-8">
+  return `<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-16938428518');
+    </script>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${html(description)}">
     <meta name="author" content="Zadoni Presentes">
@@ -303,6 +312,7 @@ function faqHtml(faqs) {
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260726-seo-local" defer></script>
     <script src="${prefix}assets/js/app.js?v=20260726-seo-local" defer></script>
+    <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
 
