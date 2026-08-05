@@ -122,8 +122,8 @@ ${JSON.stringify(items, null, 2).replace(/</g, "\\u003c")}
     </script>`;
 }
 
-function baseSchemas(pageUrl, title, breadcrumbs) {
-  return [
+function baseSchemas(pageUrl, title, breadcrumbs, options = {}) {
+  const schemas = [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -131,8 +131,11 @@ function baseSchemas(pageUrl, title, breadcrumbs) {
       "name": "Zadoni Presentes",
       "url": SITE,
       "sameAs": ["https://www.instagram.com/zadonipresentescanaa"]
-    },
-    {
+    }
+  ];
+
+  if (options.includeLocalBusiness !== false) {
+    schemas.push({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": `${SITE}/#localbusiness`,
@@ -148,7 +151,10 @@ function baseSchemas(pageUrl, title, breadcrumbs) {
         "addressCountry": "BR"
       },
       "areaServed": "Canaã dos Carajás, Pará"
-    },
+    });
+  }
+
+  schemas.push(
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -156,7 +162,22 @@ function baseSchemas(pageUrl, title, breadcrumbs) {
       "name": "Zadoni Presentes",
       "url": SITE,
       "publisher": { "@id": `${SITE}/#organization` }
-    },
+    }
+  );
+
+  if (options.includeWebPage === true) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      "url": pageUrl,
+      "name": title,
+      "isPartOf": { "@id": `${SITE}/#website` },
+      "about": { "@id": `${SITE}/#organization` }
+    });
+  }
+
+  schemas.push(
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -167,27 +188,50 @@ function baseSchemas(pageUrl, title, breadcrumbs) {
         "item": item.url
       }))
     }
-  ];
+  );
+
+  return schemas;
 }
 
-function productSchemas(pageProducts, pageUrl) {
-  return pageProducts.map((product) => ({
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.nome,
-    "description": product.descricao,
-    "image": absoluteUrl(product.imagem),
-    "category": product.categoria,
-    "brand": { "@type": "Brand", "name": "Zadoni Presentes" },
-    "url": `${pageUrl}#produto-${product.id}`,
-    "offers": {
+function productSchemas(pageProducts, pageUrl, options = {}) {
+  return pageProducts.map((product) => {
+    const offer = {
       "@type": "Offer",
       "price": Number(product.preco).toFixed(2),
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock",
-      "url": `${pageUrl}#produto-${product.id}`
+      "priceCurrency": "BRL"
+    };
+
+    if (options.includeAvailability !== false) {
+      offer.availability = "https://schema.org/InStock";
     }
-  }));
+
+    offer.url = `${pageUrl}#produto-${product.id}`;
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": product.nome,
+      "description": product.descricao,
+      "image": absoluteUrl(product.imagem),
+      "category": product.categoria,
+      "brand": { "@type": "Brand", "name": "Zadoni Presentes" },
+      "url": `${pageUrl}#produto-${product.id}`,
+      "offers": offer
+    };
+  });
+}
+
+function itemListSchema(pageProducts, pageUrl) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": pageProducts.map((product, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${pageUrl}#produto-${product.id}`,
+      "name": product.nome
+    }))
+  };
 }
 
 function faqSchema(faqs) {
@@ -248,8 +292,8 @@ function header(prefix = "") {
                         <li><a href="${prefix}presentes-canaa.html">Presentes</a></li>
                         <li><a href="${prefix}buques-canaa-dos-carajas/">Buquês</a></li>
                         <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
-                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Floricultura</a></li>
-                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Café da manhã</a></li>
+                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
+                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
                         <li><a href="${prefix}presentes-romanticos-canaa/">Românticos</a></li>
                     </ul>
                 </nav>
@@ -272,8 +316,8 @@ function footer(prefix = "") {
                         <li><a href="${prefix}presentes-canaa.html">Presentes em Canaã</a></li>
                         <li><a href="${prefix}buques-canaa-dos-carajas/">Buquês</a></li>
                         <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
-                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Floricultura</a></li>
-                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Café da manhã</a></li>
+                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
+                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
                         <li><a href="${prefix}rosas-perfumadas-canaa/">Rosas e perfumes</a></li>
                     </ul>
                 </div>
@@ -347,8 +391,14 @@ function categoryPage(config) {
   ];
   const faqs = config.faqs;
   const schemas = [
-    ...baseSchemas(canonical, config.title, crumbItems.map(({ name, url }) => ({ name, url }))),
-    ...productSchemas(pageProducts, canonical),
+    ...baseSchemas(canonical, config.title, crumbItems.map(({ name, url }) => ({ name, url })), {
+      includeLocalBusiness: config.includeLocalBusiness !== false,
+      includeWebPage: config.includeWebPage === true
+    }),
+    ...(config.includeItemListSchema === true ? [itemListSchema(pageProducts, canonical)] : []),
+    ...productSchemas(pageProducts, canonical, {
+      includeAvailability: config.includeOfferAvailability !== false
+    }),
     faqSchema(faqs)
   ];
 
@@ -469,8 +519,8 @@ function mainPage() {
                 <div class="seo-category-links">
                     <a href="buques-canaa-dos-carajas/">Buquês em Canaã</a>
                     <a href="cestas-de-presente-canaa/">Cestas de presente</a>
-                    <a href="floricultura-canaa-dos-carajas/">Floricultura em Canaã</a>
-                    <a href="cesta-cafe-da-manha-canaa/">Cesta de café da manhã</a>
+                    <a href="floricultura-canaa-dos-carajas/">Flores e buquês em Canaã</a>
+                    <a href="cesta-cafe-da-manha-canaa/">Cesta matinal personalizada</a>
                     <a href="presentes-romanticos-canaa/">Presentes românticos</a>
                     <a href="rosas-perfumadas-canaa/">Rosas e perfumes</a>
                     <a href="presentes-canaa-dos-carajas/">Catálogo local</a>
@@ -601,40 +651,50 @@ const pageConfigs = [
   },
   {
     dir: "floricultura-canaa-dos-carajas",
-    title: "Floricultura em Canaã dos Carajás | Zadoni Presentes",
-    description: "Floricultura em Canaã dos Carajás com buquês, rosas, flores naturais e presentes para pedir pelo WhatsApp com atendimento local.",
-    h1: "Floricultura em Canaã dos Carajás",
-    h2: "Flores e buquês para presentear em Canaã",
-    intro: "Encontre buquês, rosas e arranjos com flores naturais para aniversários, declarações, pedidos de desculpa e surpresas especiais.",
-    copy1: "Quem procura uma floricultura em Canaã dos Carajás geralmente precisa confirmar rápido quais flores estão disponíveis, qual acabamento combina com a ocasião e se dá para incluir cartão, chocolate ou outro complemento.",
-    copy2: "A Zadoni reúne opções de flores e presentes em um atendimento direto pelo WhatsApp, ajudando a escolher entre buquês, rosas, jarros, boxes e combinações personalizadas conforme orçamento e disponibilidade.",
-    productsTitle: "Flores, rosas e buquês da Zadoni",
+    title: "Floricultura em Canaã dos Carajás | Buquês e Presentes | Zadoni",
+    description: "Procura floricultura em Canaã dos Carajás? Conheça buquês, rosas, flores e presentes personalizados da Zadoni. Consulte modelos e disponibilidade pelo WhatsApp.",
+    h1: "Flores, Buquês e Presentes em Canaã dos Carajás",
+    h2: "Buquês e flores para momentos especiais",
+    intro: "Quem procura uma floricultura em Canaã dos Carajás também pode encontrar na Zadoni opções de buquês, rosas, flores e presentes preparados para momentos especiais. Os modelos podem variar conforme a disponibilidade e a personalização desejada.",
+    copy1: "A Zadoni é uma empresa de presentes em Canaã dos Carajás que oferece opções com buquês, rosas, flores, chocolates e detalhes personalizados conforme os modelos disponíveis.",
+    copy2: "Para consultar modelos e disponibilidade, envie uma mensagem pelo WhatsApp informando a ocasião e o estilo de presente desejado. A composição deve ser confirmada durante o atendimento.",
+    productsTitle: "Opções com rosas, flores e buquês",
+    includeLocalBusiness: false,
+    includeWebPage: true,
+    includeItemListSchema: true,
+    includeOfferAvailability: false,
     filter: (items) => items.filter((item) => {
       const text = slugify(item.nome + " " + item.descricao + " " + item.categoria);
-      return text.includes("buque") || text.includes("rosa") || text.includes("flor") || text.includes("jarro");
+      return !text.includes("perfume") && (text.includes("buque") || text.includes("rosa") || text.includes("flor") || text.includes("jarro"));
     }),
     faqs: [
-      { q: "A Zadoni funciona como floricultura em Canaã dos Carajás?", a: "Sim. A Zadoni atende pedidos locais de flores, buquês, rosas e presentes em Canaã dos Carajás pelo WhatsApp." },
-      { q: "Posso pedir flores com chocolate ou cartão?", a: "Pode. A inclusão de chocolates, cartão, foto ou outros detalhes depende da disponibilidade no momento do pedido." }
+      { q: "A Zadoni trabalha com flores e buquês em Canaã dos Carajás?", a: "A Zadoni oferece opções de buquês, rosas, flores e presentes conforme os modelos e a disponibilidade. A consulta pode ser feita diretamente pelo WhatsApp." },
+      { q: "É possível personalizar o presente?", a: "Algumas opções podem receber complementos e detalhes personalizados. A disponibilidade deve ser confirmada durante o atendimento." },
+      { q: "Como saber quais modelos estão disponíveis?", a: "Entre em contato pelo WhatsApp para consultar os modelos, valores e condições disponíveis para a data desejada." }
     ]
   },
   {
     dir: "cesta-cafe-da-manha-canaa",
-    title: "Cesta de Café da Manhã em Canaã | Zadoni",
-    description: "Cesta de café da manhã em Canaã dos Carajás com opções personalizadas, valores iniciais e atendimento pelo WhatsApp.",
-    h1: "Cesta de café da manhã em Canaã",
-    h2: "Uma surpresa prática para começar o dia",
-    intro: "Veja opções de cesta de café da manhã e cestas personalizadas para aniversário, agradecimento, romance ou carinho fora de data.",
-    copy1: "A cesta de café da manhã é uma escolha útil para quem quer surpreender cedo, com itens combinados e acabamento pronto para presente.",
-    copy2: "A composição final pode variar conforme disponibilidade, orçamento e complementos escolhidos. Pelo WhatsApp, a Zadoni confirma itens, valor final e possibilidade de personalização.",
-    productsTitle: "Cestas de café da manhã e opções próximas",
+    title: "Cesta de Café da Manhã em Canaã dos Carajás | Zadoni",
+    description: "Cestas de café da manhã em Canaã dos Carajás para aniversários e momentos especiais. Consulte modelos, itens e personalização pelo WhatsApp.",
+    h1: "Cesta de Café da Manhã em Canaã dos Carajás",
+    h2: "Modelos de cesta de café da manhã",
+    intro: "Uma cesta de café da manhã é uma forma especial de começar uma comemoração. A Zadoni prepara opções em Canaã dos Carajás com itens selecionados e possibilidades de personalização conforme o modelo e a disponibilidade.",
+    copy1: "Os itens que acompanham a cesta podem variar conforme o modelo escolhido. A composição, os adicionais e as condições disponíveis devem ser confirmados no atendimento pelo WhatsApp.",
+    copy2: "Para aniversários e momentos especiais, informe a data, a ocasião e o tipo de cesta desejada para consultar modelos, valores e possibilidades de personalização.",
+    productsTitle: "Cesta com itens de café disponível no catálogo",
+    includeLocalBusiness: false,
+    includeWebPage: true,
+    includeItemListSchema: true,
+    includeOfferAvailability: false,
     filter: (items) => items.filter((item) => {
       const text = slugify(item.nome + " " + item.descricao + " " + item.categoria);
-      return text.includes("cafe") || text.includes("cesta") || text.includes("cestinha");
+      return text.includes("cafe") && text.includes("manha");
     }),
     faqs: [
-      { q: "Tem cesta de café da manhã em Canaã dos Carajás?", a: "Sim. A Zadoni apresenta opções de cesta de café da manhã e confirma disponibilidade pelo WhatsApp." },
-      { q: "A cesta pode ser personalizada?", a: "Pode. A personalização depende dos itens disponíveis, orçamento e horário desejado para a surpresa." }
+      { q: "O que pode acompanhar a cesta de café da manhã?", a: "A composição varia conforme o modelo escolhido e a disponibilidade dos itens. Consulte pelo WhatsApp para conhecer as opções atuais." },
+      { q: "É possível personalizar a cesta?", a: "A possibilidade de personalização depende do modelo e dos itens disponíveis. Os detalhes podem ser definidos durante o atendimento." },
+      { q: "Como consultar preço e disponibilidade?", a: "Entre em contato pelo WhatsApp informando a data, a ocasião e o tipo de cesta desejada." }
     ]
   },
   {
