@@ -59,3 +59,81 @@ A producao atual ainda serve a versao antiga ate o PR ser revisado, aprovado e i
 - Os JSON-LD de Product usam os precos cadastrados em `produtosLocais`; se esses valores mudarem, o arquivo de dados e as paginas geradas devem ser atualizados juntos.
 - As dimensoes HTML dos produtos usam proporcao estavel 720x900 com `object-fit: contain`; validar visualmente apos deploy em mobile.
 - Sem GitHub CLI instalado neste ambiente; a abertura do PR depende do push/autenticacao via Git ou conector GitHub disponivel.
+
+## Atualização - 2026-08-05
+
+- Criadas páginas locais adicionais para cobrir duas intenções fortes observadas no Google Ads:
+  - `/floricultura-canaa-dos-carajas/`
+  - `/cesta-cafe-da-manha-canaa/`
+- As novas páginas usam o mesmo template SEO local, com canonical absoluto, Open Graph, Twitter Cards, BreadcrumbList, Product, Offer e FAQPage quando aplicável.
+- `presentes-canaa.html` ganhou links internos contextuais para Floricultura e Cesta de café da manhã na navegação de categorias.
+- As páginas geradas ganharam links internos para Floricultura e Cesta de café da manhã no header/footer do template.
+- `index.html` ganhou cartões e links internos para as novas páginas sem alterar URL existente, scripts de tracking, número de WhatsApp ou botões já publicados.
+- `sitemap.xml` foi atualizado com as novas URLs canônicas.
+- `scripts/validate-seo.mjs` passou a validar as novas páginas.
+- `scripts/validate-google-ads-tracking.mjs` foi ajustado para validar preservação de Google Ads e WhatsApp durante evoluções SEO, sem congelar título, heading, JSON-LD e links internos contra a branch base.
+- Nenhum deploy ou push remoto foi executado.
+## Ajuste seguro - 2026-08-05
+
+### Ajustes realizados
+
+- Reposicionada a página `/floricultura-canaa-dos-carajas/` para apresentar a Zadoni como empresa de presentes com opções de buquês, rosas, flores e presentes, sem afirmar que é uma floricultura tradicional.
+- Reposicionada a página `/cesta-cafe-da-manha-canaa/` para focar exclusivamente em cesta de café da manhã e composição com itens matinais.
+- Revisadas âncoras internas para reduzir repetição de palavra-chave exata:
+  - `Flores e buquês`
+  - `Flores e buquês em Canaã`
+  - `Cesta de café`
+  - `Cesta matinal personalizada`
+- Removida da página de café da manhã a listagem de cestas sem relação clara com café da manhã.
+- Removido da página de floricultura o produto de perfume que entrava por conter termo relacionado a floral, mas não era uma oferta de flor, rosa, buquê ou arranjo.
+- Nas duas páginas novas, o JSON-LD deixou de incluir `LocalBusiness` e `availability`, mantendo `WebPage`, `BreadcrumbList`, `ItemList`, `Product`, `Offer` e `FAQPage` apenas quando visíveis/aplicáveis.
+
+### Informações presumidas removidas ou suavizadas
+
+- Removida a afirmação direta de que a Zadoni funciona como floricultura.
+- Removidas expressões que podiam sugerir disponibilidade imediata, estoque permanente ou entrega garantida.
+- Substituída a ideia de “surpreender cedo” por linguagem cautelosa sobre modelos, composição, disponibilidade e consulta pelo WhatsApp.
+- A personalização passou a ser descrita como possibilidade dependente de modelo, itens e disponibilidade.
+
+### Mapeamento de intenção
+
+- `/presentes-canaa.html`: catálogo geral, loja de presentes, presentes em Canaã dos Carajás e presentes personalizados.
+- `/floricultura-canaa-dos-carajas/`: intenção ampla de floricultura, flores, rosas, buquês e presentes com flores, sem prometer estrutura de floricultura tradicional.
+- `/buques-canaa-dos-carajas/`: intenção específica de buquês, tipos de buquê, buquê romântico e buquê de rosas.
+- `/cestas-de-presente-canaa/`: cestas de presente, cestas personalizadas e cestas para diferentes ocasiões.
+- `/cesta-cafe-da-manha-canaa/`: cesta de café da manhã, cesta matinal e composição com itens de café.
+
+### Redução do risco de canibalização
+
+- A página de floricultura ficou mais ampla que a página de buquês, evitando repetir o mesmo H1 e o mesmo posicionamento.
+- A página de café da manhã passou a exibir apenas o produto com relação clara com café da manhã, evitando competição direta com a página ampla de cestas.
+- As âncoras internas foram diversificadas para reforçar o papel de cada URL.
+
+### Validações executadas
+
+- `node scripts/validate-seo.mjs`: ok, 10 páginas e 33 produtos preservados.
+- `node scripts/validate-google-ads-tracking.mjs`: ok, 10 páginas e 125 links de WhatsApp preservados.
+- `node --check scripts/generate-seo-pages.mjs`: ok.
+- `node --check scripts/validate-google-ads-tracking.mjs`: ok.
+- `git diff --check`: ok.
+
+### Resultado final
+
+- Produtos, preços e dados de origem foram preservados.
+- Google Ads, ID da tag, destino de conversão e número do WhatsApp foram preservados.
+- O total de links de WhatsApp caiu de 133 para 125 porque a página de cesta de café da manhã deixou de listar produtos irrelevantes e, consequentemente, removeu CTAs de WhatsApp desses produtos da página nova.
+- Nenhum push ou deploy foi executado.
+## Atualização de imagens reais - 2026-08-05
+
+- Adicionadas 7 imagens reais na página `/cesta-cafe-da-manha-canaa/` como galeria de modelos de cestas personalizadas já preparadas pela Zadoni.
+- As imagens foram renomeadas com nomes descritivos e estáveis:
+  - `cesta-cafe-da-manha-modelo-real-01.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-02.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-03.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-04.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-05.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-06.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-07.jpeg`
+- A galeria usa linguagem cautelosa: os itens, acabamentos e adicionais podem variar conforme modelo, ocasião e disponibilidade no atendimento.
+- O produto principal da página continua sendo apenas `Cesta Cafe da Manha Especial`; produtos, preços e dados de origem não foram alterados.
+- A inclusão das imagens reforça confiança visual e SEO de imagem sem criar novos produtos ou promessas comerciais.
