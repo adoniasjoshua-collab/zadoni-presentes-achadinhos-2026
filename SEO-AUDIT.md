@@ -123,3 +123,17 @@ A producao atual ainda serve a versao antiga ate o PR ser revisado, aprovado e i
 - Google Ads, ID da tag, destino de conversão e número do WhatsApp foram preservados.
 - O total de links de WhatsApp caiu de 133 para 125 porque a página de cesta de café da manhã deixou de listar produtos irrelevantes e, consequentemente, removeu CTAs de WhatsApp desses produtos da página nova.
 - Nenhum push ou deploy foi executado.
+## Atualização de imagens reais - 2026-08-05
+
+- Adicionadas 7 imagens reais na página `/cesta-cafe-da-manha-canaa/` como galeria de modelos de cestas personalizadas já preparadas pela Zadoni.
+- As imagens foram renomeadas com nomes descritivos e estáveis:
+  - `cesta-cafe-da-manha-modelo-real-01.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-02.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-03.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-04.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-05.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-06.jpeg`
+  - `cesta-cafe-da-manha-modelo-real-07.jpeg`
+- A galeria usa linguagem cautelosa: os itens, acabamentos e adicionais podem variar conforme modelo, ocasião e disponibilidade no atendimento.
+- O produto principal da página continua sendo apenas `Cesta Cafe da Manha Especial`; produtos, preços e dados de origem não foram alterados.
+- A inclusão das imagens reforça confiança visual e SEO de imagem sem criar novos produtos ou promessas comerciais.

@@ -357,6 +357,25 @@ function faqHtml(faqs) {
     </section>`;
 }
 
+function galleryHtml(config) {
+  if (!config.galleryImages || config.galleryImages.length === 0) return "";
+
+  return `<section class="seo-gallery" aria-labelledby="galeria-title">
+        <div class="container">
+            <div class="seo-gallery-header">
+                <h2 id="galeria-title">${html(config.galleryTitle)}</h2>
+                <p>${html(config.galleryIntro)}</p>
+            </div>
+            <div class="seo-gallery-grid">
+                ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item">
+                    <img src="${html(image.src)}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+                    <figcaption>${html(image.caption)}</figcaption>
+                </figure>`).join("\n                ")}
+            </div>
+        </div>
+    </section>\n`;
+}
+
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260726-seo-local" defer></script>
     <script src="${prefix}assets/js/app.js?v=20260726-seo-local" defer></script>
@@ -422,7 +441,7 @@ function categoryPage(config) {
                 <p>${html(config.copy2)}</p>
             </div>
         </section>
-        <section class="seo-products" aria-labelledby="produtos-title">
+${galleryHtml(config)}        <section class="seo-products" aria-labelledby="produtos-title">
             <div class="container">
                 <h2 id="produtos-title">${html(config.productsTitle)}</h2>
                 <div class="produtos-grid">
@@ -683,6 +702,17 @@ const pageConfigs = [
     copy1: "Os itens que acompanham a cesta podem variar conforme o modelo escolhido. A composição, os adicionais e as condições disponíveis devem ser confirmados no atendimento pelo WhatsApp.",
     copy2: "Para aniversários e momentos especiais, informe a data, a ocasião e o tipo de cesta desejada para consultar modelos, valores e possibilidades de personalização.",
     productsTitle: "Cesta com itens de café disponível no catálogo",
+    galleryTitle: "Modelos reais de cestas personalizadas",
+    galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Itens, acabamento e adicionais podem variar conforme modelo, ocasião e disponibilidade no atendimento.",
+    galleryImages: [
+      { src: "cesta-cafe-da-manha-modelo-real-01.jpeg", alt: "Modelo real de cesta personalizada da Zadoni em Canaã dos Carajás", caption: "Modelo real preparado pela Zadoni", width: 610, height: 1356 },
+      { src: "cesta-cafe-da-manha-modelo-real-02.jpeg", alt: "Cesta personalizada com itens selecionados para presente", caption: "Composição com itens selecionados", width: 736, height: 920 },
+      { src: "cesta-cafe-da-manha-modelo-real-03.jpeg", alt: "Cesta personalizada para momento especial em Canaã dos Carajás", caption: "Opção para momento especial", width: 736, height: 981 },
+      { src: "cesta-cafe-da-manha-modelo-real-04.jpeg", alt: "Modelo de cesta personalizada com acabamento para presente", caption: "Acabamento personalizado", width: 736, height: 977 },
+      { src: "cesta-cafe-da-manha-modelo-real-05.jpeg", alt: "Cesta personalizada da Zadoni com itens e detalhes decorativos", caption: "Detalhes variam conforme disponibilidade", width: 736, height: 981 },
+      { src: "cesta-cafe-da-manha-modelo-real-06.jpeg", alt: "Cesta de presente personalizada com composição consultada pelo WhatsApp", caption: "Composição confirmada no atendimento", width: 736, height: 977 },
+      { src: "cesta-cafe-da-manha-modelo-real-07.jpeg", alt: "Cesta personalizada real para presente em Canaã dos Carajás", caption: "Modelo real da Zadoni", width: 697, height: 1089 }
+    ],
     includeLocalBusiness: false,
     includeWebPage: true,
     includeItemListSchema: true,
