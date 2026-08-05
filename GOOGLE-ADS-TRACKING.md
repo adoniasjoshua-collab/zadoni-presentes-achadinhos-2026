@@ -32,6 +32,8 @@ Implementacao exclusiva da Tag Google Ads e da conversao de clique real em Whats
 - `https://zadonipresentes.com.br/presentes-canaa-dos-carajas/`
 - `https://zadonipresentes.com.br/buques-canaa-dos-carajas/`
 - `https://zadonipresentes.com.br/cestas-de-presente-canaa/`
+- `https://zadonipresentes.com.br/floricultura-canaa-dos-carajas/`
+- `https://zadonipresentes.com.br/cesta-cafe-da-manha-canaa/`
 - `https://zadonipresentes.com.br/presentes-romanticos-canaa/`
 - `https://zadonipresentes.com.br/rosas-perfumadas-canaa/`
 - `https://zadonipresentes.com.br/404.html`
@@ -71,7 +73,7 @@ Nao sao enviados ao Google Ads:
 
 ## Quantidade de Links Rastreados
 
-A validacao tecnica conta os links de WhatsApp preservados em HTML publico. A contagem atual deve ser conferida com:
+A validacao tecnica conta os links de WhatsApp preservados em HTML publico e confirma que cada link continua usando o telefone oficial. A contagem atual deve ser conferida com:
 
 ```powershell
 node scripts\validate-google-ads-tracking.mjs
@@ -113,7 +115,7 @@ node scripts\validate-google-ads-tracking.mjs
 
 ## Confirmacao SEO
 
-Esta implementacao nao altera:
+A validacao atual protege a Tag Google Ads, o destino de conversao e os links de WhatsApp. Alteracoes SEO posteriores podem alterar conteudo, links internos, headings e dados estruturados de forma intencional, desde que a validacao continue passando. Na implementacao original de tracking, ela nao alterou:
 
 - `title`
 - meta description

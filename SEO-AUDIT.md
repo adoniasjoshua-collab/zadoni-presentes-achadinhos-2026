@@ -59,3 +59,17 @@ A producao atual ainda serve a versao antiga ate o PR ser revisado, aprovado e i
 - Os JSON-LD de Product usam os precos cadastrados em `produtosLocais`; se esses valores mudarem, o arquivo de dados e as paginas geradas devem ser atualizados juntos.
 - As dimensoes HTML dos produtos usam proporcao estavel 720x900 com `object-fit: contain`; validar visualmente apos deploy em mobile.
 - Sem GitHub CLI instalado neste ambiente; a abertura do PR depende do push/autenticacao via Git ou conector GitHub disponivel.
+
+## Atualização - 2026-08-05
+
+- Criadas páginas locais adicionais para cobrir duas intenções fortes observadas no Google Ads:
+  - `/floricultura-canaa-dos-carajas/`
+  - `/cesta-cafe-da-manha-canaa/`
+- As novas páginas usam o mesmo template SEO local, com canonical absoluto, Open Graph, Twitter Cards, BreadcrumbList, Product, Offer e FAQPage quando aplicável.
+- `presentes-canaa.html` ganhou links internos contextuais para Floricultura e Cesta de café da manhã na navegação de categorias.
+- As páginas geradas ganharam links internos para Floricultura e Cesta de café da manhã no header/footer do template.
+- `index.html` ganhou cartões e links internos para as novas páginas sem alterar URL existente, scripts de tracking, número de WhatsApp ou botões já publicados.
+- `sitemap.xml` foi atualizado com as novas URLs canônicas.
+- `scripts/validate-seo.mjs` passou a validar as novas páginas.
+- `scripts/validate-google-ads-tracking.mjs` foi ajustado para validar preservação de Google Ads e WhatsApp durante evoluções SEO, sem congelar título, heading, JSON-LD e links internos contra a branch base.
+- Nenhum deploy ou push remoto foi executado.

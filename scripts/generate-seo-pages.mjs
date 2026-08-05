@@ -248,6 +248,8 @@ function header(prefix = "") {
                         <li><a href="${prefix}presentes-canaa.html">Presentes</a></li>
                         <li><a href="${prefix}buques-canaa-dos-carajas/">Buquês</a></li>
                         <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
+                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Floricultura</a></li>
+                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Café da manhã</a></li>
                         <li><a href="${prefix}presentes-romanticos-canaa/">Românticos</a></li>
                     </ul>
                 </nav>
@@ -270,6 +272,8 @@ function footer(prefix = "") {
                         <li><a href="${prefix}presentes-canaa.html">Presentes em Canaã</a></li>
                         <li><a href="${prefix}buques-canaa-dos-carajas/">Buquês</a></li>
                         <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
+                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Floricultura</a></li>
+                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Café da manhã</a></li>
                         <li><a href="${prefix}rosas-perfumadas-canaa/">Rosas e perfumes</a></li>
                     </ul>
                 </div>
@@ -465,6 +469,8 @@ function mainPage() {
                 <div class="seo-category-links">
                     <a href="buques-canaa-dos-carajas/">Buquês em Canaã</a>
                     <a href="cestas-de-presente-canaa/">Cestas de presente</a>
+                    <a href="floricultura-canaa-dos-carajas/">Floricultura em Canaã</a>
+                    <a href="cesta-cafe-da-manha-canaa/">Cesta de café da manhã</a>
                     <a href="presentes-romanticos-canaa/">Presentes românticos</a>
                     <a href="rosas-perfumadas-canaa/">Rosas e perfumes</a>
                     <a href="presentes-canaa-dos-carajas/">Catálogo local</a>
@@ -594,6 +600,44 @@ const pageConfigs = [
     ]
   },
   {
+    dir: "floricultura-canaa-dos-carajas",
+    title: "Floricultura em Canaã dos Carajás | Zadoni Presentes",
+    description: "Floricultura em Canaã dos Carajás com buquês, rosas, flores naturais e presentes para pedir pelo WhatsApp com atendimento local.",
+    h1: "Floricultura em Canaã dos Carajás",
+    h2: "Flores e buquês para presentear em Canaã",
+    intro: "Encontre buquês, rosas e arranjos com flores naturais para aniversários, declarações, pedidos de desculpa e surpresas especiais.",
+    copy1: "Quem procura uma floricultura em Canaã dos Carajás geralmente precisa confirmar rápido quais flores estão disponíveis, qual acabamento combina com a ocasião e se dá para incluir cartão, chocolate ou outro complemento.",
+    copy2: "A Zadoni reúne opções de flores e presentes em um atendimento direto pelo WhatsApp, ajudando a escolher entre buquês, rosas, jarros, boxes e combinações personalizadas conforme orçamento e disponibilidade.",
+    productsTitle: "Flores, rosas e buquês da Zadoni",
+    filter: (items) => items.filter((item) => {
+      const text = slugify(item.nome + " " + item.descricao + " " + item.categoria);
+      return text.includes("buque") || text.includes("rosa") || text.includes("flor") || text.includes("jarro");
+    }),
+    faqs: [
+      { q: "A Zadoni funciona como floricultura em Canaã dos Carajás?", a: "Sim. A Zadoni atende pedidos locais de flores, buquês, rosas e presentes em Canaã dos Carajás pelo WhatsApp." },
+      { q: "Posso pedir flores com chocolate ou cartão?", a: "Pode. A inclusão de chocolates, cartão, foto ou outros detalhes depende da disponibilidade no momento do pedido." }
+    ]
+  },
+  {
+    dir: "cesta-cafe-da-manha-canaa",
+    title: "Cesta de Café da Manhã em Canaã | Zadoni",
+    description: "Cesta de café da manhã em Canaã dos Carajás com opções personalizadas, valores iniciais e atendimento pelo WhatsApp.",
+    h1: "Cesta de café da manhã em Canaã",
+    h2: "Uma surpresa prática para começar o dia",
+    intro: "Veja opções de cesta de café da manhã e cestas personalizadas para aniversário, agradecimento, romance ou carinho fora de data.",
+    copy1: "A cesta de café da manhã é uma escolha útil para quem quer surpreender cedo, com itens combinados e acabamento pronto para presente.",
+    copy2: "A composição final pode variar conforme disponibilidade, orçamento e complementos escolhidos. Pelo WhatsApp, a Zadoni confirma itens, valor final e possibilidade de personalização.",
+    productsTitle: "Cestas de café da manhã e opções próximas",
+    filter: (items) => items.filter((item) => {
+      const text = slugify(item.nome + " " + item.descricao + " " + item.categoria);
+      return text.includes("cafe") || text.includes("cesta") || text.includes("cestinha");
+    }),
+    faqs: [
+      { q: "Tem cesta de café da manhã em Canaã dos Carajás?", a: "Sim. A Zadoni apresenta opções de cesta de café da manhã e confirma disponibilidade pelo WhatsApp." },
+      { q: "A cesta pode ser personalizada?", a: "Pode. A personalização depende dos itens disponíveis, orçamento e horário desejado para a surpresa." }
+    ]
+  },
+  {
     dir: "presentes-romanticos-canaa",
     title: "Presentes Românticos em Canaã | Zadoni Presentes",
     description: "Presentes românticos em Canaã dos Carajás: buquês, boxes, kits, cestas e mimos para declarar carinho.",
@@ -648,6 +692,8 @@ const urls = [
   { loc: `${SITE}/presentes-canaa-dos-carajas/`, priority: "0.9" },
   { loc: `${SITE}/buques-canaa-dos-carajas/`, priority: "0.85" },
   { loc: `${SITE}/cestas-de-presente-canaa/`, priority: "0.85" },
+  { loc: `${SITE}/floricultura-canaa-dos-carajas/`, priority: "0.88" },
+  { loc: `${SITE}/cesta-cafe-da-manha-canaa/`, priority: "0.88" },
   { loc: `${SITE}/presentes-romanticos-canaa/`, priority: "0.85" },
   { loc: `${SITE}/rosas-perfumadas-canaa/`, priority: "0.8" }
 ];

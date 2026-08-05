@@ -10,6 +10,8 @@ const pages = [
   "presentes-canaa-dos-carajas/index.html",
   "buques-canaa-dos-carajas/index.html",
   "cestas-de-presente-canaa/index.html",
+  "floricultura-canaa-dos-carajas/index.html",
+  "cesta-cafe-da-manha-canaa/index.html",
   "presentes-romanticos-canaa/index.html",
   "rosas-perfumadas-canaa/index.html",
   "404.html"
