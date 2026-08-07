@@ -1,0 +1,1 @@
+﻿(function(w){w.ZadoniCesta.niveis=[{id:'em-montagem',nome:'Em montagem',minimo:0,maximo:9899},{id:'essencial',nome:'Essencial',minimo:9900,maximo:14999},{id:'especial',nome:'Especial',minimo:15000,maximo:24999},{id:'premium',nome:'Premium',minimo:25000,maximo:39999},{id:'royal',nome:'Royal',minimo:40000,maximo:Infinity}];})(window);

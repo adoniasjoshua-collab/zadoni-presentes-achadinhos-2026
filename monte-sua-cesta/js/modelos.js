@@ -1,0 +1,5 @@
+(function(w){const N=w.ZadoniCesta,s=N.config.SITE_URL;N.modelos=[
+{id:'box-compacta',nome:'Box Compacta',descricao:'Ideal para uma composição pequena, delicada e acessível.',precoBase:2700,capacidade:10,quantidadeSugerida:'3 a 5 produtos',imagem:'../assets/optimized/products/box-amor-perfeito.jpg',urlPublica:s+'/assets/optimized/products/box-amor-perfeito.jpg'},
+{id:'cesta-classica',nome:'Cesta Clássica',descricao:'Ideal para uma composição intermediária e versátil.',precoBase:3500,capacidade:20,quantidadeSugerida:'6 a 9 produtos',imagem:'../assets/optimized/products/cesta-cafe-da-manha-especial.webp',urlPublica:s+'/assets/optimized/products/cesta-cafe-da-manha-especial.webp'},
+{id:'bandeja-elegance',nome:'Bandeja Elegance',descricao:'Ideal para uma composição maior, sofisticada e de alto impacto.',precoBase:4800,capacidade:30,quantidadeSugerida:'8 a 14 produtos',imagem:'../assets/optimized/products/cesta-masculina-gourmet-dourada.jpg',urlPublica:s+'/assets/optimized/products/cesta-masculina-gourmet-dourada.jpg'}
+];})(window);
