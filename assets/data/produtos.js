@@ -444,5 +444,17 @@ const produtosLocais = [
     imagem: "assets/optimized/products/mimo-amor-perfeito-trufas-pelucia.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Mimo Amor Perfeito com Trufas. Pode me passar disponibilidade?"
+  },
+  {
+    id: 37,
+    nome: "Cesta Romantica na Bandeja",
+    categoria: "Cestas",
+    descricao: "Cesta romantica em bandeja com rosas, chocolate, mimo especial e composicao consultada conforme disponibilidade e personalizacao.",
+    preco: 199.90,
+    imagem: "assets/optimized/products/cesta-na-bandeja.webp",
+    destaque: true,
+    observacaoPreco: "Modelo para inspiracao. O valor final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalizacao.",
+    adicionaisOpcionais: adicionaisCestas,
+    whatsappMensagem: "Ola! Tenho interesse na Cesta Romantica na Bandeja. Pode me passar disponibilidade e opcoes de personalizacao?"
   }
 ];

@@ -43,6 +43,7 @@ function localTargetExists(fromFile, href) {
 const productContext = {};
 vm.runInNewContext(`${read("assets/data/produtos.js")}\nglobalThis.__produtosLocais = produtosLocais;`, productContext);
 const products = productContext.__produtosLocais;
+const productsById = new Map(products.map((product) => [String(product.id), product]));
 
 for (const page of pages) {
   const content = read(page);
@@ -67,6 +68,14 @@ for (const page of pages) {
   const hrefs = [...content.matchAll(/\shref=["']([^"']+)["']/gi)].map((match) => match[1]);
   for (const href of hrefs) {
     assert(localTargetExists(page, href), `${page}: link interno quebrado ${href}`);
+  }
+
+  const productCards = [...content.matchAll(/<article\b[^>]*\bid=["']produto-(\d+)["'][\s\S]*?<\/article>/gi)];
+  for (const [cardHtml, id] of productCards) {
+    const product = productsById.get(id);
+    assert(product, `${page}: card produto-${id} nao existe em assets/data/produtos.js`);
+    assert(cardHtml.includes(`data-produto-id="${id}"`), `${page}: card produto-${id} sem data-produto-id consistente`);
+    assert(cardHtml.includes(product.nome), `${page}: card produto-${id} nao contem o nome cadastrado ${product.nome}`);
   }
 }
 

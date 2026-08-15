@@ -374,13 +374,13 @@
           vazio.dataset.initialized = "true";
           inicializarTrackingLinks();
         }
-        vazio.style.display = "block";
+        vazio.hidden = false;
       }
       return;
     }
 
     container.style.display = "grid";
-    if (vazio) vazio.style.display = "none";
+    if (vazio) vazio.hidden = true;
 
     lista.forEach(function (produto, index) {
       var card = criarCardProdutoLocal(produto, index);
@@ -469,7 +469,9 @@
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(Object.assign({ event: nomeEvento }, dados));
 
-    console.log("[tracking]", nomeEvento, dados);
+    if (obterParametroUrl("debug_tracking") === "1" && window.console) {
+      console.log("[tracking]", nomeEvento, dados);
+    }
   }
 
   function normalizarProdutoParaTracking(produtoOuNome, preco) {

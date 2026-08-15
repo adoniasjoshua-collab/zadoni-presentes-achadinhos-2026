@@ -87,6 +87,24 @@ function whatsappUrl(product, source = "produto") {
   return `https://wa.me/${PHONE}?${params.toString()}`;
 }
 
+function galleryWhatsAppUrl(image, index, source = "galeria") {
+  const modelLabel = image.modelLabel || `modelo ${index + 1}`;
+  const msg = [
+    `Ola! Tenho interesse em uma cesta de cafe da manha parecida com o ${modelLabel}.`,
+    "Vi esse modelo real no site da Zadoni Presentes.",
+    "Pode me passar disponibilidade, valor final e opcoes de personalizacao?"
+  ].join(" ");
+
+  const params = new URLSearchParams({
+    text: msg,
+    utm_source: "site",
+    utm_medium: "whatsapp",
+    utm_campaign: "seo_local",
+    utm_content: `${source}_${slugify(modelLabel)}`
+  });
+
+  return `https://wa.me/${PHONE}?${params.toString()}`;
+}
 function picture(product, index, prefix) {
   const img = imageInfo(product.imagem);
   const eager = index === 0;
@@ -96,10 +114,12 @@ function picture(product, index, prefix) {
                 </picture>`;
 }
 
-function productCard(product, index, prefix = "", source = "produto") {
+function productCard(product, index, prefix = "", source = "produto", options = {}) {
   const key = categoryKey(product);
   const id = `produto-${product.id}`;
   const productLink = prefix ? `../presentes-canaa.html#${id}` : `#${id}`;
+  const note = product.observacaoPreco || options.priceNote;
+  const priceNote = note ? `\n                <p class="produto-preco-nota">${html(note)}</p>` : "";
   return `<article class="produto-card seo-product-card" id="${id}" data-produto-id="${product.id}" data-category="${key}">
             <a class="produto-imagem produto-imagem-link" href="${productLink}" aria-label="Ver detalhes de ${html(product.nome)}">
                 ${picture(product, index, prefix)}
@@ -108,7 +128,7 @@ function productCard(product, index, prefix = "", source = "produto") {
             <div class="produto-content">
                 <h3 class="produto-nome"><a href="${productLink}">${html(product.nome)}</a></h3>
                 <p class="produto-descricao">${html(product.descricao)}</p>
-                <p class="produto-preco">A partir de ${money(product.preco)}</p>
+                <p class="produto-preco">A partir de ${money(product.preco)}</p>${priceNote}
                 <div class="produto-acoes">
                     <a class="btn-whatsapp-produto" href="${html(whatsappUrl(product, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-produto-id="${product.id}">Quero este presente</a>
                 </div>
@@ -275,7 +295,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     <link rel="preload" as="image" href="${prefix}${html(imageInfo(image).webp720)}" imagesrcset="${prefix}${html(imageInfo(image).webp480)} 480w, ${prefix}${html(imageInfo(image).webp720)} 720w" imagesizes="(max-width: 640px) 92vw, 720px" type="image/webp" fetchpriority="high">
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260726-seo-local">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260811-catalog-opt">`;
 }
 
 function header(prefix = "") {
@@ -360,6 +380,9 @@ function faqHtml(faqs) {
 function galleryHtml(config) {
   if (!config.galleryImages || config.galleryImages.length === 0) return "";
 
+  const source = slugify(config.h1 || config.galleryTitle || "galeria");
+  const ctaLabel = config.galleryCtaLabel || "Escolher este modelo";
+
   return `<section class="seo-gallery" aria-labelledby="galeria-title">
         <div class="container">
             <div class="seo-gallery-header">
@@ -369,16 +392,19 @@ function galleryHtml(config) {
             <div class="seo-gallery-grid">
                 ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item">
                     <img src="${html(image.src)}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
-                    <figcaption>${html(image.caption)}</figcaption>
+                    <figcaption>
+                        <span>${html(image.caption)}</span>
+                        ${config.galleryItemNote ? `<small class="seo-gallery-note">${html(config.galleryItemNote)}</small>` : ""}
+                        <a class="btn-whatsapp-produto seo-gallery-cta" href="${html(galleryWhatsAppUrl(image, index, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">${html(ctaLabel)}</a>
+                    </figcaption>
                 </figure>`).join("\n                ")}
             </div>
         </div>
     </section>\n`;
 }
-
 function scripts(prefix, schemas) {
-  return `<script src="${prefix}assets/data/produtos.js?v=20260726-seo-local" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260726-seo-local" defer></script>
+  return `<script src="${prefix}assets/data/produtos.js?v=20260815-sales-engine" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260811-catalog-opt" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
@@ -403,12 +429,29 @@ function pageShell({ path: pagePath, title, description, canonical, image, body,
 function categoryPage(config) {
   const prefix = "../";
   const canonical = `${SITE}/${config.dir}/`;
-  const pageProducts = config.filter(products).slice(0, config.limit || 9);
+  const priorityIds = new Set((config.priorityProductIds || []).map(String));
+  const showProductsSection = config.showProductsSection !== false;
+  const pageProducts = showProductsSection
+    ? config.filter(products)
+      .sort((a, b) => Number(priorityIds.has(String(b.id))) - Number(priorityIds.has(String(a.id))))
+      .slice(0, config.limit || 9)
+    : [];
   const crumbItems = [
     { name: "Início", href: "../index.html", url: `${SITE}/` },
     { name: config.h1, href: `../${config.dir}/`, url: canonical }
   ];
   const faqs = config.faqs;
+  const productsIntroHtml = config.productsIntro ? `\n                <p class="seo-section-intro">${html(config.productsIntro)}</p>` : "";
+  const productsSectionHtml = showProductsSection ? `        <section class="seo-products" aria-labelledby="produtos-title">
+            <div class="container">
+                <h2 id="produtos-title">${html(config.productsTitle)}</h2>${productsIntroHtml}
+                <div class="produtos-grid">
+                    ${pageProducts.map((product, index) => productCard(product, index, prefix, slugify(config.h1), { priceNote: config.productPriceNote })).join("\n                    ")}
+                </div>
+            </div>
+        </section>
+` : "";
+  const pageImage = config.image || pageProducts[0]?.imagem || (config.galleryImages?.[0] ? `${config.dir}/${config.galleryImages[0].src}` : "assets/optimized/products/buque-te-amo-romantico.jpg");
   const schemas = [
     ...baseSchemas(canonical, config.title, crumbItems.map(({ name, url }) => ({ name, url })), {
       includeLocalBusiness: config.includeLocalBusiness !== false,
@@ -441,14 +484,7 @@ function categoryPage(config) {
                 <p>${html(config.copy2)}</p>
             </div>
         </section>
-${galleryHtml(config)}        <section class="seo-products" aria-labelledby="produtos-title">
-            <div class="container">
-                <h2 id="produtos-title">${html(config.productsTitle)}</h2>
-                <div class="produtos-grid">
-                    ${pageProducts.map((product, index) => productCard(product, index, prefix, slugify(config.h1))).join("\n                    ")}
-                </div>
-            </div>
-        </section>
+${galleryHtml(config)}${productsSectionHtml}
         ${faqHtml(faqs)}
         <section class="seo-cta">
             <div class="container">
@@ -464,7 +500,7 @@ ${galleryHtml(config)}        <section class="seo-products" aria-labelledby="pro
     title: config.title,
     description: config.description,
     canonical,
-    image: pageProducts[0].imagem,
+    image: pageImage,
     body,
     schemas
   });
@@ -546,10 +582,10 @@ function mainPage() {
                 </div>
             </div>
         </section>
-        <section class="seo-products" style="padding: 40px 20px;" aria-labelledby="produtos-title">
+        <section class="seo-products catalog-products" aria-labelledby="produtos-title">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 40px;">
-                    <h2 id="produtos-title" style="margin-bottom: 24px; font-size: 1.6rem;">Escolha por categoria</h2>
+                <div class="catalog-products-header">
+                    <h2 class="catalog-products-title" id="produtos-title">Escolha por categoria</h2>
                     <div class="filtros-container" aria-label="Filtros de produtos">
                         <button class="filtro-btn ativo" onclick="filtrarProdutos('todos', event)">Todos</button>
                         <button class="filtro-btn" onclick="filtrarProdutos('buquês', event)">Buquês</button>
@@ -566,7 +602,7 @@ function mainPage() {
                 <div class="produtos-grid" id="produtos-container">
                     ${featured.map((product, index) => productCard(product, index, "", "catalogo")).join("\n                    ")}
                 </div>
-                <div class="sem-produtos" id="sem-produtos" style="display: none;" aria-live="polite"></div>
+                <div class="sem-produtos" id="sem-produtos" aria-live="polite" hidden></div>
             </div>
         </section>
         <section class="seo-copy bg-light" aria-labelledby="entrega-title">
@@ -662,6 +698,7 @@ const pageConfigs = [
     copy1: "As cestas podem combinar bebida, chocolates, caneca, petiscos, flores e itens de autocuidado conforme disponibilidade.",
     copy2: "Ao chamar no WhatsApp, informe se o presente é para aniversário, agradecimento, romance ou surpresa corporativa.",
     productsTitle: "Cestas locais para pedir pelo WhatsApp",
+    priorityProductIds: [37],
     filter: (items) => items.filter((item) => categoryKey(item) === "cestas"),
     faqs: [
       { q: "A cesta pode ter itens diferentes?", a: "Pode. A montagem é confirmada pelo WhatsApp conforme estoque e orçamento." },
@@ -696,14 +733,20 @@ const pageConfigs = [
     dir: "cesta-cafe-da-manha-canaa",
     title: "Cesta de Café da Manhã em Canaã dos Carajás | Zadoni",
     description: "Cestas de café da manhã em Canaã dos Carajás para aniversários e momentos especiais. Consulte modelos, itens e personalização pelo WhatsApp.",
+    image: "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-08.webp",
     h1: "Cesta de Café da Manhã em Canaã dos Carajás",
-    h2: "Modelos de cesta de café da manhã",
+    h2: "Como funciona o pedido da cesta de café",
     intro: "Uma cesta de café da manhã é uma forma especial de começar uma comemoração. A Zadoni prepara opções em Canaã dos Carajás com itens selecionados e possibilidades de personalização conforme o modelo e a disponibilidade.",
-    copy1: "Os itens que acompanham a cesta podem variar conforme o modelo escolhido. A composição, os adicionais e as condições disponíveis devem ser confirmados no atendimento pelo WhatsApp.",
-    copy2: "Para aniversários e momentos especiais, informe a data, a ocasião e o tipo de cesta desejada para consultar modelos, valores e possibilidades de personalização.",
-    productsTitle: "Cesta com itens de café disponível no catálogo",
-    galleryTitle: "Modelos reais de cestas personalizadas",
-    galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Itens, acabamento e adicionais podem variar conforme modelo, ocasião e disponibilidade no atendimento.",
+    copy1: "Primeiro escolha uma referência visual na galeria. Depois a Zadoni confirma pelo WhatsApp quais itens estão disponíveis, quais ajustes cabem no orçamento e qual será o valor final.",
+    copy2: "As fotos abaixo não são pacotes fechados: elas ajudam a comunicar estilo, tamanho e acabamento desejado para aniversários, surpresas românticas e momentos especiais.",
+    productsTitle: "Base de orçamento para cesta de café",
+    productsIntro: "Use esta opção como ponto de partida para o atendimento. O valor exibido é inicial; a composição final é montada a partir do modelo escolhido na galeria, dos itens disponíveis e da personalização desejada.",
+    galleryTitle: "Escolha um modelo de inspiração",
+    galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Escolha a referência mais próxima do que você deseja e consulte disponibilidade, itens e valor final pelo WhatsApp.",
+    galleryItemNote: "Modelo para inspiração. O valor final varia conforme itens escolhidos e disponíveis.",
+    galleryCtaLabel: "Consultar este modelo",
+    showProductsSection: false,
+    productPriceNote: "Valor inicial. O preço final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalização; pode ficar em torno de R$ 200, R$ 300 ou mais.",
     galleryImages: [
       { src: "cesta-cafe-da-manha-modelo-real-01.jpeg", alt: "Modelo real de cesta personalizada da Zadoni em Canaã dos Carajás", caption: "Modelo real preparado pela Zadoni", width: 610, height: 1356 },
       { src: "cesta-cafe-da-manha-modelo-real-02.jpeg", alt: "Cesta personalizada com itens selecionados para presente", caption: "Composição com itens selecionados", width: 736, height: 920 },
@@ -711,7 +754,11 @@ const pageConfigs = [
       { src: "cesta-cafe-da-manha-modelo-real-04.jpeg", alt: "Modelo de cesta personalizada com acabamento para presente", caption: "Acabamento personalizado", width: 736, height: 977 },
       { src: "cesta-cafe-da-manha-modelo-real-05.jpeg", alt: "Cesta personalizada da Zadoni com itens e detalhes decorativos", caption: "Detalhes variam conforme disponibilidade", width: 736, height: 981 },
       { src: "cesta-cafe-da-manha-modelo-real-06.jpeg", alt: "Cesta de presente personalizada com composição consultada pelo WhatsApp", caption: "Composição confirmada no atendimento", width: 736, height: 977 },
-      { src: "cesta-cafe-da-manha-modelo-real-07.jpeg", alt: "Cesta personalizada real para presente em Canaã dos Carajás", caption: "Modelo real da Zadoni", width: 697, height: 1089 }
+      { src: "cesta-cafe-da-manha-modelo-real-07.jpeg", alt: "Cesta personalizada real para presente em Canaã dos Carajás", caption: "Modelo real da Zadoni", width: 697, height: 1089 },
+      { src: "cesta-cafe-da-manha-modelo-real-08.webp", alt: "Cesta de café da manhã com laço rosa e itens selecionados em Canaã dos Carajás", caption: "Cesta matinal com laço rosa", width: 720, height: 960 },
+      { src: "cesta-cafe-da-manha-modelo-real-09.webp", alt: "Cesta de café da manhã com frutas, pães, chocolates e bebida", caption: "Modelo com frutas e itens de café", width: 720, height: 960 },
+      { src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", width: 720, height: 960 },
+      { src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", width: 720, height: 720 }
     ],
     includeLocalBusiness: false,
     includeWebPage: true,
@@ -737,7 +784,8 @@ const pageConfigs = [
     copy1: "Presentes românticos funcionam melhor quando combinam mensagem, visual e um item que tenha a ver com a pessoa presenteada.",
     copy2: "A Zadoni ajuda a escolher entre buquês, boxes, cestas e mimos conforme prazo, orçamento e estilo da surpresa.",
     productsTitle: "Sugestões românticas da Zadoni",
-    filter: (items) => items.filter((item) => /romantic|romant|amor|te amo|rosa|vinho|box|kit/i.test(slugify(`${item.nome} ${item.descricao}`))).slice(0, 12),
+    priorityProductIds: [37],
+    filter: (items) => items.filter((item) => /romantic|romant|amor|te amo|rosa|vinho|box|kit/i.test(slugify(`${item.nome} ${item.descricao}`))),
     faqs: [
       { q: "Dá para montar presente romântico no mesmo dia?", a: "A disponibilidade depende do horário e dos itens escolhidos. O WhatsApp confirma as opções viáveis." },
       { q: "Posso incluir mensagem no presente?", a: "Sim. Consulte opções de cartão, foto ou detalhes personalizados no atendimento." }
@@ -784,6 +832,7 @@ const urls = [
   { loc: `${SITE}/cestas-de-presente-canaa/`, priority: "0.85" },
   { loc: `${SITE}/floricultura-canaa-dos-carajas/`, priority: "0.88" },
   { loc: `${SITE}/cesta-cafe-da-manha-canaa/`, priority: "0.88" },
+  { loc: `${SITE}/monte-sua-cesta/`, priority: "0.9" },
   { loc: `${SITE}/presentes-romanticos-canaa/`, priority: "0.85" },
   { loc: `${SITE}/rosas-perfumadas-canaa/`, priority: "0.8" }
 ];

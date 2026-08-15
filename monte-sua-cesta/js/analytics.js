@@ -1,1 +1,1 @@
-﻿(function(w){w.ZadoniCesta.analytics={registrarEvento:function(nome,dados={}){if(typeof gtag==='function')gtag('event',nome,dados);console.log('[Evento]',nome,dados)}};})(window);
+(function(w){function debug(){return new URLSearchParams(w.location.search).get('debug_tracking')==='1'}w.ZadoniCesta.analytics={registrarEvento:function(nome,dados={}){if(typeof gtag==='function')gtag('event',nome,dados);if(debug()&&w.console)console.log('[Evento]',nome,dados)}};})(window);
