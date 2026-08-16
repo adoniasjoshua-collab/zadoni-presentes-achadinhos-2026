@@ -6,30 +6,35 @@
 const adicionaisBuques = [
   {
     id: "ferrero-rocher",
-    nome: "Ferrero Rocher",
-    preco: 35.00
+    nome: "Ferrero Rocher caixa 4 unidades",
+    preco: 40.00,
+    imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-4.webp"
   },
   {
     id: "caixinha-tres-ferrero",
     nome: "Caixinha com 3 Ferrero Rocher",
-    preco: 22.00
+    preco: 29.00,
+    imagem: "assets/optimized/products/mimo-ferrero-elegante.jpg"
   },
   {
     id: "ursinho-chaveiro",
     nome: "Ursinho de pelúcia chaveiro",
-    preco: 27.00
+    preco: 29.00,
+    imagem: "monte-sua-cesta/assets/produtos/chaveiro-ursinho.webp"
   },
   {
     id: "cartao-personalizado",
     nome: "Cartão impresso ou escrito à mão",
-    preco: 15.00
+    preco: 20.00,
+    imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp"
   },
   {
     id: "foto-impressa",
     nome: "Foto impressa",
     preco: 15.00,
     tipo: "quantidade",
-    unidade: "foto"
+    unidade: "foto",
+    imagem: "assets/optimized/products/kit-vela-presente-especial.jpg"
   },
   {
     id: "body-splash-winpink",
@@ -40,7 +45,8 @@ const adicionaisBuques = [
     id: "perfume-bolso-amakha",
     nome: "Perfume de bolso Amakha Paris 15 ml",
     preco: 47.00,
-    observacao: "Fragrância a escolher"
+    observacao: "Fragrância a escolher",
+    imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg"
   },
   {
     id: "perfume-hinode-100ml",
@@ -52,27 +58,36 @@ const adicionaisBuques = [
 
 const adicionaisCestas = [
   {
-    id: "chocolate-extra",
-    nome: "Chocolate extra",
-    preco: 25.00,
-    observacao: "Opcao a escolher"
-  },
-  {
     id: "ferrero-rocher-cesta",
-    nome: "Ferrero Rocher",
-    preco: 35.00
+    nome: "Ferrero Rocher caixa 4 unidades",
+    preco: 40.00,
+    imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-4.webp"
   },
   {
-    id: "petisco-premium",
-    nome: "Petisco premium",
-    preco: 28.00,
-    observacao: "Salgado, castanhas ou snack"
+    id: "nutella-cesta",
+    nome: "Nutella",
+    preco: 49.00,
+    imagem: "monte-sua-cesta/assets/produtos/nutella.webp"
   },
   {
-    id: "bebida-especial",
-    nome: "Bebida especial",
-    preco: 32.00,
-    observacao: "Refrigerante, suco ou similar"
+    id: "mini-bolo-cesta",
+    nome: "Mini bolo decorado",
+    preco: 80.00,
+    observacao: "Conforme disponibilidade",
+    imagem: "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp"
+  },
+  {
+    id: "salgados-variados-cesta",
+    nome: "Salgados variados",
+    preco: 69.00,
+    observacao: "Porção conforme disponibilidade",
+    imagem: "monte-sua-cesta/assets/produtos/salgados-variados.webp"
+  },
+  {
+    id: "suco-uva-aurora-cesta",
+    nome: "Suco de uva Aurora",
+    preco: 39.00,
+    imagem: "monte-sua-cesta/assets/produtos/suco-uva-aurora.webp"
   },
   {
     id: "caneca-presente",
@@ -82,7 +97,8 @@ const adicionaisCestas = [
   {
     id: "cartao-personalizado-cesta",
     nome: "Cartao impresso ou escrito a mao",
-    preco: 15.00
+    preco: 20.00,
+    imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp"
   },
   {
     id: "foto-impressa-cesta",
@@ -96,6 +112,81 @@ const adicionaisCestas = [
     nome: "Item de beleza ou autocuidado",
     preco: 47.00,
     observacao: "Produto conforme disponibilidade"
+  }
+];
+
+const adicionaisCafeManha = [
+  {
+    id: "pao-frances-cafe",
+    nome: "Pão francês",
+    preco: 12.00,
+    imagem: "monte-sua-cesta/assets/produtos/pao-frances.webp"
+  },
+  {
+    id: "mini-croissant-cafe",
+    nome: "Mini croissant",
+    preco: 18.00,
+    imagem: "monte-sua-cesta/assets/produtos/mini-croissant.webp"
+  },
+  {
+    id: "bolo-simples-cafe",
+    nome: "Bolo simples",
+    preco: 49.00,
+    imagem: "monte-sua-cesta/assets/produtos/bolo-simples-cafe.webp"
+  },
+  {
+    id: "geleia-cafe",
+    nome: "Geleia de frutas vermelhas",
+    preco: 18.00,
+    imagem: "monte-sua-cesta/assets/produtos/geleia-frutas-vermelhas.webp"
+  },
+  {
+    id: "requeijao-cafe",
+    nome: "Requeijão",
+    preco: 25.00,
+    imagem: "monte-sua-cesta/assets/produtos/requeijao-vigor.webp"
+  },
+  {
+    id: "queijo-cafe",
+    nome: "Queijo fatiado",
+    preco: 49.00,
+    imagem: "monte-sua-cesta/assets/produtos/queijo-fatiado.webp"
+  },
+  {
+    id: "achocolatado-cafe",
+    nome: "Achocolatado",
+    preco: 22.00,
+    imagem: "monte-sua-cesta/assets/produtos/achocolatado-nescau.webp"
+  },
+  {
+    id: "leite-cafe",
+    nome: "Leite Piracanjuba",
+    preco: 22.00,
+    imagem: "monte-sua-cesta/assets/produtos/leite-piracanjuba.webp"
+  },
+  {
+    id: "iogurte-cafe",
+    nome: "Iogurte",
+    preco: 18.00,
+    imagem: "monte-sua-cesta/assets/produtos/iogurte-morango.webp"
+  },
+  {
+    id: "biscoito-cafe",
+    nome: "Biscoitos",
+    preco: 16.00,
+    imagem: "monte-sua-cesta/assets/produtos/biscoito-bauducco.webp"
+  },
+  {
+    id: "mini-bolo-cafe",
+    nome: "Mini bolo decorado",
+    preco: 80.00,
+    imagem: "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp"
+  },
+  {
+    id: "rosa-branca-cafe",
+    nome: "Rosa branca",
+    preco: 29.00,
+    imagem: "monte-sua-cesta/assets/produtos/rosa-branca.webp"
   }
 ];
 
@@ -248,7 +339,7 @@ const produtosLocais = [
     preco: 199.90,
     imagem: "assets/optimized/products/cesta-cafe-da-manha-especial.webp",
     destaque: true,
-    adicionaisOpcionais: adicionaisCestas,
+    adicionaisOpcionais: adicionaisCafeManha,
     whatsappMensagem: "Ola! Gostaria de saber mais sobre a Cesta Cafe da Manha Especial."
   },
   {
@@ -456,5 +547,90 @@ const produtosLocais = [
     observacaoPreco: "Modelo para inspiracao. O valor final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalizacao.",
     adicionaisOpcionais: adicionaisCestas,
     whatsappMensagem: "Ola! Tenho interesse na Cesta Romantica na Bandeja. Pode me passar disponibilidade e opcoes de personalizacao?"
+  },
+  {
+    id: 38,
+    nome: "Mini bolo de aniversário",
+    categoria: "Adicionais",
+    descricao: "Mini bolo decorado para enviar junto com cesta, buquê ou mimo especial. Valor estimado conforme modelo e disponibilidade.",
+    preco: 80.00,
+    imagem: "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp",
+    destaque: true,
+    observacaoPreco: "Valor estimado. O acabamento e sabor são confirmados no atendimento.",
+    whatsappMensagem: "Ola! Tenho interesse em um Mini bolo de aniversario para complementar um presente."
+  },
+  {
+    id: 39,
+    nome: "Salgados variados",
+    categoria: "Adicionais",
+    descricao: "Porção de salgados variados para compor cesta de lanche, aniversário ou café especial.",
+    preco: 69.00,
+    imagem: "monte-sua-cesta/assets/produtos/salgados-variados.webp",
+    destaque: false,
+    observacaoPreco: "Valor estimado conforme quantidade e disponibilidade.",
+    whatsappMensagem: "Ola! Tenho interesse em salgados variados para complementar uma cesta."
+  },
+  {
+    id: 40,
+    nome: "Nutella para cesta",
+    categoria: "Adicionais",
+    descricao: "Creme de avelã Nutella para deixar a composição mais premium e afetiva.",
+    preco: 49.00,
+    imagem: "monte-sua-cesta/assets/produtos/nutella.webp",
+    destaque: false,
+    whatsappMensagem: "Ola! Quero adicionar Nutella em uma cesta da Zadoni."
+  },
+  {
+    id: 41,
+    nome: "Bolo simples para cesta",
+    categoria: "Adicionais",
+    descricao: "Bolo simples para cesta de café da manhã ou lanche personalizado.",
+    preco: 49.00,
+    imagem: "monte-sua-cesta/assets/produtos/bolo-simples-cafe.webp",
+    destaque: false,
+    observacaoPreco: "Valor estimado conforme tamanho e disponibilidade.",
+    whatsappMensagem: "Ola! Tenho interesse em um bolo simples para montar uma cesta."
+  },
+  {
+    id: 42,
+    nome: "Bolo confeitado especial",
+    categoria: "Adicionais",
+    descricao: "Bolo confeitado para composição premium de aniversário, romance ou surpresa especial.",
+    preco: 149.00,
+    imagem: "monte-sua-cesta/assets/produtos/bolo-bailarina-chocolate.webp",
+    destaque: true,
+    observacaoPreco: "Valor estimado. Modelo, peso e disponibilidade são confirmados pelo WhatsApp.",
+    whatsappMensagem: "Ola! Quero consultar um bolo confeitado para complementar um presente."
+  },
+  {
+    id: 43,
+    nome: "Suco de uva Aurora",
+    categoria: "Adicionais",
+    descricao: "Bebida para compor cestas especiais, opções masculinas, românticas ou de café.",
+    preco: 39.00,
+    imagem: "monte-sua-cesta/assets/produtos/suco-uva-aurora.webp",
+    destaque: false,
+    whatsappMensagem: "Ola! Quero adicionar Suco de uva Aurora em uma cesta."
+  },
+  {
+    id: 44,
+    nome: "Rosa branca avulsa",
+    categoria: "Adicionais",
+    descricao: "Rosa branca para incluir em cesta, buquê, bandeja ou surpresa personalizada.",
+    preco: 29.00,
+    imagem: "monte-sua-cesta/assets/produtos/rosa-branca.webp",
+    destaque: false,
+    whatsappMensagem: "Ola! Tenho interesse em adicionar rosa branca a um presente."
+  },
+  {
+    id: 45,
+    nome: "Kit café para cesta",
+    categoria: "Adicionais",
+    descricao: "Seleção estimada com pão, bebida, biscoito e complemento para montar uma cesta matinal.",
+    preco: 79.00,
+    imagem: "monte-sua-cesta/assets/produtos/pao-frances.webp",
+    destaque: true,
+    observacaoPreco: "Composição estimada. Os itens finais dependem da disponibilidade do dia.",
+    whatsappMensagem: "Ola! Quero consultar um kit de itens de cafe para montar uma cesta."
   }
 ];

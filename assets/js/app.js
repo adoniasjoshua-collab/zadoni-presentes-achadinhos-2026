@@ -46,6 +46,7 @@
 
   function obterSrcsetWebp(caminho) {
     if (!caminho || !/\.(jpe?g|png|webp)$/i.test(caminho)) return "";
+    if (!caminho.includes("assets/optimized/products/")) return "";
 
     var base = caminho.replace(/\.(jpe?g|png|webp)$/i, "");
     var responsivo = base.replace("assets/optimized/products/", "assets/optimized/products/responsive/");
@@ -79,6 +80,10 @@
       "Resumo: " + produto.descricao
     ];
 
+    if (produto.observacaoPreco) {
+      linhas.push("Observação: " + produto.observacaoPreco);
+    }
+
     if (adicionais.length) {
       linhas.push("");
       linhas.push("Adicionais opcionais:");
@@ -91,6 +96,10 @@
         linhas.push("- " + detalheQuantidade + adicional.nome + " (+" + formatarPreco(subtotal) + ")" + observacao);
       });
       linhas.push("Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionais)));
+    }
+
+    if (produto.observacaoPreco || adicionais.length) {
+      linhas.push("Valores estimados. A composição final depende dos itens disponíveis e da personalização escolhida.");
     }
 
     var imagemUrl = criarUrlAbsoluta(produto.imagem);
@@ -121,6 +130,7 @@
     if (filtro.includes("mimo")) return "mimos";
     if (filtro.includes("cesta")) return "cestas";
     if (filtro.includes("perfume")) return "perfumes";
+    if (filtro.includes("adicion") || filtro.includes("avulso") || filtro.includes("extra")) return "adicionais";
     if (filtro.includes("promo") || filtro.includes("destaque")) return "promocoes";
     if (filtro.includes("data") || filtro.includes("especial")) return "datas especiais";
 
@@ -240,9 +250,26 @@
     wrapper.appendChild(titulo);
 
     produto.adicionaisOpcionais.forEach(function (adicional, index) {
+      function criarImagemAdicional() {
+        if (!adicional.imagem) return null;
+
+        var img = document.createElement("img");
+        img.className = "produto-adicional-imagem";
+        img.src = adicional.imagem;
+        img.alt = "";
+        img.width = 44;
+        img.height = 44;
+        img.loading = "lazy";
+        img.decoding = "async";
+        return img;
+      }
+
       if (adicional.tipo === "quantidade") {
         var linhaQuantidade = document.createElement("label");
         linhaQuantidade.className = "produto-adicional produto-adicional-com-quantidade";
+        if (adicional.imagem) {
+          linhaQuantidade.classList.add("produto-adicional-com-imagem");
+        }
 
         var inputQuantidade = document.createElement("input");
         inputQuantidade.className = "produto-adicional-quantidade";
@@ -258,13 +285,21 @@
         var textoQuantidade = document.createElement("span");
         textoQuantidade.textContent = adicional.nome + " +" + formatarPreco(adicional.preco) + " por " + (adicional.unidade || "unidade");
 
-        linhaQuantidade.append(inputQuantidade, textoQuantidade);
+        var imagemQuantidade = criarImagemAdicional();
+        if (imagemQuantidade) {
+          linhaQuantidade.append(inputQuantidade, imagemQuantidade, textoQuantidade);
+        } else {
+          linhaQuantidade.append(inputQuantidade, textoQuantidade);
+        }
         wrapper.appendChild(linhaQuantidade);
         return;
       }
 
       var label = document.createElement("label");
       label.className = "produto-adicional";
+      if (adicional.imagem) {
+        label.classList.add("produto-adicional-com-imagem");
+      }
 
       var checkbox = document.createElement("input");
       checkbox.className = "produto-adicional-check";
@@ -275,7 +310,12 @@
       var texto = document.createElement("span");
       texto.textContent = adicional.nome + " +" + formatarPreco(adicional.preco) + (adicional.observacao ? " · " + adicional.observacao : "");
 
-      label.append(checkbox, texto);
+      var imagem = criarImagemAdicional();
+      if (imagem) {
+        label.append(checkbox, imagem, texto);
+      } else {
+        label.append(checkbox, texto);
+      }
       wrapper.appendChild(label);
     });
 
@@ -403,6 +443,9 @@
     if (filtro.includes("kit")) return categoriaProduto.includes("kit") || nome.includes("kit");
     if (filtro.includes("mimo")) return categoriaProduto.includes("mimo") || nome.includes("mimo");
     if (filtro.includes("perfume")) return categoriaProduto.includes("perfume") || nome.includes("perfume");
+    if (filtro.includes("adicion") || filtro.includes("avulso") || filtro.includes("extra")) {
+      return categoriaProduto.includes("adicion") || nome.includes("adicion");
+    }
     if (filtro.includes("promo")) return Boolean(produto.destaque);
     if (filtro.includes("data") || filtro.includes("especial")) {
       return Boolean(produto.destaque) ||

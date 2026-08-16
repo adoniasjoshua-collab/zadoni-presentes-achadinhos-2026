@@ -1008,6 +1008,11 @@ header {
   cursor: pointer;
 }
 
+.produto-adicional-com-imagem {
+  grid-template-columns: 18px 44px 1fr;
+  align-items: center;
+}
+
 .produto-adicional input[type="checkbox"] {
   width: 18px;
   height: 18px;
@@ -1015,9 +1020,22 @@ header {
   accent-color: var(--cor-destaque);
 }
 
+.produto-adicional-imagem {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(122, 47, 85, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  object-fit: cover;
+}
+
 .produto-adicional-com-quantidade {
   grid-template-columns: 48px 1fr;
   align-items: center;
+}
+
+.produto-adicional-com-quantidade.produto-adicional-com-imagem {
+  grid-template-columns: 48px 44px 1fr;
 }
 
 .produto-adicional-quantidade {
