@@ -1,5 +1,30 @@
-(function(w){const N=w.ZadoniCesta,s=N.config.SITE_URL;N.modelos=[
-{id:'box-compacta',nome:'Box Compacta',descricao:'Ideal para uma composição pequena, delicada e acessível.',precoBase:2500,capacidade:10,quantidadeSugerida:'3 a 5 produtos',imagem:'../assets/optimized/products/box-amor-perfeito.jpg',urlPublica:s+'/assets/optimized/products/box-amor-perfeito.jpg'},
-{id:'cesta-classica',nome:'Cesta Clássica',descricao:'Ideal para uma composição intermediária e versátil.',precoBase:3900,capacidade:20,quantidadeSugerida:'6 a 9 produtos',imagem:'../assets/optimized/products/cesta-cafe-da-manha-especial.webp',urlPublica:s+'/assets/optimized/products/cesta-cafe-da-manha-especial.webp'},
-{id:'bandeja-elegance',nome:'Bandeja Elegance',descricao:'Ideal para uma composição maior, sofisticada, romântica e de alto impacto.',precoBase:5500,capacidade:30,quantidadeSugerida:'8 a 14 produtos',imagem:'assets/modelos/bandeja-elegance.webp?v=20260815-elegance-3',urlPublica:s+'/monte-sua-cesta/assets/modelos/bandeja-elegance.webp'}
-];})(window);
+(function (w) {
+  const N = w.ZadoniCesta;
+
+  N.modelos = [
+    {
+      id: 'box-compacta',
+      nome: 'Box Compacta',
+      descricao: 'Uma composição pequena e delicada para lembranças, carinho e surpresas mais enxutas.',
+      perfil: 'Modelo compacto',
+      imagem: '../assets/optimized/products/box-amor-perfeito.jpg',
+      urlPublica: 'https://zadonipresentes.com.br/assets/optimized/products/box-amor-perfeito.jpg'
+    },
+    {
+      id: 'cesta-classica',
+      nome: 'Cesta Clássica',
+      descricao: 'Uma opção intermediária e versátil para café da manhã, aniversário e outras ocasiões.',
+      perfil: 'Modelo intermediário',
+      imagem: '../assets/optimized/products/cesta-cafe-da-manha-especial.webp',
+      urlPublica: 'https://zadonipresentes.com.br/assets/optimized/products/cesta-cafe-da-manha-especial.webp'
+    },
+    {
+      id: 'bandeja-elegance',
+      nome: 'Bandeja Elegance',
+      descricao: 'Uma composição maior, sofisticada e de alto impacto para presentes marcantes.',
+      perfil: 'Modelo amplo',
+      imagem: 'assets/modelos/bandeja-elegance.webp?v=20260815-elegance-3',
+      urlPublica: 'https://zadonipresentes.com.br/monte-sua-cesta/assets/modelos/bandeja-elegance.webp'
+    }
+  ];
+})(window);

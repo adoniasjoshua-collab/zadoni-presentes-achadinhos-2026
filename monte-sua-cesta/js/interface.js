@@ -1,152 +1,109 @@
 (function (w, d) {
   const N = w.ZadoniCesta;
-  const A = d.getElementById('app');
-  const P = d.getElementById('progressArea');
-  const S = d.getElementById('sideSummary');
-  const B = d.getElementById('cartBar');
-  const D = d.getElementById('cartDrawer');
-  const DC = d.getElementById('drawerContent');
-  const T = d.getElementById('toast');
+  const app = d.getElementById('app');
+  const toast = d.getElementById('toast');
 
-  function e(v) {
-    return String(v || '').replace(/[&<>"']/g, s => ({
+  function escapar(valor) {
+    return String(valor || '').replace(/[&<>"']/g, caractere => ({
       '&': '&amp;',
       '<': '&lt;',
       '>': '&gt;',
       '"': '&quot;',
       "'": '&#039;'
-    }[s]));
+    }[caractere]));
   }
 
-  function img(src, alt, lazy = true) {
-    return src
-      ? `<img class="photo" src="${src}" alt="${e(alt)}" loading="${lazy ? 'lazy' : 'eager'}" onerror="this.remove()">`
-      : '';
+  function imagem(src, alt, lazy) {
+    return `<img class="photo" src="${src}" alt="${escapar(alt)}" loading="${lazy ? 'lazy' : 'eager'}" decoding="async">`;
   }
 
-  function toast(m) {
-    T.textContent = m;
-    T.classList.add('show');
-    clearTimeout(toast.t);
-    toast.t = setTimeout(() => T.classList.remove('show'), 2600);
+  function mostrarToast(texto) {
+    toast.textContent = texto;
+    toast.classList.add('show');
+    clearTimeout(mostrarToast.tempo);
+    mostrarToast.tempo = setTimeout(() => toast.classList.remove('show'), 2600);
   }
 
-  function progress(m, start) {
-    if (start) {
-      P.innerHTML = '';
-      return;
-    }
-    const pct = m.etapaAtual / 4 * 100;
-    P.innerHTML = `<div class="step-label"><span>Etapa ${m.etapaAtual} de 4 - ${N.navegacao.etapas[m.etapaAtual - 1]}</span><span>${Math.round(pct)}%</span></div><div class="track"><span class="fill" style="width:${pct}%"></span></div>`;
+  function opcoes(valores, selecionado, placeholder) {
+    return `<option value="">${placeholder}</option>${valores.map(valor => `<option value="${escapar(valor)}" ${selecionado === valor ? 'selected' : ''}>${escapar(valor)}</option>`).join('')}`;
   }
 
-  function inicio(has) {
-    return `<article class="hero"><div class="title"><h2>Monte Sua Cesta Zadoni</h2><p>Escolha o modelo, adicione os produtos e crie um presente personalizado em poucos minutos.</p><p><strong>Monte sua cesta sem compromisso. Os valores são estimativas e o pedido é confirmado pelo WhatsApp.</strong></p><p><a href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">Ver avaliações da Zadoni no Google</a></p></div>${has ? '<div class="notice success">Encontramos uma cesta que você começou anteriormente.</div>' : ''}<div class="benefits"><div class="benefit"><span>1</span><strong>Escolha com fotos reais</strong></div><div class="benefit"><span>2</span><strong>Acompanhe o orçamento em tempo real</strong></div><div class="benefit"><span>3</span><strong>Personalize cada detalhe</strong></div><div class="benefit"><span>4</span><strong>Envie o pedido pelo WhatsApp</strong></div></div><div class="actions"><button class="primary" data-action="nova-montagem">Começar minha cesta</button>${has ? '<button class="secondary" data-action="continuar-montagem">Continuar montagem</button>' : ''}</div></article>`;
+  function dataMinima() {
+    const hoje = new Date();
+    const ano = hoje.getFullYear();
+    const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoje.getDate()).padStart(2, '0');
+    return `${ano}-${mes}-${dia}`;
   }
 
-  function modelos(m) {
-    const cards = N.modelos.map((x, i) => `<article class="card ${m.modelo === x.id ? 'selected' : ''}"><span class="badge">Selecionado</span>${img(x.imagem, x.nome, i > 0)}<div class="body"><h3>${x.nome}</h3><p>${x.descricao}</p><strong class="price">${N.calculos.formatarMoeda(x.precoBase)}</strong><div class="meta"><span class="pill">${x.capacidade} pontos</span><span class="pill">${x.quantidadeSugerida}</span></div><button class="btn ghost" data-action="selecionar-modelo" data-modelo="${x.id}" aria-pressed="${m.modelo === x.id}">Escolher este modelo</button></div></article>`).join('');
-    const mo = N.calculos.obterModelo(m.modelo);
-    return `<div class="title"><h2>Monte Sua Cesta Personalizada</h2><p>Comece escolhendo o modelo físico da montagem. O valor do modelo já inclui base, acabamento e margem operacional estimada.</p></div>${mo ? `<div class="notice success">Você escolheu: ${mo.nome}.</div>` : ''}<div class="models">${cards}</div><div class="actions"><button class="primary" data-action="proxima-etapa" ${mo ? '' : 'disabled'}>Continuar</button></div>`;
+  function cardModelo(modelo, selecionado, indice) {
+    const ativo = selecionado === modelo.id;
+    return `<article class="card model-card ${ativo ? 'selected' : ''}">
+      <span class="badge">Escolhido</span>
+      ${imagem(modelo.imagem, modelo.nome, indice > 0)}
+      <div class="body">
+        <span class="pill">${escapar(modelo.perfil)}</span>
+        <h3>${escapar(modelo.nome)}</h3>
+        <p>${escapar(modelo.descricao)}</p>
+        <strong class="custom-quote">Orçamento personalizado</strong>
+        <button class="primary" type="button" data-action="selecionar-modelo" data-modelo="${modelo.id}" aria-pressed="${ativo}">${ativo ? 'Modelo escolhido' : 'Quero este modelo'}</button>
+      </div>
+    </article>`;
   }
 
-  function q(m, id) {
-    return (m.itens.find(i => i.produtoId === id) || {}).quantidade || 0;
+  function renderizar(estado) {
+    const p = estado.preferencias;
+    const precisaAjuda = estado.modelo === 'ajuda-zadoni';
+    const modelo = N.modelos.find(item => item.id === estado.modelo);
+    const escolha = precisaAjuda ? 'Ajuda da Zadoni para escolher' : modelo ? modelo.nome : 'Nenhum modelo escolhido';
+    const podeEnviar = Boolean(estado.modelo);
+
+    app.innerHTML = `<article class="hero assisted-hero">
+      <div class="title">
+        <span class="eyebrow">Atendimento personalizado</span>
+        <h2>Escolha o estilo. A Zadoni monta cada detalhe com você.</h2>
+        <p>Veja os modelos disponíveis, conte um pouco sobre o presente e receba sugestões personalizadas pelo WhatsApp.</p>
+      </div>
+      <div class="benefits">
+        <div class="benefit"><span>1</span><strong>Escolha um modelo</strong></div>
+        <div class="benefit"><span>2</span><strong>Informe ocasião e orçamento</strong></div>
+        <div class="benefit"><span>3</span><strong>Receba sugestões da Zadoni</strong></div>
+        <div class="benefit"><span>4</span><strong>Confirme tudo pelo WhatsApp</strong></div>
+      </div>
+    </article>
+
+    <section class="flow-section" aria-labelledby="modelos-title">
+      <div class="section-heading">
+        <span class="step-number">1</span>
+        <div><h2 id="modelos-title">Qual modelo combina com o presente?</h2><p>As fotos mostram o estilo da montagem. Produtos e acabamento serão definidos no atendimento.</p></div>
+      </div>
+      <div class="models">${N.modelos.map((item, indice) => cardModelo(item, estado.modelo, indice)).join('')}</div>
+      <div class="help-choice ${precisaAjuda ? 'selected' : ''}">
+        <div><strong>Não sabe qual modelo escolher?</strong><p>Conte a ocasião e o orçamento. A Zadoni indica a melhor opção.</p></div>
+        <button class="secondary" type="button" data-action="pedir-ajuda" aria-pressed="${precisaAjuda}">${precisaAjuda ? 'Ajuda selecionada' : 'Quero ajuda para escolher'}</button>
+      </div>
+    </section>
+
+    <section id="preferencias" class="flow-section" aria-labelledby="preferencias-title">
+      <div class="section-heading">
+        <span class="step-number">2</span>
+        <div><h2 id="preferencias-title">Conte o essencial para a Zadoni</h2><p>Todos os campos são opcionais, mas ajudam a preparar sugestões mais adequadas.</p></div>
+      </div>
+      <div class="notice ${podeEnviar ? 'success' : 'warning'}"><strong>Escolha atual:</strong> ${escapar(escolha)}.</div>
+      <form id="briefingForm" class="grid form" novalidate>
+        <div class="field"><label for="ocasiao">Ocasião</label><select id="ocasiao" name="ocasiao">${opcoes(N.config.ocasioes, p.ocasiao, 'Selecione a ocasião')}</select></div>
+        <div class="field"><label for="orcamento">Faixa de orçamento</label><select id="orcamento" name="orcamento">${opcoes(N.config.orcamentos, p.orcamento, 'Selecione uma faixa')}</select></div>
+        <div class="field"><label for="dataEntrega">Data desejada</label><input id="dataEntrega" name="dataEntrega" type="date" min="${dataMinima()}" value="${escapar(p.dataEntrega)}"></div>
+        <div class="field wide"><label for="observacoes">Preferências e observações</label><textarea id="observacoes" name="observacoes" maxlength="${N.config.OBSERVACOES_MAX}" placeholder="Ex.: gosta de chocolate, prefere tons de rosa, sem bebida alcoólica...">${escapar(p.observacoes)}</textarea><p class="help">Não precisa escolher cada produto agora; a Zadoni ajuda nessa etapa.</p></div>
+      </form>
+      <div class="assisted-cta">
+        <div><strong>Pronto para montar com a Zadoni?</strong><p>Disponibilidade, composição, entrega e valor final serão confirmados no WhatsApp.</p></div>
+        <a id="whatsappButton" class="whatsapp" href="${podeEnviar ? N.whatsapp.criarUrl(estado) : '#modelos-title'}" target="${podeEnviar ? '_blank' : '_self'}" rel="noopener noreferrer" aria-disabled="${podeEnviar ? 'false' : 'true'}" data-action="enviar-whatsapp">Montar com ajuda da Zadoni</a>
+      </div>
+    </section>
+
+    <p class="trust-note"><a href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">Veja as avaliações da Zadoni no Google</a></p>`;
   }
 
-  function capMsg(c, m) {
-    if (!m.modelo) return '<div class="notice warning">Escolha um modelo para calcular a capacidade.</div>';
-    let cls = c.estado === 'excedida' ? 'danger' : c.estado === 'proxima' ? 'warning' : 'success';
-    let txt = 'Sua cesta ainda possui espaço disponível.';
-    if (c.estado === 'proxima') txt = 'Este modelo está próximo da capacidade máxima.';
-    if (c.estado === 'excedida') txt = 'Estes produtos podem não caber neste modelo. Escolha uma cesta maior ou remova algum item.';
-    return `<div class="notice ${cls}"><strong>Capacidade:</strong> ${c.utilizada}/${c.maxima} pontos. ${txt}<div class="track"><span class="fill capacity ${cls}" style="width:${Math.min(100, c.percentual)}%"></span></div></div>`;
-  }
-
-  function produtos(m) {
-    const cat = N.categorias[m.categoriaAtual] || N.categorias[0];
-    const ps = N.produtos.filter(p => p.categoria === cat.id);
-    const tabs = `<div class="tabs">${N.categorias.map((c, i) => `<button class="tab" data-action="ir-categoria" data-categoria="${i}" aria-current="${i === m.categoriaAtual ? 'step' : 'false'}">${c.nome}</button>`).join('')}</div>`;
-    const cards = ps.map((p, i) => {
-      const qt = q(m, p.id);
-      return `<article class="card ${p.imagem ? '' : 'no-photo'}">${img(p.imagem, p.nome, i > 0)}<div class="body"><h3>${p.nome}</h3><p>${p.descricao}</p>${qt ? `<span class="ok">Item selecionado</span><div class="qty"><button data-action="diminuir-produto" data-produto="${p.id}" aria-label="Diminuir ${p.nome}">-</button><output>${qt}</output><button data-action="aumentar-produto" data-produto="${p.id}" ${qt >= p.quantidadeMaxima ? 'disabled' : ''} aria-label="Aumentar ${p.nome}">+</button></div>` : `<button class="primary" data-action="adicionar-produto" data-produto="${p.id}">Adicionar</button>`}</div></article>`;
-    }).join('');
-    return `<div class="title"><h2>Escolha os produtos</h2><p>${cat.nome}: selecione os itens desejados e acompanhe o valor total estimado da cesta em tempo real.</p></div>${tabs}${capMsg(N.calculos.calcularCapacidade(m), m)}<div class="products">${cards}</div><div class="actions"><button class="ghost" data-action="voltar-etapa">Voltar</button><button class="secondary" data-action="voltar-categoria" ${m.categoriaAtual === 0 ? 'disabled' : ''}>Categoria anterior</button><button class="secondary" data-action="proxima-categoria" ${m.categoriaAtual >= N.categorias.length - 1 ? 'disabled' : ''}>Próxima categoria</button><button class="primary" data-action="proxima-etapa">Continuar</button></div>`;
-  }
-
-  function personal(m) {
-    const p = m.personalizacao;
-    const min = N.validacoes.dataMinima();
-    return `<div class="title"><h2>Personalização</h2><p>Defina os detalhes principais. O endereço completo será confirmado pelo WhatsApp.</p></div><form class="grid form"><div class="field"><label for="ocasiao">Ocasião</label><select id="ocasiao" name="ocasiao"><option value="">Selecione</option>${N.config.ocasioes.map(o => `<option ${p.ocasiao === o ? 'selected' : ''}>${o}</option>`).join('')}</select></div><div class="field"><span class="label">Cor da decoração</span><div class="options">${N.config.cores.map(c => `<label class="chip"><input type="radio" name="cor" value="${c}" ${p.cor === c ? 'checked' : ''}><span>${c}</span></label>`).join('')}</div></div><div class="field"><label for="destinatario">Nome de quem receberá</label><input id="destinatario" name="destinatario" maxlength="80" value="${e(p.destinatario)}"></div><div class="field"><label for="dataEntrega">Data desejada</label><input id="dataEntrega" name="dataEntrega" type="date" min="${min}" value="${e(p.dataEntrega)}"></div><div class="field"><label for="bairro">Bairro</label><input id="bairro" name="bairro" maxlength="80" value="${e(p.bairro)}"></div><div class="field wide"><label for="mensagem">Mensagem do cartão</label><textarea id="mensagem" name="mensagem" maxlength="${N.config.MENSAGEM_MAX}">${e(p.mensagem)}</textarea><p class="help"><span id="messageCount">${p.mensagem.length}</span>/${N.config.MENSAGEM_MAX} caracteres</p></div><div class="field wide"><label for="observacoes">Observações</label><textarea id="observacoes" name="observacoes" maxlength="180">${e(p.observacoes)}</textarea></div></form><div class="actions"><button class="ghost" data-action="voltar-etapa">Voltar</button><button class="secondary" data-action="pular-personalizacao">Pular personalização</button><button class="primary" data-action="proxima-etapa">Revisar cesta</button></div>`;
-  }
-
-  function lista(m) {
-    return m.itens.length ? m.itens.map(i => {
-      const p = N.calculos.obterProduto(i.produtoId);
-      return p ? `<div class="line"><div class="line-head"><strong>${i.quantidade}x ${p.nome}</strong><button class="ghost" data-action="remover-produto" data-produto="${p.id}">Remover</button></div><div class="qty"><button data-action="diminuir-produto" data-produto="${p.id}">-</button><output>${i.quantidade}</output><button data-action="aumentar-produto" data-produto="${p.id}" ${i.quantidade >= p.quantidadeMaxima ? 'disabled' : ''}>+</button></div></div>` : '';
-    }).join('') : '<div class="empty">Sua cesta ainda não possui produtos.</div>';
-  }
-
-  function nivelMsg(t) {
-    if (t.nivel.id === 'em-montagem') return t.proximoNivel ? `Adicione mais ${N.calculos.formatarMoeda(t.proximoNivel.faltam)} para completar uma Cesta Essencial.` : 'Em montagem.';
-    if (t.nivel.id === 'essencial') return 'Cesta Essencial pronta para uma surpresa simples e bonita.';
-    if (t.nivel.id === 'especial') return 'Cesta Especial desbloqueada, com mais impacto visual.';
-    if (t.nivel.id === 'premium') return 'Sua montagem alcançou o nível Premium.';
-    return 'Experiência Royal Zadoni desbloqueada.';
-  }
-
-  function linhas(t) {
-    const metaRoyal = (N.niveis.find(n => n.id === 'royal') || {}).minimo || 65000;
-    const pct = Math.min(100, Math.round(t.total / metaRoyal * 100));
-    const prox = t.proximoNivel ? `Faltam ${N.calculos.formatarMoeda(t.proximoNivel.faltam)} para alcançar o nível ${t.proximoNivel.nivel.nome}.` : 'Experiência Royal Zadoni desbloqueada.';
-    return `<div class="row"><span>Modelo</span><strong>${N.calculos.formatarMoeda(t.modelo)}</strong></div><div class="row"><span>Produtos</span><strong>${N.calculos.formatarMoeda(t.produtos)}</strong></div><div class="row"><span>Personalizações</span><strong>${N.calculos.formatarMoeda(t.personalizacoes)}</strong></div><div class="row"><span>Adicionais</span><strong>${N.calculos.formatarMoeda(t.adicionais)}</strong></div><div class="row"><span>Entrega</span><strong>A confirmar</strong></div><div class="row total"><span>Total estimado</span><strong>${N.calculos.formatarMoeda(t.total)}</strong></div><div class="level"><h3>Nível: ${t.nivel.nome}</h3><div class="track"><span class="fill capacity" style="width:${pct}%"></span></div><p>${nivelMsg(t)}</p><p class="help">${prox}</p></div>`;
-  }
-
-  function resumo(m) {
-    const mo = N.calculos.obterModelo(m.modelo);
-    const t = N.calculos.totaisDetalhados(m);
-    const err = N.validacoes.validarFinalizacao(m);
-    const p = m.personalizacao;
-    return `<div class="title"><h2>Resumo e envio</h2><p>Revise a montagem antes de enviar o orçamento para o atendimento.</p></div>${err ? `<div class="notice danger">${err}</div>` : '<div class="notice success">Orçamento estimado pronto para envio pelo WhatsApp.</div>'}<div class="summary-grid"><section class="summary"><h3>Modelo escolhido</h3>${mo ? `${img(mo.imagem, mo.nome, true)}<strong>${mo.nome}</strong><span>${N.calculos.formatarMoeda(mo.precoBase)} - ${mo.capacidade} pontos</span>` : '<p>Nenhum modelo selecionado.</p>'}<button class="secondary" data-action="ir-etapa" data-etapa="1">Editar modelo</button></section><section class="summary"><h3>Produtos escolhidos</h3>${lista(m)}<button class="secondary" data-action="ir-etapa" data-etapa="2">Editar produtos</button></section><section class="summary"><h3>Personalização</h3><p><strong>Ocasião:</strong> ${e(p.ocasiao || 'Não informado')}</p><p><strong>Cor:</strong> ${e(p.cor || 'Não informado')}</p><p><strong>Destinatário:</strong> ${e(p.destinatario || 'Não informado')}</p><p><strong>Mensagem:</strong> ${e(p.mensagem || 'Não informado')}</p><p><strong>Data:</strong> ${e(p.dataEntrega || 'Não informado')}</p><p><strong>Bairro:</strong> ${e(p.bairro || 'Não informado')}</p><button class="secondary" data-action="ir-etapa" data-etapa="3">Editar personalização</button></section><section class="summary"><h3>Resumo financeiro</h3>${linhas(t)}<p class="notice warning">Este é um orçamento estimado. A Zadoni confirma disponibilidade, substituições, personalização, entrega e valor final pelo WhatsApp.</p></section></div><div class="actions"><button class="ghost" data-action="voltar-etapa">Voltar</button><button class="danger" data-action="limpar-montagem">Limpar montagem</button><button class="secondary" data-action="compartilhar-modelo">Compartilhar imagem do modelo</button><a id="whatsappButton" class="whatsapp" href="${err ? '#' : N.whatsapp.criarUrlWhatsApp(m)}" target="_blank" rel="noopener noreferrer" ${err ? 'aria-disabled="true"' : ''} data-action="enviar-whatsapp">Enviar orçamento pelo WhatsApp</a></div>`;
-  }
-
-  function lateral(m, start) {
-    if (start) {
-      S.innerHTML = '';
-      B.classList.remove('show');
-      return;
-    }
-    const t = N.calculos.totaisDetalhados(m);
-    const u = m.itens.reduce((a, i) => a + i.quantidade, 0);
-    S.innerHTML = `<div class="summary-card"><h2>Resumo</h2>${linhas(t)}<button class="secondary" data-action="abrir-carrinho">Ver cesta</button></div>`;
-    B.innerHTML = `<div><strong>${u} itens | ${N.calculos.formatarMoeda(t.total)}</strong><span>${t.nivel.nome} - entrega a confirmar</span></div><button class="btn" data-action="abrir-carrinho">Ver cesta</button>`;
-    B.classList.add('show');
-  }
-
-  function render(st) {
-    progress(st.montagem, st.telaInicial);
-    A.innerHTML = st.telaInicial ? inicio(st.temMontagemSalva) : st.montagem.etapaAtual === 1 ? modelos(st.montagem) : st.montagem.etapaAtual === 2 ? produtos(st.montagem) : st.montagem.etapaAtual === 3 ? personal(st.montagem) : resumo(st.montagem);
-    lateral(st.montagem, st.telaInicial);
-  }
-
-  function abrir(m) {
-    const t = N.calculos.totaisDetalhados(m);
-    DC.innerHTML = `${lista(m)}<section class="summary"><h3>Total</h3>${linhas(t)}${capMsg(t.capacidade, m)}</section><button class="primary" data-action="fechar-carrinho">Continuar</button>`;
-    D.classList.add('open');
-    D.setAttribute('aria-hidden', 'false');
-    d.body.classList.add('drawer-open');
-  }
-
-  function fechar() {
-    D.classList.remove('open');
-    D.setAttribute('aria-hidden', 'true');
-    d.body.classList.remove('drawer-open');
-  }
-
-  N.interface = {
-    renderizarAplicacao: render,
-    abrirDrawer: abrir,
-    fecharDrawer: fechar,
-    mostrarToast: toast
-  };
+  N.interface = { renderizar, mostrarToast };
 })(window, document);

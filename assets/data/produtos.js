@@ -25,7 +25,7 @@ const adicionaisBuques = [
   {
     id: "cartao-personalizado",
     nome: "Cartão impresso ou escrito à mão",
-    preco: 20.00,
+    preco: 15.00,
     imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp"
   },
   {
@@ -39,12 +39,12 @@ const adicionaisBuques = [
   {
     id: "body-splash-winpink",
     nome: "Body Splash Winpink",
-    preco: 78.00
+    preco: 97.00
   },
   {
     id: "perfume-bolso-amakha",
     nome: "Perfume de bolso Amakha Paris 15 ml",
-    preco: 47.00,
+    preco: 50.00,
     observacao: "Fragrância a escolher",
     imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg"
   },
@@ -66,7 +66,7 @@ const adicionaisCestas = [
   {
     id: "nutella-cesta",
     nome: "Nutella",
-    preco: 49.00,
+    preco: 35.00,
     imagem: "monte-sua-cesta/assets/produtos/nutella.webp"
   },
   {
@@ -85,8 +85,8 @@ const adicionaisCestas = [
   },
   {
     id: "suco-uva-aurora-cesta",
-    nome: "Suco de uva Aurora",
-    preco: 39.00,
+    nome: "Suco de uva Aurora - garrafa pequena",
+    preco: 18.00,
     imagem: "monte-sua-cesta/assets/produtos/suco-uva-aurora.webp"
   },
   {
@@ -97,7 +97,7 @@ const adicionaisCestas = [
   {
     id: "cartao-personalizado-cesta",
     nome: "Cartao impresso ou escrito a mao",
-    preco: 20.00,
+    preco: 15.00,
     imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp"
   },
   {
@@ -119,7 +119,7 @@ const adicionaisCafeManha = [
   {
     id: "pao-frances-cafe",
     nome: "Pão francês",
-    preco: 12.00,
+    preco: 15.00,
     imagem: "monte-sua-cesta/assets/produtos/pao-frances.webp"
   },
   {
@@ -137,7 +137,7 @@ const adicionaisCafeManha = [
   {
     id: "geleia-cafe",
     nome: "Geleia de frutas vermelhas",
-    preco: 18.00,
+    preco: 32.00,
     imagem: "monte-sua-cesta/assets/produtos/geleia-frutas-vermelhas.webp"
   },
   {
@@ -149,19 +149,19 @@ const adicionaisCafeManha = [
   {
     id: "queijo-cafe",
     nome: "Queijo fatiado",
-    preco: 49.00,
+    preco: 22.00,
     imagem: "monte-sua-cesta/assets/produtos/queijo-fatiado.webp"
   },
   {
     id: "achocolatado-cafe",
     nome: "Achocolatado",
-    preco: 22.00,
+    preco: 15.00,
     imagem: "monte-sua-cesta/assets/produtos/achocolatado-nescau.webp"
   },
   {
     id: "leite-cafe",
     nome: "Leite Piracanjuba",
-    preco: 22.00,
+    preco: 24.00,
     imagem: "monte-sua-cesta/assets/produtos/leite-piracanjuba.webp"
   },
   {
@@ -272,7 +272,7 @@ const produtosLocais = [
     nome: "Cesta Feminina Delicada",
     categoria: "Cestas",
     descricao: "Cesta delicada para surpreender com carinho, beleza e acabamento especial.",
-    preco: 189.90,
+    preco: 229.00,
     imagem: "assets/optimized/products/cesta-feminina-delicada.webp",
     destaque: true,
     adicionaisOpcionais: adicionaisCestas,
@@ -336,7 +336,7 @@ const produtosLocais = [
     nome: "Cesta Cafe da Manha Especial",
     categoria: "Cestas",
     descricao: "Cesta de cafe da manha para presentear com praticidade e carinho.",
-    preco: 199.90,
+    preco: 227.00,
     imagem: "assets/optimized/products/cesta-cafe-da-manha-especial.webp",
     destaque: true,
     adicionaisOpcionais: adicionaisCafeManha,
@@ -387,7 +387,7 @@ const produtosLocais = [
     nome: "Cone Ferrero Presente Charmoso",
     categoria: "Mimos",
     descricao: "Cone presenteavel com proposta elegante, ideal para lembrancas rapidas e marcantes.",
-    preco: 89.00,
+    preco: 79.00,
     imagem: "assets/optimized/products/cone-ferrero-presente-charmoso.jpg",
     destaque: false,
     whatsappMensagem: "Ola! Quero informacoes sobre o Cone Ferrero Presente Charmoso."
@@ -448,7 +448,7 @@ const produtosLocais = [
     nome: "Perfume de Bolso Asadiyy 15ml",
     categoria: "Perfumes",
     descricao: "Fragrancia masculina ambarada e marcante, inspirada no Asad. Ideal para quem gosta de perfume intenso, elegante e com presenca.",
-    preco: 47.00,
+    preco: 50.00,
     imagem: "assets/optimized/products/perfume-asadiyy-amakha-15ml.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Asadiyy 15ml. Quais fragrancias estao disponiveis?"
@@ -458,7 +458,7 @@ const produtosLocais = [
     nome: "Perfume de Bolso Chic Woman 15ml",
     categoria: "Perfumes",
     descricao: "Fragrancia feminina sofisticada, inspirada no Coco Mademoiselle. Uma opcao elegante para presente romantico e uso diario.",
-    preco: 47.00,
+    preco: 50.00,
     imagem: "assets/optimized/products/perfume-chic-woman-amakha-15ml.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Chic Woman 15ml. Voce pode me passar disponibilidade?"
@@ -468,7 +468,7 @@ const produtosLocais = [
     nome: "Perfume de Bolso Fortune 15ml",
     categoria: "Perfumes",
     descricao: "Fragrancia masculina amadeirada, inspirada no 1 Million. Combina presenca, estilo e praticidade para levar no bolso.",
-    preco: 47.00,
+    preco: 50.00,
     imagem: "assets/optimized/products/perfume-fortune-amakha-15ml.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso Fortune 15ml. Ainda tem disponivel?"
@@ -488,7 +488,7 @@ const produtosLocais = [
     nome: "Perfume de Bolso 521 Vip Rose 15ml",
     categoria: "Perfumes",
     descricao: "Fragrancia feminina floral frutada, inspirada no 212 Vip Rose. Leve, charmosa e marcante para complementar presentes romanticos.",
-    preco: 47.00,
+    preco: 50.00,
     imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg",
     destaque: true,
     whatsappMensagem: "Ola! Tenho interesse no Perfume de Bolso 521 Vip Rose 15ml. Quero saber as opcoes para presente."
@@ -575,7 +575,7 @@ const produtosLocais = [
     nome: "Nutella para cesta",
     categoria: "Adicionais",
     descricao: "Creme de avelã Nutella para deixar a composição mais premium e afetiva.",
-    preco: 49.00,
+    preco: 35.00,
     imagem: "monte-sua-cesta/assets/produtos/nutella.webp",
     destaque: false,
     whatsappMensagem: "Ola! Quero adicionar Nutella em uma cesta da Zadoni."
@@ -595,19 +595,19 @@ const produtosLocais = [
     id: 42,
     nome: "Bolo confeitado especial",
     categoria: "Adicionais",
-    descricao: "Bolo confeitado para composição premium de aniversário, romance ou surpresa especial.",
-    preco: 149.00,
+    descricao: "Bolo confeitado de 2 kg para composição premium de aniversário, romance ou surpresa especial.",
+    preco: 210.00,
     imagem: "monte-sua-cesta/assets/produtos/bolo-bailarina-chocolate.webp",
     destaque: true,
-    observacaoPreco: "Valor estimado. Modelo, peso e disponibilidade são confirmados pelo WhatsApp.",
+    observacaoPreco: "Valor para bolo de 2 kg. Modelo e disponibilidade são confirmados pelo WhatsApp.",
     whatsappMensagem: "Ola! Quero consultar um bolo confeitado para complementar um presente."
   },
   {
     id: 43,
     nome: "Suco de uva Aurora",
     categoria: "Adicionais",
-    descricao: "Bebida para compor cestas especiais, opções masculinas, românticas ou de café.",
-    preco: 39.00,
+    descricao: "Garrafa menor de suco de uva Aurora para compor cestas especiais, opções masculinas, românticas ou de café.",
+    preco: 15.00,
     imagem: "monte-sua-cesta/assets/produtos/suco-uva-aurora.webp",
     destaque: false,
     whatsappMensagem: "Ola! Quero adicionar Suco de uva Aurora em uma cesta."
@@ -621,16 +621,5 @@ const produtosLocais = [
     imagem: "monte-sua-cesta/assets/produtos/rosa-branca.webp",
     destaque: false,
     whatsappMensagem: "Ola! Tenho interesse em adicionar rosa branca a um presente."
-  },
-  {
-    id: 45,
-    nome: "Kit café para cesta",
-    categoria: "Adicionais",
-    descricao: "Seleção estimada com pão, bebida, biscoito e complemento para montar uma cesta matinal.",
-    preco: 79.00,
-    imagem: "monte-sua-cesta/assets/produtos/pao-frances.webp",
-    destaque: true,
-    observacaoPreco: "Composição estimada. Os itens finais dependem da disponibilidade do dia.",
-    whatsappMensagem: "Ola! Quero consultar um kit de itens de cafe para montar uma cesta."
   }
 ];

@@ -8,100 +8,102 @@ Observa??o: valores do cat?logo est?o em reais. Valores do montador foram conver
 
 | OK | ID | Produto | Categoria | Valor atual | Novo valor | Observa??o |
 | --- | --- | --- | --- | ---: | ---: | --- |
-| [ ] | 1 | Buque Romantico | Flores | R$ 189,00 |  |  |
-| [ ] | 2 | Buque na xicara | Flores | R$ 119,90 |  |  |
-| [ ] | 3 | Kit romantico com chocolates | Kits | R$ 149,90 |  |  |
-| [ ] | 6 | Cesta Masculina Vinho Bella Vista | Cestas | R$ 239,90 |  |  |
-| [ ] | 7 | Cesta Masculina Azul Classica | Cestas | R$ 169,90 |  |  |
-| [ ] | 8 | Cesta Masculina Gourmet Dourada | Cestas | R$ 219,90 |  |  |
-| [ ] | 9 | Cesta Masculina Verde Artesanal | Cestas | R$ 179,90 |  |  |
-| [ ] | 10 | Cesta Feminina Delicada | Cestas | R$ 189,90 |  |  |
-| [ ] | 11 | Cesta Masculina Vinho e Petiscos | Cestas | R$ 249,90 |  |  |
-| [ ] | 12 | Box Amor Perfeito | Kits | R$ 159,90 |  |  |
-| [ ] | 13 | Box Girassol com Caixa | Kits | R$ 169,00 |  |  |
-| [ ] | 15 | Buque Declaracao de Amor | Flores | R$ 149,00 |  |  |
-| [ ] | 16 | Buque Te Amo Romantico | Flores | R$ 189,00 |  |  |
-| [ ] | 17 | Cesta Cafe da Manha Especial | Cestas | R$ 199,90 |  |  |
-| [ ] | 18 | Kit Vela Presente Especial | Kits | R$ 129,90 |  |  |
-| [ ] | 19 | Mimo Carinho Especial | Mimos | R$ 129,00 |  |  |
-| [ ] | 20 | Mimo Coca-Cola Criativo | Mimos | R$ 69,90 |  |  |
-| [ ] | 21 | Mimo Ferrero Elegante | Mimos | R$ 39,00 |  |  |
-| [ ] | 22 | Cone Ferrero Presente Charmoso | Mimos | R$ 89,00 |  |  |
-| [ ] | 23 | Cestinha Virginia Mimo Delicado | Cestas | R$ 139,00 |  |  |
-| [ ] | 24 | Kit Ferrari Presente Premium | Kits | R$ 297,00 |  |  |
-| [ ] | 25 | Jarro Flores Naturais Vermelho | Mimos | R$ 75,00 |  |  |
-| [ ] | 26 | Jarro Flor Natural Laco Vermelho | Mimos | R$ 89,00 |  |  |
-| [ ] | 27 | Jarro Flor Natural Laco Rosa | Mimos | R$ 89,00 |  |  |
-| [ ] | 28 | Perfume de Bolso Asadiyy 15ml | Perfumes | R$ 47,00 |  |  |
-| [ ] | 29 | Perfume de Bolso Chic Woman 15ml | Perfumes | R$ 47,00 |  |  |
-| [ ] | 30 | Perfume de Bolso Fortune 15ml | Perfumes | R$ 47,00 |  |  |
-| [ ] | 31 | Perfume de Bolso Zaya 15ml | Perfumes | R$ 47,00 |  |  |
-| [ ] | 32 | Perfume de Bolso 521 Vip Rose 15ml | Perfumes | R$ 47,00 |  |  |
-| [ ] | 33 | Cesta Romantica com Vinho San Martin | Cestas | R$ 249,90 |  |  |
-| [ ] | 34 | Buque Rosa Pretty Flower | Flores | R$ 149,00 |  |  |
-| [ ] | 35 | Buque Rosas Vermelhas Premium | Flores | R$ 189,00 |  |  |
-| [ ] | 36 | Mimo Amor Perfeito com Trufas | Mimos | R$ 119,90 |  |  |
-| [ ] | 37 | Cesta Romantica na Bandeja | Cestas | R$ 199,90 |  | Modelo para inspiracao. O valor final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalizacao. |
-| [ ] | 38 | Mini bolo de aniversário | Adicionais | R$ 80,00 |  | Valor estimado. O acabamento e sabor são confirmados no atendimento. |
-| [ ] | 39 | Salgados variados | Adicionais | R$ 69,00 |  | Valor estimado conforme quantidade e disponibilidade. |
-| [ ] | 40 | Nutella para cesta | Adicionais | R$ 49,00 |  |  |
-| [ ] | 41 | Bolo simples para cesta | Adicionais | R$ 49,00 |  | Valor estimado conforme tamanho e disponibilidade. |
-| [ ] | 42 | Bolo confeitado especial | Adicionais | R$ 149,00 |  | Valor estimado. Modelo, peso e disponibilidade são confirmados pelo WhatsApp. |
-| [ ] | 43 | Suco de uva Aurora | Adicionais | R$ 39,00 |  |  |
-| [ ] | 44 | Rosa branca avulsa | Adicionais | R$ 29,00 |  |  |
-| [ ] | 45 | Kit café para cesta | Adicionais | R$ 79,00 |  | Composição estimada. Os itens finais dependem da disponibilidade do dia. |
+| [x] | 1 | Buque Romantico | Flores | R$ 189,00 |  | Mantido em 17/08/2026. |
+| [x] | 2 | Buque na xicara | Flores | R$ 119,90 |  | Mantido em 17/08/2026. |
+| [x] | 3 | Kit romantico com chocolates | Kits | R$ 149,90 |  | Mantido em 17/08/2026. |
+| [x] | 6 | Cesta Masculina Vinho Bella Vista | Cestas | R$ 239,90 |  | Mantido em 17/08/2026. |
+| [x] | 7 | Cesta Masculina Azul Classica | Cestas | R$ 169,90 |  | Mantido em 17/08/2026. |
+| [x] | 8 | Cesta Masculina Gourmet Dourada | Cestas | R$ 219,90 |  | Mantido em 17/08/2026. |
+| [x] | 9 | Cesta Masculina Verde Artesanal | Cestas | R$ 179,90 |  | Mantido em 17/08/2026. |
+| [x] | 10 | Cesta Feminina Delicada | Cestas | R$ 189,90 | R$ 229,00 | Alterado em 17/08/2026. |
+| [x] | 11 | Cesta Masculina Vinho e Petiscos | Cestas | R$ 249,90 |  | Mantido em 17/08/2026. |
+| [x] | 12 | Box Amor Perfeito | Kits | R$ 159,90 |  | Mantido em 17/08/2026. |
+| [x] | 13 | Box Girassol com Caixa | Kits | R$ 169,00 |  | Mantido em 17/08/2026. |
+| [x] | 15 | Buque Declaracao de Amor | Flores | R$ 149,00 |  | Mantido em 17/08/2026. |
+| [x] | 16 | Buque Te Amo Romantico | Flores | R$ 189,00 |  | Mantido em 17/08/2026. |
+| [x] | 17 | Cesta Cafe da Manha Especial | Cestas | R$ 199,90 | R$ 227,00 | Alterado em 17/08/2026. |
+| [x] | 18 | Kit Vela Presente Especial | Kits | R$ 129,90 |  | Mantido em 17/08/2026. |
+| [x] | 19 | Mimo Carinho Especial | Mimos | R$ 129,00 |  | Mantido em 17/08/2026. |
+| [x] | 20 | Mimo Coca-Cola Criativo | Mimos | R$ 69,90 |  | Mantido em 17/08/2026. |
+| [x] | 21 | Mimo Ferrero Elegante | Mimos | R$ 39,00 |  | Mantido em 17/08/2026. |
+| [x] | 22 | Cone Ferrero Presente Charmoso | Mimos | R$ 89,00 | R$ 79,00 | Alterado em 17/08/2026. |
+| [x] | 23 | Cestinha Virginia Mimo Delicado | Cestas | R$ 139,00 |  | Mantido em 17/08/2026. |
+| [x] | 24 | Kit Ferrari Presente Premium | Kits | R$ 297,00 |  | Mantido em 17/08/2026. |
+| [x] | 25 | Jarro Flores Naturais Vermelho | Mimos | R$ 75,00 |  | Mantido em 17/08/2026. |
+| [x] | 26 | Jarro Flor Natural Laco Vermelho | Mimos | R$ 89,00 |  | Mantido em 17/08/2026. |
+| [x] | 27 | Jarro Flor Natural Laco Rosa | Mimos | R$ 89,00 |  | Mantido em 17/08/2026. |
+| [x] | 28 | Perfume de Bolso Asadiyy 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
+| [x] | 29 | Perfume de Bolso Chic Woman 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
+| [x] | 30 | Perfume de Bolso Fortune 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
+| [x] | 31 | Perfume de Bolso Zaya 15ml | Perfumes | R$ 47,00 |  | Mantido em 17/08/2026. |
+| [x] | 32 | Perfume de Bolso 521 Vip Rose 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
+| [x] | 33 | Cesta Romantica com Vinho San Martin | Cestas | R$ 249,90 |  | Mantido em 17/08/2026. |
+| [x] | 34 | Buque Rosa Pretty Flower | Flores | R$ 149,00 |  | Mantido em 17/08/2026. |
+| [x] | 35 | Buque Rosas Vermelhas Premium | Flores | R$ 189,00 |  | Mantido em 17/08/2026. |
+| [x] | 36 | Mimo Amor Perfeito com Trufas | Mimos | R$ 119,90 |  | Mantido em 17/08/2026. |
+| [x] | 37 | Cesta Romantica na Bandeja | Cestas | R$ 199,90 |  | Mantido em 17/08/2026. Modelo para inspiracao. O valor final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalizacao. |
+| [x] | 38 | Mini bolo de aniversário | Adicionais | R$ 80,00 |  | Mantido em 17/08/2026. Valor estimado. O acabamento e sabor são confirmados no atendimento. |
+| [x] | 39 | Salgados variados | Adicionais | R$ 69,00 |  | Mantido em 17/08/2026. Valor estimado conforme quantidade e disponibilidade. |
+| [x] | 40 | Nutella para cesta | Adicionais | R$ 49,00 | R$ 35,00 | Alterado em 17/08/2026. |
+| [x] | 41 | Bolo simples para cesta | Adicionais | R$ 49,00 |  | Mantido em 17/08/2026. Valor estimado conforme tamanho e disponibilidade. |
+| [x] | 42 | Bolo confeitado especial | Adicionais | R$ 149,00 | R$ 210,00 | Alterado em 17/08/2026. Valor para bolo de 2 kg; modelo e disponibilidade são confirmados pelo WhatsApp. |
+| [x] | 43 | Suco de uva Aurora | Adicionais | R$ 39,00 | R$ 15,00 | Alterado em 17/08/2026. Valor da garrafa menor. |
+| [x] | 44 | Rosa branca avulsa | Adicionais | R$ 29,00 |  | Mantido em 17/08/2026. |
+| [x] | 45 | Kit café para cesta | Adicionais | R$ 79,00 | Removido | Removido do catálogo em 17/08/2026. |
 
 ## Adicionais para Buqu?s
 
 | OK | ID | Item | Valor atual | Novo valor | Observa??o |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | ferrero-rocher | Ferrero Rocher caixa 4 unidades | R$ 40,00 |  |  |
-| [ ] | caixinha-tres-ferrero | Caixinha com 3 Ferrero Rocher | R$ 29,00 |  |  |
-| [ ] | ursinho-chaveiro | Ursinho de pelúcia chaveiro | R$ 29,00 |  |  |
-| [ ] | cartao-personalizado | Cartão impresso ou escrito à mão | R$ 20,00 |  |  |
-| [ ] | foto-impressa | Foto impressa | R$ 15,00 |  | por foto |
-| [ ] | body-splash-winpink | Body Splash Winpink | R$ 78,00 |  |  |
-| [ ] | perfume-bolso-amakha | Perfume de bolso Amakha Paris 15 ml | R$ 47,00 |  | Fragrância a escolher |
-| [ ] | perfume-hinode-100ml | Perfume Hinode 100 ml | R$ 189,00 |  | A partir de R$ 189,00 |
+| [x] | ferrero-rocher | Ferrero Rocher caixa 4 unidades | R$ 40,00 |  | Mantido em 17/08/2026. |
+| [x] | caixinha-tres-ferrero | Caixinha com 3 Ferrero Rocher | R$ 29,00 |  | Mantido em 17/08/2026. |
+| [x] | ursinho-chaveiro | Ursinho de pelúcia chaveiro | R$ 29,00 |  | Mantido em 17/08/2026. |
+| [x] | cartao-personalizado | Cartão impresso ou escrito à mão | R$ 20,00 | R$ 15,00 | Alterado em 17/08/2026. |
+| [x] | foto-impressa | Foto impressa | R$ 15,00 |  | Mantido em 17/08/2026; por foto. |
+| [x] | body-splash-winpink | Body Splash Winpink | R$ 78,00 | R$ 97,00 | Alterado em 17/08/2026. |
+| [x] | perfume-bolso-amakha | Perfume de bolso Amakha Paris 15 ml | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. Fragrância a escolher. |
+| [x] | perfume-hinode-100ml | Perfume Hinode 100 ml | R$ 189,00 |  | Mantido em 17/08/2026; a partir de R$ 189,00. |
 
 ## Adicionais para Cestas
 
 | OK | ID | Item | Valor atual | Novo valor | Observa??o |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | ferrero-rocher-cesta | Ferrero Rocher caixa 4 unidades | R$ 40,00 |  |  |
-| [ ] | nutella-cesta | Nutella | R$ 49,00 |  |  |
-| [ ] | mini-bolo-cesta | Mini bolo decorado | R$ 80,00 |  | Conforme disponibilidade |
-| [ ] | salgados-variados-cesta | Salgados variados | R$ 69,00 |  | Porção conforme disponibilidade |
-| [ ] | suco-uva-aurora-cesta | Suco de uva Aurora | R$ 39,00 |  |  |
-| [ ] | caneca-presente | Caneca para presente | R$ 39,00 |  |  |
-| [ ] | cartao-personalizado-cesta | Cartao impresso ou escrito a mao | R$ 20,00 |  |  |
-| [ ] | foto-impressa-cesta | Foto impressa | R$ 15,00 |  | por foto |
-| [ ] | item-beleza | Item de beleza ou autocuidado | R$ 47,00 |  | Produto conforme disponibilidade |
+| [x] | ferrero-rocher-cesta | Ferrero Rocher caixa 4 unidades | R$ 40,00 |  | Mantido em 17/08/2026. |
+| [x] | nutella-cesta | Nutella | R$ 49,00 | R$ 35,00 | Alterado em 17/08/2026. |
+| [x] | mini-bolo-cesta | Mini bolo decorado | R$ 80,00 |  | Mantido em 17/08/2026; conforme disponibilidade. |
+| [x] | salgados-variados-cesta | Salgados variados | R$ 69,00 |  | Mantido em 17/08/2026; porção conforme disponibilidade. |
+| [x] | suco-uva-aurora-cesta | Suco de uva Aurora | R$ 39,00 | R$ 18,00 | Alterado em 17/08/2026. Garrafa pequena. |
+| [x] | caneca-presente | Caneca para presente | R$ 39,00 |  | Mantido em 17/08/2026. |
+| [x] | cartao-personalizado-cesta | Cartao impresso ou escrito a mao | R$ 20,00 | R$ 15,00 | Alterado em 17/08/2026. |
+| [x] | foto-impressa-cesta | Foto impressa | R$ 15,00 |  | Mantido em 17/08/2026; por foto. |
+| [x] | item-beleza | Item de beleza ou autocuidado | R$ 47,00 |  | Mantido em 17/08/2026; produto conforme disponibilidade. |
 
 ## Adicionais de Caf? da Manh?
 
 | OK | ID | Item | Valor atual | Novo valor | Observa??o |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | pao-frances-cafe | Pão francês | R$ 12,00 |  |  |
-| [ ] | mini-croissant-cafe | Mini croissant | R$ 18,00 |  |  |
-| [ ] | bolo-simples-cafe | Bolo simples | R$ 49,00 |  |  |
-| [ ] | geleia-cafe | Geleia de frutas vermelhas | R$ 18,00 |  |  |
-| [ ] | requeijao-cafe | Requeijão | R$ 25,00 |  |  |
-| [ ] | queijo-cafe | Queijo fatiado | R$ 49,00 |  |  |
-| [ ] | achocolatado-cafe | Achocolatado | R$ 22,00 |  |  |
-| [ ] | leite-cafe | Leite Piracanjuba | R$ 22,00 |  |  |
-| [ ] | iogurte-cafe | Iogurte | R$ 18,00 |  |  |
-| [ ] | biscoito-cafe | Biscoitos | R$ 16,00 |  |  |
-| [ ] | mini-bolo-cafe | Mini bolo decorado | R$ 80,00 |  |  |
-| [ ] | rosa-branca-cafe | Rosa branca | R$ 29,00 |  |  |
+| [x] | pao-frances-cafe | Pão francês | R$ 12,00 | R$ 15,00 | Alterado em 17/08/2026. |
+| [x] | mini-croissant-cafe | Mini croissant | R$ 18,00 |  | Mantido em 17/08/2026. |
+| [x] | bolo-simples-cafe | Bolo simples | R$ 49,00 |  | Mantido em 17/08/2026. |
+| [x] | geleia-cafe | Geleia de frutas vermelhas | R$ 18,00 | R$ 32,00 | Alterado em 17/08/2026. |
+| [x] | requeijao-cafe | Requeijão | R$ 25,00 |  | Mantido em 17/08/2026. |
+| [x] | queijo-cafe | Queijo fatiado | R$ 49,00 | R$ 22,00 | Alterado em 17/08/2026. |
+| [x] | achocolatado-cafe | Achocolatado | R$ 22,00 | R$ 15,00 | Alterado em 17/08/2026. |
+| [x] | leite-cafe | Leite Piracanjuba | R$ 22,00 | R$ 24,00 | Alterado em 17/08/2026. |
+| [x] | iogurte-cafe | Iogurte | R$ 18,00 |  | Mantido em 17/08/2026. |
+| [x] | biscoito-cafe | Biscoitos | R$ 16,00 |  | Mantido em 17/08/2026. |
+| [x] | mini-bolo-cafe | Mini bolo decorado | R$ 80,00 |  | Mantido em 17/08/2026. |
+| [x] | rosa-branca-cafe | Rosa branca | R$ 29,00 |  | Mantido em 17/08/2026. |
 
 ## Itens do Monte Sua Cesta
+
+> Fluxo detalhado removido do site em 17/08/2026. O cliente agora escolhe um modelo, informa ocasião, orçamento, data e preferências, e monta a composição com ajuda da Zadoni pelo WhatsApp. Os itens abaixo permanecem apenas como histórico e não precisam de revisão individual.
 
 ### Chocolates
 
 | OK | ID | Item | Valor atual | Novo valor | Observa??o |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | ferrero-rocher-12 | Ferrero Rocher caixa 12 unidades | R$ 63,00 |  | Caixa com 12 unidades de Ferrero Rocher. |
+| [x] | ferrero-rocher-12 | Ferrero Rocher caixa 12 unidades | R$ 63,00 | R$ 69,00 | Alterado em 17/08/2026. Caixa com 12 unidades de Ferrero Rocher. |
 | [ ] | ferrero-rocher-10 | Ferrero Rocher caixa 10 unidades | R$ 53,00 |  | Caixa com 10 unidades de Ferrero Rocher. |
 | [ ] | ferrero-rocher-4 | Ferrero Rocher caixa 4 unidades | R$ 36,00 |  | Caixa com 4 unidades de Ferrero Rocher. |
 | [ ] | barrinha-cacau-show | Barrinha Cacau Show | R$ 9,00 |  | Barrinha Cacau Show para compor a cesta. |

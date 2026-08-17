@@ -1,1 +1,57 @@
-﻿(function(w){const N=w.ZadoniCesta,c=N.config;function inicial(){const a=new Date().toISOString();return{versao:1,etapaAtual:1,categoriaAtual:0,modelo:null,itens:[],personalizacao:{ocasiao:'',cor:'',destinatario:'',mensagem:'',dataEntrega:'',bairro:'',observacoes:''},totais:{modelo:0,produtos:0,personalizacoes:0,adicionais:0,desconto:0,total:0},nivelAtual:'em-montagem',criadoEm:a,atualizadoEm:a}}function ok(){try{localStorage.setItem('__t','1');localStorage.removeItem('__t');return true}catch(e){return false}}function expirou(m){return !m||!m.atualizadoEm||Date.now()-new Date(m.atualizadoEm).getTime()>c.EXPIRATION_MS}function carregar(){if(!ok())return null;try{const m=JSON.parse(localStorage.getItem(c.STORAGE_KEY)||'null');return m&&m.versao===1&&!expirou(m)?m:null}catch(e){return null}}function salvar(m){m.atualizadoEm=new Date().toISOString();if(ok())try{localStorage.setItem(c.STORAGE_KEY,JSON.stringify(m))}catch(e){}return m}function limpar(){if(ok())localStorage.removeItem(c.STORAGE_KEY)}N.storage={criarMontagemInicial:inicial,carregarMontagem:carregar,salvarMontagem:salvar,limparMontagem:limpar,montagemExiste:()=>!!carregar(),montagemExpirou:expirou};})(window);
+(function (w) {
+  const N = w.ZadoniCesta;
+  const c = N.config;
+
+  function criar() {
+    const agora = new Date().toISOString();
+    return {
+      versao: 2,
+      modelo: '',
+      preferencias: {
+        ocasiao: '',
+        orcamento: '',
+        dataEntrega: '',
+        observacoes: ''
+      },
+      criadoEm: agora,
+      atualizadoEm: agora
+    };
+  }
+
+  function disponivel() {
+    try {
+      localStorage.setItem('__zadoni_teste', '1');
+      localStorage.removeItem('__zadoni_teste');
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function carregar() {
+    if (!disponivel()) return null;
+    try {
+      const estado = JSON.parse(localStorage.getItem(c.STORAGE_KEY) || 'null');
+      const expirado = !estado || !estado.atualizadoEm || Date.now() - new Date(estado.atualizadoEm).getTime() > c.EXPIRATION_MS;
+      return estado && estado.versao === 2 && !expirado ? estado : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function salvar(estado) {
+    estado.atualizadoEm = new Date().toISOString();
+    if (disponivel()) {
+      try {
+        localStorage.setItem(c.STORAGE_KEY, JSON.stringify(estado));
+      } catch (e) {}
+    }
+    return estado;
+  }
+
+  function limpar() {
+    if (disponivel()) localStorage.removeItem(c.STORAGE_KEY);
+  }
+
+  N.storage = { criar, carregar, salvar, limpar };
+})(window);

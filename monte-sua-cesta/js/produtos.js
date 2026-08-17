@@ -1,7 +1,7 @@
 (function(w){const N=w.ZadoniCesta;N.categorias=[{id:'chocolates',nome:'Chocolates'},{id:'bebidas',nome:'Bebidas'},{id:'flores-decoracao',nome:'Flores e decoração'},{id:'presentes',nome:'Presentes'},{id:'tabua-frios-frutas',nome:'Tábua de frios e frutas'},{id:'adicionais',nome:'Adicionais'}];
 // ATENÇÃO: substituir pelos preços, produtos e disponibilidade reais da Zadoni.
 N.produtos=[
-{id:'ferrero-rocher-12',nome:'Ferrero Rocher caixa 12 unidades',descricao:'Caixa com 12 unidades de Ferrero Rocher.',categoria:'chocolates',preco:6300,espaco:4,quantidadeMaxima:2,imagem:'assets/produtos/ferrero-rocher-caixa-12.webp',disponivel:true,destaque:true},
+{id:'ferrero-rocher-12',nome:'Ferrero Rocher caixa 12 unidades',descricao:'Caixa com 12 unidades de Ferrero Rocher.',categoria:'chocolates',preco:6900,espaco:4,quantidadeMaxima:2,imagem:'assets/produtos/ferrero-rocher-caixa-12.webp',disponivel:true,destaque:true},
 {id:'ferrero-rocher-10',nome:'Ferrero Rocher caixa 10 unidades',descricao:'Caixa com 10 unidades de Ferrero Rocher.',categoria:'chocolates',preco:5300,espaco:4,quantidadeMaxima:2,imagem:'assets/produtos/ferrero-rocher-caixa-8.webp',disponivel:true,destaque:true},
 {id:'ferrero-rocher-4',nome:'Ferrero Rocher caixa 4 unidades',descricao:'Caixa com 4 unidades de Ferrero Rocher.',categoria:'chocolates',preco:3600,espaco:2,quantidadeMaxima:3,imagem:'assets/produtos/ferrero-rocher-caixa-4.webp',disponivel:true,destaque:true},
 {id:'barrinha-cacau-show',nome:'Barrinha Cacau Show',descricao:'Barrinha Cacau Show para compor a cesta.',categoria:'chocolates',preco:900,espaco:1,quantidadeMaxima:10,imagem:'assets/produtos/barrinha-cacau-show.webp',disponivel:true,destaque:true},
