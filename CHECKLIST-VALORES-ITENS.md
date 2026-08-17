@@ -1,12 +1,12 @@
 # Checklist de Valores - Zadoni Presentes
 
-Use este arquivo para revisar os pre?os atuais. Marque os itens conferidos e preencha a coluna "Novo valor" quando quiser alterar.
+Use este arquivo para revisar os preços atuais. Marque os itens conferidos e preencha a coluna "Novo valor" quando quiser alterar.
 
-Observa??o: valores do cat?logo est?o em reais. Valores do montador foram convertidos de centavos para reais.
+Observação: valores do catálogo estão em reais. Valores do montador foram convertidos de centavos para reais.
 
-## Produtos Principais do Cat?logo
+## Produtos Principais do Catálogo
 
-| OK | ID | Produto | Categoria | Valor atual | Novo valor | Observa??o |
+| OK | ID | Produto | Categoria | Valor atual | Novo valor | Observação |
 | --- | --- | --- | --- | ---: | ---: | --- |
 | [x] | 1 | Buque Romantico | Flores | R$ 189,00 |  | Mantido em 17/08/2026. |
 | [x] | 2 | Buque na xicara | Flores | R$ 119,90 |  | Mantido em 17/08/2026. |
@@ -42,58 +42,66 @@ Observa??o: valores do cat?logo est?o em reais. Valores do montador foram conver
 | [x] | 35 | Buque Rosas Vermelhas Premium | Flores | R$ 189,00 |  | Mantido em 17/08/2026. |
 | [x] | 36 | Mimo Amor Perfeito com Trufas | Mimos | R$ 119,90 |  | Mantido em 17/08/2026. |
 | [x] | 37 | Cesta Romantica na Bandeja | Cestas | R$ 199,90 |  | Mantido em 17/08/2026. Modelo para inspiracao. O valor final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalizacao. |
-| [x] | 38 | Mini bolo de aniversário | Adicionais | R$ 80,00 |  | Mantido em 17/08/2026. Valor estimado. O acabamento e sabor são confirmados no atendimento. |
-| [x] | 39 | Salgados variados | Adicionais | R$ 69,00 |  | Mantido em 17/08/2026. Valor estimado conforme quantidade e disponibilidade. |
-| [x] | 40 | Nutella para cesta | Adicionais | R$ 49,00 | R$ 35,00 | Alterado em 17/08/2026. |
-| [x] | 41 | Bolo simples para cesta | Adicionais | R$ 49,00 |  | Mantido em 17/08/2026. Valor estimado conforme tamanho e disponibilidade. |
+| [x] | 38 | Mini bolo decorado - 1 unidade | Adicionais | R$ 80,00 |  | Mantido em 17/08/2026. Acabamento e sabor confirmados no atendimento. |
+| [x] | 39 | Porção de salgados variados | Adicionais | R$ 69,00 |  | Mantido em 17/08/2026. Quantidade da porção confirmada no WhatsApp. |
+| [x] | 40 | Nutella para cesta - 1 pote | Adicionais | R$ 49,00 | R$ 35,00 | Alterado em 17/08/2026. Tamanho da embalagem confirmado no WhatsApp. |
+| [x] | 41 | Bolo simples para cesta - 1 unidade | Adicionais | R$ 49,00 |  | Mantido em 17/08/2026. Tamanho e sabor confirmados no WhatsApp. |
 | [x] | 42 | Bolo confeitado especial | Adicionais | R$ 149,00 | R$ 210,00 | Alterado em 17/08/2026. Valor para bolo de 2 kg; modelo e disponibilidade são confirmados pelo WhatsApp. |
-| [x] | 43 | Suco de uva Aurora | Adicionais | R$ 39,00 | R$ 15,00 | Alterado em 17/08/2026. Valor da garrafa menor. |
-| [x] | 44 | Rosa branca avulsa | Adicionais | R$ 29,00 |  | Mantido em 17/08/2026. |
+| [x] | 43 | Suco de uva Aurora - 1 garrafa pequena | Adicionais | R$ 39,00 | R$ 15,00 | Alterado em 17/08/2026. |
+| [x] | 44 | Rosa branca avulsa - 1 unidade | Adicionais | R$ 29,00 |  | Mantido em 17/08/2026. |
 | [x] | 45 | Kit café para cesta | Adicionais | R$ 79,00 | Removido | Removido do catálogo em 17/08/2026. |
+| [x] | 46 | Ferrero Rocher - caixa com 4 unidades | Adicionais | R$ 40,00 | R$ 39,00 | Atualizado e mantido como item avulso em 17/08/2026. |
+| [x] | 47 | Caixinha com 3 Ferrero Rocher | Adicionais | R$ 29,00 | Removido | Removido do catálogo e de todas as listas de adicionais em 17/08/2026. |
+| [x] | 48 | Ursinho de pelúcia chaveiro - 1 unidade | Adicionais | R$ 29,00 |  | Publicado como item avulso em 17/08/2026. Modelo e cor conforme estoque. |
+| [x] | 49 | Cartão personalizado - 1 unidade | Adicionais | R$ 15,00 |  | Publicado como item avulso em 17/08/2026. Mensagem enviada pelo cliente. |
+| [x] | 50 | Ferrero Rocher - caixa com 12 unidades | Adicionais | R$ 69,00 |  | Publicado como item avulso e adicional para cestas em 17/08/2026. |
+| [x] | 51 | Barrinha Cacau Show - 1 unidade | Adicionais | R$ 10,00 |  | Publicada como item avulso e adicional para cestas em 17/08/2026. Sabor conforme disponibilidade. |
 
-## Adicionais para Buqu?s
+## Adicionais para Buquês
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [x] | ferrero-rocher | Ferrero Rocher caixa 4 unidades | R$ 40,00 |  | Mantido em 17/08/2026. |
-| [x] | caixinha-tres-ferrero | Caixinha com 3 Ferrero Rocher | R$ 29,00 |  | Mantido em 17/08/2026. |
-| [x] | ursinho-chaveiro | Ursinho de pelúcia chaveiro | R$ 29,00 |  | Mantido em 17/08/2026. |
-| [x] | cartao-personalizado | Cartão impresso ou escrito à mão | R$ 20,00 | R$ 15,00 | Alterado em 17/08/2026. |
-| [x] | foto-impressa | Foto impressa | R$ 15,00 |  | Mantido em 17/08/2026; por foto. |
-| [x] | body-splash-winpink | Body Splash Winpink | R$ 78,00 | R$ 97,00 | Alterado em 17/08/2026. |
-| [x] | perfume-bolso-amakha | Perfume de bolso Amakha Paris 15 ml | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. Fragrância a escolher. |
-| [x] | perfume-hinode-100ml | Perfume Hinode 100 ml | R$ 189,00 |  | Mantido em 17/08/2026; a partir de R$ 189,00. |
+| [x] | ferrero-rocher | Ferrero Rocher - caixa com 4 unidades | R$ 40,00 | R$ 39,00 | Atualizado em 17/08/2026. |
+| [x] | caixinha-tres-ferrero | Caixinha com 3 Ferrero Rocher | R$ 29,00 | Removido | Removido de todas as listas de adicionais em 17/08/2026. |
+| [x] | ursinho-chaveiro | Ursinho de pelúcia chaveiro - 1 unidade | R$ 29,00 |  | Mantido em 17/08/2026. |
+| [x] | cartao-personalizado | Cartão personalizado - 1 unidade | R$ 20,00 | R$ 15,00 | Alterado em 17/08/2026. Mensagem enviada pelo cliente. |
+| [x] | foto-impressa | Foto impressa | R$ 15,00 |  | Mantido em 17/08/2026; por foto. Imagem genérica incorreta removida. |
+| [x] | body-splash-winpink | Body Splash Winpink - 1 unidade | R$ 78,00 | R$ 97,00 | Alterado em 17/08/2026. Fragrância e embalagem confirmadas no WhatsApp. |
+| [x] | perfume-bolso-amakha | Perfume de bolso Amakha Paris 15 ml | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. Fragrância conforme estoque. |
+| [x] | perfume-hinode-100ml | Perfume Hinode 100 ml - 1 unidade | R$ 189,00 |  | Mantido em 17/08/2026; fragrância e valor final confirmados no WhatsApp. |
 
 ## Adicionais para Cestas
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [x] | ferrero-rocher-cesta | Ferrero Rocher caixa 4 unidades | R$ 40,00 |  | Mantido em 17/08/2026. |
-| [x] | nutella-cesta | Nutella | R$ 49,00 | R$ 35,00 | Alterado em 17/08/2026. |
-| [x] | mini-bolo-cesta | Mini bolo decorado | R$ 80,00 |  | Mantido em 17/08/2026; conforme disponibilidade. |
-| [x] | salgados-variados-cesta | Salgados variados | R$ 69,00 |  | Mantido em 17/08/2026; porção conforme disponibilidade. |
-| [x] | suco-uva-aurora-cesta | Suco de uva Aurora | R$ 39,00 | R$ 18,00 | Alterado em 17/08/2026. Garrafa pequena. |
-| [x] | caneca-presente | Caneca para presente | R$ 39,00 |  | Mantido em 17/08/2026. |
-| [x] | cartao-personalizado-cesta | Cartao impresso ou escrito a mao | R$ 20,00 | R$ 15,00 | Alterado em 17/08/2026. |
-| [x] | foto-impressa-cesta | Foto impressa | R$ 15,00 |  | Mantido em 17/08/2026; por foto. |
-| [x] | item-beleza | Item de beleza ou autocuidado | R$ 47,00 |  | Mantido em 17/08/2026; produto conforme disponibilidade. |
+| [x] | ferrero-rocher-cesta | Ferrero Rocher - caixa com 4 unidades | R$ 40,00 | R$ 39,00 | Atualizado em 17/08/2026. |
+| [x] | ferrero-rocher-12-cesta | Ferrero Rocher - caixa com 12 unidades | R$ 69,00 |  | Publicado como adicional para cestas em 17/08/2026. |
+| [x] | barrinha-cacau-show-cesta | Barrinha Cacau Show - 1 unidade | R$ 10,00 |  | Publicada como adicional para cestas em 17/08/2026. |
+| [x] | nutella-cesta | Nutella para cesta - 1 pote | R$ 49,00 | R$ 35,00 | Alterado em 17/08/2026. Tamanho confirmado no WhatsApp. |
+| [x] | mini-bolo-cesta | Mini bolo decorado - 1 unidade | R$ 80,00 |  | Mantido em 17/08/2026; sabor e acabamento confirmados no WhatsApp. |
+| [x] | salgados-variados-cesta | Porção de salgados variados | R$ 69,00 |  | Mantido em 17/08/2026; quantidade confirmada no WhatsApp. |
+| [x] | suco-uva-aurora-cesta | Suco de uva Aurora - 1 garrafa pequena | R$ 39,00 | R$ 15,00 | Unificado com o catálogo público em 17/08/2026. |
+| [x] | caneca-presente | Caneca para presente - 1 unidade | R$ 39,00 |  | Mantido em 17/08/2026. Modelo e cor conforme estoque. |
+| [x] | cartao-personalizado-cesta | Cartão personalizado - 1 unidade | R$ 20,00 | R$ 15,00 | Alterado em 17/08/2026. Mensagem enviada pelo cliente. |
+| [x] | foto-impressa-cesta | Foto impressa | R$ 15,00 |  | Mantido em 17/08/2026; por foto. Arquivo enviado pelo cliente. |
+| [x] | item-beleza | Item de beleza ou autocuidado - 1 unidade | R$ 47,00 |  | Mantido em 17/08/2026; produto específico escolhido no WhatsApp. |
 
-## Adicionais de Caf? da Manh?
+## Adicionais de Café da Manhã
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [x] | pao-frances-cafe | Pão francês | R$ 12,00 | R$ 15,00 | Alterado em 17/08/2026. |
-| [x] | mini-croissant-cafe | Mini croissant | R$ 18,00 |  | Mantido em 17/08/2026. |
-| [x] | bolo-simples-cafe | Bolo simples | R$ 49,00 |  | Mantido em 17/08/2026. |
-| [x] | geleia-cafe | Geleia de frutas vermelhas | R$ 18,00 | R$ 32,00 | Alterado em 17/08/2026. |
-| [x] | requeijao-cafe | Requeijão | R$ 25,00 |  | Mantido em 17/08/2026. |
-| [x] | queijo-cafe | Queijo fatiado | R$ 49,00 | R$ 22,00 | Alterado em 17/08/2026. |
-| [x] | achocolatado-cafe | Achocolatado | R$ 22,00 | R$ 15,00 | Alterado em 17/08/2026. |
-| [x] | leite-cafe | Leite Piracanjuba | R$ 22,00 | R$ 24,00 | Alterado em 17/08/2026. |
-| [x] | iogurte-cafe | Iogurte | R$ 18,00 |  | Mantido em 17/08/2026. |
-| [x] | biscoito-cafe | Biscoitos | R$ 16,00 |  | Mantido em 17/08/2026. |
-| [x] | mini-bolo-cafe | Mini bolo decorado | R$ 80,00 |  | Mantido em 17/08/2026. |
-| [x] | rosa-branca-cafe | Rosa branca | R$ 29,00 |  | Mantido em 17/08/2026. |
+| [x] | pao-frances-cafe | Porção de pães franceses | R$ 12,00 | R$ 15,00 | Alterado em 17/08/2026. Quantidade confirmada no WhatsApp. |
+| [x] | mini-croissant-cafe | Porção de mini croissants | R$ 18,00 |  | Mantido em 17/08/2026. Quantidade confirmada no WhatsApp. |
+| [x] | bolo-simples-cafe | Bolo simples - 1 unidade | R$ 49,00 |  | Mantido em 17/08/2026. Tamanho e sabor confirmados no WhatsApp. |
+| [x] | geleia-cafe | Geleia de frutas vermelhas - 1 pote | R$ 18,00 | R$ 32,00 | Alterado em 17/08/2026. Marca e peso confirmados no WhatsApp. |
+| [x] | requeijao-cafe | Requeijão tradicional - 1 pote | R$ 25,00 |  | Mantido em 17/08/2026. Marca e peso confirmados no WhatsApp. |
+| [x] | queijo-cafe | Porção de queijo fatiado | R$ 49,00 | R$ 22,00 | Alterado em 17/08/2026. Peso confirmado no WhatsApp. |
+| [x] | achocolatado-cafe | Achocolatado Nescau pronto para beber - 1 unidade | R$ 22,00 | R$ 15,00 | Alterado em 17/08/2026. Volume confirmado no WhatsApp. |
+| [x] | leite-cafe | Leite Piracanjuba integral - 1 unidade | R$ 22,00 | R$ 24,00 | Alterado em 17/08/2026. Volume confirmado no WhatsApp. |
+| [x] | iogurte-cafe | Iogurte Vigor morango - 1 unidade | R$ 18,00 |  | Mantido em 17/08/2026. Volume confirmado no WhatsApp. |
+| [x] | biscoito-cafe | Biscoito Bauducco Fini - 1 pacote | R$ 16,00 |  | Mantido em 17/08/2026. Sabor confirmado no WhatsApp. |
+| [x] | mini-bolo-cafe | Mini bolo decorado - 1 unidade | R$ 80,00 |  | Mantido em 17/08/2026. Sabor e acabamento confirmados no WhatsApp. |
+| [x] | rosa-branca-cafe | Rosa branca - 1 unidade | R$ 29,00 |  | Mantido em 17/08/2026. |
 
 ## Itens do Monte Sua Cesta
 
@@ -101,139 +109,139 @@ Observa??o: valores do cat?logo est?o em reais. Valores do montador foram conver
 
 ### Chocolates
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
 | [x] | ferrero-rocher-12 | Ferrero Rocher caixa 12 unidades | R$ 63,00 | R$ 69,00 | Alterado em 17/08/2026. Caixa com 12 unidades de Ferrero Rocher. |
-| [ ] | ferrero-rocher-10 | Ferrero Rocher caixa 10 unidades | R$ 53,00 |  | Caixa com 10 unidades de Ferrero Rocher. |
-| [ ] | ferrero-rocher-4 | Ferrero Rocher caixa 4 unidades | R$ 36,00 |  | Caixa com 4 unidades de Ferrero Rocher. |
-| [ ] | barrinha-cacau-show | Barrinha Cacau Show | R$ 9,00 |  | Barrinha Cacau Show para compor a cesta. |
-| [ ] | kit-kat | Kit Kat | R$ 7,00 |  | Kit Kat para compor a cesta. |
-| [ ] | talento | Talento | R$ 26,00 |  | Chocolate Talento para a cesta. |
-| [ ] | caixa-nestle | Caixa Nestlé | R$ 58,00 |  | Caixa de chocolates Nestlé. |
-| [ ] | caixa-garoto | Caixa Garoto | R$ 58,00 |  | Caixa de chocolates Garoto. |
-| [ ] | barra-nestle | Barra Nestlé | R$ 22,00 |  | Barra de chocolate Nestlé. |
-| [ ] | nutella | Nutella | R$ 44,00 |  | Creme de avelã Nutella para compor a cesta. |
-| [ ] | hersheys | Hershey's | R$ 22,00 |  | Barra Hershey's para compor a cesta. |
-| [ ] | cookies | Cookies | R$ 14,00 |  | Cookies para a cesta. |
-| [ ] | wafer | Wafer | R$ 12,00 |  | Wafer para compor a cesta. |
-| [ ] | marshmallow | Marshmallow | R$ 13,00 |  | Marshmallow para compor a cesta. |
+| [x] | ferrero-rocher-10 | Ferrero Rocher caixa 10 unidades | R$ 53,00 | R$ 58,00 | Alterado em 17/08/2026. Publicação pública pendente de uma foto correta; a imagem atual mostra caixa com 8 unidades. |
+| [x] | ferrero-rocher-4 | Ferrero Rocher caixa 4 unidades | R$ 36,00 | R$ 39,00 | Alterado em 17/08/2026. Caixa com 4 unidades de Ferrero Rocher. |
+| [x] | barrinha-cacau-show | Barrinha Cacau Show | R$ 9,00 | R$ 10,00 | Alterado em 17/08/2026. Barrinha Cacau Show para compor a cesta. |
+| [x] | kit-kat | Kit Kat | R$ 7,00 | R$ 8,00 | Alterado em 17/08/2026. Kit Kat para compor a cesta. |
+| [x] | talento | Talento | R$ 26,00 |  | Mantido em 17/08/2026. Chocolate Talento para a cesta. |
+| [x] | caixa-nestle | Caixa Nestlé | R$ 58,00 | Removido | Marcado como indisponível em 17/08/2026 durante a revisão de exibição. |
+| [x] | caixa-garoto | Caixa Garoto | R$ 58,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | barra-nestle | Barra Nestlé | R$ 22,00 |  | Mantido em 17/08/2026. Barra de chocolate Nestlé. |
+| [x] | nutella | Nutella | R$ 44,00 | R$ 35,00 | Alterado em 17/08/2026. Creme de avelã Nutella para compor a cesta. |
+| [x] | hersheys | Hershey's | R$ 22,00 | R$ 25,00 | Alterado em 17/08/2026. Barra Hershey's para compor a cesta. |
+| [x] | cookies | Cookies | R$ 14,00 |  | Mantido em 17/08/2026. Cookies para a cesta. |
+| [x] | wafer | Wafer | R$ 12,00 | Removido | Marcado como indisponível em 17/08/2026 durante a revisão de exibição. |
+| [x] | marshmallow | Marshmallow | R$ 13,00 | Removido | Marcado como indisponível em 17/08/2026. |
 
 ### Bebidas
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | bebida-especial | Bebida especial | R$ 63,00 |  | Bebida escolhida no fechamento pelo WhatsApp conforme disponibilidade. |
-| [ ] | vinho-pergola | Vinho Pérgola | R$ 80,00 |  | Vinho Pérgola para composição especial. |
-| [ ] | bebida-cafe | Bebida para café | R$ 18,00 |  | Item para cesta de café da manhã. |
-| [ ] | cafe-tradicional | Café tradicional | R$ 22,00 |  | Café em pó para cesta de café da manhã. |
-| [ ] | cappuccino | Cappuccino | R$ 22,00 |  | Cappuccino pronto para a cesta. |
-| [ ] | achocolatado | Achocolatado Nescau | R$ 19,00 |  | Achocolatado para compor cesta. |
-| [ ] | chocolate-quente | Chocolate quente | R$ 21,00 |  | Mix para chocolate quente. |
-| [ ] | cha | Chá | R$ 16,00 |  | Sache ou caixa de chá para cesta. |
-| [ ] | achocolatado-toddy | Achocolatado Toddy | R$ 19,00 |  | Achocolatado para cesta infantil ou café da manhã. |
-| [ ] | leite-piracanjuba | Leite Piracanjuba | R$ 22,00 |  | Leite para compor cesta de café da manhã. |
-| [ ] | suco-uva-kapo | Suco de uva Kapo | R$ 10,00 |  | Suco individual para cesta infantil ou café da manhã. |
-| [ ] | suco-uva-aurora | Suco de uva Aurora | R$ 35,00 |  | Suco de uva para composição especial. |
-| [ ] | iogurte-morango | Iogurte de morango | R$ 16,00 |  | Iogurte sabor morango para cesta de café da manhã. |
-| [ ] | iogurte-frutas-vermelhas | Iogurte frutas vermelhas | R$ 19,00 |  | Iogurte sabor frutas vermelhas para cesta. |
-| [ ] | danone | Danone | R$ 16,00 |  | Danone para compor cesta de café da manhã. |
-| [ ] | campari | Campari | R$ 260,00 |  | Campari para compor a cesta (álcool). |
-| [ ] | espumante | Espumante | R$ 116,00 |  | Espumante para celebrar. |
+| [x] | bebida-especial | Bebida especial | R$ 63,00 |  | Mantido em 17/08/2026. Bebida escolhida no fechamento pelo WhatsApp conforme disponibilidade. |
+| [x] | vinho-pergola | Vinho Pérgola | R$ 80,00 |  | Mantido em 17/08/2026. Vinho Pérgola para composição especial. |
+| [x] | bebida-cafe | Bebida para café | R$ 18,00 |  | Mantido em 17/08/2026. Item para cesta de café da manhã. |
+| [x] | cafe-tradicional | Café tradicional | R$ 22,00 |  | Mantido em 17/08/2026. Café em pó para cesta de café da manhã. |
+| [x] | cappuccino | Cappuccino | R$ 22,00 |  | Mantido em 17/08/2026. Cappuccino pronto para a cesta. |
+| [x] | achocolatado | Achocolatado Nescau | R$ 19,00 | R$ 12,00 | Alterado em 17/08/2026. Achocolatado para compor cesta. |
+| [x] | chocolate-quente | Chocolate quente | R$ 21,00 | R$ 14,00 | Alterado em 17/08/2026. Mix para chocolate quente. |
+| [x] | cha | Chá | R$ 16,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | achocolatado-toddy | Achocolatado Toddy | R$ 19,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | leite-piracanjuba | Leite Piracanjuba | R$ 22,00 |  | Mantido em 17/08/2026. Leite para compor cesta de café da manhã. |
+| [x] | suco-uva-kapo | Suco de uva Kapo | R$ 10,00 |  | Mantido em 17/08/2026. Suco individual para cesta infantil ou café da manhã. |
+| [x] | suco-uva-aurora | Suco de uva Aurora | R$ 35,00 | R$ 15,00 | Alterado e unificado com o catálogo público em 17/08/2026. |
+| [x] | iogurte-morango | Iogurte de morango | R$ 16,00 |  | Mantido em 17/08/2026. Iogurte sabor morango para cesta de café da manhã. |
+| [x] | iogurte-frutas-vermelhas | Iogurte frutas vermelhas | R$ 19,00 | R$ 20,00 | Alterado em 17/08/2026. Iogurte sabor frutas vermelhas para cesta. |
+| [x] | danone | Danone | R$ 16,00 |  | Mantido em 17/08/2026. Danone para compor cesta de café da manhã. |
+| [x] | campari | Campari | R$ 260,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | espumante | Espumante | R$ 116,00 |  | Mantido em 17/08/2026. Espumante para celebrar. |
 
-### Flores e decora??o
+### Flores e decoração
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | arranjo-rosas-naturais | Arranjo de rosas naturais | R$ 107,00 |  | Arranjo de rosas naturais para colocar na cesta. |
-| [ ] | arranjo-rosas-artificiais | Arranjo de rosas artificiais | R$ 53,00 |  | Arranjo de rosas artificiais para compor a cesta. |
-| [ ] | arranjo-vermelho | Arranjo vermelho | R$ 89,00 |  | Arranjo com presença para ocasiões especiais. |
-| [ ] | detalhe-girassol | Detalhe girassol | R$ 44,00 |  | Elemento alegre para decoração da cesta. |
-| [ ] | rosa-branca | Rosa branca | R$ 31,00 |  | Rosa branca para decoração. |
-| [ ] | rosa-rosa | Rosa rosa | R$ 31,00 |  | Rosa rosa para decoração. |
-| [ ] | rosa-perfumada | Rosa perfumada | R$ 35,00 |  | Rosa perfumada para presente. |
-| [ ] | mini-arranjo | Mini arranjo | R$ 35,00 |  | Mini arranjo para compor a cesta. |
-| [ ] | buque-compacto | Buquê compacto | R$ 85,00 |  | Buquê compacto para presente. |
+| [x] | arranjo-rosas-naturais | Arranjo de rosas naturais | R$ 107,00 |  | Mantido em 17/08/2026. Arranjo de rosas naturais para colocar na cesta. |
+| [x] | arranjo-rosas-artificiais | Arranjo de rosas artificiais | R$ 53,00 |  | Mantido em 17/08/2026. Arranjo de rosas artificiais para compor a cesta. |
+| [x] | arranjo-vermelho | Arranjo vermelho | R$ 89,00 |  | Mantido em 17/08/2026. Arranjo com presença para ocasiões especiais. |
+| [x] | detalhe-girassol | Detalhe girassol | R$ 44,00 |  | Mantido em 17/08/2026. Elemento alegre para decoração da cesta. |
+| [x] | rosa-branca | Rosa branca | R$ 31,00 |  | Mantido em 17/08/2026. Rosa branca para decoração. |
+| [x] | rosa-rosa | Rosa rosa | R$ 31,00 |  | Mantido em 17/08/2026. Rosa rosa para decoração. |
+| [x] | rosa-perfumada | Rosa perfumada | R$ 35,00 |  | Mantido em 17/08/2026. Rosa perfumada para presente. |
+| [x] | mini-arranjo | Mini arranjo | R$ 35,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | buque-compacto | Buquê compacto | R$ 85,00 |  | Mantido em 17/08/2026. Buquê compacto para presente. |
 
 ### Presentes
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | caneca-presente | Caneca para presente | R$ 44,00 |  | Caneca para deixar a cesta mais útil e afetiva. |
-| [ ] | pelucia | Pelúcia | R$ 71,00 |  | Pelúcia decorativa para complementar o presente. |
-| [ ] | perfume-bolso | Perfume de bolso | R$ 45,00 |  | Fragrância 15 ml conforme disponibilidade. |
-| [ ] | porta-retrato | Porta-retrato | R$ 35,00 |  | Porta-retrato para presente. |
-| [ ] | quadro | Quadro decorativo | R$ 62,00 |  | Quadro para decorar o presente. |
-| [ ] | agenda | Agenda | R$ 35,00 |  | Agenda para presente. |
-| [ ] | caderno | Caderno | R$ 26,00 |  | Caderno para presente. |
-| [ ] | copo-whisky | Copo de Whisky | R$ 44,00 |  | Copo de whisky como mimo. |
-| [ ] | taca-vinho | Taça de vinho | R$ 31,00 |  | Taça de vinho para a cesta. |
+| [x] | caneca-presente | Caneca para presente | R$ 44,00 |  | Mantido em 17/08/2026. Caneca para deixar a cesta mais útil e afetiva. |
+| [x] | pelucia | Pelúcia | R$ 71,00 |  | Mantido em 17/08/2026. Pelúcia decorativa para complementar o presente. |
+| [x] | perfume-bolso | Perfume de bolso | R$ 45,00 |  | Mantido em 17/08/2026. Fragrância 15 ml conforme disponibilidade. |
+| [x] | porta-retrato | Porta-retrato | R$ 35,00 |  | Mantido em 17/08/2026. Porta-retrato para presente. |
+| [x] | quadro | Quadro decorativo | R$ 62,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | agenda | Agenda | R$ 35,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | caderno | Caderno | R$ 26,00 |  | Mantido em 17/08/2026. Caderno para presente. |
+| [x] | copo-whisky | Copo de Whisky | R$ 44,00 |  | Mantido em 17/08/2026. Copo de whisky como mimo. |
+| [x] | taca-vinho | Taça de vinho | R$ 31,00 |  | Mantido em 17/08/2026. Taça de vinho para a cesta. |
 
-### T?bua de frios, caf? e frutas
+### Tábua de frios, café e frutas
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | tabua-frios-pequena | Tábua de frios pequena | R$ 107,00 |  | Opção menor com frios, queijo e azeitonas. Valor estimado conforme itens disponíveis. |
-| [ ] | tabua-frios-frutas-media | Tábua de frios média | R$ 152,00 |  | Composição intermediária com salame, queijo, azeitonas e petiscos. Valor estimado. |
-| [ ] | tabua-frios-premium | Tábua de frios premium | R$ 197,00 |  | Modelo maior com frios, queijos, ovos, chips, castanhas e molhos. Valor estimado. |
-| [ ] | tabua-frutas | Seleção de frutas | R$ 62,00 |  | Frutas para deixar a cesta mais completa. |
-| [ ] | pao-frances | Pão francês (fresco) | R$ 13,00 |  | Pão francês para cesta de café da manhã. |
-| [ ] | croissant | Mini croissant | R$ 16,00 |  | Mini croissant fresco para cesta. |
-| [ ] | torradas | Torradas | R$ 14,00 |  | Torradas para café da manhã. |
-| [ ] | biscoitos-cafe | Biscoitos Bauducco | R$ 14,00 |  | Biscoitos para cesta de café. |
-| [ ] | biscoito-passatempo | Biscoito Passatempo | R$ 9,00 |  | Biscoito Passatempo para compor a cesta. |
-| [ ] | club-social | Club Social | R$ 10,00 |  | Salgadinho Club Social para cesta de lanche. |
-| [ ] | geleia | Geleia de frutas vermelhas | R$ 24,00 |  | Geleia para compor cesta de café. |
-| [ ] | mel | Mel | R$ 26,00 |  | Mel para compor cesta de café. |
-| [ ] | requeijao | Requeijão | R$ 22,00 |  | Requeijão para cesta de café. |
-| [ ] | pao-massa-fina | Pão massa fina | R$ 13,00 |  | Pão massa fina para cesta de café da manhã. |
-| [ ] | pao-massa-grossa | Pão massa grossa | R$ 12,00 |  | Pão massa grossa para cesta de café da manhã. |
-| [ ] | bolo-simples-cafe | Bolo simples para cesta | R$ 44,00 |  | Bolo simples para cesta de café da manhã. |
-| [ ] | fatia-bolo-chocolate | Fatia de bolo de chocolate | R$ 21,00 |  | Fatia de bolo de chocolate para complementar a cesta. |
-| [ ] | mini-bolo-aniversario | Mini bolo de aniversário | R$ 72,00 |  | Mini bolo decorado para cesta especial. |
-| [ ] | bolo-chocolate-morango | Mini bolo chocolate com morango | R$ 80,00 |  | Mini bolo de chocolate com morangos para surpresa especial. |
-| [ ] | bolo-confeitado-feminino | Bolo confeitado feminino | R$ 179,00 |  | Bolo confeitado para composição premium. |
-| [ ] | bolo-bailarina-chocolate | Bolo bailarina chocolate 2 kg | R$ 204,00 |  | Bolo temático de chocolate 2 kg para composição especial. |
-| [ ] | salgados-variados | Salgados variados | R$ 62,00 |  | Porção de salgados variados para cesta de lanche. |
-| [ ] | queijo | Queijo fatiado | R$ 31,00 |  | Queijo para compor tábua de frios. |
-| [ ] | presunto | Presunto fatiado | R$ 27,00 |  | Presunto para tábua de frios. |
-| [ ] | salame | Salame fatiado | R$ 24,00 |  | Salame para tábua de frios. |
-| [ ] | uva | Uva | R$ 24,00 |  | Uvas frescas para compor a cesta. |
-| [ ] | maca | Maçã | R$ 18,00 |  | Maçã para compor a cesta. |
-| [ ] | pera | Pera | R$ 18,00 |  | Pera para compor a cesta. |
-| [ ] | kiwi | Kiwi | R$ 16,00 |  | Kiwi para compor a cesta. |
-| [ ] | morango | Morango | R$ 21,00 |  | Morango para compor a cesta. |
-| [ ] | banana | Banana | R$ 13,00 |  | Banana para compor a cesta. |
+| [x] | tabua-frios-pequena | Tábua de frios pequena | R$ 107,00 |  | Mantido em 17/08/2026. Opção menor com frios, queijo e azeitonas. Valor estimado conforme itens disponíveis. |
+| [x] | tabua-frios-frutas-media | Tábua de frios média | R$ 152,00 |  | Mantido em 17/08/2026. Composição intermediária com salame, queijo, azeitonas e petiscos. Valor estimado. |
+| [x] | tabua-frios-premium | Tábua de frios premium | R$ 197,00 |  | Mantido em 17/08/2026. Modelo maior com frios, queijos, ovos, chips, castanhas e molhos. Valor estimado. |
+| [x] | tabua-frutas | Seleção de frutas | R$ 62,00 |  | Mantido em 17/08/2026. Frutas para deixar a cesta mais completa. |
+| [x] | pao-frances | Pão francês (fresco) | R$ 13,00 |  | Mantido em 17/08/2026. Pão francês para cesta de café da manhã. |
+| [x] | croissant | Mini croissant | R$ 16,00 |  | Mantido em 17/08/2026. Mini croissant fresco para cesta. |
+| [x] | torradas | Torradas | R$ 14,00 |  | Mantido em 17/08/2026. Torradas para café da manhã. |
+| [x] | biscoitos-cafe | Biscoitos Bauducco | R$ 14,00 |  | Mantido em 17/08/2026. Biscoitos para cesta de café. |
+| [x] | biscoito-passatempo | Biscoito Passatempo | R$ 9,00 |  | Mantido em 17/08/2026. Biscoito Passatempo para compor a cesta. |
+| [x] | club-social | Club Social | R$ 10,00 |  | Mantido em 17/08/2026. Salgadinho Club Social para cesta de lanche. |
+| [x] | geleia | Geleia de frutas vermelhas | R$ 24,00 |  | Mantido em 17/08/2026. Geleia para compor cesta de café. |
+| [x] | mel | Mel | R$ 26,00 |  | Mantido em 17/08/2026. Mel para compor cesta de café. |
+| [x] | requeijao | Requeijão | R$ 22,00 |  | Mantido em 17/08/2026. Requeijão para cesta de café. |
+| [x] | pao-massa-fina | Pão massa fina | R$ 13,00 |  | Mantido em 17/08/2026. Pão massa fina para cesta de café da manhã. |
+| [x] | pao-massa-grossa | Pão massa grossa | R$ 12,00 |  | Mantido em 17/08/2026. Pão massa grossa para cesta de café da manhã. |
+| [x] | bolo-simples-cafe | Bolo simples para cesta | R$ 44,00 |  | Mantido em 17/08/2026. Bolo simples para cesta de café da manhã. |
+| [x] | fatia-bolo-chocolate | Fatia de bolo de chocolate | R$ 21,00 |  | Mantido em 17/08/2026. Fatia de bolo de chocolate para complementar a cesta. |
+| [x] | mini-bolo-aniversario | Mini bolo de aniversário | R$ 72,00 |  | Mantido em 17/08/2026. Mini bolo decorado para cesta especial. |
+| [x] | bolo-chocolate-morango | Mini bolo chocolate com morango | R$ 80,00 |  | Mantido em 17/08/2026. Mini bolo de chocolate com morangos para surpresa especial. |
+| [x] | bolo-confeitado-feminino | Bolo confeitado feminino | R$ 179,00 | R$ 210,00 | Alterado em 17/08/2026. Valor referente ao bolo de 2 kg. |
+| [x] | bolo-bailarina-chocolate | Bolo bailarina chocolate 2 kg | R$ 204,00 |  | Mantido em 17/08/2026. Bolo temático de chocolate 2 kg para composição especial. |
+| [x] | salgados-variados | Salgados variados | R$ 62,00 |  | Mantido em 17/08/2026. Porção de salgados variados para cesta de lanche. |
+| [x] | queijo | Queijo fatiado | R$ 31,00 |  | Mantido em 17/08/2026. Queijo para compor tábua de frios. |
+| [x] | presunto | Presunto fatiado | R$ 27,00 |  | Mantido em 17/08/2026. Presunto para tábua de frios. |
+| [x] | salame | Salame fatiado | R$ 24,00 |  | Mantido em 17/08/2026. Salame para tábua de frios. |
+| [x] | uva | Uva | R$ 24,00 |  | Mantido em 17/08/2026. Uvas frescas para compor a cesta. |
+| [x] | maca | Maçã | R$ 18,00 |  | Mantido em 17/08/2026. Maçã para compor a cesta. |
+| [x] | pera | Pera | R$ 18,00 |  | Mantido em 17/08/2026. Pera para compor a cesta. |
+| [x] | kiwi | Kiwi | R$ 16,00 |  | Mantido em 17/08/2026. Kiwi para compor a cesta. |
+| [x] | morango | Morango | R$ 21,00 |  | Mantido em 17/08/2026. Morango para compor a cesta. |
+| [x] | banana | Banana | R$ 13,00 |  | Mantido em 17/08/2026. Banana para compor a cesta. |
 
 ### Adicionais
 
-| OK | ID | Item | Valor atual | Novo valor | Observa??o |
+| OK | ID | Item | Valor atual | Novo valor | Observação |
 | --- | --- | --- | ---: | ---: | --- |
-| [ ] | balao | Balão decorativo | R$ 16,00 |  | Acabamento visual para deixar a surpresa mais marcante. |
-| [ ] | fotos-impressas | Fotografias | R$ 18,00 |  | Fotos impressas para personalizar a cesta. |
-| [ ] | cartao-personalizado | Carta personalizada | R$ 18,00 |  | Mensagem impressa ou escrita à mão. |
-| [ ] | laco | Laço decorativo | R$ 7,00 |  | Laço para acabamento da cesta. |
-| [ ] | papel-seda | Papel seda | R$ 4,00 |  | Papel seda para embrulho. |
-| [ ] | celofane | Celofane | R$ 7,00 |  | Celofane para embrulho. |
-| [ ] | fita-decorativa | Fita decorativa | R$ 7,00 |  | Fita decorativa para acabamento. |
-| [ ] | palha-decorativa | Palha decorativa | R$ 6,00 |  | Palha decorativa para acabamento. |
-| [ ] | caixa-decorativa | Caixa decorativa | R$ 26,00 |  | Caixa decorativa para apresentação. |
-| [ ] | cesta-vime | Cesta de vime | R$ 53,00 |  | Cesta de vime para montagem. |
-| [ ] | box-decorativo | Box decorativo | R$ 35,00 |  | Box decorativo para presentes. |
-| [ ] | bandeja | Bandeja | R$ 43,00 |  | Bandeja para apresentação. |
-| [ ] | cartao | Cartão | R$ 9,00 |  | Cartão simples para mensagem. |
-| [ ] | nome-personalizado | Nome personalizado | R$ 13,00 |  | Nome personalizado para a decoração. |
-| [ ] | mensagem-personalizada | Mensagem personalizada | R$ 13,00 |  | Mensagem personalizada para cartão. |
-| [ ] | tema-personalizado | Tema personalizado | R$ 18,00 |  | Tema de decoração personalizado. |
-| [ ] | cor-decoracao | Cor da decoração | R$ 0,00 |  | Escolha de cor para a decoração. |
-| [ ] | ocasiacao-aniversario | Ocasião: Aniversário | R$ 0,00 |  | Marca a cesta para aniversário. |
-| [ ] | ocasiacao-romantico | Ocasião: Romântico | R$ 0,00 |  | Marca a cesta como romântica. |
-| [ ] | ocasiacao-dia-dos-pais | Ocasião: Dia dos Pais | R$ 0,00 |  | Marca a cesta para Dia dos Pais. |
-| [ ] | ocasiacao-dia-das-maes | Ocasião: Dia das Mães | R$ 0,00 |  | Marca a cesta para Dia das Mães. |
-| [ ] | ocasiacao-cafe-da-manha | Ocasião: Café da manhã | R$ 0,00 |  | Marca a cesta como café da manhã. |
-| [ ] | ocasiacao-agradecimento | Ocasião: Agradecimento | R$ 0,00 |  | Marca a cesta como agradecimento. |
-| [ ] | ocasiacao-pedido-desculpas | Ocasião: Pedido de desculpas | R$ 0,00 |  | Marca a cesta para pedido de desculpas. |
-| [ ] | ocasiacao-conquista | Ocasião: Conquista | R$ 0,00 |  | Marca a cesta para comemorar conquista. |
-| [ ] | ocasiacao-formatura | Ocasião: Formatura | R$ 0,00 |  | Marca a cesta para formatura. |
-| [ ] | ocasiacao-casamento | Ocasião: Casamento | R$ 0,00 |  | Marca a cesta para casamento. |
-| [ ] | ocasiacao-noivado | Ocasião: Noivado | R$ 0,00 |  | Marca a cesta para noivado. |
-| [ ] | ocasiacao-surpresa | Ocasião: Surpresa | R$ 0,00 |  | Marca a cesta para surpresa. |
+| [x] | balao | Balão decorativo | R$ 16,00 | R$ 10,00 | Alterado em 17/08/2026. Acabamento visual para deixar a surpresa mais marcante. |
+| [x] | fotos-impressas | Fotografias impressas | R$ 18,00 | R$ 15,00 | Alterado em 17/08/2026. Valor por foto impressa. |
+| [x] | cartao-personalizado | Carta personalizada | R$ 18,00 |  | Mantido em 17/08/2026. Mensagem impressa ou escrita à mão. |
+| [x] | laco | Laço decorativo | R$ 7,00 |  | Mantido em 17/08/2026. Laço para acabamento da cesta. |
+| [x] | papel-seda | Papel seda | R$ 4,00 |  | Mantido em 17/08/2026. Papel seda para embrulho. |
+| [x] | celofane | Celofane | R$ 7,00 |  | Mantido em 17/08/2026. Celofane para embrulho. |
+| [x] | fita-decorativa | Fita decorativa | R$ 7,00 |  | Mantido em 17/08/2026. Fita decorativa para acabamento. |
+| [x] | palha-decorativa | Palha decorativa | R$ 6,00 |  | Mantido em 17/08/2026. Palha decorativa para acabamento. |
+| [x] | caixa-decorativa | Caixa decorativa | R$ 26,00 |  | Mantido em 17/08/2026. Caixa decorativa para apresentação. |
+| [x] | cesta-vime | Cesta de vime | R$ 53,00 | Removido | Marcado como indisponível em 17/08/2026. |
+| [x] | box-decorativo | Box decorativo | R$ 35,00 |  | Mantido em 17/08/2026. Box decorativo para presentes. |
+| [x] | bandeja | Bandeja | R$ 43,00 |  | Mantido em 17/08/2026. Bandeja para apresentação. |
+| [x] | cartao | Cartão | R$ 9,00 |  | Mantido em 17/08/2026. Cartão simples para mensagem. |
+| [x] | nome-personalizado | Nome personalizado | R$ 13,00 |  | Mantido em 17/08/2026. Nome personalizado para a decoração. |
+| [x] | mensagem-personalizada | Mensagem personalizada | R$ 13,00 |  | Mantido em 17/08/2026. Mensagem personalizada para cartão. |
+| [x] | tema-personalizado | Tema personalizado | R$ 18,00 |  | Mantido em 17/08/2026. Tema de decoração personalizado. |
+| [x] | cor-decoracao | Cor da decoração | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-aniversario | Ocasião: Aniversário | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-romantico | Ocasião: Romântico | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-dia-dos-pais | Ocasião: Dia dos Pais | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-dia-das-maes | Ocasião: Dia das Mães | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-cafe-da-manha | Ocasião: Café da manhã | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-agradecimento | Ocasião: Agradecimento | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-pedido-desculpas | Ocasião: Pedido de desculpas | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-conquista | Ocasião: Conquista | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-formatura | Ocasião: Formatura | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-casamento | Ocasião: Casamento | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-noivado | Ocasião: Noivado | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |
+| [x] | ocasiacao-surpresa | Ocasião: Surpresa | R$ 0,00 |  | Mantido como preferência interna sem custo em 17/08/2026. |

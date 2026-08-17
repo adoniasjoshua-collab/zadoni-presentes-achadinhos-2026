@@ -5,6 +5,36 @@ import vm from "node:vm";
 const SITE = "https://zadonipresentes.com.br";
 const PHONE = "5594992993138";
 const ROOT = process.cwd();
+const BASKET_BUDGET_TIERS = Object.freeze([
+  {
+    id: "basica",
+    name: "Básica",
+    priceLabel: "A partir de R$ 189",
+    priceDisplay: "R$ 189",
+    badge: "Essencial",
+    proposal: "Composição mais enxuta, delicada e bem apresentada.",
+    composition: "Base decorada, seleção essencial de itens para café da manhã, bebida e cartão."
+  },
+  {
+    id: "intermediaria",
+    name: "Intermediária",
+    priceLabel: "A partir de R$ 270",
+    priceDisplay: "R$ 270",
+    badge: "Mais escolhida",
+    featured: true,
+    proposal: "Mais variedade de itens e acabamento especial.",
+    composition: "Base decorada, seleção ampliada de café da manhã, chocolates, frutas ou frios e acabamento especial."
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    priceLabel: "A partir de R$ 300",
+    priceDisplay: "R$ 300+",
+    badge: "Mais completa",
+    proposal: "Montagem ampla, sofisticada e com mais impacto visual.",
+    composition: "Seleção mais completa de itens, complementos especiais, personalização e acabamento elaborado."
+  }
+]);
 
 function loadProducts() {
   const code = fs.readFileSync(path.join(ROOT, "assets/data/produtos.js"), "utf8");
@@ -51,15 +81,21 @@ function absoluteUrl(url) {
 function imageInfo(src) {
   const ext = path.extname(src);
   const base = src.slice(0, -ext.length);
+  const hasResponsiveVariants = src.includes("assets/optimized/products/");
   return {
     fallback: src,
-    webp480: `${base}-480.webp`.replace("assets/optimized/products/", "assets/optimized/products/responsive/"),
-    webp720: `${base}-720.webp`.replace("assets/optimized/products/", "assets/optimized/products/responsive/")
+    webp480: hasResponsiveVariants
+      ? `${base}-480.webp`.replace("assets/optimized/products/", "assets/optimized/products/responsive/")
+      : "",
+    webp720: hasResponsiveVariants
+      ? `${base}-720.webp`.replace("assets/optimized/products/", "assets/optimized/products/responsive/")
+      : ""
   };
 }
 
 function categoryKey(product) {
   const text = slugify(`${product.categoria} ${product.nome} ${product.descricao}`);
+  if (text.includes("adicion") || text.includes("avulso") || text.includes("extra")) return "adicionais";
   if (text.includes("perfume")) return "perfumes";
   if (text.includes("cesta") || text.includes("cestinha")) return "cestas";
   if (text.includes("buque") || text.includes("flor") || text.includes("rosa")) return "buques";
@@ -70,10 +106,17 @@ function categoryKey(product) {
 function whatsappUrl(product, source = "produto") {
   const msg = product
     ? [
-        `Olá! Tenho interesse em ${product.nome}.`,
-        `Vi no site da Zadoni Presentes.`,
-        `Pode me passar disponibilidade, formas de pagamento e entrega em Canaã dos Carajás?`
-      ].join(" ")
+        "Olá! Quero este presente:",
+        "",
+        `Produto: ${product.nome}`,
+        `Categoria: ${product.categoria}`,
+        `Valor anunciado: ${money(product.preco)}`,
+        `Resumo: ${product.descricao}`,
+        ...(product.observacaoPreco ? [`Observação: ${product.observacaoPreco}`] : []),
+        `Imagem do produto: ${absoluteUrl(product.imagem)}`,
+        "",
+        "Pode me informar disponibilidade, formas de pagamento e entrega em Canaã dos Carajás?"
+      ].join("\n")
     : "Olá! Vi o site da Zadoni Presentes e quero ajuda para escolher um presente em Canaã dos Carajás.";
 
   const params = new URLSearchParams({
@@ -87,20 +130,39 @@ function whatsappUrl(product, source = "produto") {
   return `https://wa.me/${PHONE}?${params.toString()}`;
 }
 
-function galleryWhatsAppUrl(image, index, source = "galeria") {
+function galleryWhatsAppUrl(image, index, source = "galeria", directory = "", budgetTier = null) {
   const modelLabel = image.modelLabel || `modelo ${index + 1}`;
+  const budgetDetails = budgetTier
+    ? [
+        `Faixa escolhida: ${budgetTier.name}`,
+        `Orçamento de referência: ${budgetTier.priceLabel}`,
+        `Proposta: ${budgetTier.proposal}`,
+        `Composição sugerida: ${budgetTier.composition}`
+      ]
+    : [];
   const msg = [
-    `Ola! Tenho interesse em uma cesta de cafe da manha parecida com o ${modelLabel}.`,
-    "Vi esse modelo real no site da Zadoni Presentes.",
-    "Pode me passar disponibilidade, valor final e opcoes de personalizacao?"
-  ].join(" ");
+    "Olá! Quero uma cesta parecida com esta referência:",
+    "",
+    `Modelo: ${modelLabel}`,
+    `Resumo: ${image.caption}`,
+    ...budgetDetails,
+    `Imagem do modelo: ${absoluteUrl(`${directory}/${image.src}`)}`,
+    "",
+    ...(budgetTier
+      ? [
+          "Gostaria que a Zadoni adaptasse este modelo para a faixa escolhida.",
+          "Pode confirmar os itens disponíveis, o valor final, as formas de pagamento e a entrega?",
+          "Entendo que a foto é uma referência e que itens, marcas e acabamento podem variar conforme disponibilidade."
+        ]
+      : ["Pode me informar disponibilidade, valor final e opções de personalização?"])
+  ].join("\n");
 
   const params = new URLSearchParams({
     text: msg,
     utm_source: "site",
     utm_medium: "whatsapp",
     utm_campaign: "seo_local",
-    utm_content: `${source}_${slugify(modelLabel)}`
+    utm_content: `${source}_${slugify(modelLabel)}${budgetTier ? `_${budgetTier.id}` : ""}`
   });
 
   return `https://wa.me/${PHONE}?${params.toString()}`;
@@ -108,8 +170,10 @@ function galleryWhatsAppUrl(image, index, source = "galeria") {
 function picture(product, index, prefix) {
   const img = imageInfo(product.imagem);
   const eager = index === 0;
-  return `<picture>
-                    <source type="image/webp" srcset="${prefix}${html(img.webp480)} 480w, ${prefix}${html(img.webp720)} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">
+  const responsiveSource = img.webp480
+    ? `\n                    <source type="image/webp" srcset="${prefix}${html(img.webp480)} 480w, ${prefix}${html(img.webp720)} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">`
+    : "";
+  return `<picture>${responsiveSource}
                     <img src="${prefix}${html(img.fallback)}" alt="${html(product.nome)}" width="720" height="900" loading="${eager ? "eager" : "lazy"}" decoding="async" fetchpriority="${eager ? "high" : "low"}">
                 </picture>`;
 }
@@ -149,6 +213,8 @@ function baseSchemas(pageUrl, title, breadcrumbs, options = {}) {
       "@type": "Organization",
       "@id": `${SITE}/#organization`,
       "name": "Zadoni Presentes",
+      "alternateName": "Zadoni",
+      "description": "Loja de presentes em Canaã dos Carajás com buquês, flores, cestas e mimos personalizados.",
       "url": SITE,
       "sameAs": ["https://www.instagram.com/zadonipresentescanaa"]
     }
@@ -180,6 +246,7 @@ function baseSchemas(pageUrl, title, breadcrumbs, options = {}) {
       "@type": "WebSite",
       "@id": `${SITE}/#website`,
       "name": "Zadoni Presentes",
+      "alternateName": "Zadoni",
       "url": SITE,
       "publisher": { "@id": `${SITE}/#organization` }
     }
@@ -267,6 +334,10 @@ function faqSchema(faqs) {
 }
 
 function head({ title, description, canonical, image, type = "website", prefix = "" }) {
+  const responsiveImage = imageInfo(image);
+  const preload = responsiveImage.webp720
+    ? `<link rel="preload" as="image" href="${prefix}${html(responsiveImage.webp720)}" imagesrcset="${prefix}${html(responsiveImage.webp480)} 480w, ${prefix}${html(responsiveImage.webp720)} 720w" imagesizes="(max-width: 640px) 92vw, 720px" type="image/webp" fetchpriority="high">`
+    : `<link rel="preload" as="image" href="${prefix}${html(image)}" fetchpriority="high">`;
   return `<!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script>
     <script>
@@ -285,6 +356,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <link rel="canonical" href="${canonical}">
     <meta property="og:title" content="${html(title)}">
     <meta property="og:description" content="${html(description)}">
+    <meta property="og:site_name" content="Zadoni Presentes">
     <meta property="og:type" content="${type}">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="${canonical}">
@@ -293,9 +365,9 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:title" content="${html(title)}">
     <meta name="twitter:description" content="${html(description)}">
     <meta name="twitter:image" content="${absoluteUrl(image)}">
-    <link rel="preload" as="image" href="${prefix}${html(imageInfo(image).webp720)}" imagesrcset="${prefix}${html(imageInfo(image).webp480)} 480w, ${prefix}${html(imageInfo(image).webp720)} 720w" imagesizes="(max-width: 640px) 92vw, 720px" type="image/webp" fetchpriority="high">
+    ${preload}
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260811-catalog-opt">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260817-complete-addons-1">`;
 }
 
 function header(prefix = "") {
@@ -328,7 +400,7 @@ function footer(prefix = "") {
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Zadoni Presentes</h3>
-                    <p>Presentes, buquês, cestas e surpresas com atendimento local em Canaã dos Carajás - PA.</p>
+                    <p>Loja de presentes em Canaã dos Carajás com buquês, flores, cestas e surpresas personalizadas.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Links</h3>
@@ -346,6 +418,7 @@ function footer(prefix = "") {
                     <p>Canaã dos Carajás - PA</p>
                     <p>WhatsApp: <a href="https://wa.me/${PHONE}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">94992993138</a></p>
                     <p>Instagram: <a href="https://www.instagram.com/zadonipresentescanaa" target="_blank" rel="noopener noreferrer" data-track="instagram">@zadonipresentescanaa</a></p>
+                    <p>Google: <a href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">ver avaliações da Zadoni</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -377,11 +450,33 @@ function faqHtml(faqs) {
     </section>`;
 }
 
+function galleryChoiceHtml(config, image, index, source, ctaLabel) {
+  const tiers = config.galleryBudgetTiers || [];
+
+  if (!tiers.length) {
+    return `<a class="btn-whatsapp-produto seo-gallery-cta" href="${html(galleryWhatsAppUrl(image, index, source, config.dir))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">${html(ctaLabel)}</a>`;
+  }
+
+  const modelLabel = image.modelLabel || `modelo ${index + 1}`;
+  return `<div class="seo-gallery-budget">
+                            <p class="seo-gallery-budget-title">Escolha a faixa para abrir no WhatsApp</p>
+                            <div class="seo-gallery-budget-options">
+                                ${tiers.map((tier) => `<a class="seo-gallery-budget-option${tier.featured ? " is-featured" : ""}" href="${html(galleryWhatsAppUrl(image, index, source, config.dir, tier))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-budget-tier="${html(tier.id)}" aria-label="Escolher ${html(modelLabel)} na versão ${html(tier.name)} por ${html(tier.priceLabel)} pelo WhatsApp">
+                                    <span>${html(tier.name)}</span>
+                                    <strong>${html(tier.priceDisplay)}</strong>
+                                    <small>${html(tier.badge)}</small>
+                                </a>`).join("\n                                ")}
+                            </div>
+                            <small class="seo-gallery-budget-help">O WhatsApp receberá o modelo, a faixa, a composição sugerida e o link da imagem.</small>
+                        </div>`;
+}
+
 function galleryHtml(config) {
   if (!config.galleryImages || config.galleryImages.length === 0) return "";
 
   const source = slugify(config.h1 || config.galleryTitle || "galeria");
   const ctaLabel = config.galleryCtaLabel || "Escolher este modelo";
+  const hasBudgetTiers = Boolean(config.galleryBudgetTiers?.length);
 
   return `<section class="seo-gallery" aria-labelledby="galeria-title">
         <div class="container">
@@ -389,13 +484,19 @@ function galleryHtml(config) {
                 <h2 id="galeria-title">${html(config.galleryTitle)}</h2>
                 <p>${html(config.galleryIntro)}</p>
             </div>
-            <div class="seo-gallery-grid">
+            ${config.galleryExtras === "cafe" ? `<aside class="seo-gallery-addons" id="cafe-gallery-addons" aria-labelledby="cafe-gallery-addons-title">
+                <h3 id="cafe-gallery-addons-title">Adicionais opcionais para sua cesta de café</h3>
+                <p>Selecione os complementos desejados antes de escolher o modelo e a faixa de orçamento. O resumo seguirá completo para o WhatsApp.</p>
+                <div id="cafe-gallery-addons-options"></div>
+                <strong class="seo-gallery-addons-total" id="cafe-gallery-addons-total" aria-live="polite">Nenhum adicional selecionado.</strong>
+            </aside>` : ""}
+            <div class="seo-gallery-grid${hasBudgetTiers ? " seo-gallery-grid--budget" : ""}">
                 ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item">
                     <img src="${html(image.src)}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
                     <figcaption>
                         <span>${html(image.caption)}</span>
                         ${config.galleryItemNote ? `<small class="seo-gallery-note">${html(config.galleryItemNote)}</small>` : ""}
-                        <a class="btn-whatsapp-produto seo-gallery-cta" href="${html(galleryWhatsAppUrl(image, index, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">${html(ctaLabel)}</a>
+                        ${galleryChoiceHtml(config, image, index, source, ctaLabel)}
                     </figcaption>
                 </figure>`).join("\n                ")}
             </div>
@@ -403,8 +504,8 @@ function galleryHtml(config) {
     </section>\n`;
 }
 function scripts(prefix, schemas) {
-  return `<script src="${prefix}assets/data/produtos.js?v=20260815-sales-engine" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260811-catalog-opt" defer></script>
+  return `<script src="${prefix}assets/data/produtos.js?v=20260817-remove-ferrero3-1" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260817-complete-addons-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
@@ -521,6 +622,10 @@ function mainPage() {
     {
       q: "Posso pedir ajuda para escolher um presente?",
       a: "Pode. Pelo WhatsApp, a Zadoni ajuda a escolher opções de buquês, cestas, kits, perfumes e mimos para a ocasião."
+    },
+    {
+      q: "Onde encontro uma loja de presentes perto de mim em Canaã?",
+      a: "A Zadoni atende clientes em Canaã dos Carajás pelo WhatsApp, com catálogo de presentes, confirmação de disponibilidade e orientação para entrega local."
     }
   ];
   const crumbItems = [
@@ -528,7 +633,7 @@ function mainPage() {
     { name: "Presentes em Canaã", href: "presentes-canaa.html", url: canonical }
   ];
   const schemas = [
-    ...baseSchemas(canonical, "Presentes em Canaã dos Carajás", crumbItems.map(({ name, url }) => ({ name, url }))),
+    ...baseSchemas(canonical, "Loja de Presentes em Canaã dos Carajás", crumbItems.map(({ name, url }) => ({ name, url }))),
     ...productSchemas(featured, canonical),
     faqSchema(faqs)
   ];
@@ -538,8 +643,8 @@ function mainPage() {
             <div class="container">
                 ${breadcrumbs(crumbItems)}
                 <p class="local-badge">Atendimento local em Canaã dos Carajás - PA</p>
-                <h1>Presentes em Canaã dos Carajás: Buquês, Cestas e Surpresas</h1>
-                <p class="hero-hook">Escolha buquês, cestas, kits românticos, perfumes de bolso e mimos prontos para surpreender com atendimento rápido pelo WhatsApp.</p>
+                <h1>Loja de Presentes em Canaã dos Carajás</h1>
+                <p class="hero-hook">A Zadoni reúne buquês, flores, cestas de café da manhã, kits românticos, perfumes e mimos com atendimento local pelo WhatsApp.</p>
                 <div class="hero-buttons">
                     <a class="btn btn-secondary" href="${html(whatsappUrl(null, "hero_presentes_canaa"))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Pedir ajuda no WhatsApp</a>
                     <a class="btn btn-outline" href="#produtos-container">Ver produtos</a>
@@ -563,22 +668,34 @@ function mainPage() {
         </section>
         <section class="seo-copy" aria-labelledby="como-escolher-title">
             <div class="container">
-                <h2 id="como-escolher-title">Como escolher um presente local com mais segurança</h2>
-                <p>Comprar de uma loja local em Canaã dos Carajás facilita a confirmação de disponibilidade, personalização e entrega. Antes de fechar o pedido, informe a ocasião, o horário desejado e se o presente precisa incluir cartão, foto, chocolates ou bebida.</p>
+                <h2 id="como-escolher-title">Loja de presentes perto de você em Canaã</h2>
+                <p>Quem procura uma loja de presentes perto de casa em Canaã dos Carajás pode consultar a Zadoni pelo WhatsApp. O atendimento local facilita a confirmação de disponibilidade, personalização e entrega. Antes de fechar o pedido, informe a ocasião, o horário desejado e se o presente precisa incluir cartão, foto, chocolates ou bebida.</p>
                 <p>Os valores abaixo são iniciais e ajudam no planejamento. A composição final pode mudar conforme tamanho do buquê, flores disponíveis, itens extras e acabamento escolhido.</p>
             </div>
         </section>
         <section class="seo-category-nav" aria-labelledby="categorias-title">
             <div class="container">
                 <h2 id="categorias-title">Categorias de presentes</h2>
-                <div class="seo-category-links">
-                    <a href="buques-canaa-dos-carajas/">Buquês em Canaã</a>
-                    <a href="cestas-de-presente-canaa/">Cestas de presente</a>
-                    <a href="floricultura-canaa-dos-carajas/">Flores e buquês em Canaã</a>
-                    <a href="cesta-cafe-da-manha-canaa/">Cesta matinal personalizada</a>
-                    <a href="presentes-romanticos-canaa/">Presentes românticos</a>
-                    <a href="rosas-perfumadas-canaa/">Rosas e perfumes</a>
-                    <a href="presentes-canaa-dos-carajas/">Catálogo local</a>
+                <div class="seo-category-groups">
+                    <div class="seo-category-group seo-category-group--primary" aria-label="Categorias mais procuradas">
+                        <p class="seo-category-group-label">Mais procurados</p>
+                        <div class="seo-category-links">
+                            <a href="floricultura-canaa-dos-carajas/">Floricultura em Canaã dos Carajás</a>
+                            <a href="cesta-cafe-da-manha-canaa/">Cesta de café da manhã em Canaã</a>
+                            <a href="buques-canaa-dos-carajas/">Buquês em Canaã</a>
+                            <a href="cestas-de-presente-canaa/">Cestas de presente</a>
+                        </div>
+                    </div>
+                    <div class="seo-category-group seo-category-group--secondary" aria-label="Outras formas de explorar presentes">
+                        <p class="seo-category-group-label">Explorar também</p>
+                        <div class="seo-category-links">
+                            <a href="presentes-romanticos-canaa/">Presentes românticos</a>
+                            <a href="presentes-canaa.html?categoria=adicionais#produtos-container">Itens avulsos para cestas</a>
+                            <a href="rosas-perfumadas-canaa/">Rosas e perfumes</a>
+                            <a href="presentes-canaa-dos-carajas/">Catálogo local</a>
+                        </div>
+                    </div>
+                    <p class="catalog-results-count" id="catalog-results-count" aria-live="polite"></p>
                 </div>
             </div>
         </section>
@@ -593,11 +710,13 @@ function mainPage() {
                         <button class="filtro-btn" onclick="filtrarProdutos('mimos', event)">Mimos</button>
                         <button class="filtro-btn" onclick="filtrarProdutos('cestas', event)">Cestas</button>
                         <button class="filtro-btn" onclick="filtrarProdutos('perfumes', event)">Perfumes de bolso</button>
+                        <button class="filtro-btn" onclick="filtrarProdutos('adicionais', event)">Itens avulsos</button>
                         <button class="filtro-btn" onclick="filtrarProdutos('promoções', event)">Destaques</button>
                     </div>
                 </div>
                 <div class="preco-observacao">
                     <strong>Observação sobre valores:</strong> os preços dos buquês, cestas e kits podem variar para mais ou para menos conforme tamanho, flores, chocolates, bebidas e complementos adicionados ao presente.
+                    <a href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">Ver avaliações da Zadoni no Google</a>.
                 </div>
                 <div class="produtos-grid" id="produtos-container">
                     ${featured.map((product, index) => productCard(product, index, "", "catalogo")).join("\n                    ")}
@@ -646,8 +765,8 @@ function mainPage() {
 
   return pageShell({
     path: "presentes-canaa.html",
-    title: "Presentes em Canaã dos Carajás | Buquês e Cestas | Zadoni",
-    description: "Compre presentes em Canaã dos Carajás com a Zadoni: buquês, cestas, kits românticos, perfumes e mimos com atendimento pelo WhatsApp.",
+    title: "Loja de Presentes em Canaã dos Carajás | Zadoni",
+    description: "Zadoni é uma loja de presentes em Canaã dos Carajás com buquês, flores, cestas de café da manhã, kits e mimos. Consulte pelo WhatsApp.",
     canonical,
     image: "assets/optimized/products/buque-te-amo-romantico.jpg",
     body,
@@ -658,11 +777,11 @@ function mainPage() {
 const pageConfigs = [
   {
     dir: "presentes-canaa-dos-carajas",
-    title: "Presentes em Canaã dos Carajás | Zadoni Presentes",
-    description: "Catálogo local da Zadoni Presentes em Canaã dos Carajás com buquês, cestas, kits, perfumes e mimos para pedir pelo WhatsApp.",
-    h1: "Presentes em Canaã dos Carajás",
-    h2: "Opções locais para presentear sem perder tempo",
-    intro: "Veja sugestões de presentes com atendimento local, preços iniciais e conversa direta pelo WhatsApp para confirmar disponibilidade.",
+    title: "Entrega de Presentes em Canaã dos Carajás | Zadoni",
+    description: "Entrega de presentes em Canaã dos Carajás com buquês, cestas, kits, perfumes e mimos da Zadoni. Consulte disponibilidade pelo WhatsApp.",
+    h1: "Entrega de Presentes em Canaã dos Carajás",
+    h2: "Opções locais para escolher e enviar um presente",
+    intro: "Veja sugestões da Zadoni para presentear em Canaã dos Carajás, com preços iniciais e atendimento pelo WhatsApp para confirmar disponibilidade e entrega.",
     copy1: "Para quem precisa resolver uma surpresa em Canaã dos Carajás, a compra local reduz dúvidas sobre prazo, personalização e entrega.",
     copy2: "A Zadoni trabalha com opções prontas e personalizáveis, incluindo buquês, cestas, kits, perfumes de bolso e mimos de valor acessível.",
     productsTitle: "Produtos locais em destaque",
@@ -674,8 +793,8 @@ const pageConfigs = [
   },
   {
     dir: "buques-canaa-dos-carajas",
-    title: "Buquês em Canaã dos Carajás | Zadoni Presentes",
-    description: "Buquês românticos, rosas e arranjos para presentear em Canaã dos Carajás com atendimento local pelo WhatsApp.",
+    title: "Buquês em Canaã dos Carajás | Floricultura Zadoni",
+    description: "Buquês em Canaã dos Carajás com rosas, flores e acabamento especial. Consulte modelos da floricultura Zadoni e disponibilidade pelo WhatsApp.",
     h1: "Buquês em Canaã dos Carajás",
     h2: "Buquês para surpreender com entrega local",
     intro: "Escolha buquês com flores, rosas e acabamento especial para aniversários, pedidos de desculpa, declarações e datas importantes.",
@@ -690,9 +809,9 @@ const pageConfigs = [
   },
   {
     dir: "cestas-de-presente-canaa",
-    title: "Cestas de Presente em Canaã | Zadoni Presentes",
-    description: "Cestas de presente em Canaã dos Carajás com chocolates, bebidas, cafés, itens masculinos e opções românticas.",
-    h1: "Cestas de presente em Canaã",
+    title: "Cestas de Presente em Canaã dos Carajás | Zadoni",
+    description: "Cestas de presente em Canaã dos Carajás com chocolates, bebidas, café e opções românticas. Personalize e consulte a Zadoni pelo WhatsApp.",
+    h1: "Cestas de Presente em Canaã dos Carajás",
     h2: "Cestas montadas para diferentes ocasiões",
     intro: "Veja cestas femininas, masculinas, românticas e de café da manhã para presentear em Canaã dos Carajás.",
     copy1: "As cestas podem combinar bebida, chocolates, caneca, petiscos, flores e itens de autocuidado conforme disponibilidade.",
@@ -707,10 +826,10 @@ const pageConfigs = [
   },
   {
     dir: "floricultura-canaa-dos-carajas",
-    title: "Floricultura em Canaã dos Carajás | Buquês e Presentes | Zadoni",
-    description: "Procura floricultura em Canaã dos Carajás? Conheça buquês, rosas, flores e presentes personalizados da Zadoni. Consulte modelos e disponibilidade pelo WhatsApp.",
-    h1: "Flores, Buquês e Presentes em Canaã dos Carajás",
-    h2: "Buquês e flores para momentos especiais",
+    title: "Floricultura em Canaã dos Carajás | Zadoni",
+    description: "Floricultura em Canaã dos Carajás com buquês, rosas, flores e presentes personalizados. Consulte modelos da Zadoni pelo WhatsApp.",
+    h1: "Floricultura em Canaã dos Carajás",
+    h2: "Buquês, flores e presentes para momentos especiais",
     intro: "Quem procura uma floricultura em Canaã dos Carajás também pode encontrar na Zadoni opções de buquês, rosas, flores e presentes preparados para momentos especiais. Os modelos podem variar conforme a disponibilidade e a personalização desejada.",
     copy1: "A Zadoni é uma empresa de presentes em Canaã dos Carajás que oferece opções com buquês, rosas, flores, chocolates e detalhes personalizados conforme os modelos disponíveis.",
     copy2: "Para consultar modelos e disponibilidade, envie uma mensagem pelo WhatsApp informando a ocasião e o estilo de presente desejado. A composição deve ser confirmada durante o atendimento.",
@@ -725,6 +844,7 @@ const pageConfigs = [
     }),
     faqs: [
       { q: "A Zadoni trabalha com flores e buquês em Canaã dos Carajás?", a: "A Zadoni oferece opções de buquês, rosas, flores e presentes conforme os modelos e a disponibilidade. A consulta pode ser feita diretamente pelo WhatsApp." },
+      { q: "Como encontrar uma floricultura perto de mim em Canaã?", a: "Se você está em Canaã dos Carajás, consulte a Zadoni pelo WhatsApp para conhecer os buquês e flores disponíveis e confirmar as condições de entrega local." },
       { q: "É possível personalizar o presente?", a: "Algumas opções podem receber complementos e detalhes personalizados. A disponibilidade deve ser confirmada durante o atendimento." },
       { q: "Como saber quais modelos estão disponíveis?", a: "Entre em contato pelo WhatsApp para consultar os modelos, valores e condições disponíveis para a data desejada." }
     ]
@@ -732,19 +852,21 @@ const pageConfigs = [
   {
     dir: "cesta-cafe-da-manha-canaa",
     title: "Cesta de Café da Manhã em Canaã dos Carajás | Zadoni",
-    description: "Cestas de café da manhã em Canaã dos Carajás para aniversários e momentos especiais. Consulte modelos, itens e personalização pelo WhatsApp.",
+    description: "Cesta de café da manhã em Canaã dos Carajás nas versões Básica, Intermediária e Premium. Escolha o modelo e consulte a Zadoni pelo WhatsApp.",
     image: "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-08.webp",
     h1: "Cesta de Café da Manhã em Canaã dos Carajás",
     h2: "Como funciona o pedido da cesta de café",
-    intro: "Uma cesta de café da manhã é uma forma especial de começar uma comemoração. A Zadoni prepara opções em Canaã dos Carajás com itens selecionados e possibilidades de personalização conforme o modelo e a disponibilidade.",
-    copy1: "Primeiro escolha uma referência visual na galeria. Depois a Zadoni confirma pelo WhatsApp quais itens estão disponíveis, quais ajustes cabem no orçamento e qual será o valor final.",
-    copy2: "As fotos abaixo não são pacotes fechados: elas ajudam a comunicar estilo, tamanho e acabamento desejado para aniversários, surpresas românticas e momentos especiais.",
+    intro: "Quem procura cesta de café da manhã em Canaã dos Carajás encontra na Zadoni modelos reais com itens selecionados e possibilidades de personalização conforme orçamento e disponibilidade.",
+    copy1: "Primeiro escolha uma referência visual na galeria e depois selecione a faixa Básica, Intermediária ou Premium. O WhatsApp receberá um resumo com o modelo, orçamento, composição sugerida e link da imagem.",
+    copy2: "As fotos abaixo são referências de estilo e acabamento. A Zadoni adapta cada modelo à faixa escolhida e confirma os itens disponíveis, a personalização e o valor final durante o atendimento.",
     productsTitle: "Base de orçamento para cesta de café",
     productsIntro: "Use esta opção como ponto de partida para o atendimento. O valor exibido é inicial; a composição final é montada a partir do modelo escolhido na galeria, dos itens disponíveis e da personalização desejada.",
     galleryTitle: "Escolha um modelo de inspiração",
-    galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Escolha a referência mais próxima do que você deseja e consulte disponibilidade, itens e valor final pelo WhatsApp.",
-    galleryItemNote: "Modelo para inspiração. O valor final varia conforme itens escolhidos e disponíveis.",
+    galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Em cada modelo, escolha uma montagem Básica a partir de R$ 189, Intermediária a partir de R$ 270 ou Premium a partir de R$ 300.",
+    galleryItemNote: "A foto é uma referência visual. Itens, marcas e acabamento são adaptados à faixa e à disponibilidade.",
     galleryCtaLabel: "Consultar este modelo",
+    galleryBudgetTiers: BASKET_BUDGET_TIERS,
+    galleryExtras: "cafe",
     showProductsSection: false,
     productPriceNote: "Valor inicial. O preço final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalização; pode ficar em torno de R$ 200, R$ 300 ou mais.",
     galleryImages: [
@@ -770,15 +892,16 @@ const pageConfigs = [
     }),
     faqs: [
       { q: "O que pode acompanhar a cesta de café da manhã?", a: "A composição varia conforme o modelo escolhido e a disponibilidade dos itens. Consulte pelo WhatsApp para conhecer as opções atuais." },
+      { q: "Quais são as faixas de montagem?", a: "Cada modelo pode ser solicitado nas versões Básica a partir de R$ 189, Intermediária a partir de R$ 270 ou Premium a partir de R$ 300. A composição e o valor final são confirmados pelo WhatsApp." },
       { q: "É possível personalizar a cesta?", a: "A possibilidade de personalização depende do modelo e dos itens disponíveis. Os detalhes podem ser definidos durante o atendimento." },
       { q: "Como consultar preço e disponibilidade?", a: "Entre em contato pelo WhatsApp informando a data, a ocasião e o tipo de cesta desejada." }
     ]
   },
   {
     dir: "presentes-romanticos-canaa",
-    title: "Presentes Românticos em Canaã | Zadoni Presentes",
+    title: "Presentes Românticos em Canaã dos Carajás | Zadoni",
     description: "Presentes românticos em Canaã dos Carajás: buquês, boxes, kits, cestas e mimos para declarar carinho.",
-    h1: "Presentes românticos em Canaã",
+    h1: "Presentes Românticos em Canaã dos Carajás",
     h2: "Surpresas para declarar carinho",
     intro: "Opções românticas para namoro, aniversário de relacionamento, pedido de desculpas ou uma surpresa fora de data.",
     copy1: "Presentes românticos funcionam melhor quando combinam mensagem, visual e um item que tenha a ver com a pessoa presenteada.",
@@ -793,9 +916,9 @@ const pageConfigs = [
   },
   {
     dir: "rosas-perfumadas-canaa",
-    title: "Rosas e Perfumes em Canaã | Zadoni Presentes",
+    title: "Rosas e Perfumes em Canaã dos Carajás | Zadoni",
     description: "Rosas, buquês e perfumes de bolso em Canaã dos Carajás para presentes elegantes e fáceis de pedir pelo WhatsApp.",
-    h1: "Rosas e perfumes em Canaã",
+    h1: "Rosas e Perfumes em Canaã dos Carajás",
     h2: "Combinações delicadas para presentes marcantes",
     intro: "Rosas, flores naturais e perfumes de bolso são opções práticas para montar uma surpresa elegante em Canaã dos Carajás.",
     copy1: "A combinação de flor e fragrância funciona para presentes românticos, aniversários e lembranças de agradecimento.",

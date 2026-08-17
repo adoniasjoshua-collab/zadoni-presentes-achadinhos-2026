@@ -104,7 +104,7 @@
 
     var imagemUrl = criarUrlAbsoluta(produto.imagem);
     if (imagemUrl) {
-      linhas.push("Imagem: " + imagemUrl);
+      linhas.push("Imagem do produto: " + imagemUrl);
     }
 
     linhas.push("");
@@ -241,12 +241,12 @@
   function criarAdicionaisProduto(produto, onChange) {
     if (!produtoTemAdicionais(produto)) return null;
 
-    var wrapper = document.createElement("div");
+    var wrapper = document.createElement("details");
     wrapper.className = "produto-adicionais";
 
-    var titulo = document.createElement("p");
+    var titulo = document.createElement("summary");
     titulo.className = "produto-adicionais-titulo";
-    titulo.textContent = obterTituloAdicionais(produto);
+    titulo.textContent = obterTituloAdicionais(produto) + " " + produto.adicionaisOpcionais.length + " opções";
     wrapper.appendChild(titulo);
 
     produto.adicionaisOpcionais.forEach(function (adicional, index) {
@@ -283,7 +283,7 @@
         inputQuantidade.addEventListener("input", onChange);
 
         var textoQuantidade = document.createElement("span");
-        textoQuantidade.textContent = adicional.nome + " +" + formatarPreco(adicional.preco) + " por " + (adicional.unidade || "unidade");
+        textoQuantidade.textContent = adicional.nome + " +" + formatarPreco(adicional.preco) + " por " + (adicional.unidade || "unidade") + (adicional.observacao ? " · " + adicional.observacao : "");
 
         var imagemQuantidade = criarImagemAdicional();
         if (imagemQuantidade) {
@@ -320,6 +320,74 @@
     });
 
     return wrapper;
+  }
+
+  function obterAdicionaisCafeGaleria() {
+    return typeof adicionaisCestasCafe !== "undefined" && Array.isArray(adicionaisCestasCafe)
+      ? adicionaisCestasCafe
+      : [];
+  }
+
+  function adicionarExtrasAoLinkWhatsApp(linkBase, adicionaisSelecionados) {
+    if (!adicionaisSelecionados.length) return linkBase;
+
+    var url = new URL(linkBase);
+    var mensagem = url.searchParams.get("text") || "";
+    var linhas = ["", "Adicionais opcionais selecionados:"];
+    var total = 0;
+
+    adicionaisSelecionados.forEach(function (adicional) {
+      var quantidade = Math.max(1, Number(adicional.quantidade || 1));
+      var subtotal = Number(adicional.preco || 0) * quantidade;
+      total += subtotal;
+      linhas.push("- " + quantidade + "x " + adicional.nome + " (" + formatarPreco(subtotal) + ")");
+    });
+
+    linhas.push("Total estimado dos adicionais: " + formatarPreco(total));
+    url.searchParams.set("text", mensagem + "\n" + linhas.join("\n"));
+    return url.toString();
+  }
+
+  function inicializarAdicionaisGaleriaCafe() {
+    var painel = document.getElementById("cafe-gallery-addons");
+    var destino = document.getElementById("cafe-gallery-addons-options");
+    if (!painel || !destino || painel.dataset.initialized === "true") return;
+
+    var lista = obterAdicionaisCafeGaleria();
+    if (!lista.length) return;
+
+    painel.dataset.initialized = "true";
+    var produtoReferencia = {
+      categoria: "Cestas",
+      nome: "Cesta de café da manhã",
+      adicionaisOpcionais: lista
+    };
+    var links = Array.prototype.slice.call(document.querySelectorAll(".seo-gallery-budget-option"));
+    var total = document.getElementById("cafe-gallery-addons-total");
+
+    links.forEach(function (link) {
+      link.dataset.baseWhatsappHref = link.href;
+    });
+
+    function atualizarLinksGaleria() {
+      var selecionados = obterAdicionaisSelecionados(painel, produtoReferencia);
+      var valor = selecionados.reduce(function (soma, adicional) {
+        return soma + Number(adicional.preco || 0) * Math.max(1, Number(adicional.quantidade || 1));
+      }, 0);
+
+      links.forEach(function (link) {
+        link.href = adicionarExtrasAoLinkWhatsApp(link.dataset.baseWhatsappHref, selecionados);
+      });
+
+      if (total) {
+        total.textContent = selecionados.length
+          ? selecionados.length + " adicional(is) selecionado(s) - " + formatarPreco(valor)
+          : "Nenhum adicional selecionado.";
+      }
+    }
+
+    destino.appendChild(criarAdicionaisProduto(produtoReferencia, atualizarLinksGaleria));
+    atualizarLinksGaleria();
   }
 
   function criarCardProdutoLocal(produto, index) {
@@ -468,6 +536,25 @@
     }
   }
 
+  function atualizarContagemProdutos(lista, categoria) {
+    var status = document.getElementById("catalog-results-count");
+    if (!status) return;
+
+    var rotulos = {
+      todos: "no catálogo",
+      buques: "em Buquês",
+      kits: "em Kits",
+      mimos: "em Mimos",
+      cestas: "em Cestas",
+      perfumes: "em Perfumes de bolso",
+      adicionais: "em Itens avulsos",
+      promocoes: "em Destaques"
+    };
+    var total = lista.length;
+    var substantivo = total === 1 ? "produto encontrado" : "produtos encontrados";
+    status.textContent = total + " " + substantivo + " " + (rotulos[categoria] || "nesta categoria") + ".";
+  }
+
   function filtrarProdutos(categoria, event) {
     event = event || window.event;
     categoria = normalizarCategoriaProdutos(categoria);
@@ -479,6 +566,7 @@
 
     atualizarBotaoAtivo(".filtro-btn", event && event.target ? event.target : null);
     renderizarProdutosLocais(filtrados);
+    atualizarContagemProdutos(filtrados, categoria);
 
     rastrearEvento("select_category", {
       categoria: categoria,
@@ -499,6 +587,7 @@
       });
 
     renderizarProdutosLocais(lista);
+    atualizarContagemProdutos(lista, categoriaInicial);
 
     document.querySelectorAll(".filtro-btn").forEach(function (botao) {
       var texto = normalizarCategoriaProdutos(botao.textContent);
@@ -619,6 +708,7 @@
     criarCompatibilidadeLegado();
     inicializarMenuMobile();
     carregarProdutosLocais();
+    inicializarAdicionaisGaleriaCafe();
     inicializarTrackingLinks();
   }
 

@@ -1,31 +1,26 @@
 /**
- * Base de produtos - Zadoni
- * Dados ficticios organizados para edicao rapida.
+ * Base ativa de produtos - Zadoni.
+ * Nomes e observacoes devem informar unidade, porcao ou variacao de estoque.
  */
 
 const adicionaisBuques = [
   {
     id: "ferrero-rocher",
-    nome: "Ferrero Rocher caixa 4 unidades",
-    preco: 40.00,
+    nome: "Ferrero Rocher - caixa com 4 unidades",
+    preco: 39.00,
     imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-4.webp"
   },
   {
-    id: "caixinha-tres-ferrero",
-    nome: "Caixinha com 3 Ferrero Rocher",
-    preco: 29.00,
-    imagem: "assets/optimized/products/mimo-ferrero-elegante.jpg"
-  },
-  {
     id: "ursinho-chaveiro",
-    nome: "Ursinho de pelúcia chaveiro",
+    nome: "Ursinho de pelúcia chaveiro - 1 unidade",
     preco: 29.00,
     imagem: "monte-sua-cesta/assets/produtos/chaveiro-ursinho.webp"
   },
   {
     id: "cartao-personalizado",
-    nome: "Cartão impresso ou escrito à mão",
+    nome: "Cartão personalizado - 1 unidade",
     preco: 15.00,
+    observacao: "Mensagem enviada pelo cliente no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp"
   },
   {
@@ -34,70 +29,87 @@ const adicionaisBuques = [
     preco: 15.00,
     tipo: "quantidade",
     unidade: "foto",
-    imagem: "assets/optimized/products/kit-vela-presente-especial.jpg"
+    observacao: "Arquivo enviado pelo cliente no WhatsApp"
   },
   {
     id: "body-splash-winpink",
-    nome: "Body Splash Winpink",
-    preco: 97.00
+    nome: "Body Splash Winpink - 1 unidade",
+    preco: 97.00,
+    observacao: "Fragrância e embalagem confirmadas no WhatsApp"
   },
   {
     id: "perfume-bolso-amakha",
     nome: "Perfume de bolso Amakha Paris 15 ml",
     preco: 50.00,
-    observacao: "Fragrância a escolher",
+    observacao: "Fragrância escolhida conforme estoque",
     imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg"
   },
   {
     id: "perfume-hinode-100ml",
-    nome: "Perfume Hinode 100 ml",
+    nome: "Perfume Hinode 100 ml - 1 unidade",
     preco: 189.00,
-    observacao: "A partir de R$ 189,00"
+    observacao: "A partir de R$ 189; fragrância e valor final confirmados no WhatsApp"
   }
 ];
 
 const adicionaisCestas = [
   {
     id: "ferrero-rocher-cesta",
-    nome: "Ferrero Rocher caixa 4 unidades",
-    preco: 40.00,
+    nome: "Ferrero Rocher - caixa com 4 unidades",
+    preco: 39.00,
     imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-4.webp"
   },
   {
+    id: "ferrero-rocher-12-cesta",
+    nome: "Ferrero Rocher - caixa com 12 unidades",
+    preco: 69.00,
+    imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-12.webp"
+  },
+  {
+    id: "barrinha-cacau-show-cesta",
+    nome: "Barrinha Cacau Show - 1 unidade",
+    preco: 10.00,
+    observacao: "Sabor escolhido conforme disponibilidade",
+    imagem: "monte-sua-cesta/assets/produtos/barrinha-cacau-show.webp"
+  },
+  {
     id: "nutella-cesta",
-    nome: "Nutella",
+    nome: "Nutella para cesta - 1 pote",
     preco: 35.00,
+    observacao: "Tamanho da embalagem confirmado no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/nutella.webp"
   },
   {
     id: "mini-bolo-cesta",
-    nome: "Mini bolo decorado",
+    nome: "Mini bolo decorado - 1 unidade",
     preco: 80.00,
-    observacao: "Conforme disponibilidade",
+    observacao: "Sabor e acabamento confirmados no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp"
   },
   {
     id: "salgados-variados-cesta",
-    nome: "Salgados variados",
+    nome: "Porção de salgados variados",
     preco: 69.00,
-    observacao: "Porção conforme disponibilidade",
+    observacao: "Quantidade da porção confirmada no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/salgados-variados.webp"
   },
   {
     id: "suco-uva-aurora-cesta",
-    nome: "Suco de uva Aurora - garrafa pequena",
-    preco: 18.00,
+    nome: "Suco de uva Aurora - 1 garrafa pequena",
+    preco: 15.00,
     imagem: "monte-sua-cesta/assets/produtos/suco-uva-aurora.webp"
   },
   {
     id: "caneca-presente",
-    nome: "Caneca para presente",
-    preco: 39.00
+    nome: "Caneca para presente - 1 unidade",
+    preco: 39.00,
+    observacao: "Modelo e cor confirmados no WhatsApp"
   },
   {
     id: "cartao-personalizado-cesta",
-    nome: "Cartao impresso ou escrito a mao",
+    nome: "Cartão personalizado - 1 unidade",
     preco: 15.00,
+    observacao: "Mensagem enviada pelo cliente no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp"
   },
   {
@@ -105,89 +117,108 @@ const adicionaisCestas = [
     nome: "Foto impressa",
     preco: 15.00,
     tipo: "quantidade",
-    unidade: "foto"
+    unidade: "foto",
+    observacao: "Arquivo enviado pelo cliente no WhatsApp"
   },
   {
     id: "item-beleza",
-    nome: "Item de beleza ou autocuidado",
+    nome: "Item de beleza ou autocuidado - 1 unidade",
     preco: 47.00,
-    observacao: "Produto conforme disponibilidade"
+    observacao: "Produto específico escolhido com a Zadoni no WhatsApp"
   }
 ];
 
 const adicionaisCafeManha = [
   {
     id: "pao-frances-cafe",
-    nome: "Pão francês",
+    nome: "Porção de pães franceses",
     preco: 15.00,
+    observacao: "Quantidade da porção confirmada no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/pao-frances.webp"
   },
   {
     id: "mini-croissant-cafe",
-    nome: "Mini croissant",
+    nome: "Porção de mini croissants",
     preco: 18.00,
+    observacao: "Quantidade da porção confirmada no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/mini-croissant.webp"
   },
   {
     id: "bolo-simples-cafe",
-    nome: "Bolo simples",
+    nome: "Bolo simples - 1 unidade",
     preco: 49.00,
+    observacao: "Tamanho e sabor confirmados no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/bolo-simples-cafe.webp"
   },
   {
     id: "geleia-cafe",
-    nome: "Geleia de frutas vermelhas",
+    nome: "Geleia de frutas vermelhas - 1 pote",
     preco: 32.00,
+    observacao: "Marca e peso confirmados no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/geleia-frutas-vermelhas.webp"
   },
   {
     id: "requeijao-cafe",
-    nome: "Requeijão",
+    nome: "Requeijão tradicional - 1 pote",
     preco: 25.00,
+    observacao: "Marca e peso confirmados no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/requeijao-vigor.webp"
   },
   {
     id: "queijo-cafe",
-    nome: "Queijo fatiado",
+    nome: "Porção de queijo fatiado",
     preco: 22.00,
+    observacao: "Peso da porção confirmado no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/queijo-fatiado.webp"
   },
   {
     id: "achocolatado-cafe",
-    nome: "Achocolatado",
+    nome: "Achocolatado Nescau pronto para beber - 1 unidade",
     preco: 15.00,
+    observacao: "Volume confirmado no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/achocolatado-nescau.webp"
   },
   {
     id: "leite-cafe",
-    nome: "Leite Piracanjuba",
+    nome: "Leite Piracanjuba integral - 1 unidade",
     preco: 24.00,
+    observacao: "Volume confirmado no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/leite-piracanjuba.webp"
   },
   {
     id: "iogurte-cafe",
-    nome: "Iogurte",
+    nome: "Iogurte Vigor morango - 1 unidade",
     preco: 18.00,
+    observacao: "Volume confirmado no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/iogurte-morango.webp"
   },
   {
     id: "biscoito-cafe",
-    nome: "Biscoitos",
+    nome: "Biscoito Bauducco Fini - 1 pacote",
     preco: 16.00,
+    observacao: "Sabor confirmado no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/biscoito-bauducco.webp"
   },
   {
     id: "mini-bolo-cafe",
-    nome: "Mini bolo decorado",
+    nome: "Mini bolo decorado - 1 unidade",
     preco: 80.00,
+    observacao: "Sabor e acabamento confirmados no WhatsApp",
     imagem: "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp"
   },
   {
     id: "rosa-branca-cafe",
-    nome: "Rosa branca",
+    nome: "Rosa branca - 1 unidade",
     preco: 29.00,
     imagem: "monte-sua-cesta/assets/produtos/rosa-branca.webp"
   }
+];
+
+// Cestas de cafe podem receber tanto complementos matinais quanto os
+// adicionais gerais de cesta. O mini bolo aparece uma unica vez.
+const adicionaisCestasCafe = [
+  ...adicionaisCafeManha,
+  ...adicionaisCestas.filter((adicional) => adicional.id !== "mini-bolo-cesta")
 ];
 
 const produtosLocais = [
@@ -550,7 +581,7 @@ const produtosLocais = [
   },
   {
     id: 38,
-    nome: "Mini bolo de aniversário",
+    nome: "Mini bolo decorado - 1 unidade",
     categoria: "Adicionais",
     descricao: "Mini bolo decorado para enviar junto com cesta, buquê ou mimo especial. Valor estimado conforme modelo e disponibilidade.",
     preco: 80.00,
@@ -561,34 +592,35 @@ const produtosLocais = [
   },
   {
     id: 39,
-    nome: "Salgados variados",
+    nome: "Porção de salgados variados",
     categoria: "Adicionais",
     descricao: "Porção de salgados variados para compor cesta de lanche, aniversário ou café especial.",
     preco: 69.00,
     imagem: "monte-sua-cesta/assets/produtos/salgados-variados.webp",
     destaque: false,
-    observacaoPreco: "Valor estimado conforme quantidade e disponibilidade.",
+    observacaoPreco: "O valor corresponde a uma porção. A quantidade e a disponibilidade são confirmadas no WhatsApp.",
     whatsappMensagem: "Ola! Tenho interesse em salgados variados para complementar uma cesta."
   },
   {
     id: 40,
-    nome: "Nutella para cesta",
+    nome: "Nutella para cesta - 1 pote",
     categoria: "Adicionais",
     descricao: "Creme de avelã Nutella para deixar a composição mais premium e afetiva.",
     preco: 35.00,
     imagem: "monte-sua-cesta/assets/produtos/nutella.webp",
-    destaque: false,
+    destaque: true,
+    observacaoPreco: "O tamanho da embalagem é confirmado no WhatsApp.",
     whatsappMensagem: "Ola! Quero adicionar Nutella em uma cesta da Zadoni."
   },
   {
     id: 41,
-    nome: "Bolo simples para cesta",
+    nome: "Bolo simples para cesta - 1 unidade",
     categoria: "Adicionais",
     descricao: "Bolo simples para cesta de café da manhã ou lanche personalizado.",
     preco: 49.00,
     imagem: "monte-sua-cesta/assets/produtos/bolo-simples-cafe.webp",
     destaque: false,
-    observacaoPreco: "Valor estimado conforme tamanho e disponibilidade.",
+    observacaoPreco: "O tamanho, o sabor e a disponibilidade são confirmados no WhatsApp.",
     whatsappMensagem: "Ola! Tenho interesse em um bolo simples para montar uma cesta."
   },
   {
@@ -604,7 +636,7 @@ const produtosLocais = [
   },
   {
     id: 43,
-    nome: "Suco de uva Aurora",
+    nome: "Suco de uva Aurora - 1 garrafa pequena",
     categoria: "Adicionais",
     descricao: "Garrafa menor de suco de uva Aurora para compor cestas especiais, opções masculinas, românticas ou de café.",
     preco: 15.00,
@@ -614,12 +646,78 @@ const produtosLocais = [
   },
   {
     id: 44,
-    nome: "Rosa branca avulsa",
+    nome: "Rosa branca avulsa - 1 unidade",
     categoria: "Adicionais",
     descricao: "Rosa branca para incluir em cesta, buquê, bandeja ou surpresa personalizada.",
     preco: 29.00,
     imagem: "monte-sua-cesta/assets/produtos/rosa-branca.webp",
     destaque: false,
     whatsappMensagem: "Ola! Tenho interesse em adicionar rosa branca a um presente."
+  },
+  {
+    id: 46,
+    nome: "Ferrero Rocher - caixa com 4 unidades",
+    categoria: "Adicionais",
+    descricao: "Caixa fechada com 4 bombons Ferrero Rocher para complementar cesta, buquê ou mimo.",
+    preco: 39.00,
+    imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-4.webp",
+    destaque: true,
+    whatsappMensagem: "Ola! Quero adicionar uma caixa com 4 Ferrero Rocher ao meu presente."
+  },
+  {
+    id: 48,
+    nome: "Ursinho de pelúcia chaveiro - 1 unidade",
+    categoria: "Adicionais",
+    descricao: "Ursinho de pelúcia em formato de chaveiro para complementar cesta, buquê ou mimo.",
+    preco: 29.00,
+    imagem: "monte-sua-cesta/assets/produtos/chaveiro-ursinho.webp",
+    destaque: false,
+    observacaoPreco: "O modelo e a cor são confirmados conforme o estoque.",
+    whatsappMensagem: "Ola! Quero adicionar um ursinho de pelucia chaveiro ao meu presente."
+  },
+  {
+    id: 49,
+    nome: "Cartão personalizado - 1 unidade",
+    categoria: "Adicionais",
+    descricao: "Cartão impresso ou escrito à mão com a mensagem enviada pelo cliente.",
+    preco: 15.00,
+    imagem: "monte-sua-cesta/assets/produtos/carta-personalizada.webp",
+    destaque: false,
+    observacaoPreco: "A mensagem é enviada pelo cliente durante o atendimento no WhatsApp.",
+    whatsappMensagem: "Ola! Quero adicionar um cartao personalizado ao meu presente."
+  },
+  {
+    id: 50,
+    nome: "Ferrero Rocher - caixa com 12 unidades",
+    categoria: "Adicionais",
+    descricao: "Caixa fechada com 12 bombons Ferrero Rocher para complementar cesta, buquê ou mimo especial.",
+    preco: 69.00,
+    imagem: "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-12.webp",
+    destaque: true,
+    whatsappMensagem: "Ola! Quero adicionar uma caixa com 12 Ferrero Rocher ao meu presente."
+  },
+  {
+    id: 51,
+    nome: "Barrinha Cacau Show - 1 unidade",
+    categoria: "Adicionais",
+    descricao: "Uma barrinha Cacau Show para acrescentar à cesta ou ao presente.",
+    preco: 10.00,
+    imagem: "monte-sua-cesta/assets/produtos/barrinha-cacau-show.webp",
+    destaque: true,
+    observacaoPreco: "O sabor é escolhido conforme disponibilidade no atendimento.",
+    whatsappMensagem: "Ola! Quero adicionar uma barrinha Cacau Show ao meu presente."
   }
 ];
+
+// Mantem a personalizacao coerente em todas as vitrines. Cestas de cafe usam
+// a lista combinada; demais cestas, kits e mimos usam os adicionais gerais.
+produtosLocais.forEach((produto) => {
+  const categoria = String(produto.categoria || "").toLowerCase();
+  const nome = String(produto.nome || "").toLowerCase();
+
+  if (categoria === "cestas" && nome.includes("cafe")) {
+    produto.adicionaisOpcionais = adicionaisCestasCafe;
+  } else if (["cestas", "kits", "mimos"].includes(categoria)) {
+    produto.adicionaisOpcionais = adicionaisCestas;
+  }
+});

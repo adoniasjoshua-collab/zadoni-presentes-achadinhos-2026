@@ -8,6 +8,7 @@
 
   function mensagem(estado) {
     const modelo = obterModelo(estado.modelo);
+    const nivel = c.niveisMontagem.find(item => item.id === estado.nivel);
     const p = estado.preferencias;
     const escolha = estado.modelo === 'ajuda-zadoni'
       ? 'Quero ajuda da Zadoni para escolher o melhor modelo'
@@ -16,12 +17,14 @@
     return [
       'Olá, Zadoni Presentes! Quero montar uma cesta personalizada com a ajuda de vocês.',
       '',
-      'MODELO OU ATENDIMENTO',
-      escolha,
+      'MONTAGEM ESCOLHIDA',
+      `Modelo: ${escolha}`,
+      `Versão: ${nivel ? nivel.nome : 'Não escolhida'}`,
+      `Orçamento de referência: ${nivel ? nivel.precoLabel : 'Não informado'}`,
+      `Proposta: ${nivel ? nivel.descricao : 'Quero orientação da Zadoni'}`,
       '',
       'PREFERÊNCIAS',
       `Ocasião: ${p.ocasiao || 'Não informada'}`,
-      `Faixa de orçamento: ${p.orcamento || 'Não informada'}`,
       `Data desejada: ${p.dataEntrega || 'Não informada'}`,
       `Itens, cores ou observações: ${p.observacoes || 'Quero sugestões da Zadoni'}`,
       '',

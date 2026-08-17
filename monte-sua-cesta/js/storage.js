@@ -5,11 +5,11 @@
   function criar() {
     const agora = new Date().toISOString();
     return {
-      versao: 2,
+      versao: 3,
       modelo: '',
+      nivel: '',
       preferencias: {
         ocasiao: '',
-        orcamento: '',
         dataEntrega: '',
         observacoes: ''
       },
@@ -33,7 +33,7 @@
     try {
       const estado = JSON.parse(localStorage.getItem(c.STORAGE_KEY) || 'null');
       const expirado = !estado || !estado.atualizadoEm || Date.now() - new Date(estado.atualizadoEm).getTime() > c.EXPIRATION_MS;
-      return estado && estado.versao === 2 && !expirado ? estado : null;
+      return estado && estado.versao === 3 && !expirado ? estado : null;
     } catch (e) {
       return null;
     }
