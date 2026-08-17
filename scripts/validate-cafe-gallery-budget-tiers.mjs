@@ -71,6 +71,18 @@ assert.ok(generator.includes("galleryBudgetTiers: BASKET_BUDGET_TIERS"));
 assert.ok(generator.includes('galleryExtras: "cafe"'));
 assert.ok(app.includes("inicializarAdicionaisGaleriaCafe()"));
 assert.ok(app.includes("adicionarExtrasAoLinkWhatsApp"));
+assert.ok(
+  app.includes("img.src = criarUrlAbsoluta(adicional.imagem)"),
+  "As imagens dos adicionais devem ser resolvidas a partir da raiz do site"
+);
+assert.ok(
+  app.includes("new URL(caminhoDesdeRaiz, window.location.origin).href"),
+  "O resolvedor de imagens deve funcionar tambem nas paginas internas"
+);
+assert.ok(
+  source.includes("assets/js/app.js?v=20260817-fix-addon-images-1"),
+  "A pagina de cafe deve invalidar o cache do JavaScript corrigido"
+);
 assert.equal(optionCount, 33);
 
 console.log("Café gallery budget validation ok: 11 models x 3 tiers = 33 WhatsApp summaries.");

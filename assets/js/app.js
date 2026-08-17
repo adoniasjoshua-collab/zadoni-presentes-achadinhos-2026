@@ -33,9 +33,13 @@
 
   function criarUrlAbsoluta(caminho) {
     if (!caminho) return "";
-    if (/^https?:\/\//i.test(caminho)) return caminho;
+    if (/^(?:https?:|data:|blob:)/i.test(caminho)) return caminho;
 
-    return new URL(caminho, window.location.href).href;
+    var caminhoDesdeRaiz = "/" + String(caminho)
+      .replace(/^\.\//, "")
+      .replace(/^\/+/, "");
+
+    return new URL(caminhoDesdeRaiz, window.location.origin).href;
   }
 
   function criarSlug(texto) {
@@ -51,7 +55,8 @@
     var base = caminho.replace(/\.(jpe?g|png|webp)$/i, "");
     var responsivo = base.replace("assets/optimized/products/", "assets/optimized/products/responsive/");
 
-    return responsivo + "-480.webp 480w, " + responsivo + "-720.webp 720w";
+    return criarUrlAbsoluta(responsivo + "-480.webp") + " 480w, " +
+      criarUrlAbsoluta(responsivo + "-720.webp") + " 720w";
   }
 
   function calcularTotalProduto(produto, adicionais) {
@@ -178,7 +183,7 @@
       }
 
       var img = document.createElement("img");
-      img.src = produto.imagem;
+      img.src = criarUrlAbsoluta(produto.imagem);
       img.alt = produto.nome;
       img.width = 720;
       img.height = 900;
@@ -255,12 +260,15 @@
 
         var img = document.createElement("img");
         img.className = "produto-adicional-imagem";
-        img.src = adicional.imagem;
+        img.src = criarUrlAbsoluta(adicional.imagem);
         img.alt = "";
         img.width = 44;
         img.height = 44;
         img.loading = "lazy";
         img.decoding = "async";
+        img.onerror = function () {
+          img.remove();
+        };
         return img;
       }
 

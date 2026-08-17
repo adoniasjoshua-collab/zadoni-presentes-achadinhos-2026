@@ -367,7 +367,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     ${preload}
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260817-complete-addons-1">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260817-fix-addon-images-1">`;
 }
 
 function header(prefix = "") {
@@ -505,7 +505,7 @@ function galleryHtml(config) {
 }
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260817-remove-ferrero3-1" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260817-complete-addons-1" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260817-fix-addon-images-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
