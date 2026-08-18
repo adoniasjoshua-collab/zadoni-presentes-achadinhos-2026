@@ -1,5 +1,7 @@
 # Catalogo Zadoni Presentes
 
+[![Validate site](https://github.com/adoniasjoshua-collab/zadoni-presentes-achadinhos-2026/actions/workflows/validate.yml/badge.svg)](https://github.com/adoniasjoshua-collab/zadoni-presentes-achadinhos-2026/actions)
+
 Site catalogo da Zadoni Presentes, criado para apresentar produtos locais em Canaa dos Carajas, com foco em presentes, buques, kits, perfumes e cestas vendidos pela loja.
 
 ## Objetivo
