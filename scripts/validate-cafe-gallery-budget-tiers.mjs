@@ -26,11 +26,12 @@ assert.ok(source.includes('id="cafe-gallery-addons"'), "A galeria deve exibir a 
 assert.ok(source.includes('id="cafe-gallery-addons-options"'), "O destino da lista de adicionais para cafe esta ausente");
 
 const figures = [...source.matchAll(/<figure class="seo-gallery-item">([\s\S]*?)<\/figure>/g)];
-assert.equal(figures.length, 11, "A galeria deve manter os 11 modelos");
+assert.equal(figures.length, 12, "A galeria deve exibir os 11 modelos anteriores e a nova cesta artesanal");
 
 let optionCount = 0;
 figures.forEach((figureMatch, index) => {
   const figure = figureMatch[1];
+  const expectedModelLabel = index === 11 ? "cesta artesanal com pães" : `modelo ${index + 1}`;
   const links = [...figure.matchAll(/<a class="seo-gallery-budget-option[^"]*" href="([^"]+)"[^>]*data-budget-tier="([^"]+)"/g)];
   assert.equal(links.length, 3, `O modelo ${index + 1} deve oferecer exatamente 3 faixas`);
 
@@ -43,11 +44,11 @@ figures.forEach((figureMatch, index) => {
 
     const url = new URL(encodedHref.replaceAll("&amp;", "&"));
     const message = url.searchParams.get("text") || "";
-    assert.ok(message.includes(`Modelo: modelo ${index + 1}`));
+    assert.ok(message.includes(`Modelo: ${expectedModelLabel}`));
     assert.ok(message.includes(`Faixa escolhida: ${tier.name}`));
     assert.ok(message.includes(`Orçamento de referência: ${tier.price}`));
     assert.ok(message.includes("Composição sugerida:"));
-    assert.ok(message.includes("Imagem do modelo: https://zadonipresentes.com.br/cesta-cafe-da-manha-canaa/"));
+    assert.ok(message.includes("Imagem do modelo: https://zadonipresentes.com.br/"));
     assert.ok(message.includes("itens, marcas e acabamento podem variar"));
     assert.ok((url.searchParams.get("utm_content") || "").endsWith(`_${tierId}`));
     optionCount += 1;
@@ -83,6 +84,6 @@ assert.ok(
   source.includes("assets/js/app.js?v=20260817-fix-addon-images-1"),
   "A pagina de cafe deve invalidar o cache do JavaScript corrigido"
 );
-assert.equal(optionCount, 33);
+assert.equal(optionCount, 36);
 
-console.log("Café gallery budget validation ok: 11 models x 3 tiers = 33 WhatsApp summaries.");
+console.log("Café gallery budget validation ok: 12 models x 3 tiers = 36 WhatsApp summaries.");

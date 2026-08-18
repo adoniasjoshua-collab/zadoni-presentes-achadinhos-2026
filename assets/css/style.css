@@ -566,6 +566,10 @@ header {
   background: var(--cor-fundo-alt);
 }
 
+.seo-gallery-item picture {
+  display: block;
+}
+
 .seo-gallery-item figcaption {
   display: grid;
   gap: var(--espaco-sm);
@@ -993,54 +997,71 @@ header {
   font-size: 1.05rem;
 }
 
-.comentarios-clientes {
-  background: #ffffff;
+.entregas-reais {
+  background: linear-gradient(180deg, #ffffff, #fff8fb);
   content-visibility: auto;
-  contain-intrinsic-size: 760px;
+  contain-intrinsic-size: 840px;
 }
 
-.comentarios-header {
-  max-width: 760px;
+.entregas-reais-header {
+  max-width: 820px;
   margin-bottom: var(--espaco-xl);
 }
 
-.comentarios-grid {
+.entregas-reais-header > p:last-child {
+  color: var(--cor-texto-leve);
+}
+
+.entregas-reais-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: var(--espaco-lg);
 }
 
-.comentario-card {
+.entrega-real-card {
   overflow: hidden;
   border: 1px solid var(--cor-borda);
   border-radius: var(--raio);
-  background: var(--cor-fundo-card);
+  background: #ffffff;
   box-shadow: var(--sombra-leve);
 }
 
-.comentario-foto {
-  aspect-ratio: 9 / 16;
+.entrega-real-foto {
+  display: block;
+  aspect-ratio: 4 / 5;
   background: #fff7fb;
 }
 
-.comentario-foto img {
+.entrega-real-foto img {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.comentario-card h3 {
-  padding: var(--espaco-md) var(--espaco-md) 0;
+.entrega-real-card figcaption {
+  display: grid;
+  gap: 0.35rem;
+  padding: var(--espaco-md);
+}
+
+.entrega-real-card strong {
   color: var(--cor-primaria-escura);
   font-family: var(--fonte-corpo);
   font-size: 1rem;
 }
 
-.comentario-card p {
-  padding: 0 var(--espaco-md) var(--espaco-md);
+.entrega-real-card span {
+  color: var(--cor-texto-leve);
   font-size: 0.9rem;
-  margin: 0;
+  line-height: 1.45;
+}
+
+.entregas-reais-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-sm);
+  margin-top: var(--espaco-xl);
 }
 
 .product-card,
@@ -1517,7 +1538,7 @@ select:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .comentarios-grid {
+  .entregas-reais-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1581,7 +1602,7 @@ select:focus {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .comentarios-grid {
+  .entregas-reais-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -1617,7 +1638,7 @@ select:focus {
 @media (max-width: 767px) {
   .produto-card,
   .card,
-  .comentario-card {
+  .entrega-real-card {
     box-shadow: 0 6px 18px rgba(79, 29, 56, 0.08);
   }
 

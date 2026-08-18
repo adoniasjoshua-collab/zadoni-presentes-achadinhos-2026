@@ -36,6 +36,127 @@ const BASKET_BUDGET_TIERS = Object.freeze([
   }
 ]);
 
+const SOCIAL_PROOF_IMAGES = Object.freeze([
+  {
+    src: "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-01.webp",
+    src480: "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-01-480.webp",
+    alt: "Entrega real de buquê preparada pela Zadoni em Canaã dos Carajás",
+    title: "Buquê entregue para celebrar",
+    caption: "Registro de uma surpresa preparada e entregue em Canaã."
+  },
+  {
+    src: "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-02.webp",
+    src480: "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-02-480.webp",
+    alt: "Cliente com buquê recebido em entrega local da Zadoni",
+    title: "Flores para um momento especial",
+    caption: "Buquê entregue com atendimento local da Zadoni."
+  },
+  {
+    src: "assets/img/prova-social/entregas-canaa/entrega-buque-casal-01.webp",
+    src480: "assets/img/prova-social/entregas-canaa/entrega-buque-casal-01-480.webp",
+    alt: "Casal com presente floral entregue pela Zadoni em Canaã",
+    title: "Presente recebido com carinho",
+    caption: "Um dos momentos registrados depois da entrega."
+  },
+  {
+    src: "assets/img/prova-social/entregas-canaa/entrega-buques-clientes-03.webp",
+    src480: "assets/img/prova-social/entregas-canaa/entrega-buques-clientes-03-480.webp",
+    alt: "Clientes com diferentes buquês preparados pela Zadoni",
+    title: "Buquês para diferentes ocasiões",
+    caption: "Modelos reais preparados conforme cada pedido."
+  },
+  {
+    src: "assets/img/prova-social/entregas-canaa/entrega-presente-casal-02.webp",
+    src480: "assets/img/prova-social/entregas-canaa/entrega-presente-casal-02-480.webp",
+    alt: "Entrega de presente para casal em Canaã dos Carajás",
+    title: "Surpresa entregue em Canaã",
+    caption: "Atendimento próximo para transformar o pedido em presente."
+  }
+]);
+
+const BOUQUET_GALLERY_IMAGES = Object.freeze([
+  {
+    src: "assets/img/galerias/buques/buque-rosa-vermelha-delicado.webp",
+    src480: "assets/img/galerias/buques/buque-rosa-vermelha-delicado-480.webp",
+    modelLabel: "buquê delicado com rosa vermelha",
+    alt: "Buquê delicado com rosa vermelha e acabamento branco",
+    caption: "Buquê delicado com rosa vermelha",
+    width: 720,
+    height: 900
+  },
+  {
+    src: "assets/img/galerias/buques/buque-rosas-vermelhas-classico.webp",
+    src480: "assets/img/galerias/buques/buque-rosas-vermelhas-classico-480.webp",
+    modelLabel: "buquê clássico de rosas vermelhas",
+    alt: "Buquê clássico com rosas vermelhas e folhagens",
+    caption: "Rosas vermelhas com acabamento clássico",
+    width: 720,
+    height: 900
+  },
+  {
+    src: "assets/img/galerias/buques/buque-rosas-com-chocolates.webp",
+    src480: "assets/img/galerias/buques/buque-rosas-com-chocolates-480.webp",
+    modelLabel: "buquê de rosas com chocolates",
+    alt: "Buquê de rosas vermelhas com chocolates e acabamento dourado",
+    caption: "Rosas e chocolates em uma composição especial",
+    width: 720,
+    height: 900
+  },
+  {
+    src: "assets/img/galerias/buques/buque-rosas-vermelhas-amarelas.webp",
+    src480: "assets/img/galerias/buques/buque-rosas-vermelhas-amarelas-480.webp",
+    modelLabel: "buquê de rosas vermelhas com flores amarelas",
+    alt: "Buquê de rosas vermelhas com flores amarelas e folhagens",
+    caption: "Rosas vermelhas com contraste amarelo",
+    width: 720,
+    height: 900
+  }
+]);
+
+const BASKET_GALLERY_IMAGES = Object.freeze([
+  {
+    src: "assets/img/galerias/cestas/cesta-cafe-artesanal.webp",
+    src480: "assets/img/galerias/cestas/cesta-cafe-artesanal-480.webp",
+    modelLabel: "cesta artesanal com pães",
+    alt: "Cesta artesanal com pães e acabamento para presente",
+    caption: "Cesta artesanal com itens de café",
+    width: 720,
+    height: 900
+  },
+  {
+    src: "assets/img/galerias/cestas/cesta-masculina-azul.webp",
+    src480: "assets/img/galerias/cestas/cesta-masculina-azul-480.webp",
+    modelLabel: "cesta masculina azul",
+    alt: "Cesta masculina azul com bebida, chocolates e complementos",
+    caption: "Composição masculina em tons de azul",
+    width: 720,
+    height: 900
+  },
+  {
+    src: "assets/img/galerias/cestas/cesta-chocolates-petiscos.webp",
+    src480: "assets/img/galerias/cestas/cesta-chocolates-petiscos-480.webp",
+    modelLabel: "cesta com chocolates e petiscos",
+    alt: "Cesta de presente com chocolates, petiscos e frutas",
+    caption: "Cesta com chocolates, petiscos e frutas",
+    width: 720,
+    height: 900
+  }
+]);
+
+const ROMANTIC_GALLERY_IMAGES = Object.freeze([
+  {
+    src: "assets/img/galerias/romanticos/arranjo-romantico-balao-rosas.webp",
+    src480: "assets/img/galerias/romanticos/arranjo-romantico-balao-rosas-480.webp",
+    modelLabel: "arranjo romântico com balão e rosas",
+    alt: "Arranjo romântico com balão Te Amo e rosas cor-de-rosa",
+    caption: "Arranjo romântico com balão e rosas",
+    width: 720,
+    height: 900
+  },
+  BOUQUET_GALLERY_IMAGES[2],
+  BOUQUET_GALLERY_IMAGES[3]
+]);
+
 function loadProducts() {
   const code = fs.readFileSync(path.join(ROOT, "assets/data/produtos.js"), "utf8");
   const context = {};
@@ -76,6 +197,16 @@ function relativeAssetPrefix(pagePath) {
 function absoluteUrl(url) {
   if (/^https?:\/\//i.test(url)) return url;
   return `${SITE}/${url.replace(/^\/+/, "")}`;
+}
+
+function galleryPublicPath(image, directory) {
+  if (image.src.startsWith("assets/")) return image.src;
+  return `${directory}/${image.src}`;
+}
+
+function galleryPagePath(src) {
+  if (!src) return "";
+  return src.startsWith("assets/") ? `../${src}` : src;
 }
 
 function imageInfo(src) {
@@ -132,6 +263,9 @@ function whatsappUrl(product, source = "produto") {
 
 function galleryWhatsAppUrl(image, index, source = "galeria", directory = "", budgetTier = null) {
   const modelLabel = image.modelLabel || `modelo ${index + 1}`;
+  const requestOpening = directory === "cesta-cafe-da-manha-canaa"
+    ? "Olá! Quero uma cesta parecida com esta referência:"
+    : "Olá! Quero um presente parecido com esta referência:";
   const budgetDetails = budgetTier
     ? [
         `Faixa escolhida: ${budgetTier.name}`,
@@ -141,12 +275,12 @@ function galleryWhatsAppUrl(image, index, source = "galeria", directory = "", bu
       ]
     : [];
   const msg = [
-    "Olá! Quero uma cesta parecida com esta referência:",
+    requestOpening,
     "",
     `Modelo: ${modelLabel}`,
     `Resumo: ${image.caption}`,
     ...budgetDetails,
-    `Imagem do modelo: ${absoluteUrl(`${directory}/${image.src}`)}`,
+    `Imagem do modelo: ${absoluteUrl(galleryPublicPath(image, directory))}`,
     "",
     ...(budgetTier
       ? [
@@ -367,7 +501,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     ${preload}
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260817-fix-addon-images-1">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260818-real-deliveries-1">`;
 }
 
 function header(prefix = "") {
@@ -492,13 +626,44 @@ function galleryHtml(config) {
             </aside>` : ""}
             <div class="seo-gallery-grid${hasBudgetTiers ? " seo-gallery-grid--budget" : ""}">
                 ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item">
-                    <img src="${html(image.src)}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+                    ${image.src480 ? `<picture>
+                        <source type="image/webp" srcset="${html(galleryPagePath(image.src480))} 480w, ${html(galleryPagePath(image.src))} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">
+                        <img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
+                    </picture>` : `<img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">`}
                     <figcaption>
                         <span>${html(image.caption)}</span>
                         ${config.galleryItemNote ? `<small class="seo-gallery-note">${html(config.galleryItemNote)}</small>` : ""}
                         ${galleryChoiceHtml(config, image, index, source, ctaLabel)}
                     </figcaption>
                 </figure>`).join("\n                ")}
+            </div>
+        </div>
+    </section>\n`;
+}
+
+function socialProofHtml(prefix = "") {
+  return `<section class="entregas-reais" aria-labelledby="entregas-reais-title">
+        <div class="container">
+            <div class="entregas-reais-header">
+                <p class="local-badge">Prova social local</p>
+                <h2 id="entregas-reais-title">Entregas reais em Canaã dos Carajás</h2>
+                <p>Registros de presentes preparados e entregues pela Zadoni. Cada montagem é personalizada conforme a ocasião, o orçamento e os itens disponíveis.</p>
+            </div>
+            <div class="entregas-reais-grid">
+                ${SOCIAL_PROOF_IMAGES.map((image) => `<figure class="entrega-real-card">
+                    <picture class="entrega-real-foto">
+                        <source type="image/webp" srcset="${prefix}${html(image.src480)} 480w, ${prefix}${html(image.src)} 720w" sizes="(max-width: 639px) 88vw, (max-width: 1023px) 44vw, 220px">
+                        <img src="${prefix}${html(image.src)}" alt="${html(image.alt)}" width="720" height="900" loading="lazy" decoding="async">
+                    </picture>
+                    <figcaption>
+                        <strong>${html(image.title)}</strong>
+                        <span>${html(image.caption)}</span>
+                    </figcaption>
+                </figure>`).join("\n                ")}
+            </div>
+            <div class="entregas-reais-actions">
+                <a class="btn btn-outline" href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">Ver avaliações no Google</a>
+                <a class="btn btn-secondary" href="${html(whatsappUrl(null, "prova_social_entregas_canaa"))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Pedir ajuda no WhatsApp</a>
             </div>
         </div>
     </section>\n`;
@@ -585,7 +750,7 @@ function categoryPage(config) {
                 <p>${html(config.copy2)}</p>
             </div>
         </section>
-${galleryHtml(config)}${productsSectionHtml}
+${galleryHtml(config)}${productsSectionHtml}${config.showSocialProof ? socialProofHtml(prefix) : ""}
         ${faqHtml(faqs)}
         <section class="seo-cta">
             <div class="container">
@@ -743,23 +908,7 @@ function mainPage() {
                 </div>
             </div>
         </section>
-        <section class="comentarios-clientes">
-            <div class="container">
-                <div class="comentarios-header">
-                    <h2>Comentários de clientes</h2>
-                    <p>Retornos reais de quem já escolheu a Zadoni para presentear em Canaã.</p>
-                </div>
-                <div class="comentarios-grid">
-                    ${["comentario primeiro.jpeg", "comenta 01.jpeg", "comentario 02.jpeg", "comenta 03.jpeg", "comentario 03.jpeg"].map((img, index) => `<article class="comentario-card">
-                        <div class="comentario-foto">
-                            <img src="assets/img/comentarios instagram/${img}" alt="Comentário de cliente da Zadoni Presentes" width="720" height="1280" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
-                        </div>
-                        <h3>${["Atendimento com carinho", "Presente que emociona", "Entrega especial", "Pedido bem cuidado", "Cliente feliz"][index]}</h3>
-                        <p>Prova social leve para quem quer confiar antes de chamar no WhatsApp.</p>
-                    </article>`).join("\n                    ")}
-                </div>
-            </div>
-        </section>
+        ${socialProofHtml("")}
         ${faqHtml(faqs)}
     </main>`;
 
@@ -785,6 +934,7 @@ const pageConfigs = [
     copy1: "Para quem precisa resolver uma surpresa em Canaã dos Carajás, a compra local reduz dúvidas sobre prazo, personalização e entrega.",
     copy2: "A Zadoni trabalha com opções prontas e personalizáveis, incluindo buquês, cestas, kits, perfumes de bolso e mimos de valor acessível.",
     productsTitle: "Produtos locais em destaque",
+    showSocialProof: true,
     filter: (items) => items.filter((item) => item.destaque),
     faqs: [
       { q: "Como peço um presente em Canaã?", a: "Escolha uma opção no catálogo e chame no WhatsApp para confirmar disponibilidade, valor final e entrega." },
@@ -801,6 +951,11 @@ const pageConfigs = [
     copy1: "Ao pedir um buquê local, informe a ocasião, cor preferida e se deseja incluir cartão, foto impressa ou chocolate.",
     copy2: "Os valores são iniciais e podem mudar conforme flores disponíveis, tamanho do arranjo e complementos escolhidos.",
     productsTitle: "Buquês e flores disponíveis",
+    galleryTitle: "Modelos reais de buquês preparados pela Zadoni",
+    galleryIntro: "Use as fotos como referência de estilo. Flores, cores, tamanho e acabamento são confirmados no WhatsApp conforme disponibilidade.",
+    galleryItemNote: "Referência visual: a composição final pode variar conforme flores e complementos disponíveis.",
+    galleryCtaLabel: "Consultar este buquê",
+    galleryImages: BOUQUET_GALLERY_IMAGES,
     filter: (items) => items.filter((item) => categoryKey(item) === "buques"),
     faqs: [
       { q: "Posso personalizar o buquê?", a: "Sim. A personalização depende das flores e complementos disponíveis no momento do pedido." },
@@ -817,6 +972,11 @@ const pageConfigs = [
     copy1: "As cestas podem combinar bebida, chocolates, caneca, petiscos, flores e itens de autocuidado conforme disponibilidade.",
     copy2: "Ao chamar no WhatsApp, informe se o presente é para aniversário, agradecimento, romance ou surpresa corporativa.",
     productsTitle: "Cestas locais para pedir pelo WhatsApp",
+    galleryTitle: "Cestas reais para escolher como referência",
+    galleryIntro: "Veja composições já preparadas pela Zadoni e envie o modelo preferido no WhatsApp para adaptar itens, cores e orçamento.",
+    galleryItemNote: "Referência visual: marcas, itens e acabamento dependem da disponibilidade e do orçamento.",
+    galleryCtaLabel: "Consultar esta cesta",
+    galleryImages: BASKET_GALLERY_IMAGES,
     priorityProductIds: [37],
     filter: (items) => items.filter((item) => categoryKey(item) === "cestas"),
     faqs: [
@@ -834,6 +994,11 @@ const pageConfigs = [
     copy1: "A Zadoni é uma empresa de presentes em Canaã dos Carajás que oferece opções com buquês, rosas, flores, chocolates e detalhes personalizados conforme os modelos disponíveis.",
     copy2: "Para consultar modelos e disponibilidade, envie uma mensagem pelo WhatsApp informando a ocasião e o estilo de presente desejado. A composição deve ser confirmada durante o atendimento.",
     productsTitle: "Opções com rosas, flores e buquês",
+    galleryTitle: "Trabalhos florais reais da Zadoni",
+    galleryIntro: "Conheça referências de buquês já preparados para clientes em Canaã dos Carajás.",
+    galleryItemNote: "As flores e o acabamento podem variar conforme disponibilidade e personalização.",
+    galleryCtaLabel: "Consultar este trabalho floral",
+    galleryImages: BOUQUET_GALLERY_IMAGES,
     includeLocalBusiness: false,
     includeWebPage: true,
     includeItemListSchema: true,
@@ -880,7 +1045,8 @@ const pageConfigs = [
       { src: "cesta-cafe-da-manha-modelo-real-08.webp", alt: "Cesta de café da manhã com laço rosa e itens selecionados em Canaã dos Carajás", caption: "Cesta matinal com laço rosa", width: 720, height: 960 },
       { src: "cesta-cafe-da-manha-modelo-real-09.webp", alt: "Cesta de café da manhã com frutas, pães, chocolates e bebida", caption: "Modelo com frutas e itens de café", width: 720, height: 960 },
       { src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", width: 720, height: 960 },
-      { src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", width: 720, height: 720 }
+      { src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", width: 720, height: 720 },
+      BASKET_GALLERY_IMAGES[0]
     ],
     includeLocalBusiness: false,
     includeWebPage: true,
@@ -907,6 +1073,11 @@ const pageConfigs = [
     copy1: "Presentes românticos funcionam melhor quando combinam mensagem, visual e um item que tenha a ver com a pessoa presenteada.",
     copy2: "A Zadoni ajuda a escolher entre buquês, boxes, cestas e mimos conforme prazo, orçamento e estilo da surpresa.",
     productsTitle: "Sugestões românticas da Zadoni",
+    galleryTitle: "Referências reais para uma surpresa romântica",
+    galleryIntro: "Arranjos e buquês preparados pela Zadoni para inspirar uma composição personalizada.",
+    galleryItemNote: "A foto serve como inspiração; itens, flores e acabamento são confirmados no atendimento.",
+    galleryCtaLabel: "Consultar esta inspiração",
+    galleryImages: ROMANTIC_GALLERY_IMAGES,
     priorityProductIds: [37],
     filter: (items) => items.filter((item) => /romantic|romant|amor|te amo|rosa|vinho|box|kit/i.test(slugify(`${item.nome} ${item.descricao}`))),
     faqs: [
@@ -938,7 +1109,7 @@ const pageConfigs = [
 function writeFile(filePath, content) {
   const fullPath = path.join(ROOT, filePath);
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-  fs.writeFileSync(fullPath, content, "utf8");
+  fs.writeFileSync(fullPath, content.replace(/[ \t]+\r?\n/g, "\n"), "utf8");
 }
 
 writeFile("presentes-canaa.html", mainPage());

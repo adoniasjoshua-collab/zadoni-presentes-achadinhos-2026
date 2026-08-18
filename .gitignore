@@ -7,6 +7,9 @@ desktop.ini
 node_modules/
 .vscode/
 
+# Recebidos pelo WhatsApp: preservar localmente e publicar apenas copias tratadas
+/Fotos adicionais para incluir/
+
 # Arquivos fonte/originais mantidos localmente, fora do deploy
 assets/img/originais/
 assets/img/achadinhos/
