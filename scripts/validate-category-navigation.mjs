@@ -14,7 +14,7 @@ const expected = [
   { href: "cesta-cafe-da-manha-canaa/", text: "Cesta de café da manhã em Canaã" },
   { href: "presentes-romanticos-canaa/", text: "Presentes românticos" },
   { href: "rosas-perfumadas-canaa/", text: "Rosas e perfumes" },
-  { href: "presentes-canaa.html?categoria=adicionais#produtos-container", text: "Itens avulsos para cestas" },
+  { href: "presentes-canaa.html#categoria-adicionais", text: "Itens avulsos para cestas" },
   { href: "presentes-canaa-dos-carajas/", text: "Catálogo local" }
 ];
 

@@ -330,6 +330,16 @@
     return wrapper;
   }
 
+  function obterCategoriaInicial() {
+    var categoriaQuery = obterParametroUrl("categoria");
+    if (categoriaQuery) return categoriaQuery;
+
+    var hash = String(window.location.hash || "");
+    return hash.startsWith("#categoria-")
+      ? hash.slice("#categoria-".length)
+      : "";
+  }
+
   function obterAdicionaisCafeGaleria() {
     return typeof adicionaisCestasCafe !== "undefined" && Array.isArray(adicionaisCestasCafe)
       ? adicionaisCestasCafe
@@ -586,7 +596,7 @@
   function carregarProdutosLocais() {
     if (!document.getElementById("produtos-container")) return;
 
-    var categoriaInicial = normalizarCategoriaProdutos(obterParametroUrl("categoria"));
+    var categoriaInicial = normalizarCategoriaProdutos(obterCategoriaInicial());
     var produtos = getProdutosLocais();
     var lista = categoriaInicial === "todos"
       ? produtos
@@ -601,6 +611,12 @@
       var texto = normalizarCategoriaProdutos(botao.textContent);
       botao.classList.toggle("ativo", texto === categoriaInicial);
     });
+
+    if (window.location.hash.startsWith("#categoria-")) {
+      window.requestAnimationFrame(function () {
+        document.getElementById("produtos-container")?.scrollIntoView({ block: "start" });
+      });
+    }
   }
 
   function rastrearEvento(nomeEvento, parametros) {

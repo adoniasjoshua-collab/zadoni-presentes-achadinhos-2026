@@ -157,6 +157,12 @@ const ROMANTIC_GALLERY_IMAGES = Object.freeze([
   BOUQUET_GALLERY_IMAGES[3]
 ]);
 
+const FLORAL_GALLERY_IMAGES = Object.freeze([
+  ROMANTIC_GALLERY_IMAGES[0],
+  BOUQUET_GALLERY_IMAGES[0],
+  BOUQUET_GALLERY_IMAGES[3]
+]);
+
 function loadProducts() {
   const code = fs.readFileSync(path.join(ROOT, "assets/data/produtos.js"), "utf8");
   const context = {};
@@ -303,12 +309,11 @@ function galleryWhatsAppUrl(image, index, source = "galeria", directory = "", bu
 }
 function picture(product, index, prefix) {
   const img = imageInfo(product.imagem);
-  const eager = index === 0;
   const responsiveSource = img.webp480
     ? `\n                    <source type="image/webp" srcset="${prefix}${html(img.webp480)} 480w, ${prefix}${html(img.webp720)} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">`
     : "";
   return `<picture>${responsiveSource}
-                    <img src="${prefix}${html(img.fallback)}" alt="${html(product.nome)}" width="720" height="900" loading="${eager ? "eager" : "lazy"}" decoding="async" fetchpriority="${eager ? "high" : "low"}">
+                    <img src="${prefix}${html(img.fallback)}" alt="${html(product.nome)}" width="720" height="900" loading="lazy" decoding="async" fetchpriority="low">
                 </picture>`;
 }
 
@@ -468,10 +473,6 @@ function faqSchema(faqs) {
 }
 
 function head({ title, description, canonical, image, type = "website", prefix = "" }) {
-  const responsiveImage = imageInfo(image);
-  const preload = responsiveImage.webp720
-    ? `<link rel="preload" as="image" href="${prefix}${html(responsiveImage.webp720)}" imagesrcset="${prefix}${html(responsiveImage.webp480)} 480w, ${prefix}${html(responsiveImage.webp720)} 720w" imagesizes="(max-width: 640px) 92vw, 720px" type="image/webp" fetchpriority="high">`
-    : `<link rel="preload" as="image" href="${prefix}${html(image)}" fetchpriority="high">`;
   return `<!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script>
     <script>
@@ -487,6 +488,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="author" content="Zadoni Presentes">
     <meta name="geo.placename" content="Canaã dos Carajás, Pará">
     <meta name="geo.region" content="BR-PA">
+    <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
     <link rel="canonical" href="${canonical}">
     <meta property="og:title" content="${html(title)}">
     <meta property="og:description" content="${html(description)}">
@@ -499,7 +501,6 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:title" content="${html(title)}">
     <meta name="twitter:description" content="${html(description)}">
     <meta name="twitter:image" content="${absoluteUrl(image)}">
-    ${preload}
     <title>${html(title)}</title>
     <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260818-real-deliveries-1">`;
 }
@@ -545,6 +546,10 @@ function footer(prefix = "") {
                         <li><a href="${prefix}floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
                         <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
                         <li><a href="${prefix}rosas-perfumadas-canaa/">Rosas e perfumes</a></li>
+                        <li><a href="${prefix}presentes-canaa-dos-carajas/">Entrega de presentes</a></li>
+                        <li><a href="${prefix}presentes-romanticos-canaa/">Presentes românticos</a></li>
+                        <li><a href="${prefix}monte-sua-cesta/">Monte sua cesta</a></li>
+                        <li><a href="${prefix}revenda-chocolates-canaa/">Chocolates</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -628,8 +633,8 @@ function galleryHtml(config) {
                 ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item">
                     ${image.src480 ? `<picture>
                         <source type="image/webp" srcset="${html(galleryPagePath(image.src480))} 480w, ${html(galleryPagePath(image.src))} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">
-                        <img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">
-                    </picture>` : `<img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async">`}
+                        <img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async">
+                    </picture>` : `<img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async">`}
                     <figcaption>
                         <span>${html(image.caption)}</span>
                         ${config.galleryItemNote ? `<small class="seo-gallery-note">${html(config.galleryItemNote)}</small>` : ""}
@@ -708,6 +713,9 @@ function categoryPage(config) {
   ];
   const faqs = config.faqs;
   const productsIntroHtml = config.productsIntro ? `\n                <p class="seo-section-intro">${html(config.productsIntro)}</p>` : "";
+  const relatedLinkHtml = config.relatedLink
+    ? `\n                <p>${html(config.relatedLink.intro)} <a href="${html(config.relatedLink.href)}">${html(config.relatedLink.label)}</a>${html(config.relatedLink.suffix || ".")}</p>`
+    : "";
   const productsSectionHtml = showProductsSection ? `        <section class="seo-products" aria-labelledby="produtos-title">
             <div class="container">
                 <h2 id="produtos-title">${html(config.productsTitle)}</h2>${productsIntroHtml}
@@ -747,7 +755,7 @@ function categoryPage(config) {
             <div class="container">
                 <h2 id="orientacao-title">${html(config.h2)}</h2>
                 <p>${html(config.copy1)}</p>
-                <p>${html(config.copy2)}</p>
+                <p>${html(config.copy2)}</p>${relatedLinkHtml}
             </div>
         </section>
 ${galleryHtml(config)}${productsSectionHtml}${config.showSocialProof ? socialProofHtml(prefix) : ""}
@@ -855,7 +863,7 @@ function mainPage() {
                         <p class="seo-category-group-label">Explorar também</p>
                         <div class="seo-category-links">
                             <a href="presentes-romanticos-canaa/">Presentes românticos</a>
-                            <a href="presentes-canaa.html?categoria=adicionais#produtos-container">Itens avulsos para cestas</a>
+                            <a href="presentes-canaa.html#categoria-adicionais">Itens avulsos para cestas</a>
                             <a href="rosas-perfumadas-canaa/">Rosas e perfumes</a>
                             <a href="presentes-canaa-dos-carajas/">Catálogo local</a>
                         </div>
@@ -944,22 +952,30 @@ const pageConfigs = [
   {
     dir: "buques-canaa-dos-carajas",
     title: "Buquês em Canaã dos Carajás | Floricultura Zadoni",
-    description: "Buquês em Canaã dos Carajás com rosas, flores e acabamento especial. Consulte modelos da floricultura Zadoni e disponibilidade pelo WhatsApp.",
+    description: "Buquês em Canaã dos Carajás com rosas naturais, opções românticas e chocolate. Consulte modelos, personalização e entrega pelo WhatsApp.",
     h1: "Buquês em Canaã dos Carajás",
-    h2: "Buquês para surpreender com entrega local",
+    h2: "Buquês de rosas naturais, artificiais e com chocolate",
     intro: "Escolha buquês com flores, rosas e acabamento especial para aniversários, pedidos de desculpa, declarações e datas importantes.",
-    copy1: "Ao pedir um buquê local, informe a ocasião, cor preferida e se deseja incluir cartão, foto impressa ou chocolate.",
-    copy2: "Os valores são iniciais e podem mudar conforme flores disponíveis, tamanho do arranjo e complementos escolhidos.",
+    copy1: "É possível consultar modelos com rosas naturais ou rosas artificiais e opções de buquê com chocolate. Informe a ocasião, a cor preferida e se deseja incluir cartão, foto impressa ou outros complementos.",
+    copy2: "Os valores são iniciais e podem mudar conforme as flores disponíveis, a quantidade de rosas, o tamanho do buquê e os complementos escolhidos. A entrega de buquê em Canaã dos Carajás deve ser confirmada pelo WhatsApp conforme endereço, data e horário.",
+    relatedLink: {
+      intro: "Para conhecer jarros, flores naturais e outros trabalhos florais, visite também a página de",
+      href: "../floricultura-canaa-dos-carajas/",
+      label: "floricultura em Canaã dos Carajás"
+    },
     productsTitle: "Buquês e flores disponíveis",
     galleryTitle: "Modelos reais de buquês preparados pela Zadoni",
     galleryIntro: "Use as fotos como referência de estilo. Flores, cores, tamanho e acabamento são confirmados no WhatsApp conforme disponibilidade.",
     galleryItemNote: "Referência visual: a composição final pode variar conforme flores e complementos disponíveis.",
     galleryCtaLabel: "Consultar este buquê",
     galleryImages: BOUQUET_GALLERY_IMAGES,
-    filter: (items) => items.filter((item) => categoryKey(item) === "buques"),
+    filter: (items) => items.filter((item) => slugify(item.categoria) === "flores"),
     faqs: [
       { q: "Posso personalizar o buquê?", a: "Sim. A personalização depende das flores e complementos disponíveis no momento do pedido." },
-      { q: "Buquês têm preço fixo?", a: "Os preços exibidos são iniciais. O valor final varia conforme tamanho, flores e adicionais." }
+      { q: "Buquês têm preço fixo?", a: "Os preços exibidos são iniciais. O valor final varia conforme tamanho, flores e adicionais." },
+      { q: "Tem buquê de rosas naturais ou artificiais?", a: "A disponibilidade de modelos com rosas naturais ou artificiais deve ser consultada pelo WhatsApp para a data desejada." },
+      { q: "É possível pedir um buquê com chocolate?", a: "Sim. Existem referências com rosas e chocolates, mas marcas, quantidade e composição final dependem da disponibilidade." },
+      { q: "A Zadoni faz entrega de buquê em Canaã dos Carajás?", a: "A possibilidade de entrega é confirmada pelo WhatsApp conforme endereço, data, horário e modelo escolhido." }
     ]
   },
   {
@@ -987,29 +1003,33 @@ const pageConfigs = [
   {
     dir: "floricultura-canaa-dos-carajas",
     title: "Floricultura em Canaã dos Carajás | Zadoni",
-    description: "Floricultura em Canaã dos Carajás com buquês, rosas, flores e presentes personalizados. Consulte modelos da Zadoni pelo WhatsApp.",
+    description: "Floricultura em Canaã dos Carajás com flores naturais, arranjos florais e opções para presente. Consulte disponibilidade e entrega pelo WhatsApp.",
     h1: "Floricultura em Canaã dos Carajás",
-    h2: "Buquês, flores e presentes para momentos especiais",
+    h2: "Flores naturais e arranjos florais para presente",
     intro: "Quem procura uma floricultura em Canaã dos Carajás também pode encontrar na Zadoni opções de buquês, rosas, flores e presentes preparados para momentos especiais. Os modelos podem variar conforme a disponibilidade e a personalização desejada.",
-    copy1: "A Zadoni é uma empresa de presentes em Canaã dos Carajás que oferece opções com buquês, rosas, flores, chocolates e detalhes personalizados conforme os modelos disponíveis.",
-    copy2: "Para consultar modelos e disponibilidade, envie uma mensagem pelo WhatsApp informando a ocasião e o estilo de presente desejado. A composição deve ser confirmada durante o atendimento.",
-    productsTitle: "Opções com rosas, flores e buquês",
-    galleryTitle: "Trabalhos florais reais da Zadoni",
-    galleryIntro: "Conheça referências de buquês já preparados para clientes em Canaã dos Carajás.",
+    copy1: "A Zadoni oferece flores naturais, arranjos florais e opções com flores para presente em Canaã dos Carajás. Os modelos podem incluir jarros, rosas, composições decoradas e detalhes personalizados.",
+    copy2: "A disponibilidade das flores, a composição e a possibilidade de entrega são confirmadas pelo WhatsApp conforme o modelo, o endereço, a data e o horário desejados.",
+    relatedLink: {
+      intro: "Se a procura for por modelos montados com rosas e complementos, veja também os",
+      href: "../buques-canaa-dos-carajas/",
+      label: "buquês em Canaã dos Carajás"
+    },
+    productsTitle: "Flores naturais, jarros e arranjos disponíveis",
+    galleryTitle: "Trabalhos florais e arranjos reais da Zadoni",
+    galleryIntro: "Conheça referências de flores, rosas e arranjos já preparados para clientes em Canaã dos Carajás.",
     galleryItemNote: "As flores e o acabamento podem variar conforme disponibilidade e personalização.",
     galleryCtaLabel: "Consultar este trabalho floral",
-    galleryImages: BOUQUET_GALLERY_IMAGES,
+    galleryImages: FLORAL_GALLERY_IMAGES,
     includeLocalBusiness: false,
     includeWebPage: true,
     includeItemListSchema: true,
     includeOfferAvailability: false,
-    filter: (items) => items.filter((item) => {
-      const text = slugify(item.nome + " " + item.descricao + " " + item.categoria);
-      return !text.includes("perfume") && (text.includes("buque") || text.includes("rosa") || text.includes("flor") || text.includes("jarro"));
-    }),
+    filter: (items) => items.filter((item) => [2, 25, 26, 27].includes(Number(item.id))),
     faqs: [
       { q: "A Zadoni trabalha com flores e buquês em Canaã dos Carajás?", a: "A Zadoni oferece opções de buquês, rosas, flores e presentes conforme os modelos e a disponibilidade. A consulta pode ser feita diretamente pelo WhatsApp." },
       { q: "Como encontrar uma floricultura perto de mim em Canaã?", a: "Se você está em Canaã dos Carajás, consulte a Zadoni pelo WhatsApp para conhecer os buquês e flores disponíveis e confirmar as condições de entrega local." },
+      { q: "A Zadoni faz entrega de flores em Canaã dos Carajás?", a: "A possibilidade de entrega é confirmada pelo WhatsApp conforme o modelo, endereço, data e horário desejados." },
+      { q: "Quais arranjos florais estão disponíveis?", a: "A Zadoni trabalha com referências de jarros, rosas, flores naturais e composições decoradas. Os modelos disponíveis devem ser confirmados no atendimento." },
       { q: "É possível personalizar o presente?", a: "Algumas opções podem receber complementos e detalhes personalizados. A disponibilidade deve ser confirmada durante o atendimento." },
       { q: "Como saber quais modelos estão disponíveis?", a: "Entre em contato pelo WhatsApp para consultar os modelos, valores e condições disponíveis para a data desejada." }
     ]
@@ -1128,7 +1148,8 @@ const urls = [
   { loc: `${SITE}/cesta-cafe-da-manha-canaa/`, priority: "0.88" },
   { loc: `${SITE}/monte-sua-cesta/`, priority: "0.9" },
   { loc: `${SITE}/presentes-romanticos-canaa/`, priority: "0.85" },
-  { loc: `${SITE}/rosas-perfumadas-canaa/`, priority: "0.8" }
+  { loc: `${SITE}/rosas-perfumadas-canaa/`, priority: "0.8" },
+  { loc: `${SITE}/revenda-chocolates-canaa/`, priority: "0.88" }
 ];
 
 writeFile("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>

@@ -10,7 +10,7 @@ const pages = new Map([
   ["cesta-cafe-da-manha-canaa/index.html", { galleries: 12, deliveries: 0 }],
   ["buques-canaa-dos-carajas/index.html", { galleries: 4, deliveries: 0 }],
   ["cestas-de-presente-canaa/index.html", { galleries: 3, deliveries: 0 }],
-  ["floricultura-canaa-dos-carajas/index.html", { galleries: 4, deliveries: 0 }],
+  ["floricultura-canaa-dos-carajas/index.html", { galleries: 3, deliveries: 0 }],
   ["presentes-romanticos-canaa/index.html", { galleries: 3, deliveries: 0 }]
 ]);
 

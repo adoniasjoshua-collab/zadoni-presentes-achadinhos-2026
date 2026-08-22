@@ -11,7 +11,8 @@ const pages = new Map([
   ["cesta-cafe-da-manha-canaa/index.html", "cesta de café da manhã em canaã dos carajás"],
   ["presentes-romanticos-canaa/index.html", "presentes românticos em canaã dos carajás"],
   ["rosas-perfumadas-canaa/index.html", "rosas e perfumes em canaã dos carajás"],
-  ["monte-sua-cesta/index.html", "monte sua cesta"]
+  ["monte-sua-cesta/index.html", "monte sua cesta"],
+  ["revenda-chocolates-canaa/index.html", "revenda de chocolates em canaã dos carajás"]
 ]);
 
 const titles = new Set();
@@ -58,5 +59,26 @@ assert.ok(catalog.includes("loja de presentes perto de mim"), "A consulta perto 
 
 const florist = fs.readFileSync("floricultura-canaa-dos-carajas/index.html", "utf8").toLocaleLowerCase("pt-BR");
 assert.ok(florist.includes("floricultura perto de mim"), "A intenção local perto de mim deve aparecer na FAQ de floricultura.");
+
+for (const term of ["entrega de flores", "arranjos florais", "flores para presente"]) {
+  assert.ok(florist.includes(term), `Floricultura deve cobrir naturalmente a intenção: ${term}`);
+}
+
+const bouquets = fs.readFileSync("buques-canaa-dos-carajas/index.html", "utf8").toLocaleLowerCase("pt-BR");
+for (const term of ["rosas naturais", "rosas artificiais", "buquê com chocolate", "entrega de buquê"]) {
+  assert.ok(bouquets.includes(term), `Buquês deve cobrir naturalmente a intenção: ${term}`);
+}
+
+assert.ok(florist.includes('../buques-canaa-dos-carajas/'), "Floricultura deve ter link contextual para Buquês.");
+assert.ok(bouquets.includes('../floricultura-canaa-dos-carajas/'), "Buquês deve ter link contextual para Floricultura.");
+
+function productIds(source) {
+  return new Set([...source.matchAll(/<article\b[^>]*\bid="produto-(\d+)"/g)].map((match) => match[1]));
+}
+
+const floristProducts = productIds(florist);
+const bouquetProducts = productIds(bouquets);
+const sharedProducts = [...floristProducts].filter((id) => bouquetProducts.has(id));
+assert.ok(sharedProducts.length <= 1, `Floricultura e Buquês repetem produtos demais: ${sharedProducts.join(", ")}`);
 
 console.log(`SEO local validado: ${pages.size} páginas com intenção própria, metadados únicos e termos locais contextualizados.`);

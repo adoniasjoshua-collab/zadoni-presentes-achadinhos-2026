@@ -45,6 +45,7 @@ const productContext = {};
 vm.runInNewContext(`${read("assets/data/produtos.js")}\nglobalThis.__produtosLocais = produtosLocais;`, productContext);
 const products = productContext.__produtosLocais;
 const productsById = new Map(products.map((product) => [String(product.id), product]));
+const sitemap = read("sitemap.xml");
 
 for (const page of pages) {
   const content = read(page);
@@ -56,6 +57,9 @@ for (const page of pages) {
     assert(/<link\s+rel=["']canonical["']\s+href=["']https:\/\/zadonipresentes\.com\.br\//i.test(content), `${page}: canonical absoluto ausente`);
     assert(/property=["']og:title["']/i.test(content), `${page}: og:title ausente`);
     assert(/name=["']twitter:card["']/i.test(content), `${page}: twitter card ausente`);
+
+    const canonical = content.match(/<link\s+rel=["']canonical["']\s+href=["']([^"']+)/i)?.[1];
+    assert(sitemap.includes(`<loc>${canonical}</loc>`), `${page}: canonical ausente do sitemap.xml`);
   }
 
   const jsonScripts = [...content.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
