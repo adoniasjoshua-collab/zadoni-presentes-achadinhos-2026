@@ -1149,7 +1149,11 @@ const urls = [
   { loc: `${SITE}/monte-sua-cesta/`, priority: "0.9" },
   { loc: `${SITE}/presentes-romanticos-canaa/`, priority: "0.85" },
   { loc: `${SITE}/rosas-perfumadas-canaa/`, priority: "0.8" },
-  { loc: `${SITE}/revenda-chocolates-canaa/`, priority: "0.88" }
+  { loc: `${SITE}/revenda-chocolates-canaa/`, priority: "0.88" },
+  { loc: `${SITE}/achadinhos/`, priority: "0.8" },
+  { loc: `${SITE}/achadinhos/presentes-para-namorada/`, priority: "0.7" },
+  { loc: `${SITE}/achadinhos/presentes-criativos/`, priority: "0.7" },
+  { loc: `${SITE}/achadinhos/presentes-de-aniversario/`, priority: "0.7" }
 ];
 
 writeFile("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>

@@ -44,4 +44,20 @@
     <loc>https://zadonipresentes.com.br/revenda-chocolates-canaa/</loc>
     <priority>0.88</priority>
   </url>
+  <url>
+    <loc>https://zadonipresentes.com.br/achadinhos/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zadonipresentes.com.br/achadinhos/presentes-para-namorada/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zadonipresentes.com.br/achadinhos/presentes-criativos/</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zadonipresentes.com.br/achadinhos/presentes-de-aniversario/</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>
