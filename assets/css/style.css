@@ -1394,6 +1394,52 @@ header {
   color: #ffffff;
 }
 
+.achadinhos-entry {
+  padding: 0 0 var(--espaco-xxl);
+}
+
+.achadinhos-entry-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--espaco-lg);
+  overflow: hidden;
+  border: 1px solid rgba(217, 54, 127, 0.18);
+  border-radius: var(--raio);
+  background: linear-gradient(135deg, #fff7fb, #f7f2ff);
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  box-shadow: var(--sombra-suave);
+}
+
+.achadinhos-entry-content {
+  min-width: 0;
+  max-width: 720px;
+}
+
+.achadinhos-entry-label {
+  display: block;
+  margin-bottom: var(--espaco-sm);
+  color: var(--cor-primaria-escura);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.achadinhos-entry h2 {
+  margin-bottom: var(--espaco-sm);
+}
+
+.achadinhos-entry p {
+  margin: 0;
+  color: var(--cor-texto-leve);
+}
+
+.achadinhos-entry-link {
+  flex: 0 0 auto;
+  text-align: center;
+}
+
 footer {
   background: linear-gradient(135deg, var(--cor-primaria-escura), #2d1020);
   color: #ffffff;
@@ -1619,6 +1665,12 @@ select:focus {
 }
 
 @media (min-width: 768px) {
+  .achadinhos-entry-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .perfume-spotlight-content {
     grid-template-columns: minmax(0, 1fr) auto;
     padding: var(--espaco-xl);
