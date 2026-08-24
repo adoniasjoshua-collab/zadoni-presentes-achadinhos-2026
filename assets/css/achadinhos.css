@@ -233,24 +233,45 @@ body.achadinhos-site {
 }
 
 .ach-offers {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 20px;
+}
+
+.ach-affiliate-offer {
+  align-items: stretch;
+  background: #fff;
+  border: 1px solid var(--ach-border);
+  border-radius: 14px;
+  color: var(--ach-ink);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.ach-affiliate-image {
+  aspect-ratio: 1 / 1;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
 }
 
 .ach-affiliate-link {
   background: var(--ach-primary);
-  border-radius: 999px;
   color: #fff;
-  display: inline-flex;
+  display: block;
   font-weight: 750;
-  padding: 11px 17px;
-  text-decoration: none;
+  margin-top: auto;
+  padding: 12px 14px;
+  text-align: center;
 }
 
-.ach-affiliate-link:hover,
-.ach-affiliate-link:focus-visible {
+.ach-affiliate-offer:hover .ach-affiliate-link,
+.ach-affiliate-offer:focus-visible .ach-affiliate-link {
   background: var(--ach-primary-dark);
 }
 
@@ -349,6 +370,10 @@ body.achadinhos-site {
   .ach-grid,
   .ach-recommendations,
   .ach-criteria {
+    grid-template-columns: 1fr;
+  }
+
+  .ach-offers {
     grid-template-columns: 1fr;
   }
 }

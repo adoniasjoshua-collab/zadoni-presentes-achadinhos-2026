@@ -129,7 +129,7 @@ function head(page, prefix) {
     <meta name="twitter:image" content="${socialImage}">
     <title>${escapeHtml(page.metaTitle)}</title>
     <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260818-real-deliveries-1">
-    <link rel="stylesheet" href="${prefix}assets/css/achadinhos.css?v=20260824-pilot-1">`;
+    <link rel="stylesheet" href="${prefix}assets/css/achadinhos.css?v=20260824-affiliate-images-1">`;
 }
 
 function header(prefix, currentSlug = "") {
@@ -202,7 +202,7 @@ function shell({ page, prefix, currentSlug, body, schemas }) {
     ${header(prefix, currentSlug)}
     ${body}
     ${footer(prefix)}
-    <script src="${prefix}assets/data/achadinhos.js?v=20260824-pilot-1" defer></script>
+    <script src="${prefix}assets/data/achadinhos.js?v=20260824-affiliate-images-1" defer></script>
     <script src="${prefix}assets/js/achadinhos.js?v=20260824-pilot-1" defer></script>
     ${jsonLd(schemas)}
 </body>
@@ -210,10 +210,13 @@ function shell({ page, prefix, currentSlug, body, schemas }) {
 `;
 }
 
-function offerLinks(recommendation, guideSlug) {
+function offerLinks(recommendation, guideSlug, prefix) {
   if (!recommendation.offers?.length) return "";
   return `<div class="ach-offers" aria-label="Lojas parceiras">
-        ${recommendation.offers.map((offer) => `<a class="ach-affiliate-link" href="${escapeHtml(offer.url)}" target="_blank" rel="sponsored noopener noreferrer" data-affiliate-link data-affiliate-partner="${escapeHtml(offer.partner)}" data-item-id="${escapeHtml(recommendation.id)}" data-placement="guide_${escapeHtml(guideSlug)}">Ver na loja parceira</a>`).join("\n        ")}
+        ${recommendation.offers.map((offer) => `<a class="ach-affiliate-offer" href="${escapeHtml(offer.url)}" target="_blank" rel="sponsored noopener noreferrer" data-affiliate-link data-affiliate-partner="${escapeHtml(offer.partner)}" data-item-id="${escapeHtml(offer.id || recommendation.id)}" data-placement="guide_${escapeHtml(guideSlug)}">
+          ${offer.image ? `<img class="ach-affiliate-image" src="${prefix}${escapeHtml(offer.image)}" alt="${escapeHtml(offer.imageAlt || "")}" width="${Number(offer.imageWidth)}" height="${Number(offer.imageHeight)}" loading="lazy" decoding="async">` : ""}
+          <span class="ach-affiliate-link">${escapeHtml(offer.label || "Ver na loja parceira")}</span>
+        </a>`).join("\n        ")}
       </div>`;
 }
 
@@ -278,6 +281,7 @@ function hubPage() {
 }
 
 function guidePage(guide) {
+  const prefix = "../../";
   const page = {
     ...guide,
     canonical: `${SITE}/achadinhos/${guide.slug}/`,
@@ -332,7 +336,7 @@ function guidePage(guide) {
               <p>${escapeHtml(item.description)}</p>
               <span class="ach-note"><strong>Para quem faz sentido:</strong> ${escapeHtml(item.fit)}</span>
               <span class="ach-note"><strong>Orçamento:</strong> ${escapeHtml(item.budget)}</span>
-${offerLinks(item, guide.slug)}
+${offerLinks(item, guide.slug, prefix)}
             </article>`).join("\n            ")}
           </div>
         </div>
@@ -357,7 +361,7 @@ ${offerLinks(item, guide.slug)}
       </section>
       ${faqHtml(guide.faq)}
     </main>`;
-  return shell({ page, prefix: "../../", currentSlug: guide.slug, body, schemas });
+  return shell({ page, prefix, currentSlug: guide.slug, body, schemas });
 }
 
 function write(relativePath, content) {

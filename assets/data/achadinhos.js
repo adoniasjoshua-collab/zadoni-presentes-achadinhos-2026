@@ -66,7 +66,48 @@
             description: "Uma foto, data, frase curta ou lugar importante pode transformar um objeto simples em uma lembrança particular.",
             fit: "Indicado quando a personalização tem significado real e não expõe algo que ela prefira manter privado.",
             budget: "Reserve tempo para produção e revisão da personalização antes de comprar.",
-            offers: []
+            offers: [
+              {
+                id: "colar-foto-frase-25mm",
+                partner: "mercado_livre",
+                label: "Ver colar personalizado com foto e frase",
+                image: "assets/optimized/achadinhos/colar-personalizado-foto-frase-25mm.webp",
+                imageWidth: 1000,
+                imageHeight: 1000,
+                imageAlt: "Colar de aço inox com pingente redondo personalizado com foto",
+                url: "https://meli.la/21fxTBz"
+              },
+              {
+                id: "colar-foto-nome-feminino",
+                partner: "mercado_livre",
+                label: "Ver colar personalizado com foto e nome",
+                image: "assets/optimized/achadinhos/colar-personalizado-feminino-foto-nome.webp",
+                imageWidth: 1200,
+                imageHeight: 1105,
+                imageAlt: "Colar feminino dourado com pingente personalizado com foto e nome",
+                url: "https://meli.la/1iFHZpS"
+              },
+              {
+                id: "colar-esposa-ouro-18k-mensagem",
+                partner: "mercado_livre",
+                label: "Ver colar para esposa com mensagem",
+                image: "assets/optimized/achadinhos/colar-presente-esposa-ouro-18k-mensagem.webp",
+                imageWidth: 1200,
+                imageHeight: 1200,
+                imageAlt: "Colar dourado com pingente de coração e cartão com mensagem para esposa",
+                url: "https://meli.la/1G7dL3Z"
+              },
+              {
+                id: "colar-pingente-letra-inicial-ouro-18k",
+                partner: "mercado_livre",
+                label: "Ver colar com pingente de letra inicial",
+                image: "assets/optimized/achadinhos/colar-pingente-letra-inicial-ouro-18k.webp",
+                imageWidth: 1200,
+                imageHeight: 1200,
+                imageAlt: "Colar dourado delicado com pingente de letra inicial",
+                url: "https://meli.la/2MJmUeb"
+              }
+            ]
           },
           {
             id: "item-hobby",
@@ -122,6 +163,25 @@
             offers: []
           },
           {
+            id: "acessorio-mensagem-simbolica",
+            title: "Acessório com uma mensagem simbólica",
+            description: "Pingentes e pequenos objetos com palavras significativas podem transformar uma lembrança em algo que acompanha a rotina.",
+            fit: "Faz sentido quando a mensagem representa de verdade a relação com quem recebe e combina com seu estilo.",
+            budget: "Confira material, acabamento, medidas e conteúdo da mensagem antes de decidir.",
+            offers: [
+              {
+                id: "colar-livro-minha-estrelinha-filha",
+                partner: "mercado_livre",
+                label: "Ver colar-livro Minha Estrelinha",
+                image: "assets/optimized/achadinhos/colar-livro-minha-estrelinha-aco-titanio.webp",
+                imageWidth: 600,
+                imageHeight: 600,
+                imageAlt: "Pingente em formato de livro aberto com mensagem de amor para filha",
+                url: "https://meli.la/2SuFcFh"
+              }
+            ]
+          },
+          {
             id: "kit-projeto",
             title: "Kit para começar um pequeno projeto",
             description: "Reúna os itens essenciais para fotografia, desenho, culinária, cultivo, escrita ou outra atividade que a pessoa queira experimentar.",
@@ -135,7 +195,18 @@
             description: "Organizadores modulares, iluminação ajustável e acessórios multifuncionais podem surpreender sem perder utilidade.",
             fit: "Verifique medidas, alimentação elétrica e materiais antes de decidir.",
             budget: "Compare especificações e garantia, não apenas aparência.",
-            offers: []
+            offers: [
+              {
+                id: "luminaria-led-coracao-foto-personalizada",
+                partner: "mercado_livre",
+                label: "Ver luminária de coração personalizada",
+                image: "assets/optimized/achadinhos/luminaria-led-coracao-foto-personalizada.webp",
+                imageWidth: 1024,
+                imageHeight: 1024,
+                imageAlt: "Luminária LED em formato de coração personalizada com foto de casal",
+                url: "https://meli.la/22h8DSM"
+              }
+            ]
           },
           {
             id: "experiencia-tematica",
