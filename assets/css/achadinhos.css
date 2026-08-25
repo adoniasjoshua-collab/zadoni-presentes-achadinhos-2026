@@ -280,8 +280,7 @@ body.achadinhos-site {
 }
 
 .ach-card,
-.ach-recommendation,
-.ach-disclosure {
+.ach-recommendation {
   background: #fff;
   border: 1px solid var(--ach-border);
   border-radius: 18px;
@@ -347,15 +346,15 @@ body.achadinhos-site {
   padding: 22px;
 }
 
-.ach-affiliate-notice {
-  background: #fff8dd;
-  border: 1px solid #eedb9e;
-  border-radius: 12px;
+.ach-affiliate-label {
+  font-size: 0.82rem;
+  margin: -8px 0 16px;
+}
+
+.ach-affiliate-label a {
   color: var(--ach-muted);
-  font-size: 0.92rem;
-  line-height: 1.55;
-  margin: 0 0 22px;
-  padding: 12px 15px;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 .ach-note {
@@ -456,26 +455,6 @@ body.achadinhos-site {
   background: var(--ach-primary-dark);
 }
 
-.ach-disclosure {
-  padding: 28px;
-}
-
-.ach-disclosure {
-  border-left: 5px solid var(--ach-accent);
-  margin-top: 28px;
-}
-
-.ach-disclosure h2 {
-  font-size: 1.25rem;
-  margin-bottom: 8px;
-}
-
-.ach-disclosure p {
-  color: var(--ach-muted);
-  line-height: 1.65;
-  margin: 0;
-}
-
 .ach-faq {
   display: grid;
   gap: 12px;
@@ -515,6 +494,20 @@ body.achadinhos-site {
 
 .ach-footer a {
   color: #fff;
+}
+
+.ach-footer-disclosure {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  margin: 24px 0 0;
+  max-width: 920px;
+  padding-top: 18px;
+}
+
+.ach-footer-disclosure strong {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 860px) {
@@ -614,10 +607,8 @@ body.achadinhos-site {
     display: none;
   }
 
-  .ach-affiliate-notice {
-    font-size: 0.84rem;
-    margin-bottom: 16px;
-    padding: 10px 12px;
+  .ach-affiliate-label {
+    margin-top: -4px;
   }
 
   .ach-grid,

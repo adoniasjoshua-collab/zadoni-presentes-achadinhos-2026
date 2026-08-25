@@ -109,9 +109,7 @@ function faqSchema(faq) {
 
 function head(page, prefix) {
   const socialImage = absoluteUrl("assets/optimized/products/box-amor-perfeito.jpg");
-  const achadinhosCssVersion = page.isHub
-    ? "20260825-instagram-authority-1"
-    : "20260824-affiliate-images-1";
+  const achadinhosCssVersion = "20260825-ux-footer-disclosure-1";
   return `<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${escapeHtml(page.description)}">
@@ -162,13 +160,6 @@ function breadcrumbs(items) {
         </nav>`;
 }
 
-function disclosure() {
-  return `<aside class="ach-disclosure" aria-labelledby="disclosure-title">
-          <h2 id="disclosure-title">Transparência sobre links de afiliados</h2>
-          <p>${escapeHtml(data.disclosure)}</p>
-        </aside>`;
-}
-
 function faqHtml(faq) {
   return `<section class="ach-section ach-section--soft" aria-labelledby="faq-title">
       <div class="container">
@@ -188,9 +179,12 @@ function faqHtml(faq) {
 
 function footer(prefix) {
   return `<footer class="ach-footer">
-      <div class="container ach-footer-inner">
-        <div><strong>Zadoni Achadinhos</strong><p>Guias editoriais nacionais para escolher presentes com mais contexto.</p></div>
-        <p><a href="${prefix}index.html">Conhecer a Zadoni Presentes</a> · <a href="${prefix}achadinhos/">Ver todos os Achadinhos</a></p>
+      <div class="container">
+        <div class="ach-footer-inner">
+          <div><strong>Zadoni Achadinhos</strong><p>Guias editoriais nacionais para escolher presentes com mais contexto.</p></div>
+          <p><a href="${prefix}index.html">Conhecer a Zadoni Presentes</a> · <a href="${prefix}achadinhos/">Ver todos os Achadinhos</a></p>
+        </div>
+        <p id="transparencia-afiliados" class="ach-footer-disclosure"><strong>Transparência sobre links de afiliados:</strong> ${escapeHtml(data.disclosure)}</p>
       </div>
     </footer>`;
 }
@@ -287,7 +281,6 @@ function hubPage() {
           <h2 id="metodo-title">Uma ideia útil antes de ser uma oferta</h2>
           <p>Os guias partem do perfil de quem recebe, da ocasião e do uso esperado. Uma recomendação deve continuar útil mesmo quando não houver uma oferta associada.</p>
           <p>Quando links de lojas parceiras forem incluídos, compare o custo final, as especificações, as regras de troca e o prazo informado pelo vendedor antes de concluir a compra.</p>
-          ${disclosure()}
         </div>
       </section>
       ${faqHtml(data.hub.faq)}
@@ -341,7 +334,7 @@ function guidePage(guide) {
             <h2 id="produtos-title">Opções para comparar agora</h2>
             <p>Escolha pelo perfil de quem recebe e confirme características, prazo e condições diretamente na loja.</p>
           </div>
-          <p class="ach-affiliate-notice"><strong>Transparência sobre links de afiliados:</strong> alguns links abaixo podem gerar comissão para a Zadoni, sem custo adicional obrigatório para você.</p>
+          <p class="ach-affiliate-label"><a href="#transparencia-afiliados">Links de afiliados</a></p>
           <div class="ach-recommendations">
             ${productRecommendations.map((item) => `<article class="ach-recommendation" id="ideia-${escapeHtml(item.id)}">
               <h3>${escapeHtml(item.title)}</h3>
