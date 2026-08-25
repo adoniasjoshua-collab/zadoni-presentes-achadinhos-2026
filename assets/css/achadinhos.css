@@ -117,8 +117,131 @@ body.achadinhos-site {
   max-width: 760px;
 }
 
+.ach-hero--hub,
+.ach-hero--guide {
+  padding: 56px 0;
+}
+
+.ach-hero--guide {
+  padding: 48px 0;
+}
+
+.ach-hero--guide h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+}
+
+.ach-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.ach-primary-cta,
+.ach-secondary-cta {
+  align-items: center;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-weight: 750;
+  gap: 8px;
+  justify-content: center;
+  max-width: 100%;
+  padding: 13px 19px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ach-primary-cta {
+  background: var(--ach-accent);
+  color: var(--ach-ink);
+}
+
+.ach-secondary-cta {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  color: #fff;
+}
+
+.ach-primary-cta:hover,
+.ach-primary-cta:focus-visible {
+  background: #ffe092;
+}
+
+.ach-secondary-cta:hover,
+.ach-secondary-cta:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.ach-authority {
+  padding: 22px 0 0;
+}
+
+.ach-authority-card {
+  align-items: center;
+  background: linear-gradient(135deg, #fff 0%, var(--ach-soft) 100%);
+  border: 1px solid var(--ach-border);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(74, 29, 67, 0.07);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 22px 24px;
+}
+
+.ach-authority-copy {
+  min-width: 0;
+}
+
+.ach-authority .ach-eyebrow {
+  color: var(--ach-primary-dark);
+}
+
+.ach-authority h2 {
+  color: var(--ach-ink);
+  font-size: clamp(1.35rem, 3vw, 1.85rem);
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
+.ach-authority-copy > p:last-child {
+  color: var(--ach-muted);
+  line-height: 1.58;
+  margin: 0;
+  max-width: 780px;
+}
+
+.ach-authority-cta {
+  align-items: center;
+  background: var(--ach-primary-dark);
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: #fff;
+  display: inline-flex;
+  flex-shrink: 0;
+  font-weight: 750;
+  gap: 8px;
+  justify-content: center;
+  max-width: 100%;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.ach-authority-cta:hover,
+.ach-authority-cta:focus-visible {
+  background: var(--ach-primary);
+}
+
 .ach-section {
-  padding: 64px 0;
+  padding: 52px 0;
+}
+
+.ach-section--compact {
+  padding: 38px 0;
+}
+
+.ach-products-section {
+  padding-top: 44px;
 }
 
 .ach-section--soft {
@@ -126,8 +249,12 @@ body.achadinhos-site {
 }
 
 .ach-section-heading {
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   max-width: 760px;
+}
+
+.ach-section-heading--compact {
+  margin-bottom: 16px;
 }
 
 .ach-section-heading h2,
@@ -154,7 +281,6 @@ body.achadinhos-site {
 
 .ach-card,
 .ach-recommendation,
-.ach-budget,
 .ach-disclosure {
   background: #fff;
   border: 1px solid var(--ach-border);
@@ -213,12 +339,23 @@ body.achadinhos-site {
 
 .ach-recommendations {
   display: grid;
-  gap: 22px;
+  gap: 18px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .ach-recommendation {
-  padding: 28px;
+  padding: 22px;
+}
+
+.ach-affiliate-notice {
+  background: #fff8dd;
+  border: 1px solid #eedb9e;
+  border-radius: 12px;
+  color: var(--ach-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  padding: 12px 15px;
 }
 
 .ach-note {
@@ -232,11 +369,55 @@ body.achadinhos-site {
   color: var(--ach-ink);
 }
 
+.ach-recommendation-details {
+  border-top: 1px solid var(--ach-border);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.ach-recommendation-details summary,
+.ach-guide-details summary {
+  color: var(--ach-primary-dark);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.ach-recommendation-details .ach-note {
+  border-top: 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin-top: 12px;
+  padding-top: 0;
+}
+
+.ach-guide-details {
+  background: #fff;
+  border: 1px solid var(--ach-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(74, 29, 67, 0.06);
+  padding: 18px 22px;
+}
+
+.ach-guide-details-content {
+  margin-top: 20px;
+}
+
+.ach-guide-details-content h3 {
+  color: var(--ach-ink);
+  font-size: 1.2rem;
+  margin: 26px 0 12px;
+}
+
 .ach-offers {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 20px;
+  margin-top: 16px;
+}
+
+.ach-affiliate-offer:only-child {
+  grid-column: 1 / -1;
+  max-width: 320px;
 }
 
 .ach-affiliate-offer {
@@ -275,7 +456,6 @@ body.achadinhos-site {
   background: var(--ach-primary-dark);
 }
 
-.ach-budget,
 .ach-disclosure {
   padding: 28px;
 }
@@ -360,11 +540,84 @@ body.achadinhos-site {
 
 @media (max-width: 620px) {
   .ach-hero {
-    padding: 52px 0;
+    padding: 34px 0;
+  }
+
+  .ach-hero--hub h1,
+  .ach-hero--guide h1 {
+    font-size: clamp(1.95rem, 9vw, 2.35rem);
+    line-height: 1.04;
+  }
+
+  .ach-hero--guide .ach-breadcrumbs {
+    display: none;
+  }
+
+  .ach-hero-copy {
+    font-size: 1rem;
+    line-height: 1.52;
+    margin-top: 18px;
+  }
+
+  .ach-hero-actions {
+    margin-top: 22px;
+  }
+
+  .ach-hero-actions a {
+    width: 100%;
+  }
+
+  .ach-hero--guide .ach-secondary-cta {
+    display: none;
+  }
+
+  .ach-authority {
+    padding-top: 18px;
+  }
+
+  .ach-authority-card {
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 20px;
+  }
+
+  .ach-authority-cta {
+    width: 100%;
   }
 
   .ach-section {
-    padding: 48px 0;
+    padding: 38px 0;
+  }
+
+  .ach-section--compact {
+    padding: 30px 0;
+  }
+
+  .ach-products-section {
+    padding-top: 30px;
+  }
+
+  .ach-products-section .ach-section-heading {
+    margin-bottom: 14px;
+  }
+
+  .ach-products-section .ach-section-heading .ach-eyebrow,
+  .ach-products-section .ach-section-heading > p:last-child {
+    display: none;
+  }
+
+  .ach-products-section .ach-section-heading h2 {
+    font-size: 1.7rem;
+  }
+
+  .ach-guides-section .ach-section-heading > p:last-child {
+    display: none;
+  }
+
+  .ach-affiliate-notice {
+    font-size: 0.84rem;
+    margin-bottom: 16px;
+    padding: 10px 12px;
   }
 
   .ach-grid,
@@ -373,7 +626,12 @@ body.achadinhos-site {
     grid-template-columns: 1fr;
   }
 
-  .ach-offers {
-    grid-template-columns: 1fr;
+  .ach-recommendation {
+    padding: 20px;
+  }
+
+  .ach-affiliate-link {
+    font-size: 0.86rem;
+    padding: 11px 8px;
   }
 }

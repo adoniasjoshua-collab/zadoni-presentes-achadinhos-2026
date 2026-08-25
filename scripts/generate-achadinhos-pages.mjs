@@ -109,6 +109,9 @@ function faqSchema(faq) {
 
 function head(page, prefix) {
   const socialImage = absoluteUrl("assets/optimized/products/box-amor-perfeito.jpg");
+  const achadinhosCssVersion = page.isHub
+    ? "20260825-instagram-authority-1"
+    : "20260824-affiliate-images-1";
   return `<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${escapeHtml(page.description)}">
@@ -129,7 +132,7 @@ function head(page, prefix) {
     <meta name="twitter:image" content="${socialImage}">
     <title>${escapeHtml(page.metaTitle)}</title>
     <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260818-real-deliveries-1">
-    <link rel="stylesheet" href="${prefix}assets/css/achadinhos.css?v=20260824-affiliate-images-1">`;
+    <link rel="stylesheet" href="${prefix}assets/css/achadinhos.css?v=${achadinhosCssVersion}">`;
 }
 
 function header(prefix, currentSlug = "") {
@@ -202,7 +205,7 @@ function shell({ page, prefix, currentSlug, body, schemas }) {
     ${header(prefix, currentSlug)}
     ${body}
     ${footer(prefix)}
-    <script src="${prefix}assets/data/achadinhos.js?v=20260824-affiliate-images-1" defer></script>
+    <script src="${prefix}assets/data/achadinhos.js?v=20260824-affiliate-images-10" defer></script>
     <script src="${prefix}assets/js/achadinhos.js?v=20260824-pilot-1" defer></script>
     ${jsonLd(schemas)}
 </body>
@@ -242,7 +245,7 @@ function hubPage() {
     faqSchema(data.hub.faq)
   ];
   const body = `<main id="conteudo">
-      <section class="ach-hero">
+      <section class="ach-hero ach-hero--hub">
         <div class="container">
           ${breadcrumbs(crumbs)}
           <p class="ach-eyebrow">Curadoria editorial nacional</p>
@@ -250,7 +253,7 @@ function hubPage() {
           <p class="ach-hero-copy">${escapeHtml(data.hub.intro)}</p>
         </div>
       </section>
-      <section class="ach-section" aria-labelledby="guias-title">
+      <section class="ach-section ach-guides-section" aria-labelledby="guias-title">
         <div class="container">
           <div class="ach-section-heading">
             <p class="ach-eyebrow">Comece pelo contexto</p>
@@ -263,6 +266,18 @@ function hubPage() {
               <p>${escapeHtml(guide.description)}</p>
               <span class="ach-card-link">Abrir guia →</span>
             </a>`).join("\n            ")}
+          </div>
+        </div>
+      </section>
+      <section class="ach-authority" aria-labelledby="autoridade-title">
+        <div class="container">
+          <div class="ach-authority-card">
+            <div class="ach-authority-copy">
+              <p class="ach-eyebrow">${escapeHtml(data.hub.authority.eyebrow)}</p>
+              <h2 id="autoridade-title">${escapeHtml(data.hub.authority.title)}</h2>
+              <p>${escapeHtml(data.hub.authority.text)}</p>
+            </div>
+            <a class="ach-authority-cta" href="${escapeHtml(data.hub.authority.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(data.hub.authority.cta)} <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
@@ -292,7 +307,10 @@ function guidePage(guide) {
     { name: "Achadinhos", href: "../", url: `${SITE}/achadinhos/` },
     { name: guide.label, href: `./`, url: page.canonical }
   ];
-  const listItems = guide.recommendations.map((item) => ({
+  const productRecommendations = guide.recommendations.filter((item) => (
+    Array.isArray(item.offers) && item.offers.length > 0
+  ));
+  const listItems = productRecommendations.map((item) => ({
     name: item.title,
     url: `${page.canonical}#ideia-${item.id}`
   }));
@@ -304,51 +322,58 @@ function guidePage(guide) {
   ];
   const relatedGuides = guide.related.map((slug) => guidesBySlug.get(slug)).filter(Boolean);
   const body = `<main id="conteudo">
-      <section class="ach-hero">
+      <section class="ach-hero ach-hero--guide">
         <div class="container">
           ${breadcrumbs(crumbs)}
           <p class="ach-eyebrow">Guia nacional de presentes</p>
           <h1>${escapeHtml(guide.h1)}</h1>
           <p class="ach-hero-copy">${escapeHtml(guide.intro)}</p>
+          <div class="ach-hero-actions">
+            <a class="ach-primary-cta" href="#produtos-title">Ver opções selecionadas <span aria-hidden="true">↓</span></a>
+            <a class="ach-secondary-cta" href="#como-escolher-title">Como escolher</a>
+          </div>
         </div>
       </section>
-      <section class="ach-section" aria-labelledby="como-escolher-title">
-        <div class="container ach-prose">
-          <p class="ach-eyebrow">Decisão consciente</p>
-          <h2 id="como-escolher-title">Como escolher</h2>
-          ${guide.howToChoose.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n          ")}
-          <h2>Critérios de seleção</h2>
-          <ul class="ach-criteria">
-            ${guide.criteria.map((criterion) => `<li>${escapeHtml(criterion)}</li>`).join("\n            ")}
-          </ul>
-        </div>
-      </section>
-      <section class="ach-section ach-section--soft" aria-labelledby="recomendacoes-title">
+      <section class="ach-section ach-products-section" aria-labelledby="produtos-title">
         <div class="container">
           <div class="ach-section-heading">
-            <p class="ach-eyebrow">Categorias e recomendações</p>
-            <h2 id="recomendacoes-title">Ideias para adaptar ao perfil</h2>
-            <p>As sugestões abaixo são pontos de partida editoriais. Confirme características e condições na loja escolhida.</p>
+            <p class="ach-eyebrow">Seleção prática</p>
+            <h2 id="produtos-title">Opções para comparar agora</h2>
+            <p>Escolha pelo perfil de quem recebe e confirme características, prazo e condições diretamente na loja.</p>
           </div>
+          <p class="ach-affiliate-notice"><strong>Transparência sobre links de afiliados:</strong> alguns links abaixo podem gerar comissão para a Zadoni, sem custo adicional obrigatório para você.</p>
           <div class="ach-recommendations">
-            ${guide.recommendations.map((item) => `<article class="ach-recommendation" id="ideia-${escapeHtml(item.id)}">
+            ${productRecommendations.map((item) => `<article class="ach-recommendation" id="ideia-${escapeHtml(item.id)}">
               <h3>${escapeHtml(item.title)}</h3>
               <p>${escapeHtml(item.description)}</p>
-              <span class="ach-note"><strong>Para quem faz sentido:</strong> ${escapeHtml(item.fit)}</span>
-              <span class="ach-note"><strong>Orçamento:</strong> ${escapeHtml(item.budget)}</span>
 ${offerLinks(item, guide.slug, prefix)}
+              <details class="ach-recommendation-details">
+                <summary>Como avaliar esta opção</summary>
+                <span class="ach-note"><strong>Para quem faz sentido:</strong> ${escapeHtml(item.fit)}</span>
+                <span class="ach-note"><strong>Antes de comprar:</strong> ${escapeHtml(item.budget)}</span>
+              </details>
             </article>`).join("\n            ")}
           </div>
         </div>
       </section>
-      <section class="ach-section" aria-labelledby="orcamento-title">
+      <section class="ach-section ach-section--soft ach-section--compact" aria-labelledby="como-escolher-title">
         <div class="container">
-          <div class="ach-budget ach-prose">
-            <p class="ach-eyebrow">Planejamento</p>
-            <h2 id="orcamento-title">${escapeHtml(guide.budgetTitle)}</h2>
-            <p>${escapeHtml(guide.budgetCopy)}</p>
+          <div class="ach-section-heading ach-section-heading--compact">
+            <p class="ach-eyebrow">Guia de compra</p>
+            <h2 id="como-escolher-title">Como escolher e comparar</h2>
           </div>
-          ${disclosure()}
+          <details class="ach-guide-details">
+            <summary>Ver critérios, cuidados e orçamento</summary>
+            <div class="ach-guide-details-content ach-prose">
+              ${guide.howToChoose.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("\n              ")}
+              <h3>Critérios de seleção</h3>
+              <ul class="ach-criteria">
+                ${guide.criteria.map((criterion) => `<li>${escapeHtml(criterion)}</li>`).join("\n                ")}
+              </ul>
+              <h3>${escapeHtml(guide.budgetTitle)}</h3>
+              <p>${escapeHtml(guide.budgetCopy)}</p>
+            </div>
+          </details>
         </div>
       </section>
       <section class="ach-section ach-section--soft" aria-labelledby="relacionados-title">

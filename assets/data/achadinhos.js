@@ -10,6 +10,13 @@
       metaTitle: "Zadoni Achadinhos | Ideias de Presentes para Todo o Brasil",
       description: "Guias nacionais da Zadoni com ideias de presentes por pessoa, ocasião, estilo e orçamento para ajudar você a escolher com mais segurança.",
       intro: "Guias editoriais para transformar uma dúvida ampla em uma escolha mais consciente, considerando a pessoa, a ocasião, o uso e o orçamento total.",
+      authority: {
+        eyebrow: "Experiência que orienta a curadoria",
+        title: "Curadoria feita por quem entende de presentes",
+        text: "A Zadoni Presentes já reúne mais de 5 mil seguidores no Instagram e experiência prática com presentes, flores, cestas e surpresas. No Zadoni Achadinhos, usamos essa experiência para selecionar ideias de presentes para todo o Brasil.",
+        cta: "Conheça a Zadoni no Instagram",
+        url: "https://www.instagram.com/zadonipresentes/"
+      },
       faq: [
         {
           question: "Como os presentes dos guias são selecionados?",
@@ -106,6 +113,64 @@
                 imageHeight: 1200,
                 imageAlt: "Colar dourado delicado com pingente de letra inicial",
                 url: "https://meli.la/2MJmUeb"
+              },
+              {
+                id: "chaveiro-calendario-casal-data",
+                partner: "mercado_livre",
+                label: "Ver chaveiro de calendário para casal",
+                image: "assets/optimized/achadinhos/chaveiro-calendario-casal-data-personalizada.webp",
+                imageWidth: 1024,
+                imageHeight: 950,
+                imageAlt: "Chaveiro prateado personalizado com iniciais e calendário de uma data marcante",
+                url: "https://meli.la/2WYg3o9"
+              }
+            ]
+          },
+          {
+            id: "organizador-joias-acessorios",
+            title: "Porta-joias para organizar acessórios da rotina",
+            description: "Um modelo com divisórias pode reunir anéis, brincos, colares e pulseiras, ajudando a proteger peças e facilitar a escolha no dia a dia.",
+            fit: "É mais adequado para quem já usa joias ou bijuterias e tem espaço disponível para manter a caixa apoiada.",
+            budget: "Compare dimensões, quantidade de compartimentos, revestimento interno e tipo de fechamento.",
+            offers: [
+              {
+                id: "porta-joias-3-camadas-couro-preto",
+                partner: "mercado_livre",
+                label: "Ver porta-joias feminino com três camadas",
+                image: "assets/optimized/achadinhos/porta-joias-3-camadas-couro-preto.webp",
+                imageWidth: 500,
+                imageHeight: 476,
+                imageAlt: "Porta-joias preto com três camadas, divisórias e gavetas abertas",
+                url: "https://meli.la/2tEZ71J"
+              },
+              {
+                id: "porta-joias-3-camadas-couro-branco",
+                partner: "mercado_livre",
+                label: "Ver porta-joias feminino branco com três camadas",
+                image: "assets/optimized/achadinhos/porta-joias-3-camadas-couro-branco.webp",
+                imageWidth: 500,
+                imageHeight: 485,
+                imageAlt: "Porta-joias branco com três camadas, divisórias e gavetas abertas",
+                url: "https://meli.la/2ZLMj6B"
+              }
+            ]
+          },
+          {
+            id: "conjunto-joias-estilo",
+            title: "Conjunto de acessórios alinhado ao estilo dela",
+            description: "Colar e brincos coordenados podem formar um presente completo sem exigir várias escolhas separadas.",
+            fit: "Observe se ela costuma usar peças douradas ou prateadas, discretas ou marcantes, e quais cores aparecem com frequência nos acessórios dela.",
+            budget: "Confira material, medidas, tipo de fecho e orientações de conservação antes da compra.",
+            offers: [
+              {
+                id: "conjunto-colar-brincos-zirconia-folheado-ouro",
+                partner: "mercado_livre",
+                label: "Ver conjunto de colar e brincos com zircônia",
+                image: "assets/optimized/achadinhos/conjunto-colar-brincos-zirconia-folheado-ouro.webp",
+                imageWidth: 470,
+                imageHeight: 500,
+                imageAlt: "Conjunto dourado de colar e brincos com pedras verdes e zircônias",
+                url: "https://meli.la/24WDRRW"
               }
             ]
           },
@@ -205,6 +270,94 @@
                 imageHeight: 1024,
                 imageAlt: "Luminária LED em formato de coração personalizada com foto de casal",
                 url: "https://meli.la/22h8DSM"
+              },
+              {
+                id: "luminaria-led-uv-foto-colorida",
+                partner: "mercado_livre",
+                label: "Ver luminária UV com foto colorida",
+                image: "assets/optimized/achadinhos/luminaria-led-uv-foto-colorida-personalizada.webp",
+                imageWidth: 1200,
+                imageHeight: 1200,
+                imageAlt: "Luminária LED UV em formato de coração com foto colorida de casal",
+                url: "https://meli.la/2won69q"
+              },
+              {
+                id: "caneca-magica-personalizada-foto",
+                partner: "mercado_livre",
+                label: "Ver caneca mágica personalizada",
+                image: "assets/optimized/achadinhos/caneca-magica-personalizada-foto.webp",
+                imageWidth: 1151,
+                imageHeight: 1200,
+                imageAlt: "Caneca mágica preta personalizada revelando a arte ao receber bebida quente",
+                url: "https://meli.la/1tBAqVH"
+              }
+            ]
+          },
+          {
+            id: "conforto-decoracao-afetiva",
+            title: "Objeto de conforto e decoração afetiva",
+            description: "Pelúcias e objetos macios podem funcionar como lembrança visual, companhia decorativa ou elemento de conforto no ambiente.",
+            fit: "Considere a idade de quem recebe, o espaço disponível, as orientações de limpeza e eventuais peças pequenas.",
+            budget: "Compare dimensões e materiais para evitar escolher apenas pela aparência da foto.",
+            offers: [
+              {
+                id: "pelucia-capivara-filo-gigante-antialergica",
+                partner: "mercado_livre",
+                label: "Ver pelúcia Capivara Filó gigante",
+                image: "assets/optimized/achadinhos/pelucia-capivara-filo-gigante-antialergica.webp",
+                imageWidth: 500,
+                imageHeight: 500,
+                imageAlt: "Pelúcia Capivara Filó marrom com acessório verde",
+                url: "https://meli.la/1Bo8mTn"
+              }
+            ]
+          },
+          {
+            id: "personalizacao-para-grupos",
+            title: "Personalização em quantidade para grupos e eventos",
+            description: "Itens repetidos com uma identidade visual comum podem funcionar como lembrança para equipes, famílias, convidados ou pequenas celebrações.",
+            fit: "É uma opção para quem precisa presentear várias pessoas com unidade visual, sem tratar cada item como uma escolha individual.",
+            budget: "Confirme quantidade mínima, área de impressão, prazo de produção e aprovação da arte antes da compra.",
+            offers: [
+              {
+                id: "kit-12-canecas-personalizadas-logo-frase",
+                partner: "mercado_livre",
+                label: "Ver kit com 12 canecas personalizadas",
+                image: "assets/optimized/achadinhos/kit-12-canecas-personalizadas-logo-frase.webp",
+                imageWidth: 943,
+                imageHeight: 976,
+                imageAlt: "Caneca branca ilustrando personalização com logo, foto, frase ou ideia",
+                url: "https://meli.la/29XspZH"
+              },
+              {
+                id: "kit-12-canecas-brancas-sublimacao-325ml",
+                partner: "mercado_livre",
+                label: "Ver kit com 12 canecas brancas para sublimação",
+                image: "assets/optimized/achadinhos/kit-12-canecas-brancas-sublimacao-325ml.webp",
+                imageWidth: 500,
+                imageHeight: 437,
+                imageAlt: "Canecas brancas de cerâmica sem estampa para sublimação",
+                url: "https://meli.la/15tupcP"
+              },
+              {
+                id: "kit-10-mini-caixotes-mdf-festa",
+                partner: "mercado_livre",
+                label: "Ver kit com 10 mini caixotes de MDF",
+                image: "assets/optimized/achadinhos/kit-10-mini-caixotes-mdf-festa.webp",
+                imageWidth: 500,
+                imageHeight: 500,
+                imageAlt: "Dois mini caixotes de MDF natural para decoração de festas",
+                url: "https://meli.la/2kk8vgd"
+              },
+              {
+                id: "kit-100-chaveiros-acrilicos-3x4",
+                partner: "mercado_livre",
+                label: "Ver kit com 100 chaveiros acrílicos",
+                image: "assets/optimized/achadinhos/kit-100-chaveiros-acrilicos-3x4-personalizar.webp",
+                imageWidth: 1200,
+                imageHeight: 1183,
+                imageAlt: "Conjunto de chaveiros acrílicos transparentes 3 por 4 para personalização com fotos",
+                url: "https://meli.la/32216Yv"
               }
             ]
           },
@@ -276,6 +429,63 @@
             fit: "Confirme modelo, edição, tamanho e nível técnico antes da compra.",
             budget: "Prefira um complemento confiável a um conjunto grande de qualidade incerta.",
             offers: []
+          },
+          {
+            id: "brinquedo-sensorial-faixa-etaria",
+            title: "Brinquedo sensorial adequado à fase da criança",
+            description: "Atividades com formas, movimentos, texturas e sons podem estimular exploração e coordenação quando o brinquedo corresponde à etapa de desenvolvimento da criança.",
+            fit: "Antes de presentear, confirme a faixa etária indicada pelo fabricante, a presença de peças pequenas e a necessidade de supervisão de um adulto.",
+            budget: "Considere segurança, resistência dos materiais, facilidade de limpeza e variedade de atividades, não apenas a quantidade anunciada.",
+            offers: [
+              {
+                id: "brinquedo-cubo-sensorial-montessori-10-em-1",
+                partner: "mercado_livre",
+                label: "Ver brinquedo cubo sensorial 10 em 1",
+                image: "assets/optimized/achadinhos/brinquedo-cubo-sensorial-montessori-10-em-1.webp",
+                imageWidth: 500,
+                imageHeight: 500,
+                imageAlt: "Bebê segurando um cubo sensorial colorido com diferentes atividades",
+                url: "https://meli.la/2QwGmZB"
+              }
+            ]
+          },
+          {
+            id: "brinquedo-montagem-imaginacao",
+            title: "Brinquedo de montagem para criar percursos e histórias",
+            description: "Trens com trilhos montáveis podem combinar brincadeira imaginativa com planejamento do percurso e organização das peças.",
+            fit: "Confira a faixa etária indicada, o espaço necessário para montar a pista, a alimentação do brinquedo e se há peças pequenas.",
+            budget: "Compare quantidade de trilhos, compatibilidade entre peças e facilidade de guardar o conjunto depois da brincadeira.",
+            offers: [
+              {
+                id: "ferrorama-trem-luz-19-pecas",
+                partner: "mercado_livre",
+                label: "Ver ferrorama com trem e trilhos",
+                image: "assets/optimized/achadinhos/ferrorama-trem-luz-19-pecas.webp",
+                imageWidth: 469,
+                imageHeight: 500,
+                imageAlt: "Trem de brinquedo preto com vagões e trilhos montáveis",
+                url: "https://meli.la/2mxvz4o"
+              }
+            ]
+          },
+          {
+            id: "brinquedo-eletronico-educativo",
+            title: "Brinquedo eletrônico com atividades educativas",
+            description: "Um laptop infantil pode reunir atividades de letras, números, palavras e sons em um formato inspirado nos equipamentos usados pelos adultos.",
+            fit: "Confirme a faixa etária recomendada, os idiomas disponíveis, o tipo de alimentação e se o volume pode ser ajustado.",
+            budget: "Compare variedade das atividades, clareza dos comandos, resistência das teclas e necessidade de pilhas ou acessórios.",
+            offers: [
+              {
+                id: "laptop-infantil-educativo-bilingue-rosa",
+                partner: "mercado_livre",
+                label: "Ver laptop infantil educativo bilíngue",
+                image: "assets/optimized/achadinhos/laptop-infantil-educativo-bilingue-rosa.webp",
+                imageWidth: 500,
+                imageHeight: 484,
+                imageAlt: "Laptop infantil educativo rosa com teclado de letras e números",
+                url: "https://meli.la/2k8aUa4"
+              }
+            ]
           },
           {
             id: "lembranca-coletiva",
