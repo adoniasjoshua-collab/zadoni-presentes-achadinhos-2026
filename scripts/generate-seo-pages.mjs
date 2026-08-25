@@ -196,6 +196,15 @@ function money(value) {
   });
 }
 
+function hasProductPrice(product) {
+  return Boolean(
+    product &&
+    product.precoSobConsulta !== true &&
+    Number.isFinite(product.preco) &&
+    product.preco > 0
+  );
+}
+
 function relativeAssetPrefix(pagePath) {
   return pagePath.includes("/") ? "../" : "";
 }
@@ -247,7 +256,7 @@ function whatsappUrl(product, source = "produto") {
         "",
         `Produto: ${product.nome}`,
         `Categoria: ${product.categoria}`,
-        `Valor anunciado: ${money(product.preco)}`,
+        `Valor anunciado: ${hasProductPrice(product) ? money(product.preco) : "sob consulta"}`,
         `Resumo: ${product.descricao}`,
         ...(product.observacaoPreco ? [`Observação: ${product.observacaoPreco}`] : []),
         `Imagem do produto: ${absoluteUrl(product.imagem)}`,
@@ -323,6 +332,10 @@ function productCard(product, index, prefix = "", source = "produto", options = 
   const productLink = prefix ? `../presentes-canaa.html#${id}` : `#${id}`;
   const note = product.observacaoPreco || options.priceNote;
   const priceNote = note ? `\n                <p class="produto-preco-nota">${html(note)}</p>` : "";
+  const priceLabel = hasProductPrice(product) ? `A partir de ${money(product.preco)}` : "Valor sob consulta";
+  const addonsLink = prefix && product.exibirAdicionaisNaCategoria === true && Array.isArray(product.adicionaisOpcionais) && product.adicionaisOpcionais.length
+    ? `<a class="btn btn-secondary" href="${productLink}">Escolher adicionais</a>\n                    `
+    : "";
   return `<article class="produto-card seo-product-card" id="${id}" data-produto-id="${product.id}" data-category="${key}">
             <a class="produto-imagem produto-imagem-link" href="${productLink}" aria-label="Ver detalhes de ${html(product.nome)}">
                 ${picture(product, index, prefix)}
@@ -331,9 +344,9 @@ function productCard(product, index, prefix = "", source = "produto", options = 
             <div class="produto-content">
                 <h3 class="produto-nome"><a href="${productLink}">${html(product.nome)}</a></h3>
                 <p class="produto-descricao">${html(product.descricao)}</p>
-                <p class="produto-preco">A partir de ${money(product.preco)}</p>${priceNote}
+                <p class="produto-preco">${priceLabel}</p>${priceNote}
                 <div class="produto-acoes">
-                    <a class="btn-whatsapp-produto" href="${html(whatsappUrl(product, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-produto-id="${product.id}">Quero este presente</a>
+                    ${addonsLink}<a class="btn-whatsapp-produto" href="${html(whatsappUrl(product, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-produto-id="${product.id}">Quero este presente</a>
                 </div>
             </div>
         </article>`;
@@ -421,19 +434,7 @@ function baseSchemas(pageUrl, title, breadcrumbs, options = {}) {
 
 function productSchemas(pageProducts, pageUrl, options = {}) {
   return pageProducts.map((product) => {
-    const offer = {
-      "@type": "Offer",
-      "price": Number(product.preco).toFixed(2),
-      "priceCurrency": "BRL"
-    };
-
-    if (options.includeAvailability !== false) {
-      offer.availability = "https://schema.org/InStock";
-    }
-
-    offer.url = `${pageUrl}#produto-${product.id}`;
-
-    return {
+    const schema = {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": product.nome,
@@ -441,9 +442,26 @@ function productSchemas(pageProducts, pageUrl, options = {}) {
       "image": absoluteUrl(product.imagem),
       "category": product.categoria,
       "brand": { "@type": "Brand", "name": "Zadoni Presentes" },
-      "url": `${pageUrl}#produto-${product.id}`,
-      "offers": offer
+      "url": `${pageUrl}#produto-${product.id}`
     };
+
+    if (hasProductPrice(product)) {
+      const offer = {
+        "@type": "Offer",
+        "price": Number(product.preco).toFixed(2),
+        "priceCurrency": "BRL"
+      };
+
+      if (options.includeAvailability !== false) {
+        offer.availability = "https://schema.org/InStock";
+      }
+
+      offer.url = `${pageUrl}#produto-${product.id}`;
+
+      schema.offers = offer;
+    }
+
+    return schema;
   });
 }
 
@@ -674,8 +692,8 @@ function socialProofHtml(prefix = "") {
     </section>\n`;
 }
 function scripts(prefix, schemas) {
-  return `<script src="${prefix}assets/data/produtos.js?v=20260817-remove-ferrero3-1" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260817-fix-addon-images-1" defer></script>
+  return `<script src="${prefix}assets/data/produtos.js?v=20260825-artificial-bouquets-1" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260825-consult-price-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
@@ -970,6 +988,8 @@ const pageConfigs = [
     galleryCtaLabel: "Consultar este buquê",
     galleryImages: BOUQUET_GALLERY_IMAGES,
     filter: (items) => items.filter((item) => slugify(item.categoria) === "flores"),
+    priorityProductIds: [52, 53, 54, 55, 56, 57],
+    limit: 12,
     faqs: [
       { q: "Posso personalizar o buquê?", a: "Sim. A personalização depende das flores e complementos disponíveis no momento do pedido." },
       { q: "Buquês têm preço fixo?", a: "Os preços exibidos são iniciais. O valor final varia conforme tamanho, flores e adicionais." },

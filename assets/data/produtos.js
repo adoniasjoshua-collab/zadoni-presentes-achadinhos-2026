@@ -706,6 +706,84 @@ const produtosLocais = [
     destaque: true,
     observacaoPreco: "O sabor é escolhido conforme disponibilidade no atendimento.",
     whatsappMensagem: "Ola! Quero adicionar uma barrinha Cacau Show ao meu presente."
+  },
+  {
+    id: 52,
+    nome: "Buquê Rosas Rubi Perfumadas",
+    categoria: "Flores",
+    descricao: "Buquê de rosas artificiais vermelhas de ótima qualidade, com embalagem marsala, acabamento dourado e flores perfumadas com fragrância de grife.",
+    preco: 95.00,
+    imagem: "assets/optimized/products/buque-rosas-rubi-perfumadas.jpg",
+    destaque: false,
+    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo e os adicionais escolhidos.",
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Rosas Rubi Perfumadas e quero escolher adicionais."
+  },
+  {
+    id: 53,
+    nome: "Buquê Girassóis Marsala Perfumado",
+    categoria: "Flores",
+    descricao: "Buquê de girassóis artificiais de ótima qualidade, com embalagem marsala, laço vermelho e flores perfumadas com fragrância de grife.",
+    preco: 95.00,
+    imagem: "assets/optimized/products/buque-girassois-marsala-perfumado.jpg",
+    destaque: false,
+    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo e os adicionais escolhidos.",
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Girassois Marsala Perfumado e quero escolher adicionais."
+  },
+  {
+    id: 54,
+    nome: "Buquê Rosas Clássico Branco e Dourado",
+    categoria: "Flores",
+    descricao: "Buquê de rosas artificiais vermelhas de ótima qualidade, com embalagem branca, bordas douradas, laço vermelho e fragrância de grife.",
+    preco: 95.00,
+    imagem: "assets/optimized/products/buque-rosas-classico-branco-dourado.jpg",
+    destaque: false,
+    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo e os adicionais escolhidos.",
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Rosas Classico Branco e Dourado e quero escolher adicionais."
+  },
+  {
+    id: 55,
+    nome: "Buquê Jardim Azul Perfumado",
+    categoria: "Flores",
+    descricao: "Buquê de flores artificiais de ótima qualidade em tons azul, branco e vinho, com acabamento dourado, cartão e perfumação com fragrância de grife.",
+    preco: 95.00,
+    imagem: "assets/optimized/products/buque-jardim-azul-perfumado.jpg",
+    destaque: false,
+    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo, a mensagem do cartão e os adicionais escolhidos.",
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Jardim Azul Perfumado e quero escolher adicionais."
+  },
+  {
+    id: 56,
+    nome: "Buquê Rosas Cherry Perfumadas",
+    categoria: "Flores",
+    descricao: "Buquê de rosas e flores artificiais de ótima qualidade em tons de rosa, com detalhe Cherry, acabamento dourado e perfumação com fragrância de grife.",
+    preco: 95.00,
+    imagem: "assets/optimized/products/buque-rosas-cherry-perfumado.jpg",
+    destaque: false,
+    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo, o detalhe Cherry e os adicionais escolhidos.",
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Rosas Cherry Perfumadas e quero escolher adicionais."
+  },
+  {
+    id: 57,
+    nome: "Buquê Girassóis Noir Perfumado",
+    categoria: "Flores",
+    descricao: "Buquê de girassóis artificiais de ótima qualidade, com embalagem preta, acabamento dourado, laço vermelho e fragrância de grife.",
+    preco: 95.00,
+    imagem: "assets/optimized/products/buque-girassois-noir-perfumado.jpg",
+    destaque: false,
+    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo e os adicionais escolhidos.",
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buque Girassois Noir Perfumado e quero escolher adicionais."
   }
 ];
 

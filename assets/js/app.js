@@ -31,6 +31,15 @@
     });
   }
 
+  function temPrecoProduto(produto) {
+    return Boolean(
+      produto &&
+      produto.precoSobConsulta !== true &&
+      Number.isFinite(produto.preco) &&
+      produto.preco > 0
+    );
+  }
+
   function criarUrlAbsoluta(caminho) {
     if (!caminho) return "";
     if (/^(?:https?:|data:|blob:)/i.test(caminho)) return caminho;
@@ -81,7 +90,7 @@
       "",
       "Produto: " + produto.nome,
       "Categoria: " + produto.categoria,
-      "Valor do produto: " + formatarPreco(produto.preco),
+      "Valor do produto: " + (temPrecoProduto(produto) ? formatarPreco(produto.preco) : "sob consulta"),
       "Resumo: " + produto.descricao
     ];
 
@@ -100,7 +109,9 @@
 
         linhas.push("- " + detalheQuantidade + adicional.nome + " (+" + formatarPreco(subtotal) + ")" + observacao);
       });
-      linhas.push("Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionais)));
+      linhas.push(temPrecoProduto(produto)
+        ? "Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionais))
+        : "Subtotal estimado dos adicionais: " + formatarPreco(calcularTotalProduto(produto, adicionais)));
     }
 
     if (produto.observacaoPreco || adicionais.length) {
@@ -435,11 +446,13 @@
 
     var preco = document.createElement("div");
     preco.className = "produto-preco";
-    preco.textContent = formatarPreco(produto.preco);
+    preco.textContent = temPrecoProduto(produto) ? formatarPreco(produto.preco) : "Valor sob consulta";
 
     var totalEstimado = document.createElement("p");
     totalEstimado.className = "produto-total-estimado";
-    totalEstimado.textContent = "Total estimado: " + formatarPreco(produto.preco);
+    totalEstimado.textContent = temPrecoProduto(produto)
+      ? "Total estimado: " + formatarPreco(produto.preco)
+      : "Valor do buquê sob consulta";
 
     var acoes = document.createElement("div");
     acoes.className = "produto-acoes";
@@ -456,7 +469,11 @@
     function atualizarLinkWhatsApp() {
       var adicionaisSelecionados = obterAdicionaisSelecionados(card, produto);
       whatsapp.href = gerarLinkWhatsApp(produto, adicionaisSelecionados);
-      totalEstimado.textContent = "Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionaisSelecionados));
+      totalEstimado.textContent = temPrecoProduto(produto)
+        ? "Total estimado: " + formatarPreco(calcularTotalProduto(produto, adicionaisSelecionados))
+        : adicionaisSelecionados.length
+          ? "Adicionais selecionados: " + formatarPreco(calcularTotalProduto(produto, adicionaisSelecionados)) + " · valor do buquê sob consulta"
+          : "Valor do buquê sob consulta";
     }
 
     var adicionais = criarAdicionaisProduto(produto, atualizarLinkWhatsApp);
@@ -615,6 +632,10 @@
     if (window.location.hash.startsWith("#categoria-")) {
       window.requestAnimationFrame(function () {
         document.getElementById("produtos-container")?.scrollIntoView({ block: "start" });
+      });
+    } else if (window.location.hash.startsWith("#produto-")) {
+      window.requestAnimationFrame(function () {
+        document.querySelector(window.location.hash)?.scrollIntoView({ block: "start" });
       });
     }
   }

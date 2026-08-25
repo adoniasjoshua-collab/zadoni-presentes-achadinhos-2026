@@ -50,7 +50,9 @@ verificar(produtosLocais.filter((produto) => produto.categoria === "Adicionais")
 verificar(adicionais.length === 30, "As listas contextuais devem manter 30 posições de adicionais.");
 
 for (const produto of produtosLocais) {
-  verificar(Number.isFinite(produto.preco) && produto.preco > 0, `Preço inválido no produto ${produto.id}.`);
+  const temPrecoValido = Number.isFinite(produto.preco) && produto.preco > 0;
+  const estaSobConsulta = produto.precoSobConsulta === true && produto.preco == null && Boolean(produto.observacaoPreco);
+  verificar(temPrecoValido || estaSobConsulta, `Preço inválido ou consulta sem observação no produto ${produto.id}.`);
   verificar(Boolean(produto.nome && produto.descricao), `Nome ou descrição ausente no produto ${produto.id}.`);
   verificar(Boolean(produto.imagem), `Imagem ausente no produto público ${produto.id}.`);
   verificar(caminhoImagemExiste(produto.imagem), `Imagem inexistente no produto ${produto.id}: ${produto.imagem}`);
