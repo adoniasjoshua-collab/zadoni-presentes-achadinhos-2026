@@ -65,7 +65,28 @@
             description: "Em vez de reunir itens aleatórios, escolha uma rotina coerente, como banho relaxante, cuidados com cabelo ou uma noite de descanso.",
             fit: "Funciona melhor quando você conhece preferências, fragrâncias e possíveis sensibilidades.",
             budget: "Priorize poucos itens compatíveis entre si em vez de volume.",
-            offers: []
+            offers: [
+              {
+                id: "perfume-natura-una-artisan-75ml",
+                partner: "mercado_livre",
+                label: "Ver perfume Natura Una Artisan 75 ml",
+                image: "assets/optimized/achadinhos/perfume-natura-una-artisan-75ml.webp",
+                imageWidth: 278,
+                imageHeight: 500,
+                imageAlt: "Frasco do perfume feminino Natura Una Artisan Eau de Parfum de 75 ml",
+                url: "https://meli.la/2j2hL6f"
+              },
+              {
+                id: "colonia-eudora-diva-absoluta-100ml",
+                partner: "mercado_livre",
+                label: "Ver colônia Eudora Diva Absoluta 100 ml",
+                image: "assets/optimized/achadinhos/colonia-eudora-diva-absoluta-100ml.webp",
+                imageWidth: 207,
+                imageHeight: 500,
+                imageAlt: "Frasco roxo da colônia feminina Eudora Diva Absoluta de 100 ml",
+                url: "https://meli.la/2dGSxjZ"
+              }
+            ]
           },
           {
             id: "presente-personalizado",

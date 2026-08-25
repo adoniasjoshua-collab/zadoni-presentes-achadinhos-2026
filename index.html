@@ -35,7 +35,7 @@
     <title>Zadoni | Loja de Presentes e Floricultura em Canaã</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20260824-achadinhos-entry-1">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260825-home-choice-1">
 
     <style>
         /* Botão Flutuante WhatsApp */
@@ -213,16 +213,23 @@
 
     <section class="hero" style="background: linear-gradient(135deg, #D946A6 0%, #A855C7 50%, #7C3AED 100%); min-height: 600px; display: flex; align-items: center;">
         <div class="container">
-            <div class="hero-content" style="max-width: 600px;">
+            <div class="hero-content home-choice-hero">
                 <h1 style="color: white; font-size: 2.5rem; line-height: 1.3; margin-bottom: 24px;">
                     Zadoni Presentes: loja de presentes<br>em Canaã dos Carajás
                 </h1>
                 <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; margin-bottom: 32px; line-height: 1.6;">
                     Encontre buquês, flores, cestas de café da manhã, kits românticos, perfumes e mimos com atendimento local pelo WhatsApp.
                 </p>
-                <div class="hero-buttons" style="flex-direction: column; gap: 16px;">
-                    <a href="presentes-canaa.html" class="btn btn-secondary" style="display: inline-block; width: 100%; text-align: center;">
-                        Ver Presentes em Canaã
+                <div class="home-paths" aria-label="Escolha como encontrar seu presente">
+                    <a href="presentes-canaa.html" class="home-path home-path--local" data-home-path="local">
+                        <span class="home-path-label">Entrega em Canaã</span>
+                        <strong>Ver presentes da loja</strong>
+                        <span>Atendimento local e pedidos pelo WhatsApp</span>
+                    </a>
+                    <a href="achadinhos/" class="home-path home-path--national" data-home-path="achadinhos">
+                        <span class="home-path-label">Compras online para todo o Brasil</span>
+                        <strong>Explorar Zadoni Achadinhos</strong>
+                        <span>Curadoria com produtos e links de lojas parceiras</span>
                     </a>
                 </div>
             </div>
@@ -479,6 +486,15 @@
             rastrearEvento('view_page', {
                 page: 'home',
                 title: 'Zadoni Presentes - Home'
+            });
+
+            document.querySelectorAll('[data-home-path]').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    rastrearEvento('select_home_path', {
+                        destination: link.dataset.homePath,
+                        page: 'home'
+                    });
+                });
             });
         });
     </script>
