@@ -431,6 +431,45 @@
             offers: []
           },
           {
+            id: "aliancas-compromisso-presente",
+            title: "Alianças de compromisso para marcar uma fase do relacionamento",
+            description: "Um par de alianças pode transformar o aniversário em uma ocasião simbólica quando a escolha representa uma decisão já conversada pelo casal.",
+            fit: "Confirme se esse tipo de presente combina com o momento da relação e verifique corretamente a numeração dos dois aros.",
+            budget: "Antes de comprar, confira composição, largura, acabamento, política de troca e o que acompanha o conjunto.",
+            offers: [
+              {
+                id: "par-aliancas-compromisso-prata-caixinha-anel",
+                partner: "mercado_livre",
+                label: "Ver par de alianças de compromisso com caixinha",
+                image: "assets/optimized/achadinhos/par-aliancas-compromisso-prata-caixinha-anel.webp",
+                imageWidth: 483,
+                imageHeight: 500,
+                imageAlt: "Par de alianças prateadas e anel com pedra em caixa vermelha de coração",
+                url: "https://meli.la/2G7dva4"
+              },
+              {
+                id: "par-aliancas-anatomicas-diamantadas-anel",
+                partner: "mercado_livre",
+                label: "Ver par de alianças anatômicas com anel",
+                image: "assets/optimized/achadinhos/par-aliancas-anatomicas-diamantadas-anel.webp",
+                imageWidth: 410,
+                imageHeight: 500,
+                imageAlt: "Par de alianças prateadas diamantadas e anel com pedra em caixa vermelha",
+                url: "https://meli.la/2vTefdP"
+              },
+              {
+                id: "par-aliancas-moeda-antiga-anel-solitario",
+                partner: "mercado_livre",
+                label: "Ver par de alianças de moeda antiga com anel",
+                image: "assets/optimized/achadinhos/par-aliancas-moeda-antiga-anel-solitario.webp",
+                imageWidth: 463,
+                imageHeight: 500,
+                imageAlt: "Par de alianças douradas abauladas e anel solitário com pedra",
+                url: "https://meli.la/1YNv7ke"
+              }
+            ]
+          },
+          {
             id: "brinquedo-sensorial-faixa-etaria",
             title: "Brinquedo sensorial adequado à fase da criança",
             description: "Atividades com formas, movimentos, texturas e sons podem estimular exploração e coordenação quando o brinquedo corresponde à etapa de desenvolvimento da criança.",

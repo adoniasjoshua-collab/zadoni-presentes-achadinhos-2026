@@ -357,6 +357,33 @@ body.achadinhos-site {
   text-underline-offset: 3px;
 }
 
+.ach-category-jumps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 22px;
+  max-width: 100%;
+}
+
+.ach-category-jumps a {
+  background: var(--ach-soft);
+  border: 1px solid var(--ach-border);
+  border-radius: 999px;
+  color: var(--ach-primary-dark);
+  font-size: 0.86rem;
+  font-weight: 750;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.ach-category-jumps a:hover,
+.ach-category-jumps a:focus-visible {
+  background: #fff;
+  border-color: var(--ach-primary);
+}
+
 .ach-note {
   border-top: 1px solid var(--ach-border);
   display: block;

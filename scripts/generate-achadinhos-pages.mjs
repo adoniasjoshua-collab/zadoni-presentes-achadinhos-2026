@@ -109,7 +109,7 @@ function faqSchema(faq) {
 
 function head(page, prefix) {
   const socialImage = absoluteUrl("assets/optimized/products/box-amor-perfeito.jpg");
-  const achadinhosCssVersion = "20260825-ux-footer-disclosure-1";
+  const achadinhosCssVersion = "20260825-birthday-aggregator-1";
   return `<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="${escapeHtml(page.description)}">
@@ -300,9 +300,28 @@ function guidePage(guide) {
     { name: "Achadinhos", href: "../", url: `${SITE}/achadinhos/` },
     { name: guide.label, href: `./`, url: page.canonical }
   ];
-  const productRecommendations = guide.recommendations.filter((item) => (
-    Array.isArray(item.offers) && item.offers.length > 0
-  ));
+  const isBirthdayAggregator = guide.slug === "presentes-de-aniversario";
+  const recommendationSources = isBirthdayAggregator
+    ? [guide, ...data.guides.filter((candidate) => candidate.slug !== guide.slug)]
+    : [guide];
+  const productRecommendations = [...new Map(
+    recommendationSources
+      .flatMap((source) => source.recommendations)
+      .filter((item) => Array.isArray(item.offers) && item.offers.length > 0)
+      .map((item) => [item.id, item])
+  ).values()];
+  const productEyebrow = isBirthdayAggregator ? "Todas as categorias" : "Seleção prática";
+  const productTitle = isBirthdayAggregator
+    ? "Presentes de aniversário por categoria"
+    : "Opções para comparar agora";
+  const productCopy = isBirthdayAggregator
+    ? "Explore todas as opções ativas da curadoria e escolha pelo perfil de quem vai receber."
+    : "Escolha pelo perfil de quem recebe e confirme características, prazo e condições diretamente na loja.";
+  const categoryJumps = isBirthdayAggregator
+    ? `<nav class="ach-category-jumps" aria-label="Categorias de presentes de aniversário">
+              ${productRecommendations.map((item) => `<a href="#ideia-${escapeHtml(item.id)}">${escapeHtml(item.title)}</a>`).join("\n              ")}
+            </nav>`
+    : "";
   const listItems = productRecommendations.map((item) => ({
     name: item.title,
     url: `${page.canonical}#ideia-${item.id}`
@@ -330,10 +349,11 @@ function guidePage(guide) {
       <section class="ach-section ach-products-section" aria-labelledby="produtos-title">
         <div class="container">
           <div class="ach-section-heading">
-            <p class="ach-eyebrow">Seleção prática</p>
-            <h2 id="produtos-title">Opções para comparar agora</h2>
-            <p>Escolha pelo perfil de quem recebe e confirme características, prazo e condições diretamente na loja.</p>
-          </div>
+            <p class="ach-eyebrow">${productEyebrow}</p>
+            <h2 id="produtos-title">${productTitle}</h2>
+            <p>${productCopy}</p>
+          </div>${categoryJumps ? `
+          ${categoryJumps}` : ""}
           <p class="ach-affiliate-label"><a href="#transparencia-afiliados">Links de afiliados</a></p>
           <div class="ach-recommendations">
             ${productRecommendations.map((item) => `<article class="ach-recommendation" id="ideia-${escapeHtml(item.id)}">
