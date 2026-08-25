@@ -1,0 +1,47 @@
+[
+  {
+    "id": "cesta-aniversario-doce-surpresa",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa-480.webp",
+    "modelLabel": "Cesta Aniversário Doce Surpresa",
+    "alt": "Cesta de aniversário com ursinho, chocolates, snacks e bebidas em Canaã dos Carajás",
+    "caption": "Cesta Aniversário Doce Surpresa",
+    "description": "Modelo ilustrativo com ursinho, chocolates, snacks e bebidas. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "featuredLabel": "Modelo em destaque",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "cesta-parabens-elegante",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-parabens-elegante.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-parabens-elegante-480.webp",
+    "modelLabel": "Cesta Parabéns Elegante",
+    "alt": "Cesta de aniversário com chocolates, embalagem transparente e laço marrom e dourado",
+    "caption": "Cesta Parabéns Elegante",
+    "description": "Modelo ilustrativo com chocolates e acabamento elegante. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "mini-cesta-aniversario-com-bolo",
+    "src": "assets/img/galerias/cestas-aniversario/mini-cesta-aniversario-com-bolo.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/mini-cesta-aniversario-com-bolo-480.webp",
+    "modelLabel": "Mini Cesta Aniversário com Bolo",
+    "alt": "Mini cesta de aniversário com bolo, brigadeiros, salgados e refrigerante",
+    "caption": "Mini Cesta Aniversário com Bolo",
+    "description": "Modelo ilustrativo com bolo, brigadeiros, salgados e bebida. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "cesta-chocolates-celebracao",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-chocolates-celebracao.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-chocolates-celebracao-480.webp",
+    "modelLabel": "Cesta Chocolates Celebração",
+    "alt": "Cesta de aniversário em vime com chocolates e laço vermelho",
+    "caption": "Cesta Chocolates Celebração",
+    "description": "Modelo ilustrativo em cesta de vime com chocolates. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  }
+]

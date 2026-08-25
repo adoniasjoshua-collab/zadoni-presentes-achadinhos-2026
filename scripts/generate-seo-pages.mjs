@@ -5,6 +5,9 @@ import vm from "node:vm";
 const SITE = "https://zadonipresentes.com.br";
 const PHONE = "5594992993138";
 const ROOT = process.cwd();
+const BIRTHDAY_BASKET_GALLERY_IMAGES = Object.freeze(
+  JSON.parse(fs.readFileSync(path.join(ROOT, "assets/data/cestas-aniversario.json"), "utf8"))
+);
 const BASKET_BUDGET_TIERS = Object.freeze([
   {
     id: "basica",
@@ -278,7 +281,7 @@ function whatsappUrl(product, source = "produto") {
 
 function galleryWhatsAppUrl(image, index, source = "galeria", directory = "", budgetTier = null) {
   const modelLabel = image.modelLabel || `modelo ${index + 1}`;
-  const requestOpening = directory === "cesta-cafe-da-manha-canaa"
+  const requestOpening = ["cesta-cafe-da-manha-canaa", "cesta-de-aniversario-canaa"].includes(directory)
     ? "Olá! Quero uma cesta parecida com esta referência:"
     : "Olá! Quero um presente parecido com esta referência:";
   const budgetDetails = budgetTier
@@ -607,6 +610,21 @@ function faqHtml(faqs) {
     </section>`;
 }
 
+function galleryItemListSchema(galleryImages, pageUrl) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Modelos de cesta de aniversário",
+    "itemListElement": galleryImages.map((image, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "url": `${pageUrl}#${image.id}`,
+      "name": image.modelLabel,
+      "image": absoluteUrl(image.src)
+    }))
+  };
+}
+
 function galleryChoiceHtml(config, image, index, source, ctaLabel) {
   const tiers = config.galleryBudgetTiers || [];
 
@@ -648,13 +666,15 @@ function galleryHtml(config) {
                 <strong class="seo-gallery-addons-total" id="cafe-gallery-addons-total" aria-live="polite">Nenhum adicional selecionado.</strong>
             </aside>` : ""}
             <div class="seo-gallery-grid${hasBudgetTiers ? " seo-gallery-grid--budget" : ""}">
-                ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item">
+                ${config.galleryImages.map((image, index) => `<figure class="seo-gallery-item"${image.id ? ` id="${html(image.id)}"` : ""}>
                     ${image.src480 ? `<picture>
                         <source type="image/webp" srcset="${html(galleryPagePath(image.src480))} 480w, ${html(galleryPagePath(image.src))} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">
                         <img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async">
                     </picture>` : `<img src="${html(galleryPagePath(image.src))}" alt="${html(image.alt)}" width="${image.width}" height="${image.height}" loading="lazy" decoding="async">`}
-                    <figcaption>
-                        <span>${html(image.caption)}</span>
+                    <figcaption>${image.featuredLabel ? `
+                        <strong class="local-badge">${html(image.featuredLabel)}</strong>` : ""}
+                        <span>${html(image.caption)}</span>${image.description ? `
+                        <small class="seo-gallery-note">${html(image.description)}</small>` : ""}
                         ${config.galleryItemNote ? `<small class="seo-gallery-note">${html(config.galleryItemNote)}</small>` : ""}
                         ${galleryChoiceHtml(config, image, index, source, ctaLabel)}
                     </figcaption>
@@ -727,6 +747,7 @@ function categoryPage(config) {
     : [];
   const crumbItems = [
     { name: "Início", href: "../index.html", url: `${SITE}/` },
+    ...(config.parentBreadcrumb ? [config.parentBreadcrumb] : []),
     { name: config.h1, href: `../${config.dir}/`, url: canonical }
   ];
   const faqs = config.faqs;
@@ -750,6 +771,7 @@ function categoryPage(config) {
       includeWebPage: config.includeWebPage === true
     }),
     ...(config.includeItemListSchema === true ? [itemListSchema(pageProducts, canonical)] : []),
+    ...(config.includeGalleryItemListSchema === true ? [galleryItemListSchema(config.galleryImages, canonical)] : []),
     ...productSchemas(pageProducts, canonical, {
       includeAvailability: config.includeOfferAvailability !== false
     }),
@@ -1007,6 +1029,11 @@ const pageConfigs = [
     intro: "Veja cestas femininas, masculinas, românticas e de café da manhã para presentear em Canaã dos Carajás.",
     copy1: "As cestas podem combinar bebida, chocolates, caneca, petiscos, flores e itens de autocuidado conforme disponibilidade.",
     copy2: "Ao chamar no WhatsApp, informe se o presente é para aniversário, agradecimento, romance ou surpresa corporativa.",
+    relatedLink: {
+      intro: "Para uma comemoração com bolo, chocolates e personalização, conheça também a página de",
+      href: "../cesta-de-aniversario-canaa/",
+      label: "cesta de aniversário em Canaã dos Carajás"
+    },
     productsTitle: "Cestas locais para pedir pelo WhatsApp",
     galleryTitle: "Cestas reais para escolher como referência",
     galleryIntro: "Veja composições já preparadas pela Zadoni e envie o modelo preferido no WhatsApp para adaptar itens, cores e orçamento.",
@@ -1018,6 +1045,44 @@ const pageConfigs = [
     faqs: [
       { q: "A cesta pode ter itens diferentes?", a: "Pode. A montagem é confirmada pelo WhatsApp conforme estoque e orçamento." },
       { q: "Tem cesta para homens e mulheres?", a: "Sim. O catálogo inclui cestas masculinas, femininas, românticas e de café da manhã." }
+    ]
+  },
+  {
+    dir: "cesta-de-aniversario-canaa",
+    title: "Cesta de Aniversário em Canaã dos Carajás | Zadoni",
+    description: "Cesta de aniversário em Canaã dos Carajás com chocolates, bolo e personalização. Escolha um modelo e consulte entrega local pelo WhatsApp.",
+    image: "assets/img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa.webp",
+    h1: "Cesta de Aniversário em Canaã dos Carajás",
+    h2: "Como escolher uma cesta para celebrar o aniversário",
+    intro: "Escolha uma cesta de aniversário com chocolates, bolo, snacks ou detalhes personalizados e consulte a Zadoni para adaptar a composição, o acabamento e a entrega em Canaã dos Carajás.",
+    copy1: "Para escolher bem, considere o gosto de quem vai receber, a quantidade de pessoas, o orçamento e se a surpresa deve incluir bolo, chocolates, bebidas, cartão, foto, balão ou pelúcia.",
+    copy2: "As fotos são referências de montagem. Itens, marcas, sabores, cores e acabamento podem variar conforme disponibilidade; a composição e o valor final são confirmados antes do pedido.",
+    relatedLink: {
+      intro: "Para conhecer cestas para outras ocasiões, visite também a página de",
+      href: "../cestas-de-presente-canaa/",
+      label: "cestas de presente em Canaã dos Carajás"
+    },
+    parentBreadcrumb: {
+      name: "Cestas de Presente",
+      href: "../cestas-de-presente-canaa/",
+      url: `${SITE}/cestas-de-presente-canaa/`
+    },
+    productsTitle: "Modelos de cesta de aniversário",
+    galleryTitle: "Modelos de cesta de aniversário para escolher",
+    galleryIntro: "Compare as referências e envie o modelo preferido pelo WhatsApp. A Zadoni confirma os itens disponíveis, as possibilidades de personalização, o valor e a entrega local.",
+    galleryCtaLabel: "Escolher e confirmar com a Zadoni",
+    galleryImages: BIRTHDAY_BASKET_GALLERY_IMAGES,
+    showProductsSection: false,
+    includeLocalBusiness: false,
+    includeWebPage: true,
+    includeGalleryItemListSchema: true,
+    filter: () => [],
+    faqs: [
+      { q: "O que pode vir em uma cesta de aniversário?", a: "A composição pode incluir chocolates, bolo, brigadeiros, snacks, bebidas, cartão e outros complementos conforme o modelo, o orçamento e a disponibilidade." },
+      { q: "É possível personalizar a cesta com foto ou mensagem?", a: "Sim. Consulte pelo WhatsApp as opções disponíveis de cartão, mensagem, foto, balão, pelúcia e acabamento para a data desejada." },
+      { q: "As marcas e os itens das fotos são garantidos?", a: "Não. As fotos servem como referência; marcas, sabores, quantidades e acabamento podem variar conforme disponibilidade e orçamento." },
+      { q: "Qual é o valor de uma cesta de aniversário?", a: "O valor depende do modelo, da quantidade de itens e dos adicionais escolhidos. A Zadoni confirma a composição e o preço final antes do pedido." },
+      { q: "A Zadoni entrega cesta de aniversário em Canaã dos Carajás?", a: "A possibilidade de entrega é confirmada pelo WhatsApp conforme endereço, data, horário e disponibilidade do modelo." }
     ]
   },
   {
@@ -1164,6 +1229,7 @@ const urls = [
   { loc: `${SITE}/presentes-canaa-dos-carajas/`, priority: "0.9" },
   { loc: `${SITE}/buques-canaa-dos-carajas/`, priority: "0.85" },
   { loc: `${SITE}/cestas-de-presente-canaa/`, priority: "0.85" },
+  { loc: `${SITE}/cesta-de-aniversario-canaa/`, priority: "0.86" },
   { loc: `${SITE}/floricultura-canaa-dos-carajas/`, priority: "0.88" },
   { loc: `${SITE}/cesta-cafe-da-manha-canaa/`, priority: "0.88" },
   { loc: `${SITE}/monte-sua-cesta/`, priority: "0.9" },
