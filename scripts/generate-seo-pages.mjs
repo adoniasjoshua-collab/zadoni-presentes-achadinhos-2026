@@ -542,6 +542,7 @@ function header(prefix = "") {
                         <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
                         <li><a href="${prefix}floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
                         <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
+                        <li><a href="${prefix}cesta-de-aniversario-canaa/">Cesta de aniversário</a></li>
                         <li><a href="${prefix}presentes-romanticos-canaa/">Românticos</a></li>
                     </ul>
                 </nav>
@@ -566,6 +567,7 @@ function footer(prefix = "") {
                         <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
                         <li><a href="${prefix}floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
                         <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
+                        <li><a href="${prefix}cesta-de-aniversario-canaa/">Cesta de aniversário</a></li>
                         <li><a href="${prefix}rosas-perfumadas-canaa/">Rosas e perfumes</a></li>
                         <li><a href="${prefix}presentes-canaa-dos-carajas/">Entrega de presentes</a></li>
                         <li><a href="${prefix}presentes-romanticos-canaa/">Presentes românticos</a></li>
@@ -897,6 +899,7 @@ function mainPage() {
                             <a href="cesta-cafe-da-manha-canaa/">Cesta de café da manhã em Canaã</a>
                             <a href="buques-canaa-dos-carajas/">Buquês em Canaã</a>
                             <a href="cestas-de-presente-canaa/">Cestas de presente</a>
+                            <a href="cesta-de-aniversario-canaa/">Cesta de aniversário em Canaã</a>
                         </div>
                     </div>
                     <div class="seo-category-group seo-category-group--secondary" aria-label="Outras formas de explorar presentes">
