@@ -380,6 +380,7 @@ function baseSchemas(pageUrl, title, breadcrumbs, options = {}) {
       "alternateName": "Zadoni",
       "description": "Loja de presentes em Canaã dos Carajás com buquês, flores, cestas e mimos personalizados.",
       "url": SITE,
+      "logo": `${SITE}/assets/img/brand/logo-zadoni-320.webp`,
       "sameAs": ["https://www.instagram.com/zadonipresentescanaa"]
     }
   ];
@@ -519,6 +520,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="geo.placename" content="Canaã dos Carajás, Pará">
     <meta name="geo.region" content="BR-PA">
     <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="${prefix}assets/img/brand/logo-zadoni-180.png">
     <link rel="canonical" href="${canonical}">
     <meta property="og:title" content="${html(title)}">
     <meta property="og:description" content="${html(description)}">
@@ -532,7 +534,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:description" content="${html(description)}">
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260826-navigation-ux-1">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260826-brand-logo-1">`;
 }
 
 function navCurrentSection(pagePath) {
@@ -553,7 +555,7 @@ function header(prefix = "", pagePath = "") {
     <header>
         <div class="container">
             <div class="header-content">
-                <a class="logo" href="${prefix}index.html">🎁 <span>Zadoni Presentes</span></a>
+                <a class="logo" href="${prefix}index.html" aria-label="Zadoni Presentes - início"><img class="brand-logo-image" src="${prefix}assets/img/brand/logo-zadoni-96.webp" alt="" width="40" height="40" loading="eager" decoding="async" fetchpriority="high"> <span>Zadoni Presentes</span></a>
                 <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
                 <nav aria-label="Navegação principal">
                     <ul class="nav-menu" id="nav-menu">

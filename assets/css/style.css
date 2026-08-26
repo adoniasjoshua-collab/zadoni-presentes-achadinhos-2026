@@ -305,6 +305,16 @@ header {
   color: var(--cor-secundaria);
 }
 
+.brand-logo-image {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(43, 8, 18, 0.22);
+}
+
 .nav-menu a[aria-current="page"] {
   color: var(--cor-secundaria);
   text-decoration: underline;

@@ -40,7 +40,8 @@ function commonSchemas(page) {
       "@id": `${SITE}/#organization`,
       name: "Zadoni Presentes",
       alternateName: "Zadoni Achadinhos",
-      url: `${SITE}/`
+      url: `${SITE}/`,
+      logo: `${SITE}/assets/img/brand/logo-zadoni-320.webp`
     },
     {
       "@context": "https://schema.org",
@@ -116,6 +117,7 @@ function head(page, prefix) {
     <meta name="author" content="Zadoni Presentes">
     <meta name="theme-color" content="#4b1745">
     <link rel="icon" href="${prefix}assets/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="${prefix}assets/img/brand/logo-zadoni-180.png">
     <link rel="canonical" href="${page.canonical}">
     <meta property="og:title" content="${escapeHtml(page.metaTitle)}">
     <meta property="og:description" content="${escapeHtml(page.description)}">
@@ -129,7 +131,7 @@ function head(page, prefix) {
     <meta name="twitter:description" content="${escapeHtml(page.description)}">
     <meta name="twitter:image" content="${socialImage}">
     <title>${escapeHtml(page.metaTitle)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260818-real-deliveries-1">
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260826-brand-logo-1">
     <link rel="stylesheet" href="${prefix}assets/css/achadinhos.css?v=${achadinhosCssVersion}">`;
 }
 
@@ -143,7 +145,7 @@ function header(prefix, currentSlug = "") {
   return `<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="ach-header">
       <div class="container ach-header-inner">
-        <a class="ach-brand" href="${currentSlug ? "../" : "./"}">🎁 Zadoni Achadinhos</a>
+        <a class="ach-brand" href="${currentSlug ? "../" : "./"}" aria-label="Zadoni Achadinhos - início"><img class="brand-logo-image" src="${prefix}assets/img/brand/logo-zadoni-96.webp" alt="" width="40" height="40" loading="eager" decoding="async" fetchpriority="high"><span>Zadoni Achadinhos</span></a>
         <nav class="ach-nav" aria-label="Navegação dos guias nacionais">
           <a href="${currentSlug ? "../" : "./"}"${currentSlug ? "" : ` aria-current="page"`}>Início dos Achadinhos</a>
           ${guideLinks}
