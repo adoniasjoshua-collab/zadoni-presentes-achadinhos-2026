@@ -43,5 +43,82 @@
     "description": "Modelo ilustrativo em cesta de vime com chocolates. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
     "width": 720,
     "height": 900
+  },
+  {
+    "id": "cesta-aniversario-bolo-foto-petiscos",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-aniversario-bolo-foto-petiscos.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-aniversario-bolo-foto-petiscos-480.webp",
+    "modelLabel": "Cesta Aniversário com Bolo e Foto",
+    "alt": "Cesta de aniversário personalizada com bolo, brigadeiros, petiscos, bebidas e foto",
+    "caption": "Cesta Aniversário com Bolo e Foto",
+    "description": "Modelo ilustrativo com bolo, brigadeiros, petiscos, bebidas e foto personalizada. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "cesta-celebracao-te-amo-bolo-brigadeiros",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-celebracao-te-amo-bolo-brigadeiros.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-celebracao-te-amo-bolo-brigadeiros-480.webp",
+    "modelLabel": "Cesta Celebração Te Amo",
+    "alt": "Cesta de celebração com bolo, brigadeiros, petiscos, bebidas, porta-retrato e flores",
+    "caption": "Cesta Celebração Te Amo",
+    "description": "Modelo ilustrativo com bolo, brigadeiros, petiscos, bebidas, porta-retrato e flores. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "caixa-aniversario-personalizada-bolo-vinho",
+    "src": "assets/img/galerias/cestas-aniversario/caixa-aniversario-personalizada-bolo-vinho.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/caixa-aniversario-personalizada-bolo-vinho-480.webp",
+    "modelLabel": "Caixa Aniversário Personalizada",
+    "alt": "Caixa de aniversário personalizada com fotos, bolo, brigadeiros, morangos, salgados e vinho",
+    "caption": "Caixa Aniversário Personalizada",
+    "description": "Modelo ilustrativo com fotos, bolo, brigadeiros, morangos, salgados e vinho. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "cesta-premium-bolo-vinho-ursinho",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-premium-bolo-vinho-ursinho.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-premium-bolo-vinho-ursinho-480.webp",
+    "modelLabel": "Cesta Premium com Bolo e Vinho",
+    "alt": "Cesta premium de aniversário com bolo de morango, vinho, taças, chocolates, rosas e ursinho",
+    "caption": "Cesta Premium com Bolo e Vinho",
+    "description": "Modelo ilustrativo com bolo de morango, vinho, taças, chocolates, rosas e ursinho. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "box-aniversario-bolo-balao-azul",
+    "src": "assets/img/galerias/cestas-aniversario/box-aniversario-bolo-balao-azul.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/box-aniversario-bolo-balao-azul-480.webp",
+    "modelLabel": "Box Aniversário com Bolo e Balão",
+    "alt": "Box de aniversário azul com mini bolo, chocolates, bombons e balão personalizado",
+    "caption": "Box Aniversário com Bolo e Balão",
+    "description": "Modelo ilustrativo com mini bolo, chocolates, bombons e balão personalizado. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "cesta-bolo-chocolates-te-amo",
+    "src": "assets/img/galerias/cestas-aniversario/cesta-bolo-chocolates-te-amo.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/cesta-bolo-chocolates-te-amo-480.webp",
+    "modelLabel": "Cesta com Bolo e Chocolates",
+    "alt": "Cesta de celebração com bolo de chocolate e morango, chocolates, doces e almofada Te Amo",
+    "caption": "Cesta com Bolo e Chocolates",
+    "description": "Modelo ilustrativo com bolo de chocolate e morango, chocolates, doces e almofada. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
+  },
+  {
+    "id": "caixa-aniversario-fotos-bolo-brigadeiros",
+    "src": "assets/img/galerias/cestas-aniversario/caixa-aniversario-fotos-bolo-brigadeiros.webp",
+    "src480": "assets/img/galerias/cestas-aniversario/caixa-aniversario-fotos-bolo-brigadeiros-480.webp",
+    "modelLabel": "Caixa Aniversário com Fotos e Bolo",
+    "alt": "Caixa de aniversário personalizada com mural de fotos, bolo, brigadeiros, salgados, chocolates e bebidas",
+    "caption": "Caixa Aniversário com Fotos e Bolo",
+    "description": "Modelo ilustrativo com mural de fotos, bolo, brigadeiros, salgados, chocolates e bebidas. Escolha esta referência e clique abaixo para confirmar itens, valor e personalização com a ajuda da Zadoni.",
+    "width": 720,
+    "height": 900
   }
 ]

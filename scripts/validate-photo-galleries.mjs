@@ -10,7 +10,7 @@ const pages = new Map([
   ["cesta-cafe-da-manha-canaa/index.html", { galleries: 12, deliveries: 0 }],
   ["buques-canaa-dos-carajas/index.html", { galleries: 4, deliveries: 0 }],
   ["cestas-de-presente-canaa/index.html", { galleries: 3, deliveries: 0 }],
-  ["cesta-de-aniversario-canaa/index.html", { galleries: 4, deliveries: 0 }],
+  ["cesta-de-aniversario-canaa/index.html", { galleries: 11, deliveries: 0 }],
   ["floricultura-canaa-dos-carajas/index.html", { galleries: 3, deliveries: 0 }],
   ["presentes-romanticos-canaa/index.html", { galleries: 3, deliveries: 0 }]
 ]);
@@ -52,7 +52,7 @@ const generatedFiles = [
   ...fs.readdirSync(path.join(root, "assets/img/prova-social/entregas-canaa")).map((name) => `assets/img/prova-social/entregas-canaa/${name}`)
 ];
 
-assert.equal(generatedFiles.length, 34, "Devem existir 17 fotos tratadas em duas resolucoes");
+assert.equal(generatedFiles.length, 48, "Devem existir 24 fotos tratadas em duas resolucoes");
 generatedFiles.forEach((file) => {
   const stats = fs.statSync(path.join(root, file));
   assert.ok(stats.size > 10_000, `${file}: arquivo pequeno ou invalido`);

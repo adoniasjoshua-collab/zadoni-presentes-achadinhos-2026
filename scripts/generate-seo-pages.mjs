@@ -336,20 +336,29 @@ function productCard(product, index, prefix = "", source = "produto", options = 
   const note = product.observacaoPreco || options.priceNote;
   const priceNote = note ? `\n                <p class="produto-preco-nota">${html(note)}</p>` : "";
   const priceLabel = hasProductPrice(product) ? `A partir de ${money(product.preco)}` : "Valor sob consulta";
+  const categoryLabel = options.categoryLabel || product.categoria;
   const addonsLink = prefix && product.exibirAdicionaisNaCategoria === true && Array.isArray(product.adicionaisOpcionais) && product.adicionaisOpcionais.length
     ? `<a class="btn btn-secondary" href="${productLink}">Escolher adicionais</a>\n                    `
     : "";
+  const imageOpening = options.keepContext
+    ? `<div class="produto-imagem">`
+    : `<a class="produto-imagem produto-imagem-link" href="${productLink}" aria-label="Ver detalhes de ${html(product.nome)}">`;
+  const imageClosing = options.keepContext ? `</div>` : `</a>`;
+  const productName = options.keepContext
+    ? html(product.nome)
+    : `<a href="${productLink}">${html(product.nome)}</a>`;
+  const ctaLabel = options.ctaLabel || "Quero este presente";
   return `<article class="produto-card seo-product-card" id="${id}" data-produto-id="${product.id}" data-category="${key}">
-            <a class="produto-imagem produto-imagem-link" href="${productLink}" aria-label="Ver detalhes de ${html(product.nome)}">
+            ${imageOpening}
                 ${picture(product, index, prefix)}
-                <span class="produto-categoria">${html(product.categoria)}</span>
-            </a>
+                <span class="produto-categoria">${html(categoryLabel)}</span>
+            ${imageClosing}
             <div class="produto-content">
-                <h3 class="produto-nome"><a href="${productLink}">${html(product.nome)}</a></h3>
+                <h3 class="produto-nome">${productName}</h3>
                 <p class="produto-descricao">${html(product.descricao)}</p>
                 <p class="produto-preco">${priceLabel}</p>${priceNote}
                 <div class="produto-acoes">
-                    ${addonsLink}<a class="btn-whatsapp-produto" href="${html(whatsappUrl(product, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-produto-id="${product.id}">Quero este presente</a>
+                    ${addonsLink}<a class="btn-whatsapp-produto" href="${html(whatsappUrl(product, source))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-track-source="${html(source)}" data-produto-id="${product.id}">${html(ctaLabel)}</a>
                 </div>
             </div>
         </article>`;
@@ -523,27 +532,37 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:description" content="${html(description)}">
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260818-real-deliveries-1">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260826-navigation-ux-1">`;
 }
 
-function header(prefix = "") {
+function navCurrentSection(pagePath) {
+  if (pagePath === "index.html") return "inicio";
+  if (["presentes-canaa.html", "presentes-canaa-dos-carajas/index.html", "presentes-romanticos-canaa/index.html"].includes(pagePath)) return "presentes";
+  if (["buques-canaa-dos-carajas/index.html", "floricultura-canaa-dos-carajas/index.html", "rosas-perfumadas-canaa/index.html"].includes(pagePath)) return "flores";
+  if (["cestas-de-presente-canaa/index.html", "cesta-cafe-da-manha-canaa/index.html"].includes(pagePath)) return "cestas";
+  if (pagePath === "cesta-de-aniversario-canaa/index.html") return "aniversario";
+  if (pagePath === "monte-sua-cesta/index.html") return "monte";
+  return "";
+}
+
+function header(prefix = "", pagePath = "") {
+  const currentSection = navCurrentSection(pagePath);
+  const navLink = (section, href, label) => `<li><a href="${prefix}${href}"${currentSection === section ? ` aria-current="page"` : ""}>${label}</a></li>`;
   return `<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <a href="${html(whatsappUrl(null, "botao_fixo"))}" class="whatsapp-float" aria-label="Conversar com a Zadoni Presentes pelo WhatsApp" target="_blank" rel="noopener noreferrer" data-track="whatsapp">💬</a>
     <header>
         <div class="container">
             <div class="header-content">
                 <a class="logo" href="${prefix}index.html">🎁 <span>Zadoni Presentes</span></a>
-                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">☰</button>
                 <nav aria-label="Navegação principal">
-                    <ul class="nav-menu">
-                        <li><a href="${prefix}index.html">Início</a></li>
-                        <li><a href="${prefix}presentes-canaa.html">Presentes</a></li>
-                        <li><a href="${prefix}buques-canaa-dos-carajas/">Buquês</a></li>
-                        <li><a href="${prefix}cestas-de-presente-canaa/">Cestas</a></li>
-                        <li><a href="${prefix}floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
-                        <li><a href="${prefix}cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
-                        <li><a href="${prefix}cesta-de-aniversario-canaa/">Cesta de aniversário</a></li>
-                        <li><a href="${prefix}presentes-romanticos-canaa/">Românticos</a></li>
+                    <ul class="nav-menu" id="nav-menu">
+                        ${navLink("inicio", "index.html", "Início")}
+                        ${navLink("presentes", "presentes-canaa.html", "Presentes")}
+                        ${navLink("flores", "floricultura-canaa-dos-carajas/", "Flores e buquês")}
+                        ${navLink("cestas", "cestas-de-presente-canaa/", "Cestas")}
+                        ${navLink("aniversario", "cesta-de-aniversario-canaa/", "Aniversário")}
+                        ${navLink("monte", "monte-sua-cesta/", "Monte sua cesta")}
                     </ul>
                 </nav>
             </div>
@@ -598,8 +617,8 @@ function breadcrumbs(items) {
         </nav>`;
 }
 
-function faqHtml(faqs) {
-  return `<section class="seo-faq" aria-labelledby="faq-title">
+function faqHtml(faqs, sectionId = "") {
+  return `<section class="seo-faq"${sectionId ? ` id="${html(sectionId)}"` : ""} aria-labelledby="faq-title">
         <div class="container">
             <h2 id="faq-title">Perguntas frequentes</h2>
             <div class="faq-grid">
@@ -655,7 +674,7 @@ function galleryHtml(config) {
   const ctaLabel = config.galleryCtaLabel || "Escolher este modelo";
   const hasBudgetTiers = Boolean(config.galleryBudgetTiers?.length);
 
-  return `<section class="seo-gallery" aria-labelledby="galeria-title">
+  return `<section class="seo-gallery"${config.gallerySectionId ? ` id="${html(config.gallerySectionId)}"` : ""} aria-labelledby="galeria-title">
         <div class="container">
             <div class="seo-gallery-header">
                 <h2 id="galeria-title">${html(config.galleryTitle)}</h2>
@@ -715,7 +734,7 @@ function socialProofHtml(prefix = "") {
 }
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260825-artificial-bouquets-1" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260825-consult-price-1" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260826-navigation-ux-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
@@ -728,7 +747,7 @@ function pageShell({ path: pagePath, title, description, canonical, image, body,
     ${head({ title, description, canonical, image, prefix })}
 </head>
 <body>
-    ${header(prefix)}
+    ${header(prefix, pagePath)}
     ${body}
     ${footer(prefix)}
     ${scripts(prefix, schemas)}
@@ -757,15 +776,23 @@ function categoryPage(config) {
   const relatedLinkHtml = config.relatedLink
     ? `\n                <p>${html(config.relatedLink.intro)} <a href="${html(config.relatedLink.href)}">${html(config.relatedLink.label)}</a>${html(config.relatedLink.suffix || ".")}</p>`
     : "";
-  const productsSectionHtml = showProductsSection ? `        <section class="seo-products" aria-labelledby="produtos-title">
+  const productsSectionHtml = showProductsSection ? `        <section class="seo-products"${config.productsSectionId ? ` id="${html(config.productsSectionId)}"` : ""} aria-labelledby="produtos-title">
             <div class="container">
                 <h2 id="produtos-title">${html(config.productsTitle)}</h2>${productsIntroHtml}
                 <div class="produtos-grid">
-                    ${pageProducts.map((product, index) => productCard(product, index, prefix, slugify(config.h1), { priceNote: config.productPriceNote })).join("\n                    ")}
+                    ${pageProducts.map((product, index) => productCard(product, index, prefix, slugify(config.h1), {
+                      priceNote: config.productPriceNote,
+                      categoryLabel: config.productCategoryLabel,
+                      keepContext: config.keepProductContext === true,
+                      ctaLabel: config.productCtaLabel
+                    })).join("\n                    ")}
                 </div>
             </div>
         </section>
 ` : "";
+  const showcaseSectionsHtml = config.productsBeforeGallery
+    ? `${productsSectionHtml}${galleryHtml(config)}`
+    : `${galleryHtml(config)}${productsSectionHtml}`;
   const pageImage = config.image || pageProducts[0]?.imagem || (config.galleryImages?.[0] ? `${config.dir}/${config.galleryImages[0].src}` : "assets/optimized/products/buque-te-amo-romantico.jpg");
   const schemas = [
     ...baseSchemas(canonical, config.title, crumbItems.map(({ name, url }) => ({ name, url })), {
@@ -779,6 +806,16 @@ function categoryPage(config) {
     }),
     faqSchema(faqs)
   ];
+  const sectionNavHtml = config.sectionNavItems?.length ? `
+        <nav class="section-jump-nav" aria-label="Atalhos desta página">
+            <div class="container">
+                <ul>
+                    ${config.sectionNavItems.map((item) => `<li><a href="${html(item.href)}">${html(item.label)}</a></li>`).join("\n                    ")}
+                </ul>
+            </div>
+        </nav>` : "";
+  const secondaryCtaHref = config.secondaryCtaHref || "../presentes-canaa.html";
+  const secondaryCtaLabel = config.secondaryCtaLabel || "Ver catálogo completo";
 
   const body = `<main id="conteudo">
         <section class="seo-hero">
@@ -789,10 +826,10 @@ function categoryPage(config) {
                 <p class="hero-hook">${html(config.intro)}</p>
                 <div class="hero-buttons">
                     <a class="btn btn-secondary" href="${html(whatsappUrl(null, slugify(config.h1)))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Pedir pelo WhatsApp</a>
-                    <a class="btn btn-outline" href="../presentes-canaa.html">Ver catálogo completo</a>
+                    <a class="btn btn-outline" href="${html(secondaryCtaHref)}">${html(secondaryCtaLabel)}</a>
                 </div>
             </div>
-        </section>
+        </section>${sectionNavHtml}
         <section class="seo-copy" aria-labelledby="orientacao-title">
             <div class="container">
                 <h2 id="orientacao-title">${html(config.h2)}</h2>
@@ -800,8 +837,8 @@ function categoryPage(config) {
                 <p>${html(config.copy2)}</p>${relatedLinkHtml}
             </div>
         </section>
-${galleryHtml(config)}${productsSectionHtml}${config.showSocialProof ? socialProofHtml(prefix) : ""}
-        ${faqHtml(faqs)}
+${showcaseSectionsHtml}${config.showSocialProof ? socialProofHtml(prefix) : ""}
+        ${faqHtml(faqs, config.faqSectionId)}
         <section class="seo-cta">
             <div class="container">
                 <h2>Atendimento local para montar sua surpresa</h2>
@@ -1070,16 +1107,32 @@ const pageConfigs = [
       href: "../cestas-de-presente-canaa/",
       url: `${SITE}/cestas-de-presente-canaa/`
     },
-    productsTitle: "Modelos de cesta de aniversário",
+    productsTitle: "Bolos confeitados para aniversário",
+    productsIntro: "Escolha entre mini bolos e bolos confeitados de 2 kg. Sabor, tema, cores, acabamento e disponibilidade são confirmados no WhatsApp antes do pedido.",
+    productCategoryLabel: "Bolos de aniversário",
+    productCtaLabel: "Consultar este bolo",
+    keepProductContext: true,
+    productsSectionId: "bolos-aniversario",
+    productsBeforeGallery: true,
+    gallerySectionId: "cestas-aniversario",
+    faqSectionId: "duvidas-aniversario",
+    secondaryCtaHref: "#bolos-aniversario",
+    secondaryCtaLabel: "Ver bolos e cestas",
+    sectionNavItems: [
+      { href: "#orientacao-title", label: "Como escolher" },
+      { href: "#bolos-aniversario", label: "Bolos" },
+      { href: "#cestas-aniversario", label: "Cestas" },
+      { href: "#duvidas-aniversario", label: "Dúvidas" }
+    ],
     galleryTitle: "Modelos de cesta de aniversário para escolher",
     galleryIntro: "Compare as referências e envie o modelo preferido pelo WhatsApp. A Zadoni confirma os itens disponíveis, as possibilidades de personalização, o valor e a entrega local.",
     galleryCtaLabel: "Escolher e confirmar com a Zadoni",
     galleryImages: BIRTHDAY_BASKET_GALLERY_IMAGES,
-    showProductsSection: false,
+    priorityProductIds: [38, 58, 59, 42],
     includeLocalBusiness: false,
     includeWebPage: true,
     includeGalleryItemListSchema: true,
-    filter: () => [],
+    filter: (items) => items.filter((item) => [38, 42, 58, 59].includes(Number(item.id))),
     faqs: [
       { q: "O que pode vir em uma cesta de aniversário?", a: "A composição pode incluir chocolates, bolo, brigadeiros, snacks, bebidas, cartão e outros complementos conforme o modelo, o orçamento e a disponibilidade." },
       { q: "É possível personalizar a cesta com foto ou mensagem?", a: "Sim. Consulte pelo WhatsApp as opções disponíveis de cartão, mensagem, foto, balão, pelúcia e acabamento para a data desejada." },

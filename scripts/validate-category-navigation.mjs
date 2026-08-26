@@ -29,8 +29,14 @@ if (!section.includes('id="categorias-title">Categorias de presentes</h2>')) {
 if (!section.includes('seo-category-group--primary') || !section.includes('seo-category-group--secondary')) {
   errors.push("A hierarquia visual principal/complementar não foi gerada.");
 }
-if (!home.includes('<li><a href="cesta-de-aniversario-canaa/">Cesta de aniversário</a></li>')) {
+if (!home.includes('<li><a href="cesta-de-aniversario-canaa/">Aniversário</a></li>')) {
   errors.push("O acesso à cesta de aniversário está ausente do menu ou dos links rápidos da Home.");
+}
+if (!home.includes('<a href="index.html" aria-current="page">Início</a>')) {
+  errors.push("A página atual não está identificada no menu da Home.");
+}
+if (!home.includes('aria-controls="nav-menu"') || !home.includes('id="nav-menu"')) {
+  errors.push("O menu da Home não expõe corretamente seu controle para tecnologias assistivas.");
 }
 if (!home.includes('<a class="category-card" href="cesta-de-aniversario-canaa/"')) {
   errors.push("O cartão da cesta de aniversário está ausente das opções locais da Home.");

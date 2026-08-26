@@ -664,14 +664,15 @@
     };
   }
 
-  function trackWhatsAppClick(produtoOuNome, preco) {
+  function trackWhatsAppClick(produtoOuNome, preco, origem) {
     var produto = normalizarProdutoParaTracking(produtoOuNome, preco);
 
     rastrearEvento("click_whatsapp", {
       produto_id: produto.id,
       produto_nome: produto.nome,
       categoria: produto.categoria,
-      valor: produto.preco
+      valor: produto.preco,
+      origem: origem || "nao_informada"
     });
   }
 
@@ -701,7 +702,31 @@
           return Number(item.id) === produtoId;
         });
 
-        trackWhatsAppClick(produto || "WhatsApp", produto ? produto.preco : 0);
+        trackWhatsAppClick(produto || "WhatsApp", produto ? produto.preco : 0, link.dataset.trackSource);
+      });
+    });
+
+    document.querySelectorAll(".nav-menu a").forEach(function (link) {
+      if (link.dataset.navigationTrackingInitialized === "true") return;
+      link.dataset.navigationTrackingInitialized = "true";
+
+      link.addEventListener("click", function () {
+        rastrearEvento("select_navigation", {
+          label: (link.textContent || "").trim(),
+          url: link.getAttribute("href") || ""
+        });
+      });
+    });
+
+    document.querySelectorAll(".category-card").forEach(function (link) {
+      if (link.dataset.categoryTrackingInitialized === "true") return;
+      link.dataset.categoryTrackingInitialized = "true";
+
+      link.addEventListener("click", function () {
+        rastrearEvento("select_home_category", {
+          label: (link.textContent || "").trim(),
+          url: link.getAttribute("href") || ""
+        });
       });
     });
 
@@ -723,16 +748,35 @@
 
     menuToggle.dataset.initialized = "true";
 
+    function fecharMenu(devolverFoco) {
+      navMenu.classList.remove("ativo");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menu");
+      if (devolverFoco) menuToggle.focus();
+    }
+
     menuToggle.addEventListener("click", function () {
       var aberto = navMenu.classList.toggle("ativo");
       menuToggle.setAttribute("aria-expanded", aberto ? "true" : "false");
+      menuToggle.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
     });
 
     navMenu.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        navMenu.classList.remove("ativo");
-        menuToggle.setAttribute("aria-expanded", "false");
+        fecharMenu(false);
       });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && navMenu.classList.contains("ativo")) {
+        fecharMenu(true);
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!navMenu.classList.contains("ativo")) return;
+      if (navMenu.contains(event.target) || menuToggle.contains(event.target)) return;
+      fecharMenu(false);
     });
   }
 

@@ -46,7 +46,7 @@ for (const produto of produtosLocais.filter((item) => ["Cestas", "Kits", "Mimos"
   verificar(produto.adicionaisOpcionais?.length === quantidadeEsperada, `${produto.nome} deve oferecer ${quantidadeEsperada} adicionais.`);
 }
 
-verificar(produtosLocais.filter((produto) => produto.categoria === "Adicionais").length === 12, "A categoria pública Adicionais deve conter 12 produtos.");
+verificar(produtosLocais.filter((produto) => produto.categoria === "Adicionais").length === 14, "A categoria pública Adicionais deve conter 14 produtos, incluindo os novos bolos.");
 verificar(adicionais.length === 30, "As listas contextuais devem manter 30 posições de adicionais.");
 
 for (const produto of produtosLocais) {
@@ -121,4 +121,4 @@ if (falhas.length) {
   process.exit(1);
 }
 
-console.log(`Catálogo validado: ${produtosLocais.length} produtos, 12 itens avulsos públicos e ${adicionais.length} posições de adicionais sem divergências críticas.`);
+console.log(`Catálogo validado: ${produtosLocais.length} produtos, 14 itens avulsos públicos e ${adicionais.length} posições de adicionais sem divergências críticas.`);

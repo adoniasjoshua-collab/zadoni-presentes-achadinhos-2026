@@ -35,7 +35,7 @@
     <title>Zadoni | Loja de Presentes e Floricultura em Canaã</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css?v=20260825-home-choice-1">
+    <link rel="stylesheet" href="assets/css/style.css?v=20260826-navigation-ux-1">
 
     <style>
         /* Botão Flutuante WhatsApp */
@@ -170,12 +170,15 @@
     </script>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <!-- BOTÃO FLUTUANTE WHATSAPP -->
     <a href="https://wa.me/5594992993138?text=Olá!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni"
        class="whatsapp-float"
        title="Conversar no WhatsApp"
        target="_blank"
-       rel="noopener noreferrer">
+       rel="noopener noreferrer"
+       data-track="whatsapp"
+       data-track-source="botao_fixo_home">
         💬
     </a>
 
@@ -186,21 +189,21 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">
+                <a class="logo" href="index.html" aria-label="Zadoni Presentes - início">
                     🎁 <span>Zadoni Presentes</span>
-                </div>
+                </a>
 
-                <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
                     ☰
                 </button>
 
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Início</a></li>
+                <nav aria-label="Navegação principal">
+                    <ul class="nav-menu" id="nav-menu">
+                        <li><a href="index.html" aria-current="page">Início</a></li>
                         <li><a href="presentes-canaa.html">Presentes</a></li>
                         <li><a href="floricultura-canaa-dos-carajas/">Flores e buquês</a></li>
-                        <li><a href="cesta-cafe-da-manha-canaa/">Cesta de café</a></li>
-                        <li><a href="cesta-de-aniversario-canaa/">Cesta de aniversário</a></li>
+                        <li><a href="cestas-de-presente-canaa/">Cestas</a></li>
+                        <li><a href="cesta-de-aniversario-canaa/">Aniversário</a></li>
                         <li><a href="monte-sua-cesta/">Monte sua cesta</a></li>
                     </ul>
                 </nav>
@@ -212,6 +215,7 @@
          HERO SECTION
          ============================================ -->
 
+    <main id="conteudo">
     <section class="hero" style="background: linear-gradient(135deg, #D946A6 0%, #A855C7 50%, #7C3AED 100%); min-height: 600px; display: flex; align-items: center;">
         <div class="container">
             <div class="hero-content home-choice-hero">
@@ -367,7 +371,7 @@
 
             <div class="entregas-reais-actions">
                 <a class="btn btn-outline" href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">Ver avaliações no Google</a>
-                <a class="btn btn-secondary" href="https://wa.me/5594992993138?text=Ola!%20Quero%20ajuda%20para%20escolher%20um%20presente%20em%20Canaa%20dos%20Carajas." target="_blank" rel="noopener noreferrer" data-track="whatsapp">Pedir ajuda no WhatsApp</a>
+                <a class="btn btn-secondary" href="https://wa.me/5594992993138?text=Ola!%20Quero%20ajuda%20para%20escolher%20um%20presente%20em%20Canaa%20dos%20Carajas." target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-track-source="entregas_reais_home">Pedir ajuda no WhatsApp</a>
             </div>
         </div>
     </section>
@@ -381,6 +385,8 @@
                    class="btn btn-secondary"
                    target="_blank"
                    rel="noopener noreferrer"
+                   data-track="whatsapp"
+                   data-track-source="prova_social_home"
                    style="margin-top: 16px;">
                     Chamar no WhatsApp
                 </a>
@@ -409,6 +415,8 @@
                class="btn btn-primary"
                target="_blank"
                rel="noopener noreferrer"
+               data-track="whatsapp"
+               data-track-source="cta_home"
                style="display: inline-flex; padding: 16px 32px; font-size: 1.1rem;">
                 💬 Conversar no WhatsApp
             </a>
@@ -427,6 +435,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ============================================
          FOOTER
@@ -458,12 +468,12 @@
                 <div class="footer-section">
                     <h3>Conecte Conosco</h3>
                     <p>📍 Canaã dos Carajás - PA</p>
-                    <p>📱 WhatsApp: <a href="https://wa.me/5594992993138" target="_blank" rel="noopener noreferrer">94992993138</a></p>
+                    <p>📱 WhatsApp: <a href="https://wa.me/5594992993138" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-track-source="rodape_telefone_home">94992993138</a></p>
                     <p>⭐ Google: <a href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">ver avaliações da Zadoni</a></p>
                     <p>🏪 Endereço: Canaã dos Carajás - PA</p>
                     <div class="social-links" style="margin-top: 16px;">
                         <a href="https://www.instagram.com/zadonipresentescanaa?igsh=MXNhN2VvNXhsNmJrbQ==" title="Instagram @zadonipresentescanaa" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem;">📷</a>
-                        <a href="https://wa.me/5594992993138" title="WhatsApp" target="_blank" rel="noopener noreferrer" style="font-size: 1.5rem;">💬</a>
+                        <a href="https://wa.me/5594992993138" title="WhatsApp" target="_blank" rel="noopener noreferrer" data-track="whatsapp" data-track-source="rodape_icone_home" style="font-size: 1.5rem;">💬</a>
                     </div>
                 </div>
             </div>
@@ -484,7 +494,7 @@
          ============================================ -->
 
     <script src="assets/data/produtos.js?v=20260817-remove-ferrero3-1" defer></script>
-    <script src="assets/js/app.js?v=20260817-fix-addon-images-1" defer></script>
+    <script src="assets/js/app.js?v=20260826-navigation-ux-1" defer></script>
     <script src="assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
 
     <script>

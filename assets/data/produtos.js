@@ -784,6 +784,28 @@ const produtosLocais = [
     exibirAdicionaisNaCategoria: true,
     adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Tenho interesse no Buque Girassois Noir Perfumado e quero escolher adicionais."
+  },
+  {
+    id: 58,
+    nome: "Mini bolo de chocolate com morangos",
+    categoria: "Adicionais",
+    descricao: "Mini bolo confeitado de chocolate com morangos para aniversário, cesta personalizada ou surpresa especial.",
+    preco: 80.00,
+    imagem: "monte-sua-cesta/assets/produtos/bolo-chocolate-morango-aniversario.webp",
+    destaque: false,
+    observacaoPreco: "Valor estimado. O tamanho, o sabor, a decoração e a disponibilidade são confirmados no WhatsApp.",
+    whatsappMensagem: "Ola! Quero consultar o mini bolo de chocolate com morangos para um aniversario."
+  },
+  {
+    id: 59,
+    nome: "Bolo confeitado feminino - 2 kg",
+    categoria: "Adicionais",
+    descricao: "Bolo confeitado feminino de 2 kg para aniversário, composição premium ou surpresa personalizada.",
+    preco: 210.00,
+    imagem: "monte-sua-cesta/assets/produtos/bolo-confeitado-feminino.webp",
+    destaque: false,
+    observacaoPreco: "Valor para bolo de 2 kg. O tema, as cores, o sabor e a disponibilidade são confirmados no WhatsApp.",
+    whatsappMensagem: "Ola! Quero consultar o bolo confeitado feminino de 2 kg para um aniversario."
   }
 ];
 

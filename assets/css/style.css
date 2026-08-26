@@ -305,6 +305,53 @@ header {
   color: var(--cor-secundaria);
 }
 
+.nav-menu a[aria-current="page"] {
+  color: var(--cor-secundaria);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35rem;
+}
+
+.section-jump-nav {
+  overflow-x: auto;
+  border-bottom: 1px solid var(--cor-borda);
+  background: #ffffff;
+  scrollbar-width: thin;
+}
+
+.section-jump-nav .container {
+  padding-block: 0.65rem;
+}
+
+.section-jump-nav ul {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  gap: var(--espaco-sm);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.section-jump-nav a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 999px;
+  background: var(--cor-fundo-suave);
+  color: var(--cor-primaria);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.section-jump-nav a:hover,
+.section-jump-nav a:focus-visible {
+  border-color: var(--cor-primaria);
+  background: #ffffff;
+}
+
 .hero,
 .hero-hiperlocal,
 .seo-hero {
@@ -1682,29 +1729,6 @@ select:focus {
     padding: 4rem 0;
   }
 
-  .menu-toggle {
-    display: none;
-  }
-
-  .nav-menu {
-    position: static;
-    display: flex !important;
-    align-items: center;
-    gap: var(--espaco-lg);
-    overflow: visible;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  .nav-menu li + li {
-    border-top: 0;
-  }
-
-  .nav-menu a {
-    padding: 0.3rem 0;
-  }
-
   .grid-3,
   .produtos-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1731,6 +1755,31 @@ select:focus {
     bottom: 1.5rem;
     width: 64px;
     height: 64px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+    display: flex !important;
+    align-items: center;
+    gap: var(--espaco-lg);
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-menu li + li {
+    border-top: 0;
+  }
+
+  .nav-menu a {
+    padding: 0.3rem 0;
   }
 }
 
