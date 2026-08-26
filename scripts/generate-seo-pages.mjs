@@ -592,6 +592,7 @@ function footer(prefix = "") {
                         <li><a href="${prefix}presentes-romanticos-canaa/">Presentes românticos</a></li>
                         <li><a href="${prefix}monte-sua-cesta/">Monte sua cesta</a></li>
                         <li><a href="${prefix}revenda-chocolates-canaa/">Chocolates</a></li>
+                        <li><a href="${prefix}links/">Links oficiais</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

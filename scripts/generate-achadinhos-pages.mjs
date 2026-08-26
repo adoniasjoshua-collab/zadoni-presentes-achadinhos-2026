@@ -182,7 +182,7 @@ function footer(prefix) {
       <div class="container">
         <div class="ach-footer-inner">
           <div><strong>Zadoni Achadinhos</strong><p>Guias editoriais nacionais para escolher presentes com mais contexto.</p></div>
-          <p><a href="${prefix}index.html">Conhecer a Zadoni Presentes</a> · <a href="${prefix}achadinhos/">Ver todos os Achadinhos</a></p>
+          <p><a href="${prefix}index.html">Conhecer a Zadoni Presentes</a> · <a href="${prefix}achadinhos/">Ver todos os Achadinhos</a> · <a href="${prefix}links/">Links oficiais</a></p>
         </div>
         <p id="transparencia-afiliados" class="ach-footer-disclosure"><strong>Transparência sobre links de afiliados:</strong> ${escapeHtml(data.disclosure)}</p>
       </div>
