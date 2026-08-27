@@ -17,16 +17,23 @@ assert.ok(home.includes('<a href="links/">Links oficiais</a>'), "Acesso pelo rod
 assert.ok(seoGenerator.includes('${prefix}links/'), "Acesso nos rodapés das páginas locais ausente");
 assert.ok(achadinhosGenerator.includes('${prefix}links/'), "Acesso nos rodapés dos Achadinhos ausente");
 assert.equal((html.match(/<h1\b/g) || []).length, 1, "A linkpage deve ter um único H1");
-assert.equal((html.match(/data-choice=/g) || []).length, 3, "Devem existir três caminhos guiados");
-assert.equal((html.match(/data-panel=/g) || []).length, 3, "Cada caminho deve ter um painel correspondente");
+assert.ok(html.indexOf('data-bio-link="whatsapp_principal"') < html.indexOf('data-bio-link="buques_canaa"'), "WhatsApp deve permanecer antes dos atalhos locais");
+assert.ok(html.includes('../buques-canaa-dos-carajas/'), "Atalho direto para Buquês ausente");
+assert.ok(html.includes('../cesta-cafe-da-manha-canaa/'), "Atalho direto para cesta de café ausente");
+assert.ok(html.includes('../cesta-de-aniversario-canaa/'), "Atalho direto para cesta de aniversário ausente");
+assert.ok(html.includes('../floricultura-canaa-dos-carajas/'), "Atalho direto para Floricultura ausente");
+assert.ok(html.includes('../monte-sua-cesta/'), "Atalho direto para Monte sua cesta ausente");
+assert.ok(html.includes('../presentes-canaa.html'), "Atalho para o catálogo completo ausente");
+assert.ok(html.includes('class="direct-link-badge">Mais procurado</span>'), "Destaque de Buquês ausente");
 assert.ok(html.includes("../achadinhos/"), "Destaque dos Achadinhos ausente");
 assert.ok(html.includes("../achadinhos/presentes-para-namorada/"), "Guia para namorada ausente");
 assert.ok(html.includes("../achadinhos/presentes-criativos/"), "Guia de presentes criativos ausente");
 assert.ok(html.includes("../achadinhos/presentes-de-aniversario/"), "Guia de aniversário ausente");
 assert.ok(html.includes("https://wa.me/5594992993138"), "WhatsApp principal ausente");
 assert.ok(html.includes("data-bio-link="), "Links sem instrumentação própria");
-assert.ok(js.includes('"bio_select_path"') && js.includes('"bio_click_link"'), "Eventos da linkpage ausentes");
+assert.ok(js.includes('"bio_click_link"'), "Evento de clique da linkpage ausente");
 assert.ok(css.includes("min-height: 44px") && css.includes("prefers-reduced-motion"), "Requisitos básicos de acessibilidade ausentes");
+assert.ok(css.includes(".direct-link--featured") && css.includes("grid-template-columns: repeat(2, minmax(0, 1fr))"), "Interface responsiva dos atalhos ausente");
 assert.ok(!html.match(/https:\/\/(?:cdn|fonts)\./), "A linkpage não deve depender de CDN ou fonte externa");
 
 for (const [, href] of html.matchAll(/href="(\.\.\/[^"?#]+)"/g)) {
@@ -34,4 +41,4 @@ for (const [, href] of html.matchAll(/href="(\.\.\/[^"?#]+)"/g)) {
   assert.ok(fs.existsSync(target), `Destino interno ausente: ${href}`);
 }
 
-console.log("Linkpage validation ok: noindex, three guided paths, local links, Achadinhos and analytics preserved.");
+console.log("Linkpage validation ok: noindex, direct local links, Achadinhos and analytics preserved.");
