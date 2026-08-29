@@ -314,7 +314,9 @@
         img.loading = "lazy";
         img.decoding = "async";
         img.onerror = function () {
+          var linha = img.parentElement;
           img.remove();
+          if (linha) linha.classList.remove("produto-adicional-com-imagem");
         };
         return img;
       }
@@ -413,36 +415,84 @@
     return url.toString();
   }
 
-  function inicializarAdicionaisGaleriaCafe() {
-    var painel = document.getElementById("cafe-gallery-addons");
-    var destino = document.getElementById("cafe-gallery-addons-options");
-    if (!painel || !destino || painel.dataset.initialized === "true") return;
+  function criarPainelAdicionaisGaleria(configuracao) {
+    var painel = configuracao.painel;
+    var destino = configuracao.destino;
+    var total = configuracao.total;
+    var modelos = configuracao.modelos;
+    var produtoReferencia = configuracao.produtoReferencia;
+    var estados = new WeakMap();
+    var botoes = new WeakMap();
+    var modeloAtivo = null;
+    var gatilhoAtivo = null;
 
-    var lista = obterAdicionaisCafeGaleria();
-    if (!lista.length) return;
+    if (!painel || !destino || !modelos.length || !produtoTemAdicionais(produtoReferencia)) return;
 
-    painel.dataset.initialized = "true";
-    var produtoReferencia = {
-      categoria: "Cestas",
-      nome: "Cesta de café da manhã",
-      adicionaisOpcionais: lista
-    };
-    var links = Array.prototype.slice.call(document.querySelectorAll(".seo-gallery-budget-option"));
-    var total = document.getElementById("cafe-gallery-addons-total");
+    painel.classList.add("seo-gallery-addons--modal");
+    painel.setAttribute("role", "dialog");
+    painel.setAttribute("aria-modal", "true");
+    painel.setAttribute("aria-hidden", "true");
+    painel.tabIndex = -1;
 
-    links.forEach(function (link) {
-      link.dataset.baseWhatsappHref = link.href;
-    });
+    var fechar = document.createElement("button");
+    fechar.type = "button";
+    fechar.className = "seo-gallery-addons-close";
+    fechar.setAttribute("aria-label", "Fechar lista de adicionais");
+    fechar.textContent = "×";
+    painel.prepend(fechar);
 
-    function atualizarLinksGaleria() {
+    var fundo = document.createElement("button");
+    fundo.type = "button";
+    fundo.className = "seo-gallery-addons-backdrop";
+    fundo.setAttribute("aria-label", "Fechar lista de adicionais");
+    document.body.appendChild(fundo);
+
+    function salvarEstado() {
+      if (!modeloAtivo) return;
+
+      estados.set(modeloAtivo, {
+        checks: Array.prototype.slice.call(painel.querySelectorAll(".produto-adicional-check")).map(function (input) {
+          return input.checked;
+        }),
+        quantidades: Array.prototype.slice.call(painel.querySelectorAll(".produto-adicional-quantidade")).map(function (input) {
+          return input.value;
+        })
+      });
+    }
+
+    function restaurarEstado(modelo) {
+      var estado = estados.get(modelo) || { checks: [], quantidades: [] };
+
+      Array.prototype.slice.call(painel.querySelectorAll(".produto-adicional-check")).forEach(function (input, index) {
+        input.checked = Boolean(estado.checks[index]);
+      });
+      Array.prototype.slice.call(painel.querySelectorAll(".produto-adicional-quantidade")).forEach(function (input, index) {
+        input.value = estado.quantidades[index] || "0";
+      });
+    }
+
+    function atualizarModeloAtivo(deveSalvar) {
+      if (!modeloAtivo) return;
+      if (deveSalvar !== false) salvarEstado();
+
       var selecionados = obterAdicionaisSelecionados(painel, produtoReferencia);
       var valor = selecionados.reduce(function (soma, adicional) {
         return soma + Number(adicional.preco || 0) * Math.max(1, Number(adicional.quantidade || 1));
       }, 0);
+      var links = configuracao.obterLinks(modeloAtivo);
+      var botao = botoes.get(modeloAtivo);
 
       links.forEach(function (link) {
+        if (!link.dataset.baseWhatsappHref) link.dataset.baseWhatsappHref = link.href;
         link.href = adicionarExtrasAoLinkWhatsApp(link.dataset.baseWhatsappHref, selecionados);
       });
+
+      if (botao) {
+        botao.textContent = selecionados.length
+          ? botao.dataset.baseLabel + " · " + selecionados.length + " selecionado(s)"
+          : botao.dataset.baseLabel;
+        botao.classList.toggle("btn-adicionais-modelo--selecionado", selecionados.length > 0);
+      }
 
       if (total) {
         total.textContent = selecionados.length
@@ -451,8 +501,206 @@
       }
     }
 
-    destino.appendChild(criarAdicionaisProduto(produtoReferencia, atualizarLinksGaleria));
-    atualizarLinksGaleria();
+    var adicionais = criarAdicionaisProduto(produtoReferencia, function () {
+      atualizarModeloAtivo(true);
+    });
+    destino.appendChild(adicionais);
+
+    var concluir = document.createElement("button");
+    concluir.type = "button";
+    concluir.className = "btn btn-primary btn-block seo-gallery-addons-done";
+    concluir.textContent = "Concluir adicionais";
+    painel.appendChild(concluir);
+
+    function fecharPainel() {
+      painel.classList.remove("is-open");
+      fundo.classList.remove("is-open");
+      painel.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("addons-modal-open");
+      if (gatilhoAtivo) gatilhoAtivo.focus();
+    }
+
+    function abrirPainel(modelo, botao) {
+      modeloAtivo = modelo;
+      gatilhoAtivo = botao;
+      restaurarEstado(modelo);
+      adicionais.open = true;
+      atualizarModeloAtivo(false);
+      painel.classList.add("is-open");
+      fundo.classList.add("is-open");
+      painel.setAttribute("aria-hidden", "false");
+      document.body.classList.add("addons-modal-open");
+      painel.scrollTop = 0;
+      fechar.focus();
+    }
+
+    modelos.forEach(function (modelo, index) {
+      var ancora = configuracao.obterAncora(modelo);
+      if (!ancora) return;
+
+      configuracao.obterLinks(modelo).forEach(function (link) {
+        link.dataset.baseWhatsappHref = link.href;
+      });
+
+      var botao = document.createElement("button");
+      botao.type = "button";
+      botao.className = "btn btn-adicionais-modelo";
+      botao.dataset.baseLabel = configuracao.rotuloBotao;
+      botao.textContent = configuracao.rotuloBotao;
+      botao.setAttribute("aria-haspopup", "dialog");
+      botao.setAttribute("aria-controls", painel.id);
+      botao.setAttribute("aria-label", configuracao.rotuloBotao + " no modelo " + (index + 1));
+      botao.addEventListener("click", function () {
+        abrirPainel(modelo, botao);
+      });
+
+      ancora.after(botao);
+      botoes.set(modelo, botao);
+      destacarControleQuandoVisivel(botao);
+    });
+
+    fechar.addEventListener("click", fecharPainel);
+    concluir.addEventListener("click", fecharPainel);
+    fundo.addEventListener("click", fecharPainel);
+    document.addEventListener("keydown", function (event) {
+      if (!painel.classList.contains("is-open")) return;
+
+      if (event.key === "Escape") {
+        fecharPainel();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      var focaveis = Array.prototype.slice.call(painel.querySelectorAll(
+        "button:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex='-1'])"
+      )).filter(function (elemento) {
+        return elemento.offsetParent !== null;
+      });
+      if (!focaveis.length) return;
+
+      var primeiro = focaveis[0];
+      var ultimo = focaveis[focaveis.length - 1];
+
+      if (event.shiftKey && document.activeElement === primeiro) {
+        event.preventDefault();
+        ultimo.focus();
+      } else if (!event.shiftKey && document.activeElement === ultimo) {
+        event.preventDefault();
+        primeiro.focus();
+      }
+    });
+  }
+
+  function inicializarAdicionaisGaleriaCafe() {
+    var painel = document.getElementById("cafe-gallery-addons");
+    var destino = document.getElementById("cafe-gallery-addons-options");
+    if (!painel || !destino || painel.dataset.initialized === "true") return;
+
+    var lista = obterAdicionaisCafeGaleria();
+    if (!lista.length) return;
+
+    var produtoReferencia = {
+      categoria: "Cestas",
+      nome: "Cesta de café da manhã",
+      adicionaisOpcionais: lista
+    };
+    var total = document.getElementById("cafe-gallery-addons-total");
+    var modelos = Array.prototype.slice.call(document.querySelectorAll(".seo-gallery-grid--budget .seo-gallery-item"));
+    var orientacao = painel.querySelector(":scope > p");
+
+    painel.dataset.initialized = "true";
+    painel.id = painel.id || "cafe-gallery-addons";
+    if (orientacao) {
+      orientacao.textContent = "Selecione os complementos deste modelo. Depois, escolha a faixa de orçamento para enviar o resumo completo pelo WhatsApp.";
+    }
+
+    criarPainelAdicionaisGaleria({
+      painel: painel,
+      destino: destino,
+      total: total,
+      modelos: modelos,
+      produtoReferencia: produtoReferencia,
+      rotuloBotao: "Adicionar itens à cesta",
+      obterAncora: function (modelo) {
+        return modelo.querySelector(".seo-gallery-budget-options");
+      },
+      obterLinks: function (modelo) {
+        return Array.prototype.slice.call(modelo.querySelectorAll(".seo-gallery-budget-option"));
+      }
+    });
+  }
+
+  function inicializarAdicionaisModelosGaleria() {
+    var caminho = removerAcentos(window.location.pathname);
+    var configuracao = null;
+
+    if (caminho.includes("cestas-de-presente-canaa") && typeof adicionaisCestas !== "undefined") {
+      configuracao = {
+        lista: adicionaisCestas,
+        categoria: "Cestas",
+        nome: "Cesta de presente",
+        titulo: "Adicionais opcionais para esta cesta",
+        descricao: "Selecione os complementos desejados para enviar junto com este modelo pelo WhatsApp.",
+        rotuloBotao: "Adicionar itens à cesta"
+      };
+    } else if (caminho.includes("buques-canaa-dos-carajas") && typeof adicionaisBuques !== "undefined") {
+      configuracao = {
+        lista: adicionaisBuques,
+        categoria: "Flores",
+        nome: "Buquê",
+        titulo: "Adicionais opcionais para este buquê",
+        descricao: "Selecione os complementos desejados para enviar junto com este modelo pelo WhatsApp.",
+        rotuloBotao: "Adicionar itens ao buquê"
+      };
+    }
+
+    if (!configuracao || !Array.isArray(configuracao.lista) || !configuracao.lista.length) return;
+
+    var modelos = Array.prototype.slice.call(document.querySelectorAll(".seo-gallery .seo-gallery-item"));
+    if (!modelos.length || document.getElementById("gallery-model-addons")) return;
+
+    var painel = document.createElement("aside");
+    painel.className = "seo-gallery-addons";
+    painel.id = "gallery-model-addons";
+
+    var titulo = document.createElement("h3");
+    titulo.id = "gallery-model-addons-title";
+    titulo.textContent = configuracao.titulo;
+    painel.setAttribute("aria-labelledby", titulo.id);
+
+    var descricao = document.createElement("p");
+    descricao.textContent = configuracao.descricao;
+
+    var destino = document.createElement("div");
+    var total = document.createElement("strong");
+    total.className = "seo-gallery-addons-total";
+    total.setAttribute("aria-live", "polite");
+    total.textContent = "Nenhum adicional selecionado.";
+
+    painel.append(titulo, descricao, destino, total);
+    document.body.appendChild(painel);
+
+    criarPainelAdicionaisGaleria({
+      painel: painel,
+      destino: destino,
+      total: total,
+      modelos: modelos,
+      produtoReferencia: {
+        categoria: configuracao.categoria,
+        nome: configuracao.nome,
+        adicionaisOpcionais: configuracao.lista
+      },
+      rotuloBotao: configuracao.rotuloBotao,
+      obterAncora: function (modelo) {
+        var cta = modelo.querySelector(".seo-gallery-cta");
+        return cta ? cta.previousElementSibling || modelo.querySelector("figcaption > :last-child") : null;
+      },
+      obterLinks: function (modelo) {
+        var link = modelo.querySelector(".seo-gallery-cta");
+        return link ? [link] : [];
+      }
+    });
   }
 
   function inicializarAdicionaisCardsSeo() {
@@ -911,6 +1159,7 @@
     inicializarMenuMobile();
     carregarProdutosLocais();
     inicializarAdicionaisGaleriaCafe();
+    inicializarAdicionaisModelosGaleria();
     inicializarAdicionaisCardsSeo();
     inicializarAtalhoModelosMobile();
     inicializarTrackingLinks();
