@@ -221,6 +221,34 @@
       produto.adicionaisOpcionais.length > 0;
   }
 
+  function destacarControleQuandoVisivel(controle) {
+    if (!controle || controle.dataset.attentionInitialized === "true") return;
+
+    controle.dataset.attentionInitialized = "true";
+
+    function destacar() {
+      if (controle.closest("details")?.open) return;
+      controle.classList.add("produto-adicionais-titulo--destaque");
+    }
+
+    controle.addEventListener("click", function () {
+      controle.classList.remove("produto-adicionais-titulo--destaque");
+    }, { once: true });
+
+    if (!("IntersectionObserver" in window)) {
+      destacar();
+      return;
+    }
+
+    var observador = new IntersectionObserver(function (entradas) {
+      if (!entradas.some(function (entrada) { return entrada.isIntersecting; })) return;
+      destacar();
+      observador.disconnect();
+    }, { threshold: 0.7 });
+
+    observador.observe(controle);
+  }
+
   function obterTituloAdicionais(produto) {
     var categoria = removerAcentos(produto && produto.categoria);
     var nome = removerAcentos(produto && produto.nome);
@@ -264,6 +292,14 @@
     titulo.className = "produto-adicionais-titulo";
     titulo.textContent = obterTituloAdicionais(produto) + " " + produto.adicionaisOpcionais.length + " opções";
     wrapper.appendChild(titulo);
+
+    wrapper.addEventListener("toggle", function () {
+      if (wrapper.open) {
+        titulo.classList.remove("produto-adicionais-titulo--destaque");
+      }
+    });
+
+    destacarControleQuandoVisivel(titulo);
 
     produto.adicionaisOpcionais.forEach(function (adicional, index) {
       function criarImagemAdicional() {
@@ -417,6 +453,83 @@
 
     destino.appendChild(criarAdicionaisProduto(produtoReferencia, atualizarLinksGaleria));
     atualizarLinksGaleria();
+  }
+
+  function inicializarAdicionaisCardsSeo() {
+    if (document.getElementById("produtos-container")) return;
+
+    var produtos = getProdutosLocais();
+
+    document.querySelectorAll(".seo-products .seo-product-card[data-produto-id]").forEach(function (card) {
+      if (card.dataset.addonsInitialized === "true") return;
+
+      var produtoId = String(card.dataset.produtoId || "");
+      var produto = produtos.find(function (item) {
+        return String(item.id) === produtoId;
+      });
+      var acoes = card.querySelector(".produto-acoes");
+      var whatsapp = card.querySelector(".btn-whatsapp-produto");
+
+      if (!produtoTemAdicionais(produto) || !acoes || !whatsapp) return;
+
+      card.dataset.addonsInitialized = "true";
+      whatsapp.dataset.baseWhatsappHref = whatsapp.href;
+
+      var totalEstimado = document.createElement("p");
+      totalEstimado.className = "produto-total-estimado";
+
+      function atualizarPedido() {
+        var selecionados = obterAdicionaisSelecionados(card, produto);
+        whatsapp.href = adicionarExtrasAoLinkWhatsApp(whatsapp.dataset.baseWhatsappHref, selecionados);
+
+        if (temPrecoProduto(produto)) {
+          totalEstimado.textContent = "Total estimado: " + formatarPreco(calcularTotalProduto(produto, selecionados));
+        } else {
+          totalEstimado.textContent = selecionados.length
+            ? "Adicionais selecionados: " + formatarPreco(calcularTotalProduto(produto, selecionados)) + " · valor do buquê sob consulta"
+            : "Valor do buquê sob consulta";
+        }
+      }
+
+      var adicionais = criarAdicionaisProduto(produto, atualizarPedido);
+      acoes.before(adicionais, totalEstimado);
+      atualizarPedido();
+
+      var linkAdicionais = acoes.querySelector(".btn-secondary");
+      if (linkAdicionais && removerAcentos(linkAdicionais.textContent).includes("adicion")) {
+        linkAdicionais.addEventListener("click", function (event) {
+          event.preventDefault();
+          adicionais.open = true;
+          adicionais.scrollIntoView({ behavior: "smooth", block: "center" });
+          adicionais.querySelector(".produto-adicionais-titulo")?.focus();
+        });
+      }
+    });
+  }
+
+  function inicializarAtalhoModelosMobile() {
+    var hero = document.querySelector(".seo-hero");
+    var galeria = document.querySelector(".seo-gallery");
+    var botoes = hero?.querySelector(".hero-buttons");
+
+    if (!hero || !galeria || !botoes || hero.dataset.mobileShortcutInitialized === "true") return;
+
+    hero.dataset.mobileShortcutInitialized = "true";
+    hero.classList.add("seo-hero--tem-atalho-mobile");
+
+    var atalho = document.createElement("button");
+    atalho.type = "button";
+    atalho.className = "btn btn-outline btn-catalogo-mobile";
+    atalho.textContent = "Ver modelos";
+    atalho.setAttribute("aria-label", "Ir direto aos modelos desta categoria");
+    atalho.addEventListener("click", function () {
+      galeria.scrollIntoView({ behavior: "smooth", block: "start" });
+      rastrearEvento("click_mobile_catalog_shortcut", {
+        pagina: window.location.pathname
+      });
+    });
+
+    botoes.appendChild(atalho);
   }
 
   function criarCardProdutoLocal(produto, index) {
@@ -798,6 +911,8 @@
     inicializarMenuMobile();
     carregarProdutosLocais();
     inicializarAdicionaisGaleriaCafe();
+    inicializarAdicionaisCardsSeo();
+    inicializarAtalhoModelosMobile();
     inicializarTrackingLinks();
   }
 
