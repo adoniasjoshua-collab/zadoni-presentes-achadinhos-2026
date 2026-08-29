@@ -1141,6 +1141,169 @@
     });
   }
 
+  function inicializarCarrosseisGaleriaMobile() {
+    var caminho = removerAcentos(window.location.pathname);
+    var paginaComCatalogoVisual = caminho.includes("cesta-cafe-da-manha-canaa")
+      || caminho.includes("cestas-de-presente-canaa")
+      || caminho.includes("buques-canaa-dos-carajas");
+
+    if (!paginaComCatalogoVisual) return;
+
+    var movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var telaMobile = window.matchMedia("(max-width: 767px)");
+
+    document.querySelectorAll(".seo-gallery-grid").forEach(function (galeria, indiceGaleria) {
+      var modelos = Array.prototype.slice.call(galeria.querySelectorAll(":scope > .seo-gallery-item"));
+      if (modelos.length < 2 || galeria.dataset.carouselInitialized === "true") return;
+
+      galeria.dataset.carouselInitialized = "true";
+      galeria.classList.add("seo-gallery-carousel");
+
+      var controles = document.createElement("div");
+      controles.className = "seo-gallery-carousel-controls";
+
+      var status = document.createElement("div");
+      status.className = "seo-gallery-carousel-status";
+
+      var contador = document.createElement("strong");
+      contador.className = "seo-gallery-carousel-counter";
+      contador.setAttribute("aria-live", "polite");
+      contador.setAttribute("aria-atomic", "true");
+
+      var instrucao = document.createElement("span");
+      instrucao.className = "seo-gallery-carousel-hint";
+      instrucao.textContent = "Deslize para ver os próximos";
+
+      var progresso = document.createElement("div");
+      progresso.className = "seo-gallery-carousel-progress";
+      progresso.setAttribute("aria-hidden", "true");
+
+      var barraProgresso = document.createElement("span");
+      progresso.appendChild(barraProgresso);
+      status.append(contador, instrucao, progresso);
+
+      var navegacao = document.createElement("div");
+      navegacao.className = "seo-gallery-carousel-navigation";
+
+      function criarBotaoNavegacao(direcao, simbolo) {
+        var botao = document.createElement("button");
+        botao.type = "button";
+        botao.className = "seo-gallery-carousel-button";
+        botao.setAttribute("aria-label", direcao === "anterior" ? "Ver modelo anterior" : "Ver próximo modelo");
+        botao.textContent = simbolo;
+        return botao;
+      }
+
+      var anterior = criarBotaoNavegacao("anterior", "‹");
+      var proximo = criarBotaoNavegacao("proximo", "›");
+      navegacao.append(anterior, proximo);
+      controles.append(status, navegacao);
+      galeria.before(controles);
+
+      var indiceAtivo = 0;
+      var atualizacaoPendente = false;
+
+      function atualizarInterface(novoIndice) {
+        indiceAtivo = Math.max(0, Math.min(modelos.length - 1, novoIndice));
+        contador.textContent = "Modelo " + (indiceAtivo + 1) + " de " + modelos.length;
+        barraProgresso.style.width = ((indiceAtivo + 1) / modelos.length * 100) + "%";
+        anterior.disabled = indiceAtivo === 0;
+        proximo.disabled = indiceAtivo === modelos.length - 1;
+      }
+
+      function obterIndiceVisivel() {
+        var inicioGaleria = galeria.getBoundingClientRect().left;
+        var melhorIndice = 0;
+        var menorDistancia = Infinity;
+
+        modelos.forEach(function (modelo, index) {
+          var distancia = Math.abs(modelo.getBoundingClientRect().left - inicioGaleria);
+          if (distancia < menorDistancia) {
+            menorDistancia = distancia;
+            melhorIndice = index;
+          }
+        });
+
+        return melhorIndice;
+      }
+
+      function acompanharRolagem() {
+        if (atualizacaoPendente) return;
+        atualizacaoPendente = true;
+        window.requestAnimationFrame(function () {
+          atualizacaoPendente = false;
+          atualizarInterface(obterIndiceVisivel());
+        });
+      }
+
+      function irParaModelo(index) {
+        var destino = modelos[Math.max(0, Math.min(modelos.length - 1, index))];
+        if (!destino) return;
+
+        var distancia = galeria.scrollLeft
+          + destino.getBoundingClientRect().left
+          - galeria.getBoundingClientRect().left;
+
+        galeria.scrollTo({
+          left: distancia,
+          behavior: movimentoReduzido.matches ? "auto" : "smooth"
+        });
+      }
+
+      function configurarModoMobile() {
+        if (telaMobile.matches) {
+          galeria.setAttribute("role", "region");
+          galeria.setAttribute("aria-roledescription", "carrossel");
+          galeria.setAttribute("aria-label", "Modelos disponíveis");
+          galeria.tabIndex = 0;
+          modelos.forEach(function (modelo, index) {
+            modelo.setAttribute("role", "group");
+            modelo.setAttribute("aria-roledescription", "slide");
+            modelo.setAttribute("aria-label", "Modelo " + (index + 1) + " de " + modelos.length);
+          });
+          acompanharRolagem();
+          return;
+        }
+
+        galeria.removeAttribute("role");
+        galeria.removeAttribute("aria-roledescription");
+        galeria.removeAttribute("aria-label");
+        galeria.removeAttribute("tabindex");
+        modelos.forEach(function (modelo) {
+          modelo.removeAttribute("role");
+          modelo.removeAttribute("aria-roledescription");
+          modelo.removeAttribute("aria-label");
+        });
+      }
+
+      anterior.addEventListener("click", function () {
+        irParaModelo(indiceAtivo - 1);
+      });
+      proximo.addEventListener("click", function () {
+        irParaModelo(indiceAtivo + 1);
+      });
+      galeria.addEventListener("scroll", acompanharRolagem, { passive: true });
+      galeria.addEventListener("keydown", function (event) {
+        if (!telaMobile.matches || event.target !== galeria) return;
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          irParaModelo(indiceAtivo - 1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          irParaModelo(indiceAtivo + 1);
+        }
+      });
+
+      atualizarInterface(0);
+      configurarModoMobile();
+      if (typeof telaMobile.addEventListener === "function") {
+        telaMobile.addEventListener("change", configurarModoMobile);
+      } else if (typeof telaMobile.addListener === "function") {
+        telaMobile.addListener(configurarModoMobile);
+      }
+    });
+  }
+
   function criarCompatibilidadeLegado() {
     if (location.pathname.includes("presentes-canaa")) {
       window.PRODUTOS = { produtosLocais: getProdutosLocais() };
@@ -1160,6 +1323,7 @@
     carregarProdutosLocais();
     inicializarAdicionaisGaleriaCafe();
     inicializarAdicionaisModelosGaleria();
+    inicializarCarrosseisGaleriaMobile();
     inicializarAdicionaisCardsSeo();
     inicializarAtalhoModelosMobile();
     inicializarTrackingLinks();
