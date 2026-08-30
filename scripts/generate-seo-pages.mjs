@@ -534,7 +534,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:description" content="${html(description)}">
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260830-mobile-copy-accordion-7">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260830-bouquet-card-height-8">`;
 }
 
 function navCurrentSection(pagePath) {

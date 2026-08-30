@@ -2163,6 +2163,7 @@ select:focus {
   .seo-gallery-grid.seo-gallery-carousel,
   .produtos-grid.seo-gallery-carousel {
     display: flex;
+    align-items: flex-start;
     overflow-x: auto;
     gap: 0.75rem;
     overscroll-behavior-inline: contain;
@@ -2180,8 +2181,28 @@ select:focus {
   .seo-gallery-carousel > .seo-gallery-item,
   .seo-gallery-carousel > .produto-card {
     flex: 0 0 calc(100% - 1.5rem);
+    height: auto;
+    min-height: 0;
     min-width: 0;
     scroll-snap-align: start;
+  }
+
+  .seo-gallery-carousel > .seo-gallery-carousel-product .produto-imagem,
+  .seo-gallery-carousel > .seo-gallery-carousel-product .produto-imagem picture,
+  .seo-gallery-carousel > .seo-gallery-carousel-product .produto-imagem img {
+    height: 360px;
+    max-height: 360px;
+  }
+
+  .seo-gallery-carousel > .seo-gallery-carousel-product .produto-imagem {
+    min-height: 0;
+    flex: 0 0 360px;
+    aspect-ratio: auto;
+  }
+
+  .seo-gallery-carousel > .seo-gallery-carousel-product .produto-imagem img {
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   .seo-gallery-carousel > .seo-gallery-carousel-product {
