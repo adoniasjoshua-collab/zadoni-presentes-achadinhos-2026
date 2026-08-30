@@ -682,6 +682,14 @@ header {
   display: none;
 }
 
+.seo-copy-collapse-button {
+  display: none;
+}
+
+.seo-copy-collapse-content[hidden] {
+  display: none !important;
+}
+
 .seo-gallery-item {
   display: flex;
   overflow: hidden;
@@ -2029,6 +2037,51 @@ select:focus {
     margin-bottom: 0;
   }
 
+  .seo-copy--collapsible-mobile {
+    padding: 1.15rem 0;
+  }
+
+  .seo-copy--collapsible-mobile.seo-copy--expanded-mobile {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .seo-copy--collapsible-mobile h2 {
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.25rem, 6.2vw, 1.55rem);
+    line-height: 1.2;
+  }
+
+  .seo-copy-collapse-button:not([hidden]) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid rgba(122, 47, 85, 0.28);
+    border-radius: var(--raio);
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--cor-primaria-escura);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .seo-copy-collapse-button:focus-visible {
+    outline: 3px solid rgba(122, 47, 85, 0.3);
+    outline-offset: 2px;
+  }
+
+  .seo-copy-collapse-content:not([hidden]) {
+    margin-top: 1rem;
+  }
+
+  .seo-copy-collapse-content > :first-child {
+    margin-top: 0;
+  }
+
   .seo-gallery-header {
     margin-bottom: 1.25rem;
   }
@@ -2039,6 +2092,10 @@ select:focus {
     justify-content: space-between;
     gap: 1rem;
     margin-bottom: 0.75rem;
+  }
+
+  .seo-gallery-carousel-controls[hidden] {
+    display: none !important;
   }
 
   .seo-gallery-carousel-status {
@@ -2103,7 +2160,8 @@ select:focus {
     cursor: default;
   }
 
-  .seo-gallery-grid.seo-gallery-carousel {
+  .seo-gallery-grid.seo-gallery-carousel,
+  .produtos-grid.seo-gallery-carousel {
     display: flex;
     overflow-x: auto;
     gap: 0.75rem;
@@ -2114,14 +2172,36 @@ select:focus {
     -webkit-overflow-scrolling: touch;
   }
 
-  .seo-gallery-grid.seo-gallery-carousel::-webkit-scrollbar {
+  .seo-gallery-grid.seo-gallery-carousel::-webkit-scrollbar,
+  .produtos-grid.seo-gallery-carousel::-webkit-scrollbar {
     display: none;
   }
 
-  .seo-gallery-carousel > .seo-gallery-item {
+  .seo-gallery-carousel > .seo-gallery-item,
+  .seo-gallery-carousel > .produto-card {
     flex: 0 0 calc(100% - 1.5rem);
     min-width: 0;
     scroll-snap-align: start;
+  }
+
+  .seo-gallery-carousel > .seo-gallery-carousel-product {
+    position: relative;
+  }
+
+  .seo-gallery-carousel > .seo-gallery-carousel-product::before {
+    content: "Buquê artificial";
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    z-index: 2;
+    border-radius: 999px;
+    background: var(--cor-primaria-escura);
+    color: #ffffff;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
   }
 
   .seo-gallery-addons {

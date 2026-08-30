@@ -534,7 +534,7 @@ function head({ title, description, canonical, image, type = "website", prefix =
     <meta name="twitter:description" content="${html(description)}">
     <meta name="twitter:image" content="${absoluteUrl(image)}">
     <title>${html(title)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260829-mobile-carousel-ux-3">`;
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260830-mobile-copy-accordion-7">`;
 }
 
 function navCurrentSection(pagePath) {
@@ -737,7 +737,7 @@ function socialProofHtml(prefix = "") {
 }
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260825-artificial-bouquets-1" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260829-mobile-carousel-ux-3" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260830-mobile-copy-accordion-7" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }

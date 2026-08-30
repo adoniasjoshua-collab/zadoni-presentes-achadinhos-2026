@@ -644,6 +644,15 @@
         descricao: "Selecione os complementos desejados para enviar junto com este modelo pelo WhatsApp.",
         rotuloBotao: "Adicionar itens à cesta"
       };
+    } else if (caminho.includes("cesta-de-aniversario-canaa") && typeof adicionaisCestas !== "undefined") {
+      configuracao = {
+        lista: adicionaisCestas,
+        categoria: "Cestas",
+        nome: "Cesta de aniversário",
+        titulo: "Adicionais opcionais para esta cesta de aniversário",
+        descricao: "Selecione os complementos desejados para enviar junto com este modelo pelo WhatsApp.",
+        rotuloBotao: "Adicionar itens à cesta"
+      };
     } else if (caminho.includes("buques-canaa-dos-carajas") && typeof adicionaisBuques !== "undefined") {
       configuracao = {
         lista: adicionaisBuques,
@@ -780,6 +789,77 @@
     botoes.appendChild(atalho);
   }
 
+  function inicializarExplicacoesRecolhiveisMobile() {
+    var primeiroCatalogo = document.querySelector(".seo-gallery, .seo-products");
+    var telaMobile = window.matchMedia("(max-width: 767px)");
+
+    if (!primeiroCatalogo) return;
+
+    document.querySelectorAll(".seo-copy").forEach(function (secao, index) {
+      var estaAntesDoCatalogo = Boolean(
+        secao.compareDocumentPosition(primeiroCatalogo) & Node.DOCUMENT_POSITION_FOLLOWING
+      );
+      var container = secao.querySelector(":scope > .container");
+      var titulo = container?.querySelector(":scope > h2");
+
+      if (!estaAntesDoCatalogo || !container || !titulo || secao.dataset.mobileCollapseInitialized === "true") return;
+
+      var elementosExplicativos = Array.prototype.slice.call(container.children).filter(function (elemento) {
+        return elemento !== titulo;
+      });
+
+      if (!elementosExplicativos.length) return;
+
+      secao.dataset.mobileCollapseInitialized = "true";
+      secao.classList.add("seo-copy--collapsible-mobile");
+
+      var conteudo = document.createElement("div");
+      conteudo.className = "seo-copy-collapse-content";
+      conteudo.id = (titulo.id || "seo-copy-" + (index + 1)) + "-conteudo";
+      elementosExplicativos.forEach(function (elemento) {
+        conteudo.appendChild(elemento);
+      });
+
+      var botao = document.createElement("button");
+      botao.type = "button";
+      botao.className = "seo-copy-collapse-button";
+      botao.setAttribute("aria-controls", conteudo.id);
+
+      var expandidoNoMobile = false;
+
+      function atualizarEstado() {
+        var recolhido = telaMobile.matches && !expandidoNoMobile;
+        conteudo.hidden = recolhido;
+        botao.hidden = !telaMobile.matches;
+        botao.setAttribute("aria-expanded", recolhido ? "false" : "true");
+        botao.textContent = recolhido ? "Mais informações +" : "Recolher −";
+        secao.classList.toggle("seo-copy--collapsed-mobile", recolhido);
+        secao.classList.toggle("seo-copy--expanded-mobile", telaMobile.matches && !recolhido);
+      }
+
+      botao.addEventListener("click", function () {
+        if (!telaMobile.matches) return;
+        expandidoNoMobile = !expandidoNoMobile;
+        atualizarEstado();
+        rastrearEvento("toggle_mobile_explanation", {
+          pagina: window.location.pathname,
+          secao: titulo.id || "texto-explicativo-" + (index + 1),
+          estado: expandidoNoMobile ? "expandido" : "recolhido"
+        });
+      });
+
+      titulo.after(botao);
+      botao.after(conteudo);
+      atualizarEstado();
+
+      if (typeof telaMobile.addEventListener === "function") {
+        telaMobile.addEventListener("change", atualizarEstado);
+      } else if (typeof telaMobile.addListener === "function") {
+        telaMobile.addListener(atualizarEstado);
+      }
+    });
+  }
+
   function criarCardProdutoLocal(produto, index) {
     var card = document.createElement("article");
     card.className = "produto-card";
@@ -862,16 +942,18 @@
     return card;
   }
 
-  function renderizarProdutosLocais(lista) {
+  function renderizarProdutosLocais(lista, categoria) {
     var container = document.getElementById("produtos-container");
     var vazio = document.getElementById("sem-produtos");
 
     if (!container) return;
 
     container.innerHTML = "";
+    container.dataset.carouselEnabled = categoria && categoria !== "todos" && lista.length > 1 ? "true" : "false";
 
     if (!lista.length) {
       container.style.display = "none";
+      container.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
       if (vazio) {
         if (!vazio.dataset.initialized) {
           vazio.innerHTML = "<h3>Nenhum produto encontrado</h3><p>Tente outra categoria ou fale conosco no WhatsApp.</p><a href=\"" + gerarLinkWhatsApp(null) + "\" target=\"_blank\" rel=\"noopener noreferrer\" data-track=\"whatsapp\">Conversar no WhatsApp</a>";
@@ -883,7 +965,7 @@
       return;
     }
 
-    container.style.display = "grid";
+    container.style.removeProperty("display");
     if (vazio) vazio.hidden = true;
 
     lista.forEach(function (produto, index) {
@@ -893,6 +975,7 @@
       container.appendChild(card);
     });
 
+    container.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
     inicializarTrackingLinks();
   }
 
@@ -961,7 +1044,7 @@
     });
 
     atualizarBotaoAtivo(".filtro-btn", event && event.target ? event.target : null);
-    renderizarProdutosLocais(filtrados);
+    renderizarProdutosLocais(filtrados, categoria);
     atualizarContagemProdutos(filtrados, categoria);
 
     rastrearEvento("select_category", {
@@ -982,7 +1065,7 @@
         return categoriaCombina(produto, categoriaInicial);
       });
 
-    renderizarProdutosLocais(lista);
+    renderizarProdutosLocais(lista, categoriaInicial);
     atualizarContagemProdutos(lista, categoriaInicial);
 
     document.querySelectorAll(".filtro-btn").forEach(function (botao) {
@@ -1141,23 +1224,89 @@
     });
   }
 
-  function inicializarCarrosseisGaleriaMobile() {
+  function integrarBuquesArtificiaisCarrosselMobile() {
     var caminho = removerAcentos(window.location.pathname);
-    var paginaComCatalogoVisual = caminho.includes("cesta-cafe-da-manha-canaa")
-      || caminho.includes("cestas-de-presente-canaa")
-      || caminho.includes("buques-canaa-dos-carajas");
+    if (!caminho.includes("buques-canaa-dos-carajas")) return;
 
-    if (!paginaComCatalogoVisual) return;
+    var galeria = document.querySelector(".seo-gallery .seo-gallery-grid");
+    var gradeProdutos = document.querySelector(".seo-products .produtos-grid");
+    var telaMobile = window.matchMedia("(max-width: 767px)");
+    var idsArtificiais = ["52", "53", "54", "55", "56", "57"];
 
+    if (!galeria || !gradeProdutos) return;
+
+    var registros = idsArtificiais.map(function (produtoId) {
+      var card = document.getElementById("produto-" + produtoId);
+      if (!card || !gradeProdutos.contains(card)) return null;
+
+      var marcador = document.createComment("origem-produto-" + produtoId);
+      card.before(marcador);
+      return { card: card, marcador: marcador };
+    }).filter(Boolean);
+
+    if (!registros.length) return;
+
+    function notificarMudanca() {
+      galeria.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
+      gradeProdutos.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
+    }
+
+    function moverParaGaleria() {
+      var mudou = false;
+
+      registros.forEach(function (registro) {
+        if (registro.card.parentElement === galeria) return;
+        registro.card.classList.add("seo-gallery-item", "seo-gallery-carousel-product");
+        registro.card.dataset.carouselType = "artificial";
+        galeria.appendChild(registro.card);
+        mudou = true;
+      });
+
+      if (mudou) notificarMudanca();
+    }
+
+    function restaurarNaGrade() {
+      var mudou = false;
+
+      registros.forEach(function (registro) {
+        if (registro.card.parentElement !== galeria || !registro.marcador.parentNode) return;
+        registro.marcador.parentNode.insertBefore(registro.card, registro.marcador.nextSibling);
+        registro.card.classList.remove("seo-gallery-item", "seo-gallery-carousel-product");
+        delete registro.card.dataset.carouselType;
+        mudou = true;
+      });
+
+      if (mudou) notificarMudanca();
+    }
+
+    function atualizarIntegracao() {
+      if (telaMobile.matches) moverParaGaleria();
+      else restaurarNaGrade();
+    }
+
+    atualizarIntegracao();
+    if (typeof telaMobile.addEventListener === "function") {
+      telaMobile.addEventListener("change", atualizarIntegracao);
+    } else if (typeof telaMobile.addListener === "function") {
+      telaMobile.addListener(atualizarIntegracao);
+    }
+  }
+
+  function inicializarCarrosseisGaleriaMobile() {
     var movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
     var telaMobile = window.matchMedia("(max-width: 767px)");
 
-    document.querySelectorAll(".seo-gallery-grid").forEach(function (galeria, indiceGaleria) {
-      var modelos = Array.prototype.slice.call(galeria.querySelectorAll(":scope > .seo-gallery-item"));
+    document.querySelectorAll(".seo-gallery-grid, .produtos-grid").forEach(function (galeria) {
+      var carrosselProdutos = galeria.classList.contains("produtos-grid");
+      var carrosselDinamico = galeria.id === "produtos-container";
+      var seletorItens = carrosselProdutos ? ":scope > .produto-card" : ":scope > .seo-gallery-item";
+      var rotuloItem = carrosselProdutos ? "Item" : "Modelo";
+      var rotuloItemMinusculo = carrosselProdutos ? "item" : "modelo";
+      var modelos = Array.prototype.slice.call(galeria.querySelectorAll(seletorItens));
+
       if (modelos.length < 2 || galeria.dataset.carouselInitialized === "true") return;
 
       galeria.dataset.carouselInitialized = "true";
-      galeria.classList.add("seo-gallery-carousel");
 
       var controles = document.createElement("div");
       controles.className = "seo-gallery-carousel-controls";
@@ -1189,7 +1338,9 @@
         var botao = document.createElement("button");
         botao.type = "button";
         botao.className = "seo-gallery-carousel-button";
-        botao.setAttribute("aria-label", direcao === "anterior" ? "Ver modelo anterior" : "Ver próximo modelo");
+        botao.setAttribute("aria-label", direcao === "anterior"
+          ? "Ver " + rotuloItemMinusculo + " anterior"
+          : "Ver próximo " + rotuloItemMinusculo);
         botao.textContent = simbolo;
         return botao;
       }
@@ -1203,9 +1354,14 @@
       var indiceAtivo = 0;
       var atualizacaoPendente = false;
 
+      function carrosselHabilitado() {
+        return modelos.length > 1 && (!carrosselDinamico || galeria.dataset.carouselEnabled === "true");
+      }
+
       function atualizarInterface(novoIndice) {
+        if (!modelos.length) return;
         indiceAtivo = Math.max(0, Math.min(modelos.length - 1, novoIndice));
-        contador.textContent = "Modelo " + (indiceAtivo + 1) + " de " + modelos.length;
+        contador.textContent = rotuloItem + " " + (indiceAtivo + 1) + " de " + modelos.length;
         barraProgresso.style.width = ((indiceAtivo + 1) / modelos.length * 100) + "%";
         anterior.disabled = indiceAtivo === 0;
         proximo.disabled = indiceAtivo === modelos.length - 1;
@@ -1228,7 +1384,7 @@
       }
 
       function acompanharRolagem() {
-        if (atualizacaoPendente) return;
+        if (!carrosselHabilitado() || atualizacaoPendente) return;
         atualizacaoPendente = true;
         window.requestAnimationFrame(function () {
           atualizacaoPendente = false;
@@ -1237,6 +1393,7 @@
       }
 
       function irParaModelo(index) {
+        if (!carrosselHabilitado()) return;
         var destino = modelos[Math.max(0, Math.min(modelos.length - 1, index))];
         if (!destino) return;
 
@@ -1251,15 +1408,15 @@
       }
 
       function configurarModoMobile() {
-        if (telaMobile.matches) {
+        if (telaMobile.matches && carrosselHabilitado()) {
           galeria.setAttribute("role", "region");
           galeria.setAttribute("aria-roledescription", "carrossel");
-          galeria.setAttribute("aria-label", "Modelos disponíveis");
+          galeria.setAttribute("aria-label", carrosselProdutos ? "Itens disponíveis" : "Modelos disponíveis");
           galeria.tabIndex = 0;
           modelos.forEach(function (modelo, index) {
             modelo.setAttribute("role", "group");
             modelo.setAttribute("aria-roledescription", "slide");
-            modelo.setAttribute("aria-label", "Modelo " + (index + 1) + " de " + modelos.length);
+            modelo.setAttribute("aria-label", rotuloItem + " " + (index + 1) + " de " + modelos.length);
           });
           acompanharRolagem();
           return;
@@ -1276,6 +1433,31 @@
         });
       }
 
+      function aplicarEstadoCarrossel() {
+        var habilitado = carrosselHabilitado();
+        galeria.classList.toggle("seo-gallery-carousel", habilitado);
+        controles.hidden = !habilitado;
+        if (!habilitado) galeria.scrollLeft = 0;
+        configurarModoMobile();
+        if (modelos.length) atualizarInterface(telaMobile.matches && habilitado ? obterIndiceVisivel() : 0);
+      }
+
+      function sincronizarModelos() {
+        var modelosAnteriores = modelos.slice();
+        var modelosAtuais = Array.prototype.slice.call(galeria.querySelectorAll(seletorItens));
+
+        modelosAnteriores.forEach(function (modelo) {
+          if (modelosAtuais.includes(modelo)) return;
+          modelo.removeAttribute("role");
+          modelo.removeAttribute("aria-roledescription");
+          modelo.removeAttribute("aria-label");
+        });
+
+        modelos = modelosAtuais;
+        indiceAtivo = modelos.length ? Math.min(indiceAtivo, modelos.length - 1) : 0;
+        aplicarEstadoCarrossel();
+      }
+
       anterior.addEventListener("click", function () {
         irParaModelo(indiceAtivo - 1);
       });
@@ -1283,8 +1465,9 @@
         irParaModelo(indiceAtivo + 1);
       });
       galeria.addEventListener("scroll", acompanharRolagem, { passive: true });
+      galeria.addEventListener("zadoni:gallery-items-change", sincronizarModelos);
       galeria.addEventListener("keydown", function (event) {
-        if (!telaMobile.matches || event.target !== galeria) return;
+        if (!telaMobile.matches || !carrosselHabilitado() || event.target !== galeria) return;
         if (event.key === "ArrowLeft") {
           event.preventDefault();
           irParaModelo(indiceAtivo - 1);
@@ -1294,12 +1477,11 @@
         }
       });
 
-      atualizarInterface(0);
-      configurarModoMobile();
+      aplicarEstadoCarrossel();
       if (typeof telaMobile.addEventListener === "function") {
-        telaMobile.addEventListener("change", configurarModoMobile);
+        telaMobile.addEventListener("change", aplicarEstadoCarrossel);
       } else if (typeof telaMobile.addListener === "function") {
-        telaMobile.addListener(configurarModoMobile);
+        telaMobile.addListener(aplicarEstadoCarrossel);
       }
     });
   }
@@ -1323,8 +1505,10 @@
     carregarProdutosLocais();
     inicializarAdicionaisGaleriaCafe();
     inicializarAdicionaisModelosGaleria();
-    inicializarCarrosseisGaleriaMobile();
     inicializarAdicionaisCardsSeo();
+    inicializarExplicacoesRecolhiveisMobile();
+    integrarBuquesArtificiaisCarrosselMobile();
+    inicializarCarrosseisGaleriaMobile();
     inicializarAtalhoModelosMobile();
     inicializarTrackingLinks();
   }

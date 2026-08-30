@@ -81,7 +81,7 @@ assert.ok(
   "O resolvedor de imagens deve funcionar tambem nas paginas internas"
 );
 assert.ok(
-  source.includes("assets/js/app.js?v=20260829-mobile-carousel-ux-3"),
+  source.includes("assets/js/app.js?v=20260830-mobile-copy-accordion-7"),
   "A pagina de cafe deve usar a versao atual do JavaScript"
 );
 assert.equal(optionCount, 36);
