@@ -1222,6 +1222,47 @@
       if (navMenu.contains(event.target) || menuToggle.contains(event.target)) return;
       fecharMenu(false);
     });
+
+    document.addEventListener("focusin", function (event) {
+      if (!navMenu.classList.contains("ativo")) return;
+      if (navMenu.contains(event.target) || menuToggle.contains(event.target)) return;
+      fecharMenu(false);
+    });
+
+    // Reuse the existing tracked WhatsApp link, including its contextual message.
+    var header = menuToggle.closest(".header-content");
+    var whatsapp = document.querySelector(".whatsapp-float");
+    var telaCompacta = window.matchMedia("(max-width: 1099px)");
+    var marcadorWhatsApp = null;
+    if (header && whatsapp) {
+      marcadorWhatsApp = document.createComment("Posição original do WhatsApp");
+      whatsapp.before(marcadorWhatsApp);
+    }
+
+    function sincronizarHeader() {
+      var focoNoMenu = navMenu.contains(document.activeElement);
+      fecharMenu(telaCompacta.matches && focoNoMenu);
+      if (!header || !whatsapp || !marcadorWhatsApp) return;
+      var focoWhatsApp = document.activeElement === whatsapp;
+      header.classList.toggle("header-content--mobile", telaCompacta.matches);
+      whatsapp.classList.toggle("header-whatsapp", telaCompacta.matches);
+      if (telaCompacta.matches) {
+        header.prepend(menuToggle);
+        menuToggle.after(header.querySelector("nav"));
+        header.append(whatsapp);
+      } else {
+        header.append(header.querySelector("nav"));
+        marcadorWhatsApp.after(whatsapp);
+      }
+      if (focoWhatsApp) whatsapp.focus({ preventScroll: true });
+    }
+
+    sincronizarHeader();
+    if (typeof telaCompacta.addEventListener === "function") {
+      telaCompacta.addEventListener("change", sincronizarHeader);
+    } else if (typeof telaCompacta.addListener === "function") {
+      telaCompacta.addListener(sincronizarHeader);
+    }
   }
 
   function integrarBuquesArtificiaisCarrosselMobile() {

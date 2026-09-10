@@ -131,7 +131,7 @@ function head(page, prefix) {
     <meta name="twitter:description" content="${escapeHtml(page.description)}">
     <meta name="twitter:image" content="${socialImage}">
     <title>${escapeHtml(page.metaTitle)}</title>
-    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260826-brand-logo-1">
+    <link rel="stylesheet" href="${prefix}assets/css/style.css?v=20260909-ui-system-1">
     <link rel="stylesheet" href="${prefix}assets/css/achadinhos.css?v=${achadinhosCssVersion}">`;
 }
 
