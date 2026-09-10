@@ -23,7 +23,7 @@ const BASKET_BUDGET_TIERS = Object.freeze([
     name: "Intermediária",
     priceLabel: "A partir de R$ 270",
     priceDisplay: "R$ 270",
-    badge: "Mais escolhida",
+    badge: "Versão intermediária",
     featured: true,
     proposal: "Mais variedade de itens e acabamento especial.",
     composition: "Base decorada, seleção ampliada de café da manhã, chocolates, frutas ou frios e acabamento especial."

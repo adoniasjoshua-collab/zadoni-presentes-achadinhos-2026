@@ -32,7 +32,7 @@
         nome: 'Intermediária',
         preco: 27000,
         precoLabel: 'A partir de R$ 270',
-        selo: 'Mais escolhida',
+        selo: 'Versão intermediária',
         destaque: true,
         descricao: 'Mais variedade de itens e acabamento especial, equilibrando presença e investimento.'
       },
