@@ -5,6 +5,8 @@ desktop.ini
 .env
 .env.*
 node_modules/
+__pycache__/
+.tmp/
 .vscode/
 
 # Recebidos pelo WhatsApp: preservar localmente e publicar apenas copias tratadas
