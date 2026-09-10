@@ -1,0 +1,142 @@
+{
+  "checkedAtUtc": "2026-09-10T09:38:27.968126+00:00",
+  "localCommit": "1c5c55dcfed7c6a80a6d5413d824d7c8d77be8a3",
+  "pages": [
+    {
+      "page": "404.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "links/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "monte-sua-cesta/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "status": 200,
+      "passed": true,
+      "differences": []
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/css/style.css",
+      "status": 200,
+      "matchesLocal": true
+    },
+    {
+      "path": "assets/js/app.js",
+      "status": 200,
+      "matchesLocal": true
+    },
+    {
+      "path": "monte-sua-cesta/js/configuracao.js",
+      "status": 200,
+      "matchesLocal": true
+    },
+    {
+      "path": "sitemap.xml",
+      "status": 200,
+      "matchesLocal": true
+    },
+    {
+      "path": "robots.txt",
+      "status": 200,
+      "matchesLocal": true
+    }
+  ],
+  "passed": true
+}

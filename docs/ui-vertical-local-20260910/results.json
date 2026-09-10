@@ -1,0 +1,6564 @@
+{
+  "phase": "after",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/152.0.7977.83",
+    "revision": "@79460ebecaa5625e57a5fb679a735659e73dc687",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+    "jsVersion": "15.2.124.21"
+  },
+  "capturedAt": "2026-09-10T09:40:54.046Z",
+  "scope": "local Chromium; tracking blocked; no WhatsApp messages sent",
+  "cases": 112,
+  "failedCases": 0,
+  "results": [
+    {
+      "page": "404.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 16,
+        "y": 20.71875,
+        "width": 192.90625,
+        "height": 34.546875
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 360,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 360,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 360,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 360,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "💬",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [
+        {
+          "label": "Todos",
+          "count": 54,
+          "horizontal": false
+        },
+        {
+          "label": "Buquês",
+          "count": 12,
+          "horizontal": false
+        },
+        {
+          "label": "Kits",
+          "count": 5,
+          "horizontal": false
+        },
+        {
+          "label": "Mimos",
+          "count": 9,
+          "horizontal": false
+        },
+        {
+          "label": "Cestas",
+          "count": 11,
+          "horizontal": false
+        },
+        {
+          "label": "Perfumes de bolso",
+          "count": 5,
+          "horizontal": false
+        },
+        {
+          "label": "Itens avulsos",
+          "count": 14,
+          "horizontal": false
+        },
+        {
+          "label": "Destaques",
+          "count": 35,
+          "horizontal": false
+        }
+      ],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 98.734375,
+        "y": 16,
+        "width": 162.515625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 98.734375,
+          "y": 16,
+          "width": 162.515625,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 360,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 360,
+        "height": 76
+      },
+      "logo": {
+        "x": 92.203125,
+        "y": 16,
+        "width": 175.578125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 300,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 92.203125,
+          "y": 16,
+          "width": 175.578125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 300,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "404.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 16,
+        "y": 20.71875,
+        "width": 192.90625,
+        "height": 34.546875
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 390,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 390,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 390,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 390,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "💬",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [
+        {
+          "label": "Todos",
+          "count": 54,
+          "horizontal": false
+        },
+        {
+          "label": "Buquês",
+          "count": 12,
+          "horizontal": false
+        },
+        {
+          "label": "Kits",
+          "count": 5,
+          "horizontal": false
+        },
+        {
+          "label": "Mimos",
+          "count": 9,
+          "horizontal": false
+        },
+        {
+          "label": "Cestas",
+          "count": 11,
+          "horizontal": false
+        },
+        {
+          "label": "Perfumes de bolso",
+          "count": 5,
+          "horizontal": false
+        },
+        {
+          "label": "Itens avulsos",
+          "count": 14,
+          "horizontal": false
+        },
+        {
+          "label": "Destaques",
+          "count": 35,
+          "horizontal": false
+        }
+      ],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 112.515625,
+        "y": 16,
+        "width": 164.953125,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 112.515625,
+          "y": 16,
+          "width": 164.953125,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 390,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 76
+      },
+      "logo": {
+        "x": 106.140625,
+        "y": 16,
+        "width": 177.71875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 330,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 106.140625,
+          "y": 16,
+          "width": 177.71875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 330,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "404.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 16,
+        "y": 20.71875,
+        "width": 192.90625,
+        "height": 34.546875
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 430,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 430,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 430,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 76,
+        "width": 430,
+        "height": 121.125
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      },
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "💬",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [
+        {
+          "label": "Todos",
+          "count": 54,
+          "horizontal": false
+        },
+        {
+          "label": "Buquês",
+          "count": 12,
+          "horizontal": false
+        },
+        {
+          "label": "Kits",
+          "count": 5,
+          "horizontal": false
+        },
+        {
+          "label": "Mimos",
+          "count": 9,
+          "horizontal": false
+        },
+        {
+          "label": "Cestas",
+          "count": 11,
+          "horizontal": false
+        },
+        {
+          "label": "Perfumes de bolso",
+          "count": 5,
+          "horizontal": false
+        },
+        {
+          "label": "Itens avulsos",
+          "count": 14,
+          "horizontal": false
+        },
+        {
+          "label": "Destaques",
+          "count": 35,
+          "horizontal": false
+        }
+      ],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 124.390625,
+        "y": 16,
+        "width": 181.21875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 124.390625,
+          "y": 16,
+          "width": 181.21875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 430,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 76
+      },
+      "logo": {
+        "x": 119,
+        "y": 16,
+        "width": 192,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 370,
+        "y": 16,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 16,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 119,
+          "y": 16,
+          "width": 192,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 370,
+          "y": 16,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "filters": [],
+      "addons": null,
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "404.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 84
+      },
+      "logo": {
+        "x": 24,
+        "y": 24.71875,
+        "width": 192.90625,
+        "height": 34.546875
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 753,
+        "height": 89.0625
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 753,
+        "height": 89.0625
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 753,
+        "height": 89.0625
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 753,
+        "height": 89.0625
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "💬",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 277.40625,
+        "y": 20,
+        "width": 198.1875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 277.40625,
+          "y": 20,
+          "width": 198.1875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 768,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 753,
+        "height": 84
+      },
+      "logo": {
+        "x": 273.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 685,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 273.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 685,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "404.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 84
+      },
+      "logo": {
+        "x": 24,
+        "y": 24.71875,
+        "width": 192.90625,
+        "height": 34.546875
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "💬",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 405.40625,
+        "y": 20,
+        "width": 198.1875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 405.40625,
+          "y": 20,
+          "width": 198.1875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 1024,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1009,
+        "height": 84
+      },
+      "logo": {
+        "x": 401.03125,
+        "y": 20,
+        "width": 206.921875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 941,
+        "y": 20,
+        "width": 44,
+        "height": 44
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": true,
+      "navVisible": false,
+      "headerTargets": [
+        {
+          "label": "Abrir menu",
+          "x": 24,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        },
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 401.03125,
+          "y": 20,
+          "width": 206.921875,
+          "height": 44
+        },
+        {
+          "label": "Conversar com a Zadoni Presentes pelo WhatsApp",
+          "x": 941,
+          "y": 20,
+          "width": 44,
+          "height": 44
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "404.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 84
+      },
+      "logo": {
+        "x": 50,
+        "y": 20,
+        "width": 192.90625,
+        "height": 44
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Inicio",
+          "x": 1072.6875,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 1138.78125,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1189,
+        "y": 816,
+        "width": 60,
+        "height": 60
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 227.546875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 42.5,
+          "y": 20,
+          "width": 227.546875,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 534.453125,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 600.546875,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Buquês",
+          "x": 697.359375,
+          "y": 19.609375,
+          "width": 74.40625,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 777.359375,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 849.703125,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cesta de café",
+          "x": 991.5,
+          "y": 19.609375,
+          "width": 118.171875,
+          "height": 44.78125
+        },
+        {
+          "label": "Românticos",
+          "x": 1115.265625,
+          "y": 19.609375,
+          "width": 107.234375,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 1280,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1265,
+        "height": 84
+      },
+      "logo": {
+        "x": 42.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1185,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 42.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 594,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 660.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 756.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 898.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 971.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1081.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "404.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 84
+      },
+      "logo": {
+        "x": 130,
+        "y": 20,
+        "width": 192.90625,
+        "height": 44
+      },
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Inicio",
+          "x": 1152.6875,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 1218.78125,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 84,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": null,
+      "whatsapp": null,
+      "toggleVisible": false,
+      "navVisible": false,
+      "headerTargets": [],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 12,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 11,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 4,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1349,
+        "y": 816,
+        "width": 60,
+        "height": 60
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20presentes%20da%20Zadoni",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "produtos-container",
+          "display": "grid",
+          "items": 54,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 3,
+          "horizontal": false,
+          "role": null
+        },
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 227.546875,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Quero+consultar+os+chocolates+dispon%C3%ADveis+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "🎁 Zadoni Presentes",
+          "x": 122.5,
+          "y": 20,
+          "width": 227.546875,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 614.453125,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 680.546875,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Buquês",
+          "x": 777.359375,
+          "y": 19.609375,
+          "width": 74.40625,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 857.359375,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 929.703125,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cesta de café",
+          "x": 1071.5,
+          "y": 19.609375,
+          "width": 118.171875,
+          "height": 44.78125
+        },
+        {
+          "label": "Românticos",
+          "x": 1195.265625,
+          "y": 19.609375,
+          "width": 107.234375,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 6,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "width": 1440,
+      "overflow": false,
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1425,
+        "height": 84
+      },
+      "logo": {
+        "x": 122.5,
+        "y": 20,
+        "width": 240.90625,
+        "height": 44
+      },
+      "whatsapp": {
+        "x": 1345,
+        "y": 812,
+        "width": 64,
+        "height": 64
+      },
+      "whatsappHref": "https://wa.me/5594992993138?text=Ol%C3%A1%21+Vi+o+site+da+Zadoni+Presentes+e+quero+ajuda+para+escolher+um+presente+em+Cana%C3%A3+dos+Caraj%C3%A1s.&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=botao_fixo",
+      "toggleVisible": false,
+      "navVisible": true,
+      "headerTargets": [
+        {
+          "label": "Zadoni Presentes - início",
+          "x": 122.5,
+          "y": 20,
+          "width": 240.90625,
+          "height": 44
+        },
+        {
+          "label": "Início",
+          "x": 674,
+          "y": 19.609375,
+          "width": 60.5,
+          "height": 44.78125
+        },
+        {
+          "label": "Presentes",
+          "x": 740.09375,
+          "y": 19.609375,
+          "width": 91.21875,
+          "height": 44.78125
+        },
+        {
+          "label": "Flores e buquês",
+          "x": 836.90625,
+          "y": 19.609375,
+          "width": 136.203125,
+          "height": 44.78125
+        },
+        {
+          "label": "Cestas",
+          "x": 978.703125,
+          "y": 19.609375,
+          "width": 66.75,
+          "height": 44.78125
+        },
+        {
+          "label": "Aniversário",
+          "x": 1051.046875,
+          "y": 19.609375,
+          "width": 104.703125,
+          "height": 44.78125
+        },
+        {
+          "label": "Monte sua cesta",
+          "x": 1161.34375,
+          "y": 19.609375,
+          "width": 141.15625,
+          "height": 44.78125
+        }
+      ],
+      "brokenImages": [],
+      "galleries": [
+        {
+          "id": "",
+          "display": "grid",
+          "items": 9,
+          "horizontal": false,
+          "role": null
+        }
+      ],
+      "errors": [],
+      "failures": []
+    }
+  ]
+}
