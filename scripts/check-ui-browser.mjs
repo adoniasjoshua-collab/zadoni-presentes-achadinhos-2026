@@ -29,7 +29,8 @@ const server = http.createServer((req, res) => {
   catch { res.writeHead(404).end(); }
 });
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-const origin = `http://127.0.0.1:${server.address().port}`;
+const live = process.env.UI_LIVE === '1';
+const origin = live ? 'https://zadonipresentes.com.br' : `http://127.0.0.1:${server.address().port}`;
 const child = spawn(chrome, ['--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', '--disable-background-networking', '--disable-extensions', '--remote-debugging-port=0', `--user-data-dir=${profile}`, 'about:blank'], { windowsHide: true, stdio: 'ignore' });
 let socket;
 const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -70,13 +71,14 @@ try {
   const baseline = JSON.parse(fs.readFileSync(path.join(root, 'docs/seo-baseline-before-ui.json'), 'utf8'));
   const pages = Object.keys(baseline.snapshot.pages).filter(p => !['links/index.html', 'monte-sua-cesta/index.html'].includes(p));
   const results = [];
-  for (const width of [360, 390, 430, 768, 1024, 1280, 1440]) {
+  const widths = process.env.UI_MOBILE_ONLY === '1' ? [390] : [360, 390, 430, 540, 640, 768, 1024, 1280, 1440];
+  for (const width of widths) {
     for (const page of pages) {
       errors = [];
       await cdp('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: width < 768 });
       await cdp('Page.navigate', { url: `${origin}/${page}` });
       for (let i = 0; i < 100; i++) {
-        if (await evaluate(`location.pathname === ${JSON.stringify('/' + page)} && document.readyState === 'complete'`)) break;
+        if (await evaluate(`location.pathname.replace(/index\\.html$/, '') === ${JSON.stringify('/' + page.replace(/index\.html$/, ''))} && document.readyState === 'complete'`)) break;
         await pause(50);
       }
       await evaluate('document.fonts.ready.then(() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))))');
@@ -145,12 +147,48 @@ try {
         const shot = await cdp('Page.captureScreenshot', { format: 'png' });
         fs.writeFileSync(path.join(out, `${page === 'index.html' ? 'home' : 'cafe'}-${width}.png`), Buffer.from(shot.data, 'base64'));
       }
+      const galleries = await evaluate(`Array.from(document.querySelectorAll('.seo-gallery-grid,.produtos-grid')).filter(g => g.clientWidth > 0).map(g => ({
+        id:g.id, display:getComputedStyle(g).display, items:g.children.length,
+        horizontal:g.scrollWidth > g.clientWidth + 1, role:g.getAttribute('aria-roledescription')
+      }))`);
+      state.galleries = galleries;
+      if (phase === 'after' && galleries.some(g => g.horizontal || g.role === 'carrossel')) failures.push('catalog still uses horizontal carousel');
+      if (width === 390 && galleries.length) {
+        await evaluate("document.querySelector('.seo-gallery-grid,.produtos-grid').scrollIntoView({block:'start',behavior:'instant'})");
+        await pause(250);
+        const shot = await cdp('Page.captureScreenshot', { format: 'png' });
+        fs.writeFileSync(path.join(out, `${page.replaceAll('/', '-').replace('.html', '')}-gallery.png`), Buffer.from(shot.data, 'base64'));
+        await evaluate("window.scrollTo({top:0,behavior:'instant'})");
+      }
+      if (phase === 'after' && width < 768) {
+        state.filters = await evaluate(`(() => {
+          const filters=Array.from(document.querySelectorAll('.filtro-btn'));
+          const results=filters.map(button => {button.click(); const grid=document.getElementById('produtos-container');
+            return {label:button.textContent.trim(),count:grid?.children.length || 0,horizontal:!!grid && grid.scrollWidth > grid.clientWidth+1};});
+          filters[0]?.click(); return results;
+        })()`);
+        if (state.filters.some(f => f.horizontal || f.count === 0)) failures.push('category filter has empty or horizontal results');
+        state.addons = await evaluate(`(() => {
+          const trigger=document.querySelector('.btn-adicionais-modelo'); if(!trigger) return null;
+          trigger.click(); const panel=document.getElementById(trigger.getAttribute('aria-controls'));
+          const opened=panel?.getAttribute('aria-hidden')==='false';
+          const input=panel?.querySelector('input[type=checkbox]');
+          const model=trigger.closest('figure,.produto-card');
+          const links=() => Array.from(model?.querySelectorAll('a[href*="wa.me/"]') || []).map(a => a.href).join('|');
+          const original=links(); let updated=true,restored=true;
+          if(input) {input.click(); updated=links()!==original; input.click(); restored=links()===original;}
+          document.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+          return {opened,closed:panel?.getAttribute('aria-hidden')==='true',focusReturned:document.activeElement===trigger,updated,restored};
+        })()`);
+        if (state.addons && Object.values(state.addons).some(v => !v)) failures.push('addons modal or WhatsApp message regression');
+        await evaluate("window.scrollTo({top:0,behavior:'instant'})");
+      }
       results.push({ page, width, ...state, errors: [...errors], failures });
     }
     console.log(`${phase}: checked ${pages.length} pages at ${width}px`);
   }
   const failed = results.filter(r => r.failures.length);
-  fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ phase, browser: await call('Browser.getVersion'), capturedAt: new Date().toISOString(), scope: 'local Chromium; tracking blocked; no WhatsApp messages sent', cases: results.length, failedCases: failed.length, results }, null, 2) + '\n');
+  fs.writeFileSync(path.join(out, 'results.json'), JSON.stringify({ phase, browser: await call('Browser.getVersion'), capturedAt: new Date().toISOString(), scope: `${live ? 'production' : 'local'} Chromium; tracking blocked; no WhatsApp messages sent`, cases: results.length, failedCases: failed.length, results }, null, 2) + '\n');
   console.log(`${results.length} browser cases; ${failed.length} failed`);
   for (const row of failed) console.log(`${row.page} ${row.width}: ${row.failures.join(', ')}`);
   if (failed.length) process.exitCode = 1;

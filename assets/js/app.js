@@ -949,11 +949,9 @@
     if (!container) return;
 
     container.innerHTML = "";
-    container.dataset.carouselEnabled = categoria && categoria !== "todos" && lista.length > 1 ? "true" : "false";
 
     if (!lista.length) {
       container.style.display = "none";
-      container.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
       if (vazio) {
         if (!vazio.dataset.initialized) {
           vazio.innerHTML = "<h3>Nenhum produto encontrado</h3><p>Tente outra categoria ou fale conosco no WhatsApp.</p><a href=\"" + gerarLinkWhatsApp(null) + "\" target=\"_blank\" rel=\"noopener noreferrer\" data-track=\"whatsapp\">Conversar no WhatsApp</a>";
@@ -975,7 +973,6 @@
       container.appendChild(card);
     });
 
-    container.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
     inicializarTrackingLinks();
   }
 
@@ -1265,268 +1262,6 @@
     }
   }
 
-  function integrarBuquesArtificiaisCarrosselMobile() {
-    var caminho = removerAcentos(window.location.pathname);
-    if (!caminho.includes("buques-canaa-dos-carajas")) return;
-
-    var galeria = document.querySelector(".seo-gallery .seo-gallery-grid");
-    var gradeProdutos = document.querySelector(".seo-products .produtos-grid");
-    var telaMobile = window.matchMedia("(max-width: 767px)");
-    var idsArtificiais = ["52", "53", "54", "55", "56", "57"];
-
-    if (!galeria || !gradeProdutos) return;
-
-    var registros = idsArtificiais.map(function (produtoId) {
-      var card = document.getElementById("produto-" + produtoId);
-      if (!card || !gradeProdutos.contains(card)) return null;
-
-      var marcador = document.createComment("origem-produto-" + produtoId);
-      card.before(marcador);
-      return { card: card, marcador: marcador };
-    }).filter(Boolean);
-
-    if (!registros.length) return;
-
-    function notificarMudanca() {
-      galeria.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
-      gradeProdutos.dispatchEvent(new CustomEvent("zadoni:gallery-items-change"));
-    }
-
-    function moverParaGaleria() {
-      var mudou = false;
-
-      registros.forEach(function (registro) {
-        if (registro.card.parentElement === galeria) return;
-        registro.card.classList.add("seo-gallery-item", "seo-gallery-carousel-product");
-        registro.card.dataset.carouselType = "artificial";
-        galeria.appendChild(registro.card);
-        mudou = true;
-      });
-
-      if (mudou) notificarMudanca();
-    }
-
-    function restaurarNaGrade() {
-      var mudou = false;
-
-      registros.forEach(function (registro) {
-        if (registro.card.parentElement !== galeria || !registro.marcador.parentNode) return;
-        registro.marcador.parentNode.insertBefore(registro.card, registro.marcador.nextSibling);
-        registro.card.classList.remove("seo-gallery-item", "seo-gallery-carousel-product");
-        delete registro.card.dataset.carouselType;
-        mudou = true;
-      });
-
-      if (mudou) notificarMudanca();
-    }
-
-    function atualizarIntegracao() {
-      if (telaMobile.matches) moverParaGaleria();
-      else restaurarNaGrade();
-    }
-
-    atualizarIntegracao();
-    if (typeof telaMobile.addEventListener === "function") {
-      telaMobile.addEventListener("change", atualizarIntegracao);
-    } else if (typeof telaMobile.addListener === "function") {
-      telaMobile.addListener(atualizarIntegracao);
-    }
-  }
-
-  function inicializarCarrosseisGaleriaMobile() {
-    var movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
-    var telaMobile = window.matchMedia("(max-width: 767px)");
-
-    document.querySelectorAll(".seo-gallery-grid, .produtos-grid").forEach(function (galeria) {
-      var carrosselProdutos = galeria.classList.contains("produtos-grid");
-      var carrosselDinamico = galeria.id === "produtos-container";
-      var seletorItens = carrosselProdutos ? ":scope > .produto-card" : ":scope > .seo-gallery-item";
-      var rotuloItem = carrosselProdutos ? "Item" : "Modelo";
-      var rotuloItemMinusculo = carrosselProdutos ? "item" : "modelo";
-      var modelos = Array.prototype.slice.call(galeria.querySelectorAll(seletorItens));
-
-      if (modelos.length < 2 || galeria.dataset.carouselInitialized === "true") return;
-
-      galeria.dataset.carouselInitialized = "true";
-
-      var controles = document.createElement("div");
-      controles.className = "seo-gallery-carousel-controls";
-
-      var status = document.createElement("div");
-      status.className = "seo-gallery-carousel-status";
-
-      var contador = document.createElement("strong");
-      contador.className = "seo-gallery-carousel-counter";
-      contador.setAttribute("aria-live", "polite");
-      contador.setAttribute("aria-atomic", "true");
-
-      var instrucao = document.createElement("span");
-      instrucao.className = "seo-gallery-carousel-hint";
-      instrucao.textContent = "Deslize para ver os próximos";
-
-      var progresso = document.createElement("div");
-      progresso.className = "seo-gallery-carousel-progress";
-      progresso.setAttribute("aria-hidden", "true");
-
-      var barraProgresso = document.createElement("span");
-      progresso.appendChild(barraProgresso);
-      status.append(contador, instrucao, progresso);
-
-      var navegacao = document.createElement("div");
-      navegacao.className = "seo-gallery-carousel-navigation";
-
-      function criarBotaoNavegacao(direcao, simbolo) {
-        var botao = document.createElement("button");
-        botao.type = "button";
-        botao.className = "seo-gallery-carousel-button";
-        botao.setAttribute("aria-label", direcao === "anterior"
-          ? "Ver " + rotuloItemMinusculo + " anterior"
-          : "Ver próximo " + rotuloItemMinusculo);
-        botao.textContent = simbolo;
-        return botao;
-      }
-
-      var anterior = criarBotaoNavegacao("anterior", "‹");
-      var proximo = criarBotaoNavegacao("proximo", "›");
-      navegacao.append(anterior, proximo);
-      controles.append(status, navegacao);
-      galeria.before(controles);
-
-      var indiceAtivo = 0;
-      var atualizacaoPendente = false;
-
-      function carrosselHabilitado() {
-        return modelos.length > 1 && (!carrosselDinamico || galeria.dataset.carouselEnabled === "true");
-      }
-
-      function atualizarInterface(novoIndice) {
-        if (!modelos.length) return;
-        indiceAtivo = Math.max(0, Math.min(modelos.length - 1, novoIndice));
-        contador.textContent = rotuloItem + " " + (indiceAtivo + 1) + " de " + modelos.length;
-        barraProgresso.style.width = ((indiceAtivo + 1) / modelos.length * 100) + "%";
-        anterior.disabled = indiceAtivo === 0;
-        proximo.disabled = indiceAtivo === modelos.length - 1;
-      }
-
-      function obterIndiceVisivel() {
-        var inicioGaleria = galeria.getBoundingClientRect().left;
-        var melhorIndice = 0;
-        var menorDistancia = Infinity;
-
-        modelos.forEach(function (modelo, index) {
-          var distancia = Math.abs(modelo.getBoundingClientRect().left - inicioGaleria);
-          if (distancia < menorDistancia) {
-            menorDistancia = distancia;
-            melhorIndice = index;
-          }
-        });
-
-        return melhorIndice;
-      }
-
-      function acompanharRolagem() {
-        if (!carrosselHabilitado() || atualizacaoPendente) return;
-        atualizacaoPendente = true;
-        window.requestAnimationFrame(function () {
-          atualizacaoPendente = false;
-          atualizarInterface(obterIndiceVisivel());
-        });
-      }
-
-      function irParaModelo(index) {
-        if (!carrosselHabilitado()) return;
-        var destino = modelos[Math.max(0, Math.min(modelos.length - 1, index))];
-        if (!destino) return;
-
-        var distancia = galeria.scrollLeft
-          + destino.getBoundingClientRect().left
-          - galeria.getBoundingClientRect().left;
-
-        galeria.scrollTo({
-          left: distancia,
-          behavior: movimentoReduzido.matches ? "auto" : "smooth"
-        });
-      }
-
-      function configurarModoMobile() {
-        if (telaMobile.matches && carrosselHabilitado()) {
-          galeria.setAttribute("role", "region");
-          galeria.setAttribute("aria-roledescription", "carrossel");
-          galeria.setAttribute("aria-label", carrosselProdutos ? "Itens disponíveis" : "Modelos disponíveis");
-          galeria.tabIndex = 0;
-          modelos.forEach(function (modelo, index) {
-            modelo.setAttribute("role", "group");
-            modelo.setAttribute("aria-roledescription", "slide");
-            modelo.setAttribute("aria-label", rotuloItem + " " + (index + 1) + " de " + modelos.length);
-          });
-          acompanharRolagem();
-          return;
-        }
-
-        galeria.removeAttribute("role");
-        galeria.removeAttribute("aria-roledescription");
-        galeria.removeAttribute("aria-label");
-        galeria.removeAttribute("tabindex");
-        modelos.forEach(function (modelo) {
-          modelo.removeAttribute("role");
-          modelo.removeAttribute("aria-roledescription");
-          modelo.removeAttribute("aria-label");
-        });
-      }
-
-      function aplicarEstadoCarrossel() {
-        var habilitado = carrosselHabilitado();
-        galeria.classList.toggle("seo-gallery-carousel", habilitado);
-        controles.hidden = !habilitado;
-        if (!habilitado) galeria.scrollLeft = 0;
-        configurarModoMobile();
-        if (modelos.length) atualizarInterface(telaMobile.matches && habilitado ? obterIndiceVisivel() : 0);
-      }
-
-      function sincronizarModelos() {
-        var modelosAnteriores = modelos.slice();
-        var modelosAtuais = Array.prototype.slice.call(galeria.querySelectorAll(seletorItens));
-
-        modelosAnteriores.forEach(function (modelo) {
-          if (modelosAtuais.includes(modelo)) return;
-          modelo.removeAttribute("role");
-          modelo.removeAttribute("aria-roledescription");
-          modelo.removeAttribute("aria-label");
-        });
-
-        modelos = modelosAtuais;
-        indiceAtivo = modelos.length ? Math.min(indiceAtivo, modelos.length - 1) : 0;
-        aplicarEstadoCarrossel();
-      }
-
-      anterior.addEventListener("click", function () {
-        irParaModelo(indiceAtivo - 1);
-      });
-      proximo.addEventListener("click", function () {
-        irParaModelo(indiceAtivo + 1);
-      });
-      galeria.addEventListener("scroll", acompanharRolagem, { passive: true });
-      galeria.addEventListener("zadoni:gallery-items-change", sincronizarModelos);
-      galeria.addEventListener("keydown", function (event) {
-        if (!telaMobile.matches || !carrosselHabilitado() || event.target !== galeria) return;
-        if (event.key === "ArrowLeft") {
-          event.preventDefault();
-          irParaModelo(indiceAtivo - 1);
-        } else if (event.key === "ArrowRight") {
-          event.preventDefault();
-          irParaModelo(indiceAtivo + 1);
-        }
-      });
-
-      aplicarEstadoCarrossel();
-      if (typeof telaMobile.addEventListener === "function") {
-        telaMobile.addEventListener("change", aplicarEstadoCarrossel);
-      } else if (typeof telaMobile.addListener === "function") {
-        telaMobile.addListener(aplicarEstadoCarrossel);
-      }
-    });
-  }
-
   function criarCompatibilidadeLegado() {
     if (location.pathname.includes("presentes-canaa")) {
       window.PRODUTOS = { produtosLocais: getProdutosLocais() };
@@ -1548,8 +1283,6 @@
     inicializarAdicionaisModelosGaleria();
     inicializarAdicionaisCardsSeo();
     inicializarExplicacoesRecolhiveisMobile();
-    integrarBuquesArtificiaisCarrosselMobile();
-    inicializarCarrosseisGaleriaMobile();
     inicializarAtalhoModelosMobile();
     inicializarTrackingLinks();
   }
