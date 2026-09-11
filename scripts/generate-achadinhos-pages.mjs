@@ -196,6 +196,7 @@ function shell({ page, prefix, currentSlug, body, schemas }) {
 <html lang="pt-BR">
 <head>
     ${head(page, prefix)}
+    <link rel="stylesheet" href="${prefix}assets/css/storefront.css?v=20260911-vitrine-1">
 </head>
 <body class="achadinhos-site">
     ${header(prefix, currentSlug)}

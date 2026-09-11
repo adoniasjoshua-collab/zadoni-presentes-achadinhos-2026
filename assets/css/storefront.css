@@ -1,0 +1,144 @@
+/* Vitrine Zadoni: presentation only. Existing copy, links and catalog are preserved. */
+body { background: #fffdfb; }
+
+.hero.home-hero {
+  padding: 2.5rem 0;
+  background: #f7ecee;
+  border-bottom: 1px solid #eadde5;
+}
+.hero.home-hero::before { content: none; }
+.home-hero > .container { position: relative; }
+.home-hero .home-choice-hero { max-width: none; }
+.home-hero h1 {
+  color: #4f1d38;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  max-width: 700px;
+}
+.home-hero p { color: #625761; max-width: 610px; }
+.home-hero .home-paths { grid-template-columns: 1fr; max-width: 540px; gap: .75rem; }
+.home-hero .home-path { min-height: 0; padding: 1rem 1.25rem; border-radius: 12px; }
+.home-hero .home-path--local {
+  background: #7a2f55;
+  border-color: #7a2f55;
+  color: #fff;
+  box-shadow: 0 8px 20px #4f1d381a;
+}
+.home-hero .home-path--local:hover { background: #4f1d38; }
+.home-hero .home-path--local strong { font-size: 1.25rem; }
+.home-hero .home-path--national {
+  background: #fffaf8;
+  border-color: #ddc8d0;
+  color: #4f1d38;
+  box-shadow: none;
+}
+.home-hero .home-path--national:hover { background: #fff; }
+.home-hero .home-path-label { margin-bottom: .35rem; }
+
+/* Decorative catalog photography; category labels remain the accessible names. */
+.home-categories { background: #fffdfb; padding: 2.75rem 0; }
+.home-categories h2 { text-align: left; font-size: clamp(1.6rem, 3vw, 2.1rem); }
+.home-categories h2::after { left: 0; transform: none; }
+.home-categories .grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1.25rem; }
+.home-categories .category-card {
+  padding: .65rem .25rem;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.home-categories .category-card:hover { background: #f7ecee; transform: translateY(-2px); }
+.home-categories .category-icon {
+  flex-shrink: 0;
+  width: 128px;
+  height: 128px;
+  max-width: 100%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 0 1px #e5d4dc;
+  margin-bottom: .85rem;
+  background-color: #f3e9ed;
+  background-position: center;
+  background-size: cover;
+  color: transparent;
+  font-size: 0;
+}
+.home-categories .category-name { font-family: var(--fonte-corpo); font-size: .95rem; line-height: 1.35; color: #4f1d38; }
+.home-categories .category-card[href="buques-canaa-dos-carajas/"] .category-icon { background-image: url('../optimized/products/responsive/buque-rosas-rubi-perfumadas-480.webp'); }
+.home-categories .category-card[href="floricultura-canaa-dos-carajas/"] .category-icon { background-image: url('../optimized/products/responsive/jarro-flor-natural-laco-rosa-480.webp'); }
+.home-categories .category-card[href="presentes-romanticos-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/box-amor-perfeito-480.webp'); }
+.home-categories .category-card[href="presentes-canaa.html#categoria-mimos"] .category-icon { background-image: url('../optimized/products/responsive/cestinha-virginia-mimo-delicado-480.webp'); }
+.home-categories .category-card[href="cestas-de-presente-canaa/"] .category-icon { background-image: url('../img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa-480.webp'); }
+.home-categories .category-card[href="cesta-de-aniversario-canaa/"] .category-icon { background-image: url('../img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa-480.webp'); }
+.home-categories .category-card[href="monte-sua-cesta/"] .category-icon { background-image: url('../img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa-480.webp'); }
+.home-categories .category-card[href="cesta-cafe-da-manha-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/cesta-cafe-da-manha-especial-480.webp'); }
+.home-categories .category-card[href="rosas-perfumadas-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/perfume-521-vip-rose-amakha-15ml-480.webp'); }
+.home-categories .category-card[href="presentes-canaa.html#categoria-promocoes"] .category-icon { background-image: url('../optimized/products/responsive/buque-rosas-rubi-perfumadas-480.webp'); }
+.home-categories .category-card[href="revenda-chocolates-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/cone-ferrero-presente-charmoso-480.webp'); }
+.home-categories .category-card[href="presentes-canaa-dos-carajas/"] .category-icon { background-image: url('../optimized/products/responsive/box-amor-perfeito-480.webp'); }
+
+.seo-hero {
+  padding: 2.5rem 0;
+  background: #f7ecee;
+  border-bottom: 1px solid #eadde5;
+}
+.seo-hero::before { content: none; }
+.seo-hero h1 { color: #4f1d38; font-size: clamp(1.9rem, 4vw, 3rem); letter-spacing: -.025em; }
+.seo-hero p, .seo-hero .breadcrumbs { color: #625761; }
+.seo-hero .btn-outline { color: #4f1d38; border-color: #7a2f55; background: transparent; }
+.seo-hero .btn-outline:hover { background: #fff; }
+.seo-hero a[data-track="whatsapp"] { background: #087a3d; color: #fff; border-color: #087a3d; }
+.seo-hero a[data-track="whatsapp"]:hover { background: #066332; }
+.produto-card, .seo-gallery-item { border-radius: 16px; box-shadow: 0 3px 14px #4f1d380a; border-color: #e7dce1; }
+.produto-card:hover, .seo-gallery-item:hover { box-shadow: 0 8px 24px #4f1d3814; transform: translateY(-2px); }
+.produto-imagem { background: #f8f5f3; }
+.produto-nome { font-family: var(--fonte-corpo); font-weight: 700; }
+.produto-preco { color: #4f1d38; font-weight: 800; }
+.seo-gallery-item figcaption { background: #fff; }
+.seo-gallery-budget-option { border-radius: 10px; }
+.seo-category-group--primary .seo-category-links a { background: #fff; border-left: 3px solid #7a2f55; box-shadow: none; }
+.seo-category-group--secondary .seo-category-links a { min-height: 44px; }
+.perfume-spotlight-content { box-shadow: none; border-radius: 16px; }
+.seo-faq { background: #faf5f6; }
+.seo-faq details { background: #fff; border-radius: 12px; }
+
+@media (min-width: 1024px) {
+  .home-hero .home-choice-hero { width: 57%; padding: 1rem 2rem 1rem 0; }
+  .home-hero > .container::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 60%;
+    border-radius: 100px 16px 100px 16px;
+    background: #e4d9df url('../optimized/products/responsive/buque-rosas-rubi-perfumadas-480.webp') center / cover no-repeat;
+    box-shadow: 0 16px 40px #4f1d3814;
+    pointer-events: none;
+  }
+  .home-hero { min-height: 550px; }
+}
+@media (max-width: 1023px) {
+  .home-categories .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 539px) {
+  .hero.home-hero { padding: 1.5rem 0; }
+  .home-hero h1 { font-size: 2rem; }
+  .home-hero p { font-size: .95rem; }
+  .home-hero .home-path { padding: .85rem 1rem; }
+  .home-hero .home-path--national strong { font-size: .95rem; }
+  .home-hero .home-path--national { border: 0; border-left: 3px solid #d5b1c2; border-radius: 0; background: transparent; }
+  .home-categories { padding: 1.5rem 0; }
+  .home-categories .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem .5rem; }
+  .home-categories .category-card { min-height: 0; padding: .4rem .1rem; }
+  .home-categories .category-icon { width: 88px; height: 88px; margin-bottom: .65rem; }
+  .home-categories .category-name { font-size: .8rem; }
+  .seo-hero { padding: 1.75rem 0; }
+  .seo-hero .breadcrumbs { font-size: .8rem; margin-bottom: 1rem; }
+  .seo-hero .hero-buttons { gap: .65rem; }
+  .produto-card, .seo-gallery-item { border-radius: 12px; }
+}
+@media (forced-colors: active) {
+  .home-categories .category-icon { color: CanvasText; font-size: 1rem; }
+}

@@ -748,6 +748,7 @@ function pageShell({ path: pagePath, title, description, canonical, image, body,
 <html lang="pt-BR">
 <head>
     ${head({ title, description, canonical, image, prefix })}
+    <link rel="stylesheet" href="${prefix}assets/css/storefront.css?v=20260911-vitrine-1">
 </head>
 <body>
     ${header(prefix, pagePath)}

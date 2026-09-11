@@ -37,7 +37,7 @@ def main():
     with ThreadPoolExecutor(max_workers=4) as pool:
         pages = list(pool.map(inspect_page, expected['pages']))
     assets = []
-    for relative in ['assets/css/style.css', 'assets/js/app.js',
+    for relative in ['assets/css/style.css', 'assets/css/storefront.css', 'assets/js/app.js',
                      'monte-sua-cesta/js/configuracao.js', 'sitemap.xml', 'robots.txt']:
         try:
             status, source = fetch(relative)
