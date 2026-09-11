@@ -381,7 +381,7 @@ function baseSchemas(pageUrl, title, breadcrumbs, options = {}) {
       "description": "Loja de presentes em Canaã dos Carajás com buquês, flores, cestas e mimos personalizados.",
       "url": SITE,
       "logo": `${SITE}/assets/img/brand/logo-zadoni-320.webp`,
-      "sameAs": ["https://www.instagram.com/zadonipresentescanaa"]
+      "sameAs": ["https://www.instagram.com/zadonipresentes/"]
     }
   ];
 
@@ -601,7 +601,7 @@ function footer(prefix = "") {
                     <h3>Contato</h3>
                     <p>Canaã dos Carajás - PA</p>
                     <p>WhatsApp: <a href="https://wa.me/${PHONE}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">94992993138</a></p>
-                    <p>Instagram: <a href="https://www.instagram.com/zadonipresentescanaa" target="_blank" rel="noopener noreferrer" data-track="instagram">@zadonipresentescanaa</a></p>
+                    <p>Instagram: <a href="https://www.instagram.com/zadonipresentes/" target="_blank" rel="noopener noreferrer" data-track="instagram">@zadonipresentes</a></p>
                     <p>Google: <a href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">ver avaliações da Zadoni</a></p>
                 </div>
             </div>

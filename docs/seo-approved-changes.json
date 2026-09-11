@@ -82,5 +82,221 @@
     "beforeSha256": "70ff3ab4a2b364a5befd86f2f312bab59638f38f9359ac245ce7b6b95bcd26b7",
     "afterSha256": "1daaf22547e3b6a921c7be9e9bbca8aaeb37d83f021a25fc8edc1b34a0447792",
     "reason": "User approval 2026-09-09: replace unverified popularity badge with neutral label; preserve prices and all other content."
+  },
+  {
+    "path": "$/pages/buques-canaa-dos-carajas/index.html/links/73/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/buques-canaa-dos-carajas/index.html/links/73/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/buques-canaa-dos-carajas/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cesta-cafe-da-manha-canaa/index.html/links/62/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cesta-cafe-da-manha-canaa/index.html/links/62/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cesta-cafe-da-manha-canaa/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cesta-de-aniversario-canaa/index.html/links/47/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cesta-de-aniversario-canaa/index.html/links/47/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cesta-de-aniversario-canaa/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cestas-de-presente-canaa/index.html/links/57/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cestas-de-presente-canaa/index.html/links/57/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/cestas-de-presente-canaa/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/floricultura-canaa-dos-carajas/index.html/links/42/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/floricultura-canaa-dos-carajas/index.html/links/42/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/floricultura-canaa-dos-carajas/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/index.html/links/41/href",
+    "beforeSha256": "e419aba01a810ad9194987ac4efacec8da927daeb872154f0a8bdb455b5203e7",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/index.html/links/43/href",
+    "beforeSha256": "e419aba01a810ad9194987ac4efacec8da927daeb872154f0a8bdb455b5203e7",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/index.html/links/43/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/links/index.html/links/14/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/links/index.html/links/14/text",
+    "beforeSha256": "5b924f85b366c9d31c124c47d9c1b275ff95962ec1629991eff54b5d2f2e0336",
+    "afterSha256": "bf0d48f38cd785dfdae6cc93542eb7af04e62f44d9418c53cd9b6fc21c96a386",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/links/index.html/mainText",
+    "beforeSha256": "f465acfbf224063f04474503305ce6de8185ada04ef9a3a97b7d6fa2691d16ee",
+    "afterSha256": "76e415e9f6e7ca39affd6c9329f948026830c43b81cb442143a61df79bbe0f4b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/monte-sua-cesta/index.html/schemas/0/@graph/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-canaa-dos-carajas/index.html/links/55/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-canaa-dos-carajas/index.html/links/55/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-canaa-dos-carajas/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-canaa.html/links/200/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-canaa.html/links/200/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-canaa.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-romanticos-canaa/index.html/links/56/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-romanticos-canaa/index.html/links/56/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/presentes-romanticos-canaa/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/revenda-chocolates-canaa/index.html/schemas/0/@graph/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/rosas-perfumadas-canaa/index.html/links/53/href",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/rosas-perfumadas-canaa/index.html/links/53/text",
+    "beforeSha256": "4a1c056d9dc2faf4b17a7347430b74c15a1d4b24c0eeab1382e76bf9b9cd04cf",
+    "afterSha256": "ca1b971d894181fa7fffcc954e20569d48abf12cd1e65d35ed14e3b1848ae8ef",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/rosas-perfumadas-canaa/index.html/schemas/0/0/sameAs/0",
+    "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
+    "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
+    "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
   }
 ]
