@@ -1,4 +1,5 @@
 import copy
+import json
 import unittest
 from seo_baseline import page_snapshot, differences, classify, sha
 
@@ -14,6 +15,17 @@ HTML = '''<html><head><title>Presentes</title><meta content="Descrição" name="
 
 
 class BaselineTests(unittest.TestCase):
+    def test_structured_approval_is_exact_and_opt_in(self):
+        change = {'path': '$/pages/new.html', 'before': None, 'after': {'title': ['Perfumaria']}}
+        rule = {'path': change['path'], 'valueFormat': 'json',
+                'beforeSha256': sha(json.dumps(change['before'], ensure_ascii=False, sort_keys=True)),
+                'afterSha256': sha(json.dumps(change['after'], ensure_ascii=False, sort_keys=True))}
+        self.assertEqual(classify([change], [rule]), ([change], []))
+        altered = dict(change, after={'title': ['Alterado']})
+        self.assertEqual(classify([altered], [rule]), ([], [altered]))
+        del rule['valueFormat']
+        self.assertEqual(classify([change], [rule]), ([], [change]))
+
     def test_presentation_changes_are_allowed(self):
         modified = HTML.replace('<main>', '<main class="new-layout" style="display:grid">')
         modified = modified.replace('<span>', '<strong>').replace('</span>', '</strong>')

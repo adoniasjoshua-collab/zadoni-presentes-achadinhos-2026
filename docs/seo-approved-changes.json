@@ -298,5 +298,61 @@
     "beforeSha256": "bb3581df66fc213f859c1c7f51a7a85ec833ac9a73134981b7bd017ffb52fa2f",
     "afterSha256": "360cc8bbb475a4ad19f83d4664d77dc3598763f6f65059ac69356f3660b24c5b",
     "reason": "User approval 2026-09-11: official Instagram is https://www.instagram.com/zadonipresentes/; update all Instagram destinations and matching labels/schema only."
+  },
+  {
+    "path": "$/pages/index.html/headings",
+    "valueFormat": "json",
+    "beforeSha256": "d7801a8047683b105ff07538cbeb7e13ef41ed773197dc33b7d6364b9070a9e0",
+    "afterSha256": "34ef50b31d95de5f83f5e5d47c0fc3427a56b191e238a9cb4a52d300714e8c3e",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/pages/index.html/links",
+    "valueFormat": "json",
+    "beforeSha256": "bf7eec54535d665b81c2885ced8e61e2bba327bd614f7328b3f0727cd977ee38",
+    "afterSha256": "b8a9b6951b00b65d341d9bb9e96e36fb07e9c7e5a1fb1200cc35192401dcbffb",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/pages/index.html/mainText",
+    "valueFormat": "json",
+    "beforeSha256": "303a6616e87c9102cae29df620202b01576a909efa7ec9bf25b8106b099df543",
+    "afterSha256": "cf5961b5f4835132e6ce2dca9b65659ad4acfd850a1aee5b18aa77f0c43ace31",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/pages/perfumaria-cosmeticos-canaa/index.html",
+    "valueFormat": "json",
+    "beforeSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "afterSha256": "48e4bfb08f646c7cee001060e66ccd48678846bab2e5cebdf4c490af0f33caca",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/pages/rosas-perfumadas-canaa/index.html/headings",
+    "valueFormat": "json",
+    "beforeSha256": "9c411cb0ec80e6e978b1627df52136b28cb3c1a79459452d294de530a33b4649",
+    "afterSha256": "cd568e394be4d6a7e1526e5b3c9029ecb1c5a460b50e7e988910fab2e823ac55",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/pages/rosas-perfumadas-canaa/index.html/links",
+    "valueFormat": "json",
+    "beforeSha256": "03b0d24f907a2fdae92e090d98596bbaad2cf9d04437a38c3adaf9af8d97caf5",
+    "afterSha256": "44c7f989a5804882ce826d6cc3f95715771f299f4d5fcb4d2f2cecfa6771a3aa",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/pages/rosas-perfumadas-canaa/index.html/mainText",
+    "valueFormat": "json",
+    "beforeSha256": "c98f459ab36ed3128a77b6486208ac9dfe86f1bc68d12f1177edf33075b85994",
+    "afterSha256": "b0395b63b15f4c1cc3e2b2af17951aea241ef9720690e9870dbd37ade05420ca",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
+  },
+  {
+    "path": "$/protectedFiles/sitemap.xml",
+    "valueFormat": "json",
+    "beforeSha256": "77b70bafa33c1ab49098c2551192902e60abcd6651dc7c52e2f03b044ec18c7d",
+    "afterSha256": "9cebdc8e38d4a1651dbcb6249a56de3bd39faf1385fda0ef7c58a0086490914f",
+    "reason": "User authorization 2026-09-15: create perfumaria department, add two discovery blocks and sitemap URL; verified existing page content unchanged after removing only added blocks."
   }
 ]

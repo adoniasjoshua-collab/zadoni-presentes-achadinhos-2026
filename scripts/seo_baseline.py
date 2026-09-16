@@ -161,9 +161,13 @@ def classify(changes, approvals):
     approved, rejected = [], []
     for change in changes:
         rule = next((r for r in approvals if r['path'] == change['path']
-                     and isinstance(change['before'], str) and isinstance(change['after'], str)
-                     and sha(change['before']) == r['beforeSha256']
-                     and sha(change['after']) == r['afterSha256']), None)
+                     and ((r.get('valueFormat') == 'json'
+                           and sha(json.dumps(change['before'], ensure_ascii=False, sort_keys=True)) == r['beforeSha256']
+                           and sha(json.dumps(change['after'], ensure_ascii=False, sort_keys=True)) == r['afterSha256'])
+                          or (r.get('valueFormat') is None
+                              and isinstance(change['before'], str) and isinstance(change['after'], str)
+                              and sha(change['before']) == r['beforeSha256']
+                              and sha(change['after']) == r['afterSha256']))), None)
         (approved if rule else rejected).append(change)
     return approved, rejected
 

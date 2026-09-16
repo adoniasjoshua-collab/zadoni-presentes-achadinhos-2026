@@ -1318,3 +1318,5 @@ Sitemap: ${SITE}/sitemap.xml
 `);
 
 console.log(`Generated ${pageConfigs.length + 1} SEO pages and sitemap.xml`);
+// Keep the isolated perfumaria page and its additive discovery links on rebuilds.
+await import('./generate-perfumaria.mjs');
