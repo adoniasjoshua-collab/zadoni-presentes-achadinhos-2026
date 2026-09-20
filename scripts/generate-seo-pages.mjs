@@ -1309,6 +1309,9 @@ const pageConfigs = [
     showProductsSection: false,
     productPriceNote: "Valor inicial. O preço final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalização; pode ficar em torno de R$ 200, R$ 300 ou mais.",
     galleryImages: [
+      { id: "cafe-modelo-10", src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", width: 720, height: 960 },
+      { id: "cafe-modelo-11", src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", width: 720, height: 720 },
+      { id: "cafe-modelo-artesanal", ...BASKET_GALLERY_IMAGES[0] },
       { src: "cesta-cafe-da-manha-modelo-real-01.jpeg", alt: "Modelo real de cesta personalizada da Zadoni em Canaã dos Carajás", caption: "Modelo real preparado pela Zadoni", width: 610, height: 1356 },
       { src: "cesta-cafe-da-manha-modelo-real-02.jpeg", alt: "Cesta personalizada com itens selecionados para presente", caption: "Composição com itens selecionados", width: 736, height: 920 },
       { src: "cesta-cafe-da-manha-modelo-real-03.jpeg", alt: "Cesta personalizada para momento especial em Canaã dos Carajás", caption: "Opção para momento especial", width: 736, height: 981 },
@@ -1317,10 +1320,7 @@ const pageConfigs = [
       { src: "cesta-cafe-da-manha-modelo-real-06.jpeg", alt: "Cesta de presente personalizada com composição consultada pelo WhatsApp", caption: "Composição confirmada no atendimento", width: 736, height: 977 },
       { src: "cesta-cafe-da-manha-modelo-real-07.jpeg", alt: "Cesta personalizada real para presente em Canaã dos Carajás", caption: "Modelo real da Zadoni", width: 697, height: 1089 },
       { src: "cesta-cafe-da-manha-modelo-real-08.webp", alt: "Cesta de café da manhã com laço rosa e itens selecionados em Canaã dos Carajás", caption: "Cesta matinal com laço rosa", width: 720, height: 960 },
-      { src: "cesta-cafe-da-manha-modelo-real-09.webp", alt: "Cesta de café da manhã com frutas, pães, chocolates e bebida", caption: "Modelo com frutas e itens de café", width: 720, height: 960 },
-      { src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", width: 720, height: 960 },
-      { src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", width: 720, height: 720 },
-      BASKET_GALLERY_IMAGES[0]
+      { src: "cesta-cafe-da-manha-modelo-real-09.webp", alt: "Cesta de café da manhã com frutas, pães, chocolates e bebida", caption: "Modelo com frutas e itens de café", width: 720, height: 960 }
     ],
     includeLocalBusiness: false,
     includeWebPage: true,
