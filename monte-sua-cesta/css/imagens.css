@@ -1,0 +1,9 @@
+/* Product media uses one consistent shape while preserving each photo's aspect ratio. */
+.photo {
+  border-radius: var(--image-radius);
+}
+
+.model-card .photo,
+.budget-card .photo {
+  overflow: hidden;
+}
