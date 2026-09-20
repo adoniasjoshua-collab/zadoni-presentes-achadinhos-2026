@@ -69,7 +69,6 @@ for (const page of pages) {
 
 if (productButtons === 0) errors.push("Nenhum botão de produto encontrado");
 if (galleryButtons === 0) errors.push("Nenhum botão de galeria encontrado");
-if (galleryBudgetButtons === 0) errors.push("Nenhuma faixa de orçamento da galeria encontrada");
 
 if (errors.length) {
   throw new Error(errors.join("\n"));

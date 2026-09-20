@@ -17,7 +17,7 @@ assert.equal((html.match(/<h1\b/g) || []).length, 1, "A página deve ter exatame
 assert.ok(!/<meta[^>]+noindex/i.test(html), "A página não pode ter noindex");
 assert.equal((html.match(/class="seo-gallery-item"/g) || []).length, 11, "A página deve ter onze modelos");
 assert.equal((html.match(/Modelo em destaque/g) || []).length, 1, "A página deve ter um único modelo em destaque");
-assert.equal((html.match(/Escolher e confirmar com a Zadoni/g) || []).length, 11, "Cada modelo deve ter CTA de confirmação");
+assert.equal((html.match(/Quero esta cesta/g) || []).length, 11, "Cada modelo deve ter CTA de confirmação");
 assert.equal((html.match(/Modelo ilustrativo/g) || []).length, 11, "Cada cesta deve informar que o modelo é ilustrativo");
 assert.match(html, /<h2 id="produtos-title">Bolos confeitados para aniversário<\/h2>/);
 assert.equal((html.match(/class="produto-card seo-product-card"/g) || []).length, 4, "A página deve exibir quatro bolos de aniversário");

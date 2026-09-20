@@ -612,7 +612,7 @@
     painel.dataset.initialized = "true";
     painel.id = painel.id || "cafe-gallery-addons";
     if (orientacao) {
-      orientacao.textContent = "Selecione os complementos deste modelo. Depois, escolha a faixa de orçamento para enviar o resumo completo pelo WhatsApp.";
+      orientacao.textContent = "Selecione os complementos deste modelo. Depois, clique em Quero esta cesta para abrir o WhatsApp com o resumo e o link da imagem.";
     }
 
     criarPainelAdicionaisGaleria({
@@ -623,10 +623,10 @@
       produtoReferencia: produtoReferencia,
       rotuloBotao: "Adicionar itens à cesta",
       obterAncora: function (modelo) {
-        return modelo.querySelector(".seo-gallery-budget-options");
+        return modelo.querySelector(".seo-gallery-cta, .seo-gallery-budget-options");
       },
       obterLinks: function (modelo) {
-        return Array.prototype.slice.call(modelo.querySelectorAll(".seo-gallery-budget-option"));
+        return Array.prototype.slice.call(modelo.querySelectorAll(".seo-gallery-cta, .seo-gallery-budget-option"));
       }
     });
   }
@@ -904,7 +904,7 @@
     whatsapp.dataset.track = "whatsapp";
     whatsapp.dataset.produtoId = String(produto.id);
     whatsapp.setAttribute("aria-label", "Chamar no WhatsApp sobre " + produto.nome);
-    whatsapp.textContent = "Quero este presente";
+    whatsapp.textContent = produto.categoria === "Cestas" ? "Quero esta cesta" : "Quero este presente";
     function atualizarLinkWhatsApp() {
       var adicionaisSelecionados = obterAdicionaisSelecionados(card, produto);
       whatsapp.href = gerarLinkWhatsApp(produto, adicionaisSelecionados);

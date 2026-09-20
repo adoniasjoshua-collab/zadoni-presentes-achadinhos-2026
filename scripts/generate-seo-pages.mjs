@@ -293,11 +293,13 @@ function galleryWhatsAppUrl(image, index, source = "galeria", directory = "", bu
         `Composição sugerida: ${budgetTier.composition}`
       ]
     : [];
+  const directPrice = image.priceLabel ? [`Valor de referência: ${image.priceLabel}`] : [];
   const msg = [
     requestOpening,
     "",
     `Modelo: ${modelLabel}`,
     `Resumo: ${image.caption}`,
+    ...directPrice,
     ...budgetDetails,
     `Imagem do modelo: ${absoluteUrl(galleryPublicPath(image, directory))}`,
     "",
@@ -348,7 +350,7 @@ function productCard(product, index, prefix = "", source = "produto", options = 
   const productName = options.keepContext
     ? html(product.nome)
     : `<a href="${productLink}">${html(product.nome)}</a>`;
-  const ctaLabel = options.ctaLabel || "Quero este presente";
+  const ctaLabel = product.categoria === "Cestas" ? "Quero esta cesta" : (options.ctaLabel || "Quero este presente");
   return `<article class="produto-card seo-product-card" id="${id}" data-produto-id="${product.id}" data-category="${key}">
             ${imageOpening}
                 ${picture(product, index, prefix)}
@@ -653,7 +655,7 @@ function galleryItemListSchema(galleryImages, pageUrl) {
 function galleryChoiceHtml(config, image, index, source, ctaLabel) {
   const tiers = config.galleryBudgetTiers || [];
 
-  if (!tiers.length) {
+  if (!tiers.length || config.galleryDirectChoice) {
     return `<a class="btn-whatsapp-produto seo-gallery-cta" href="${html(galleryWhatsAppUrl(image, index, source, config.dir))}" target="_blank" rel="noopener noreferrer" data-track="whatsapp">${html(ctaLabel)}</a>`;
   }
 
@@ -686,7 +688,7 @@ function galleryHtml(config) {
             </div>
             ${config.galleryExtras === "cafe" ? `<aside class="seo-gallery-addons" id="cafe-gallery-addons" aria-labelledby="cafe-gallery-addons-title">
                 <h3 id="cafe-gallery-addons-title">Adicionais opcionais para sua cesta de café</h3>
-                <p>Selecione os complementos desejados antes de escolher o modelo e a faixa de orçamento. O resumo seguirá completo para o WhatsApp.</p>
+                <p>Escolha um modelo e adicione complementos se desejar. Clique em Quero esta cesta para abrir o WhatsApp com o resumo e o link da imagem.</p>
                 <div id="cafe-gallery-addons-options"></div>
                 <strong class="seo-gallery-addons-total" id="cafe-gallery-addons-total" aria-live="polite">Nenhum adicional selecionado.</strong>
             </aside>` : ""}
@@ -738,7 +740,7 @@ function socialProofHtml(prefix = "") {
 }
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260920-buques-entrega-rapida-1" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260920-buques-entrega-rapida-1" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260920-cafe-whatsapp-direto-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
@@ -1150,7 +1152,7 @@ const pageConfigs = [
     galleryTitle: "Todas as referências de cestas para escolher",
     galleryIntro: "Veja composições já preparadas pela Zadoni e envie o modelo preferido no WhatsApp para adaptar itens, cores e orçamento.",
     galleryItemNote: "Referência visual: marcas, itens e acabamento dependem da disponibilidade e do orçamento.",
-    galleryCtaLabel: "Consultar esta cesta",
+    galleryCtaLabel: "Quero esta cesta",
     galleryImages: [
       BIRTHDAY_BASKET_GALLERY_IMAGES[7],
       BIRTHDAY_BASKET_GALLERY_IMAGES[6],
@@ -1211,7 +1213,7 @@ const pageConfigs = [
     ],
     galleryTitle: "Modelos de cesta de aniversário para escolher",
     galleryIntro: "Compare as referências e envie o modelo preferido pelo WhatsApp. A Zadoni confirma os itens disponíveis, as possibilidades de personalização, o valor e a entrega local.",
-    galleryCtaLabel: "Escolher e confirmar com a Zadoni",
+    galleryCtaLabel: "Quero esta cesta",
     galleryImages: BIRTHDAY_BASKET_GALLERY_IMAGES,
     priorityProductIds: [42, 59, 58, 38],
     includeLocalBusiness: false,
@@ -1296,22 +1298,23 @@ const pageConfigs = [
     h1: "Cesta de Café da Manhã em Canaã dos Carajás",
     h2: "Como funciona o pedido da cesta de café",
     intro: "Quem procura cesta de café da manhã em Canaã dos Carajás encontra na Zadoni modelos reais com itens selecionados e possibilidades de personalização conforme orçamento e disponibilidade.",
-    copy1: "Primeiro escolha uma referência visual na galeria e depois selecione a faixa Básica, Intermediária ou Premium. O WhatsApp receberá um resumo com o modelo, orçamento, composição sugerida e link da imagem.",
+    copy1: "Escolha um modelo na galeria e clique em Quero esta cesta. O WhatsApp recebe o resumo e o link da imagem para o assistente ajudar com os itens, valores e entrega.",
     copy2: "As fotos abaixo são referências de estilo e acabamento. A Zadoni adapta cada modelo à faixa escolhida e confirma os itens disponíveis, a personalização e o valor final durante o atendimento.",
     productsTitle: "Base de orçamento para cesta de café",
     productsIntro: "Use esta opção como ponto de partida para o atendimento. O valor exibido é inicial; a composição final é montada a partir do modelo escolhido na galeria, dos itens disponíveis e da personalização desejada.",
     galleryTitle: "Escolha um modelo de inspiração",
     galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Em cada modelo, escolha uma montagem Básica a partir de R$ 189, Intermediária a partir de R$ 270 ou Premium a partir de R$ 300.",
     galleryItemNote: "A foto é uma referência visual. Itens, marcas e acabamento são adaptados à faixa e à disponibilidade.",
-    galleryCtaLabel: "Consultar este modelo",
+    galleryCtaLabel: "Quero esta cesta",
     galleryBudgetTiers: BASKET_BUDGET_TIERS,
+    galleryDirectChoice: true,
     galleryExtras: "cafe",
     showProductsSection: false,
     productPriceNote: "Valor inicial. O preço final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalização; pode ficar em torno de R$ 200, R$ 300 ou mais.",
     galleryImages: [
-      { id: "cafe-modelo-10", src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", width: 720, height: 960 },
-      { id: "cafe-modelo-11", src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", width: 720, height: 720 },
-      { id: "cafe-modelo-artesanal", ...BASKET_GALLERY_IMAGES[0] },
+      { id: "cafe-modelo-10", modelLabel: "Cesta personalizada com caneca", src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", priceLabel: "A partir de R$ 189", width: 720, height: 960 },
+      { id: "cafe-modelo-11", modelLabel: "Versão romântica para café da manhã", src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", priceLabel: "A partir de R$ 189", width: 720, height: 720 },
+      { id: "cafe-modelo-artesanal", ...BASKET_GALLERY_IMAGES[0], priceLabel: "A partir de R$ 189" },
       { src: "cesta-cafe-da-manha-modelo-real-01.jpeg", alt: "Modelo real de cesta personalizada da Zadoni em Canaã dos Carajás", caption: "Modelo real preparado pela Zadoni", width: 610, height: 1356 },
       { src: "cesta-cafe-da-manha-modelo-real-02.jpeg", alt: "Cesta personalizada com itens selecionados para presente", caption: "Composição com itens selecionados", width: 736, height: 920 },
       { src: "cesta-cafe-da-manha-modelo-real-03.jpeg", alt: "Cesta personalizada para momento especial em Canaã dos Carajás", caption: "Opção para momento especial", width: 736, height: 981 },
