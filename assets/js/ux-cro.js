@@ -51,7 +51,7 @@
     const pagePriorities = (() => {
       if (location.pathname.includes('buques-canaa-dos-carajas')) return [61, 57, 52, 53, 54, 56, 55, 16, 15, 2];
       if (location.pathname.includes('floricultura-canaa-dos-carajas')) return [61, 57, 52, 53, 54, 56, 55, 16, 15, 2, 26, 27, 25];
-      if (location.pathname.includes('cestas-de-presente-canaa')) return [60, 11, 6, 33, 10, 17, 8, 37, 9, 7, 23];
+      if (location.pathname.includes('cestas-de-presente-canaa')) return [60, 17, 11, 6, 33, 10, 8, 37, 9, 7, 23];
       if (location.pathname.includes('presentes-romanticos-canaa')) return [33, 37, 1, 16, 12, 3, 36];
       return [];
     })();

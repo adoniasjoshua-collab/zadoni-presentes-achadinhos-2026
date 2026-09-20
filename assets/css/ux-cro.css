@@ -5,6 +5,19 @@
   [data-ux-cro] #entrega-rapida #produto-61 .produto-imagem { aspect-ratio: 16 / 10; }
 }
 [data-ux-cro] .natural-bouquet-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: stretch; }
+[data-ux-cro] .cestas-cafe-destaques { background: #fff8ee; padding: 3rem 0; }
+[data-ux-cro] .cestas-cafe-destaques-header { max-width: 760px; margin-bottom: 1.5rem; }
+[data-ux-cro] .cestas-cafe-destaques-header h2 { margin: .35rem 0 .6rem; color: #4f1d38; }
+[data-ux-cro] .cestas-cafe-destaques-header > p:last-child { color: #625761; }
+[data-ux-cro] .cestas-cafe-destaques-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; align-items: stretch; }
+[data-ux-cro] .cesta-cafe-destaque { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid #eadde5; border-radius: 14px; background: #fff; color: #4f1d38; box-shadow: 0 8px 22px #4f1d3812; transition: transform .18s ease, box-shadow .18s ease; }
+[data-ux-cro] .cesta-cafe-destaque:hover { transform: translateY(-3px); box-shadow: 0 14px 30px #4f1d3820; }
+[data-ux-cro] .cesta-cafe-destaque img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }
+[data-ux-cro] .cesta-cafe-destaque--hero img { aspect-ratio: 1; }
+[data-ux-cro] .cesta-cafe-destaque > span { display: grid; gap: .3rem; padding: .9rem 1rem 1rem; }
+[data-ux-cro] .cesta-cafe-destaque strong { font-size: 1.05rem; }
+[data-ux-cro] .cesta-cafe-destaque small { color: #625761; line-height: 1.4; }
+[data-ux-cro] .cestas-cafe-destaques-cta { margin-top: 1.25rem; }
 [data-ux-cro] .natural-bouquet-highlights .produto-imagem { aspect-ratio: 1; }
 [data-ux-cro] .natural-bouquet-highlights .produto-imagem img { object-fit: contain; }
 [data-ux-cro] #rosas-naturais .natural-bouquet-highlights { margin-bottom: 1.5rem; }
@@ -75,6 +88,9 @@
 }
 @media (max-width: 767px) {
   [data-ux-cro] .produtos-grid, [data-ux-cro] .seo-gallery-grid { grid-template-columns: 1fr; }
+  [data-ux-cro] .cestas-cafe-destaques { padding: 2rem 0; }
+  [data-ux-cro] .cestas-cafe-destaques-grid { grid-template-columns: 1fr; }
+  [data-ux-cro] .cesta-cafe-destaque--hero img, [data-ux-cro] .cesta-cafe-destaque img { aspect-ratio: 4 / 5; }
   [data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
   [data-ux-cro] .home-categories .category-name { font-size: 1rem; }
   [data-ux-cro] .ux-filter-fields { grid-template-columns: 1fr; }
