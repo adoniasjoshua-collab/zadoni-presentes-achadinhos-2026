@@ -39,6 +39,9 @@
 [data-ux-cro] .produto-card[data-category="cestas"] .produto-imagem img { transform: scale(1.5); }
 [data-ux-cro] .produto-card[data-produto-id="60"] .produto-imagem img { transform: scale(1.15); }
 [data-ux-cro] .seo-gallery-item img { width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; background: #f8f5f3; }
+[data-ux-cro] .seo-gallery-grid--budget .seo-gallery-item:has(img[src*="modelo-real-10"]) { order: -3; }
+[data-ux-cro] .seo-gallery-grid--budget .seo-gallery-item:has(img[src*="modelo-real-11"]) { order: -2; }
+[data-ux-cro] .seo-gallery-grid--budget .seo-gallery-item:has(img[src*="cesta-cafe-artesanal"]) { order: -1; }
 [data-ux-cro] .produto-content { padding: 1rem; }
 [data-ux-cro] .produto-descricao { font-size: 1rem; line-height: 1.5; }
 [data-ux-cro] .produto-acoes { grid-template-columns: 1fr; }

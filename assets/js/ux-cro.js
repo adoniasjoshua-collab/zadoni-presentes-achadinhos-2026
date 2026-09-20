@@ -87,6 +87,19 @@
     };
     reorderProducts();
 
+    const cafeGallery = document.querySelector('.seo-gallery-grid--budget');
+    if (cafeGallery) {
+      const preferredImages = ['modelo-real-10', 'modelo-real-11', 'cesta-cafe-artesanal'];
+      const cafeCards = [...cafeGallery.querySelectorAll('.seo-gallery-item')];
+      cafeCards.sort((left, right) => {
+        const leftSrc = left.querySelector('img')?.getAttribute('src') || '';
+        const rightSrc = right.querySelector('img')?.getAttribute('src') || '';
+        const leftPriority = preferredImages.findIndex(name => leftSrc.includes(name));
+        const rightPriority = preferredImages.findIndex(name => rightSrc.includes(name));
+        return (leftPriority < 0 ? Number.MAX_SAFE_INTEGER : leftPriority) - (rightPriority < 0 ? Number.MAX_SAFE_INTEGER : rightPriority);
+      }).forEach(card => cafeGallery.append(card));
+    }
+
     document.querySelectorAll('.produto-card').forEach(card => {
       const content = card.querySelector('.produto-content');
       const description = card.querySelector('.produto-descricao');
