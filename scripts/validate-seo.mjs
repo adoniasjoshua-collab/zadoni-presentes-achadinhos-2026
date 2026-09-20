@@ -44,7 +44,7 @@ function localTargetExists(fromFile, href) {
 
 const productContext = {};
 vm.runInNewContext(`${read("assets/data/produtos.js")}\nglobalThis.__produtosLocais = produtosLocais;`, productContext);
-const products = productContext.__produtosLocais;
+const products = productContext.__produtosLocais.filter(product => product.ativo !== false);
 const productsById = new Map(products.map((product) => [String(product.id), product]));
 const sitemap = read("sitemap.xml");
 

@@ -1,0 +1,92 @@
+﻿[
+    {
+        "test":  "validate-achadinhos-seo.mjs",
+        "code":  0,
+        "output":  "Achadinhos SEO validation ok: 4 national pages."
+    },
+    {
+        "test":  "validate-brand-identity.mjs",
+        "code":  0,
+        "output":  "OK: identidade oficial aplicada com ativos responsivos, texto acessível e schema de organização."
+    },
+    {
+        "test":  "validate-cafe-gallery-budget-tiers.mjs",
+        "code":  0,
+        "output":  "Café gallery budget validation ok: 12 models x 3 tiers = 36 WhatsApp summaries."
+    },
+    {
+        "test":  "validate-catalog-item-clarity.mjs",
+        "code":  0,
+        "output":  "Catálogo validado: 54 produtos, 14 itens avulsos públicos e 30 posições de adicionais sem divergências críticas."
+    },
+    {
+        "test":  "validate-category-navigation.mjs",
+        "code":  0,
+        "output":  "Category navigation validation ok: 9 links preserved, 5 primary and 4 complementary."
+    },
+    {
+        "test":  "validate-cesta-aniversario-seo.mjs",
+        "code":  0,
+        "output":  "Cesta de aniversário SEO validation ok: 11 cestas, 4 bolos confeitados e schemas coerentes."
+    },
+    {
+        "test":  "validate-cesta-budget-tiers.mjs",
+        "code":  0,
+        "output":  "Cesta budget tiers validation ok: 3 models x 3 tiers = 9 combinations"
+    },
+    {
+        "test":  "validate-google-ads-tracking.mjs",
+        "code":  0,
+        "output":  "Google Ads tracking validation ok: 12 pages, 215 WhatsApp links preserved"
+    },
+    {
+        "test":  "validate-linkpage.mjs",
+        "code":  0,
+        "output":  "Linkpage validation ok: noindex, direct local links, Achadinhos and analytics preserved."
+    },
+    {
+        "test":  "validate-local-seo-integrity.mjs",
+        "code":  0,
+        "output":  "Local SEO integrity ok: 17 sitemap pages, 8 consistent LocalBusiness records. Local HTML checks only; Google indexation and business facts require external verification."
+    },
+    {
+        "test":  "validate-local-seo-keywords.mjs",
+        "code":  0,
+        "output":  "SEO local validado: 11 páginas com intenção própria, metadados únicos e termos locais contextualizados."
+    },
+    {
+        "test":  "validate-navigation-ux.mjs",
+        "code":  0,
+        "output":  "Navigation UX validation ok: 10 pages, six-item menu, accessible control and tracked Home WhatsApp links."
+    },
+    {
+        "test":  "validate-performance.mjs",
+        "code":  0,
+        "output":  "Performance validation ok: scripts locais não bloqueiam o head, imagens têm dimensões e links de filtro usam fragmentos."
+    },
+    {
+        "test":  "validate-perfumaria.mjs",
+        "code":  0,
+        "output":  "Perfumaria: metadata, 5 products, 4 placeholders, anchors, assets, WhatsApp and discovery links passed."
+    },
+    {
+        "test":  "validate-photo-galleries.mjs",
+        "code":  0,
+        "output":  "Galerias validadas: 48 arquivos WebP e 48 referencias publicas."
+    },
+    {
+        "test":  "validate-seo-baseline.mjs",
+        "code":  0,
+        "output":  "{\"passed\": true, \"pages\": 19, \"failures\": [], \"scope\": \"Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.\", \"results\": [{\"page\": \"404.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-criativos/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-de-aniversario/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-para-namorada/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"buques-canaa-dos-carajas/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"cesta-cafe-da-manha-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"cesta-de-aniversario-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"cestas-de-presente-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"floricultura-canaa-dos-carajas/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"links/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"monte-sua-cesta/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"perfumaria-cosmeticos-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"presentes-canaa-dos-carajas/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"presentes-canaa.html\", \"passed\": true, \"issues\": []}, {\"page\": \"presentes-romanticos-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"revenda-chocolates-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"rosas-perfumadas-canaa/index.html\", \"passed\": true, \"issues\": []}]}"
+    },
+    {
+        "test":  "validate-seo.mjs",
+        "code":  0,
+        "output":  "SEO validation ok: 13 pages, 54 products"
+    },
+    {
+        "test":  "validate-whatsapp-product-links.mjs",
+        "code":  0,
+        "output":  "WhatsApp product summary validation ok: 106 product buttons, 49 gallery buttons and 36 budget options"
+    }
+]

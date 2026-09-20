@@ -12,7 +12,7 @@
 
   function getProdutosLocais() {
     return typeof produtosLocais !== "undefined" && Array.isArray(produtosLocais)
-      ? produtosLocais
+      ? produtosLocais.filter(function (produto) { return produto.ativo !== false; })
       : [];
   }
 
@@ -713,8 +713,6 @@
   }
 
   function inicializarAdicionaisCardsSeo() {
-    if (document.getElementById("produtos-container")) return;
-
     var produtos = getProdutosLocais();
 
     document.querySelectorAll(".seo-products .seo-product-card[data-produto-id]").forEach(function (card) {
@@ -757,7 +755,7 @@
         linkAdicionais.addEventListener("click", function (event) {
           event.preventDefault();
           adicionais.open = true;
-          adicionais.scrollIntoView({ behavior: "smooth", block: "center" });
+          adicionais.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: "center" });
           adicionais.querySelector(".produto-adicionais-titulo")?.focus();
         });
       }
@@ -766,7 +764,7 @@
 
   function inicializarAtalhoModelosMobile() {
     var hero = document.querySelector(".seo-hero");
-    var galeria = document.querySelector(".seo-gallery");
+    var galeria = document.querySelector(".seo-gallery, .seo-products");
     var botoes = hero?.querySelector(".hero-buttons");
 
     if (!hero || !galeria || !botoes || hero.dataset.mobileShortcutInitialized === "true") return;
@@ -777,10 +775,10 @@
     var atalho = document.createElement("button");
     atalho.type = "button";
     atalho.className = "btn btn-outline btn-catalogo-mobile";
-    atalho.textContent = "Ver modelos";
+    atalho.textContent = galeria.id === 'cestas-aniversario' ? 'Ver cestas de aniversário' : 'Ver modelos';
     atalho.setAttribute("aria-label", "Ir direto aos modelos desta categoria");
     atalho.addEventListener("click", function () {
-      galeria.scrollIntoView({ behavior: "smooth", block: "start" });
+      galeria.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: "start" });
       rastrearEvento("click_mobile_catalog_shortcut", {
         pagina: window.location.pathname
       });
@@ -948,6 +946,27 @@
 
     if (!container) return;
 
+    // Keep the server-rendered cards, original links and user selections intact.
+    var cardsEstaticos = container.querySelectorAll(".seo-product-card[data-produto-id]");
+    if (cardsEstaticos.length) {
+      var idsVisiveis = new Set(lista.map(function (produto) { return String(produto.id); }));
+      cardsEstaticos.forEach(function (card) { card.hidden = !idsVisiveis.has(card.dataset.produtoId); });
+      container.querySelectorAll("[data-ux-group]").forEach(function (titulo) {
+        var extras = titulo.dataset.uxGroup === "extras";
+        titulo.hidden = !Array.from(cardsEstaticos).some(function (card) {
+          return !card.hidden && (card.dataset.category === "adicionais") === extras;
+        });
+      });
+      container.style.removeProperty("display");
+      if (vazio) {
+        vazio.hidden = lista.length > 0;
+        vazio.textContent = "Nenhum produto encontrado. Limpe os filtros para ver todas as opções.";
+      }
+      container.dataset.activeCategory = categoria || "todos";
+      inicializarTrackingLinks();
+      return;
+    }
+
     container.innerHTML = "";
 
     if (!lista.length) {
@@ -1036,11 +1055,21 @@
     categoria = normalizarCategoriaProdutos(categoria);
 
     var produtos = getProdutosLocais();
+    var busca = removerAcentos(document.getElementById("ux-search")?.value || "");
+    var faixa = document.getElementById("ux-price")?.value || "";
     var filtrados = produtos.filter(function (produto) {
-      return categoriaCombina(produto, categoria);
+      var texto = removerAcentos(produto.nome + " " + produto.descricao + " " + produto.categoria);
+      var precoCombina = !faixa || (faixa === "consulta" ? !temPrecoProduto(produto) :
+        temPrecoProduto(produto) && (faixa === "100" ? produto.preco <= 100 :
+          faixa === "200" ? produto.preco > 100 && produto.preco <= 200 : produto.preco > 200));
+      return categoriaCombina(produto, categoria) && texto.includes(busca) && precoCombina;
     });
 
-    atualizarBotaoAtivo(".filtro-btn", event && event.target ? event.target : null);
+    document.querySelectorAll(".filtro-btn").forEach(function (botao) {
+      var ativo = normalizarCategoriaProdutos(botao.textContent) === categoria;
+      botao.classList.toggle("ativo", ativo);
+      botao.setAttribute("aria-pressed", String(ativo));
+    });
     renderizarProdutosLocais(filtrados, categoria);
     atualizarContagemProdutos(filtrados, categoria);
 
@@ -1049,6 +1078,7 @@
       total_resultados: filtrados.length,
       pagina: "presentes-canaa"
     });
+    rastrearEvento("apply_filter", { page_path: location.pathname, filter_type: "catalog", filter_value: categoria + ":" + faixa, total_resultados: filtrados.length });
   }
 
   function carregarProdutosLocais() {

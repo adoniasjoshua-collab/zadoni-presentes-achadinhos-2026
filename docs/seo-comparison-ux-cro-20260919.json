@@ -1,0 +1,256 @@
+{
+  "passed": false,
+  "pages": 19,
+  "failures": [
+    "Protected data, robots, sitemap or redirects changed",
+    "buques-canaa-dos-carajas/index.html: Original text blocks: p",
+    "buques-canaa-dos-carajas/index.html: First principal paragraph",
+    "buques-canaa-dos-carajas/index.html: Existing scripts or analytics integration",
+    "buques-canaa-dos-carajas/index.html: metadata",
+    "buques-canaa-dos-carajas/index.html: schemas",
+    "buques-canaa-dos-carajas/index.html: links",
+    "buques-canaa-dos-carajas/index.html: images",
+    "buques-canaa-dos-carajas/index.html: pictureSources",
+    "buques-canaa-dos-carajas/index.html: Removed or rewritten heading",
+    "buques-canaa-dos-carajas/index.html: Removed indexed text",
+    "cesta-cafe-da-manha-canaa/index.html: Existing scripts or analytics integration",
+    "cesta-de-aniversario-canaa/index.html: Existing scripts or analytics integration",
+    "cesta-de-aniversario-canaa/index.html: schemas",
+    "cestas-de-presente-canaa/index.html: Original text blocks: p",
+    "cestas-de-presente-canaa/index.html: Existing scripts or analytics integration",
+    "cestas-de-presente-canaa/index.html: metadata",
+    "cestas-de-presente-canaa/index.html: schemas",
+    "cestas-de-presente-canaa/index.html: links",
+    "cestas-de-presente-canaa/index.html: images",
+    "cestas-de-presente-canaa/index.html: pictureSources",
+    "cestas-de-presente-canaa/index.html: Removed or rewritten heading",
+    "cestas-de-presente-canaa/index.html: Removed indexed text",
+    "floricultura-canaa-dos-carajas/index.html: Original text blocks: p",
+    "floricultura-canaa-dos-carajas/index.html: First principal paragraph",
+    "floricultura-canaa-dos-carajas/index.html: Existing scripts or analytics integration",
+    "floricultura-canaa-dos-carajas/index.html: metadata",
+    "floricultura-canaa-dos-carajas/index.html: schemas",
+    "floricultura-canaa-dos-carajas/index.html: links",
+    "floricultura-canaa-dos-carajas/index.html: images",
+    "floricultura-canaa-dos-carajas/index.html: pictureSources",
+    "floricultura-canaa-dos-carajas/index.html: Removed or rewritten heading",
+    "floricultura-canaa-dos-carajas/index.html: Removed indexed text",
+    "index.html: links",
+    "monte-sua-cesta/index.html: Existing scripts or analytics integration",
+    "monte-sua-cesta/index.html: schemas",
+    "presentes-canaa-dos-carajas/index.html: Original text blocks: p",
+    "presentes-canaa-dos-carajas/index.html: Existing scripts or analytics integration",
+    "presentes-canaa-dos-carajas/index.html: metadata",
+    "presentes-canaa-dos-carajas/index.html: schemas",
+    "presentes-canaa-dos-carajas/index.html: links",
+    "presentes-canaa-dos-carajas/index.html: images",
+    "presentes-canaa-dos-carajas/index.html: pictureSources",
+    "presentes-canaa-dos-carajas/index.html: Removed or rewritten heading",
+    "presentes-canaa-dos-carajas/index.html: Removed indexed text",
+    "presentes-canaa.html: Original text blocks: p",
+    "presentes-canaa.html: Existing scripts or analytics integration",
+    "presentes-canaa.html: schemas",
+    "presentes-canaa.html: links",
+    "presentes-canaa.html: images",
+    "presentes-canaa.html: pictureSources",
+    "presentes-canaa.html: Removed or rewritten heading",
+    "presentes-canaa.html: Removed indexed text",
+    "presentes-romanticos-canaa/index.html: Original text blocks: p",
+    "presentes-romanticos-canaa/index.html: Existing scripts or analytics integration",
+    "presentes-romanticos-canaa/index.html: metadata",
+    "presentes-romanticos-canaa/index.html: schemas",
+    "presentes-romanticos-canaa/index.html: links",
+    "presentes-romanticos-canaa/index.html: images",
+    "presentes-romanticos-canaa/index.html: pictureSources",
+    "presentes-romanticos-canaa/index.html: Removed or rewritten heading",
+    "presentes-romanticos-canaa/index.html: Removed indexed text",
+    "rosas-perfumadas-canaa/index.html: Original text blocks: p",
+    "rosas-perfumadas-canaa/index.html: Existing scripts or analytics integration",
+    "rosas-perfumadas-canaa/index.html: metadata",
+    "rosas-perfumadas-canaa/index.html: schemas",
+    "rosas-perfumadas-canaa/index.html: links",
+    "rosas-perfumadas-canaa/index.html: images",
+    "rosas-perfumadas-canaa/index.html: pictureSources",
+    "rosas-perfumadas-canaa/index.html: Removed or rewritten heading",
+    "rosas-perfumadas-canaa/index.html: Removed indexed text"
+  ],
+  "scope": "Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.",
+  "results": [
+    {
+      "page": "404.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "First principal paragraph",
+        "Existing scripts or analytics integration",
+        "metadata",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "passed": false,
+      "issues": [
+        "Existing scripts or analytics integration"
+      ]
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "passed": false,
+      "issues": [
+        "Existing scripts or analytics integration",
+        "schemas"
+      ]
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "Existing scripts or analytics integration",
+        "metadata",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "First principal paragraph",
+        "Existing scripts or analytics integration",
+        "metadata",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    },
+    {
+      "page": "index.html",
+      "passed": false,
+      "issues": [
+        "links"
+      ]
+    },
+    {
+      "page": "links/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "monte-sua-cesta/index.html",
+      "passed": false,
+      "issues": [
+        "Existing scripts or analytics integration",
+        "schemas"
+      ]
+    },
+    {
+      "page": "perfumaria-cosmeticos-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "Existing scripts or analytics integration",
+        "metadata",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    },
+    {
+      "page": "presentes-canaa.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "Existing scripts or analytics integration",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "Existing scripts or analytics integration",
+        "metadata",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "passed": false,
+      "issues": [
+        "Original text blocks: p",
+        "Existing scripts or analytics integration",
+        "metadata",
+        "schemas",
+        "links",
+        "images",
+        "pictureSources",
+        "Removed or rewritten heading",
+        "Removed indexed text"
+      ]
+    }
+  ]
+}

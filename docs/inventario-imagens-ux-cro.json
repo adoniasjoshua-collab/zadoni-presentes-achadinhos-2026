@@ -1,0 +1,2380 @@
+{
+  "filesInspected": 574,
+  "images": [
+    {
+      "page": "index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "index.html",
+      "product": "Entrega real de buquê preparada pela Zadoni em Canaã dos Carajás",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-01.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 46306,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "index.html",
+      "product": "Cliente com buquê recebido em entrega local da Zadoni",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-02.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 65336,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "index.html",
+      "product": "Casal com presente floral entregue pela Zadoni em Canaã",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-casal-01.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 65710,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "index.html",
+      "product": "Clientes com diferentes buquês preparados pela Zadoni",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buques-clientes-03.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 87952,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "index.html",
+      "product": "Entrega de presente para casal em Canaã dos Carajás",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-presente-casal-02.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 101334,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buque Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buque na xicara",
+      "file": "assets/optimized/products/buque-na-xicara-premium.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 55268,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-na-xicara-premium.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Kit romantico com chocolates",
+      "file": "assets/optimized/products/box-amor-perfeito.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90043,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-amor-perfeito.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Masculina Vinho Bella Vista",
+      "file": "assets/optimized/products/cesta-masculina-vinho-bella-vista.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94973,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-bella-vista.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-bella-vista.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Masculina Azul Classica",
+      "file": "assets/optimized/products/cesta-masculina-azul-classica.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60489,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-azul-classica.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-azul-classica.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Masculina Gourmet Dourada",
+      "file": "assets/optimized/products/cesta-masculina-gourmet-dourada.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 105902,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-gourmet-dourada.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-gourmet-dourada.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Masculina Verde Artesanal",
+      "file": "assets/optimized/products/cesta-masculina-verde-artesanal.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 133584,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-verde-artesanal.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-verde-artesanal.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Feminina Delicada",
+      "file": "assets/optimized/products/cesta-feminina-delicada.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 109710,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-feminina-delicada.webp",
+        "assets/img/cestas-femininas/cesta-feminina-delicada.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Masculina Vinho e Petiscos",
+      "file": "assets/optimized/products/cesta-masculina-vinho-e-petiscos.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 93037,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-e-petiscos.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-e-petiscos.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Box Amor Perfeito",
+      "file": "assets/optimized/products/box-amor-perfeito.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90043,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-amor-perfeito.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Box Girassol com Caixa",
+      "file": "assets/optimized/products/box-girassol-com-caixa.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 68419,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-girassol-com-caixa.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buque Declaracao de Amor",
+      "file": "assets/optimized/products/buque-te-amo-mae.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60995,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-mae.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buque Te Amo Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Cafe da Manha Especial",
+      "file": "assets/optimized/products/cesta-cafe-da-manha-especial.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 93780,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-especial.webp",
+        "assets/img/cestas-femininas/cesta-cafe-da-manha-especial.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Kit Vela Presente Especial",
+      "file": "assets/optimized/products/kit-vela-presente-especial.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 109602,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/kit-vela-presente-especial.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Mimo Carinho Especial",
+      "file": "assets/optimized/products/mimo-carinho-especial.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 58266,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/mimo-carinho-especial.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Mimo Coca-Cola Criativo",
+      "file": "assets/optimized/products/mimo-coca-cola-criativo.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 58301,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/mimo-coca-cola-criativo.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Mimo Ferrero Elegante",
+      "file": "assets/optimized/products/mimo-ferrero-elegante.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 55065,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/mimo-ferrero-elegante.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cone Ferrero Presente Charmoso",
+      "file": "assets/optimized/products/cone-ferrero-presente-charmoso.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 51771,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/cone-ferrero-presente-charmoso.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cestinha Virginia Mimo Delicado",
+      "file": "assets/optimized/products/cestinha-virginia-mimo-delicado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 56673,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/cestinha-virginia-mimo-delicado.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Kit Ferrari Presente Premium",
+      "file": "assets/optimized/products/kit-ferrari-presente-premium.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 54851,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/kit-ferrari-presente-premium.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Jarro Flores Naturais Vermelho",
+      "file": "assets/optimized/products/jarro-flores-naturais-vermelho.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 62813,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Jarro Flor Natural Laco Vermelho",
+      "file": "assets/optimized/products/jarro-flor-natural-laco-vermelho.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90497,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Jarro Flor Natural Laco Rosa",
+      "file": "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94940,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Perfume de Bolso Asadiyy 15ml",
+      "file": "assets/optimized/products/perfume-asadiyy-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 63084,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Perfume de Bolso Chic Woman 15ml",
+      "file": "assets/optimized/products/perfume-chic-woman-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 22013,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Perfume de Bolso Fortune 15ml",
+      "file": "assets/optimized/products/perfume-fortune-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 19817,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Perfume de Bolso Zaya 15ml",
+      "file": "assets/optimized/products/perfume-zaya-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 23273,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Perfume de Bolso 521 Vip Rose 15ml",
+      "file": "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 27649,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Romantica com Vinho San Martin",
+      "file": "assets/optimized/products/cesta-romantica-vinho-san-martin.jpg",
+      "width": 900,
+      "height": 1600,
+      "bytes": 162836,
+      "ratio": 0.562,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-romantica-vinho-san-martin.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buque Rosa Pretty Flower",
+      "file": "assets/optimized/products/buque-rosa-pretty-flower.jpg",
+      "width": 900,
+      "height": 1600,
+      "bytes": 109828,
+      "ratio": 0.562,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buque Rosas Vermelhas Premium",
+      "file": "assets/optimized/products/buque-rosas-vermelhas-premium.jpg",
+      "width": 900,
+      "height": 1600,
+      "bytes": 160998,
+      "ratio": 0.562,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Mimo Amor Perfeito com Trufas",
+      "file": "assets/optimized/products/mimo-amor-perfeito-trufas-pelucia.jpg",
+      "width": 900,
+      "height": 1600,
+      "bytes": 141999,
+      "ratio": 0.562,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cesta Romantica na Bandeja",
+      "file": "assets/optimized/products/cesta-na-bandeja.webp",
+      "width": 720,
+      "height": 720,
+      "bytes": 33692,
+      "ratio": 1.0,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buquê Rosas Rubi Perfumadas",
+      "file": "assets/optimized/products/buque-rosas-rubi-perfumadas.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 91265,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buquê Girassóis Marsala Perfumado",
+      "file": "assets/optimized/products/buque-girassois-marsala-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 140561,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buquê Rosas Clássico Branco e Dourado",
+      "file": "assets/optimized/products/buque-rosas-classico-branco-dourado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 127408,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buquê Jardim Azul Perfumado",
+      "file": "assets/optimized/products/buque-jardim-azul-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 138586,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buquê Rosas Cherry Perfumadas",
+      "file": "assets/optimized/products/buque-rosas-cherry-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 117156,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Buquê Girassóis Noir Perfumado",
+      "file": "assets/optimized/products/buque-girassois-noir-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 121240,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Mini bolo decorado - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 87326,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Porção de salgados variados",
+      "file": "monte-sua-cesta/assets/produtos/salgados-variados.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 92726,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Nutella para cesta - 1 pote",
+      "file": "monte-sua-cesta/assets/produtos/nutella.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 19436,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Bolo simples para cesta - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/bolo-simples-cafe.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 52876,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Bolo confeitado especial",
+      "file": "monte-sua-cesta/assets/produtos/bolo-bailarina-chocolate.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 47580,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Suco de uva Aurora - 1 garrafa pequena",
+      "file": "monte-sua-cesta/assets/produtos/suco-uva-aurora.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 9538,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Rosa branca avulsa - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/rosa-branca.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 52514,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Ferrero Rocher - caixa com 4 unidades",
+      "file": "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-4.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 26162,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Ursinho de pelúcia chaveiro - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/chaveiro-ursinho.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 18356,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cartão personalizado - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/carta-personalizada.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 100944,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Ferrero Rocher - caixa com 12 unidades",
+      "file": "monte-sua-cesta/assets/produtos/ferrero-rocher-caixa-12.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 79990,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Barrinha Cacau Show - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/barrinha-cacau-show.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 39208,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Mini bolo de chocolate com morangos",
+      "file": "monte-sua-cesta/assets/produtos/bolo-chocolate-morango-aniversario.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 75142,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Bolo confeitado feminino - 2 kg",
+      "file": "monte-sua-cesta/assets/produtos/bolo-confeitado-feminino.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 45856,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Entrega real de buquê preparada pela Zadoni em Canaã dos Carajás",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-01.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 46306,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Cliente com buquê recebido em entrega local da Zadoni",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-02.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 65336,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Casal com presente floral entregue pela Zadoni em Canaã",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-casal-01.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 65710,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Clientes com diferentes buquês preparados pela Zadoni",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buques-clientes-03.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 87952,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa.html",
+      "product": "Entrega de presente para casal em Canaã dos Carajás",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-presente-casal-02.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 101334,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Buque na xicara",
+      "file": "assets/optimized/products/buque-na-xicara-premium.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 55268,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-na-xicara-premium.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Jarro Flores Naturais Vermelho",
+      "file": "assets/optimized/products/jarro-flores-naturais-vermelho.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 62813,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Jarro Flor Natural Laco Vermelho",
+      "file": "assets/optimized/products/jarro-flor-natural-laco-vermelho.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90497,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Jarro Flor Natural Laco Rosa",
+      "file": "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94940,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Arranjo romântico com balão Te Amo e rosas cor-de-rosa",
+      "file": "assets/img/galerias/romanticos/arranjo-romantico-balao-rosas.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 58242,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Buquê delicado com rosa vermelha e acabamento branco",
+      "file": "assets/img/galerias/buques/buque-rosa-vermelha-delicado.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 49288,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "product": "Buquê de rosas vermelhas com flores amarelas e folhagens",
+      "file": "assets/img/galerias/buques/buque-rosas-vermelhas-amarelas.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 78694,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Romantica na Bandeja",
+      "file": "assets/optimized/products/cesta-na-bandeja.webp",
+      "width": 720,
+      "height": 720,
+      "bytes": 33692,
+      "ratio": 1.0,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Masculina Vinho Bella Vista",
+      "file": "assets/optimized/products/cesta-masculina-vinho-bella-vista.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94973,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-bella-vista.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-bella-vista.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Masculina Azul Classica",
+      "file": "assets/optimized/products/cesta-masculina-azul-classica.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60489,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-azul-classica.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-azul-classica.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Masculina Gourmet Dourada",
+      "file": "assets/optimized/products/cesta-masculina-gourmet-dourada.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 105902,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-gourmet-dourada.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-gourmet-dourada.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Masculina Verde Artesanal",
+      "file": "assets/optimized/products/cesta-masculina-verde-artesanal.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 133584,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-verde-artesanal.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-verde-artesanal.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Feminina Delicada",
+      "file": "assets/optimized/products/cesta-feminina-delicada.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 109710,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-feminina-delicada.webp",
+        "assets/img/cestas-femininas/cesta-feminina-delicada.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Masculina Vinho e Petiscos",
+      "file": "assets/optimized/products/cesta-masculina-vinho-e-petiscos.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 93037,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-e-petiscos.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-e-petiscos.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta Cafe da Manha Especial",
+      "file": "assets/optimized/products/cesta-cafe-da-manha-especial.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 93780,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-especial.webp",
+        "assets/img/cestas-femininas/cesta-cafe-da-manha-especial.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cestinha Virginia Mimo Delicado",
+      "file": "assets/optimized/products/cestinha-virginia-mimo-delicado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 56673,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/mimos-rapidos/cestinha-virginia-mimo-delicado.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta artesanal com pães e acabamento para presente",
+      "file": "assets/img/galerias/cestas/cesta-cafe-artesanal.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 64392,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta masculina azul com bebida, chocolates e complementos",
+      "file": "assets/img/galerias/cestas/cesta-masculina-azul.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 84132,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-azul-classica.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-azul-classica.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "product": "Cesta de presente com chocolates, petiscos e frutas",
+      "file": "assets/img/galerias/cestas/cesta-chocolates-petiscos.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 85750,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta de aniversário com ursinho, chocolates, snacks e bebidas em Canaã dos Carajás",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-aniversario-doce-surpresa.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 72276,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta de aniversário com chocolates, embalagem transparente e laço marrom e dourado",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-parabens-elegante.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 70838,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Mini cesta de aniversário com bolo, brigadeiros, salgados e refrigerante",
+      "file": "assets/img/galerias/cestas-aniversario/mini-cesta-aniversario-com-bolo.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 92616,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta de aniversário em vime com chocolates e laço vermelho",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-chocolates-celebracao.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 78460,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta de aniversário personalizada com bolo, brigadeiros, petiscos, bebidas e foto",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-aniversario-bolo-foto-petiscos.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 129008,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta de celebração com bolo, brigadeiros, petiscos, bebidas, porta-retrato e flores",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-celebracao-te-amo-bolo-brigadeiros.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 107900,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Caixa de aniversário personalizada com fotos, bolo, brigadeiros, morangos, salgados e vinho",
+      "file": "assets/img/galerias/cestas-aniversario/caixa-aniversario-personalizada-bolo-vinho.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 69850,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta premium de aniversário com bolo de morango, vinho, taças, chocolates, rosas e ursinho",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-premium-bolo-vinho-ursinho.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 93584,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Box de aniversário azul com mini bolo, chocolates, bombons e balão personalizado",
+      "file": "assets/img/galerias/cestas-aniversario/box-aniversario-bolo-balao-azul.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 58320,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Cesta de celebração com bolo de chocolate e morango, chocolates, doces e almofada Te Amo",
+      "file": "assets/img/galerias/cestas-aniversario/cesta-bolo-chocolates-te-amo.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 137524,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Caixa de aniversário personalizada com mural de fotos, bolo, brigadeiros, salgados, chocolates e bebidas",
+      "file": "assets/img/galerias/cestas-aniversario/caixa-aniversario-fotos-bolo-brigadeiros.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 102094,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Mini bolo decorado - 1 unidade",
+      "file": "monte-sua-cesta/assets/produtos/mini-bolo-aniversario.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 87326,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Bolo confeitado especial",
+      "file": "monte-sua-cesta/assets/produtos/bolo-bailarina-chocolate.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 47580,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Mini bolo de chocolate com morangos",
+      "file": "monte-sua-cesta/assets/produtos/bolo-chocolate-morango-aniversario.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 75142,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "product": "Bolo confeitado feminino - 2 kg",
+      "file": "monte-sua-cesta/assets/produtos/bolo-confeitado-feminino.webp",
+      "width": 720,
+      "height": 540,
+      "bytes": 45856,
+      "ratio": 1.333,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Modelo real de cesta personalizada da Zadoni em Canaã dos Carajás",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-01.jpeg",
+      "width": 610,
+      "height": 1356,
+      "bytes": 53762,
+      "ratio": 0.45,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-01-720.webp",
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-01.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta personalizada com itens selecionados para presente",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-02.jpeg",
+      "width": 736,
+      "height": 920,
+      "bytes": 80373,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-02.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta personalizada para momento especial em Canaã dos Carajás",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-03.jpeg",
+      "width": 736,
+      "height": 981,
+      "bytes": 90871,
+      "ratio": 0.75,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-03.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Modelo de cesta personalizada com acabamento para presente",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-04.jpeg",
+      "width": 736,
+      "height": 977,
+      "bytes": 76153,
+      "ratio": 0.753,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-04.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta personalizada da Zadoni com itens e detalhes decorativos",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-05.jpeg",
+      "width": 736,
+      "height": 981,
+      "bytes": 100402,
+      "ratio": 0.75,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-05.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta de presente personalizada com composição consultada pelo WhatsApp",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-06.jpeg",
+      "width": 736,
+      "height": 977,
+      "bytes": 86021,
+      "ratio": 0.753,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-06.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta personalizada real para presente em Canaã dos Carajás",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-07.jpeg",
+      "width": 697,
+      "height": 1089,
+      "bytes": 75192,
+      "ratio": 0.64,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-07-720.webp",
+        "assets/optimized/products/responsive/cesta-cafe-da-manha-modelo-real-07.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta de café da manhã com laço rosa e itens selecionados em Canaã dos Carajás",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-08.webp",
+      "width": 720,
+      "height": 960,
+      "bytes": 176844,
+      "ratio": 0.75,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta de café da manhã com frutas, pães, chocolates e bebida",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-09.webp",
+      "width": 720,
+      "height": 960,
+      "bytes": 154686,
+      "ratio": 0.75,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta de café da manhã personalizada com frutas, caneca e itens matinais",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-10.webp",
+      "width": 720,
+      "height": 960,
+      "bytes": 158762,
+      "ratio": 0.75,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta de café da manhã romântica com frutas, chocolates e balão",
+      "file": "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-11.webp",
+      "width": 720,
+      "height": 720,
+      "bytes": 68370,
+      "ratio": 1.0,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "product": "Cesta artesanal com pães e acabamento para presente",
+      "file": "assets/img/galerias/cestas/cesta-cafe-artesanal.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 64392,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê Rosas Rubi Perfumadas",
+      "file": "assets/optimized/products/buque-rosas-rubi-perfumadas.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 91265,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê Girassóis Marsala Perfumado",
+      "file": "assets/optimized/products/buque-girassois-marsala-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 140561,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê Rosas Clássico Branco e Dourado",
+      "file": "assets/optimized/products/buque-rosas-classico-branco-dourado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 127408,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê Jardim Azul Perfumado",
+      "file": "assets/optimized/products/buque-jardim-azul-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 138586,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê Rosas Cherry Perfumadas",
+      "file": "assets/optimized/products/buque-rosas-cherry-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 117156,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê Girassóis Noir Perfumado",
+      "file": "assets/optimized/products/buque-girassois-noir-perfumado.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 121240,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buque Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buque na xicara",
+      "file": "assets/optimized/products/buque-na-xicara-premium.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 55268,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-na-xicara-premium.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buque Declaracao de Amor",
+      "file": "assets/optimized/products/buque-te-amo-mae.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60995,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-mae.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buque Te Amo Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buque Rosa Pretty Flower",
+      "file": "assets/optimized/products/buque-rosa-pretty-flower.jpg",
+      "width": 900,
+      "height": 1600,
+      "bytes": 109828,
+      "ratio": 0.562,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buque Rosas Vermelhas Premium",
+      "file": "assets/optimized/products/buque-rosas-vermelhas-premium.jpg",
+      "width": 900,
+      "height": 1600,
+      "bytes": 160998,
+      "ratio": 0.562,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê delicado com rosa vermelha e acabamento branco",
+      "file": "assets/img/galerias/buques/buque-rosa-vermelha-delicado.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 49288,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê clássico com rosas vermelhas e folhagens",
+      "file": "assets/img/galerias/buques/buque-rosas-vermelhas-classico.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 92152,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê de rosas vermelhas com chocolates e acabamento dourado",
+      "file": "assets/img/galerias/buques/buque-rosas-com-chocolates.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 97858,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "product": "Buquê de rosas vermelhas com flores amarelas e folhagens",
+      "file": "assets/img/galerias/buques/buque-rosas-vermelhas-amarelas.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 78694,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Buque Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Buque na xicara",
+      "file": "assets/optimized/products/buque-na-xicara-premium.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 55268,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-na-xicara-premium.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Kit romantico com chocolates",
+      "file": "assets/optimized/products/box-amor-perfeito.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90043,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-amor-perfeito.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Cesta Masculina Vinho Bella Vista",
+      "file": "assets/optimized/products/cesta-masculina-vinho-bella-vista.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94973,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-bella-vista.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-bella-vista.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Cesta Masculina Azul Classica",
+      "file": "assets/optimized/products/cesta-masculina-azul-classica.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60489,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-azul-classica.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-azul-classica.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Cesta Masculina Gourmet Dourada",
+      "file": "assets/optimized/products/cesta-masculina-gourmet-dourada.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 105902,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-gourmet-dourada.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-gourmet-dourada.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Cesta Feminina Delicada",
+      "file": "assets/optimized/products/cesta-feminina-delicada.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 109710,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-feminina-delicada.webp",
+        "assets/img/cestas-femininas/cesta-feminina-delicada.webp"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Cesta Masculina Vinho e Petiscos",
+      "file": "assets/optimized/products/cesta-masculina-vinho-e-petiscos.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 93037,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-e-petiscos.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-e-petiscos.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Box Amor Perfeito",
+      "file": "assets/optimized/products/box-amor-perfeito.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90043,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-amor-perfeito.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Entrega real de buquê preparada pela Zadoni em Canaã dos Carajás",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-01.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 46306,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Cliente com buquê recebido em entrega local da Zadoni",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-cliente-02.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 65336,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Casal com presente floral entregue pela Zadoni em Canaã",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buque-casal-01.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 65710,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Clientes com diferentes buquês preparados pela Zadoni",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-buques-clientes-03.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 87952,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "product": "Entrega de presente para casal em Canaã dos Carajás",
+      "file": "assets/img/prova-social/entregas-canaa/entrega-presente-casal-02.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 101334,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Cesta Romantica na Bandeja",
+      "file": "assets/optimized/products/cesta-na-bandeja.webp",
+      "width": 720,
+      "height": 720,
+      "bytes": 33692,
+      "ratio": 1.0,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Buque Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Kit romantico com chocolates",
+      "file": "assets/optimized/products/box-amor-perfeito.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90043,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-amor-perfeito.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Cesta Masculina Vinho Bella Vista",
+      "file": "assets/optimized/products/cesta-masculina-vinho-bella-vista.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94973,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-bella-vista.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-bella-vista.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Cesta Masculina Vinho e Petiscos",
+      "file": "assets/optimized/products/cesta-masculina-vinho-e-petiscos.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 93037,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/optimized/products/responsive/cesta-masculina-vinho-e-petiscos.webp",
+        "assets/img/cestas-masculinas/cesta-masculina-vinho-e-petiscos.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Box Amor Perfeito",
+      "file": "assets/optimized/products/box-amor-perfeito.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90043,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-amor-perfeito.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Box Girassol com Caixa",
+      "file": "assets/optimized/products/box-girassol-com-caixa.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 68419,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/box-girassol-com-caixa.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Buque Declaracao de Amor",
+      "file": "assets/optimized/products/buque-te-amo-mae.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60995,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-mae.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Buque Te Amo Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Arranjo romântico com balão Te Amo e rosas cor-de-rosa",
+      "file": "assets/img/galerias/romanticos/arranjo-romantico-balao-rosas.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 58242,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Buquê de rosas vermelhas com chocolates e acabamento dourado",
+      "file": "assets/img/galerias/buques/buque-rosas-com-chocolates.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 97858,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "product": "Buquê de rosas vermelhas com flores amarelas e folhagens",
+      "file": "assets/img/galerias/buques/buque-rosas-vermelhas-amarelas.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 78694,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "",
+      "file": "assets/img/brand/logo-zadoni-96.webp",
+      "width": 96,
+      "height": 96,
+      "bytes": 2240,
+      "ratio": 1.0,
+      "loading": "eager",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Buque Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Buque na xicara",
+      "file": "assets/optimized/products/buque-na-xicara-premium.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 55268,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-na-xicara-premium.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Buque Declaracao de Amor",
+      "file": "assets/optimized/products/buque-te-amo-mae.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 60995,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-mae.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Buque Te Amo Romantico",
+      "file": "assets/optimized/products/buque-te-amo-romantico.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 73109,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [
+        "assets/img/cestas-femininas/buque-te-amo-romantico.jpg"
+      ],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Jarro Flores Naturais Vermelho",
+      "file": "assets/optimized/products/jarro-flores-naturais-vermelho.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 62813,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Jarro Flor Natural Laco Vermelho",
+      "file": "assets/optimized/products/jarro-flor-natural-laco-vermelho.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 90497,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Jarro Flor Natural Laco Rosa",
+      "file": "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 94940,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Perfume de Bolso Asadiyy 15ml",
+      "file": "assets/optimized/products/perfume-asadiyy-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 63084,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "product": "Perfume de Bolso Chic Woman 15ml",
+      "file": "assets/optimized/products/perfume-chic-woman-amakha-15ml.jpg",
+      "width": 720,
+      "height": 900,
+      "bytes": 22013,
+      "ratio": 0.8,
+      "loading": "lazy",
+      "problems": [],
+      "largerLocalVariants": [],
+      "action": "Preservar origem; contain e proporção reservada nos cards; revisar original se indicado"
+    }
+  ]
+}

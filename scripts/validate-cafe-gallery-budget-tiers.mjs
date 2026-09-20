@@ -81,7 +81,7 @@ assert.ok(
   "O resolvedor de imagens deve funcionar tambem nas paginas internas"
 );
 assert.ok(
-  source.includes("assets/js/app.js?v=20260910-vertical-catalog-1"),
+  source.includes("assets/js/app.js?v=20260920-buques-entrega-rapida-1"),
   "A pagina de cafe deve usar a versao atual do JavaScript"
 );
 assert.equal(optionCount, 36);

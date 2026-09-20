@@ -54,6 +54,7 @@
   function cardNivel(nivel, selecionado) {
     const ativo = selecionado === nivel.id;
     return `<button class="budget-card ${ativo ? 'selected' : ''} ${nivel.destaque ? 'featured' : ''}" type="button" data-action="selecionar-nivel" data-nivel="${nivel.id}" aria-pressed="${ativo}">
+      ${imagem(nivel.imagem, nivel.imagemAlt || `Cesta ${nivel.nome}`, true)}
       <span class="budget-badge">${escapar(nivel.selo)}</span>
       <span class="budget-name">Versão ${escapar(nivel.nome)}</span>
       <strong class="budget-price">${escapar(nivel.precoLabel)}</strong>
@@ -100,10 +101,10 @@
     <section id="niveis-montagem" class="flow-section" aria-labelledby="niveis-title">
       <div class="section-heading">
         <span class="step-number">2</span>
-        <div><h2 id="niveis-title">Escolha a faixa da montagem</h2><p>As três versões estão disponíveis para o modelo escolhido. O valor final varia conforme itens, acabamento e disponibilidade.</p></div>
+        <div><h2 id="niveis-title">Escolha uma sugestão de orçamento</h2><p>Escolha a faixa que combina com o momento e a intenção do presente. As imagens são referências; a Zadoni confirma itens, acabamento e valor final no atendimento.</p></div>
       </div>
       <div class="budget-options">${N.config.niveisMontagem.map(item => cardNivel(item, estado.nivel)).join('')}</div>
-      <p class="budget-disclaimer">Os valores são pontos de partida. A Zadoni confirma a composição e o total antes de produzir o presente.</p>
+      <p class="budget-disclaimer">Os valores são sugestões de orçamento a partir de R$ 220. Conte a ocasião e a intenção do presente para a Zadoni indicar a composição que mais combina com o momento.</p>
     </section>
 
     <section id="preferencias" class="flow-section" aria-labelledby="preferencias-title">

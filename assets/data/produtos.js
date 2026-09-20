@@ -224,6 +224,7 @@ const adicionaisCestasCafe = [
 const produtosLocais = [
   {
     id: 1,
+    ativo: false,
     nome: "Buque Romantico",
     categoria: "Flores",
     descricao: "Buque romantico com balao Te Amo, flores vermelhas e acabamento especial para surpreender.",
@@ -372,6 +373,18 @@ const produtosLocais = [
     destaque: true,
     adicionaisOpcionais: adicionaisCafeManha,
     whatsappMensagem: "Ola! Gostaria de saber mais sobre a Cesta Cafe da Manha Especial."
+  },
+  {
+    id: 60,
+    nome: "Cesta de Cafe da Manha Premium",
+    categoria: "Cestas",
+    descricao: "Cesta premium completa com frutas, doces, itens de cafe da manha e balão para uma surpresa de alto impacto.",
+    precoSobConsulta: true,
+    observacaoPreco: "Modelo premium sob consulta. A Zadoni confirma composição, orçamento e disponibilidade para a data desejada.",
+    imagem: "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-11.webp",
+    destaque: false,
+    adicionaisOpcionais: adicionaisCestas,
+    whatsappMensagem: "Ola! Tenho interesse na Cesta de Cafe da Manha Premium. Quero confirmar a composicao e o orcamento para a data desejada."
   },
   {
     id: 18,
@@ -537,6 +550,7 @@ const produtosLocais = [
   },
   {
     id: 34,
+    ativo: false,
     nome: "Buque Rosa Pretty Flower",
     categoria: "Flores",
     descricao: "Buque delicado em tons de rosa, com embalagem Pretty Flower Studio e visual elegante para presente romantico.",
@@ -548,6 +562,7 @@ const produtosLocais = [
   },
   {
     id: 35,
+    ativo: false,
     nome: "Buque Rosas Vermelhas Premium",
     categoria: "Flores",
     descricao: "Buque premium com rosas vermelhas, acabamento preto e visual intenso para declaracoes especiais.",
@@ -712,10 +727,10 @@ const produtosLocais = [
     nome: "Buquê Rosas Rubi Perfumadas",
     categoria: "Flores",
     descricao: "Buquê de rosas artificiais vermelhas de ótima qualidade, com embalagem marsala, acabamento dourado e flores perfumadas com fragrância de grife.",
-    preco: 95.00,
+    preco: 80.00,
     imagem: "assets/optimized/products/buque-rosas-rubi-perfumadas.jpg",
     destaque: false,
-    observacaoPreco: "A partir de R$ 95,00. O valor final pode variar para R$ 110,00, R$ 120,00 ou mais, conforme o modelo e os adicionais escolhidos.",
+    observacaoPreco: "A partir de R$ 80,00. O valor pode variar até R$ 120,00 conforme o tamanho, o modelo e os adicionais escolhidos.",
     exibirAdicionaisNaCategoria: true,
     adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Tenho interesse no Buque Rosas Rubi Perfumadas e quero escolher adicionais."
@@ -784,6 +799,19 @@ const produtosLocais = [
     exibirAdicionaisNaCategoria: true,
     adicionaisOpcionais: adicionaisBuques,
     whatsappMensagem: "Ola! Tenho interesse no Buque Girassois Noir Perfumado e quero escolher adicionais."
+  },
+  {
+    id: 61,
+    nome: "Buquê Artificial Rosas e Peônias Marsala",
+    categoria: "Flores",
+    descricao: "Buquê artificial premium com rosas vermelhas, peônias amarelas, embalagem marsala e laço vermelho para uma surpresa pronta e marcante.",
+    precoSobConsulta: true,
+    observacaoPreco: "Modelo para entrega rápida sujeito à confirmação de estoque. Consulte o valor e escolha os adicionais no WhatsApp.",
+    imagem: "assets/optimized/products/buque-artificial-rosas-peonias-marsala-v1.webp",
+    destaque: false,
+    exibirAdicionaisNaCategoria: true,
+    adicionaisOpcionais: adicionaisBuques,
+    whatsappMensagem: "Ola! Tenho interesse no Buquê Artificial Rosas e Peônias Marsala para entrega rápida e quero escolher adicionais."
   },
   {
     id: 58,

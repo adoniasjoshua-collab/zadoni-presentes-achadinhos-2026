@@ -22,10 +22,12 @@
       {
         id: 'basica',
         nome: 'Básica',
-        preco: 18900,
-        precoLabel: 'A partir de R$ 189',
+        preco: 22000,
+        precoLabel: 'A partir de R$ 220',
         selo: 'Essencial',
-        descricao: 'Composição mais enxuta, delicada e bem apresentada para presentear com carinho.'
+        descricao: 'Sugestão para um gesto de carinho com uma montagem delicada e bem apresentada.',
+        imagem: '../assets/optimized/products/responsive/cesta-feminina-delicada-720-720.webp',
+        imagemAlt: 'Cesta delicada para a faixa Básica'
       },
       {
         id: 'intermediaria',
@@ -34,7 +36,9 @@
         precoLabel: 'A partir de R$ 270',
         selo: 'Versão intermediária',
         destaque: true,
-        descricao: 'Mais variedade de itens e acabamento especial, equilibrando presença e investimento.'
+        descricao: 'Sugestão equilibrada para aniversários e momentos especiais, com mais variedade de itens.',
+        imagem: '../assets/optimized/products/responsive/cesta-cafe-da-manha-especial-720-720.webp',
+        imagemAlt: 'Cesta completa para a faixa Intermediária'
       },
       {
         id: 'premium',
@@ -42,7 +46,9 @@
         preco: 30000,
         precoLabel: 'A partir de R$ 300',
         selo: 'Mais completa',
-        descricao: 'Montagem ampla e sofisticada, com mais impacto visual e possibilidades de personalização.'
+        descricao: 'Sugestão de maior impacto, com montagem ampla, sofisticada e mais possibilidades de personalização.',
+        imagem: '../assets/optimized/products/responsive/cesta-masculina-gourmet-dourada-720-720.webp',
+        imagemAlt: 'Cesta gourmet premium com acabamento dourado'
       }
     ]
   };

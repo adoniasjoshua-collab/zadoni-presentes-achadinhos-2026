@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import { refineLayout } from './apply-ux-cro-layout.mjs';
 
 const SITE = "https://zadonipresentes.com.br";
 const PHONE = "5594992993138";
@@ -173,7 +174,7 @@ function loadProducts() {
   return context.__produtosLocais;
 }
 
-const products = loadProducts();
+const products = loadProducts().filter((product) => product.ativo !== false);
 
 function slugify(value) {
   return String(value || "")
@@ -736,8 +737,8 @@ function socialProofHtml(prefix = "") {
     </section>\n`;
 }
 function scripts(prefix, schemas) {
-  return `<script src="${prefix}assets/data/produtos.js?v=20260825-artificial-bouquets-1" defer></script>
-    <script src="${prefix}assets/js/app.js?v=20260910-vertical-catalog-1" defer></script>
+  return `<script src="${prefix}assets/data/produtos.js?v=20260920-buques-entrega-rapida-1" defer></script>
+    <script src="${prefix}assets/js/app.js?v=20260920-buques-entrega-rapida-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
 }
@@ -763,12 +764,28 @@ function pageShell({ path: pagePath, title, description, canonical, image, body,
 function categoryPage(config) {
   const prefix = "../";
   const canonical = `${SITE}/${config.dir}/`;
-  const priorityIds = new Set((config.priorityProductIds || []).map(String));
   const showProductsSection = config.showProductsSection !== false;
+  const sortProducts = (items, priorityProductIds = []) => {
+    const priorityIds = priorityProductIds.map(String);
+    return items
+      .sort((a, b) => {
+        const aPriority = priorityIds.indexOf(String(a.id));
+        const bPriority = priorityIds.indexOf(String(b.id));
+        if (aPriority !== bPriority) return (aPriority < 0 ? Number.MAX_SAFE_INTEGER : aPriority) - (bPriority < 0 ? Number.MAX_SAFE_INTEGER : bPriority);
+        if (Number(b.preco || 0) !== Number(a.preco || 0)) return Number(b.preco || 0) - Number(a.preco || 0);
+        return Number(Boolean(b.destaque)) - Number(Boolean(a.destaque));
+      });
+  };
+  const productGroups = showProductsSection && config.productGroups?.length
+    ? config.productGroups.map((group) => ({
+      ...group,
+      products: sortProducts(group.filter(products), group.priorityProductIds || []).slice(0, group.limit || config.limit || 9)
+    }))
+    : [];
   const pageProducts = showProductsSection
-    ? config.filter(products)
-      .sort((a, b) => Number(priorityIds.has(String(b.id))) - Number(priorityIds.has(String(a.id))))
-      .slice(0, config.limit || 9)
+    ? (productGroups.length
+      ? productGroups.flatMap((group) => group.products)
+      : sortProducts(config.filter(products), config.priorityProductIds || []).slice(0, config.limit || 9))
     : [];
   const crumbItems = [
     { name: "Início", href: "../index.html", url: `${SITE}/` },
@@ -780,7 +797,26 @@ function categoryPage(config) {
   const relatedLinkHtml = config.relatedLink
     ? `\n                <p>${html(config.relatedLink.intro)} <a href="${html(config.relatedLink.href)}">${html(config.relatedLink.label)}</a>${html(config.relatedLink.suffix || ".")}</p>`
     : "";
-  const productsSectionHtml = showProductsSection ? `        <section class="seo-products"${config.productsSectionId ? ` id="${html(config.productsSectionId)}"` : ""} aria-labelledby="produtos-title">
+  const renderProductGroup = (group, groupIndex) => {
+    const headingId = `produtos-grupo-${groupIndex + 1}-title`;
+    const groupIntro = group.intro ? `\n                <p class="seo-section-intro">${html(group.intro)}</p>` : "";
+    return `<section class="seo-products seo-products--group"${group.id ? ` id="${html(group.id)}"` : ""} aria-labelledby="${headingId}">
+            <div class="container">
+                <h2 id="${headingId}">${html(group.title)}</h2>${groupIntro}
+                <div class="produtos-grid">
+                    ${group.products.map((product, index) => productCard(product, index, prefix, slugify(config.h1), {
+                      priceNote: group.productPriceNote || config.productPriceNote,
+                      categoryLabel: group.categoryLabel || config.productCategoryLabel,
+                      keepContext: config.keepProductContext === true,
+                      ctaLabel: group.productCtaLabel || config.productCtaLabel
+                    })).join("\n                    ")}
+                </div>
+            </div>
+        </section>\n`;
+  };
+  const productsSectionHtml = productGroups.length
+    ? productGroups.map(renderProductGroup).join("")
+    : showProductsSection ? `        <section class="seo-products"${config.productsSectionId ? ` id="${html(config.productsSectionId)}"` : ""} aria-labelledby="produtos-title">
             <div class="container">
                 <h2 id="produtos-title">${html(config.productsTitle)}</h2>${productsIntroHtml}
                 <div class="produtos-grid">
@@ -865,7 +901,13 @@ ${showcaseSectionsHtml}${config.showSocialProof ? socialProofHtml(prefix) : ""}
 
 function mainPage() {
   const canonical = `${SITE}/presentes-canaa.html`;
-  const featured = products;
+  const catalogPriorityIds = [24, 33, 11, 6, 10, 17, 8, 37, 16, 1, 15, 13, 12, 3, 19, 36];
+  const featured = [...products].sort((a, b) => {
+    const aPriority = catalogPriorityIds.indexOf(Number(a.id));
+    const bPriority = catalogPriorityIds.indexOf(Number(b.id));
+    if (aPriority !== bPriority) return (aPriority < 0 ? Number.MAX_SAFE_INTEGER : aPriority) - (bPriority < 0 ? Number.MAX_SAFE_INTEGER : bPriority);
+    return Number(b.preco || 0) - Number(a.preco || 0);
+  });
   const faqs = [
     {
       q: "A Zadoni entrega presentes em Canaã dos Carajás?",
@@ -1036,26 +1078,52 @@ const pageConfigs = [
   {
     dir: "buques-canaa-dos-carajas",
     title: "Buquês em Canaã dos Carajás | Floricultura Zadoni",
-    description: "Buquês em Canaã dos Carajás com rosas naturais, opções românticas e chocolate. Consulte modelos, personalização e entrega pelo WhatsApp.",
+    description: "Buquês em Canaã dos Carajás: opções artificiais para entrega rápida hoje e rosas naturais sob encomenda. Personalize com adicionais pelo WhatsApp.",
     h1: "Buquês em Canaã dos Carajás",
-    h2: "Buquês de rosas naturais, artificiais e com chocolate",
-    intro: "Escolha buquês com flores, rosas e acabamento especial para aniversários, pedidos de desculpa, declarações e datas importantes.",
-    copy1: "É possível consultar modelos com rosas naturais ou rosas artificiais e opções de buquê com chocolate. Informe a ocasião, a cor preferida e se deseja incluir cartão, foto impressa ou outros complementos.",
-    copy2: "Os valores são iniciais e podem mudar conforme as flores disponíveis, a quantidade de rosas, o tamanho do buquê e os complementos escolhidos. A entrega de buquê em Canaã dos Carajás deve ser confirmada pelo WhatsApp conforme endereço, data e horário.",
+    h2: "Buquês para hoje e rosas naturais sob encomenda",
+    intro: "Comece pelos buquês artificiais prontos para entrega rápida e personalize com cartão, chocolate ou pelúcia. Para rosas naturais, programe seu pedido com antecedência.",
+    copy1: "Os buquês artificiais aparecem primeiro porque atendem melhor a quem precisa presentear hoje: mantêm o acabamento premium, podem receber adicionais e dependem apenas da confirmação de estoque e rota de entrega.",
+    copy2: "Rosas naturais ficam em uma seção própria e exigem encomenda antecipada para confirmar variedade, quantidade, abertura das flores e horário de montagem. Em ambos os casos, informe ocasião, cor desejada, bairro e prazo no WhatsApp.",
     relatedLink: {
       intro: "Para conhecer jarros, flores naturais e outros trabalhos florais, visite também a página de",
       href: "../floricultura-canaa-dos-carajas/",
       label: "floricultura em Canaã dos Carajás"
     },
     productsTitle: "Buquês e flores disponíveis",
+    productsBeforeGallery: true,
+    sectionNavItems: [
+      { href: "#entrega-rapida", label: "Entrega rápida hoje" },
+      { href: "#rosas-naturais", label: "Rosas naturais por encomenda" },
+      { href: "#galeria-title", label: "Modelos reais" }
+    ],
+    productGroups: [
+      {
+        id: "entrega-rapida",
+        title: "Buquês artificiais para entrega rápida hoje",
+        intro: "Modelos artificiais premium e perfumados para quem precisa surpreender hoje. Escolha o buquê e acrescente cartão, chocolate ou pelúcia antes de chamar a Zadoni.",
+        categoryLabel: "Entrega rápida",
+        productCtaLabel: "Quero para hoje",
+        filter: (items) => items.filter((item) => [52, 53, 54, 55, 56, 57, 61].includes(item.id)),
+        priorityProductIds: [57, 61, 52, 53, 54, 56, 55],
+        limit: 7
+      },
+      {
+        id: "rosas-naturais",
+        title: "Buquês de rosas naturais por encomenda",
+        intro: "Reserve com antecedência. A Zadoni confirma a disponibilidade das rosas, a composição, a quantidade e a data de montagem antes do pedido.",
+        categoryLabel: "Encomenda antecipada",
+        productCtaLabel: "Consultar encomenda",
+        filter: (items) => items.filter((item) => [1, 2, 15, 16].includes(item.id)),
+        priorityProductIds: [16, 1, 15, 2],
+        limit: 4
+      }
+    ],
     galleryTitle: "Modelos reais de buquês preparados pela Zadoni",
     galleryIntro: "Use as fotos como referência de estilo. Flores, cores, tamanho e acabamento são confirmados no WhatsApp conforme disponibilidade.",
     galleryItemNote: "Referência visual: a composição final pode variar conforme flores e complementos disponíveis.",
     galleryCtaLabel: "Consultar este buquê",
     galleryImages: BOUQUET_GALLERY_IMAGES,
     filter: (items) => items.filter((item) => slugify(item.categoria) === "flores"),
-    priorityProductIds: [52, 53, 54, 55, 56, 57],
-    limit: 12,
     faqs: [
       { q: "Posso personalizar o buquê?", a: "Sim. A personalização depende das flores e complementos disponíveis no momento do pedido." },
       { q: "Buquês têm preço fixo?", a: "Os preços exibidos são iniciais. O valor final varia conforme tamanho, flores e adicionais." },
@@ -1079,12 +1147,25 @@ const pageConfigs = [
       label: "cesta de aniversário em Canaã dos Carajás"
     },
     productsTitle: "Cestas locais para pedir pelo WhatsApp",
-    galleryTitle: "Cestas reais para escolher como referência",
+    galleryTitle: "Todas as referências de cestas para escolher",
     galleryIntro: "Veja composições já preparadas pela Zadoni e envie o modelo preferido no WhatsApp para adaptar itens, cores e orçamento.",
     galleryItemNote: "Referência visual: marcas, itens e acabamento dependem da disponibilidade e do orçamento.",
     galleryCtaLabel: "Consultar esta cesta",
-    galleryImages: BASKET_GALLERY_IMAGES,
-    priorityProductIds: [37],
+    galleryImages: [
+      BIRTHDAY_BASKET_GALLERY_IMAGES[7],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[6],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[10],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[5],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[4],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[0],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[1],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[3],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[9],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[8],
+      BIRTHDAY_BASKET_GALLERY_IMAGES[2],
+      ...BASKET_GALLERY_IMAGES
+    ],
+    priorityProductIds: [60, 11, 6, 33, 10, 17, 8, 37, 9, 7, 23],
     filter: (items) => items.filter((item) => categoryKey(item) === "cestas"),
     faqs: [
       { q: "A cesta pode ter itens diferentes?", a: "Pode. A montagem é confirmada pelo WhatsApp conforme estoque e orçamento." },
@@ -1132,7 +1213,7 @@ const pageConfigs = [
     galleryIntro: "Compare as referências e envie o modelo preferido pelo WhatsApp. A Zadoni confirma os itens disponíveis, as possibilidades de personalização, o valor e a entrega local.",
     galleryCtaLabel: "Escolher e confirmar com a Zadoni",
     galleryImages: BIRTHDAY_BASKET_GALLERY_IMAGES,
-    priorityProductIds: [38, 58, 59, 42],
+    priorityProductIds: [42, 59, 58, 38],
     includeLocalBusiness: false,
     includeWebPage: true,
     includeGalleryItemListSchema: true,
@@ -1148,18 +1229,46 @@ const pageConfigs = [
   {
     dir: "floricultura-canaa-dos-carajas",
     title: "Floricultura em Canaã dos Carajás | Zadoni",
-    description: "Floricultura em Canaã dos Carajás com flores naturais, arranjos florais e opções para presente. Consulte disponibilidade e entrega pelo WhatsApp.",
+    description: "Floricultura em Canaã dos Carajás com buquês artificiais para entrega rápida, rosas naturais sob encomenda e opções de presentes. Consulte pelo WhatsApp.",
     h1: "Floricultura em Canaã dos Carajás",
-    h2: "Flores naturais e arranjos florais para presente",
-    intro: "Quem procura uma floricultura em Canaã dos Carajás também pode encontrar na Zadoni opções de buquês, rosas, flores e presentes preparados para momentos especiais. Os modelos podem variar conforme a disponibilidade e a personalização desejada.",
-    copy1: "A Zadoni oferece flores naturais, arranjos florais e opções com flores para presente em Canaã dos Carajás. Os modelos podem incluir jarros, rosas, composições decoradas e detalhes personalizados.",
-    copy2: "A disponibilidade das flores, a composição e a possibilidade de entrega são confirmadas pelo WhatsApp conforme o modelo, o endereço, a data e o horário desejados.",
+    h2: "Buquês para entrega rápida e flores naturais sob encomenda",
+    intro: "Encontre primeiro os buquês artificiais prontos para entrega rápida em Canaã dos Carajás. Em seguida, consulte rosas naturais e arranjos que precisam de encomenda antecipada.",
+    copy1: "A coleção de entrega rápida reúne buquês artificiais premium, perfumados e prontos para surpreender. Escolha um modelo, inclua chocolate, cartão, pelúcia ou item de maquiagem e confirme a rota de entrega pelo WhatsApp.",
+    copy2: "Rosas naturais, jarros e arranjos florais são opções de flores para presente e têm uma seção própria porque dependem da reserva de flores, da composição e da data de montagem. A Zadoni confirma disponibilidade, acabamento e entrega antes de fechar o pedido.",
     relatedLink: {
       intro: "Se a procura for por modelos montados com rosas e complementos, veja também os",
       href: "../buques-canaa-dos-carajas/",
       label: "buquês em Canaã dos Carajás"
     },
     productsTitle: "Flores naturais, jarros e arranjos disponíveis",
+    productsBeforeGallery: true,
+    sectionNavItems: [
+      { href: "#entrega-rapida", label: "Entrega rápida" },
+      { href: "#rosas-naturais", label: "Rosas naturais" },
+      { href: "#galeria-title", label: "Arranjos reais" }
+    ],
+    productGroups: [
+      {
+        id: "entrega-rapida",
+        title: "Coleção Zadoni: buquês artificiais para entrega rápida",
+        intro: "Uma escolha prática para hoje: modelos artificiais premium e perfumados, com valores que variam de R$ 80 a R$ 120 conforme o tamanho e os adicionais. Complete com chocolate, cartão, pelúcia ou maquiagem, sujeito ao estoque.",
+        categoryLabel: "Entrega rápida",
+        productCtaLabel: "Quero para hoje",
+        filter: (items) => items.filter((item) => [52, 53, 54, 55, 56, 57, 61].includes(item.id)),
+        priorityProductIds: [61, 57, 52, 53, 54, 56, 55],
+        limit: 7
+      },
+      {
+        id: "rosas-naturais",
+        title: "Rosas naturais e arranjos por encomenda antecipada",
+        intro: "Reserve antes da data desejada. A Zadoni confirma as flores disponíveis, a quantidade de rosas, a composição, os detalhes personalizados e a montagem.",
+        categoryLabel: "Encomenda antecipada",
+        productCtaLabel: "Consultar encomenda",
+        filter: (items) => items.filter((item) => [16, 15, 2, 25, 26, 27].includes(Number(item.id))),
+        priorityProductIds: [16, 15, 2, 26, 27, 25],
+        limit: 6
+      }
+    ],
     galleryTitle: "Trabalhos florais e arranjos reais da Zadoni",
     galleryIntro: "Conheça referências de flores, rosas e arranjos já preparados para clientes em Canaã dos Carajás.",
     galleryItemNote: "As flores e o acabamento podem variar conforme disponibilidade e personalização.",
@@ -1169,7 +1278,7 @@ const pageConfigs = [
     includeWebPage: true,
     includeItemListSchema: true,
     includeOfferAvailability: false,
-    filter: (items) => items.filter((item) => [2, 25, 26, 27].includes(Number(item.id))),
+    filter: (items) => items.filter((item) => [16, 1, 15, 2, 25, 26, 27].includes(Number(item.id))),
     faqs: [
       { q: "A Zadoni trabalha com flores e buquês em Canaã dos Carajás?", a: "A Zadoni oferece opções de buquês, rosas, flores e presentes conforme os modelos e a disponibilidade. A consulta pode ser feita diretamente pelo WhatsApp." },
       { q: "Como encontrar uma floricultura perto de mim em Canaã?", a: "Se você está em Canaã dos Carajás, consulte a Zadoni pelo WhatsApp para conhecer os buquês e flores disponíveis e confirmar as condições de entrega local." },
@@ -1243,7 +1352,7 @@ const pageConfigs = [
     galleryItemNote: "A foto serve como inspiração; itens, flores e acabamento são confirmados no atendimento.",
     galleryCtaLabel: "Consultar esta inspiração",
     galleryImages: ROMANTIC_GALLERY_IMAGES,
-    priorityProductIds: [37],
+    priorityProductIds: [33, 37, 1, 16, 12, 3, 36],
     filter: (items) => items.filter((item) => /romantic|romant|amor|te amo|rosa|vinho|box|kit/i.test(slugify(`${item.nome} ${item.descricao}`))),
     faqs: [
       { q: "Dá para montar presente romântico no mesmo dia?", a: "A disponibilidade depende do horário e dos itens escolhidos. O WhatsApp confirma as opções viáveis." },
@@ -1274,7 +1383,8 @@ const pageConfigs = [
 function writeFile(filePath, content) {
   const fullPath = path.join(ROOT, filePath);
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
-  fs.writeFileSync(fullPath, content.replace(/[ \t]+\r?\n/g, "\n"), "utf8");
+  const commercial = filePath === 'presentes-canaa.html' || pageConfigs.some(config => `${config.dir}/index.html` === filePath);
+  fs.writeFileSync(fullPath, (commercial ? refineLayout(content, filePath) : content).replace(/[ \t]+\r?\n/g, "\n"), "utf8");
 }
 
 writeFile("presentes-canaa.html", mainPage());

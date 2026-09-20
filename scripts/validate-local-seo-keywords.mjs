@@ -79,6 +79,9 @@ function productIds(source) {
 const floristProducts = productIds(florist);
 const bouquetProducts = productIds(bouquets);
 const sharedProducts = [...floristProducts].filter((id) => bouquetProducts.has(id));
-assert.ok(sharedProducts.length <= 1, `Floricultura e Buquês repetem produtos demais: ${sharedProducts.join(", ")}`);
+// Both storefronts intentionally offer bouquets; floricultura also offers jars.
+assert.ok(sharedProducts.length > 0, "Floricultura deve oferecer os buquês compartilhados.");
+assert.ok([...floristProducts].some(id => !bouquetProducts.has(id)), "Floricultura deve manter arranjos próprios além dos buquês.");
+assert.ok(florist.includes('rosas naturais e arranjos por encomenda antecipada'), "Floricultura deve explicar o escopo da seção de encomendas.");
 
 console.log(`SEO local validado: ${pages.size} páginas com intenção própria, metadados únicos e termos locais contextualizados.`);

@@ -17,7 +17,7 @@ for (const file of [
 
 const cesta = context.window.ZadoniCesta;
 const expectedTiers = [
-  ["basica", "Básica", 18900],
+  ["basica", "Básica", 22000],
   ["intermediaria", "Intermediária", 27000],
   ["premium", "Premium", 30000]
 ];

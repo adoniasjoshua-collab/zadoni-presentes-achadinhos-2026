@@ -6,6 +6,14 @@
     N.interface.renderizar(estado);
   }
 
+  function avancar(id) {
+    const destino = d.getElementById(id);
+    if (!destino) return;
+    destino.setAttribute('tabindex', '-1');
+    destino.focus({ preventScroll: true });
+    destino.scrollIntoView({ behavior: w.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
+
   function salvar() {
     N.storage.salvar(estado);
   }
@@ -16,7 +24,7 @@
     salvar();
     N.analytics.registrarEvento('selecionou_modelo_assistido', { modelo_id: id });
     renderizar();
-    d.getElementById('niveis-montagem')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    avancar('niveis-montagem');
   }
 
   function pedirAjuda() {
@@ -24,7 +32,7 @@
     salvar();
     N.analytics.registrarEvento('pediu_ajuda_modelo');
     renderizar();
-    d.getElementById('niveis-montagem')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    avancar('niveis-montagem');
   }
 
   function selecionarNivel(id) {
@@ -33,7 +41,7 @@
     salvar();
     N.analytics.registrarEvento('selecionou_nivel_montagem', { nivel_id: id, modelo_id: estado.modelo || 'nao_escolhido' });
     renderizar();
-    d.getElementById('preferencias')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    avancar('preferencias');
   }
 
   function atualizarCampo(campo, valor) {
@@ -50,7 +58,7 @@
     estado = N.storage.criar();
     renderizar();
     N.interface.mostrarToast('Escolhas removidas.');
-    w.scrollTo({ top: 0, behavior: 'smooth' });
+    avancar('modelos-title');
   }
 
   function tratarClique(evento) {
@@ -65,13 +73,13 @@
       if (!estado.modelo) {
         evento.preventDefault();
         N.interface.mostrarToast('Escolha um modelo ou peça ajuda da Zadoni.');
-        d.getElementById('modelos-title')?.scrollIntoView({ behavior: 'smooth' });
+        avancar('modelos-title');
         return;
       }
       if (!estado.nivel) {
         evento.preventDefault();
         N.interface.mostrarToast('Escolha a versão Básica, Intermediária ou Premium.');
-        d.getElementById('niveis-title')?.scrollIntoView({ behavior: 'smooth' });
+        avancar('niveis-title');
         return;
       }
       alvo.href = N.whatsapp.criarUrl(estado);

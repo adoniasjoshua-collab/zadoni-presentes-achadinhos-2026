@@ -1,0 +1,86 @@
+/* Scoped commercial presentation; original SEO copy and native links retained. */
+[data-ux-cro] #entrega-rapida #produto-61 .produto-imagem { aspect-ratio: 4 / 5; }
+[data-ux-cro] #entrega-rapida #produto-61 .produto-imagem img { object-fit: contain; transform: none; }
+@media (min-width: 1024px) {
+  [data-ux-cro] #entrega-rapida #produto-61 .produto-imagem { aspect-ratio: 16 / 10; }
+}
+[data-ux-cro] .natural-bouquet-highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; align-items: stretch; }
+[data-ux-cro] .natural-bouquet-highlights .produto-imagem { aspect-ratio: 1; }
+[data-ux-cro] .natural-bouquet-highlights .produto-imagem img { object-fit: contain; }
+[data-ux-cro] #rosas-naturais .natural-bouquet-highlights { margin-bottom: 1.5rem; }
+@media (min-width: 1024px) {
+  [data-ux-cro] .natural-bouquet-highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  [data-ux-cro] .natural-bouquet-highlights { grid-template-columns: 1fr; }
+}
+[data-ux-cro] [hidden] { display: none !important; }
+[data-ux-cro] .produtos-grid,
+[data-ux-cro] .seo-gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
+[data-ux-cro] .produto-card { animation: none !important; min-width: 0; }
+[data-ux-cro] .produto-card.ux-featured-card { border-color: #d7b6c6; box-shadow: 0 10px 25px #4f1d3812; }
+[data-ux-cro] .produto-card.ux-featured-card .produto-imagem img { transform: scale(1.14); }
+[data-ux-cro] .produto-imagem { height: auto; aspect-ratio: 4 / 5; background: #f8f5f3; }
+[data-ux-cro] .produto-imagem img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+[data-ux-cro] .produto-imagem picture { overflow: hidden; }
+[data-ux-cro] .produto-card[data-category="cestas"] .produto-imagem img { transform: scale(1.5); }
+[data-ux-cro] .produto-card[data-produto-id="60"] .produto-imagem img { transform: scale(1.15); }
+[data-ux-cro] .seo-gallery-item img { width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; background: #f8f5f3; }
+[data-ux-cro] .produto-content { padding: 1rem; }
+[data-ux-cro] .produto-descricao { font-size: 1rem; line-height: 1.5; }
+[data-ux-cro] .produto-acoes { grid-template-columns: 1fr; }
+[data-ux-cro] .produto-acoes .btn-secondary,
+[data-ux-cro] .ux-product-details .btn-secondary,
+[data-ux-cro] .btn-adicionais-modelo { background: transparent; color: #4f1d38; border: 1px solid #bda2b0; box-shadow: none; }
+[data-ux-cro] summary,
+[data-ux-cro] select,
+[data-ux-cro] .ux-clear,
+[data-ux-cro] .filtro-btn,
+[data-ux-cro] .btn-whatsapp-produto { min-height: 44px; font-size: 1rem; }
+[data-ux-cro] summary { cursor: pointer; padding: .75rem .5rem; color: #4f1d38; font-weight: 600; }
+[data-ux-cro] :is(a,button,summary,input,select):focus-visible { outline: 3px solid #7a2f55; outline-offset: 3px; }
+[data-ux-cro] .ux-product-details { border-top: 1px solid #e7dce1; margin-top: .8rem; }
+[data-ux-cro] .ux-model-choice { margin-top: .75rem; }
+[data-ux-cro] .seo-gallery-item .local-badge { color: #4f1d38; background: #f7ecee; margin-bottom: 0; }
+[data-ux-cro] .ux-model-choice > summary { border: 1px solid #7a2f55; border-radius: 8px; }
+[data-ux-cro] .ux-tier-label { display: grid; gap: .5rem; font-size: 1rem; }
+[data-ux-cro] select { width: 100%; max-width: 100%; padding: .5rem; border: 1px solid #8b7683; border-radius: 6px; background: white; color: #2f2530; }
+[data-ux-cro] .seo-gallery-budget-options { grid-template-columns: 1fr; }
+[data-ux-cro] .ux-group-title { grid-column: 1 / -1; margin: .5rem 0; }
+[data-ux-cro] .ux-filters { padding: .5rem; border: 1px solid #e7dce1; border-radius: 10px; margin: 1rem 0; }
+[data-ux-cro] .ux-filter-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+[data-ux-cro] .ux-filter-fields label { display: grid; gap: .5rem; }
+[data-ux-cro] .ux-filter-fields input { min-width: 0; min-height: 44px; font-size: 1rem; padding: .5rem; }
+[data-ux-cro] .ux-clear { margin-top: .75rem; padding: .5rem 1rem; background: #fff; color: #4f1d38; border: 1px solid #7a2f55; border-radius: 6px; cursor: pointer; }
+[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+[data-ux-cro] .ux-more-categories { margin-top: 1rem; }
+[data-ux-cro] .ux-more-categories .category-icon { width: 64px; height: 64px; }
+[data-ux-cro] .ux-national { margin-block: 1rem 2rem; }
+[data-ux-cro] .ux-national .home-path--national { display: block; padding: 1rem; border-left: 3px solid #d5b1c2; color: #4f1d38; }
+[data-ux-cro] .ux-national span { display: block; }
+[data-ux-cro] .seo-hero { padding-block: 1.5rem; }
+[data-ux-cro] .seo-products--group { scroll-margin-top: 1rem; }
+[data-ux-cro] .seo-products--group h2 { max-width: 780px; }
+[data-ux-cro] .seo-products--group .seo-section-intro { max-width: 760px; margin-bottom: 1.25rem; }
+[data-ux-cro] .seo-products--group#entrega-rapida { background: linear-gradient(180deg, #fff8ee 0%, #fff 100%); }
+[data-ux-cro] .home-hero { min-height: 0; }
+[data-ux-cro] .filtros-container { justify-content: flex-start; }
+[data-ux-cro]:has(#cestas-aniversario) .btn-catalogo-mobile { display: inline-flex; }
+@media (max-width: 1023px) {
+  [data-ux-cro] .produtos-grid, [data-ux-cro] .seo-gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (min-width: 1024px) {
+  [data-ux-cro] .produtos-grid .ux-featured-card { grid-column: span 2; }
+  [data-ux-cro] .produtos-grid .ux-featured-card .produto-imagem { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 767px) {
+  [data-ux-cro] .produtos-grid, [data-ux-cro] .seo-gallery-grid { grid-template-columns: 1fr; }
+  [data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  [data-ux-cro] .home-categories .category-name { font-size: 1rem; }
+  [data-ux-cro] .ux-filter-fields { grid-template-columns: 1fr; }
+  [data-ux-cro] .filtros-container { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: .7rem; }
+  [data-ux-cro] .filtro-btn { flex: 0 0 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-ux-cro] *, [data-ux-cro] *::before, [data-ux-cro] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
