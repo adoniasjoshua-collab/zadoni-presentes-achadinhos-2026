@@ -7,8 +7,8 @@ from pathlib import Path
 from seo_baseline import ROOT, collect, Document
 
 historical = '--pre-commercial' in sys.argv
-baseline_name = 'seo-before-ux-cro-20260919.json' if historical else 'seo-release-20260920.json'
-blocks_name = 'seo-protected-blocks-ux-cro-20260919.json' if historical else 'seo-protected-blocks-release-20260920.json'
+baseline_name = 'seo-before-ux-cro-20260919.json' if historical else 'seo-release-20260923.json'
+blocks_name = 'seo-protected-blocks-ux-cro-20260919.json' if historical else 'seo-protected-blocks-release-20260923.json'
 baseline = json.loads((ROOT / 'docs' / baseline_name).read_text(encoding='utf-8'))
 before = baseline['snapshot']
 protected_blocks = json.loads((ROOT / 'docs' / blocks_name).read_text(encoding='utf-8'))
@@ -76,6 +76,6 @@ for page, old in before['pages'].items():
     results.append({'page': page, 'passed': not issues, 'issues': issues})
 report = {'passed': not failures, 'pages': len(results), 'failures': failures,
           'scope': 'Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.', 'results': results}
-(ROOT / 'docs' / ('seo-comparison-pre-commercial.json' if historical else 'seo-comparison-release-20260920.json')).write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+(ROOT / 'docs' / ('seo-comparison-pre-commercial.json' if historical else 'seo-comparison-release-20260923.json')).write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
 print(json.dumps(report, ensure_ascii=True))
 raise SystemExit(bool(failures))

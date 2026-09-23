@@ -14,8 +14,9 @@ assert.equal(ids.length,new Set(ids).size);
 for(const [,ref] of html.matchAll(/(?:href|src)="([^"]+)"/g)){
  if(ref.startsWith('#'))assert(ids.includes(ref.slice(1)),`Missing anchor ${ref}`);
  else if(!/^https?:/.test(ref)){
-  let target=path.resolve(path.dirname(file),ref);
-  if(ref.endsWith('/'))target=path.join(target,'index.html');
+  const localPath=ref.split(/[?#]/)[0];
+  let target=path.resolve(path.dirname(file),localPath);
+  if(localPath.endsWith('/'))target=path.join(target,'index.html');
   assert(fs.existsSync(target),`Missing asset/link ${ref}`);
  }
  if(ref.startsWith('https://wa.me/')){

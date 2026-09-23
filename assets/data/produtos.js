@@ -223,6 +223,32 @@ const adicionaisCestasCafe = [
 
 const produtosLocais = [
   {
+    id: 63,
+    imagemLargura: 900,
+    imagemAltura: 900,
+    nome: "Kit Chandon com Ferrero Rocher",
+    categoria: "Kits",
+    descricao: "Kit com Chandon e chocolates Ferrero Rocher, em embalagem transparente com laço dourado.",
+    preco: 97.00,
+    precoFixo: true,
+    imagem: "assets/optimized/products/kit-chandon-ferrero-rocher.webp",
+    destaque: true,
+    whatsappMensagem: "Olá! Tenho interesse no Kit Chandon com Ferrero Rocher por R$ 97,00."
+  },
+  {
+    id: 62,
+    imagemLargura: 900,
+    imagemAltura: 900,
+    nome: "Cesta Carinho com Pelúcia e Chocolates",
+    categoria: "Cestas",
+    descricao: "Cesta com ursinho de pelúcia, chocolates e laço decorativo em vermelho e branco para presentear com carinho.",
+    preco: 350.00,
+    imagem: "assets/optimized/products/cesta-carinho-pelucia-chocolates.webp",
+    destaque: true,
+    observacaoPreco: "A partir de R$ 350,00. O valor final depende da composição escolhida no momento do pedido.",
+    whatsappMensagem: "Olá! Tenho interesse na Cesta Carinho com Pelúcia e Chocolates, a partir de R$ 350,00. Quero confirmar a composição e o valor final."
+  },
+  {
     id: 1,
     ativo: false,
     nome: "Buque Romantico",

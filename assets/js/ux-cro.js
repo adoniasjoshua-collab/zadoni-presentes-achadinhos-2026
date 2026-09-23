@@ -49,6 +49,7 @@
 
     const productData = new Map((window.PRODUTOS?.produtosLocais || []).map(product => [String(product.id), product]));
     const pagePriorities = (() => {
+      if (location.pathname.includes('presentes-canaa')) return [11, 6, 10, 62, 63];
       if (location.pathname.includes('buques-canaa-dos-carajas')) return [61, 57, 52, 53, 54, 56, 55, 16, 15, 2];
       if (location.pathname.includes('floricultura-canaa-dos-carajas')) return [61, 57, 52, 53, 54, 56, 55, 16, 15, 2, 26, 27, 25];
       if (location.pathname.includes('cestas-de-presente-canaa')) return [60, 17, 11, 6, 33, 10, 8, 37, 9, 7, 23];
@@ -89,7 +90,7 @@
 
     const cafeGallery = document.querySelector('.seo-gallery-grid--budget');
     if (cafeGallery) {
-      const preferredImages = ['modelo-real-10', 'modelo-real-11', 'cesta-cafe-artesanal'];
+      const preferredImages = ['cestinha-cafe-na-caixa', 'modelo-real-10', 'modelo-real-11', 'cesta-cafe-artesanal'];
       const cafeCards = [...cafeGallery.querySelectorAll('.seo-gallery-item')];
       cafeCards.sort((left, right) => {
         const leftSrc = left.querySelector('img')?.getAttribute('src') || '';

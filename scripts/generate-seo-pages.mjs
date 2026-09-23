@@ -328,7 +328,7 @@ function picture(product, index, prefix) {
     ? `\n                    <source type="image/webp" srcset="${prefix}${html(img.webp480)} 480w, ${prefix}${html(img.webp720)} 720w" sizes="(max-width: 640px) 92vw, (max-width: 1024px) 45vw, 320px">`
     : "";
   return `<picture>${responsiveSource}
-                    <img src="${prefix}${html(img.fallback)}" alt="${html(product.nome)}" width="720" height="900" loading="lazy" decoding="async" fetchpriority="low">
+                    <img src="${prefix}${html(img.fallback)}" alt="${html(product.nome)}" width="${product.imagemLargura || 720}" height="${product.imagemAltura || 900}" loading="lazy" decoding="async" fetchpriority="low">
                 </picture>`;
 }
 
@@ -338,7 +338,7 @@ function productCard(product, index, prefix = "", source = "produto", options = 
   const productLink = prefix ? `../presentes-canaa.html#${id}` : `#${id}`;
   const note = product.observacaoPreco || options.priceNote;
   const priceNote = note ? `\n                <p class="produto-preco-nota">${html(note)}</p>` : "";
-  const priceLabel = hasProductPrice(product) ? `A partir de ${money(product.preco)}` : "Valor sob consulta";
+  const priceLabel = hasProductPrice(product) ? (product.precoFixo ? money(product.preco) : `A partir de ${money(product.preco)}`) : "Valor sob consulta";
   const categoryLabel = options.categoryLabel || product.categoria;
   const addonsLink = prefix && product.exibirAdicionaisNaCategoria === true && Array.isArray(product.adicionaisOpcionais) && product.adicionaisOpcionais.length
     ? `<a class="btn btn-secondary" href="${productLink}">Escolher adicionais</a>\n                    `
@@ -702,7 +702,8 @@ function galleryHtml(config) {
                         <strong class="local-badge">${html(image.featuredLabel)}</strong>` : ""}
                         <span>${html(image.caption)}</span>${image.description ? `
                         <small class="seo-gallery-note">${html(image.description)}</small>` : ""}
-                        ${config.galleryItemNote ? `<small class="seo-gallery-note">${html(config.galleryItemNote)}</small>` : ""}
+                        ${image.displayPrice ? `<strong class="produto-preco">${html(image.priceLabel)}</strong>` : ""}
+                        ${(image.itemNote || config.galleryItemNote) ? `<small class="seo-gallery-note">${html(image.itemNote || config.galleryItemNote)}</small>` : ""}
                         ${galleryChoiceHtml(config, image, index, source, ctaLabel)}
                     </figcaption>
                 </figure>`).join("\n                ")}
@@ -739,7 +740,7 @@ function socialProofHtml(prefix = "") {
     </section>\n`;
 }
 function scripts(prefix, schemas) {
-  return `<script src="${prefix}assets/data/produtos.js?v=20260920-buques-entrega-rapida-1" defer></script>
+  return `<script src="${prefix}assets/data/produtos.js?v=20260923-kit-chandon" defer></script>
     <script src="${prefix}assets/js/app.js?v=20260920-cafe-whatsapp-direto-1" defer></script>
     <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
     ${jsonLd(schemas)}`;
@@ -903,7 +904,7 @@ ${showcaseSectionsHtml}${config.showSocialProof ? socialProofHtml(prefix) : ""}
 
 function mainPage() {
   const canonical = `${SITE}/presentes-canaa.html`;
-  const catalogPriorityIds = [24, 33, 11, 6, 10, 17, 8, 37, 16, 1, 15, 13, 12, 3, 19, 36];
+  const catalogPriorityIds = [11, 6, 10, 62, 63, 24, 33, 17, 8, 37, 16, 1, 15, 13, 12, 3, 19, 36];
   const featured = [...products].sort((a, b) => {
     const aPriority = catalogPriorityIds.indexOf(Number(a.id));
     const bPriority = catalogPriorityIds.indexOf(Number(b.id));
@@ -1070,6 +1071,7 @@ const pageConfigs = [
     copy1: "Para quem precisa resolver uma surpresa em Canaã dos Carajás, a compra local reduz dúvidas sobre prazo, personalização e entrega.",
     copy2: "A Zadoni trabalha com opções prontas e personalizáveis, incluindo buquês, cestas, kits, perfumes de bolso e mimos de valor acessível.",
     productsTitle: "Produtos locais em destaque",
+    priorityProductIds: [11, 6, 10, 62, 63],
     showSocialProof: true,
     filter: (items) => items.filter((item) => item.destaque),
     faqs: [
@@ -1303,7 +1305,7 @@ const pageConfigs = [
     productsTitle: "Base de orçamento para cesta de café",
     productsIntro: "Use esta opção como ponto de partida para o atendimento. O valor exibido é inicial; a composição final é montada a partir do modelo escolhido na galeria, dos itens disponíveis e da personalização desejada.",
     galleryTitle: "Escolha um modelo de inspiração",
-    galleryIntro: "As imagens mostram composições reais já preparadas pela Zadoni. Em cada modelo, escolha uma montagem Básica a partir de R$ 189, Intermediária a partir de R$ 270 ou Premium a partir de R$ 300.",
+    galleryIntro: "Em destaque: Cestinha de Café na Caixa por R$ 100,00. Para os demais modelos, consulte montagens Básicas a partir de R$ 189, Intermediárias a partir de R$ 270 ou Premium a partir de R$ 300.",
     galleryItemNote: "A foto é uma referência visual. Itens, marcas e acabamento são adaptados à faixa e à disponibilidade.",
     galleryCtaLabel: "Quero esta cesta",
     galleryBudgetTiers: BASKET_BUDGET_TIERS,
@@ -1312,6 +1314,7 @@ const pageConfigs = [
     showProductsSection: false,
     productPriceNote: "Valor inicial. O preço final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalização; pode ficar em torno de R$ 200, R$ 300 ou mais.",
     galleryImages: [
+      { id: "cafe-caixinha", modelLabel: "Cestinha de Café na Caixa", src: "cestinha-cafe-na-caixa.webp", src480: "cestinha-cafe-na-caixa-480.webp", alt: "Cestinha de café na caixa com itens de café da manhã e embalagem para presente", caption: "Cestinha de Café na Caixa", priceLabel: "R$ 100,00", displayPrice: true, featuredLabel: "Destaque", itemNote: "Consulte a disponibilidade e confirme os itens no WhatsApp. Adicionais cobrados separadamente.", width: 720, height: 720 },
       { id: "cafe-modelo-10", modelLabel: "Cesta personalizada com caneca", src: "cesta-cafe-da-manha-modelo-real-10.webp", alt: "Cesta de café da manhã personalizada com frutas, caneca e itens matinais", caption: "Cesta personalizada com caneca", priceLabel: "A partir de R$ 189", width: 720, height: 960 },
       { id: "cafe-modelo-11", modelLabel: "Versão romântica para café da manhã", src: "cesta-cafe-da-manha-modelo-real-11.webp", alt: "Cesta de café da manhã romântica com frutas, chocolates e balão", caption: "Versão romântica para café da manhã", priceLabel: "A partir de R$ 189", width: 720, height: 720 },
       { id: "cafe-modelo-artesanal", ...BASKET_GALLERY_IMAGES[0], priceLabel: "A partir de R$ 189" },

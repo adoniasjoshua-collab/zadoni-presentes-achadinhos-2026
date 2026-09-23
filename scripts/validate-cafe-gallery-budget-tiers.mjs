@@ -20,7 +20,7 @@ assert.ok(source.includes('id="cafe-gallery-addons"'), "A galeria deve exibir a 
 assert.ok(source.includes('id="cafe-gallery-addons-options"'), "O destino da lista de adicionais para cafe esta ausente");
 
 const figures = [...source.matchAll(/<figure class="seo-gallery-item"[^>]*>([\s\S]*?)<\/figure>/g)];
-assert.equal(figures.length, 12, "A galeria deve exibir os 11 modelos anteriores e a nova cesta artesanal");
+assert.equal(figures.length, 13, "A galeria deve exibir os 12 modelos anteriores e a nova cestinha na caixa");
 
 let optionCount = 0;
 figures.forEach(([ , figure], index) => {
@@ -67,6 +67,6 @@ assert.ok(
   source.includes("assets/js/app.js?v=20260920-cafe-whatsapp-direto-1"),
   "A pagina de cafe deve usar a versao atual do JavaScript"
 );
-assert.equal(optionCount, 12);
+assert.equal(optionCount, 13);
 
-console.log("Cafe: 12 links diretos com resumo e imagem correspondente validados.");
+console.log("Cafe: 13 links diretos com resumo e imagem correspondente validados.");
