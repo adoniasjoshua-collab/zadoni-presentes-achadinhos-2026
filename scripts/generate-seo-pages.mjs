@@ -1,3 +1,4 @@
+import { metaPixelHead, metaPixelBody } from './meta-pixel-snippet.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
@@ -753,8 +754,10 @@ function pageShell({ path: pagePath, title, description, canonical, image, body,
 <head>
     ${head({ title, description, canonical, image, prefix })}
     <link rel="stylesheet" href="${prefix}assets/css/storefront.css?v=20260911-vitrine-1">
+${metaPixelHead}
 </head>
 <body>
+${metaPixelBody}
     ${header(prefix, pagePath)}
     ${body}
     ${footer(prefix)}

@@ -1,3 +1,4 @@
+import { metaPixelHead, metaPixelBody } from './meta-pixel-snippet.mjs';
 // Isolated, repeatable department build. Does not run the legacy page generator.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -45,8 +46,10 @@ write(`${slug}/index.html`, `<!DOCTYPE html>
 <meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${url}"><meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Zadoni Presentes"><meta property="og:image" content="${image}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${description}"><meta name="twitter:image" content="${image}">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/css/perfumaria.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-16938428518');</script>
-<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph},null,2).replaceAll('<','\\u003c')}</script></head>
-<body><a class="pf-skip" href="#conteudo">Pular para o conteúdo</a>
+<script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph},null,2).replaceAll('<','\\u003c')}</script>${metaPixelHead}
+</head>
+<body>
+${metaPixelBody}<a class="pf-skip" href="#conteudo">Pular para o conteúdo</a>
 <header class="pf-header"><a class="pf-brand" href="../"><img src="../assets/img/brand/logo-zadoni-96.webp" alt="" width="40" height="40" loading="eager" decoding="async">Zadoni Presentes</a><nav aria-label="Navegação principal"><a href="../">Início</a><a href="../presentes-canaa.html">Presentes</a><a href="./" aria-current="page">Perfumaria</a><a href="#atendimento">Atendimento</a></nav></header>
 <main id="conteudo"><section class="pf-hero"><div class="pf-wrap"><nav class="pf-crumb" aria-label="Breadcrumb"><a href="../">Início</a> / <span aria-current="page">Perfumaria</span></nav><p class="pf-eyebrow">Seu próximo perfume, com atendimento em Canaã</p><h1>Perfumaria em Canaã dos Carajás</h1><p class="pf-lead">Perfumes nacionais, importados e cosméticos para sua rotina ou para presentear. Encontre sua fragrância com a Zadoni e consulte as opções disponíveis na loja e com nossos parceiros.</p><div class="pf-actions"><a class="pf-button" href="#perfumes-bolso">Ver perfumes de bolso</a>${cta('perfumes e cosméticos','Encontrar meu perfume')}</div><p class="pf-note">Preço, disponibilidade e condições de entrega confirmados antes do pedido.</p></div></section>
 <div class="pf-wrap"><nav class="pf-categories" aria-label="Categorias de perfumaria"><a href="#importados">Importados</a><a href="#nacionais">Nacionais</a><a href="#masculinos">Masculinos</a><a href="#femininos">Femininos</a><a href="#body-splash">Body splash</a><a href="#cosmeticos">Cosméticos</a><a href="#perfumes-bolso">Amakha Paris</a></nav>

@@ -1,3 +1,4 @@
+import { metaPixelHead, metaPixelBody } from './meta-pixel-snippet.mjs';
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
@@ -197,8 +198,10 @@ function shell({ page, prefix, currentSlug, body, schemas }) {
 <head>
     ${head(page, prefix)}
     <link rel="stylesheet" href="${prefix}assets/css/storefront.css?v=20260911-vitrine-1">
+${metaPixelHead}
 </head>
 <body class="achadinhos-site">
+${metaPixelBody}
     ${header(prefix, currentSlug)}
     ${body}
     ${footer(prefix)}
