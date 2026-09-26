@@ -40,7 +40,10 @@ for (const [page, expected] of pages) {
 
   for (const match of source.matchAll(/<img[^>]+src="[^"]*(?:galerias|prova-social)[^"]*"[^>]*>/g)) {
     assert.match(match[0], /alt="[^"]{12,}"/, `${page}: imagem sem texto alternativo descritivo`);
-    assert.match(match[0], /width="720" height="900"/, `${page}: imagem sem dimensoes reservadas`);
+    const dimensions = match[0].includes('prova-social/depoimentos/')
+      ? /width="1092" height="1440"/
+      : /width="720" height="900"/;
+    assert.match(match[0], dimensions, `${page}: imagem sem dimensoes reservadas`);
   }
 }
 

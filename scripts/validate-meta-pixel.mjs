@@ -17,7 +17,7 @@ const pages = [
 ];
 const code = metaPixelHead.match(/<script>([\s\S]*?)<\/script>/)[1];
 for (const page of pages) {
-  const html = fs.readFileSync(page, 'utf8');
+  const html = fs.readFileSync(page, 'utf8').replaceAll('\r\n', '\n');
   const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)[1];
   const body = html.match(/<body\b[^>]*>([\s\S]*?)<\/body>/i)[1];
   assert.equal(html.split(metaPixelHead).length - 1, 1, `${page}: base count`);

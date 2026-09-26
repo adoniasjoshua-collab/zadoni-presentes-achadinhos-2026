@@ -126,6 +126,18 @@
             font-size: 1.2rem;
             margin: 0;
         }
+        /* Galeria complementar de depoimentos: estilos restritos à home. */
+        .depoimentos-artes { margin-top: 32px; min-width: 0; }
+        .depoimentos-artes > p { margin: 8px 0; }
+        #depoimentos-artes-ajuda { font-size: .9rem; color: #595959; }
+        .depoimentos-artes-galeria { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x proximity; padding: 12px 4px 20px; }
+        .depoimento-arte { flex: 0 0 min(82vw, 340px); margin: 0; scroll-snap-align: start; border: 1px solid #eadde3; border-radius: 14px; overflow: hidden; background: #fff; }
+        .depoimento-arte a { display: block; }
+        .depoimento-arte img { display: block; width: 100%; height: auto; }
+        .depoimento-arte figcaption { padding: 16px; color: #333; }
+        .depoimento-arte blockquote { margin: 8px 0 0; font-size: .95rem; }
+        .depoimento-arte blockquote p { margin: 0; }
+        .depoimentos-artes-galeria:focus-visible, .depoimento-arte a:focus-visible { outline: 3px solid #962665; outline-offset: -3px; }
     </style>
     <script type="application/ld+json">
     [
@@ -383,6 +395,68 @@ src="https://www.facebook.com/tr?id=1954958515465784&amp;ev=PageView&amp;noscrip
                     <figcaption><strong>Surpresa entregue em Canaã</strong><span>Atendimento próximo para transformar o pedido em presente.</span></figcaption>
                 </figure>
             </div>
+
+            <section class="depoimentos-artes" aria-labelledby="depoimentos-artes-title">
+                <h3 id="depoimentos-artes-title">Quem recebe, contou!</h3>
+                <p>Depoimentos em imagens sobre flores, presentes e atendimento da Zadoni.</p>
+                <p id="depoimentos-artes-ajuda">Deslize para ver mais ou use as setas do teclado na galeria. Toque na imagem para ampliar.</p>
+                <div class="depoimentos-artes-galeria" tabindex="0" role="region" aria-label="Galeria de depoimentos" aria-describedby="depoimentos-artes-ajuda">
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/hisabella-sousa.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Hisabella Sousa (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/hisabella-sousa.jpg" alt="Arte da Zadoni com depoimento de Hisabella Sousa" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Hisabella Sousa</strong><blockquote><p>Muito bom amei o buquê de flores que ganhei as Rosas mais lindas fiquei apaixonada ❤️😍</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/shielly-silva.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Shielly Silva (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/shielly-silva.jpg" alt="Arte da Zadoni com depoimento de Shielly Silva" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Shielly Silva</strong><blockquote><p>Lindo, muito cheiroso e a entrega super rápida. Atendimento maravilhoso 🙏🏻 ❤️ super atenciosos. Amei</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/abigail-rocha.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Abigail Rocha (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/abigail-rocha.jpg" alt="Arte da Zadoni com depoimento de Abigail Rocha" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Abigail Rocha</strong><blockquote><p>Produtos de qualidade, feito com muito carinho! Amo os produtos e o atendimento 😍</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/andre-arnoud.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Andre Arnoud (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/andre-arnoud.jpg" alt="Arte da Zadoni com depoimento de Andre Arnoud" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Andre Arnoud</strong><blockquote><p>Muito bom, parabéns, Minha esposa adorou.</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/polly-cruz9.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Polly_ Cruz9 (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/polly-cruz9.jpg" alt="Arte da Zadoni com depoimento de Polly_ Cruz9" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Polly_ Cruz9</strong><blockquote><p>Ótimo, atendimento muito bom. Flores são lindas vem bem cheirosa</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/jessica-almeida.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Jéssica Almeida (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/jessica-almeida.jpg" alt="Arte da Zadoni com depoimento de Jéssica Almeida" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Jéssica Almeida</strong><blockquote><p>Superou minhas expectativas! 🌸 O buquê é lindo, perfumado e chegou tudo certinho.</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/larissa-mendonca.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Larissa Mendonça (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/larissa-mendonca.jpg" alt="Arte da Zadoni com depoimento de Larissa Mendonça" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Larissa Mendonça</strong><blockquote><p>Simplesmente perfeito! 😍 A cesta é linda, muito bem montada e chegou super rápida.</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/camila-souza.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Camila Souza (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/camila-souza.jpg" alt="Arte da Zadoni com depoimento de Camila Souza" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Camila Souza</strong><blockquote><p>Simplesmente perfeito! Encomendei uma cesta de aniversário e superou todas as expectativas.</p></blockquote></figcaption>
+                    </figure>
+                    <figure class="depoimento-arte">
+                        <a href="assets/img/prova-social/depoimentos/renata-oliveira.jpg" target="_blank" rel="noopener" aria-label="Ampliar arte com depoimento de Renata Oliveira (abre em nova aba)">
+                            <img src="assets/img/prova-social/depoimentos/renata-oliveira.jpg" alt="Arte da Zadoni com depoimento de Renata Oliveira" width="1092" height="1440" loading="lazy" decoding="async">
+                        </a>
+                        <figcaption><strong>Renata Oliveira</strong><blockquote><p>A cesta é maravilhosa! ❤️ Veio tudo muito bem organizado, produtos de qualidade, exatamente como nas fotos.</p></blockquote></figcaption>
+                    </figure>
+                </div>
+            </section>
 
             <div class="entregas-reais-actions">
                 <a class="btn btn-outline" href="https://g.page/r/CXqQulFWWhbDEAE/review" target="_blank" rel="noopener noreferrer">Ver avaliações no Google</a>

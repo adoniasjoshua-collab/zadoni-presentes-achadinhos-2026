@@ -1,4 +1,5 @@
 import { metaPixelHead, metaPixelBody } from './meta-pixel-snippet.mjs';
+import { applyCategoryHero } from './category-heroes.mjs';
 // Isolated, repeatable department build. Does not run the legacy page generator.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -6,7 +7,7 @@ import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = p => fs.readFileSync(path.join(root, p), 'utf8');
-const write = (p, text) => { fs.mkdirSync(path.dirname(path.join(root,p)), {recursive:true}); fs.writeFileSync(path.join(root,p),text); };
+const write = (p, text) => { fs.mkdirSync(path.dirname(path.join(root,p)), {recursive:true}); fs.writeFileSync(path.join(root,p),applyCategoryHero(text, p)); };
 const site = 'https://zadonipresentes.com.br';
 const slug = 'perfumaria-cosmeticos-canaa';
 const url = `${site}/${slug}/`;

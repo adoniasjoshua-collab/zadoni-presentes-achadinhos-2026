@@ -3,6 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { refineLayout } from './apply-ux-cro-layout.mjs';
+import { applyCategoryHero } from './category-heroes.mjs';
+import { applyBoxCoracaoOffer } from './box-coracao-offer.mjs';
 
 const SITE = "https://zadonipresentes.com.br";
 const PHONE = "5594992993138";
@@ -1393,7 +1395,7 @@ function writeFile(filePath, content) {
   const fullPath = path.join(ROOT, filePath);
   fs.mkdirSync(path.dirname(fullPath), { recursive: true });
   const commercial = filePath === 'presentes-canaa.html' || pageConfigs.some(config => `${config.dir}/index.html` === filePath);
-  fs.writeFileSync(fullPath, (commercial ? refineLayout(content, filePath) : content).replace(/[ \t]+\r?\n/g, "\n"), "utf8");
+  fs.writeFileSync(fullPath, applyBoxCoracaoOffer(applyCategoryHero(commercial ? refineLayout(content, filePath) : content, filePath), filePath).replace(/[ \t]+\r?\n/g, "\n"), "utf8");
 }
 
 writeFile("presentes-canaa.html", mainPage());

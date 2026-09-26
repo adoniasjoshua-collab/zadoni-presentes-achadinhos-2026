@@ -12,6 +12,7 @@ blocks_name = 'seo-protected-blocks-ux-cro-20260919.json' if historical else 'se
 baseline = json.loads((ROOT / 'docs' / baseline_name).read_text(encoding='utf-8'))
 before = baseline['snapshot']
 protected_blocks = json.loads((ROOT / 'docs' / blocks_name).read_text(encoding='utf-8'))
+approved_additions = {} if historical else json.loads((ROOT / 'docs/seo-approved-additions-20260926.json').read_text(encoding='utf-8'))
 after = collect()
 failures = []
 results = []
@@ -55,6 +56,8 @@ for page, old in before['pages'].items():
             issues.append(field)
     for field in ('links', 'images', 'pictureSources'):
         added = bag(new[field]) - bag(old[field])
+        # Explicit release additions only; removals and unrelated additions still fail.
+        added -= bag(approved_additions.get(page, {}).get(field, []))
         if field == 'links' and page == 'monte-sua-cesta/index.html':
             # Single approved additive fallback; no prior link may be removed.
             added -= bag([{'href': 'https://wa.me/5594992993138?text=Ola!%20Quero%20ajuda%20para%20escolher%20um%20presente%20em%20Canaa%20dos%20Carajas.', 'text': 'Pedir ajuda para montar minha cesta no WhatsApp', 'internal': False, 'rel': 'noopener noreferrer'}])
