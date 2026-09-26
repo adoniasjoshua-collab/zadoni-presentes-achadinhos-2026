@@ -1,0 +1,17 @@
+/* Home-only entry points to the local gift cluster. */
+.home-gift-guides { padding: 40px 0; background: var(--cor-fundo-alt); scroll-margin-top: calc(var(--header-altura) + 16px); }
+.home-gift-guides h2 { text-align: left; }
+.home-gift-guides h2::after { left: 0; transform: none; }
+.home-gift-guides > .container > p { max-width: 65ch; }
+.home-gift-guides-grid { display: grid; gap: 16px; margin-top: 24px; }
+.home-gift-guide { display: flex; flex-direction: column; min-width: 0; padding: 24px; border: 1px solid var(--cor-borda); border-radius: var(--raio); background: #fff; color: var(--cor-primaria-escura); box-shadow: var(--sombra-leve); }
+.home-gift-guide h3 { font-family: var(--fonte-titulo); font-size: 1.4rem; line-height: 1.25; color: inherit; margin: 10px 0 14px; }
+.home-gift-guide p { color: var(--cor-texto-leve); }
+.home-gift-guide-label { font-size: .85rem; font-weight: 700; }
+.home-gift-guide-action { display: flex; align-items: center; gap: 12px; min-height: 44px; margin-top: auto; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+.home-gift-guide--primary { background: var(--cor-primaria-escura); border-color: var(--cor-primaria-escura); color: #fff; }
+.home-gift-guide--primary p { color: #fff; }
+.home-gift-guide--primary .home-gift-guide-label { color: var(--cor-secundaria); }
+.home-gift-guide:hover { border-color: var(--cor-primaria); box-shadow: var(--sombra-media); }
+.home-gift-guide:focus-visible { outline: 3px solid var(--cor-primaria); outline-offset: 4px; }
+@media (min-width: 768px) { .home-gift-guides-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

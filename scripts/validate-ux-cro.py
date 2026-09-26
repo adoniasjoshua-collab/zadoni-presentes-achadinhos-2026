@@ -19,11 +19,32 @@ results = []
 def bag(items):
     return Counter(json.dumps(item, ensure_ascii=False, sort_keys=True) for item in items)
 
-if before['protectedFiles'] != after['protectedFiles']:
+cluster_paths = set() if historical else {
+    'presentes-de-natal-canaa-dos-carajas/index.html',
+    'guias-de-presentes/index.html',
+    'mensagens-para-acompanhar-presentes/index.html',
+}
+# Accept only the three requested additions. All previous entries, metadata,
+# ordering and protected files must still match the immutable release snapshot.
+protected_after = dict(after['protectedFiles'])
+if not historical:
+    sitemap = protected_after.get('sitemap.xml', '')
+    for page in sorted(cluster_paths):
+        entry = '  <url><loc>https://zadonipresentes.com.br/' + page.removesuffix('index.html') + '</loc></url>\n'
+        if sitemap.count(entry) != 1:
+            failures.append('Expected exactly one new sitemap entry: ' + page)
+        else:
+            sitemap = sitemap.replace(entry, '', 1)
+    protected_after['sitemap.xml'] = sitemap
+if before['protectedFiles'] != protected_after:
     failures.append('Protected data, robots, sitemap or redirects changed')
-if before['pages'].keys() != after['pages'].keys():
+if set(before['pages']) | cluster_paths != set(after['pages']):
     failures.append('Public HTML paths changed')
 for page, old in before['pages'].items():
+    if page not in after['pages']:
+        failures.append('Missing protected page: ' + page)
+        results.append({'page': page, 'passed': False, 'issues': ['Missing page']})
+        continue
     new = after['pages'][page]
     issues = []
     # These blocks were captured from the recorded revision (tracked HTML clean).

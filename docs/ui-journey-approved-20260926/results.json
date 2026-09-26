@@ -1,0 +1,583 @@
+[
+  {
+    "slug": "presentes-de-natal-canaa-dos-carajas",
+    "width": 360,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "presentes-de-natal-canaa-dos-carajas",
+    "width": 390,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "presentes-de-natal-canaa-dos-carajas",
+    "width": 412,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "presentes-de-natal-canaa-dos-carajas",
+    "width": 768,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "presentes-de-natal-canaa-dos-carajas",
+    "width": 1440,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "guias-de-presentes",
+    "width": 360,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "guias-de-presentes",
+    "width": 390,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "guias-de-presentes",
+    "width": 412,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "guias-de-presentes",
+    "width": 768,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "guias-de-presentes",
+    "width": 1440,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "mensagens-para-acompanhar-presentes",
+    "width": 360,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "mensagens-para-acompanhar-presentes",
+    "width": 390,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "mensagens-para-acompanhar-presentes",
+    "width": 412,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "mensagens-para-acompanhar-presentes",
+    "width": 768,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "mensagens-para-acompanhar-presentes",
+    "width": 1440,
+    "overflow": false,
+    "images": true,
+    "intrinsicRatio": true,
+    "h1": 1,
+    "tapTargets": true,
+    "formReady": true,
+    "labels": true,
+    "errors": []
+  },
+  {
+    "slug": "guias-de-presentes",
+    "flow": "encoding, custom text, validation, safe rendering, invalidation, tracking and recovery passed"
+  },
+  {
+    "slug": "mensagens-para-acompanhar-presentes",
+    "flow": "encoding, custom text, validation, safe rendering, invalidation, tracking and recovery passed"
+  },
+  {
+    "entry": "404.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "404.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 197.125,
+    "bottom": 291.625,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 168,
+    "bottom": 236,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/presentes-criativos/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 197.125,
+    "bottom": 291.625,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/presentes-criativos/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 168,
+    "bottom": 236,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/presentes-de-aniversario/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 197.125,
+    "bottom": 291.625,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/presentes-de-aniversario/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 168,
+    "bottom": 236,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/presentes-para-namorada/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 197.125,
+    "bottom": 291.625,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "achadinhos/presentes-para-namorada/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 168,
+    "bottom": 236,
+    "help": true,
+    "contact": false,
+    "targets": true
+  },
+  {
+    "entry": "buques-canaa-dos-carajas/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "buques-canaa-dos-carajas/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "cesta-cafe-da-manha-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "cesta-cafe-da-manha-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "cesta-de-aniversario-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "cesta-de-aniversario-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "cestas-de-presente-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "cestas-de-presente-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "floricultura-canaa-dos-carajas/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "floricultura-canaa-dos-carajas/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "links/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 0,
+    "bottom": 142.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "links/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 0,
+    "bottom": 68,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "monte-sua-cesta/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 99,
+    "bottom": 241.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "monte-sua-cesta/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 75,
+    "bottom": 143,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "perfumaria-cosmeticos-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 124.765625,
+    "bottom": 267.265625,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "perfumaria-cosmeticos-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 81,
+    "bottom": 149,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "presentes-canaa-dos-carajas/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "presentes-canaa-dos-carajas/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "presentes-canaa.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "presentes-canaa.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "presentes-romanticos-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "presentes-romanticos-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "revenda-chocolates-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "revenda-chocolates-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "rosas-perfumadas-canaa/index.html",
+    "width": 390,
+    "overflow": false,
+    "top": 76,
+    "bottom": 218.5,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "entry": "rosas-perfumadas-canaa/index.html",
+    "width": 1440,
+    "overflow": false,
+    "top": 84,
+    "bottom": 152,
+    "help": true,
+    "contact": true,
+    "targets": true
+  },
+  {
+    "continuation": "passed",
+    "contextualEntry": "passed",
+    "explicitChoices": "preserved",
+    "emptySearch": "passed"
+  },
+  {
+    "keyboard": "passed",
+    "originalMessages": 7,
+    "noJavaScript": "3 pages passed",
+    "failedEnhancementFallback": "passed",
+    "externalRequests": "blocked"
+  }
+]

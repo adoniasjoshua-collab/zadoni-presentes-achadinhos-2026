@@ -1,0 +1,4 @@
+.journey-help { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px 20px; padding:12px 20px; background:#fff7f3; color:#512334; font:500 15px/1.5 system-ui,sans-serif; }
+.journey-help a { display:inline-flex; align-items:center; min-height:44px; color:#702841; text-decoration:underline; text-underline-offset:3px; }
+.journey-help a:focus-visible { outline:3px solid #702841; outline-offset:3px; }
+@media(max-width:480px) { .journey-help { gap:4px 16px; justify-content:flex-start; } .journey-help span { width:100%; } }

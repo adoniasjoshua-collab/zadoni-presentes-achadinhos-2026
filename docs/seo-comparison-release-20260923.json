@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "pages": 19,
+  "failures": [],
+  "scope": "Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.",
+  "results": [
+    {
+      "page": "404.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/presentes-criativos/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/presentes-de-aniversario/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "links/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "monte-sua-cesta/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "perfumaria-cosmeticos-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "presentes-canaa.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "passed": true,
+      "issues": []
+    }
+  ]
+}

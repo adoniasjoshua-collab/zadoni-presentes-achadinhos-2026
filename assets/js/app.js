@@ -960,7 +960,10 @@
       container.style.removeProperty("display");
       if (vazio) {
         vazio.hidden = lista.length > 0;
-        vazio.textContent = "Nenhum produto encontrado. Limpe os filtros para ver todas as opções.";
+        vazio.innerHTML = '<p>Nenhum produto encontrado. Limpe os filtros para ver todas as opções.</p><button type="button" data-clear-empty>Limpar filtros</button> · <a href="/guias-de-presentes/#contexto=catalogo">Me ajude a escolher</a> · <a href="' + gerarLinkWhatsApp(null) + '" target="_blank" rel="noopener noreferrer" data-track="whatsapp">Consultar o que procuro</a>';
+        vazio.querySelector('[data-clear-empty]').addEventListener('click', function () {
+          document.querySelector('.ux-clear')?.click();
+        });
       }
       container.dataset.activeCategory = categoria || "todos";
       inicializarTrackingLinks();

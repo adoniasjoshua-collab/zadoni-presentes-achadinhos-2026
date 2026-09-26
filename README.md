@@ -36,7 +36,7 @@ zadoni-catalogo/
 
 Nao e necessario instalar dependencias.
 
-Abra o arquivo `index.html` diretamente no navegador.
+Na pasta do projeto, execute `python -m http.server 8000` e abra `http://localhost:8000`. O servidor local permite testar navegação, rotas e formulários nas mesmas condições de caminhos do site.
 
 ## Como Publicar
 
@@ -60,14 +60,21 @@ Atualmente existe um array principal:
 
 - `produtosLocais`: produtos vendidos localmente pela Zadoni.
 
-## Checklist Futuro
+## Integrações e validação
+
+O site já inclui SEO local, Google Ads e Meta Pixel. Os guias de presentes e mensagens preparam uma consulta revisável pelo cliente antes de abrir o WhatsApp.
+
+- Validadores estáticos: executar cada `scripts/validate-*.mjs` com Node.js 24.
+- Regressão SEO: `python -m unittest discover -s scripts -p test_seo_baseline.py`.
+- Navegador: `node scripts/check-gift-cluster-browser.mjs nome-unico-da-revisao`. Requer Chrome local; `CHROME_PATH` permite informar seu executável. O teste bloqueia WhatsApp e rastreadores externos.
+- Revisão e escopo para commit: [conclusão da jornada de presentes](docs/journey-release-review-20260926.md).
+
+## Evoluções futuras
 
 - Google Tag Manager
-- Meta Pixel
 - Google Analytics
 - Supabase
 - Painel admin
-- SEO local
 
 ## Observacoes
 
