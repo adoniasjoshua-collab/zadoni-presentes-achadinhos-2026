@@ -45,10 +45,24 @@ const before = JSON.parse(read('docs/combos-preservation-before-20260928.json'))
 // Release integration edits only these files; validate-ux-cro.py limits them to the
 // approved link additions (docs/seo-approved-additions-20260928.json) and one sitemap entry.
 const integration = new Set(['index.html', 'links/index.html', 'presentes-canaa.html', 'sitemap.xml']);
+// Home category card for the combos (image + five-column grid). Undoing exactly these
+// edits must reproduce the original bytes, so any other change still fails.
+const approvedEdits = {
+  'assets/css/storefront.css': [[`.home-categories .category-card[href="combos-pastel-canaa/"] .category-icon { background-image: url('../optimized/combos/categoria-pastel-480.webp'); }\n`, '']],
+  'assets/css/ux-cro.css': [
+    ['[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(5, minmax(0,1fr)); }', '[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(4, minmax(0,1fr)); }'],
+    ['\n  [data-ux-cro] .home-categories > .container > .grid > .category-card:last-child:nth-child(odd) { grid-column: 1 / -1; }', '']
+  ]
+};
 for (const [file, hash] of Object.entries(before.files)) {
   if (integration.has(file)) continue;
   // Line endings normalized so Windows (CRLF) and CI (LF) checkouts hash alike.
-  const content = fs.readFileSync(path.join(root, file)).toString('latin1').replaceAll('\r\n', '\n');
+  let content = fs.readFileSync(path.join(root, file)).toString('utf8').replaceAll('\r\n', '\n');
+  for (const [added, original] of approvedEdits[file] || []) {
+    assert.equal(content.split(added).length, 2, 'Approved edit missing or duplicated in ' + file);
+    content = content.replace(added, original);
+  }
+  content = Buffer.from(content, 'utf8').toString('latin1');
   assert.equal(crypto.createHash('sha256').update(content, 'latin1').digest('hex'), hash, 'Existing site changed: ' + file);
 }
 const generated = spawnSync(process.execPath, ['scripts/generate-combos.mjs', '--check'], { cwd: root, encoding: 'utf8' });

@@ -68,7 +68,7 @@
 [data-ux-cro] .ux-filter-fields label { display: grid; gap: .5rem; }
 [data-ux-cro] .ux-filter-fields input { min-width: 0; min-height: 44px; font-size: 1rem; padding: .5rem; }
 [data-ux-cro] .ux-clear { margin-top: .75rem; padding: .5rem 1rem; background: #fff; color: #4f1d38; border: 1px solid #7a2f55; border-radius: 6px; cursor: pointer; }
-[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(5, minmax(0,1fr)); }
 [data-ux-cro] .ux-more-categories { margin-top: 1rem; }
 [data-ux-cro] .ux-more-categories .category-icon { width: 64px; height: 64px; }
 [data-ux-cro] .ux-national { margin-block: 1rem 2rem; }
@@ -95,6 +95,7 @@
   [data-ux-cro] .cestas-cafe-destaques-grid { grid-template-columns: 1fr; }
   [data-ux-cro] .cesta-cafe-destaque--hero img, [data-ux-cro] .cesta-cafe-destaque img { aspect-ratio: 4 / 5; }
   [data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  [data-ux-cro] .home-categories > .container > .grid > .category-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
   [data-ux-cro] .home-categories .category-name { font-size: 1rem; }
   [data-ux-cro] .ux-filter-fields { grid-template-columns: 1fr; }
   [data-ux-cro] .filtros-container { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: .7rem; }

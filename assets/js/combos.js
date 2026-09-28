@@ -115,7 +115,7 @@
     updateForm(form);
     const missing = [...form.querySelectorAll('[data-pastel] select')].find(select => !select.value);
     if (missing) {
-      form.querySelector('[data-form-error]').textContent = 'Escolha o sabor e a bebida de cada pastel.';
+      form.querySelector('[data-form-error]').textContent = missing.name.startsWith('flavor') ? 'Escolha o sabor de cada pastel.' : 'Escolha a bebida de cada pastel.';
       missing.focus();
       return false;
     }
@@ -126,6 +126,8 @@
     section.hidden = false;
     document.querySelector('.order-bar').hidden = !hasItems;
     document.querySelector('[data-cart-nav]').hidden = !hasItems;
+    // The order bar takes the bottom corner once there is something to send.
+    document.querySelector('.whatsapp-float').hidden = hasItems;
     itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(item.name)} <small>${composition(item)}</small></h3><ul class="pastel-list">${item.pastels.map((p, i) => `<li>${esc(pastelLabel(item, p, i))}</li>`).join('')}</ul>${item.notes ? `<p>Preferência de bebida: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : '<p>Sem adicionais.</p>'}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}" aria-label="Editar grupo ${index + 1}: ${esc(item.name)}">Editar</button><button type="button" data-remove="${index}" aria-label="Remover grupo ${index + 1}: ${esc(item.name)}">Remover</button></div></article>`).join('');
     document.querySelector('[data-order-total]').innerHTML = totalHTML(order);
     const send = document.querySelector('[data-send-order]');

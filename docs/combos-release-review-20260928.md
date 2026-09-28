@@ -4,6 +4,8 @@
 
 Aprovada pelo proprietário e integrada para publicação em 28/09/2026: `status: ready`, `index, follow`, uma entrada nova no sitemap e links de descoberta em Home (Links Rápidos), catálogo (rodapé) e `/links/` (atalho "Combos de pastel", `data-bio-link="combos_pastel"`). Google Ads e Meta Pixel carregam como nas demais páginas; o rastreamento continua representando clique/contato, não pedido pago.
 
+Navegação e contato (28/09, segunda publicação): botão fixo de WhatsApp (some quando a barra "Revisar pedido" aparece); atalhos no topo comparando Combo 1/2/3 com preço; refrigerante em lata já marcado em cada pastel; rodapé completo com 12 páginas da Zadoni e contato (WhatsApp, Instagram, avaliações Google); card "Combos de Pastel" na grade principal da Home, com foto recortada da arte e grade de 5 colunas (a última ocupa a linha inteira no celular). O menu principal de 6 itens não foi alterado.
+
 Pendência comercial: as três artes ainda dizem "refrigerante em lata ou suco" como incluído, enquanto a página cobra R$ 7 pelo suco. Trocar as artes antes de divulgar. Retirada: local e horário combinados no WhatsApp; nenhum endereço é publicado.
 
 ## Funcionalidade
