@@ -47,7 +47,9 @@ const before = JSON.parse(read('docs/combos-preservation-before-20260928.json'))
 const integration = new Set(['index.html', 'links/index.html', 'presentes-canaa.html', 'sitemap.xml']);
 for (const [file, hash] of Object.entries(before.files)) {
   if (integration.has(file)) continue;
-  assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex'), hash, 'Existing site changed: ' + file);
+  // Line endings normalized so Windows (CRLF) and CI (LF) checkouts hash alike.
+  const content = fs.readFileSync(path.join(root, file)).toString('latin1').replaceAll('\r\n', '\n');
+  assert.equal(crypto.createHash('sha256').update(content, 'latin1').digest('hex'), hash, 'Existing site changed: ' + file);
 }
 const generated = spawnSync(process.execPath, ['scripts/generate-combos.mjs', '--check'], { cwd: root, encoding: 'utf8' });
 assert.equal(generated.status, 0, generated.stderr);
