@@ -12,7 +12,11 @@ blocks_name = 'seo-protected-blocks-ux-cro-20260919.json' if historical else 'se
 baseline = json.loads((ROOT / 'docs' / baseline_name).read_text(encoding='utf-8'))
 before = baseline['snapshot']
 protected_blocks = json.loads((ROOT / 'docs' / blocks_name).read_text(encoding='utf-8'))
-approved_additions = {} if historical else json.loads((ROOT / 'docs/seo-approved-additions-20260926.json').read_text(encoding='utf-8'))
+approved_additions = {}
+for name in ([] if historical else ['seo-approved-additions-20260926.json', 'seo-approved-additions-20260928.json']):
+    for page, fields in json.loads((ROOT / 'docs' / name).read_text(encoding='utf-8')).items():
+        for field, items in fields.items():
+            approved_additions.setdefault(page, {}).setdefault(field, []).extend(items)
 after = collect()
 failures = []
 results = []
@@ -23,8 +27,9 @@ cluster_paths = set() if historical else {
     'presentes-de-natal-canaa-dos-carajas/index.html',
     'guias-de-presentes/index.html',
     'mensagens-para-acompanhar-presentes/index.html',
+    'combos-pastel-canaa/index.html',
 }
-# Accept only the three requested additions. All previous entries, metadata,
+# Accept only the requested additions (gift cluster 26/09, combos 28/09). All previous entries, metadata,
 # ordering and protected files must still match the immutable release snapshot.
 protected_after = dict(after['protectedFiles'])
 if not historical:
@@ -38,6 +43,8 @@ if not historical:
     protected_after['sitemap.xml'] = sitemap
 if before['protectedFiles'] != protected_after:
     failures.append('Protected data, robots, sitemap or redirects changed')
+if not historical and '<meta name="robots" content="index, follow">' not in (ROOT / 'combos-pastel-canaa/index.html').read_text(encoding='utf-8'):
+    failures.append('Released combos page must be indexable')
 if set(before['pages']) | cluster_paths != set(after['pages']):
     failures.append('Public HTML paths changed')
 for page, old in before['pages'].items():

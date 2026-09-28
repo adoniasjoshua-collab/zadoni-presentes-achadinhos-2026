@@ -1,0 +1,32 @@
+{
+  "index.html": {
+    "links": [
+      {
+        "href": "https://zadonipresentes.com.br/combos-pastel-canaa/",
+        "internal": true,
+        "rel": "",
+        "text": "Combos de pastel em Canaã"
+      }
+    ]
+  },
+  "links/index.html": {
+    "links": [
+      {
+        "href": "https://zadonipresentes.com.br/combos-pastel-canaa/",
+        "internal": true,
+        "rel": "",
+        "text": "Combos de pastel Pastel + refrigerante a partir de R$ 20"
+      }
+    ]
+  },
+  "presentes-canaa.html": {
+    "links": [
+      {
+        "href": "https://zadonipresentes.com.br/combos-pastel-canaa/",
+        "internal": true,
+        "rel": "",
+        "text": "Combos de pastel"
+      }
+    ]
+  }
+}

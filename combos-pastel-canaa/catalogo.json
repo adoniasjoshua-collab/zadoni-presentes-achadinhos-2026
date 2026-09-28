@@ -1,0 +1,30 @@
+{
+  "status": "ready",
+  "phone": "5594992993138",
+  "delivery": { "price": 500, "areas": ["toda a zona urbana de Canaã dos Carajás"] },
+  "drinks": [
+    { "id": "refrigerante", "name": "Refrigerante em lata", "price": 0 },
+    { "id": "suco", "name": "Suco", "price": 700 }
+  ],
+  "socialImage": "assets/optimized/combos/social-combos.jpg",
+  "flavors": [
+    { "id": "carne-queijo", "name": "Carne com queijo" },
+    { "id": "frango-queijo", "name": "Frango com queijo" },
+    { "id": "queijo-presunto", "name": "Queijo e presunto" }
+  ],
+  "combos": [
+    { "id": "combo-1", "name": "Combo 1", "pastels": 1, "price": 2000, "image": "assets/optimized/combos/combo-1.webp", "imageAlt": "Arte do Combo de Pastel Zadoni em Canaã dos Carajás: combos de R$ 20, R$ 30 e R$ 47 com refrigerante em lata" },
+    { "id": "combo-2", "name": "Combo 2", "pastels": 2, "price": 3000, "image": "assets/optimized/combos/combo-2.webp", "imageAlt": "Arte Canaã hoje tem pastel: combos Zadoni de R$ 20, R$ 30 e R$ 47 com refrigerante em lata" },
+    { "id": "combo-3", "name": "Combo 3", "pastels": 3, "price": 4700, "image": "assets/optimized/combos/combo-3.webp", "imageAlt": "Arte Bateu a fome: pastel quentinho Zadoni em combos de R$ 20, R$ 30 e R$ 47 com refrigerante em lata" }
+  ],
+  "extras": [
+    { "id": "refrigerante-extra", "name": "Refrigerante em lata extra", "unit": "lata", "price": 600 },
+    { "id": "caixinha", "name": "Caixinha personalizada", "unit": "caixinha", "price": 1000 },
+    { "id": "maca", "name": "Maçã", "unit": "unidade", "price": 500 },
+    { "id": "pao-queijo", "name": "Pão de queijo", "unit": "unidade", "price": 200 },
+    { "id": "cacau-show", "name": "Barrinha Cacau Show", "unit": "barrinha", "price": 1000 },
+    { "id": "ferrero-4", "name": "Ferrero Rocher — caixa com 4 unidades", "unit": "caixa", "price": 4000 },
+    { "id": "ferrero-8", "name": "Ferrero Rocher — caixa com 8 unidades", "unit": "caixa", "price": 5500 },
+    { "id": "ferrero-12", "name": "Ferrero Rocher — caixa com 12 unidades", "unit": "caixa", "price": 6900 }
+  ]
+}
