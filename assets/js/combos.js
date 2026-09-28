@@ -26,28 +26,26 @@
     group.querySelector('[data-step="1"]').disabled = Number(input.value) >= Number(input.max);
   }
   function selection(form) {
-    const combo = data.combos.find(c => c.id === form.closest('[data-combo]').dataset.combo);
-    const pastels = [...form.querySelectorAll('[data-pastel]')].map(fieldset => {
-      const flavorId = fieldset.querySelector('[name^="flavor-"]').value;
-      const drinkId = fieldset.querySelector('[name^="drink-"]').value;
+    const flavor = data.flavors.find(f => f.id === form.closest('[data-flavor]').dataset.flavor);
+    const combo = data.combos.find(c => c.id === form.elements.size.value) || data.combos[0];
+    const pastels = [...form.querySelectorAll('[data-pastel]')].slice(0, combo.pastels).map(row => {
+      const drinkId = row.querySelector('select').value;
       const drink = data.drinks.find(d => d.id === drinkId);
-      return {
-        flavorId, flavorName: data.flavors.find(f => f.id === flavorId)?.name || '',
-        drinkId, drinkName: drink?.name || '', drinkPrice: drink?.price || 0
-      };
+      return { flavorName: flavor.name, drinkId, drinkName: drink?.name || '', drinkPrice: drink?.price || 0 };
     });
     const extras = [...form.querySelectorAll('[data-extra]')].map(row => ({
       ...data.extras.find(e => e.id === row.dataset.extra), quantity: quantity(row.querySelector('input'))
     })).filter(e => e.quantity > 0);
     return {
-      comboId: combo.id, name: combo.name, size: combo.pastels, price: combo.price,
+      flavorId: flavor.id, flavorName: flavor.name, comboId: combo.id, name: combo.name, size: combo.pastels, price: combo.price,
       count: quantity(form.querySelector('.combo-count input')),
       pastels, notes: form.elements.notes.value.trim(),
       extras, personalization: extras.some(e => e.id === 'caixinha') ? form.elements.personalization.value.trim() : ''
     };
   }
   const composition = item => `${plural(item.size, 'pastel', 'pastéis')} + ${plural(item.size, 'bebida', 'bebidas')}`;
-  const pastelLabel = (item, p, i) => `${item.size > 1 ? `Pastel ${i + 1}: ` : 'Pastel: '}${p.flavorName || 'sabor a escolher'} + ${p.drinkName || 'bebida a escolher'}${p.drinkPrice ? ' (+' + money(p.drinkPrice) + ')' : ''}`;
+  const pastelLabel = (item, p, i) => `${item.size > 1 ? `Pastel ${i + 1}: ` : 'Pastel: '}${p.flavorName} + ${p.drinkName || 'bebida a escolher'}${p.drinkPrice ? ' (+' + money(p.drinkPrice) + ')' : ''}`;
+  const title = item => `${item.name} de ${item.flavorName.toLowerCase()}`;
   function amounts(item) {
     const drinks = item.pastels.reduce((sum, p) => sum + p.drinkPrice, 0) * item.count;
     const base = item.price * item.count + drinks;
@@ -69,9 +67,9 @@
     const lines = ['Olá, Zadoni! Quero confirmar este pedido de combos de pastel:', ''];
     list.forEach((item, index) => {
       const a = amounts(item);
-      lines.push(`${index + 1}. ${item.count}× ${item.name} (${composition(item)}) — ${money(item.price * item.count)}`);
+      lines.push(`${index + 1}. ${item.count}× ${title(item)} (${composition(item)}) — ${money(item.price * item.count)}`);
       item.pastels.forEach((p, i) => lines.push('   ' + pastelLabel(item, p, i)));
-      if (item.count > 1) lines.push('   (mesmos sabores e bebidas em cada combo)');
+      if (item.count > 1) lines.push('   (mesmas bebidas em cada combo)');
       if (item.notes) lines.push('Preferência de bebida: ' + item.notes);
       if (item.extras.length) {
         lines.push('Adicionais deste grupo:');
@@ -96,6 +94,11 @@
   }
   function updateForm(form) {
     form.querySelectorAll('input[type="number"]').forEach(normalize);
+    const size = (data.combos.find(c => c.id === form.elements.size.value) || data.combos[0]).pastels;
+    form.querySelectorAll('[data-pastel]').forEach((row, i) => {
+      row.hidden = i >= size;
+      row.querySelector('select').disabled = i >= size;
+    });
     const item = selection(form);
     const box = item.extras.some(e => e.id === 'caixinha');
     form.querySelector('.personalization').hidden = !box;
@@ -113,9 +116,9 @@
   }
   function validate(form) {
     updateForm(form);
-    const missing = [...form.querySelectorAll('[data-pastel] select')].find(select => !select.value);
+    const missing = [...form.querySelectorAll('[data-pastel] select:not(:disabled)')].find(select => !select.value);
     if (missing) {
-      form.querySelector('[data-form-error]').textContent = missing.name.startsWith('flavor') ? 'Escolha o sabor de cada pastel.' : 'Escolha a bebida de cada pastel.';
+      form.querySelector('[data-form-error]').textContent = 'Escolha a bebida de cada pastel.';
       missing.focus();
       return false;
     }
@@ -128,7 +131,7 @@
     document.querySelector('[data-cart-nav]').hidden = !hasItems;
     // The order bar takes the bottom corner once there is something to send.
     document.querySelector('.whatsapp-float').hidden = hasItems;
-    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(item.name)} <small>${composition(item)}</small></h3><ul class="pastel-list">${item.pastels.map((p, i) => `<li>${esc(pastelLabel(item, p, i))}</li>`).join('')}</ul>${item.notes ? `<p>Preferência de bebida: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : '<p>Sem adicionais.</p>'}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}" aria-label="Editar grupo ${index + 1}: ${esc(item.name)}">Editar</button><button type="button" data-remove="${index}" aria-label="Remover grupo ${index + 1}: ${esc(item.name)}">Remover</button></div></article>`).join('');
+    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))} <small>${composition(item)}</small></h3><ul class="pastel-list">${item.pastels.map((p, i) => `<li>${esc(pastelLabel(item, p, i))}</li>`).join('')}</ul>${item.notes ? `<p>Preferência de bebida: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : '<p>Sem adicionais.</p>'}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}" aria-label="Editar grupo ${index + 1}: ${esc(title(item))}">Editar</button><button type="button" data-remove="${index}" aria-label="Remover grupo ${index + 1}: ${esc(title(item))}">Remover</button></div></article>`).join('');
     document.querySelector('[data-order-total]').innerHTML = totalHTML(order);
     const send = document.querySelector('[data-send-order]');
     send.hidden = !hasItems;
@@ -157,7 +160,7 @@
     });
   }
   document.querySelectorAll('[data-configurator]').forEach(form => {
-    const id = form.closest('[data-combo]').dataset.combo;
+    const id = form.closest('[data-flavor]').dataset.flavor;
     forms.set(id, form);
     form.addEventListener('click', event => {
       const step = event.target.closest('[data-step]');
@@ -175,7 +178,7 @@
       event.preventDefault();
       if (!validate(form)) return;
       const item = selection(form);
-      const replacing = editing && editing.comboId === id;
+      const replacing = editing && editing.flavorId === id;
       if (replacing) order[editing.index] = item;
       else order.push(item);
       finishEditing();
@@ -203,11 +206,9 @@
       const index = Number(edit.dataset.edit);
       const item = order[index];
       finishEditing();
-      const form = forms.get(item.comboId);
-      form.querySelectorAll('[data-pastel]').forEach((fieldset, i) => {
-        fieldset.querySelector('[name^="flavor-"]').value = item.pastels[i].flavorId;
-        fieldset.querySelector('[name^="drink-"]').value = item.pastels[i].drinkId;
-      });
+      const form = forms.get(item.flavorId);
+      form.elements.size.value = item.comboId;
+      form.querySelectorAll('[data-pastel] select').forEach((select, i) => { select.value = item.pastels[i]?.drinkId || 'refrigerante'; });
       form.elements.notes.value = item.notes;
       form.elements.personalization.value = item.personalization;
       form.querySelector('.combo-count input').value = item.count;
@@ -215,12 +216,12 @@
         row.querySelector('input').value = item.extras.find(e => e.id === row.dataset.extra)?.quantity || 0;
       });
       form.querySelector('.extras').open = item.extras.length > 0;
-      editing = { index, comboId: item.comboId };
+      editing = { index, flavorId: item.flavorId };
       updateForm(form);
       form.querySelector('[data-add]').textContent = 'Salvar alterações no pedido';
       form.querySelector('.direct-order').hidden = true;
       form.scrollIntoView({ block: 'start', behavior: 'auto' });
-      form.querySelector('[data-pastel] select').focus({ preventScroll: true });
+      form.querySelector('[name="size"]:checked').focus({ preventScroll: true });
       status.textContent = 'Edite as opções e clique em Salvar alterações no pedido.';
     }
   });

@@ -16,7 +16,12 @@ assert.equal(data.combos.length, 3);
 assert.deepEqual(data.combos.map(c => [c.id, c.pastels, c.price]), [['combo-1', 1, 2000], ['combo-2', 2, 3000], ['combo-3', 3, 4700]]);
 assert.deepEqual(data.flavors.map(f => f.id), ['carne-queijo', 'frango-queijo', 'queijo-presunto']);
 assert(data.delivery.areas.length, 'Delivery area must be stated');
-for (const c of data.combos) assert.equal((html.match(new RegExp(`id="${c.id}-sabor-\\d"`, 'g')) || []).length, c.pastels, 'One flavor and drink choice per pastel: ' + c.id);
+assert(data.flavors.every(f => f.image), 'Every flavor card needs an image');
+for (const f of data.flavors) {
+  const card = html.split(`id="${f.id}" data-flavor="${f.id}"`)[1]?.split('</article>')[0] || '';
+  assert.equal((card.match(/name="size" value="combo-\d"/g) || []).length, data.combos.length, 'Size options per flavor: ' + f.id);
+  assert.equal((card.match(/name="drink-\d"/g) || []).length, Math.max(...data.combos.map(c => c.pastels)), 'One drink choice per possible pastel: ' + f.id);
+}
 assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);
 assert(data.drinks.every(d => d.id && d.name && Number.isInteger(d.price) && d.price >= 0));

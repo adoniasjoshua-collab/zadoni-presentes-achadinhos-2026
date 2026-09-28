@@ -10,7 +10,7 @@ Pendência comercial: as três artes ainda dizem "refrigerante em lata ou suco" 
 
 ## Funcionalidade
 
-- Três combos, iguais às artes: Combo 1 = 1 pastel + 1 bebida (R$ 20); Combo 2 = 2 pastéis + 2 bebidas (R$ 30); Combo 3 = 3 pastéis + 3 bebidas (R$ 47). Para cada pastel o cliente escolhe o sabor (carne com queijo, frango com queijo, queijo e presunto) e a bebida: refrigerante em lata incluído ou suco com acréscimo de R$ 7 por bebida. Marca/sabor em observação opcional. Embalagem básica incluída. As artes enviadas pelo proprietário ficam nos cards.
+- Cards por sabor (carne com queijo, frango com queijo, queijo e presunto). Em cada card o cliente escolhe Combo 1 = 1 pastel + 1 bebida (R$ 20), Combo 2 = 2 + 2 (R$ 30) ou Combo 3 = 3 + 3 (R$ 47); o sabor não altera o preço. Bebida por pastel: refrigerante em lata já marcado ou suco + R$ 7. Sabores diferentes = um card de cada no mesmo pedido, com uma só entrega. Marca/sabor em observação opcional. Embalagem básica incluída. Arte ilustrativa em cada card.
 - Adicionais com quantidades: refrigerante em lata extra R$ 6 por lata; caixinha R$ 10; maçã R$ 5; pão de queijo R$ 2; barrinha Cacau Show R$ 10; Ferrero caixas de 4, 8 e 12 unidades por R$ 40, R$ 55 e R$ 69.
 - Lista expansível por combo; quantidades preservadas ao recolher; preços unitários, subtotais e total visíveis. Quantidades dos adicionais são por combo, multiplicadas quando se pedem vários combos iguais.
 - Compra direta de um grupo de combos ou inclusão no pedido geral. Edição, remoção, resumo revisável e mensagem completa para o telefone existente, 5594992993138.

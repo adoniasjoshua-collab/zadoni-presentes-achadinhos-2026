@@ -1,0 +1,149 @@
+{
+  "results": [
+    {
+      "check": "Three working forms and no horizontal overflow at 360px",
+      "passed": true
+    },
+    {
+      "check": "Expanded lists and touch heights at 360px",
+      "passed": true
+    },
+    {
+      "check": "Three working forms and no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "Expanded lists and touch heights at 390px",
+      "passed": true
+    },
+    {
+      "check": "Three working forms and no horizontal overflow at 412px",
+      "passed": true
+    },
+    {
+      "check": "Expanded lists and touch heights at 412px",
+      "passed": true
+    },
+    {
+      "check": "Three working forms and no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "Expanded lists and touch heights at 768px",
+      "passed": true
+    },
+    {
+      "check": "Three working forms and no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "Expanded lists and touch heights at 1024px",
+      "passed": true
+    },
+    {
+      "check": "Three working forms and no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "Expanded lists and touch heights at 1440px",
+      "passed": true
+    },
+    {
+      "check": "Soda preselected, compare shortcuts, floating WhatsApp and full footer",
+      "passed": true
+    },
+    {
+      "check": "Flavor cards default to 1 pastel with soda, ready to order",
+      "passed": true
+    },
+    {
+      "check": "Empty drink blocks direct checkout",
+      "passed": true
+    },
+    {
+      "check": "R$61 example and direct WhatsApp summary",
+      "passed": true
+    },
+    {
+      "check": "Closing extras preserves quantities",
+      "passed": true
+    },
+    {
+      "check": "Floating WhatsApp gives way to the order bar",
+      "passed": true
+    },
+    {
+      "check": "Cart receives configured group",
+      "passed": true
+    },
+    {
+      "check": "Two flavors in one order: Combo 2 at R$30 plus R$7 juice and a single R$5 delivery",
+      "passed": true
+    },
+    {
+      "check": "Pickup removes the R$5 fee from cart, bar, cards and message",
+      "passed": true
+    },
+    {
+      "check": "Choosing delivery on a card restores the single R$5 fee everywhere",
+      "passed": true
+    },
+    {
+      "check": "Editing group multiplies extras and replaces rather than duplicates",
+      "passed": true
+    },
+    {
+      "check": "Remove group recalculates totals",
+      "passed": true
+    },
+    {
+      "check": "Juice adds R$7 per drink and per repeated combo",
+      "passed": true
+    },
+    {
+      "check": "Empty cart cannot checkout or charge delivery",
+      "passed": true
+    },
+    {
+      "check": "All Ferrero box prices, personalization and HTML injection safety",
+      "passed": true
+    },
+    {
+      "check": "Deselected box omits stale personalization",
+      "passed": true
+    },
+    {
+      "check": "Extra canned soda at R$6 each with quantity",
+      "passed": true
+    },
+    {
+      "check": "Invalid quantities constrained to whole nonnegative bounded values",
+      "passed": true
+    },
+    {
+      "check": "Choosing 3 pastéis shows three drink choices",
+      "passed": true
+    },
+    {
+      "check": "Queijo e presunto with 3 pastéis at R$47 and one R$7 juice",
+      "passed": true
+    },
+    {
+      "check": "Keyboard skip link",
+      "passed": true
+    },
+    {
+      "check": "Failed script keeps three functional contact links and static product content",
+      "passed": true
+    },
+    {
+      "check": "No JavaScript preserves product names, prices and WhatsApp contact",
+      "passed": true
+    },
+    {
+      "check": "No browser runtime exceptions",
+      "passed": true
+    }
+  ],
+  "externalRequests": "WhatsApp and trackers blocked; no messages sent"
+}

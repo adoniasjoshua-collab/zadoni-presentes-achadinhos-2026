@@ -8,14 +8,14 @@
   ],
   "socialImage": "assets/optimized/combos/social-combos.jpg",
   "flavors": [
-    { "id": "carne-queijo", "name": "Carne com queijo" },
-    { "id": "frango-queijo", "name": "Frango com queijo" },
-    { "id": "queijo-presunto", "name": "Queijo e presunto" }
+    { "id": "carne-queijo", "name": "Carne com queijo", "image": "assets/optimized/combos/combo-1.webp", "imageAlt": "Arte promocional dos combos de pastel Zadoni em Canaã dos Carajás: 1, 2 ou 3 pastéis com refrigerante em lata por R$ 20, R$ 30 ou R$ 47" },
+    { "id": "frango-queijo", "name": "Frango com queijo", "image": "assets/optimized/combos/combo-2.webp", "imageAlt": "Arte promocional dos combos de pastel Zadoni em Canaã dos Carajás: 1, 2 ou 3 pastéis com refrigerante em lata por R$ 20, R$ 30 ou R$ 47" },
+    { "id": "queijo-presunto", "name": "Queijo e presunto", "image": "assets/optimized/combos/combo-3.webp", "imageAlt": "Arte promocional dos combos de pastel Zadoni em Canaã dos Carajás: 1, 2 ou 3 pastéis com refrigerante em lata por R$ 20, R$ 30 ou R$ 47" }
   ],
   "combos": [
-    { "id": "combo-1", "name": "Combo 1", "pastels": 1, "price": 2000, "image": "assets/optimized/combos/combo-1.webp", "imageAlt": "Arte do Combo de Pastel Zadoni em Canaã dos Carajás: combos de R$ 20, R$ 30 e R$ 47 com refrigerante em lata" },
-    { "id": "combo-2", "name": "Combo 2", "pastels": 2, "price": 3000, "image": "assets/optimized/combos/combo-2.webp", "imageAlt": "Arte Canaã hoje tem pastel: combos Zadoni de R$ 20, R$ 30 e R$ 47 com refrigerante em lata" },
-    { "id": "combo-3", "name": "Combo 3", "pastels": 3, "price": 4700, "image": "assets/optimized/combos/combo-3.webp", "imageAlt": "Arte Bateu a fome: pastel quentinho Zadoni em combos de R$ 20, R$ 30 e R$ 47 com refrigerante em lata" }
+    { "id": "combo-1", "name": "Combo 1", "pastels": 1, "price": 2000 },
+    { "id": "combo-2", "name": "Combo 2", "pastels": 2, "price": 3000 },
+    { "id": "combo-3", "name": "Combo 3", "pastels": 3, "price": 4700 }
   ],
   "extras": [
     { "id": "refrigerante-extra", "name": "Refrigerante em lata extra", "unit": "lata", "price": 600 },
