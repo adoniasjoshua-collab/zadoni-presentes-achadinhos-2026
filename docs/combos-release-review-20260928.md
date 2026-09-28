@@ -6,11 +6,11 @@ Aprovada pelo proprietário e integrada para publicação em 28/09/2026: `status
 
 Navegação e contato (28/09, segunda publicação): botão fixo de WhatsApp (some quando a barra "Revisar pedido" aparece); atalhos no topo comparando Combo 1/2/3 com preço; refrigerante em lata já marcado em cada pastel; rodapé completo com 12 páginas da Zadoni e contato (WhatsApp, Instagram, avaliações Google); card "Combos de Pastel" na grade principal da Home, com foto recortada da arte e grade de 5 colunas (a última ocupa a linha inteira no celular). O menu principal de 6 itens não foi alterado.
 
-Pendência comercial: as três artes ainda dizem "refrigerante em lata ou suco" como incluído, enquanto a página cobra R$ 7 pelo suco. Trocar as artes antes de divulgar. Retirada: local e horário combinados no WhatsApp; nenhum endereço é publicado.
+Fotos reais por recheio recebidas em 28/09 (originais em assets/img/originais/combos/, fora do deploy). Retirada: local e horário combinados no WhatsApp; nenhum endereço é publicado.
 
 ## Funcionalidade
 
-- Cards por sabor (carne com queijo, frango com queijo, queijo e presunto). Em cada card o cliente escolhe Combo 1 = 1 pastel + 1 bebida (R$ 20), Combo 2 = 2 + 2 (R$ 30) ou Combo 3 = 3 + 3 (R$ 47); o sabor não altera o preço. Bebida por pastel: refrigerante em lata já marcado ou suco + R$ 7. Sabores diferentes = um card de cada no mesmo pedido, com uma só entrega. Marca/sabor em observação opcional. Embalagem básica incluída. Arte ilustrativa em cada card.
+- Layout enxuto (28/09, noite): um card por recheio (carne com queijo, frango com queijo, presunto com queijo) com foto real própria, preço único em destaque R$ 22 = 1 pastelão + 1 refrigerante em lata, botão "Pedir no WhatsApp" e um botão "Adicionais e opções" com suco (+ R$ 7), observação, quantidade, adicionais e entrega/retirada. Combos de 2 e 3 pastéis (R$ 30/47) foram descontinuados, e as artes com esses preços saíram da página e do repositório.
 - Adicionais com quantidades: refrigerante em lata extra R$ 6 por lata; caixinha R$ 10; maçã R$ 5; pão de queijo R$ 2; barrinha Cacau Show R$ 10; Ferrero caixas de 4, 8 e 12 unidades por R$ 40, R$ 55 e R$ 69.
 - Lista expansível por combo; quantidades preservadas ao recolher; preços unitários, subtotais e total visíveis. Quantidades dos adicionais são por combo, multiplicadas quando se pedem vários combos iguais.
 - Compra direta de um grupo de combos ou inclusão no pedido geral. Edição, remoção, resumo revisável e mensagem completa para o telefone existente, 5594992993138.

@@ -12,15 +12,16 @@ const html = read(`${slug}/index.html`);
 assert.equal(data.status, 'ready');
 assert.equal(data.phone, '5594992993138');
 assert.equal(data.delivery.price, 500);
-assert.equal(data.combos.length, 3);
-assert.deepEqual(data.combos.map(c => [c.id, c.pastels, c.price]), [['combo-1', 1, 2000], ['combo-2', 2, 3000], ['combo-3', 3, 4700]]);
+assert.equal(data.price, 2200, 'Combo = 1 pastel + canned soda for R$22, same for every flavor');
+assert(!('combos' in data), 'Tiered 1/2/3-pastel pricing was retired');
 assert.deepEqual(data.flavors.map(f => f.id), ['carne-queijo', 'frango-queijo', 'queijo-presunto']);
 assert(data.delivery.areas.length, 'Delivery area must be stated');
 assert(data.flavors.every(f => f.image), 'Every flavor card needs an image');
 for (const f of data.flavors) {
   const card = html.split(`id="${f.id}" data-flavor="${f.id}"`)[1]?.split('</article>')[0] || '';
-  assert.equal((card.match(/name="size" value="combo-\d"/g) || []).length, data.combos.length, 'Size options per flavor: ' + f.id);
-  assert.equal((card.match(/name="drink-\d"/g) || []).length, Math.max(...data.combos.map(c => c.pastels)), 'One drink choice per possible pastel: ' + f.id);
+  assert(card.includes('<p class="price">R$&nbsp;22,00</p>') || card.includes('<p class="price">R$ 22,00</p>'), 'Price leads each card: ' + f.id);
+  assert.equal((card.match(/name="drink"/g) || []).length, 1, 'One drink choice per card: ' + f.id);
+  assert(card.includes('<details class="options"><summary>Adicionais e opções</summary>'), 'Options stay behind one button: ' + f.id);
 }
 assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);

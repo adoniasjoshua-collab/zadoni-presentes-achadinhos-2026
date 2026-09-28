@@ -1,21 +1,17 @@
 {
   "status": "ready",
   "phone": "5594992993138",
+  "price": 2200,
   "delivery": { "price": 500, "areas": ["toda a zona urbana de Canaã dos Carajás"] },
   "drinks": [
     { "id": "refrigerante", "name": "Refrigerante em lata", "price": 0 },
     { "id": "suco", "name": "Suco", "price": 700 }
   ],
-  "socialImage": "assets/optimized/combos/social-combos.jpg",
+  "socialImage": "assets/optimized/combos/social-pastelao.jpg",
   "flavors": [
-    { "id": "carne-queijo", "name": "Carne com queijo", "image": "assets/optimized/combos/combo-1.webp", "imageAlt": "Arte promocional dos combos de pastel Zadoni em Canaã dos Carajás: 1, 2 ou 3 pastéis com refrigerante em lata por R$ 20, R$ 30 ou R$ 47" },
-    { "id": "frango-queijo", "name": "Frango com queijo", "image": "assets/optimized/combos/combo-2.webp", "imageAlt": "Arte promocional dos combos de pastel Zadoni em Canaã dos Carajás: 1, 2 ou 3 pastéis com refrigerante em lata por R$ 20, R$ 30 ou R$ 47" },
-    { "id": "queijo-presunto", "name": "Queijo e presunto", "image": "assets/optimized/combos/combo-3.webp", "imageAlt": "Arte promocional dos combos de pastel Zadoni em Canaã dos Carajás: 1, 2 ou 3 pastéis com refrigerante em lata por R$ 20, R$ 30 ou R$ 47" }
-  ],
-  "combos": [
-    { "id": "combo-1", "name": "Combo 1", "pastels": 1, "price": 2000 },
-    { "id": "combo-2", "name": "Combo 2", "pastels": 2, "price": 3000 },
-    { "id": "combo-3", "name": "Combo 3", "pastels": 3, "price": 4700 }
+    { "id": "carne-queijo", "name": "Carne com queijo", "image": "assets/optimized/combos/carne-queijo.webp", "imageAlt": "Pastelão de carne com queijo aberto, com recheio de carne desfiada e queijo derretido, ao lado de um refrigerante em lata" },
+    { "id": "frango-queijo", "name": "Frango com queijo", "image": "assets/optimized/combos/frango-queijo.webp", "imageAlt": "Pastelão de frango com queijo aberto, com frango desfiado e queijo derretido, ao lado de um refrigerante em lata" },
+    { "id": "queijo-presunto", "name": "Presunto com queijo", "image": "assets/optimized/combos/queijo-presunto.webp", "imageAlt": "Pastelão de presunto com queijo aberto, com presunto e queijo derretido, ao lado de um refrigerante em lata" }
   ],
   "extras": [
     { "id": "refrigerante-extra", "name": "Refrigerante em lata extra", "unit": "lata", "price": 600 },

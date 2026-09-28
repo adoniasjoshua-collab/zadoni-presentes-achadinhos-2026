@@ -1,0 +1,141 @@
+{
+  "results": [
+    {
+      "check": "Three working cards and no horizontal overflow at 360px",
+      "passed": true
+    },
+    {
+      "check": "Opened options and touch heights at 360px",
+      "passed": true
+    },
+    {
+      "check": "Three working cards and no horizontal overflow at 390px",
+      "passed": true
+    },
+    {
+      "check": "Opened options and touch heights at 390px",
+      "passed": true
+    },
+    {
+      "check": "Three working cards and no horizontal overflow at 412px",
+      "passed": true
+    },
+    {
+      "check": "Opened options and touch heights at 412px",
+      "passed": true
+    },
+    {
+      "check": "Three working cards and no horizontal overflow at 768px",
+      "passed": true
+    },
+    {
+      "check": "Opened options and touch heights at 768px",
+      "passed": true
+    },
+    {
+      "check": "Three working cards and no horizontal overflow at 1024px",
+      "passed": true
+    },
+    {
+      "check": "Opened options and touch heights at 1024px",
+      "passed": true
+    },
+    {
+      "check": "Three working cards and no horizontal overflow at 1440px",
+      "passed": true
+    },
+    {
+      "check": "Opened options and touch heights at 1440px",
+      "passed": true
+    },
+    {
+      "check": "Three flavors, three different photos, R$22 up front and options closed",
+      "passed": true
+    },
+    {
+      "check": "Soda preselected, floating WhatsApp and full footer",
+      "passed": true
+    },
+    {
+      "check": "One tap orders R$22 + R$5 delivery",
+      "passed": true
+    },
+    {
+      "check": "Add-ons update the direct WhatsApp total",
+      "passed": true
+    },
+    {
+      "check": "Closing options preserves quantities",
+      "passed": true
+    },
+    {
+      "check": "Floating WhatsApp gives way to the order bar",
+      "passed": true
+    },
+    {
+      "check": "Cart receives configured combo",
+      "passed": true
+    },
+    {
+      "check": "Two flavors in one order with juice +R$7 each and one R$5 delivery",
+      "passed": true
+    },
+    {
+      "check": "Pickup removes the R$5 fee from cart, bar, cards and message",
+      "passed": true
+    },
+    {
+      "check": "Choosing delivery on a card restores the single R$5 fee everywhere",
+      "passed": true
+    },
+    {
+      "check": "Editing multiplies add-ons and replaces rather than duplicates",
+      "passed": true
+    },
+    {
+      "check": "Remove recalculates totals",
+      "passed": true
+    },
+    {
+      "check": "Juice adds R$7 per combo",
+      "passed": true
+    },
+    {
+      "check": "Empty cart cannot checkout or charge delivery",
+      "passed": true
+    },
+    {
+      "check": "All Ferrero box prices, personalization and HTML injection safety",
+      "passed": true
+    },
+    {
+      "check": "Deselected box omits stale personalization",
+      "passed": true
+    },
+    {
+      "check": "Extra canned soda at R$6 each with quantity",
+      "passed": true
+    },
+    {
+      "check": "Invalid quantities constrained to whole nonnegative bounded values",
+      "passed": true
+    },
+    {
+      "check": "Keyboard skip link",
+      "passed": true
+    },
+    {
+      "check": "Failed script keeps three WhatsApp links and static product content",
+      "passed": true
+    },
+    {
+      "check": "No JavaScript preserves flavors, price and WhatsApp contact",
+      "passed": true
+    },
+    {
+      "check": "No browser runtime exceptions",
+      "passed": true
+    }
+  ],
+  "externalRequests": "WhatsApp and trackers blocked; no messages sent"
+}
