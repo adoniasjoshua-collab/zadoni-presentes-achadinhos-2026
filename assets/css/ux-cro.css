@@ -36,7 +36,8 @@
 [data-ux-cro] .produto-imagem { height: auto; aspect-ratio: 4 / 5; background: #f8f5f3; }
 [data-ux-cro] .produto-imagem img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 [data-ux-cro] .produto-imagem picture { overflow: hidden; }
-[data-ux-cro] .produto-card[data-category="cestas"] .produto-imagem img { transform: scale(1.5); }
+[data-ux-cro] .produto-card[data-category="cestas"] .produto-imagem { aspect-ratio: 4 / 5; overflow: hidden; background: #faf9f6; }
+[data-ux-cro] .produto-card[data-category="cestas"] .produto-imagem img { width: 100%; height: 100%; object-fit: contain; transform: none; }
 [data-ux-cro] .produto-card[data-produto-id="60"] .produto-imagem img { transform: scale(1.15); }
 [data-ux-cro] .seo-gallery-item img { width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; background: #f8f5f3; }
 [data-ux-cro] .seo-gallery-grid--budget .seo-gallery-item:has(img[src*="modelo-real-10"]) { order: -3; }

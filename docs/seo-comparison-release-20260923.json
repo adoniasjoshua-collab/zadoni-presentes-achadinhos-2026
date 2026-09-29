@@ -1,7 +1,27 @@
 {
-  "passed": true,
+  "passed": false,
   "pages": 19,
-  "failures": [],
+  "failures": [
+    "buques-canaa-dos-carajas/index.html: links",
+    "buques-canaa-dos-carajas/index.html: images",
+    "buques-canaa-dos-carajas/index.html: pictureSources",
+    "cesta-cafe-da-manha-canaa/index.html: images",
+    "cesta-cafe-da-manha-canaa/index.html: pictureSources",
+    "cesta-de-aniversario-canaa/index.html: images",
+    "cestas-de-presente-canaa/index.html: links",
+    "cestas-de-presente-canaa/index.html: images",
+    "cestas-de-presente-canaa/index.html: pictureSources",
+    "floricultura-canaa-dos-carajas/index.html: images",
+    "floricultura-canaa-dos-carajas/index.html: pictureSources",
+    "index.html: pictureSources",
+    "presentes-canaa-dos-carajas/index.html: images",
+    "presentes-canaa.html: images",
+    "presentes-romanticos-canaa/index.html: images",
+    "revenda-chocolates-canaa/index.html: images",
+    "rosas-perfumadas-canaa/index.html: links",
+    "rosas-perfumadas-canaa/index.html: images",
+    "rosas-perfumadas-canaa/index.html: pictureSources"
+  ],
   "scope": "Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.",
   "results": [
     {
@@ -31,33 +51,51 @@
     },
     {
       "page": "buques-canaa-dos-carajas/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "links",
+        "images",
+        "pictureSources"
+      ]
     },
     {
       "page": "cesta-cafe-da-manha-canaa/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images",
+        "pictureSources"
+      ]
     },
     {
       "page": "cesta-de-aniversario-canaa/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images"
+      ]
     },
     {
       "page": "cestas-de-presente-canaa/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "links",
+        "images",
+        "pictureSources"
+      ]
     },
     {
       "page": "floricultura-canaa-dos-carajas/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images",
+        "pictureSources"
+      ]
     },
     {
       "page": "index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "pictureSources"
+      ]
     },
     {
       "page": "links/index.html",
@@ -76,28 +114,40 @@
     },
     {
       "page": "presentes-canaa-dos-carajas/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images"
+      ]
     },
     {
       "page": "presentes-canaa.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images"
+      ]
     },
     {
       "page": "presentes-romanticos-canaa/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images"
+      ]
     },
     {
       "page": "revenda-chocolates-canaa/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "images"
+      ]
     },
     {
       "page": "rosas-perfumadas-canaa/index.html",
-      "passed": true,
-      "issues": []
+      "passed": false,
+      "issues": [
+        "links",
+        "images",
+        "pictureSources"
+      ]
     }
   ]
 }
