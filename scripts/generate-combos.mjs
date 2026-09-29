@@ -70,7 +70,7 @@ const html = `<!DOCTYPE html>
 <link rel="canonical" href="${url}"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../assets/img/brand/logo-zadoni-180.png">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Zadoni Presentes"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${url}"><meta property="og:image" content="${social}"><meta property="og:image:alt" content="${data.socialImage ? 'Arte da Zadoni Lanches com pastel aberto de carne moída e a chamada Canaã, bateu a fome?' : 'Marca Zadoni Presentes'}">
 <meta name="twitter:card" content="${data.socialImage ? 'summary_large_image' : 'summary'}"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${description}"><meta name="twitter:image" content="${social}">
-<link rel="stylesheet" href="../assets/css/combos.css?v=20260929-2">
+<link rel="stylesheet" href="../assets/css/combos.css?v=20260929-hero-rounded">
 <script type="application/ld+json">${json(schemas)}</script>
 ${live ? `<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 'AW-16938428518');</script>\n${metaPixelHead}` : '<!-- Preview: no advertising trackers are loaded. -->'}
 <script id="combos-data" type="application/json">${json(data)}</script><script src="../assets/js/combos.js?v=20260928-5" defer></script>
