@@ -7,7 +7,7 @@
     { "id": "refrigerante", "name": "Refrigerante em lata", "price": 0 },
     { "id": "suco", "name": "Suco", "price": 700 }
   ],
-  "socialImage": "assets/optimized/combos/social-pastelao.jpg",
+  "socialImage": "assets/optimized/combos/social-pastel-capa.jpg",
   "flavors": [
     { "id": "carne-queijo", "name": "Carne com queijo", "image": "assets/optimized/combos/carne-queijo.webp", "imageAlt": "Pastelão de carne com queijo aberto, com recheio de carne desfiada e queijo derretido, ao lado de um refrigerante em lata" },
     { "id": "frango-queijo", "name": "Frango com queijo", "image": "assets/optimized/combos/frango-queijo.webp", "imageAlt": "Pastelão de frango com queijo aberto, com frango desfiado e queijo derretido, ao lado de um refrigerante em lata" },
