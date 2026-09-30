@@ -31,3 +31,15 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | 30/09/2026 | Floricultura e buquês | Rosas naturais primeiro, com 3 rosas a R$ 185 ou 7 rosas a R$ 259 e montagem no mesmo dia em 2 horas | 28/10/2026 |
 | 30/09/2026 | Buquês | Foto de rosas naturais no topo da página | 28/10/2026 |
 | 30/09/2026 | 7 páginas | Acentuação correta em 14 nomes de produtos | 28/10/2026 |
+
+## Pendências
+
+| Quando | Tarefa | Quem | Feito |
+|---|---|---|---|
+| 30/09/2026 | Pedir indexação no Search Console das 9 páginas prioritárias: inicial, floricultura, buquês, presentes, cestas, café da manhã, aniversário, perfumaria e monte sua cesta | Dono | [ ] |
+| **01/10/2026** | **Pedir indexação de https://zadonipresentes.com.br/rosas-perfumadas-canaa/** | Dono | [ ] |
+| **01/10/2026** | **Pedir indexação de https://zadonipresentes.com.br/presentes-romanticos-canaa/** | Dono | [ ] |
+| Assim que possível | Criar 301 no hPanel: /presentes-canaa-dos-carajas/ e /presentes-canaa → /presentes-canaa.html | Dono | [ ] |
+| Assim que possível | Reenviar https://zadonipresentes.com.br/sitemap.xml no Search Console | Dono | [ ] |
+| Assim que possível | Conferir e excluir a avaliação "Zadoni 2" no Perfil da Empresa, se for da própria loja | Dono | [ ] |
+| 28/10/2026 | Comparar os números de cada página com a linha de base desta tabela | Dono e agente | [ ] |
