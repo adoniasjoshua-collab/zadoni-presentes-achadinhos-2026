@@ -35,11 +35,11 @@ protected_after = dict(after['protectedFiles'])
 if not historical:
     sitemap = protected_after.get('sitemap.xml', '')
     for page in sorted(cluster_paths):
-        entry = '  <url><loc>https://zadonipresentes.com.br/' + page.removesuffix('index.html') + '</loc></url>\n'
-        if sitemap.count(entry) != 1:
+        entry = re.compile(r'  <url><loc>https://zadonipresentes\.com\.br/' + re.escape(page.removesuffix('index.html')) + r'</loc>(?:<lastmod>\d{4}-\d{2}-\d{2}</lastmod>)?</url>\n')
+        if len(entry.findall(sitemap)) != 1:
             failures.append('Expected exactly one new sitemap entry: ' + page)
         else:
-            sitemap = sitemap.replace(entry, '', 1)
+            sitemap = entry.sub('', sitemap, count=1)
     protected_after['sitemap.xml'] = sitemap
 if before['protectedFiles'] != protected_after:
     failures.append('Protected data, robots, sitemap or redirects changed')
