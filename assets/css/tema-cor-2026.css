@@ -1,0 +1,140 @@
+/*
+ * Tema de cor 2026 · Zadoni Presentes
+ * Camada visual carregada por último. Só cores, fundos, bordas e sombras:
+ * nenhum texto, link, título ou estrutura muda. Para desligar, remova o <link>.
+ */
+:root {
+  --z-vinho: #5a1f3f;
+  --z-vinho-escuro: #3f1530;
+  --z-vinho-medio: #7a2f55;
+  --z-rosa: #d9367f;
+  --z-rosa-escuro: #b0245f;
+  --z-rosa-claro: #fde8f1;
+  --z-ouro: #d4a64a;
+  --z-ouro-claro: #fbf0d9;
+  --z-creme: #fffaf3;
+  --z-blush: #fff2f7;
+  --z-verde: #0a8a45;
+  --z-verde-escuro: #066332;
+  --z-texto: #3a2e38;
+  --z-texto-leve: #5b4d58;
+  --z-borda: #f0dde6;
+  --z-sombra: 0 10px 28px rgba(122, 47, 85, .12);
+  --z-sombra-forte: 0 16px 36px rgba(122, 47, 85, .2);
+}
+
+body { background: var(--z-creme); color: var(--z-texto); }
+
+/* Cabeçalho: vinho com brilho e filete dourado */
+header {
+  background: linear-gradient(120deg, var(--z-vinho-escuro) 0%, var(--z-vinho) 55%, var(--z-vinho-medio) 100%);
+  box-shadow: 0 2px 0 var(--z-ouro), 0 8px 24px rgba(63, 21, 48, .25);
+}
+
+/* Faixa "Precisa de ajuda": champanhe, links em pílula e uma linha no celular */
+.journey-help {
+  background: linear-gradient(90deg, var(--z-ouro-claro), #fff6ea 50%, var(--z-rosa-claro));
+  border-bottom: 1px solid #f3e2c4;
+}
+.journey-help a {
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .75);
+  border: 1px solid #edd3a6;
+  color: var(--z-vinho);
+  text-decoration: none;
+  font-weight: 600;
+}
+.journey-help a:hover { background: #fff; border-color: var(--z-rosa); }
+@media (max-width: 480px) {
+  .journey-help { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; gap: 8px; padding: 10px 16px; scrollbar-width: none; }
+  .journey-help::-webkit-scrollbar { display: none; }
+  .journey-help span { width: auto; flex: 0 0 auto; font-size: 13px; }
+  .journey-help a { flex: 0 0 auto; white-space: nowrap; min-height: 40px; }
+}
+
+/* Topos das páginas: gradiente blush e dourado no lugar do rosa chapado */
+.hero.home-hero,
+.seo-hero,
+.gift-hero {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(217, 54, 127, .16), transparent 42%),
+    radial-gradient(circle at 6% 92%, rgba(212, 166, 74, .22), transparent 38%),
+    linear-gradient(135deg, #fff1f6 0%, #fff8ee 100%);
+}
+.home-hero h1, .seo-hero h1, .gift-hero h1 { color: var(--z-vinho); }
+.home-hero p, .seo-hero .hero-hook { color: var(--z-texto-leve); }
+
+/* Botão principal da inicial */
+.home-hero .home-path--local {
+  background: linear-gradient(120deg, var(--z-rosa) 0%, var(--z-vinho-medio) 70%, var(--z-vinho) 100%);
+  box-shadow: 0 12px 26px rgba(217, 54, 127, .32);
+}
+.home-hero .home-path--local:hover { background: linear-gradient(120deg, var(--z-rosa-escuro), var(--z-vinho)); }
+.home-hero .home-path--local .home-path-label { color: var(--z-ouro-claro); }
+
+/* Foto do topo com moldura dourada */
+.home-hero > .container::after,
+.category-hero-image,
+.gift-hero figure:not(.gift-hero-banner) {
+  box-shadow: 0 0 0 4px #fff, 0 0 0 6px rgba(212, 166, 74, .55), var(--z-sombra-forte);
+}
+
+/* Botões */
+.btn-primary { background: linear-gradient(120deg, var(--z-rosa), var(--z-vinho-medio)); border-color: transparent; color: #fff; }
+.btn-primary:hover { background: linear-gradient(120deg, var(--z-rosa-escuro), var(--z-vinho)); }
+.btn-secondary,
+.btn-whatsapp-produto,
+.whatsapp-float {
+  background: linear-gradient(135deg, var(--z-verde) 0%, var(--z-verde-escuro) 100%);
+}
+.btn-outline { border-color: var(--z-rosa); color: var(--z-vinho); }
+.btn-outline:hover { background: var(--z-rosa-claro); }
+
+/* Categorias da inicial: fundo creme e argola dourada */
+.home-categories { background: linear-gradient(180deg, var(--z-creme) 0%, #fff 100%); }
+.home-categories .category-icon {
+  border: 0;
+  box-shadow: 0 0 0 4px #fff, 0 0 0 7px rgba(212, 166, 74, .6), 0 12px 24px rgba(122, 47, 85, .18);
+}
+.home-categories .category-card:hover .category-icon {
+  box-shadow: 0 0 0 4px #fff, 0 0 0 7px var(--z-rosa), 0 14px 28px rgba(217, 54, 127, .28);
+}
+.home-categories .category-card:hover { background: transparent; }
+.home-categories .category-name { color: var(--z-vinho); font-weight: 700; }
+
+/* Guias da inicial: cada card com uma cor de acento */
+.home-gift-guides { background: linear-gradient(180deg, var(--z-blush) 0%, #fff6ec 100%); }
+.home-gift-guide { border-top: 4px solid var(--z-ouro); box-shadow: var(--z-sombra); }
+.home-gift-guide:nth-child(2) { border-top-color: var(--z-rosa); }
+.home-gift-guide:nth-child(3) { border-top-color: #1f7a4d; }
+
+/* Seções de produtos e galerias alternando creme e blush */
+.seo-products, [data-ux-cro] .seo-products { background: #fff; }
+.seo-products + .seo-products, .seo-copy { background: var(--z-creme); }
+.seo-gallery, .entregas-reais, .seo-reviews { background: linear-gradient(180deg, var(--z-blush) 0%, var(--z-creme) 100%); }
+.seo-faq { background: #fff; }
+
+/* Cards de produto */
+.produto-card, [data-ux-cro] .produto-card {
+  border: 1px solid var(--z-borda);
+  box-shadow: var(--z-sombra);
+}
+.produto-card:hover, [data-ux-cro] .produto-card:hover { box-shadow: var(--z-sombra-forte); border-color: #e9c6d7; }
+.produto-preco, [data-ux-cro] .produto-preco { color: var(--z-rosa-escuro); }
+.produto-categoria { background: linear-gradient(120deg, var(--z-rosa), var(--z-vinho-medio)); color: #fff; }
+.produto-nome, .produto-nome a { color: var(--z-vinho); }
+.entrega-real-card figcaption strong, .seo-gallery-item figcaption span { color: var(--z-vinho); }
+
+/* Perguntas frequentes com acento lateral */
+.seo-faq details, .faq-grid details { border-left: 4px solid var(--z-ouro); }
+.seo-faq details[open], .faq-grid details[open] { border-left-color: var(--z-rosa); }
+
+/* Atalhos das páginas de categoria em pílula colorida */
+.section-jump-nav a { border-color: #edd3a6; background: #fff; color: var(--z-vinho); }
+.section-jump-nav a:hover, .section-jump-nav a:focus-visible { background: var(--z-rosa-claro); border-color: var(--z-rosa); }
+
+/* Rodapé vinho com títulos dourados */
+footer { background: linear-gradient(160deg, var(--z-vinho-escuro) 0%, var(--z-vinho) 100%); }
+footer h2, footer h3 { color: var(--z-ouro); }
