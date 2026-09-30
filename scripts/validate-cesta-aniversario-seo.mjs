@@ -15,7 +15,28 @@ assert.match(html, /<meta name="description" content="[^"]+">/);
 assert.match(html, new RegExp(`<link rel="canonical" href="${CANONICAL}">`));
 assert.equal((html.match(/<h1\b/g) || []).length, 1, "A página deve ter exatamente um H1");
 assert.ok(!/<meta[^>]+noindex/i.test(html), "A página não pode ter noindex");
-assert.equal((html.match(/class="seo-gallery-item"/g) || []).length, 11, "A página deve ter onze modelos");
+const section = (id) => {
+  const start = html.indexOf(`<section class="seo-gallery" id="${id}"`);
+  assert.ok(start >= 0, `Seção ${id} ausente`);
+  return html.slice(start, html.indexOf("</section>", start));
+};
+const cestasHtml = section("cestas-aniversario");
+assert.equal((cestasHtml.match(/class="seo-gallery-item"/g) || []).length, 11, "A página deve ter onze modelos");
+
+// Arranjos de balões: três cores, R$ 85,00, CTA próprio e fotos no padrão 4:5 (720x900 + 480x600).
+const BALLOONS = ["azul-prata", "turquesa-prata", "rosa-dourado"];
+const baloesHtml = section("baloes-aniversario");
+assert.equal((baloesHtml.match(/class="seo-gallery-item"/g) || []).length, BALLOONS.length, "A seção deve ter três arranjos de balões");
+assert.equal((baloesHtml.match(/R\$ 85,00<\/strong>/g) || []).length, BALLOONS.length, "Cada arranjo deve mostrar o valor de R$ 85,00");
+assert.equal((baloesHtml.match(/>Quero este arranjo<\/a>/g) || []).length, BALLOONS.length, "Cada arranjo deve ter CTA próprio");
+for (const color of BALLOONS) {
+  for (const suffix of ["", "-480"]) {
+    const file = `assets/img/galerias/baloes-aniversario/baloes-aniversario-${color}${suffix}.webp`;
+    assert.ok(baloesHtml.includes(`../${file}`), `Imagem de balão ausente: ${file}`);
+    assert.ok(fs.existsSync(path.join(ROOT, file)), `Arquivo ausente: ${file}`);
+  }
+}
+assert.ok(!/<meta[^>]+baloes-aniversario/.test(html), "Imagem de compartilhamento protegida não deve mudar");
 assert.equal((html.match(/Modelo em destaque/g) || []).length, 1, "A página deve ter um único modelo em destaque");
 assert.equal((html.match(/Quero esta cesta/g) || []).length, 11, "Cada modelo deve ter CTA de confirmação");
 assert.equal((html.match(/Modelo ilustrativo/g) || []).length, 11, "Cada cesta deve informar que o modelo é ilustrativo");
@@ -67,4 +88,4 @@ const sitemap = read("sitemap.xml");
 assert.equal((sitemap.match(new RegExp(`<loc>${CANONICAL}<\\/loc>`, "g")) || []).length, 1, "URL nova deve aparecer uma vez no sitemap");
 assert.ok(read("cestas-de-presente-canaa/index.html").includes("../cesta-de-aniversario-canaa/"), "Link interno da página geral de cestas ausente");
 
-console.log("Cesta de aniversário SEO validation ok: 11 cestas, 4 bolos confeitados e schemas coerentes.");
+console.log("Cesta de aniversário SEO validation ok: 11 cestas, 3 arranjos de balões, 4 bolos confeitados e schemas coerentes.");
