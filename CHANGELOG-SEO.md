@@ -16,6 +16,7 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | 30/09/2026 | /rosas-perfumadas-canaa/ | Title "Rosas Perfumadas em Canaã dos Carajás \| Buquês" (46) e nova description (126) | Impressões | 0 cliques, 6 impressões, posição 5,8 | 28/10/2026 |
 | 30/09/2026 | /presentes-romanticos-canaa/ | Nova description (128); o title manteve o mesmo texto | Impressões e posição | 0 cliques, 1 impressão, posição 12 | 28/10/2026 |
 | 30/09/2026 | /presentes-canaa-dos-carajas/ → /presentes-canaa.html | Consolidação: canonical para o catálogo, saída do sitemap, links internos para a seção de entrega. O 301 fica pendente no hPanel | Impressões de /presentes-canaa.html e desindexação da página consolidada | Consolidada: 0 cliques, 64 impressões, posição 8,2 | 28/10/2026 |
+| 30/09/2026 | /rosas-perfumadas-canaa/ → /buques-canaa-dos-carajas/ | Consolidação: nenhum produto exclusivo (9 de 9 repetidos em presentes, 7 de 9 em buquês, galeria 8 de 8 igual à de buquês). Canonical para buquês, saída do sitemap, links de rosas e buquês perfumados para a seção de buquês perfumados e links de perfumes de bolso para a perfumaria. O 301 é criado no hPanel | Impressões e posição de /buques-canaa-dos-carajas/ | Consolidada: 0 cliques, 6 impressões, posição 5,8 | 28/10/2026 |
 | 30/09/2026 | sitemap.xml | `<lastmod>` em todas as URLs; página consolidada removida | Relatório de Sitemaps sem erros | 21 URLs sem lastmod | 14/10/2026 |
 | 30/09/2026 | /buques-canaa-dos-carajas/ | Conteúdo acrescentado: diferenciais (rosas naturais no mesmo dia, preços, embalagem, cartão, entrega, pagamento, loja), 5 avaliações reais do Google e 5 perguntas novas no FAQ | Impressões da página e buscas com "buquê" | 154 impressões, posição 6,8 | 28/10/2026 |
 | 30/09/2026 | /monte-sua-cesta/ | Texto fixo "Como funciona" (16 → 250 palavras indexáveis): versões e preços, taxa de R$ 10, pagamento, cartão, horário e endereço. Title e description preservados | Impressões | 5 impressões, posição 8,2 | 28/10/2026 |
@@ -37,7 +38,8 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | Quando | Tarefa | Quem | Feito |
 |---|---|---|---|
 | 30/09/2026 | Pedir indexação no Search Console das 9 páginas prioritárias: inicial, floricultura, buquês, presentes, cestas, café da manhã, aniversário, perfumaria e monte sua cesta | Dono | [ ] |
-| 01/10/2026 | ~~Pedir indexação de /rosas-perfumadas-canaa/~~ suspenso: a página deve ser consolidada na de buquês (9 de 9 produtos repetidos, 6 impressões e 0 cliques em 28 dias). Aguarda decisão do dono | Dono | — |
+| 01/10/2026 | Não pedir indexação de /rosas-perfumadas-canaa/: consolidada na página de buquês em 30/09 | — | — |
+| 30/09/2026 | Criar 301 no hPanel: /rosas-perfumadas-canaa/ → /buques-canaa-dos-carajas/ | Dono | [ ] |
 | **01/10/2026** | **Pedir indexação de https://zadonipresentes.com.br/presentes-romanticos-canaa/** | Dono | [ ] |
 | 30/09/2026 | Criar 301 no hPanel: /presentes-canaa-dos-carajas/ e /presentes-canaa → /presentes-canaa.html. Testado: as duas respondem 301 para a página oficial, que responde 200 sem loop | Dono | [x] |
 | Assim que possível | Reenviar https://zadonipresentes.com.br/sitemap.xml no Search Console | Dono | [ ] |
