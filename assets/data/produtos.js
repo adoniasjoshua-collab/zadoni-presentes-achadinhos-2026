@@ -251,35 +251,35 @@ const produtosLocais = [
   {
     id: 1,
     ativo: false,
-    nome: "Buque Romantico",
+    nome: "Buquê Romântico",
     categoria: "Flores",
     descricao: "Buque romantico com balao Te Amo, flores vermelhas e acabamento especial para surpreender.",
     preco: 189.00,
     imagem: "assets/optimized/products/buque-te-amo-romantico.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisBuques,
-    whatsappMensagem: "Ola! Tenho interesse no Buque Romantico. Pode me passar mais informacoes?"
+    whatsappMensagem: "Ola! Tenho interesse no Buquê Romântico. Pode me passar mais informacoes?"
   },
   {
     id: 2,
-    nome: "Buque na xicara",
+    nome: "Buquê na Xícara",
     categoria: "Flores",
     descricao: "Arranjo criativo com flores em xicara decorativa, pronto para presentear.",
     preco: 119.90,
     imagem: "assets/optimized/products/buque-na-xicara-premium.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisBuques,
-    whatsappMensagem: "Ola! Gostaria de saber mais sobre o Buque na xicara."
+    whatsappMensagem: "Ola! Gostaria de saber mais sobre o Buquê na Xícara."
   },
   {
     id: 3,
-    nome: "Kit romantico com chocolates",
+    nome: "Kit romântico com chocolates",
     categoria: "Kits",
     descricao: "Kit com itens romanticos, chocolates selecionados e acabamento especial.",
     preco: 149.90,
     imagem: "assets/optimized/products/box-amor-perfeito.jpg",
     destaque: true,
-    whatsappMensagem: "Ola! Tenho interesse no Kit romantico com chocolates."
+    whatsappMensagem: "Ola! Tenho interesse no Kit romântico com chocolates."
   },
   {
     id: 6,
@@ -294,14 +294,14 @@ const produtosLocais = [
   },
   {
     id: 7,
-    nome: "Cesta Masculina Azul Classica",
+    nome: "Cesta Masculina Azul Clássica",
     categoria: "Cestas",
     descricao: "Cesta masculina com refrigerante, petiscos, caneca e acabamento em fita azul.",
     preco: 169.90,
     imagem: "assets/optimized/products/cesta-masculina-azul-classica.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisCestas,
-    whatsappMensagem: "Ola! Tenho interesse na Cesta Masculina Azul Classica."
+    whatsappMensagem: "Ola! Tenho interesse na Cesta Masculina Azul Clássica."
   },
   {
     id: 8,
@@ -369,40 +369,40 @@ const produtosLocais = [
   },
   {
     id: 15,
-    nome: "Buque Declaracao de Amor",
+    nome: "Buquê Declaração de Amor",
     categoria: "Flores",
     descricao: "Buque romantico com balao Te Amo, flores vermelhas e acabamento especial para declarar amor.",
     preco: 149.00,
     imagem: "assets/optimized/products/buque-te-amo-mae.jpg",
     destaque: false,
     adicionaisOpcionais: adicionaisBuques,
-    whatsappMensagem: "Ola! Quero informacoes sobre o Buque Declaracao de Amor."
+    whatsappMensagem: "Ola! Quero informacoes sobre o Buquê Declaração de Amor."
   },
   {
     id: 16,
-    nome: "Buque Te Amo Romantico",
+    nome: "Buquê Te Amo Romântico",
     categoria: "Flores",
     descricao: "Buque romantico para surpreender com uma mensagem direta e especial.",
     preco: 189.00,
     imagem: "assets/optimized/products/buque-te-amo-romantico.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisBuques,
-    whatsappMensagem: "Ola! Tenho interesse no Buque Te Amo Romantico."
+    whatsappMensagem: "Ola! Tenho interesse no Buquê Te Amo Romântico."
   },
   {
     id: 17,
-    nome: "Cesta Cafe da Manha Especial",
+    nome: "Cesta Café da Manhã Especial",
     categoria: "Cestas",
     descricao: "Cesta de cafe da manha para presentear com praticidade e carinho.",
     preco: 227.00,
     imagem: "assets/optimized/products/cesta-cafe-da-manha-especial.webp",
     destaque: true,
     adicionaisOpcionais: adicionaisCafeManha,
-    whatsappMensagem: "Ola! Gostaria de saber mais sobre a Cesta Cafe da Manha Especial."
+    whatsappMensagem: "Ola! Gostaria de saber mais sobre a Cesta Café da Manhã Especial."
   },
   {
     id: 60,
-    nome: "Cesta de Cafe da Manha Premium",
+    nome: "Cesta de Café da Manhã Premium",
     categoria: "Cestas",
     descricao: "Cesta premium completa com frutas, doces, itens de cafe da manha e balão para uma surpresa de alto impacto.",
     precoSobConsulta: true,
@@ -410,7 +410,7 @@ const produtosLocais = [
     imagem: "cesta-cafe-da-manha-canaa/cesta-cafe-da-manha-modelo-real-11.webp",
     destaque: false,
     adicionaisOpcionais: adicionaisCestas,
-    whatsappMensagem: "Ola! Tenho interesse na Cesta de Cafe da Manha Premium. Quero confirmar a composicao e o orcamento para a data desejada."
+    whatsappMensagem: "Ola! Tenho interesse na Cesta de Café da Manhã Premium. Quero confirmar a composicao e o orcamento para a data desejada."
   },
   {
     id: 18,
@@ -495,23 +495,23 @@ const produtosLocais = [
   },
   {
     id: 26,
-    nome: "Jarro Flor Natural Laco Vermelho",
+    nome: "Jarro Flor Natural Laço Vermelho",
     categoria: "Mimos",
     descricao: "Jarro com flor natural vermelha, embalagem delicada e laco vermelho pronto para presente.",
     preco: 89.00,
     imagem: "assets/optimized/products/jarro-flor-natural-laco-vermelho.jpg",
     destaque: true,
-    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laco Vermelho."
+    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laço Vermelho."
   },
   {
     id: 27,
-    nome: "Jarro Flor Natural Laco Rosa",
+    nome: "Jarro Flor Natural Laço Rosa",
     categoria: "Mimos",
     descricao: "Jarro com flor natural rosa, embalagem delicada e laco pink para um mimo cheio de carinho.",
     preco: 89.00,
     imagem: "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
     destaque: true,
-    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laco Rosa."
+    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laço Rosa."
   },
   {
     id: 28,
@@ -565,38 +565,38 @@ const produtosLocais = [
   },
   {
     id: 33,
-    nome: "Cesta Romantica com Vinho San Martin",
+    nome: "Cesta Romântica com Vinho San Martin",
     categoria: "Cestas",
     descricao: "Cesta romantica com vinho, chocolates, Ferrero Rocher, caneca e detalhe de coracao para uma surpresa marcante.",
     preco: 249.90,
     imagem: "assets/optimized/products/cesta-romantica-vinho-san-martin.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisCestas,
-    whatsappMensagem: "Ola! Tenho interesse na Cesta Romantica com Vinho San Martin. Pode me passar disponibilidade?"
+    whatsappMensagem: "Ola! Tenho interesse na Cesta Romântica com Vinho San Martin. Pode me passar disponibilidade?"
   },
   {
     id: 34,
     ativo: false,
-    nome: "Buque Rosa Pretty Flower",
+    nome: "Buquê Rosa Pretty Flower",
     categoria: "Flores",
     descricao: "Buque delicado em tons de rosa, com embalagem Pretty Flower Studio e visual elegante para presente romantico.",
     preco: 149.00,
     imagem: "assets/optimized/products/buque-rosa-pretty-flower.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisBuques,
-    whatsappMensagem: "Ola! Tenho interesse no Buque Rosa Pretty Flower. Pode me passar mais informacoes?"
+    whatsappMensagem: "Ola! Tenho interesse no Buquê Rosa Pretty Flower. Pode me passar mais informacoes?"
   },
   {
     id: 35,
     ativo: false,
-    nome: "Buque Rosas Vermelhas Premium",
+    nome: "Buquê Rosas Vermelhas Premium",
     categoria: "Flores",
     descricao: "Buque premium com rosas vermelhas, acabamento preto e visual intenso para declaracoes especiais.",
     preco: 189.00,
     imagem: "assets/optimized/products/buque-rosas-vermelhas-premium.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisBuques,
-    whatsappMensagem: "Ola! Tenho interesse no Buque Rosas Vermelhas Premium. Quero saber disponibilidade."
+    whatsappMensagem: "Ola! Tenho interesse no Buquê Rosas Vermelhas Premium. Quero saber disponibilidade."
   },
   {
     id: 36,
@@ -610,7 +610,7 @@ const produtosLocais = [
   },
   {
     id: 37,
-    nome: "Cesta Romantica na Bandeja",
+    nome: "Cesta Romântica na Bandeja",
     categoria: "Cestas",
     descricao: "Cesta romantica em bandeja com rosas, chocolate, mimo especial e composicao consultada conforme disponibilidade e personalizacao.",
     preco: 199.90,
@@ -618,7 +618,7 @@ const produtosLocais = [
     destaque: true,
     observacaoPreco: "Modelo para inspiracao. O valor final pode variar conforme itens escolhidos, disponibilidade, tamanho da montagem e personalizacao.",
     adicionaisOpcionais: adicionaisCestas,
-    whatsappMensagem: "Ola! Tenho interesse na Cesta Romantica na Bandeja. Pode me passar disponibilidade e opcoes de personalizacao?"
+    whatsappMensagem: "Ola! Tenho interesse na Cesta Romântica na Bandeja. Pode me passar disponibilidade e opcoes de personalizacao?"
   },
   {
     id: 38,
@@ -867,7 +867,7 @@ const produtosLocais = [
 // a lista combinada; demais cestas, kits e mimos usam os adicionais gerais.
 produtosLocais.forEach((produto) => {
   const categoria = String(produto.categoria || "").toLowerCase();
-  const nome = String(produto.nome || "").toLowerCase();
+  const nome = String(produto.nome || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 
   if (categoria === "cestas" && nome.includes("cafe")) {
     produto.adicionaisOpcionais = adicionaisCestasCafe;

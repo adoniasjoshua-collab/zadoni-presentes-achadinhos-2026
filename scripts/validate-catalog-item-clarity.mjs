@@ -42,7 +42,7 @@ verificar(!produtosLocais.some((produto) => produto.id === 47), "A caixinha com 
 verificar(!adicionais.some((adicional) => adicional.id === "caixinha-tres-ferrero"), "A caixinha com 3 Ferrero nao pode permanecer nas listas de adicionais.");
 
 for (const produto of produtosLocais.filter((item) => ["Cestas", "Kits", "Mimos"].includes(item.categoria))) {
-  const quantidadeEsperada = produto.nome.toLowerCase().includes("cafe") ? 22 : 11;
+  const quantidadeEsperada = produto.nome.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().includes("cafe") ? 22 : 11;
   verificar(produto.adicionaisOpcionais?.length === quantidadeEsperada, `${produto.nome} deve oferecer ${quantidadeEsperada} adicionais.`);
 }
 
