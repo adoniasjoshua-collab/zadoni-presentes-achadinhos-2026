@@ -757,6 +757,7 @@ function pageShell({ path: pagePath, title, description, canonical, image, body,
     ${head({ title, description, canonical, image, prefix })}
     <link rel="stylesheet" href="${prefix}assets/css/storefront.css?v=20260911-vitrine-1">
 ${metaPixelHead}
+<link rel="stylesheet" href="${prefix}assets/css/catalog-images.css?v=20260929-rounded-24">
 </head>
 <body>
 ${metaPixelBody}

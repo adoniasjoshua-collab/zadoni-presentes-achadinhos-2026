@@ -1,0 +1,36 @@
+/* Shared product-photo presentation, based on the birthday basket gallery. */
+:root { --catalog-image-radius: 24px; --catalog-image-background: #f8f5f3; }
+body .produto-card,
+body .seo-gallery-item,
+body .cesta-cafe-destaque,
+body .pf-card { border-radius: var(--catalog-image-radius); overflow: hidden; }
+body .produto-card .produto-imagem,
+body[data-ux-cro] .produto-card .produto-imagem,
+body[data-ux-cro] #entrega-rapida .produto-card .produto-imagem,
+body[data-ux-cro] #entrega-rapida #produto-61 .produto-imagem,
+body[data-ux-cro] .produtos-grid .ux-featured-card .produto-imagem {
+  width: 100%; height: auto; min-height: 0; aspect-ratio: 4 / 5;
+  overflow: hidden; border-radius: var(--catalog-image-radius);
+  background: var(--catalog-image-background);
+}
+body .produto-imagem picture { display: block; width: 100%; height: 100%; border-radius: inherit; overflow: hidden; }
+body .produto-card .produto-imagem img,
+body[data-ux-cro] .produto-card .produto-imagem img,
+body[data-ux-cro] .produto-card[data-category] .produto-imagem img,
+body[data-ux-cro] .produto-card[data-produto-id] .produto-imagem img,
+body[data-ux-cro] #entrega-rapida .produto-card .produto-imagem img {
+  display: block; width: 100%; height: 100%; max-height: none;
+  object-fit: contain; object-position: center; transform: none;
+  border-radius: inherit;
+}
+body .seo-gallery-item picture { display: block; overflow: hidden; border-radius: var(--catalog-image-radius); }
+body .seo-gallery-item img,
+body[data-ux-cro] .seo-gallery-item img,
+body[data-ux-cro] .cesta-cafe-destaque img,
+body .pf-card img {
+  display: block; width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 5;
+  object-fit: contain; object-position: center; transform: none;
+  border-radius: var(--catalog-image-radius); background: var(--catalog-image-background);
+}
+/* Featured products retain the same photo size as their neighbours. */
+body[data-ux-cro] .produtos-grid .ux-featured-card { grid-column: auto; }

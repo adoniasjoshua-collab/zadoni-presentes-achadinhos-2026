@@ -48,6 +48,7 @@ write(`${slug}/index.html`, `<!DOCTYPE html>
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../assets/css/perfumaria.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','AW-16938428518');</script>
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph},null,2).replaceAll('<','\\u003c')}</script>${metaPixelHead}
+<link rel="stylesheet" href="../assets/css/catalog-images.css?v=20260929-rounded-24">
 </head>
 <body>
 ${metaPixelBody}<a class="pf-skip" href="#conteudo">Pular para o conteúdo</a>
