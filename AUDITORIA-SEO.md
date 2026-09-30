@@ -72,7 +72,7 @@ As 7 páginas alteradas em 30/09 só voltam a poder mudar de título a partir de
   1. O título abre com "Zadoni", uma marca que quase ninguém busca, com 2 impressões no mês. No celular, "Canaã dos Carajás" aparece truncado.
   2. As impressões subiram de 450 para 790 em buscas mais genéricas e mais baixas na página. Isso reduz a média de cliques mesmo sem piora real.
   3. Para buscas como "floricultura" e "perto de mim", o mapa com as lojas ocupa o topo e absorve parte dos cliques.
-- **Não alterada:** duas opções aguardam a escolha do dono. Estão no relatório de entrega.
+- **Decisão (30/09):** o dono escolheu a opção A, "Floricultura e Presentes em Canaã dos Carajás | Zadoni" (54), com description de 144 caracteres que inclui o endereço.
 
 ## 7. `/monte-sua-cesta/`
 
@@ -94,7 +94,7 @@ Achadinhos e combos de pastel ficaram de fora. Nos combos, o dono decidiu em 28/
 | 2 | Novos títulos e descrições de 7 páginas | Alto (CTR) | Baixo | Médio | Feito na branch |
 | 3 | Consolidar presentes-canaa-dos-carajas | Médio | Baixo | Baixo | Feito na branch, falta 301 |
 | 4 | Sitemap com lastmod | Baixo | Baixo | Baixo | Feito na branch |
-| 5 | Título da inicial | Alto | Baixo | Alto | Aguarda escolha |
+| 5 | Título da inicial | Alto | Baixo | Alto | Feito na branch (opção A) |
 | 6 | Título da perfumaria | Médio | Baixo | Baixo | A partir de 06/10, falta definir a marca |
 | 7 | Conteúdo ampliado de buquês (Fase 3) | Alto | Médio | Baixo | Depois de 21/10 |
 | 8 | Texto estático em monte-sua-cesta | Médio | Médio | Baixo | Proposto |

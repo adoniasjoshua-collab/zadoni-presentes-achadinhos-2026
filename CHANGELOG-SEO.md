@@ -5,6 +5,7 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | Data | Página | O que mudou | Métrica a acompanhar | Linha de base (28 dias até 29/09) | Avaliar em |
 |---|---|---|---|---|---|
 | 30/09/2026 | Todas as páginas locais | Endereço completo (Rua Asdrúbal Bentes, 453 - Centro, CEP 68350-067) no schema LocalBusiness e nos rodapés, com link "Como chegar" | Impressões das buscas "perto de mim" e "floricultura canaa dos carajas" | "floricultura canaa dos carajas": 320 impressões, posição 4,7 | 28/10/2026 |
+| 30/09/2026 | / (inicial) | Title "Floricultura e Presentes em Canaã dos Carajás \| Zadoni" (54), antes "Zadoni \| Loja de Presentes e Floricultura em Canaã", e nova description (144) com endereço | CTR da inicial; quem aparece para "floricultura canaa dos carajas" (inicial ou página de floricultura) | 38 cliques, 790 impressões, CTR 4,8%, posição 5,1 | 28/10/2026 |
 | 30/09/2026 | /floricultura-canaa-dos-carajas/ | Title "Floricultura em Canaã dos Carajás \| Buquês com Entrega" (54) e nova description (146) | CTR da página | 19 cliques, 919 impressões, CTR 2,1%, posição 5,5 | 28/10/2026 |
 | 30/09/2026 | /buques-canaa-dos-carajas/ | Title "Buquê de Flores em Canaã dos Carajás \| Rosas e Presentes" (56) e nova description (146) | CTR e impressões | 7 cliques, 154 impressões, CTR 4,6%, posição 6,8 | 28/10/2026 |
 | 30/09/2026 | /presentes-canaa.html | Title "Loja de Presentes em Canaã dos Carajás \| Buquês e Cestas" (56) e nova description (133) | CTR e posição | 9 cliques, 281 impressões, CTR 3,2%, posição 7,3 | 28/10/2026 |
