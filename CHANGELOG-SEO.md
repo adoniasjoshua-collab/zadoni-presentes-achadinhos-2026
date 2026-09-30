@@ -14,7 +14,7 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | 30/09/2026 | /presentes-romanticos-canaa/ | Nova description (128); o title manteve o mesmo texto | Impressões e posição | 0 cliques, 1 impressão, posição 12 | 28/10/2026 |
 | 30/09/2026 | /presentes-canaa-dos-carajas/ → /presentes-canaa.html | Consolidação: canonical para o catálogo, saída do sitemap, links internos para a seção de entrega. O 301 fica pendente no hPanel | Impressões de /presentes-canaa.html e desindexação da página consolidada | Consolidada: 0 cliques, 64 impressões, posição 8,2 | 28/10/2026 |
 | 30/09/2026 | sitemap.xml | `<lastmod>` em todas as URLs; página consolidada removida | Relatório de Sitemaps sem erros | 21 URLs sem lastmod | 14/10/2026 |
-| 06/10/2026 | /perfumaria-cosmeticos-canaa/ | Title "Perfumaria em Canaã dos Carajás \| Importados e Nacionais" (56) e nova description (151), com várias marcas, embalagem inclusa e endereço de retirada | CTR da página | 1 clique, 56 impressões, CTR 1,8%, posição 7,2 | 03/11/2026 |
+| 06/10/2026 | /perfumaria-cosmeticos-canaa/ | Title "Perfumes Nacionais e Importados em Canaã dos Carajás" (52) e nova description (151), com foco em perfumes nacionais e importados de várias marcas, embalagem inclusa e endereço de retirada | CTR da página | 1 clique, 56 impressões, CTR 1,8%, posição 7,2 | 03/11/2026 |
 
 ## Publicado antes desta rodada, no mesmo dia
 
