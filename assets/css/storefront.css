@@ -80,6 +80,8 @@ body { background: #fffdfb; }
 .home-categories .category-card[href="cesta-cafe-da-manha-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/cesta-cafe-da-manha-especial-720-720.webp'); }
 .home-categories .category-card[href="rosas-perfumadas-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/perfume-521-vip-rose-amakha-15ml-480.webp'); }
 .home-categories .category-card[href="presentes-canaa.html#categoria-promocoes"] .category-icon { background-image: url('../optimized/products/responsive/buque-rosas-rubi-perfumadas-480.webp'); }
+.home-categories .category-card[href="presentes-de-natal-canaa-dos-carajas/"] .category-icon { background-image: url('../img/natal/categoria-natal-480.webp'); }
+.home-categories .category-card[aria-label="Ver perfumes de bolso em Canaã dos Carajás"] .category-icon { background-image: url('../optimized/products/responsive/perfume-521-vip-rose-amakha-15ml-480.webp'); }
 .home-categories .category-card[href="combos-pastel-canaa/"] .category-icon { background-image: url('../optimized/combos/capa-pastel-20260929-480.webp'); background-size: contain; background-repeat: no-repeat; background-color: #24140b; border-radius: 8px; }
 .home-categories .category-card[href="revenda-chocolates-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/cone-ferrero-presente-charmoso-480.webp'); }
 .home-categories .category-card[href="presentes-canaa-dos-carajas/"] .category-icon { background-image: url('../optimized/products/responsive/box-amor-perfeito-480.webp'); }

@@ -70,7 +70,7 @@
 [data-ux-cro] .ux-filter-fields label { display: grid; gap: .5rem; }
 [data-ux-cro] .ux-filter-fields input { min-width: 0; min-height: 44px; font-size: 1rem; padding: .5rem; }
 [data-ux-cro] .ux-clear { margin-top: .75rem; padding: .5rem 1rem; background: #fff; color: #4f1d38; border: 1px solid #7a2f55; border-radius: 6px; cursor: pointer; }
-[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(5, minmax(0,1fr)); }
+[data-ux-cro] .home-categories > .container > .grid { grid-template-columns: repeat(6, minmax(0,1fr)); }
 [data-ux-cro] .ux-more-categories { margin-top: 1rem; }
 [data-ux-cro] .ux-more-categories .category-icon { width: 64px; height: 64px; }
 [data-ux-cro] .ux-national { margin-block: 1rem 2rem; }
