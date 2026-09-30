@@ -1,0 +1,74 @@
+{
+  "changedExistingFiles": [
+    "sitemap.xml",
+    "scripts/validate-ux-cro.py"
+  ],
+  "protectedPages": [
+    {
+      "page": "presentes-canaa.html",
+      "sha256": "e7aa4a481667616e071db5a9b162ea186bc6be79d575ce017b4ee15bad1e8b5a",
+      "unchanged": true
+    },
+    {
+      "page": "presentes-canaa-dos-carajas/index.html",
+      "sha256": "6b553de20ca9383b5202e11c4a2afd3d48453d3ab0ad2741de01539581ce40c8",
+      "unchanged": true
+    },
+    {
+      "page": "floricultura-canaa-dos-carajas/index.html",
+      "sha256": "a7def8d716a3ac090ef543a9ce097091ae63c98d6a09e975721d4d5f46d910ca",
+      "unchanged": true
+    },
+    {
+      "page": "buques-canaa-dos-carajas/index.html",
+      "sha256": "b74c0382e548b71e59de1e25e653e09d7f499c502b70fa68bc85a540f25576a0",
+      "unchanged": true
+    },
+    {
+      "page": "cestas-de-presente-canaa/index.html",
+      "sha256": "333f6be58a5ac3c2658646c07714a4d0612083770e2fb021d95430744c2fe664",
+      "unchanged": true
+    },
+    {
+      "page": "cesta-cafe-da-manha-canaa/index.html",
+      "sha256": "6408e36722413780fa18d2441a765604f35bb051053130c5129f211cd354f8d0",
+      "unchanged": true
+    },
+    {
+      "page": "cesta-de-aniversario-canaa/index.html",
+      "sha256": "cb0d4719989124e9b454ca4851fc6ef44bff758ff8471539a221811906890380",
+      "unchanged": true
+    },
+    {
+      "page": "presentes-romanticos-canaa/index.html",
+      "sha256": "40a1bf7d8e7e0a33dd081b25764bcb87a0f7de9a51ce40b836ad64caa4aeec89",
+      "unchanged": true
+    },
+    {
+      "page": "rosas-perfumadas-canaa/index.html",
+      "sha256": "6dbd60d9847129f33be4e6cf180c279c96ac54a731e592d61f3cfaa7f536ac51",
+      "unchanged": true
+    },
+    {
+      "page": "monte-sua-cesta/index.html",
+      "sha256": "3e09ccb15b54f36d677a0d54daa8416dbe6869e4084230d624d2bc2248984904",
+      "unchanged": true
+    },
+    {
+      "page": "revenda-chocolates-canaa/index.html",
+      "sha256": "dfdf415498fefef74b8d4704355a39db5cd24d23a65dd47bfc1dec732d0b1a7a",
+      "unchanged": true
+    },
+    {
+      "page": "perfumaria-cosmeticos-canaa/index.html",
+      "sha256": "3db5fe8c8bdc7dc0dc7a9aca72259d63722c12bd585d8305ad7dd6cf7973a78b",
+      "unchanged": true
+    },
+    {
+      "page": "achadinhos/presentes-para-namorada/index.html",
+      "sha256": "60ee49f1f4f47e51e3e1cbc8fa8a3efecffe0b6e453dc9deb9af4436baaf6c09",
+      "unchanged": true
+    }
+  ],
+  "existingFilesCompared": 739
+}

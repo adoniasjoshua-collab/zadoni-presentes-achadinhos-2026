@@ -1,0 +1,107 @@
+﻿[
+    {
+        "name":  "validate-achadinhos-seo.mjs",
+        "exitCode":  0,
+        "output":  "Achadinhos SEO validation ok: 4 national pages."
+    },
+    {
+        "name":  "validate-brand-identity.mjs",
+        "exitCode":  0,
+        "output":  "OK: identidade oficial aplicada com ativos responsivos, texto acessível e schema de organização."
+    },
+    {
+        "name":  "validate-cafe-gallery-budget-tiers.mjs",
+        "exitCode":  0,
+        "output":  "Cafe: 13 links diretos com resumo e imagem correspondente validados."
+    },
+    {
+        "name":  "validate-catalog-item-clarity.mjs",
+        "exitCode":  0,
+        "output":  "Catálogo validado: 58 produtos, 14 itens avulsos públicos e 30 posições de adicionais sem divergências críticas."
+    },
+    {
+        "name":  "validate-category-navigation.mjs",
+        "exitCode":  0,
+        "output":  "Category navigation validation ok: 9 links preserved, 5 primary and 4 complementary."
+    },
+    {
+        "name":  "validate-cesta-aniversario-seo.mjs",
+        "exitCode":  0,
+        "output":  "Cesta de aniversário SEO validation ok: 11 cestas, 4 bolos confeitados e schemas coerentes."
+    },
+    {
+        "name":  "validate-cesta-budget-tiers.mjs",
+        "exitCode":  0,
+        "output":  "Cesta budget tiers validation ok: 3 models x 3 tiers = 9 combinations"
+    },
+    {
+        "name":  "validate-combos.mjs",
+        "exitCode":  0,
+        "output":  "Combos draft: prices, semantics, resources, source sync and 62 existing files preserved byte-for-byte."
+    },
+    {
+        "name":  "validate-gift-cluster.mjs",
+        "exitCode":  0,
+        "output":  "Gift cluster: 3 pages, canonical/sitemap, metadata, links/assets/fragments, schema/visible FAQ, shared tracking and fallback passed."
+    },
+    {
+        "name":  "validate-google-ads-tracking.mjs",
+        "exitCode":  0,
+        "output":  "Google Ads tracking validation ok: 12 pages, 239 WhatsApp links preserved"
+    },
+    {
+        "name":  "validate-linkpage.mjs",
+        "exitCode":  0,
+        "output":  "Linkpage validation ok: noindex, direct local links, Achadinhos and analytics preserved."
+    },
+    {
+        "name":  "validate-local-seo-integrity.mjs",
+        "exitCode":  0,
+        "output":  "Local SEO integrity ok: 20 sitemap pages, 8 consistent LocalBusiness records. Local HTML checks only; Google indexation and business facts require external verification."
+    },
+    {
+        "name":  "validate-local-seo-keywords.mjs",
+        "exitCode":  0,
+        "output":  "SEO local validado: 11 páginas com intenção própria, metadados únicos e termos locais contextualizados."
+    },
+    {
+        "name":  "validate-meta-pixel.mjs",
+        "exitCode":  0,
+        "output":  "Meta Pixel 1954958515465784: 19 pages; one init and PageView per document; repeat execution and existing library passed."
+    },
+    {
+        "name":  "validate-navigation-ux.mjs",
+        "exitCode":  0,
+        "output":  "Navigation UX validation ok: 10 pages, six-item menu, accessible control and tracked Home WhatsApp links."
+    },
+    {
+        "name":  "validate-performance.mjs",
+        "exitCode":  0,
+        "output":  "Passed after adding explicit eager loading and async decoding to the new header logo."
+    },
+    {
+        "name":  "validate-perfumaria.mjs",
+        "exitCode":  0,
+        "output":  "Perfumaria: metadata, 5 products, 4 placeholders, anchors, assets, WhatsApp and discovery links passed."
+    },
+    {
+        "name":  "validate-photo-galleries.mjs",
+        "exitCode":  0,
+        "output":  "Galerias validadas: 48 arquivos WebP e 57 referencias publicas."
+    },
+    {
+        "name":  "validate-seo.mjs",
+        "exitCode":  0,
+        "output":  "SEO validation ok: 13 pages, 55 products"
+    },
+    {
+        "name":  "validate-seo-baseline.mjs",
+        "exitCode":  0,
+        "output":  "{\"passed\": true, \"pages\": 19, \"failures\": [], \"scope\": \"Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.\", \"results\": [{\"page\": \"404.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-criativos/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-de-aniversario/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-para-namorada/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"buques-canaa-dos-carajas/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"cesta-cafe-da-manha-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"cesta-de-aniversario-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"cestas-de-presente-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"floricultura-canaa-dos-carajas/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"links/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"monte-sua-cesta/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"perfumaria-cosmeticos-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"presentes-canaa-dos-carajas/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"presentes-canaa.html\", \"passed\": true, \"issues\": []}, {\"page\": \"presentes-romanticos-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"revenda-chocolates-canaa/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"rosas-perfumadas-canaa/index.html\", \"passed\": true, \"issues\": []}]}"
+    },
+    {
+        "name":  "validate-whatsapp-product-links.mjs",
+        "exitCode":  0,
+        "output":  "WhatsApp product summary validation ok: 123 product buttons, 37 gallery buttons and 0 budget options"
+    }
+]
