@@ -72,7 +72,7 @@ for page, old in before['pages'].items():
     def scripts(nodes):
         return [n.attrs.get('src') or n.raw() for n in nodes if n.tag == 'script']
     def script_versions(items):
-        return [re.sub(r'^((?:\.\./)?(?:assets/)?js/app\.js)\?v=[^\s]+$', r'\1', item) for item in items]
+        return [re.sub(r'^((?:\.\./)?(?:assets/)?js/(?:app|ux-cro)\.js)\?v=[^\s]+$', r'\1', item) for item in items]
     if bag(script_versions(original['scripts'])) - bag(script_versions(scripts(new_nodes))):
         issues.append('Existing scripts or analytics integration')
     for field in ('hreflang',):

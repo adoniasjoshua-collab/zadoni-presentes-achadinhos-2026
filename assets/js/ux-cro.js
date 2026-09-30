@@ -50,8 +50,8 @@
     const productData = new Map((window.PRODUTOS?.produtosLocais || []).map(product => [String(product.id), product]));
     const pagePriorities = (() => {
       if (location.pathname.includes('presentes-canaa')) return [11, 6, 10, 62, 63];
-      if (location.pathname.includes('buques-canaa-dos-carajas')) return [61, 57, 52, 53, 54, 56, 55, 16, 15, 2];
-      if (location.pathname.includes('floricultura-canaa-dos-carajas')) return [61, 57, 52, 53, 54, 56, 55, 16, 15, 2, 26, 27, 25];
+      if (location.pathname.includes('buques-canaa-dos-carajas')) return [16, 15, 2, 57, 53, 54, 56, 55, 61, 52];
+      if (location.pathname.includes('floricultura-canaa-dos-carajas')) return [16, 15, 2, 27, 26, 25, 57, 53, 54, 56, 55, 61, 52];
       if (location.pathname.includes('cestas-de-presente-canaa')) return [60, 17, 11, 6, 33, 10, 8, 37, 9, 7, 23];
       if (location.pathname.includes('presentes-romanticos-canaa')) return [33, 37, 1, 16, 12, 3, 36];
       return [];

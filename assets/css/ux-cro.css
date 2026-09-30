@@ -21,6 +21,7 @@
 [data-ux-cro] .natural-bouquet-highlights .produto-imagem { aspect-ratio: 1; }
 [data-ux-cro] .natural-bouquet-highlights .produto-imagem img { object-fit: contain; }
 [data-ux-cro] #rosas-naturais .natural-bouquet-highlights { margin-bottom: 1.5rem; }
+[data-ux-cro] #rosas-naturais .produtos-grid + .natural-bouquet-highlights { margin-top: 1.5rem; }
 @media (min-width: 1024px) {
   [data-ux-cro] .natural-bouquet-highlights { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
