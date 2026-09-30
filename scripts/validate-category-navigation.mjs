@@ -15,7 +15,7 @@ const expected = [
   { href: "floricultura-canaa-dos-carajas/", text: "Floricultura em Canaã dos Carajás" },
   { href: "cesta-cafe-da-manha-canaa/", text: "Cesta de café da manhã em Canaã" },
   { href: "presentes-romanticos-canaa/", text: "Presentes românticos" },
-  { href: "rosas-perfumadas-canaa/", text: "Rosas e perfumes" },
+  { href: "buques-canaa-dos-carajas/#novos-buques-title", text: "Buquês perfumados" },
   { href: "presentes-canaa.html#categoria-adicionais", text: "Itens avulsos para cestas" },
   { href: "#entrega-title", text: "Entrega em Canaã" }
 ];

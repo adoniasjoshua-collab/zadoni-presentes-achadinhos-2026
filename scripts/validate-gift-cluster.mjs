@@ -7,7 +7,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const site = 'https://zadonipresentes.com.br';
 const pages = ['presentes-de-natal-canaa-dos-carajas', 'guias-de-presentes', 'mensagens-para-acompanhar-presentes'];
 const required = [
-  ['cestas-de-presente-canaa/', 'cesta-cafe-da-manha-canaa/', 'presentes-romanticos-canaa/', 'rosas-perfumadas-canaa/', 'monte-sua-cesta/', 'guias-de-presentes/', 'mensagens-para-acompanhar-presentes/'],
+  ['cestas-de-presente-canaa/', 'cesta-cafe-da-manha-canaa/', 'presentes-romanticos-canaa/', 'buques-canaa-dos-carajas/#novos-buques-title', 'monte-sua-cesta/', 'guias-de-presentes/', 'mensagens-para-acompanhar-presentes/'],
   ['presentes-canaa.html', 'achadinhos/presentes-para-namorada/', 'presentes-romanticos-canaa/', 'cesta-de-aniversario-canaa/', 'buques-canaa-dos-carajas/', 'cestas-de-presente-canaa/', 'presentes-de-natal-canaa-dos-carajas/', 'mensagens-para-acompanhar-presentes/'],
   ['guias-de-presentes/', 'presentes-de-natal-canaa-dos-carajas/', 'presentes-romanticos-canaa/', 'cesta-de-aniversario-canaa/']
 ];

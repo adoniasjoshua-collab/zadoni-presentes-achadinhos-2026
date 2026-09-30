@@ -10,7 +10,7 @@ const pages = new Map([
   ["floricultura-canaa-dos-carajas/index.html", "floricultura em canaã dos carajás"],
   ["cesta-cafe-da-manha-canaa/index.html", "cesta de café da manhã em canaã dos carajás"],
   ["presentes-romanticos-canaa/index.html", "presentes românticos em canaã dos carajás"],
-  ["rosas-perfumadas-canaa/index.html", "rosas e perfumes em canaã dos carajás"],
+  // rosas-perfumadas-canaa/ foi consolidada em buques-canaa-dos-carajas/ (canonical + 301) em 30/09/2026.
   ["monte-sua-cesta/index.html", "monte sua cesta"],
   ["revenda-chocolates-canaa/index.html", "revenda de chocolates em canaã dos carajás"]
 ]);
