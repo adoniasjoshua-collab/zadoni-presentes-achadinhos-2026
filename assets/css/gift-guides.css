@@ -67,3 +67,8 @@
   .gift-section { padding: 60px 0; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+/* Banner de Natal 2026: largura total, acima do texto */
+.gift-hero .gift-hero-banner { grid-column: 1 / -1; order: -1; padding: 0; overflow: hidden; background: transparent; }
+.gift-hero .gift-hero-banner img { width: 100%; height: auto; aspect-ratio: 1600 / 873; object-fit: cover; border-radius: 24px; }
+.gift-hero .gift-hero-banner figcaption { padding: 0 8px; }
+@media (min-width: 768px) { .gift-hero .gift-hero-banner img { aspect-ratio: auto; height: 440px; object-position: center 38%; } }
