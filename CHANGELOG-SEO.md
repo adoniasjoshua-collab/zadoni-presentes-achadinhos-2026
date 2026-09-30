@@ -39,7 +39,7 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 |---|---|---|---|
 | 30/09/2026 | Pedir indexação no Search Console das 9 páginas prioritárias: inicial, floricultura, buquês, presentes, cestas, café da manhã, aniversário, perfumaria e monte sua cesta | Dono | [ ] |
 | 01/10/2026 | Não pedir indexação de /rosas-perfumadas-canaa/: consolidada na página de buquês em 30/09 | — | — |
-| 30/09/2026 | Criar 301 no hPanel: /rosas-perfumadas-canaa/ → /buques-canaa-dos-carajas/ | Dono | [ ] |
+| 30/09/2026 | Criar 301 no hPanel: /rosas-perfumadas-canaa/ → /buques-canaa-dos-carajas/. Testado: 301 em 1 salto para buquês, que responde 200 | Dono | [x] |
 | **01/10/2026** | **Pedir indexação de https://zadonipresentes.com.br/presentes-romanticos-canaa/** | Dono | [ ] |
 | 30/09/2026 | Criar 301 no hPanel: /presentes-canaa-dos-carajas/ e /presentes-canaa → /presentes-canaa.html. Testado: as duas respondem 301 para a página oficial, que responde 200 sem loop | Dono | [x] |
 | Assim que possível | Reenviar https://zadonipresentes.com.br/sitemap.xml no Search Console | Dono | [ ] |
