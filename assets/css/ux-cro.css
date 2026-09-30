@@ -106,3 +106,14 @@
 @media (prefers-reduced-motion: reduce) {
   [data-ux-cro] *, [data-ux-cro] *::before, [data-ux-cro] *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Diferenciais e avaliações reais (buquês, 30/09/2026) */
+[data-ux-cro] .seo-benefits-list { max-width: 860px; margin: 1rem 0 1.25rem; padding-left: 1.2rem; display: grid; gap: .6rem; }
+[data-ux-cro] .seo-benefits-list li { line-height: 1.55; }
+[data-ux-cro] .seo-reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1.25rem; }
+[data-ux-cro] .seo-review { margin: 0; padding: 1.1rem 1.2rem; background: #fff; border: 1px solid #ecd9e2; border-radius: 16px; display: flex; flex-direction: column; gap: .5rem; }
+[data-ux-cro] .seo-review-stars { margin: 0; color: #b7861a; letter-spacing: 2px; font-size: 1rem; }
+[data-ux-cro] .seo-review blockquote { margin: 0; }
+[data-ux-cro] .seo-review blockquote p { margin: 0; line-height: 1.55; }
+[data-ux-cro] .seo-review figcaption { margin-top: auto; font-weight: 700; font-size: .92rem; color: var(--cor-primaria); }
+[data-ux-cro] .seo-benefits a, [data-ux-cro] .seo-reviews .container > p a { color: var(--cor-primaria); text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
