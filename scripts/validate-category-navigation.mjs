@@ -17,7 +17,7 @@ const expected = [
   { href: "presentes-romanticos-canaa/", text: "Presentes românticos" },
   { href: "rosas-perfumadas-canaa/", text: "Rosas e perfumes" },
   { href: "presentes-canaa.html#categoria-adicionais", text: "Itens avulsos para cestas" },
-  { href: "presentes-canaa-dos-carajas/", text: "Catálogo local" }
+  { href: "#entrega-title", text: "Entrega em Canaã" }
 ];
 
 const errors = [];

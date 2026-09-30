@@ -10,7 +10,7 @@ const PHONE = "5594992993138";
 const read = (file) => fs.readFileSync(path.join(ROOT, file), "utf8");
 const html = read(PAGE);
 
-assert.match(html, /<title>Cesta de Aniversário em Canaã dos Carajás \| Zadoni<\/title>/);
+assert.match(html, /<title>Cesta de Aniversário em Canaã dos Carajás \| Com Entrega<\/title>/);
 assert.match(html, /<meta name="description" content="[^"]+">/);
 assert.match(html, new RegExp(`<link rel="canonical" href="${CANONICAL}">`));
 assert.equal((html.match(/<h1\b/g) || []).length, 1, "A página deve ter exatamente um H1");

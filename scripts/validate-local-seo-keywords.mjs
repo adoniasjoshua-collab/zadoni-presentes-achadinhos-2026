@@ -4,7 +4,7 @@ import fs from "node:fs";
 const pages = new Map([
   ["index.html", "loja de presentes"],
   ["presentes-canaa.html", "loja de presentes em canaã dos carajás"],
-  ["presentes-canaa-dos-carajas/index.html", "entrega de presentes em canaã dos carajás"],
+  // presentes-canaa-dos-carajas/ foi consolidada em presentes-canaa.html (canonical + 301) em 30/09/2026.
   ["buques-canaa-dos-carajas/index.html", "buquês em canaã dos carajás"],
   ["cestas-de-presente-canaa/index.html", "cestas de presente em canaã dos carajás"],
   ["floricultura-canaa-dos-carajas/index.html", "floricultura em canaã dos carajás"],
