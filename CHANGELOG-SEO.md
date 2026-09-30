@@ -46,4 +46,6 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | 30/09/2026 | Criar 301 no hPanel: /presentes-canaa-dos-carajas/ e /presentes-canaa → /presentes-canaa.html. Testado: as duas respondem 301 para a página oficial, que responde 200 sem loop | Dono | [x] |
 | Assim que possível | Reenviar https://zadonipresentes.com.br/sitemap.xml no Search Console | Dono | [ ] |
 | Assim que possível | Conferir e excluir a avaliação "Zadoni 2" no Perfil da Empresa, se for da própria loja | Dono | [ ] |
+| Até ~15/10/2026 | Natal: enviar fotos reais das cestas de Natal 2026 da Zadoni (sem fotos de terceiros), com modelos, itens, preço "a partir de", prazo de reserva e se atende empresas. O agente trata as fotos (4:5, tom natalino) e monta a seção "Cestas de Natal 2026" | Dono | [ ] |
+| A partir de 17/10/2026 | Natal: ajustar o title da página para "Cestas de Natal em Canaã dos Carajás" (regra das 3 semanas) | Agente | [ ] |
 | 28/10/2026 | Comparar os números de cada página com a linha de base desta tabela | Dono e agente | [ ] |
