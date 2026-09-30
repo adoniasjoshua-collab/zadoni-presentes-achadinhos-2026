@@ -46,7 +46,7 @@ Observações:
 
 | Página | Último título | Pode mudar a partir de |
 |---|---|---|
-| Perfumaria | 15/09/2026 | **06/10/2026** |
+| Perfumaria | 15/09/2026 | 06/10/2026 (antecipado para 30/09 por decisão do dono) |
 | Guias, mensagens e Natal | 26/09/2026 | 17/10/2026 |
 | Combos de pastel | 28/09/2026 | 19/10/2026 |
 | Demais páginas locais | 17/08 a 25/08/2026 | já liberadas |
@@ -95,9 +95,9 @@ Achadinhos e combos de pastel ficaram de fora. Nos combos, o dono decidiu em 28/
 | 3 | Consolidar presentes-canaa-dos-carajas | Médio | Baixo | Baixo | Feito na branch, falta 301 |
 | 4 | Sitemap com lastmod | Baixo | Baixo | Baixo | Feito na branch |
 | 5 | Título da inicial | Alto | Baixo | Alto | Feito na branch (opção A) |
-| 6 | Título da perfumaria | Médio | Baixo | Baixo | A partir de 06/10, falta definir a marca |
-| 7 | Conteúdo ampliado de buquês (Fase 3) | Alto | Médio | Baixo | Depois de 21/10 |
-| 8 | Texto estático em monte-sua-cesta | Médio | Médio | Baixo | Proposto |
+| 6 | Título da perfumaria | Médio | Baixo | Baixo | Feito em 30/09 (nacionais e importados) |
+| 7 | Conteúdo ampliado de buquês (Fase 3) | Alto | Médio | Baixo | Feito em 30/09 |
+| 8 | Texto estático em monte-sua-cesta | Médio | Médio | Baixo | Feito em 30/09 |
 | 9 | Descrição de combos com 192 caracteres | Baixo | Baixo | Baixo | Em 19/10 |
 | 10 | Tipo `Florist` no schema da loja | Baixo | Baixo | Médio | Proposto |
 
