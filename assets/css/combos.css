@@ -9,3 +9,4 @@
 .options .card-send{margin-top:4px}.options .add-more{min-height:44px;font-size:.85rem}
 .order-bar .bar-total{display:flex;flex-direction:column;text-decoration:none;color:var(--wine);min-width:0}.order-bar .bar-total small{font-size:.75rem;text-decoration:underline}.order-bar .button{white-space:nowrap}
 @media(min-width:761px){#combo-duplo{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}#combo-duplo .combo-photo{width:100%;height:auto;position:sticky;top:90px}}
+.hero-art-link{display:block;justify-self:center;width:100%;max-width:430px;border-radius:28px}.hero-art-link:focus-visible{outline:3px solid var(--wine);outline-offset:4px}@media(max-width:760px){.hero-art-link{order:-1}}
