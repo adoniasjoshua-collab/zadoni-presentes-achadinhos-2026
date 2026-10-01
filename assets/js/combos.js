@@ -48,7 +48,7 @@
     return { ...common, flavorName: flavor.name, price: data.price, drinkId: drink.id, drinkName: drink.name, drinkPrice: drink.price };
   }
   const title = item => item.duplo
-    ? `Combo Duplo (2 pastéis: ${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
+    ? `Combo Duplo (2 pastelões: ${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
     : `Combo pastelão de ${item.flavorName.toLowerCase()}`;
   const drinkLabel = item => `${item.drinkName}${item.drinkPrice ? ' (+' + money(item.drinkPrice) + ')' : ''}`;
   function amounts(item) {
