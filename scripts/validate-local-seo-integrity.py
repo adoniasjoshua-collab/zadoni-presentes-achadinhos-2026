@@ -16,14 +16,18 @@ def objects(value):
             yield from objects(child)
 
 
+BUSINESS_TYPES = ('LocalBusiness', 'Florist')
+
+
 def validate():
     pages = collect()['pages']
     urls = [node.text for node in ET.parse(ROOT / 'sitemap.xml').iter()
             if node.tag.endswith('}loc')]
     errors = []
     seen = {key: set() for key in ('title', 'description', 'canonical')}
+    # Florist is a schema.org subtype of LocalBusiness (home uses it since T1, 01/10/2026).
     businesses = [node for node in objects(pages['index.html']['schemas'])
-                  if node.get('@type') == 'LocalBusiness']
+                  if node.get('@type') in BUSINESS_TYPES]
     if len(businesses) != 1:
         raise ValueError('Home must contain one reference LocalBusiness')
     reference = businesses[0]
@@ -63,7 +67,7 @@ def validate():
                 if {'noindex', 'none'} & set(directives):
                     errors.append(f'{relative}: sitemap page blocks indexing')
         for node in objects(page['schemas']):
-            if node.get('@type') != 'LocalBusiness':
+            if node.get('@type') not in BUSINESS_TYPES:
                 continue
             business_count += 1
             for field in ('name', 'telephone'):
