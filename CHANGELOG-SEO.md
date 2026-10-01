@@ -36,6 +36,20 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | 30/09/2026 | Buquês | Foto de rosas naturais no topo da página | 28/10/2026 |
 | 30/09/2026 | 7 páginas | Acentuação correta em 14 nomes de produtos | 28/10/2026 |
 
+## FASE 1 do prompt v2 (01/10/2026) · ramo `seo/fase1-out2026`, ainda não publicado
+
+Fonte: PROMPT MASTER SEO v2 (cirurgia, não reforma). Endereço padrão reconfirmado pelo dono: Rua Asdrúbal Bentes, 453. Perfumaria mantida como está (sem "Hinode"). Verificação: snapshots antes/depois com 0 alterações na zona protegida das 23 páginas; 28 blocos JSON-LD válidos.
+
+| Data | Tarefa | Páginas | Hipótese | Métrica | Avaliar em |
+|---|---|---|---|---|---|
+| 01/10/2026 | T1 · Schema | / (LocalBusiness → Florist + Instagram); café (Product "Cestinha de Café na Caixa" R$ 100) | Tipo mais específico reforça a relevância para "floricultura"; snippet de preço no café | Search Console → Snippets do produto; CTR do café | 28/10/2026 |
+| 01/10/2026 | T2 · WhatsApp com origem | Botões gerais de 8 páginas (não perfumaria) | Sem efeito no ranqueamento; identifica a página de origem da conversa | Mensagens por texto de origem no WhatsApp Business | 28/10/2026 |
+| 01/10/2026 | T3 · Link interno | / → floricultura, âncora "floricultura em Canaã dos Carajás" | Indica a floricultura como dona da busca "floricultura" | Impressões da família "floricultura" migrando da inicial para /floricultura/ | 28/10/2026 |
+| 01/10/2026 | T5 · Conteúdo | /buques-canaa-dos-carajas/: seção "Buquês para cada momento" (+126 palavras) | Amplia impressões em buscas sem cidade ("buque de flores") | Impressões da página de buquês (meta 300+/mês) | 28/10/2026 |
+| 01/10/2026 | NAP | Rodapé de /combos-pastel-canaa/ | Endereço igual em todas as páginas locais | — | — |
+
+Já atendido, sem alteração: T4 (titles de aniversário e românticos já iguais ao prompt; perfumaria mantida), T6 (Natal já existe em /presentes-de-natal-canaa-dos-carajas/), T7 (todas as imagens têm width/height e alt; no celular, inicial e presentes não têm imagem na primeira tela), floricultura ↔ buquês já se linkavam. Combos ficam sem Product por decisão do lançamento (28/09).
+
 ## Pendências
 
 | Quando | Tarefa | Quem | Feito |
@@ -50,3 +64,6 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 | Até ~15/10/2026 | Natal: enviar fotos reais das cestas de Natal 2026 da Zadoni (sem fotos de terceiros), com modelos, itens, preço "a partir de", prazo de reserva e se atende empresas. O agente trata as fotos (4:5, tom natalino) e monta a seção "Cestas de Natal 2026" | Dono | [ ] |
 | A partir de 17/10/2026 | Natal: ajustar o title da página para "Cestas de Natal em Canaã dos Carajás" (regra das 3 semanas) | Agente | [ ] |
 | 28/10/2026 | Comparar os números de cada página com a linha de base desta tabela | Dono e agente | [ ] |
+| Assim que possível | Endereço do Perfil da Empresa no Google mostra "R. Asdrubal Bentes - Esplanada", sem número; o site usa "Rua Asdrúbal Bentes, 453 - Centro". Confirmar o bairro correto e acrescentar o número no Perfil (o endereço precisa ser idêntico) | Dono | [ ] |
+| Quando tiver os dados | Horário da loja física e coordenadas (geo) para completar o schema Florist da inicial (não publicar sem dado confirmado) | Dono | [ ] |
+| Após 28/10/2026 | FASE 2 (decidir com dados): title da inicial se a T3 não resolver a canibalização; ampliar floricultura; title das cestas "\| Com Entrega"; "Entrega em Canaã" e "embalagem inclusa" no topo de presentes; preload da imagem de fundo do topo da inicial (LCP); WebP se o LCP no celular passar de 2,5 s; Natal no menu a partir de 15/11; blog | Agente | [ ] |
