@@ -99,5 +99,25 @@
       "unit": "caixa",
       "price": 6900
     }
+  ],
+  "duplo": {
+    "id": "combo-duplo",
+    "name": "Combo Duplo",
+    "price": 3000,
+    "pastels": 2
+  },
+  "payments": [
+    {
+      "id": "pix",
+      "name": "Pix"
+    },
+    {
+      "id": "dinheiro",
+      "name": "Dinheiro"
+    },
+    {
+      "id": "credito",
+      "name": "Cartão de crédito pelo link InfinityPay"
+    }
   ]
 }
