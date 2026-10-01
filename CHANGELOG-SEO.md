@@ -40,12 +40,12 @@ Cada linha diz o que mudou, qual número acompanhar no Search Console e quando a
 
 | Quando | Tarefa | Quem | Feito |
 |---|---|---|---|
-| 30/09/2026 | Pedir indexação no Search Console das 9 páginas prioritárias: inicial, floricultura, buquês, presentes, cestas, café da manhã, aniversário, perfumaria e monte sua cesta | Dono | [ ] |
+| 30/09/2026 | Pedir indexação no Search Console das 9 páginas prioritárias: inicial, floricultura, buquês, presentes, cestas, café da manhã, aniversário, perfumaria e monte sua cesta. Pedidas em 30/09; a inicial foi pedida de novo em 01/10 | Dono | [x] |
 | 01/10/2026 | Não pedir indexação de /rosas-perfumadas-canaa/: consolidada na página de buquês em 30/09 | — | — |
 | 30/09/2026 | Criar 301 no hPanel: /rosas-perfumadas-canaa/ → /buques-canaa-dos-carajas/. Testado: 301 em 1 salto para buquês, que responde 200 | Dono | [x] |
-| **01/10/2026** | **Pedir indexação de https://zadonipresentes.com.br/presentes-romanticos-canaa/** | Dono | [ ] |
+| 01/10/2026 | Pedir indexação de https://zadonipresentes.com.br/presentes-romanticos-canaa/. Pedida em 01/10 | Dono | [x] |
 | 30/09/2026 | Criar 301 no hPanel: /presentes-canaa-dos-carajas/ e /presentes-canaa → /presentes-canaa.html. Testado: as duas respondem 301 para a página oficial, que responde 200 sem loop | Dono | [x] |
-| Assim que possível | Reenviar https://zadonipresentes.com.br/sitemap.xml no Search Console | Dono | [ ] |
+| 01/10/2026 | Reenviar https://zadonipresentes.com.br/sitemap.xml no Search Console. Reenviado em 01/10 (status "Processado"); a última leitura ainda era de 30/09, com 20 páginas. Conferir se passa a mostrar 19 | Dono | [x] |
 | Assim que possível | Conferir e excluir a avaliação "Zadoni 2" no Perfil da Empresa, se for da própria loja | Dono | [ ] |
 | Até ~15/10/2026 | Natal: enviar fotos reais das cestas de Natal 2026 da Zadoni (sem fotos de terceiros), com modelos, itens, preço "a partir de", prazo de reserva e se atende empresas. O agente trata as fotos (4:5, tom natalino) e monta a seção "Cestas de Natal 2026" | Dono | [ ] |
 | A partir de 17/10/2026 | Natal: ajustar o title da página para "Cestas de Natal em Canaã dos Carajás" (regra das 3 semanas) | Agente | [ ] |
