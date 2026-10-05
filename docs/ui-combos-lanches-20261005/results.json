@@ -1,0 +1,21 @@
+[
+  "Two offers without overflow 360",
+  "Large filling buttons 360",
+  "Two offers without overflow 390",
+  "Large filling buttons 390",
+  "Two offers without overflow 768",
+  "Large filling buttons 768",
+  "Two offers without overflow 1440",
+  "Large filling buttons 1440",
+  "Filling is required",
+  "No send button before the summary",
+  "Duplo in summary, escaped notes",
+  "Send waits while another combo is open",
+  "Mixed order, one delivery, same drink label",
+  "Bar shows total and combo count",
+  "Edit and extra cans per combo",
+  "Pickup removes fee and address",
+  "Juice adds R$ 7",
+  "Individual flavor and juice survive editing",
+  "Empty cart cannot send"
+]

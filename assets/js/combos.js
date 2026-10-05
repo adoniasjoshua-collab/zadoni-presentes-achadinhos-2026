@@ -38,12 +38,14 @@
       extras, personalization: extras.some(e => e.id === 'caixinha') ? form.elements.personalization.value.trim() : ''
     };
     if (isDuplo(cardId)) {
-      const flavors = ['flavor1', 'flavor2'].map(name => data.flavors.find(f => f.id === form.elements[name].value) || data.flavors[0]);
+      const flavors = ['flavor1', 'flavor2'].map(name => data.flavors.find(f => f.id === form.elements[name].value));
+      if (flavors.some(f => !f)) return null;
       return { ...common, duplo: true, flavorIds: flavors.map(f => f.id), flavorNames: flavors.map(f => f.name), price: data.duplo.price, drinkName: '1 refrigerante em lata (incluído)', drinkPrice: 0 };
     }
     const flavor = data.flavors.find(f => f.id === form.elements.flavor1.value);
+    if (!flavor) return null;
     const drink = data.drinks.find(d => d.id === form.elements.drink.value) || data.drinks[0];
-    return { ...common, flavorId: flavor.id, flavorName: flavor.name, price: data.price, drinkId: drink.id, drinkName: drink.name, drinkPrice: drink.price };
+    return { ...common, flavorId: flavor.id, flavorName: flavor.name, price: data.price, drinkId: drink.id, drinkName: drink.price ? drink.name : `1 ${drink.name.toLowerCase()} (incluído)`, drinkPrice: drink.price };
   }
   const title = item => item.duplo
     ? `Combo Duplo (2 pastelões: ${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
@@ -108,186 +110,163 @@
   }
   function customerHTML(prefix) {
     const payments = (data.payments || []).map(p => `<option value="${esc(p.id)}">${esc(p.name)}</option>`).join('');
-    return `<fieldset class="customer" data-customer><legend>Seus dados <small>(opcional, agiliza a confirmação)</small></legend>`
-      + `<label for="${prefix}-nome">Nome</label><input id="${prefix}-nome" data-field="name" maxlength="60" autocomplete="name">`
+    return `<fieldset class="customer" data-customer><legend><span data-customer-title>Dados para entrega</span> <small>(ou informe no WhatsApp)</small></legend>`
       + `<div data-show="address"><label for="${prefix}-endereco">Endereço ou bairro da entrega</label><input id="${prefix}-endereco" data-field="address" maxlength="160" autocomplete="street-address" placeholder="Rua, número e bairro"></div>`
-      + `<label for="${prefix}-pagamento">Forma de pagamento</label><select id="${prefix}-pagamento" data-field="payment"><option value="">Escolher depois</option>${payments}</select>`
+      + `<details class="customer-options"><summary>Nome, pagamento e horário (opcional)</summary><label for="${prefix}-nome">Nome</label><input id="${prefix}-nome" data-field="name" maxlength="60" autocomplete="name"><label for="${prefix}-pagamento">Forma de pagamento</label><select id="${prefix}-pagamento" data-field="payment"><option value="">Escolher depois</option>${payments}</select>`
       + `<div data-show="change" hidden><label for="${prefix}-troco">Troco para quanto?</label><input id="${prefix}-troco" data-field="change" maxlength="20" inputmode="decimal" placeholder="Ex.: R$ 50"></div>`
       + `<label for="${prefix}-quando">Quando?</label><select id="${prefix}-quando" data-field="when"><option value="">Escolher depois</option><option value="agora">O quanto antes</option><option value="agendar">Agendar horário</option></select>`
       + `<div data-show="time" hidden><label for="${prefix}-hora">Horário desejado</label><input id="${prefix}-hora" data-field="time" type="time" min="07:00" max="23:00"></div>`
-      + '<p class="small">Aceitamos Pix, dinheiro e cartão de crédito pelo link de pagamento InfinityPay.</p></fieldset>';
+      + '<p class="small">Aceitamos Pix, dinheiro e cartão de crédito pelo link de pagamento InfinityPay.</p></details></fieldset>';
   }
   function syncCustomer(source) {
     document.querySelectorAll('[data-customer]').forEach(box => {
       box.querySelectorAll('[data-field]').forEach(field => { if (field !== source) field.value = customer[field.dataset.field]; });
       box.querySelector('[data-show="address"]').hidden = fulfillment !== 'entrega';
+      box.querySelector('[data-customer-title]').textContent = fulfillment === 'entrega' ? 'Dados para entrega' : 'Seus dados';
       box.querySelector('[data-show="change"]').hidden = customer.payment !== 'dinheiro';
       box.querySelector('[data-show="time"]').hidden = customer.when !== 'agendar';
     });
   }
-  // What the card's own send button sends: the order so far plus this card's choice.
-  function cardList(form, item) {
-    const list = order.slice();
-    // Just added with "Juntar" and untouched since: it is already in the order.
-    if (form.dataset.added && !editing) return list;
-    if (editing && editing.cardId === item.cardId) list[editing.index] = item;
-    else list.push(item);
-    return list;
-  }
+  const pendingForm = () => [...forms.values()].find(form => form.querySelector('.options').open);
   function updateForm(form) {
     form.querySelectorAll('input[type="number"]').forEach(normalize);
-    const item = selection(form);
-    const box = item.extras.some(e => e.id === 'caixinha');
+    const box = Number(form.querySelector('[data-extra="caixinha"] input').value) > 0;
     form.querySelector('.personalization').hidden = !box;
     form.elements.personalization.disabled = !box;
     form.querySelectorAll('[data-extra]').forEach(row => {
-      const e = item.extras.find(extra => extra.id === row.dataset.extra);
-      row.querySelector('[data-extra-subtotal]').textContent = e ? `${e.quantity}× = ${money(e.quantity * e.price)}` : '';
+      const extra = data.extras.find(e => e.id === row.dataset.extra);
+      const count = quantity(row.querySelector('input'));
+      row.querySelector('[data-extra-subtotal]').textContent = count ? `${count}× por combo = ${money(count * extra.price)}` : '';
     });
-    form.querySelector('[data-card-total]').innerHTML = totalHTML([item]);
-    const list = cardList(form, item);
-    const total = totals(list);
-    const whole = list.length > 1 || (form.dataset.added && list.length === 1);
-    const send = form.querySelector('[data-card-send]');
-    send.href = whatsapp(list);
-    send.textContent = whole
-      ? `Enviar pedido completo (${total.count} ${total.count > 1 ? 'combos' : 'combo'}) · ${money(total.total + fee())}`
-      : `Enviar no WhatsApp · ${money(total.total + fee())}`;
-    form.querySelector('[data-form-error]').textContent = '';
+    const item = selection(form);
+    form.querySelector('[data-card-total]').textContent = item ? `Este combo: ${money(amounts(item).total)} · entrega calculada uma vez no resumo` : 'Escolha o recheio de cada pastelão para continuar.';
+    form.querySelector('[data-add]').textContent = editing?.cardId === form.closest('[data-flavor]').dataset.flavor ? 'Salvar alterações' : 'Continuar pedido';
   }
   function renderOrder() {
     const hasItems = order.length > 0;
-    section.hidden = false;
-    document.querySelector('.order-bar').hidden = !hasItems;
+    const pending = pendingForm();
+    section.hidden = !hasItems;
+    document.querySelector('.order-bar').hidden = !hasItems || summaryInView;
     document.querySelector('[data-cart-nav]').hidden = !hasItems;
-    // The order bar takes the bottom corner once there is something to send.
-    document.querySelector('.whatsapp-float').hidden = hasItems;
-    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3><p>Bebida: ${esc(drinkLabel(item))}</p>${item.notes ? `<p>Observações: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}" aria-label="Editar ${esc(title(item))}">Editar</button><button type="button" data-remove="${index}" aria-label="Remover ${esc(title(item))}">Remover</button></div></article>`).join('');
+    document.querySelector('.whatsapp-float').hidden = hasItems || !!pending;
+    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3><p>Bebida: ${esc(drinkLabel(item))}</p>${item.notes ? `<p>Observações: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}">Editar combo</button><button type="button" data-remove="${index}">Remover</button></div></article>`).join('');
     document.querySelector('[data-order-total]').innerHTML = totalHTML(order);
     const send = document.querySelector('[data-send-order]');
-    const barSend = document.querySelector('[data-bar-send]');
-    send.hidden = !hasItems;
-    document.querySelector('.message-preview').hidden = !hasItems;
-    section.querySelector('[data-customer]').hidden = !hasItems;
-    if (hasItems) {
-      send.href = barSend.href = whatsapp(order);
-      document.querySelector('[data-message-preview]').textContent = message(order);
-      const total = totals(order);
-      document.querySelector('[data-bar-total]').textContent = `Meu pedido (${total.count}) · ${money(total.total + fee())}`;
-    } else {
-      send.removeAttribute('href');
-      barSend.removeAttribute('href');
-      document.querySelector('[data-message-preview]').textContent = '';
-    }
+    send.hidden = !hasItems || !!pending;
+    document.querySelector('[data-pending-notice]').hidden = !hasItems || !pending;
+    document.querySelector('.message-preview').hidden = !hasItems || !!pending;
+    document.querySelector('[data-message-preview]').textContent = hasItems ? message(order) : '';
+    const total = totals(order).total + fee();
+    document.querySelector('[data-bar-total]').textContent = `Meu pedido · ${money(total)}`;
+    const combos = order.reduce((sum, item) => sum + item.count, 0);
+    document.querySelector('[data-bar-count]').textContent = `${combos} ${combos === 1 ? 'combo' : 'combos'} no pedido`;
+    if (hasItems && !pending) {
+      send.href = whatsapp(order);
+      send.textContent = `Enviar pedido no WhatsApp · ${money(total)}`;
+    } else send.removeAttribute('href');
   }
+  // The bar only points to the summary, so hide it while the summary is on screen.
+  let summaryInView = false;
+  if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
+    summaryInView = entry.isIntersecting;
+    renderOrder();
+  }).observe(section);
   function refresh() {
     syncCustomer();
     forms.forEach(updateForm);
-    // The order section stays hidden until the first combo is added.
-    if (order.length || !section.hidden) renderOrder();
+    renderOrder();
   }
-  function setFulfillment(value) {
-    fulfillment = value === 'retirada' ? 'retirada' : 'entrega';
-    document.querySelectorAll('input[name="fulfillment"]').forEach(radio => { radio.checked = radio.value === fulfillment; });
-    refresh();
-  }
-  function finishEditing() {
-    editing = null;
-    forms.forEach(form => { form.querySelector('[data-add]').textContent = '+ Juntar com outro combo no mesmo pedido'; });
+  function closeForm(form) {
+    form.querySelector('.options').open = false;
+    form.reset();
+    form.querySelector('[data-form-error]').textContent = '';
+    if (editing?.cardId === form.closest('[data-flavor]').dataset.flavor) editing = null;
   }
   document.querySelectorAll('[data-configurator]').forEach(form => {
     const id = form.closest('[data-flavor]').dataset.flavor;
     forms.set(id, form);
-    form.querySelector('[data-card-total]').insertAdjacentHTML('beforebegin', customerHTML(id));
     form.addEventListener('click', event => {
       const step = event.target.closest('[data-step]');
-      if (!step) return;
-      const input = step.closest('.quantity').querySelector('input');
-      input.value = quantity(input) + Number(step.dataset.step);
-      delete form.dataset.added;
-      updateForm(form);
+      if (step) {
+        const input = step.closest('.quantity').querySelector('input');
+        input.value = quantity(input) + Number(step.dataset.step);
+        updateForm(form);
+      }
+      if (event.target.closest('[data-cancel]')) {
+        closeForm(form);
+        refresh();
+        form.querySelector('summary').focus();
+      }
     });
-    form.addEventListener('input', event => {
-      if (event.target.closest('[data-customer]')) return;
-      if (event.target.name !== 'fulfillment') delete form.dataset.added;
-      updateForm(form);
-    });
-    form.addEventListener('change', event => {
-      if (event.target.closest('[data-customer]')) return;
-      if (event.target.name !== 'fulfillment') delete form.dataset.added;
-      if (event.target.name === 'fulfillment') setFulfillment(event.target.value); else updateForm(form);
-    });
+    form.addEventListener('input', () => { updateForm(form); form.querySelector('[data-form-error]').textContent = ''; });
+    form.addEventListener('change', () => updateForm(form));
     form.addEventListener('submit', event => {
       event.preventDefault();
+      if (!form.querySelector('.options').open) return;
       updateForm(form);
       const item = selection(form);
-      const replacing = editing && editing.cardId === id;
-      if (replacing) order[editing.index] = item;
+      if (!item) {
+        form.querySelector('[data-form-error]').textContent = 'Escolha o recheio de cada pastelão.';
+        const missing = [...form.querySelectorAll('.flavor-choices')].find(group => !group.querySelector(':checked'));
+        missing.querySelector('input').focus();
+        return;
+      }
+      if (editing?.cardId === id) order[editing.index] = item;
       else order.push(item);
-      form.dataset.added = '1';
-      finishEditing();
+      closeForm(form);
       refresh();
-      const notice = replacing ? 'Alterações salvas no pedido.' : `${item.count} combo(s) adicionado(s) ao pedido.`;
-      status.textContent = notice;
-      form.querySelector('[data-form-error]').textContent = notice + ' Escolha outro combo ou envie tudo pela barra “Meu pedido”.';
-      if (replacing) section.focus();
+      section.scrollIntoView({ block: 'start', behavior: 'auto' });
+      section.focus({ preventScroll: true });
+      status.textContent = 'Pedido atualizado. Confira o resumo antes de enviar.';
     });
     form.querySelector('.options').addEventListener('toggle', () => {
-      if (form.querySelector('.options').open) forms.forEach(other => {
-        if (other !== form) other.querySelector('.options').open = false;
-      });
+      if (form.querySelector('.options').open) forms.forEach(other => { if (other !== form) closeForm(other); });
+      else if (editing?.cardId === id) editing = null;
+      refresh();
     });
     form.hidden = false;
     form.closest('.card-content').querySelector('.fallback-order').hidden = true;
   });
   section.querySelector('.fulfillment').insertAdjacentHTML('afterend', customerHTML('pedido'));
-  section.querySelector('.fulfillment').addEventListener('change', event => setFulfillment(event.target.value));
+  section.querySelector('.fulfillment').addEventListener('change', event => {
+    fulfillment = event.target.value === 'retirada' ? 'retirada' : 'entrega';
+    refresh();
+  });
   const onCustomer = event => {
     const field = event.target.closest('[data-field]');
     if (!field) return;
     customer[field.dataset.field] = field.value.trim();
     syncCustomer(field);
-    forms.forEach(updateForm);
-    if (order.length) renderOrder();
+    renderOrder();
   };
   document.addEventListener('input', onCustomer);
   document.addEventListener('change', onCustomer);
-  setFulfillment('entrega');
   itemsElement.addEventListener('click', event => {
     const remove = event.target.closest('[data-remove]');
     const edit = event.target.closest('[data-edit]');
+    if (!remove && !edit) return;
+    forms.forEach(closeForm);
     if (remove) {
       order.splice(Number(remove.dataset.remove), 1);
-      forms.forEach(f => { delete f.dataset.added; });
-      finishEditing(); refresh(); section.focus();
-      status.textContent = 'Combo removido do pedido.';
+      refresh();
+      if (order.length) section.focus(); else document.querySelector('.options summary').focus();
+      return;
     }
-    if (edit) {
-      const index = Number(edit.dataset.edit);
-      const item = order[index];
-      finishEditing();
-      const form = forms.get(item.cardId);
-      delete form.dataset.added;
-      if (item.duplo) {
-        form.elements.flavor1.value = item.flavorIds[0];
-        form.elements.flavor2.value = item.flavorIds[1];
-      } else {
-        form.elements.flavor1.value = item.flavorId;
-        form.elements.drink.value = item.drinkId;
-      }
-      form.elements.notes.value = item.notes;
-      form.elements.personalization.value = item.personalization;
-      form.querySelector('.combo-count input').value = item.count;
-      form.querySelectorAll('[data-extra]').forEach(row => {
-        row.querySelector('input').value = item.extras.find(e => e.id === row.dataset.extra)?.quantity || 0;
-      });
-      form.querySelector('.options').open = true;
-      editing = { index, cardId: item.cardId };
-      updateForm(form);
-      form.querySelector('[data-add]').textContent = 'Salvar alterações no pedido';
-      form.scrollIntoView({ block: 'start', behavior: 'auto' });
-      form.querySelector('.options select').focus({ preventScroll: true });
-      status.textContent = 'Edite as opções e clique em Salvar alterações no pedido.';
-    }
+    const index = Number(edit.dataset.edit);
+    const item = order[index];
+    const form = forms.get(item.cardId);
+    form.elements.flavor1.value = item.duplo ? item.flavorIds[0] : item.flavorId;
+    if (item.duplo) form.elements.flavor2.value = item.flavorIds[1];
+    else form.elements.drink.value = item.drinkId;
+    form.elements.notes.value = item.notes;
+    form.elements.personalization.value = item.personalization;
+    form.querySelector('.combo-count input').value = item.count;
+    form.querySelectorAll('[data-extra]').forEach(row => { row.querySelector('input').value = item.extras.find(e => e.id === row.dataset.extra)?.quantity || 0; });
+    editing = { index, cardId: item.cardId };
+    form.querySelector('.options').open = true;
+    refresh();
+    form.scrollIntoView({ block: 'start', behavior: 'auto' });
+    form.querySelector('input:checked').focus({ preventScroll: true });
   });
+  refresh();
 })();

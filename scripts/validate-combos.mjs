@@ -24,9 +24,12 @@ for (const id of ['combo-individual', 'combo-duplo']) {
   const card = html.split(`id="${id}" data-flavor="${id}"`)[1]?.split('</article>')[0] || '';
   assert(card.includes('name="flavor1"'));
   assert(card.includes('Observações do pedido'));
-  assert(card.includes('data-card-send'));
+  assert(!card.includes('data-card-send'), 'Orders are sent only from the single summary');
+  assert(card.includes('class="flavor-choices"') && card.includes('data-add') && card.includes('data-cancel'));
   assert(card.includes('1 refrigerante em lata'));
 }
+assert.equal((html.match(/data-send-order/g) || []).length, 1, 'Exactly one send button: the order summary');
+assert(!html.includes('data-bar-send'), 'Sticky bar points to the summary instead of sending');
 assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);
 assert(data.drinks.every(d => d.id && d.name && Number.isInteger(d.price) && d.price >= 0));
