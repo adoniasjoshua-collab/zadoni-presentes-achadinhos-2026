@@ -22,3 +22,10 @@
 @media(max-width:760px){.combo-grid{grid-template-columns:1fr;gap:14px}.hero{padding-bottom:18px}.breadcrumbs{margin-bottom:14px}.card-content{padding:18px}.card-content form{margin-top:10px;padding-top:0;border:0}.order-bar>.shell{flex-wrap:wrap}.order-bar .button{white-space:normal}}
 
 body footer,body footer p,body footer a{color:#fff4e8}body footer a:hover{color:#f3c85f}
+/* Existing three-filling cover: full image, with an in-page purchase action. */
+.combo-cover-layout{display:grid;grid-template-columns:360px minmax(0,1fr);align-items:center;gap:40px}
+.combo-cover{width:100%;max-width:360px;justify-self:center}
+.combo-cover-image{display:block;border-radius:18px;overflow:hidden}
+.combo-cover-image img{display:block;width:100%;height:auto;aspect-ratio:864/1231;object-fit:contain}
+.combo-cover>.button{width:100%;margin-top:12px}
+@media(max-width:760px){.combo-cover-layout{grid-template-columns:1fr;gap:22px}.combo-cover{max-width:280px}.combo-cover-copy h1{font-size:2rem}.hero .breadcrumbs{margin-bottom:12px}}
