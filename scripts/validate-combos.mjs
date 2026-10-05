@@ -12,16 +12,20 @@ const html = read(`${slug}/index.html`);
 assert.equal(data.status, 'ready');
 assert.equal(data.phone, '5594992993138');
 assert.equal(data.delivery.price, 500);
-assert.equal(data.price, 2200, 'Combo = 1 pastel + canned soda for R$22, same for every flavor');
+assert.equal(data.price, 2000, 'Combo = 1 pastel + canned soda for R$20, same for every flavor');
 assert(!('combos' in data), 'Tiered 1/2/3-pastel pricing was retired');
 assert.deepEqual(data.flavors.map(f => f.id), ['carne-queijo', 'frango-queijo', 'queijo-presunto']);
 assert(data.delivery.areas.length, 'Delivery area must be stated');
 assert(data.flavors.every(f => f.image), 'Every flavor card needs an image');
-for (const f of data.flavors) {
-  const card = html.split(`id="${f.id}" data-flavor="${f.id}"`)[1]?.split('</article>')[0] || '';
-  assert(card.includes('<p class="price">R$&nbsp;22,00</p>') || card.includes('<p class="price">R$ 22,00</p>'), 'Price leads each card: ' + f.id);
-  assert.equal((card.match(/name="drink"/g) || []).length, 1, 'One drink choice per card: ' + f.id);
-  assert(card.includes('<details class="options"><summary>Adicionais e opções</summary>'), 'Options stay behind one button: ' + f.id);
+assert.equal(data.duplo.price, 3000);
+assert.equal(data.duplo.drinks, 1);
+assert.equal((html.match(/data-configurator/g) || []).length, 2);
+for (const id of ['combo-individual', 'combo-duplo']) {
+  const card = html.split(`id="${id}" data-flavor="${id}"`)[1]?.split('</article>')[0] || '';
+  assert(card.includes('name="flavor1"'));
+  assert(card.includes('Observações do pedido'));
+  assert(card.includes('data-card-send'));
+  assert(card.includes('1 refrigerante em lata'));
 }
 assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);
@@ -40,7 +44,7 @@ assert(!/"@type":"(Product|Restaurant)"|aggregateRating|InStock/.test(html));
 assert.deepEqual(JSON.parse(html.match(/id="combos-data" type="application\/json">([\s\S]*?)<\/script>/)[1]), data);
 for (const [, value] of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
   if (/^https?:|^#/.test(value)) continue;
-  const target = value.split('?')[0];
+  const target = value.split(/[?#]/)[0];
   const resolved = path.resolve(root, slug, target, target.endsWith('/') ? 'index.html' : '');
   assert(fs.existsSync(resolved), 'Broken local resource: ' + value);
 }

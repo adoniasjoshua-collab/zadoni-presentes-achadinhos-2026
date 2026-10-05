@@ -10,3 +10,15 @@
 .order-bar .bar-total{display:flex;flex-direction:column;text-decoration:none;color:var(--wine);min-width:0}.order-bar .bar-total small{font-size:.75rem;text-decoration:underline}.order-bar .button{white-space:nowrap}
 @media(min-width:761px){#combo-duplo{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:start}#combo-duplo .combo-photo{width:100%;height:auto;position:sticky;top:90px}}
 .hero-art-link{display:block;justify-self:center;width:100%;max-width:430px;border-radius:28px}.hero-art-link:focus-visible{outline:3px solid var(--wine);outline-offset:4px}@media(max-width:760px){.hero-art-link{order:-1}}
+
+/* Two offers, then one expanded configurator. */
+.combo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#combo-duplo{display:block;grid-column:auto;border:2px solid var(--wine)}
+.delivered{margin:12px 0;color:var(--wine)!important}
+.order-notice{padding:14px 16px;background:#fff0ce;border:1px solid #d4b764;border-radius:10px;font-size:.9rem}
+.extras-options{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:10px}
+.extras-options summary{min-height:44px;font-weight:650;align-content:center}
+.notes{margin-top:16px}.notes textarea{margin-top:8px}.step-title{margin-top:18px}
+@media(max-width:760px){.combo-grid{grid-template-columns:1fr;gap:14px}.hero{padding-bottom:18px}.breadcrumbs{margin-bottom:14px}.card-content{padding:18px}.card-content form{margin-top:10px;padding-top:0;border:0}.order-bar>.shell{flex-wrap:wrap}.order-bar .button{white-space:normal}}
+
+body footer,body footer p,body footer a{color:#fff4e8}body footer a:hover{color:#f3c85f}

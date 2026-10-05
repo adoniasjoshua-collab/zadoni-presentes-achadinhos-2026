@@ -1,7 +1,7 @@
 {
   "status": "ready",
   "phone": "5594992993138",
-  "price": 2200,
+  "price": 2000,
   "delivery": {
     "price": 500,
     "areas": [
@@ -104,7 +104,8 @@
     "id": "combo-duplo",
     "name": "Combo Duplo",
     "price": 3000,
-    "pastels": 2
+    "pastels": 2,
+    "drinks": 1
   },
   "payments": [
     {

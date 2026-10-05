@@ -39,13 +39,11 @@
     };
     if (isDuplo(cardId)) {
       const flavors = ['flavor1', 'flavor2'].map(name => data.flavors.find(f => f.id === form.elements[name].value) || data.flavors[0]);
-      // The duo has no drink included: a can is an extra, not an "extra can".
-      common.extras = extras.map(e => e.id === 'refrigerante-extra' ? { ...e, name: 'Refrigerante em lata' } : e);
-      return { ...common, duplo: true, flavorIds: flavors.map(f => f.id), flavorNames: flavors.map(f => f.name), price: data.duplo.price, drinkPrice: 0 };
+      return { ...common, duplo: true, flavorIds: flavors.map(f => f.id), flavorNames: flavors.map(f => f.name), price: data.duplo.price, drinkName: '1 refrigerante em lata (incluído)', drinkPrice: 0 };
     }
-    const flavor = data.flavors.find(f => f.id === cardId);
+    const flavor = data.flavors.find(f => f.id === form.elements.flavor1.value);
     const drink = data.drinks.find(d => d.id === form.elements.drink.value) || data.drinks[0];
-    return { ...common, flavorName: flavor.name, price: data.price, drinkId: drink.id, drinkName: drink.name, drinkPrice: drink.price };
+    return { ...common, flavorId: flavor.id, flavorName: flavor.name, price: data.price, drinkId: drink.id, drinkName: drink.name, drinkPrice: drink.price };
   }
   const title = item => item.duplo
     ? `Combo Duplo (2 pastelões: ${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
@@ -83,8 +81,8 @@
     list.forEach((item, index) => {
       const a = amounts(item);
       lines.push(`${index + 1}. ${item.count}× ${title(item)} — ${money(item.price * item.count)}`);
-      if (!item.duplo) lines.push(`   Bebida: ${drinkLabel(item)}${item.count > 1 ? ' em cada combo' : ''}`);
-      if (item.notes) lines.push('   Preferência de bebida: ' + item.notes);
+      lines.push(`   Bebida: ${drinkLabel(item)}${item.count > 1 ? ' em cada combo' : ''}`);
+      if (item.notes) lines.push('   Observações do pedido: ' + item.notes);
       if (item.extras.length) {
         lines.push('   Adicionais:');
         item.extras.forEach(e => lines.push(`   - ${e.quantity * item.count}× ${e.name} (${money(e.price)} por ${e.unit}) = ${money(e.quantity * item.count * e.price)}`));
@@ -164,7 +162,7 @@
     document.querySelector('[data-cart-nav]').hidden = !hasItems;
     // The order bar takes the bottom corner once there is something to send.
     document.querySelector('.whatsapp-float').hidden = hasItems;
-    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3>${item.duplo ? '' : `<p>Bebida: ${esc(drinkLabel(item))}</p>`}${item.notes ? `<p>Preferência: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}" aria-label="Editar ${esc(title(item))}">Editar</button><button type="button" data-remove="${index}" aria-label="Remover ${esc(title(item))}">Remover</button></div></article>`).join('');
+    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3><p>Bebida: ${esc(drinkLabel(item))}</p>${item.notes ? `<p>Observações: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}" aria-label="Editar ${esc(title(item))}">Editar</button><button type="button" data-remove="${index}" aria-label="Remover ${esc(title(item))}">Remover</button></div></article>`).join('');
     document.querySelector('[data-order-total]').innerHTML = totalHTML(order);
     const send = document.querySelector('[data-send-order]');
     const barSend = document.querySelector('[data-bar-send]');
@@ -234,6 +232,11 @@
       form.querySelector('[data-form-error]').textContent = notice + ' Escolha outro combo ou envie tudo pela barra “Meu pedido”.';
       if (replacing) section.focus();
     });
+    form.querySelector('.options').addEventListener('toggle', () => {
+      if (form.querySelector('.options').open) forms.forEach(other => {
+        if (other !== form) other.querySelector('.options').open = false;
+      });
+    });
     form.hidden = false;
     form.closest('.card-content').querySelector('.fallback-order').hidden = true;
   });
@@ -269,6 +272,7 @@
         form.elements.flavor1.value = item.flavorIds[0];
         form.elements.flavor2.value = item.flavorIds[1];
       } else {
+        form.elements.flavor1.value = item.flavorId;
         form.elements.drink.value = item.drinkId;
       }
       form.elements.notes.value = item.notes;
