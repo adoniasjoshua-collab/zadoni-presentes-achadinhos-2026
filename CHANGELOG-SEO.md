@@ -123,3 +123,11 @@ Já atendido antes da tarefa: Um graph com negócio local, CollectionPage, Bread
 Alteração e hipótese: Acrescenta 12 Products mantendo IDs e entidades anteriores. Sete novos sem offers; cinco Amakha com valores cadastrados. Sem geo, avaliações ou disponibilidade inventados.
 
 Métrica: Validade do JSON-LD e resultados de produto; teste externo do Google pendente. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P8
+
+Já atendido antes da tarefa: Quatro cards de parceiros sem foto e link de importados existentes.
+
+Alteração e hipótese: Substitui espaços sem foto por consulta única e preserva todas as âncoras anteriores.
+
+Métrica: Cliques na consulta de fragrância. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
