@@ -131,3 +131,15 @@ Já atendido antes da tarefa: Quatro cards de parceiros sem foto e link de impor
 Alteração e hipótese: Substitui espaços sem foto por consulta única e preserva todas as âncoras anteriores.
 
 Métrica: Cliques na consulta de fragrância. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P9
+
+Já atendido antes da tarefa: FAQ, texto de presente e cinco descrições Amakha existentes.
+
+Alteração e hipótese: Acrescenta conteúdo e três FAQs; remove referências de grife das descrições Amakha e rastreia os 12 produtos. Sem FAQ de originalidade não confirmada.
+
+Métrica: Consultas de presente e árabes; mensagens com seo_perfumaria. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+Validação final em 07/10/2026: H1, canonical, robots, IDs antigos e entidades anteriores preservados. 12 cards e 12 Products, sete sem offers; 11 cards com imagem (Ameerati pendente). Title com 56 caracteres e description com 148. Âncoras, arquivos locais, dimensões e links WhatsApp verificados. Navegador em 360, 390, 768 e 1440 px sem overflow, imagens quebradas ou erros JavaScript. Variante Atheeri limitada à resolução real, sem ampliar além de 1200 px. Diff restrito à perfumaria, suas imagens e este changelog; nenhuma outra página, CSS compartilhado, sitemap ou .htaccess alterado.
+
+Fontes de notas conferidas: https://lattafa.com/product/yara/, https://lattafa.com/product/yara-candy/, https://lattafa.com/product/yara-tous/ e https://lattafa.com/product/atheeri/. Moi e Ameerati sem pirâmide de notas não confirmada. Teste de pesquisa aprimorada hospedado pelo Google pendente; JSON parse local aprovado não substitui esse teste nem garante elegibilidade de produtos sem ofertas/avaliações. O validador legado scripts/validate-perfumaria.mjs exige quatro placeholders antigos; foi preservado pelo escopo e não serve como critério de aceite desta versão. O gerador legado também não foi alterado: executá-lo poderá sobrescrever esta edição da página.
