@@ -68,35 +68,39 @@
     if (!list.length) return '<p>Seu pedido está vazio. Escolha um combo acima.</p>';
     return `<div class="total-line"><span>Combos (${total.count})</span><strong>${money(total.base - total.drinks)}</strong></div>${total.drinks ? `<div class="total-line"><span>Troca por suco</span><strong>${money(total.drinks)}</strong></div>` : ''}${total.extras ? `<div class="total-line"><span>Adicionais</span><strong>${money(total.extras)}</strong></div>` : ''}<div class="total-line"><span>${fulfillment === 'entrega' ? 'Entrega' : 'Retirada'}</span><strong>${fulfillment === 'entrega' ? money(fee()) : 'sem taxa'}</strong></div><div class="total-line grand-total"><span>Total</span><strong>${money(total.total + fee())}</strong></div>`;
   }
+  // Message read by the attendant: single-code-point emojis only (no FE0F/ZWJ), which wa.me links render reliably.
   function customerLines() {
     const lines = [];
-    if (customer.name) lines.push('Nome: ' + customer.name);
-    if (fulfillment === 'entrega' && customer.address) lines.push('Endereço da entrega: ' + customer.address);
+    if (customer.name) lines.push('👤 Nome: ' + customer.name);
+    if (fulfillment === 'entrega' && customer.address) lines.push('📍 Endereço: ' + customer.address);
     const payment = (data.payments || []).find(p => p.id === customer.payment);
-    if (payment) lines.push('Pagamento: ' + payment.name + (payment.id === 'dinheiro' && customer.change ? ` (troco para ${customer.change})` : ''));
-    if (customer.when === 'agora') lines.push('Horário: o quanto antes');
-    if (customer.when === 'agendar') lines.push('Horário: ' + (customer.time ? `agendar para ${customer.time}` : 'quero agendar (combino por aqui)'));
+    if (payment) lines.push('💳 Pagamento: ' + payment.name + (payment.id === 'dinheiro' && customer.change ? ` (troco para ${customer.change})` : ''));
+    if (customer.when === 'agora') lines.push('🕐 Horário: o quanto antes');
+    if (customer.when === 'agendar') lines.push('🕐 Horário: ' + (customer.time ? `agendar para ${customer.time}` : 'quero agendar (combino por aqui)'));
     return lines;
   }
   function message(list) {
-    const lines = ['Olá, Zadoni! Quero confirmar este pedido:', ''];
-    list.forEach((item, index) => {
-      const a = amounts(item);
-      lines.push(`${index + 1}. ${item.count}× ${title(item)} — ${money(item.price * item.count)}`);
-      lines.push(`   Bebida: ${drinkLabel(item)}${item.count > 1 ? ' em cada combo' : ''}`);
-      if (item.notes) lines.push('   Observações do pedido: ' + item.notes);
-      if (item.extras.length) {
-        lines.push('   Adicionais:');
-        item.extras.forEach(e => lines.push(`   - ${e.quantity * item.count}× ${e.name} (${money(e.price)} por ${e.unit}) = ${money(e.quantity * item.count * e.price)}`));
-      }
-      if (item.personalization) lines.push('   Personalização das caixinhas: ' + item.personalization);
-      lines.push(`   Subtotal: ${money(a.total)}`, '');
-    });
+    const rule = '━━━━━━━━━━━━━━';
     const total = totals(list);
-    lines.push(`Produtos: ${money(total.total)}`, fulfillment === 'entrega' ? `Entrega na zona urbana: ${money(fee())}` : 'Retirada: sem taxa', `TOTAL: ${money(total.total + fee())}`);
+    const lines = ['Olá, Zadoni! Quero fazer este pedido 👇', '',
+      `${fulfillment === 'entrega' ? '🛵 *ENTREGA*' : '🏪 *RETIRADA*'} · ${total.count} ${total.count === 1 ? 'combo' : 'combos'}`, rule, ''];
+    list.forEach((item, index) => {
+      const each = item.count > 1 ? ' (cada combo)' : '';
+      lines.push(`*${index + 1}) ${item.count}× ${item.duplo ? 'Combo Duplo' : 'Combo Individual'}* — ${money(item.price * item.count)}`);
+      if (item.duplo) item.flavorNames.forEach((name, i) => lines.push(`🥟 Pastelão ${i + 1}: ${name}${each}`));
+      else lines.push(`🥟 Recheio: ${item.flavorName}${each}`);
+      lines.push(`🥤 ${drinkLabel(item)}${each}`);
+      item.extras.forEach(e => lines.push(`➕ ${e.quantity * item.count}× ${e.name} — ${money(e.quantity * item.count * e.price)}`));
+      if (item.personalization) lines.push('🎁 Caixinhas: ' + item.personalization);
+      if (item.notes) lines.push('📝 Obs.: ' + item.notes);
+      lines.push(`💵 Subtotal: ${money(amounts(item).total)}`, '');
+    });
+    lines.push(rule, '🧾 *VALORES*', `Produtos: ${money(total.total)}`,
+      fulfillment === 'entrega' ? `Entrega na zona urbana: ${money(fee())}` : 'Retirada: sem taxa',
+      `💰 *TOTAL: ${money(total.total + fee())}*`);
     const details = customerLines();
-    if (details.length) lines.push('', ...details);
-    lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?', 'Origem: página de combos de pastel — Zadoni');
+    if (details.length) lines.push('', '*DADOS DO CLIENTE*', ...details);
+    lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?', '_Origem: página de combos de pastel_');
     return lines.join('\n');
   }
   function whatsapp(list) {

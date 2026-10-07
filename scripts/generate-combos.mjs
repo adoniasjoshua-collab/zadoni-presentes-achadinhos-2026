@@ -76,7 +76,7 @@ const html = `<!DOCTYPE html>
 <link rel="stylesheet" href="../assets/css/tema-cor-2026.css?v=20260930-1">
 <script type="application/ld+json">${json(schemas)}</script>
 ${live ? `<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 'AW-16938428518');</script>\n${metaPixelHead}` : '<!-- Preview: no advertising trackers are loaded. -->'}
-<script id="combos-data" type="application/json">${json(data)}</script><script src="../assets/js/combos.js?v=20261005-4" defer></script>
+<script id="combos-data" type="application/json">${json(data)}</script><script src="../assets/js/combos.js?v=20261007-1" defer></script>
 ${live ? '<script src="../assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>' : ''}
 </head><body>
 ${live ? metaPixelBody : '<div class="draft-banner">Prévia da nova página · fotos e disponibilidade em confirmação</div>'}
