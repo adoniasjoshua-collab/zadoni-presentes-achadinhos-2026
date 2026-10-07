@@ -75,3 +75,11 @@ Já atendido antes da tarefa: H1, canonical, URL, robots e metadados sociais pre
 Alteração e hipótese: Atualiza títulos e descrições para a busca local por Yara e perfumes árabes. Imagem social será atualizada na P3.
 
 Métrica: CTR e impressões da URL. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P2
+
+Já atendido antes da tarefa: Barra de categorias e âncoras de bolso e masculinos existentes.
+
+Alteração e hipótese: Organiza atalhos por intenção de escolha. Destinos novos entram em P4 a P9.
+
+Métrica: Cliques em produtos e WhatsApp. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
