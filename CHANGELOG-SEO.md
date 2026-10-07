@@ -91,3 +91,11 @@ Já atendido antes da tarefa: Cinco fotos Amakha com dimensões; nove fontes JPE
 Alteração e hipótese: Otimiza seis imagens sem marca-d’água em WebP responsivo. Ameerati pendente: única fonte contém @renataramoscosmeticos e selo de originalidade não confirmado; não usada. Volumes não confirmados omitidos dos nomes.
 
 Métrica: Busca de imagens e carregamento móvel. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P4
+
+Já atendido antes da tarefa: Indicação pelo WhatsApp e menor preço cadastrado de R$ 47 existentes.
+
+Alteração e hipótese: Acrescenta escolha por perfil em HTML acessível sem JavaScript obrigatório.
+
+Métrica: Cliques no WhatsApp e produtos escolhidos. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
