@@ -99,3 +99,11 @@ Já atendido antes da tarefa: Indicação pelo WhatsApp e menor preço cadastrad
 Alteração e hipótese: Acrescenta escolha por perfil em HTML acessível sem JavaScript obrigatório.
 
 Métrica: Cliques no WhatsApp e produtos escolhidos. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P5
+
+Já atendido antes da tarefa: Família Yara ainda ausente; estilos e cards existentes reaproveitados.
+
+Alteração e hipótese: Inclui quatro Yara e comparação com rolagem interna. Sem preços ou estoque inventados; Moi sem notas não confirmadas.
+
+Métrica: Consultas com yara e mensagens por produto. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
