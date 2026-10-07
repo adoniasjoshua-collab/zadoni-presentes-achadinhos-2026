@@ -155,3 +155,13 @@ Validação: links internos e fragmentos conferidos; JSON e referências do grap
 Limites identificados: a página é uma categoria com produtos distintos, portanto não atende à diretriz de foco em um produto para product rich results; os sete novos também não têm offers/review/aggregateRating. A fonte é https://developers.google.com/search/docs/appearance/structured-data/product-snippet. Manter Product descritivo não equivale à elegibilidade e não se devem inventar ofertas ou avaliações. Validador legado executado e reprovado por exigir 4 placeholders (atual: 0); o workflow chama esse validador, então essa pendência precisa ser resolvida antes da publicação pelo fluxo automatizado. Scripts não alterados pelo escopo. Foto Ameerati e teste hospedado do Google continuam pendentes.
 
 Métrica: impressões, cliques e CTR da URL; carregamento de imagens em dispositivos reais. UTMs no destino wa.me não comprovam, sozinhas, medição de cliques por produto: o script atual envia conversão genérica ao Google Ads, sem utm_content. Avaliação: 04/11/2026, ajustável à publicação efetiva. Sem push ou publicação.
+
+### 07/10/2026 · Perfumaria · Coordenadas do print
+
+Já atendido: endereço oficial no rodapé e no Store, link Como chegar e hasMap. Coordenadas antes ausentes.
+
+Alteração e hipótese: usuário forneceu print com latitude -6.532173 e longitude -49.848731. Incluído geo/GeoCoordinates no Store; Como chegar e hasMap passam a abrir exatamente essas coordenadas no Google Maps, evitando depender do destino não verificado do link curto anterior. Objetivo: coerência entre o ponto informado e o mapa da página.
+
+O print mostra “R. Júlio Geraldo de Carvalho, 474 - Centro”, diferente de “Rua Asdrúbal Bentes, 453 - Centro” informado anteriormente como NAP oficial. Preservado o endereço oficial; o endereço textual exibido pelo Maps precisa de confirmação do dono antes de substituir o NAP. Não houve geocodificação reversa ou verificação independente de que o endereço e o ponto coincidem.
+
+Validação: JSON parse, latitude/longitude numéricas e correspondência entre hasMap e Como chegar aprovados. Endereço, H1, title, description e canonical preservados. Somente perfumaria e este registro alterados. Métrica: precisão do destino de Como chegar e consistência de localização. Avaliação: 04/11/2026. Sem push ou publicação.
