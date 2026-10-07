@@ -67,3 +67,11 @@ Já atendido, sem alteração: T4 (titles de aniversário e românticos já igua
 | Assim que possível | Endereço do Perfil da Empresa no Google mostra "R. Asdrubal Bentes - Esplanada", sem número; o site usa "Rua Asdrúbal Bentes, 453 - Centro". Confirmar o bairro correto e acrescentar o número no Perfil (o endereço precisa ser idêntico) | Dono | [ ] |
 | Quando tiver os dados | Horário da loja física e coordenadas (geo) para completar o schema Florist da inicial (não publicar sem dado confirmado) | Dono | [ ] |
 | Após 28/10/2026 | FASE 2 (decidir com dados): title da inicial se a T3 não resolver a canibalização; ampliar floricultura; title das cestas "\| Com Entrega"; "Entrega em Canaã" e "embalagem inclusa" no topo de presentes; preload da imagem de fundo do topo da inicial (LCP); WebP se o LCP no celular passar de 2,5 s; Natal no menu a partir de 15/11; blog | Agente | [ ] |
+
+### 07/10/2026 · Perfumaria · P1
+
+Já atendido antes da tarefa: H1, canonical, URL, robots e metadados sociais presentes.
+
+Alteração e hipótese: Atualiza títulos e descrições para a busca local por Yara e perfumes árabes. Imagem social será atualizada na P3.
+
+Métrica: CTR e impressões da URL. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
