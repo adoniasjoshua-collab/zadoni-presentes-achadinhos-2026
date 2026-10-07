@@ -83,3 +83,11 @@ Já atendido antes da tarefa: Barra de categorias e âncoras de bolso e masculin
 Alteração e hipótese: Organiza atalhos por intenção de escolha. Destinos novos entram em P4 a P9.
 
 Métrica: Cliques em produtos e WhatsApp. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P3
+
+Já atendido antes da tarefa: Cinco fotos Amakha com dimensões; nove fontes JPEG disponíveis.
+
+Alteração e hipótese: Otimiza seis imagens sem marca-d’água em WebP responsivo. Ameerati pendente: única fonte contém @renataramoscosmeticos e selo de originalidade não confirmado; não usada. Volumes não confirmados omitidos dos nomes.
+
+Métrica: Busca de imagens e carregamento móvel. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
