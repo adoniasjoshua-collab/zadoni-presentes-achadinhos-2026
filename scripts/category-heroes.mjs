@@ -25,7 +25,9 @@ export const categoryHeroes = {
   'cesta-de-aniversario-canaa/index.html': gallery('galerias/cestas-aniversario/box-aniversario-bolo-balao-azul', 'Presente de aniversário com mini bolo, chocolates e balão de parabéns'),
   'presentes-romanticos-canaa/index.html': gallery('galerias/romanticos/arranjo-romantico-balao-rosas', 'Arranjo de rosas cor-de-rosa com laço e balão Te Amo'),
   'rosas-perfumadas-canaa/index.html': product('buque-rosas-cherry-perfumado', 'Buquê de rosas Cherry perfumadas com acabamento para presente'),
-  'perfumaria-cosmeticos-canaa/index.html': product('perfume-fortune-amakha-15ml', 'Perfume de bolso Fortune da Amakha Paris com frasco e embalagem'),
+  'perfumaria-cosmeticos-canaa/index.html': {
+    ...product('hero-perfumaria-familia-yara', 'Família Yara Lattafa: perfumes Yara rosa, Yara Candy, Yara Moi e Yara Tous'), height: 720
+  },
   'revenda-chocolates-canaa/index.html': {
     src: 'assets/img/revenda-chocolates-canaa/chocolates-cacau-show-variados-720.webp',
     small: 'assets/img/revenda-chocolates-canaa/chocolates-cacau-show-variados-480.webp',
