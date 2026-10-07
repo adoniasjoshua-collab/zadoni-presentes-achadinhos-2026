@@ -107,3 +107,11 @@ Já atendido antes da tarefa: Família Yara ainda ausente; estilos e cards exist
 Alteração e hipótese: Inclui quatro Yara e comparação com rolagem interna. Sem preços ou estoque inventados; Moi sem notas não confirmadas.
 
 Métrica: Consultas com yara e mensagens por produto. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
+
+### 07/10/2026 · Perfumaria · P6
+
+Já atendido antes da tarefa: Perfumes de bolso já disponíveis como alternativa de preço.
+
+Alteração e hipótese: Inclui Atheeri, Fakhar Rose e Ameerati com consulta individual. Ameerati fica sem imagem até receber foto permitida.
+
+Métrica: Mensagens por utm_content e buscas por perfume árabe. Avaliação: 04/11/2026 (ajustar se a publicação atrasar). Implementação local, sem push.
