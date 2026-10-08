@@ -1,0 +1,62 @@
+[
+  {
+    "width": 360,
+    "overflow": false,
+    "brokenImages": [],
+    "faqOpen": true,
+    "h1": 1,
+    "buttons": 27,
+    "imported": {
+      "count": 8,
+      "consulted": true,
+      "links": true,
+      "images": true
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "faqOpen": true,
+    "h1": 1,
+    "buttons": 27,
+    "imported": {
+      "count": 8,
+      "consulted": true,
+      "links": true,
+      "images": true
+    },
+    "errors": []
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "brokenImages": [],
+    "faqOpen": true,
+    "h1": 1,
+    "buttons": 27,
+    "imported": {
+      "count": 8,
+      "consulted": true,
+      "links": true,
+      "images": true
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "faqOpen": true,
+    "h1": 1,
+    "buttons": 27,
+    "imported": {
+      "count": 8,
+      "consulted": true,
+      "links": true,
+      "images": true
+    },
+    "errors": []
+  }
+]
