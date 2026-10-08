@@ -1,0 +1,107 @@
+[
+  {
+    "script": "scripts\\validate-achadinhos-seo.mjs",
+    "code": 0,
+    "output": "Achadinhos SEO validation ok: 4 national pages.\n"
+  },
+  {
+    "script": "scripts\\validate-brand-identity.mjs",
+    "code": 0,
+    "output": "OK: identidade oficial aplicada com ativos responsivos, texto acessível e schema de organização.\n"
+  },
+  {
+    "script": "scripts\\validate-cafe-gallery-budget-tiers.mjs",
+    "code": 0,
+    "output": "Cafe: 13 links diretos com resumo e imagem correspondente validados.\n"
+  },
+  {
+    "script": "scripts\\validate-catalog-item-clarity.mjs",
+    "code": 0,
+    "output": "Catálogo validado: 58 produtos, 14 itens avulsos públicos e 30 posições de adicionais sem divergências críticas.\n"
+  },
+  {
+    "script": "scripts\\validate-category-navigation.mjs",
+    "code": 0,
+    "output": "Category navigation validation ok: 9 links preserved, 5 primary and 4 complementary.\n"
+  },
+  {
+    "script": "scripts\\validate-cesta-aniversario-seo.mjs",
+    "code": 0,
+    "output": "Cesta de aniversário SEO validation ok: 11 cestas, 3 arranjos de balões, 4 bolos confeitados e schemas coerentes.\n"
+  },
+  {
+    "script": "scripts\\validate-cesta-budget-tiers.mjs",
+    "code": 0,
+    "output": "Cesta budget tiers validation ok: 3 models x 3 tiers = 9 combinations\n"
+  },
+  {
+    "script": "scripts\\validate-combos.mjs",
+    "code": 1,
+    "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Existing site changed: 404.html\n+ actual - expected\n\n+ '446729b10eee17ff92cbb700c9518a3100ebea5e45bdb9a8e26351ed09f4f304'\n- '243ce63e01e7abdf957b6fb6adf8805453c0b99c080cc4f32ba96bcfcd819aa7'\n\n    at file:///C:/Users/Zadoni/Documents/VSCODE-GIT-HOSTINGER-ZADONI-LOJA/zadoni-catalogo/scripts/validate-combos.mjs:79:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: '446729b10eee17ff92cbb700c9518a3100ebea5e45bdb9a8e26351ed09f4f304',\n  expected: '243ce63e01e7abdf957b6fb6adf8805453c0b99c080cc4f32ba96bcfcd819aa7',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.14.1\n"
+  },
+  {
+    "script": "scripts\\validate-gift-cluster.mjs",
+    "code": 0,
+    "output": "Gift cluster: 3 pages, canonical/sitemap, metadata, links/assets/fragments, schema/visible FAQ, shared tracking and fallback passed.\n"
+  },
+  {
+    "script": "scripts\\validate-google-ads-tracking.mjs",
+    "code": 0,
+    "output": "Google Ads tracking validation ok: 12 pages, 265 WhatsApp links preserved\n"
+  },
+  {
+    "script": "scripts\\validate-linkpage.mjs",
+    "code": 0,
+    "output": "Linkpage validation ok: noindex, direct local links, Achadinhos and analytics preserved.\n"
+  },
+  {
+    "script": "scripts\\validate-local-seo-integrity.mjs",
+    "code": 0,
+    "output": "Local SEO integrity ok: 19 sitemap pages, 5 consistent LocalBusiness records. Local HTML checks only; Google indexation and business facts require external verification.\n"
+  },
+  {
+    "script": "scripts\\validate-local-seo-keywords.mjs",
+    "code": 0,
+    "output": "SEO local validado: 9 páginas com intenção própria, metadados únicos e termos locais contextualizados.\n"
+  },
+  {
+    "script": "scripts\\validate-meta-pixel.mjs",
+    "code": 0,
+    "output": "Meta Pixel 1954958515465784: 19 pages; one init and PageView per document; repeat execution and existing library passed.\n"
+  },
+  {
+    "script": "scripts\\validate-navigation-ux.mjs",
+    "code": 1,
+    "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: index.html: o menu principal deve ter seis opções\n\n7 !== 6\n\n    at file:///C:/Users/Zadoni/Documents/VSCODE-GIT-HOSTINGER-ZADONI-LOJA/zadoni-catalogo/scripts/validate-navigation-ux.mjs:24:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 7,\n  expected: 6,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.14.1\n"
+  },
+  {
+    "script": "scripts\\validate-performance.mjs",
+    "code": 0,
+    "output": "Performance validation ok: scripts locais não bloqueiam o head, imagens têm dimensões e links de filtro usam fragmentos.\n"
+  },
+  {
+    "script": "scripts\\validate-perfumaria.mjs",
+    "code": 1,
+    "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 4\n\n    at file:///C:/Users/Zadoni/Documents/VSCODE-GIT-HOSTINGER-ZADONI-LOJA/zadoni-catalogo/scripts/validate-perfumaria.mjs:8:8\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: 0,\n  expected: 4,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.14.1\n"
+  },
+  {
+    "script": "scripts\\validate-photo-galleries.mjs",
+    "code": 1,
+    "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: buques-canaa-dos-carajas/index.html: quantidade incorreta de fotos na galeria\n\n13 !== 4\n\n    at file:///C:/Users/Zadoni/Documents/VSCODE-GIT-HOSTINGER-ZADONI-LOJA/zadoni-catalogo/scripts/validate-photo-galleries.mjs:25:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 13,\n  expected: 4,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.14.1\n"
+  },
+  {
+    "script": "scripts\\validate-seo-baseline.mjs",
+    "code": 1,
+    "output": "{\"passed\": false, \"pages\": 19, \"failures\": [\"Protected data, robots, sitemap or redirects changed\", \"buques-canaa-dos-carajas/index.html: Original text blocks: p\", \"buques-canaa-dos-carajas/index.html: Original text blocks: li\", \"buques-canaa-dos-carajas/index.html: First principal paragraph\", \"buques-canaa-dos-carajas/index.html: Existing scripts or analytics integration\", \"buques-canaa-dos-carajas/index.html: title\", \"buques-canaa-dos-carajas/index.html: metadata\", \"buques-canaa-dos-carajas/index.html: schemas\", \"buques-canaa-dos-carajas/index.html: links\", \"buques-canaa-dos-carajas/index.html: images\", \"buques-canaa-dos-carajas/index.html: pictureSources\", \"buques-canaa-dos-carajas/index.html: Removed or rewritten heading\", \"buques-canaa-dos-carajas/index.html: Removed indexed text\", \"buques-canaa-dos-carajas/index.html: FAQ\", \"cesta-cafe-da-manha-canaa/index.html: Original text blocks: li\", \"cesta-cafe-da-manha-canaa/index.html: Existing scripts or analytics integration\", \"cesta-cafe-da-manha-canaa/index.html: schemas\", \"cesta-cafe-da-manha-canaa/index.html: links\", \"cesta-cafe-da-manha-canaa/index.html: images\", \"cesta-cafe-da-manha-canaa/index.html: pictureSources\", \"cesta-cafe-da-manha-canaa/index.html: FAQ\", \"cesta-de-aniversario-canaa/index.html: Original text blocks: li\", \"cesta-de-aniversario-canaa/index.html: title\", \"cesta-de-aniversario-canaa/index.html: metadata\", \"cesta-de-aniversario-canaa/index.html: links\", \"cesta-de-aniversario-canaa/index.html: images\", \"cesta-de-aniversario-canaa/index.html: pictureSources\", \"cestas-de-presente-canaa/index.html: Original text blocks: p\", \"cestas-de-presente-canaa/index.html: Original text blocks: li\", \"cestas-de-presente-canaa/index.html: Existing scripts or analytics integration\", \"cestas-de-presente-canaa/index.html: title\", \"cestas-de-presente-canaa/index.html: metadata\", \"cestas-de-presente-canaa/index.html: schemas\", \"cestas-de-presente-canaa/index.html: links\", \"cestas-de-presente-canaa/index.html: images\", \"cestas-de-presente-canaa/index.html: pictureSources\", \"cestas-de-presente-canaa/index.html: Removed or rewritten heading\", \"cestas-de-presente-canaa/index.html: Removed indexed text\", \"cestas-de-presente-canaa/index.html: FAQ\", \"floricultura-canaa-dos-carajas/index.html: Original text blocks: p\", \"floricultura-canaa-dos-carajas/index.html: Original text blocks: li\", \"floricultura-canaa-dos-carajas/index.html: First principal paragraph\", \"floricultura-canaa-dos-carajas/index.html: Existing scripts or analytics integration\", \"floricultura-canaa-dos-carajas/index.html: title\", \"floricultura-canaa-dos-carajas/index.html: metadata\", \"floricultura-canaa-dos-carajas/index.html: schemas\", \"floricultura-canaa-dos-carajas/index.html: links\", \"floricultura-canaa-dos-carajas/index.html: images\", \"floricultura-canaa-dos-carajas/index.html: pictureSources\", \"floricultura-canaa-dos-carajas/index.html: Removed or rewritten heading\", \"floricultura-canaa-dos-carajas/index.html: Removed indexed text\", \"floricultura-canaa-dos-carajas/index.html: FAQ\", \"index.html: Original text blocks: p\", \"index.html: Existing scripts or analytics integration\", \"index.html: title\", \"index.html: metadata\", \"index.html: schemas\", \"index.html: links\", \"index.html: pictureSources\", \"monte-sua-cesta/index.html: First principal paragraph\", \"monte-sua-cesta/index.html: links\", \"perfumaria-cosmeticos-canaa/index.html: Original text blocks: p\", \"perfumaria-cosmeticos-canaa/index.html: Existing scripts or analytics integration\", \"perfumaria-cosmeticos-canaa/index.html: title\", \"perfumaria-cosmeticos-canaa/index.html: metadata\", \"perfumaria-cosmeticos-canaa/index.html: schemas\", \"perfumaria-cosmeticos-canaa/index.html: links\", \"perfumaria-cosmeticos-canaa/index.html: images\", \"perfumaria-cosmeticos-canaa/index.html: Removed or rewritten heading\", \"perfumaria-cosmeticos-canaa/index.html: Removed indexed text\", \"perfumaria-cosmeticos-canaa/index.html: FAQ\", \"presentes-canaa-dos-carajas/index.html: Original text blocks: p\", \"presentes-canaa-dos-carajas/index.html: Original text blocks: li\", \"presentes-canaa-dos-carajas/index.html: Existing scripts or analytics integration\", \"presentes-canaa-dos-carajas/index.html: metadata\", \"presentes-canaa-dos-carajas/index.html: canonical\", \"presentes-canaa-dos-carajas/index.html: schemas\", \"presentes-canaa-dos-carajas/index.html: links\", \"presentes-canaa-dos-carajas/index.html: images\", \"presentes-canaa-dos-carajas/index.html: Removed or rewritten heading\", \"presentes-canaa-dos-carajas/index.html: Removed indexed text\", \"presentes-canaa.html: Original text blocks: p\", \"presentes-canaa.html: Original text blocks: li\", \"presentes-canaa.html: Existing scripts or analytics integration\", \"presentes-canaa.html: title\", \"presentes-canaa.html: metadata\", \"presentes-canaa.html: schemas\", \"presentes-canaa.html: links\", \"presentes-canaa.html: images\", \"presentes-canaa.html: pictureSources\", \"presentes-canaa.html: Removed or rewritten heading\", \"presentes-canaa.html: Removed indexed text\", \"presentes-romanticos-canaa/index.html: Original text blocks: p\", \"presentes-romanticos-canaa/index.html: Original text blocks: li\", \"presentes-romanticos-canaa/index.html: Existing scripts or analytics integration\", \"presentes-romanticos-canaa/index.html: metadata\", \"presentes-romanticos-canaa/index.html: schemas\", \"presentes-romanticos-canaa/index.html: links\", \"presentes-romanticos-canaa/index.html: images\", \"presentes-romanticos-canaa/index.html: Removed or rewritten heading\", \"presentes-romanticos-canaa/index.html: Removed indexed text\", \"revenda-chocolates-canaa/index.html: links\", \"revenda-chocolates-canaa/index.html: images\", \"rosas-perfumadas-canaa/index.html: Original text blocks: p\", \"rosas-perfumadas-canaa/index.html: Existing scripts or analytics integration\", \"rosas-perfumadas-canaa/index.html: title\", \"rosas-perfumadas-canaa/index.html: metadata\", \"rosas-perfumadas-canaa/index.html: canonical\", \"rosas-perfumadas-canaa/index.html: schemas\", \"rosas-perfumadas-canaa/index.html: links\", \"rosas-perfumadas-canaa/index.html: images\", \"rosas-perfumadas-canaa/index.html: pictureSources\", \"rosas-perfumadas-canaa/index.html: Removed or rewritten heading\", \"rosas-perfumadas-canaa/index.html: Removed indexed text\"], \"scope\": \"Exact metadata/schema/links/images/data; all original headings, FAQ and indexed words retained. Section ordering and interface labels allowed.\", \"results\": [{\"page\": \"404.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-criativos/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-de-aniversario/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"achadinhos/presentes-para-namorada/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"buques-canaa-dos-carajas/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Original text blocks: li\", \"First principal paragraph\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"schemas\", \"links\", \"images\", \"pictureSources\", \"Removed or rewritten heading\", \"Removed indexed text\", \"FAQ\"]}, {\"page\": \"cesta-cafe-da-manha-canaa/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: li\", \"Existing scripts or analytics integration\", \"schemas\", \"links\", \"images\", \"pictureSources\", \"FAQ\"]}, {\"page\": \"cesta-de-aniversario-canaa/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: li\", \"title\", \"metadata\", \"links\", \"images\", \"pictureSources\"]}, {\"page\": \"cestas-de-presente-canaa/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Original text blocks: li\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"schemas\", \"links\", \"images\", \"pictureSources\", \"Removed or rewritten heading\", \"Removed indexed text\", \"FAQ\"]}, {\"page\": \"floricultura-canaa-dos-carajas/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Original text blocks: li\", \"First principal paragraph\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"schemas\", \"links\", \"images\", \"pictureSources\", \"Removed or rewritten heading\", \"Removed indexed text\", \"FAQ\"]}, {\"page\": \"index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"schemas\", \"links\", \"pictureSources\"]}, {\"page\": \"links/index.html\", \"passed\": true, \"issues\": []}, {\"page\": \"monte-sua-cesta/index.html\", \"passed\": false, \"issues\": [\"First principal paragraph\", \"links\"]}, {\"page\": \"perfumaria-cosmeticos-canaa/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"schemas\", \"links\", \"images\", \"Removed or rewritten heading\", \"Removed indexed text\", \"FAQ\"]}, {\"page\": \"presentes-canaa-dos-carajas/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Original text blocks: li\", \"Existing scripts or analytics integration\", \"metadata\", \"canonical\", \"schemas\", \"links\", \"images\", \"Removed or rewritten heading\", \"Removed indexed text\"]}, {\"page\": \"presentes-canaa.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Original text blocks: li\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"schemas\", \"links\", \"images\", \"pictureSources\", \"Removed or rewritten heading\", \"Removed indexed text\"]}, {\"page\": \"presentes-romanticos-canaa/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Original text blocks: li\", \"Existing scripts or analytics integration\", \"metadata\", \"schemas\", \"links\", \"images\", \"Removed or rewritten heading\", \"Removed indexed text\"]}, {\"page\": \"revenda-chocolates-canaa/index.html\", \"passed\": false, \"issues\": [\"links\", \"images\"]}, {\"page\": \"rosas-perfumadas-canaa/index.html\", \"passed\": false, \"issues\": [\"Original text blocks: p\", \"Existing scripts or analytics integration\", \"title\", \"metadata\", \"canonical\", \"schemas\", \"links\", \"images\", \"pictureSources\", \"Removed or rewritten heading\", \"Removed indexed text\"]}]}\n"
+  },
+  {
+    "script": "scripts\\validate-seo.mjs",
+    "code": 0,
+    "output": "SEO validation ok: 13 pages, 55 products\n"
+  },
+  {
+    "script": "scripts\\validate-whatsapp-product-links.mjs",
+    "code": 1,
+    "output": "file:///C:/Users/Zadoni/Documents/VSCODE-GIT-HOSTINGER-ZADONI-LOJA/zadoni-catalogo/scripts/validate-whatsapp-product-links.mjs:74\n  throw new Error(errors.join(\"\\n\"));\n        ^\n\nError: buques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\nbuques-canaa-dos-carajas/index.html: botão de galeria sem resumo ou imagem pública\ncestas-de-presente-canaa/index.html: botão de galeria sem resumo ou imagem pública\ncestas-de-presente-canaa/index.html: botão de galeria sem resumo ou imagem pública\ncestas-de-presente-canaa/index.html: botão de galeria sem resumo ou imagem pública\ncestas-de-presente-canaa/index.html: botão de galeria sem resumo ou imagem pública\ncestas-de-presente-canaa/index.html: botão de galeria sem resumo ou imagem pública\ncestas-de-presente-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\nrosas-perfumadas-canaa/index.html: botão de galeria sem resumo ou imagem pública\n    at file:///C:/Users/Zadoni/Documents/VSCODE-GIT-HOSTINGER-ZADONI-LOJA/zadoni-catalogo/scripts/validate-whatsapp-product-links.mjs:74:9\n    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)\n    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)\n\nNode.js v24.14.1\n"
+  }
+]

@@ -69,7 +69,7 @@ body { background: #fffdfb; }
   font-size: 0;
 }
 .home-categories .category-name { font-family: var(--fonte-corpo); font-size: .95rem; line-height: 1.35; color: #4f1d38; }
-.home-categories .category-card[href="buques-canaa-dos-carajas/"] .category-icon { background-image: url('../optimized/products/responsive/buque-natural-vermelho-capa-480.webp'); background-size: 180%; background-position: 70% 35%; }
+.home-categories .category-card[href="buques-canaa-dos-carajas/"] .category-icon { background-image: url('../img/buque-natural/buque-rosas-vermelhas-dourado-250-480.webp'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #fff; }
 .home-categories .category-card[href="floricultura-canaa-dos-carajas/"] .category-icon { background-image: url('../optimized/products/responsive/jarro-flor-natural-laco-rosa-480.webp'); }
 .home-categories .category-card[href="presentes-romanticos-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/buque-te-amo-romantico-720.webp'); }
 .home-categories .category-card[href="perfumaria-cosmeticos-canaa/"] .category-icon { background-image: url('../optimized/products/responsive/perfume-fortune-amakha-15ml-720.webp'); }
