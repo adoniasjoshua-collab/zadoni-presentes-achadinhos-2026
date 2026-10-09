@@ -46,8 +46,14 @@ function stepper(id, name, value, min = 0, max = 99) {
 const drinkOptions = data.drinks.map(d => `<option value="${esc(d.id)}"${d.id === 'refrigerante' ? ' selected' : ''}>${esc(d.name)}${d.price ? ' (+ ' + money(d.price) + ')' : ' (incluído)'}</option>`).join('');
 const offers = [{ id: 'combo-individual', name: 'Combo Individual', price: data.price, pastels: 1 }, data.duplo];
 const flavorChoices = (id, name, label) => `<fieldset class="flavor-choices"><legend>${label} <small>Escolha 1</small></legend>${data.flavors.map(f => `<label><input type="radio" name="${name}" value="${esc(f.id)}" required><span>${esc(f.name)}</span></label>`).join('')}</fieldset>`;
+const offerPhotos = {
+  'combo-individual': { file: 'combo-individual-pastel-lata-20261009', alt: 'Pastelão frito em cesta com papel xadrez vermelho e uma lata de Coca-Cola de 350 ml' },
+  'combo-duplo': { file: 'combo-duplo-pastel-lata-20261009', alt: 'Dois pastelões fritos em cesta com papel xadrez vermelho e uma lata de Coca-Cola' }
+};
+const offerPhoto = o => { const p = offerPhotos[o.id]; return p ? `<img class="combo-photo" src="../assets/optimized/combos/${p.file}.webp" srcset="../assets/optimized/combos/${p.file}-480.webp 480w, ../assets/optimized/combos/${p.file}.webp 960w" sizes="(max-width: 760px) calc(100vw - 32px), 500px" width="960" height="960" alt="${p.alt}" loading="lazy" decoding="async">
+` : ''; };
 const cards = offers.map(o => `<article class="combo-card" id="${o.id}" data-flavor="${o.id}">
-<div class="card-content"><p class="eyebrow">${o.pastels === 2 ? 'Mais um pastelão por R$ 10' : 'Seu lanche completo'}</p><h2>${o.name}</h2><p class="price">${money(o.price)}</p><p class="includes">${o.pastels} ${o.pastels === 2 ? 'pastelões' : 'pastelão'} + 1 refrigerante em lata</p><p class="delivered">Com entrega: <strong>${money(o.price + data.delivery.price)}</strong></p>
+${offerPhoto(o)}<div class="card-content"><p class="eyebrow">${o.pastels === 2 ? 'Mais um pastelão por R$ 10' : 'Seu lanche completo'}</p><h2>${o.name}</h2><p class="price">${money(o.price)}</p><p class="includes">${o.pastels} ${o.pastels === 2 ? 'pastelões' : 'pastelão'} + 1 refrigerante em lata</p><p class="delivered">Com entrega: <strong>${money(o.price + data.delivery.price)}</strong></p>
 <form hidden data-configurator novalidate>
 <details class="options"><summary>Escolher ${o.pastels === 2 ? 'Combo Duplo' : 'Combo Individual'}</summary>
 <p class="step-title">1. Escolha ${o.pastels === 2 ? 'os recheios' : 'o recheio'}</p>
@@ -72,7 +78,7 @@ const html = `<!DOCTYPE html>
 <link rel="canonical" href="${url}"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="../assets/img/brand/logo-zadoni-180.png">
 <meta property="og:type" content="website"><meta property="og:locale" content="pt_BR"><meta property="og:site_name" content="Zadoni Presentes"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:url" content="${url}"><meta property="og:image" content="${social}"><meta property="og:image:alt" content="${data.socialImage ? 'Arte da Zadoni Lanches com pastel aberto de carne moída e a chamada Canaã, bateu a fome?' : 'Marca Zadoni Presentes'}">
 <meta name="twitter:card" content="${data.socialImage ? 'summary_large_image' : 'summary'}"><meta name="twitter:title" content="${title}"><meta name="twitter:description" content="${description}"><meta name="twitter:image" content="${social}">
-<link rel="stylesheet" href="../assets/css/combos.css?v=20261005-4">
+<link rel="stylesheet" href="../assets/css/combos.css?v=20261009-1">
 <link rel="stylesheet" href="../assets/css/tema-cor-2026.css?v=20260930-1">
 <script type="application/ld+json">${json(schemas)}</script>
 ${live ? `<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16938428518"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config', 'AW-16938428518');</script>\n${metaPixelHead}` : '<!-- Preview: no advertising trackers are loaded. -->'}

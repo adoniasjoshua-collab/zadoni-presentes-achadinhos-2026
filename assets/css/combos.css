@@ -14,6 +14,7 @@
 /* Two offers, then one expanded configurator. */
 .combo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 #combo-duplo{display:block;grid-column:auto;border:2px solid var(--wine)}
+#combo-duplo .combo-photo{position:static}
 .delivered{margin:12px 0;color:var(--wine)!important}
 .order-notice{padding:14px 16px;background:#fff0ce;border:1px solid #d4b764;border-radius:10px;font-size:.9rem}
 .extras-options{margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:10px}
