@@ -226,13 +226,14 @@ const produtosLocais = [
     id: 64,
     nome: "Cesta Cacau Show com Ursinho e Buquê",
     categoria: "Cestas",
-    descricao: "Cesta personalizada com chocolates e barras Cacau Show, ursinho de pelúcia e buquê decorativo, pronta para presentear.",
+    descricao: "Cesta personalizada com chocolates e barras Cacau Show, ursinho de pelúcia, buquê decorativo e balão de Parabéns, pronta para presentear.",
     preco: 290.00,
     precoFixo: true,
     imagem: "assets/optimized/products/cesta-cacau-show-ursinho-buque-290.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisCestas,
-    whatsappMensagem: "Olá! Quero a Cesta Cacau Show com Ursinho e Buquê por R$ 290,00. Há disponibilidade para entregar hoje?"
+    observacaoPreco: "Pronta para presentear hoje. Entrega em Canaã dos Carajás: taxa de R$ 10 à parte. Consulte disponibilidade e horário.",
+    whatsappMensagem: "Olá! Quero a Cesta Cacau Show com Ursinho e Buquê por R$ 290,00 + entrega R$ 10,00. Há disponibilidade para entregar hoje?"
   },
   {
     id: 63,
