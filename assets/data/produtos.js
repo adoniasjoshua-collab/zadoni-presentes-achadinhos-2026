@@ -239,7 +239,7 @@ const produtosLocais = [
     id: 65,
     nome: "Kit Presente Hoje com Buquê, Ursinho e Ferrero",
     categoria: "Cestas",
-    descricao: "Cesta com buquê de rosas vermelhas, ursinho de pelúcia, Ferrero Rocher e Wepink: body splash por R$ 290 ou perfume Ruby VIP por R$ 380.",
+    descricao: "Cesta com buquê de rosas vermelhas artificiais, ursinho de pelúcia, Ferrero Rocher e Wepink: body splash por R$ 290 ou perfume Ruby VIP por R$ 380.",
     preco: 290.00,
     precoFixo: true,
     imagem: "assets/optimized/products/kit-presente-hoje-buque-ursinho-ferrero-wepink.jpg",
