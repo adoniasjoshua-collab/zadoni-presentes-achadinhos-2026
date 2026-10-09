@@ -223,6 +223,18 @@ const adicionaisCestasCafe = [
 
 const produtosLocais = [
   {
+    id: 64,
+    nome: "Cesta Cacau Show com Ursinho e Buquê",
+    categoria: "Cestas",
+    descricao: "Cesta personalizada com chocolates e barras Cacau Show, ursinho de pelúcia e buquê decorativo, pronta para presentear.",
+    preco: 290.00,
+    precoFixo: true,
+    imagem: "assets/optimized/products/cesta-cacau-show-ursinho-buque-290.jpg",
+    destaque: true,
+    adicionaisOpcionais: adicionaisCestas,
+    whatsappMensagem: "Olá! Quero a Cesta Cacau Show com Ursinho e Buquê por R$ 290,00. Há disponibilidade para entregar hoje?"
+  },
+  {
     id: 63,
     imagemLargura: 900,
     imagemAltura: 900,
