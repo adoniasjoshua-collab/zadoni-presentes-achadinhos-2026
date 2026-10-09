@@ -9,3 +9,8 @@
 @media (min-width: 768px) {
   .produtos-grid:has(> #box-coracao-100) > #produto-60 { order: -2; }
 }
+/* Featured R$ 290 basket: first card on every screen size. */
+.produtos-grid:has(> #cesta-cacau-show-290) > #cesta-cacau-show-290 { order: -3; border: 2px solid #7a2f55; }
+.cesta-destaque-label { color: #7a2f55; font-weight: 700; margin: 0 0 8px; }
+.cesta-destaque-availability { font-size: .9rem; color: #595959; margin: 0 0 16px; }
+.cesta-destaque-offer .btn-whatsapp-produto { min-height: 48px; white-space: normal; text-align: center; }
