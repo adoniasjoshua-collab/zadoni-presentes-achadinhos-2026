@@ -236,6 +236,22 @@ const produtosLocais = [
     whatsappMensagem: "Olá! Quero a Cesta Cacau Show com Ursinho e Buquê por R$ 290,00 + entrega R$ 10,00. Há disponibilidade para entregar hoje?"
   },
   {
+    id: 65,
+    nome: "Kit Presente Hoje com Buquê, Ursinho e Ferrero",
+    categoria: "Cestas",
+    descricao: "Cesta com buquê de rosas vermelhas, ursinho de pelúcia, Ferrero Rocher e Wepink: body splash por R$ 290 ou perfume Ruby VIP por R$ 380.",
+    preco: 290.00,
+    precoFixo: true,
+    imagem: "assets/optimized/products/kit-presente-hoje-buque-ursinho-ferrero-wepink.jpg",
+    destaque: true,
+    observacaoPreco: "R$ 290,00 com body splash Wepink ou R$ 380,00 com perfume Wepink Ruby VIP. Entrega em Canaã dos Carajás: taxa de R$ 10 à parte. Consulte disponibilidade e horário.",
+    adicionaisOpcionais: [
+      { id: "kit-hoje-perfume-ruby-vip", nome: "Trocar body splash pelo perfume Wepink Ruby VIP", preco: 90.00 }
+    ].concat(adicionaisCestas),
+    adicionaisProprios: true,
+    whatsappMensagem: "Olá! Quero o Kit Presente Hoje com Buquê, Ursinho e Ferrero. Há disponibilidade para entregar hoje?"
+  },
+  {
     id: 63,
     imagemLargura: 900,
     imagemAltura: 900,
@@ -884,7 +900,7 @@ produtosLocais.forEach((produto) => {
 
   if (categoria === "cestas" && nome.includes("cafe")) {
     produto.adicionaisOpcionais = adicionaisCestasCafe;
-  } else if (["cestas", "kits", "mimos"].includes(categoria)) {
+  } else if (["cestas", "kits", "mimos"].includes(categoria) && !produto.adicionaisProprios) {
     produto.adicionaisOpcionais = adicionaisCestas;
   }
 });

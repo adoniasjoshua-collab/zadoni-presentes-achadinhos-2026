@@ -33,7 +33,7 @@ function caminhoImagemExiste(imagem) {
   return !imagem || fs.existsSync(path.join(root, imagem));
 }
 
-verificar(produtosLocais.filter((produto) => produto.destaque).length === 38, "A categoria Destaques deve conter 38 produtos.");
+verificar(produtosLocais.filter((produto) => produto.destaque).length === 39, "A categoria Destaques deve conter 39 produtos.");
 verificar(catalogHtml.includes('id="catalog-results-count"'), "O catalogo deve exibir a contagem de resultados dos filtros.");
 verificar(appSource.includes("atualizarContagemProdutos(lista, categoria)"), "A contagem dos filtros deve ser atualizada pelo aplicativo.");
 verificar(adicionaisCestasCafe.length === 22, "Cestas de cafe devem oferecer 22 adicionais sem repetir o mini bolo.");
@@ -42,7 +42,7 @@ verificar(!produtosLocais.some((produto) => produto.id === 47), "A caixinha com 
 verificar(!adicionais.some((adicional) => adicional.id === "caixinha-tres-ferrero"), "A caixinha com 3 Ferrero nao pode permanecer nas listas de adicionais.");
 
 for (const produto of produtosLocais.filter((item) => ["Cestas", "Kits", "Mimos"].includes(item.categoria))) {
-  const quantidadeEsperada = produto.nome.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().includes("cafe") ? 22 : 11;
+  const quantidadeEsperada = produto.nome.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().includes("cafe") ? 22 : 11 + (produto.adicionaisProprios ? 1 : 0);
   verificar(produto.adicionaisOpcionais?.length === quantidadeEsperada, `${produto.nome} deve oferecer ${quantidadeEsperada} adicionais.`);
 }
 

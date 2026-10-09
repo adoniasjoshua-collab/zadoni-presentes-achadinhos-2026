@@ -14,3 +14,6 @@
 .cesta-destaque-label { color: #7a2f55; font-weight: 700; margin: 0 0 8px; }
 .cesta-destaque-availability { font-size: .9rem; color: #595959; margin: 0 0 16px; }
 .cesta-destaque-offer .btn-whatsapp-produto { min-height: 48px; white-space: normal; text-align: center; }
+.produtos-grid:has(> #kit-presente-hoje-wepink) > #kit-presente-hoje-wepink { order: -3; border: 2px solid #7a2f55; }
+.cesta-destaque-variant { color: #595959; font-size: .95rem; margin: 0 0 8px; }
+.cesta-destaque-offer .produto-acoes { display: grid; gap: 8px; }
