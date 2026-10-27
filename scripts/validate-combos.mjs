@@ -12,13 +12,13 @@ const html = read(`${slug}/index.html`);
 assert.equal(data.status, 'ready');
 assert.equal(data.phone, '5594992993138');
 assert.equal(data.delivery.price, 500);
-assert.equal(data.price, 2000, 'Combo = 1 pastel + canned soda for R$20, same for every flavor');
+assert.equal(data.price, 1500, '1 pastelão = R$15, same for every flavor; no drink included');
 assert(!('combos' in data), 'Tiered 1/2/3-pastel pricing was retired');
 assert.deepEqual(data.flavors.map(f => f.id), ['carne-queijo', 'frango-queijo', 'queijo-presunto']);
 assert(data.delivery.areas.length, 'Delivery area must be stated');
 assert(data.flavors.every(f => f.image), 'Every flavor card needs an image');
-assert.equal(data.duplo.price, 3000);
-assert.equal(data.duplo.drinks, 1);
+assert.equal(data.duplo.price, 2400, '2 pastelões = R$24 (the 2nd costs R$9)');
+assert.equal(data.duplo.drinks, 0);
 assert.equal((html.match(/data-configurator/g) || []).length, 2);
 for (const id of ['combo-individual', 'combo-duplo']) {
   const card = html.split(`id="${id}" data-flavor="${id}"`)[1]?.split('</article>')[0] || '';
@@ -26,15 +26,14 @@ for (const id of ['combo-individual', 'combo-duplo']) {
   assert(card.includes('Observações do pedido'));
   assert(!card.includes('data-card-send'), 'Orders are sent only from the single summary');
   assert(card.includes('class="flavor-choices"') && card.includes('data-add') && card.includes('data-cancel'));
-  assert(card.includes('1 refrigerante em lata'));
+  assert(card.includes('data-extra="refrigerante-extra"') && card.includes('vendida à parte'), 'Coca lata is an add-on, outside the pastel price');
 }
 assert.equal((html.match(/data-send-order/g) || []).length, 1, 'Exactly one send button: the order summary');
 assert(!html.includes('data-bar-send'), 'Sticky bar points to the summary instead of sending');
 assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);
-assert(data.drinks.every(d => d.id && d.name && Number.isInteger(d.price) && d.price >= 0));
-assert.equal(new Set(data.drinks.map(d => d.id)).size, data.drinks.length);
-assert.deepEqual(data.drinks.map(d => [d.id, d.price]), [['refrigerante', 0], ['suco', 700]], 'Canned soda included; juice adds R$7 per drink');
+assert(!('drinks' in data), 'No drink included or swapped: Coca lata is sold apart');
+assert.equal(data.extras[0].name, 'Coca lata gelada');
 assert.equal((html.match(/<h1\b/g) || []).length, 1);
 assert(html.includes('<meta name="robots" content="index, follow">'));
 assert(html.includes(`rel="canonical" href="https://zadonipresentes.com.br/${slug}/"`));

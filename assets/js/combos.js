@@ -40,33 +40,32 @@
     if (isDuplo(cardId)) {
       const flavors = ['flavor1', 'flavor2'].map(name => data.flavors.find(f => f.id === form.elements[name].value));
       if (flavors.some(f => !f)) return null;
-      return { ...common, duplo: true, flavorIds: flavors.map(f => f.id), flavorNames: flavors.map(f => f.name), price: data.duplo.price, drinkName: '1 refrigerante em lata (incluído)', drinkPrice: 0 };
+      return { ...common, duplo: true, flavorIds: flavors.map(f => f.id), flavorNames: flavors.map(f => f.name), price: data.duplo.price, pastels: 2 };
     }
     const flavor = data.flavors.find(f => f.id === form.elements.flavor1.value);
     if (!flavor) return null;
-    const drink = data.drinks.find(d => d.id === form.elements.drink.value) || data.drinks[0];
-    return { ...common, flavorId: flavor.id, flavorName: flavor.name, price: data.price, drinkId: drink.id, drinkName: drink.price ? drink.name : `1 ${drink.name.toLowerCase()} (incluído)`, drinkPrice: drink.price };
+    return { ...common, flavorId: flavor.id, flavorName: flavor.name, price: data.price, pastels: 1 };
   }
   const title = item => item.duplo
-    ? `Combo Duplo (2 pastelões: ${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
-    : `Combo pastelão de ${item.flavorName.toLowerCase()}`;
-  const drinkLabel = item => `${item.drinkName}${item.drinkPrice ? ' (+' + money(item.drinkPrice) + ')' : ''}`;
+    ? `2 Pastelões (${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
+    : `Pastelão de ${item.flavorName.toLowerCase()}`;
+  const pastelLabel = n => `${n} ${n === 1 ? 'pastelão' : 'pastelões'}`;
+  // Add-on quantities are totals for the line (a can is not multiplied by the pastel count).
   function amounts(item) {
-    const drinks = item.drinkPrice * item.count;
-    const base = item.price * item.count + drinks;
-    const extras = item.extras.reduce((sum, e) => sum + e.price * e.quantity * item.count, 0);
-    return { base, drinks, extras, total: base + extras };
+    const base = item.price * item.count;
+    const extras = item.extras.reduce((sum, e) => sum + e.price * e.quantity, 0);
+    return { base, extras, total: base + extras };
   }
   function totals(list) {
     return list.reduce((sum, item) => {
       const a = amounts(item);
-      return { base: sum.base + a.base, drinks: sum.drinks + a.drinks, extras: sum.extras + a.extras, total: sum.total + a.total, count: sum.count + item.count };
-    }, { base: 0, drinks: 0, extras: 0, total: 0, count: 0 });
+      return { base: sum.base + a.base, extras: sum.extras + a.extras, total: sum.total + a.total, count: sum.count + item.count * item.pastels };
+    }, { base: 0, extras: 0, total: 0, count: 0 });
   }
   function totalHTML(list) {
     const total = totals(list);
-    if (!list.length) return '<p>Seu pedido está vazio. Escolha um combo acima.</p>';
-    return `<div class="total-line"><span>Combos (${total.count})</span><strong>${money(total.base - total.drinks)}</strong></div>${total.drinks ? `<div class="total-line"><span>Troca por suco</span><strong>${money(total.drinks)}</strong></div>` : ''}${total.extras ? `<div class="total-line"><span>Adicionais</span><strong>${money(total.extras)}</strong></div>` : ''}<div class="total-line"><span>${fulfillment === 'entrega' ? 'Entrega' : 'Retirada'}</span><strong>${fulfillment === 'entrega' ? money(fee()) : 'sem taxa'}</strong></div><div class="total-line grand-total"><span>Total</span><strong>${money(total.total + fee())}</strong></div>`;
+    if (!list.length) return '<p>Seu pedido está vazio. Escolha seu pastelão acima.</p>';
+    return `<div class="total-line"><span>Pastelões (${total.count})</span><strong>${money(total.base)}</strong></div>${total.extras ? `<div class="total-line"><span>Bebidas e adicionais</span><strong>${money(total.extras)}</strong></div>` : ''}<div class="total-line"><span>${fulfillment === 'entrega' ? 'Entrega' : 'Retirada'}</span><strong>${fulfillment === 'entrega' ? money(fee()) : 'sem taxa'}</strong></div><div class="total-line grand-total"><span>Total</span><strong>${money(total.total + fee())}</strong></div>`;
   }
   // Message read by the attendant: only Basic Multilingual Plane symbols: 4-byte emojis arrive as � when WhatsApp opens wa.me links.
   function customerLines() {
@@ -83,14 +82,13 @@
     const rule = '━━━━━━━━━━━━━━';
     const total = totals(list);
     const lines = ['Olá, Zadoni! Quero fazer este pedido:', '',
-      `${fulfillment === 'entrega' ? '✅ *ENTREGA*' : '✅ *RETIRADA*'} · ${total.count} ${total.count === 1 ? 'combo' : 'combos'}`, rule, ''];
+      `${fulfillment === 'entrega' ? '✅ *ENTREGA*' : '✅ *RETIRADA*'} · ${pastelLabel(total.count)}`, rule, ''];
     list.forEach((item, index) => {
-      const each = item.count > 1 ? ' (cada combo)' : '';
-      lines.push(`*${index + 1}) ${item.count}× ${item.duplo ? 'Combo Duplo' : 'Combo Individual'}* — ${money(item.price * item.count)}`);
+      const each = item.duplo && item.count > 1 ? ' (cada par)' : '';
+      lines.push(`*${index + 1}) ${item.duplo ? `${item.count}× 2 Pastelões` : `${item.count}× Pastelão`}* — ${money(item.price * item.count)}`);
       if (item.duplo) item.flavorNames.forEach((name, i) => lines.push(`⭐ Pastelão ${i + 1}: ${name}${each}`));
-      else lines.push(`⭐ Recheio: ${item.flavorName}${each}`);
-      lines.push(`☕ Bebida: ${drinkLabel(item)}${each}`);
-      item.extras.forEach(e => lines.push(`➕ ${e.quantity * item.count}× ${e.name} — ${money(e.quantity * item.count * e.price)}`));
+      else lines.push(`⭐ Recheio: ${item.flavorName}`);
+      item.extras.forEach(e => lines.push(`➕ ${e.quantity}× ${e.name} — ${money(e.quantity * e.price)}`));
       if (item.personalization) lines.push('✨ Caixinhas: ' + item.personalization);
       if (item.notes) lines.push('✏ Obs.: ' + item.notes);
       lines.push(`▸ Subtotal: ${money(amounts(item).total)}`, '');
@@ -100,7 +98,7 @@
       `▶ *TOTAL: ${money(total.total + fee())}*`);
     const details = customerLines();
     if (details.length) lines.push('', '*DADOS DO CLIENTE*', ...details);
-    lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?', '_Origem: página de combos de pastel_');
+    lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?', '_Origem: página do pastelão_');
     return lines.join('\n');
   }
   function whatsapp(list) {
@@ -140,10 +138,10 @@
     form.querySelectorAll('[data-extra]').forEach(row => {
       const extra = data.extras.find(e => e.id === row.dataset.extra);
       const count = quantity(row.querySelector('input'));
-      row.querySelector('[data-extra-subtotal]').textContent = count ? `${count}× por combo = ${money(count * extra.price)}` : '';
+      row.querySelector('[data-extra-subtotal]').textContent = count ? `${count}× = ${money(count * extra.price)}` : '';
     });
     const item = selection(form);
-    form.querySelector('[data-card-total]').textContent = item ? `Este combo: ${money(amounts(item).total)} · entrega calculada uma vez no resumo` : 'Escolha o recheio de cada pastelão para continuar.';
+    form.querySelector('[data-card-total]').textContent = item ? `Subtotal: ${money(amounts(item).total)} · entrega calculada uma vez no resumo` : 'Escolha o recheio de cada pastelão para continuar.';
     form.querySelector('[data-add]').textContent = editing?.cardId === form.closest('[data-flavor]').dataset.flavor ? 'Salvar alterações' : 'Continuar pedido';
   }
   function renderOrder() {
@@ -153,7 +151,7 @@
     document.querySelector('.order-bar').hidden = !hasItems || summaryInView;
     document.querySelector('[data-cart-nav]').hidden = !hasItems;
     document.querySelector('.whatsapp-float').hidden = hasItems || !!pending;
-    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3><p>Bebida: ${esc(drinkLabel(item))}</p>${item.notes ? `<p>Observações: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity * item.count}× ${esc(e.name)} — ${money(e.price * e.quantity * item.count)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}">Editar combo</button><button type="button" data-remove="${index}">Remover</button></div></article>`).join('');
+    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3>${item.notes ? `<p>Observações: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity}× ${esc(e.name)} — ${money(e.price * e.quantity)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}">Editar</button><button type="button" data-remove="${index}">Remover</button></div></article>`).join('');
     document.querySelector('[data-order-total]').innerHTML = totalHTML(order);
     const send = document.querySelector('[data-send-order]');
     send.hidden = !hasItems || !!pending;
@@ -162,8 +160,7 @@
     document.querySelector('[data-message-preview]').textContent = hasItems ? message(order) : '';
     const total = totals(order).total + fee();
     document.querySelector('[data-bar-total]').textContent = `Meu pedido · ${money(total)}`;
-    const combos = order.reduce((sum, item) => sum + item.count, 0);
-    document.querySelector('[data-bar-count]').textContent = `${combos} ${combos === 1 ? 'combo' : 'combos'} no pedido`;
+    document.querySelector('[data-bar-count]').textContent = `${pastelLabel(totals(order).count)} no pedido`;
     if (hasItems && !pending) {
       send.href = whatsapp(order);
       send.textContent = `Enviar pedido no WhatsApp · ${money(total)}`;
@@ -261,7 +258,6 @@
     const form = forms.get(item.cardId);
     form.elements.flavor1.value = item.duplo ? item.flavorIds[0] : item.flavorId;
     if (item.duplo) form.elements.flavor2.value = item.flavorIds[1];
-    else form.elements.drink.value = item.drinkId;
     form.elements.notes.value = item.notes;
     form.elements.personalization.value = item.personalization;
     form.querySelector('.combo-count input').value = item.count;
