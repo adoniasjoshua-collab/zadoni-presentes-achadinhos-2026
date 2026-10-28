@@ -34,7 +34,8 @@ cluster_paths = set() if historical else {
 protected_after = dict(after['protectedFiles'])
 if not historical:
     sitemap = protected_after.get('sitemap.xml', '')
-    for page in sorted(cluster_paths):
+    # SEO F2-6 (28/10/2026): the pastel page left the sitemap.
+    for page in sorted(cluster_paths - {'combos-pastel-canaa/index.html'}):
         entry = re.compile(r'  <url><loc>https://zadonipresentes\.com\.br/' + re.escape(page.removesuffix('index.html')) + r'</loc>(?:<lastmod>\d{4}-\d{2}-\d{2}</lastmod>)?</url>\n')
         if len(entry.findall(sitemap)) != 1:
             failures.append('Expected exactly one new sitemap entry: ' + page)
@@ -43,8 +44,8 @@ if not historical:
     protected_after['sitemap.xml'] = sitemap
 if before['protectedFiles'] != protected_after:
     failures.append('Protected data, robots, sitemap or redirects changed')
-if not historical and '<meta name="robots" content="index, follow">' not in (ROOT / 'combos-pastel-canaa/index.html').read_text(encoding='utf-8'):
-    failures.append('Released combos page must be indexable')
+if not historical and '<meta name="robots" content="noindex, follow">' not in (ROOT / 'combos-pastel-canaa/index.html').read_text(encoding='utf-8'):
+    failures.append('Combos page must be noindex (SEO F2-6)')
 if set(before['pages']) | cluster_paths != set(after['pages']):
     failures.append('Public HTML paths changed')
 for page, old in before['pages'].items():
