@@ -11,7 +11,7 @@ const data = JSON.parse(read(`${slug}/catalogo.json`));
 const html = read(`${slug}/index.html`);
 assert.equal(data.status, 'ready');
 assert.equal(data.phone, '5594992993138');
-assert.equal(data.delivery.price, 500);
+assert.equal(data.delivery.price, 600, 'Delivery R$6 per order');
 assert.equal(data.price, 1500, '1 pastelão = R$15, same for every flavor; no drink included');
 assert(!('combos' in data), 'Tiered 1/2/3-pastel pricing was retired');
 assert.deepEqual(data.flavors.map(f => f.id), ['carne-queijo', 'frango-queijo', 'queijo-presunto']);
