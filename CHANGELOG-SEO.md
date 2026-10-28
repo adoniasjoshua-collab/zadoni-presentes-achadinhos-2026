@@ -204,3 +204,9 @@ Já atendido: o title de /cestas-de-presente-canaa/ já é "Cestas de Presente e
 Já atendido: o pastel não estava no menu nem nas categorias da inicial desde 09/10/2026.
 Alteração: /combos-pastel-canaa/ com `noindex, follow` (gerador e validador atualizados), fora do sitemap e sem os links no rodapé da inicial e de /presentes-canaa.html (a remoção do link no rodapé é a exceção prevista para a zona protegida). Mantido apenas o link em /links/, que já tem noindex e serve o público do Instagram. Arquivo e URL mantidos, sem redirecionamento: o 301 fica para quando o pastel tiver domínio próprio.
 Hipótese: site com tema único fortalece "floricultura" e "presentes" em Canaã. Métrica: impressões da família "floricultura"; em 15 dias a inspeção da URL deve mostrar "Excluída pela tag noindex". Avaliar em 25/11/2026.
+
+### F2-7 · Sitemap e indexação
+
+Já atendido: /presentes-canaa-dos-carajas/, /presentes-canaa e /rosas-perfumadas-canaa/ (301 conferidos ao vivo) já estavam fora do sitemap; /links/ já tinha `noindex, follow` e já estava fora; nenhuma página de teste, agradecimento ou duplicada no sitemap. Removido nesta fase apenas /combos-pastel-canaa/ (F2-6).
+Alteração: lastmod 2026-10-28 só nas páginas alteradas (/, /presentes-canaa.html, buquês, cestas, floricultura, monte sua cesta, mensagens). Achadinhos, perfumaria, café da manhã e Natal sem alteração. Sitemap final: 18 URLs, todas 200, canonical própria e sem noindex.
+Métrica: páginas indexadas no relatório de Sitemaps do Search Console. Avaliar em 25/11/2026.
