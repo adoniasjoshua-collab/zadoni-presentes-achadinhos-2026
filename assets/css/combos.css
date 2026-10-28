@@ -43,3 +43,15 @@ body footer,body footer p,body footer a{color:#fff4e8}body footer a:hover{color:
 #meu-pedido h3{margin-top:6px}
 .customer-options{margin-top:14px;border-top:1px solid var(--line);padding-top:4px}.customer-options>summary{min-height:44px;display:flex;align-items:center;font-weight:600;font-size:.88rem;color:var(--wine)}
 #meu-pedido:focus{outline:0}.customer-options>summary{list-style:none}.customer-options>summary::-webkit-details-marker{display:none}.customer-options>summary::after{content:"+";margin-left:8px;font-size:1.1rem}.customer-options[open]>summary::after{content:"−"}
+/* 29/10/2026: single order form with a quantity per filling. */
+#meu-pedido form{max-width:560px}
+#meu-pedido .extra-row{grid-template-columns:minmax(0,1fr) auto}
+#meu-pedido .extra-row .quantity{justify-self:end}
+.flavor-qty{border:1px solid var(--line);border-radius:10px;background:#fff;margin:0 0 18px;padding:2px 14px 4px}
+.flavor-qty legend{font-weight:650;font-size:.9rem;padding:0 4px}
+.flavor-qty .extra-row:first-of-type{border-top:0}
+.flavor-row label{font-size:.98rem}
+#meu-pedido>.order-notice{max-width:560px}
+#meu-pedido .notes textarea{margin-top:8px}
+[data-send-order][aria-disabled="true"]{opacity:.6}
+#meu-pedido form>h3{margin-top:26px}

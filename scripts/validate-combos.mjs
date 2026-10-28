@@ -19,17 +19,17 @@ assert(data.delivery.areas.length, 'Delivery area must be stated');
 assert(data.flavors.every(f => f.image), 'Every flavor card needs an image');
 assert.equal(data.duplo.price, 2400, '2 pastelões = R$24 (the 2nd costs R$9)');
 assert.equal(data.duplo.drinks, 0);
-assert.equal((html.match(/data-configurator/g) || []).length, 2);
+// 29/10/2026: one order form with a quantity per filling; pairs get the duo price automatically.
+assert.equal((html.match(/data-order-form/g) || []).length, 1, 'Single order form');
+assert.deepEqual([...html.matchAll(/data-flavor-qty="([^"]+)"/g)].map(m => m[1]), data.flavors.map(f => f.id), 'One quantity field per filling');
+const orderForm = html.split('data-order-form')[1]?.split('</form>')[0] || '';
+assert(orderForm.includes('data-extra="refrigerante-extra"') && orderForm.includes('Observações do pedido'), 'Coca lata add-on and notes in the order form');
 for (const id of ['combo-individual', 'combo-duplo']) {
-  const card = html.split(`id="${id}" data-flavor="${id}"`)[1]?.split('</article>')[0] || '';
-  assert(card.includes('name="flavor1"'));
-  assert(card.includes('Observações do pedido'));
-  assert(!card.includes('data-card-send'), 'Orders are sent only from the single summary');
-  assert(card.includes('class="flavor-choices"') && card.includes('data-add') && card.includes('data-cancel'));
-  assert(card.includes('data-extra="refrigerante-extra"') && card.includes('vendida à parte'), 'Coca lata is an add-on, outside the pastel price');
+  const card = html.split(`id="${id}"`)[1]?.split('</article>')[0] || '';
+  assert(card.includes('href="#meu-pedido"') && card.includes('vendida à parte'), 'Price card points to the order form; Coca lata sold apart');
 }
-assert.equal((html.match(/data-send-order/g) || []).length, 1, 'Exactly one send button: the order summary');
-assert(!html.includes('data-bar-send'), 'Sticky bar points to the summary instead of sending');
+assert.equal((html.match(/data-send-order/g) || []).length, 1, 'Exactly one send button: the order form');
+assert(!html.includes('data-bar-send'), 'Sticky bar points to the order form instead of sending');
 assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);
 assert(!('drinks' in data), 'No drink included or swapped: Coca lata is sold apart');

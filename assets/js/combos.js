@@ -3,20 +3,19 @@
 (function () {
   'use strict';
   const data = JSON.parse(document.getElementById('combos-data').textContent);
+  const form = document.querySelector('[data-order-form]');
+  if (!form) return;
   const money = cents => (cents / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-  const forms = new Map();
-  const order = [];
-  let editing = null;
+  const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+  const section = document.getElementById('meu-pedido');
+  const send = form.querySelector('[data-send-order]');
+  const error = form.querySelector('[data-form-error]');
   // One choice per order: pickup is free, delivery adds the flat fee once.
   let fulfillment = 'entrega';
   const fee = () => fulfillment === 'entrega' ? data.delivery.price : 0;
-  // Optional customer details, shared by every card and the order section.
+  // Optional customer details shown in the order form.
   const customer = { name: '', address: '', payment: '', change: '', when: '', time: '' };
-  const section = document.getElementById('meu-pedido');
-  const itemsElement = document.querySelector('[data-order-items]');
-  const status = document.querySelector('[data-status]');
-  const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-  const isDuplo = id => data.duplo && id === data.duplo.id;
+  const pastelLabel = n => `${n} ${n === 1 ? 'pastelão' : 'pastelões'}`;
   function quantity(input) {
     const parsed = Number(input.value);
     return Math.min(Number(input.max), Math.max(Number(input.min), Number.isFinite(parsed) ? Math.floor(parsed) : Number(input.min)));
@@ -27,45 +26,27 @@
     group.querySelector('[data-step="-1"]').disabled = Number(input.value) <= Number(input.min);
     group.querySelector('[data-step="1"]').disabled = Number(input.value) >= Number(input.max);
   }
-  function selection(form) {
-    const cardId = form.closest('[data-flavor]').dataset.flavor;
-    const extras = [...form.querySelectorAll('[data-extra]')].map(row => ({
-      ...data.extras.find(e => e.id === row.dataset.extra), quantity: quantity(row.querySelector('input'))
-    })).filter(e => e.quantity > 0);
-    const common = {
-      cardId, count: quantity(form.querySelector('.combo-count input')),
+  // Every pair of pastels, whatever the fillings, costs the duo price; an odd one costs the single price.
+  const pastelPrice = n => Math.floor(n / 2) * data.duplo.price + (n % 2) * data.price;
+  function priceRule(n) {
+    const pairs = Math.floor(n / 2);
+    return [pairs ? `${pairs} ${pairs === 1 ? 'dupla' : 'duplas'} × ${money(data.duplo.price)}` : '', n % 2 ? `1 avulso × ${money(data.price)}` : ''].filter(Boolean).join(' + ');
+  }
+  function state() {
+    const flavors = data.flavors.map(f => ({ ...f, quantity: quantity(form.querySelector(`[data-flavor-qty="${f.id}"] input`)) })).filter(f => f.quantity > 0);
+    const extras = data.extras.map(e => ({ ...e, quantity: quantity(form.querySelector(`[data-extra="${e.id}"] input`)) })).filter(e => e.quantity > 0);
+    const count = flavors.reduce((sum, f) => sum + f.quantity, 0);
+    const pastels = pastelPrice(count);
+    const extrasTotal = extras.reduce((sum, e) => sum + e.price * e.quantity, 0);
+    return {
+      flavors, extras, count, pastels, extrasTotal, total: pastels + extrasTotal,
       notes: form.elements.notes.value.trim(),
-      extras, personalization: extras.some(e => e.id === 'caixinha') ? form.elements.personalization.value.trim() : ''
+      personalization: extras.some(e => e.id === 'caixinha') ? form.elements.personalization.value.trim() : ''
     };
-    if (isDuplo(cardId)) {
-      const flavors = ['flavor1', 'flavor2'].map(name => data.flavors.find(f => f.id === form.elements[name].value));
-      if (flavors.some(f => !f)) return null;
-      return { ...common, duplo: true, flavorIds: flavors.map(f => f.id), flavorNames: flavors.map(f => f.name), price: data.duplo.price, pastels: 2 };
-    }
-    const flavor = data.flavors.find(f => f.id === form.elements.flavor1.value);
-    if (!flavor) return null;
-    return { ...common, flavorId: flavor.id, flavorName: flavor.name, price: data.price, pastels: 1 };
   }
-  const title = item => item.duplo
-    ? `2 Pastelões (${item.flavorNames.map(n => n.toLowerCase()).join(' + ')})`
-    : `Pastelão de ${item.flavorName.toLowerCase()}`;
-  const pastelLabel = n => `${n} ${n === 1 ? 'pastelão' : 'pastelões'}`;
-  // Add-on quantities are totals for the line (a can is not multiplied by the pastel count).
-  function amounts(item) {
-    const base = item.price * item.count;
-    const extras = item.extras.reduce((sum, e) => sum + e.price * e.quantity, 0);
-    return { base, extras, total: base + extras };
-  }
-  function totals(list) {
-    return list.reduce((sum, item) => {
-      const a = amounts(item);
-      return { base: sum.base + a.base, extras: sum.extras + a.extras, total: sum.total + a.total, count: sum.count + item.count * item.pastels };
-    }, { base: 0, extras: 0, total: 0, count: 0 });
-  }
-  function totalHTML(list) {
-    const total = totals(list);
-    if (!list.length) return '<p>Seu pedido está vazio. Escolha seu pastelão acima.</p>';
-    return `<div class="total-line"><span>Pastelões (${total.count})</span><strong>${money(total.base)}</strong></div>${total.extras ? `<div class="total-line"><span>Bebidas e adicionais</span><strong>${money(total.extras)}</strong></div>` : ''}<div class="total-line"><span>${fulfillment === 'entrega' ? 'Entrega' : 'Retirada'}</span><strong>${fulfillment === 'entrega' ? money(fee()) : 'sem taxa'}</strong></div><div class="total-line grand-total"><span>Total</span><strong>${money(total.total + fee())}</strong></div>`;
+  function totalHTML(s) {
+    if (!s.count) return '<p>Escolha a quantidade de pelo menos um recheio.</p>';
+    return `<div class="total-line"><span>${pastelLabel(s.count)} <small>(${priceRule(s.count)})</small></span><strong>${money(s.pastels)}</strong></div>${s.extrasTotal ? `<div class="total-line"><span>Bebidas e adicionais</span><strong>${money(s.extrasTotal)}</strong></div>` : ''}<div class="total-line"><span>${fulfillment === 'entrega' ? 'Entrega' : 'Retirada'}</span><strong>${fulfillment === 'entrega' ? money(fee()) : 'sem taxa'}</strong></div><div class="total-line grand-total"><span>Total</span><strong>${money(s.total + fee())}</strong></div>`;
   }
   // Message read by the attendant: only Basic Multilingual Plane symbols: 4-byte emojis arrive as � when WhatsApp opens wa.me links.
   function customerLines() {
@@ -78,32 +59,29 @@
     if (customer.when === 'agendar') lines.push('⏰ Horário: ' + (customer.time ? `agendar para ${customer.time}` : 'quero agendar (combino por aqui)'));
     return lines;
   }
-  function message(list) {
+  function message(s) {
     const rule = '━━━━━━━━━━━━━━';
-    const total = totals(list);
     const lines = ['Olá, Zadoni! Quero fazer este pedido:', '',
-      `${fulfillment === 'entrega' ? '✅ *ENTREGA*' : '✅ *RETIRADA*'} · ${pastelLabel(total.count)}`, rule, ''];
-    list.forEach((item, index) => {
-      const each = item.duplo && item.count > 1 ? ' (cada par)' : '';
-      lines.push(`*${index + 1}) ${item.duplo ? `${item.count}× 2 Pastelões` : `${item.count}× Pastelão`}* — ${money(item.price * item.count)}`);
-      if (item.duplo) item.flavorNames.forEach((name, i) => lines.push(`⭐ Pastelão ${i + 1}: ${name}${each}`));
-      else lines.push(`⭐ Recheio: ${item.flavorName}`);
-      item.extras.forEach(e => lines.push(`➕ ${e.quantity}× ${e.name} — ${money(e.quantity * e.price)}`));
-      if (item.personalization) lines.push('✨ Caixinhas: ' + item.personalization);
-      if (item.notes) lines.push('✏ Obs.: ' + item.notes);
-      lines.push(`▸ Subtotal: ${money(amounts(item).total)}`, '');
-    });
-    lines.push(rule, '*VALORES*', `Produtos: ${money(total.total)}`,
+      `${fulfillment === 'entrega' ? '✅ *ENTREGA*' : '✅ *RETIRADA*'} · ${pastelLabel(s.count)}`, rule, '', '*PASTELÕES*'];
+    s.flavors.forEach(f => lines.push(`⭐ ${f.quantity}× ${f.name}`));
+    lines.push(`▸ ${priceRule(s.count)} = ${money(s.pastels)}`);
+    if (s.extras.length) {
+      lines.push('', '*BEBIDAS E ADICIONAIS*');
+      s.extras.forEach(e => lines.push(`➕ ${e.quantity}× ${e.name} — ${money(e.quantity * e.price)}`));
+    }
+    if (s.personalization) lines.push('✨ Caixinhas: ' + s.personalization);
+    if (s.notes) lines.push('✏ Obs.: ' + s.notes);
+    lines.push('', rule, '*VALORES*', `Produtos: ${money(s.total)}`,
       fulfillment === 'entrega' ? `Entrega na zona urbana: ${money(fee())}` : 'Retirada: sem taxa',
-      `▶ *TOTAL: ${money(total.total + fee())}*`);
+      `▶ *TOTAL: ${money(s.total + fee())}*`);
     const details = customerLines();
     if (details.length) lines.push('', '*DADOS DO CLIENTE*', ...details);
     lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?', '_Origem: página do pastelão_');
     return lines.join('\n');
   }
-  function whatsapp(list) {
+  function whatsapp(s) {
     const url = new URL('https://wa.me/' + data.phone);
-    url.searchParams.set('text', message(list));
+    url.searchParams.set('text', message(s));
     url.searchParams.set('utm_source', 'site');
     url.searchParams.set('utm_medium', 'whatsapp');
     url.searchParams.set('utm_campaign', 'seo_local');
@@ -120,19 +98,18 @@
       + `<div data-show="time" hidden><label for="${prefix}-hora">Horário desejado</label><input id="${prefix}-hora" data-field="time" type="time" min="07:00" max="23:00"></div>`
       + '<p class="small">Aceitamos Pix, dinheiro e cartão de crédito pelo link de pagamento InfinityPay.</p></details></fieldset>';
   }
-  function syncCustomer(source) {
-    document.querySelectorAll('[data-customer]').forEach(box => {
-      box.querySelectorAll('[data-field]').forEach(field => { if (field !== source) field.value = customer[field.dataset.field]; });
-      box.querySelector('[data-show="address"]').hidden = fulfillment !== 'entrega';
-      box.querySelector('[data-customer-title]').textContent = fulfillment === 'entrega' ? 'Dados para entrega' : 'Seus dados';
-      box.querySelector('[data-show="change"]').hidden = customer.payment !== 'dinheiro';
-      box.querySelector('[data-show="time"]').hidden = customer.when !== 'agendar';
-    });
+  function syncCustomer() {
+    const box = form.querySelector('[data-customer]');
+    box.querySelector('[data-show="address"]').hidden = fulfillment !== 'entrega';
+    box.querySelector('[data-customer-title]').textContent = fulfillment === 'entrega' ? 'Dados para entrega' : 'Seus dados';
+    box.querySelector('[data-show="change"]').hidden = customer.payment !== 'dinheiro';
+    box.querySelector('[data-show="time"]').hidden = customer.when !== 'agendar';
   }
-  const pendingForm = () => [...forms.values()].find(form => form.querySelector('.options').open);
-  function updateForm(form) {
+  // The bar only points to the order form, so hide it while the form is on screen.
+  let formInView = false;
+  function render() {
     form.querySelectorAll('input[type="number"]').forEach(normalize);
-    const box = Number(form.querySelector('[data-extra="caixinha"] input').value) > 0;
+    const box = quantity(form.querySelector('[data-extra="caixinha"] input')) > 0;
     form.querySelector('.personalization').hidden = !box;
     form.elements.personalization.disabled = !box;
     form.querySelectorAll('[data-extra]').forEach(row => {
@@ -140,133 +117,57 @@
       const count = quantity(row.querySelector('input'));
       row.querySelector('[data-extra-subtotal]').textContent = count ? `${count}× = ${money(count * extra.price)}` : '';
     });
-    const item = selection(form);
-    form.querySelector('[data-card-total]').textContent = item ? `Subtotal: ${money(amounts(item).total)} · entrega calculada uma vez no resumo` : 'Escolha o recheio de cada pastelão para continuar.';
-    form.querySelector('[data-add]').textContent = editing?.cardId === form.closest('[data-flavor]').dataset.flavor ? 'Salvar alterações' : 'Continuar pedido';
-  }
-  function renderOrder() {
-    const hasItems = order.length > 0;
-    const pending = pendingForm();
-    section.hidden = !hasItems;
-    document.querySelector('.order-bar').hidden = !hasItems || summaryInView;
-    document.querySelector('[data-cart-nav]').hidden = !hasItems;
-    document.querySelector('.whatsapp-float').hidden = hasItems || !!pending;
-    itemsElement.innerHTML = order.map((item, index) => `<article class="order-item"><h3>${item.count}× ${esc(title(item))}</h3>${item.notes ? `<p>Observações: ${esc(item.notes)}</p>` : ''}${item.extras.length ? `<ul>${item.extras.map(e => `<li>${e.quantity}× ${esc(e.name)} — ${money(e.price * e.quantity)}</li>`).join('')}</ul>` : ''}${item.personalization ? `<p>Caixinhas: ${esc(item.personalization)}</p>` : ''}<strong>Subtotal: ${money(amounts(item).total)}</strong><div class="order-actions"><button type="button" data-edit="${index}">Editar</button><button type="button" data-remove="${index}">Remover</button></div></article>`).join('');
-    document.querySelector('[data-order-total]').innerHTML = totalHTML(order);
-    const send = document.querySelector('[data-send-order]');
-    send.hidden = !hasItems || !!pending;
-    document.querySelector('[data-pending-notice]').hidden = !hasItems || !pending;
-    document.querySelector('.message-preview').hidden = !hasItems || !!pending;
-    document.querySelector('[data-message-preview]').textContent = hasItems ? message(order) : '';
-    const total = totals(order).total + fee();
-    document.querySelector('[data-bar-total]').textContent = `Meu pedido · ${money(total)}`;
-    document.querySelector('[data-bar-count]').textContent = `${pastelLabel(totals(order).count)} no pedido`;
-    if (hasItems && !pending) {
-      send.href = whatsapp(order);
-      send.textContent = `Enviar pedido no WhatsApp · ${money(total)}`;
-    } else send.removeAttribute('href');
-  }
-  // The bar only points to the summary, so hide it while the summary is on screen.
-  let summaryInView = false;
-  if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
-    summaryInView = entry.isIntersecting;
-    renderOrder();
-  }).observe(section);
-  function refresh() {
     syncCustomer();
-    forms.forEach(updateForm);
-    renderOrder();
-  }
-  function closeForm(form) {
-    form.querySelector('.options').open = false;
-    form.reset();
-    form.querySelector('[data-form-error]').textContent = '';
-    if (editing?.cardId === form.closest('[data-flavor]').dataset.flavor) editing = null;
-  }
-  document.querySelectorAll('[data-configurator]').forEach(form => {
-    const id = form.closest('[data-flavor]').dataset.flavor;
-    forms.set(id, form);
-    form.addEventListener('click', event => {
-      const step = event.target.closest('[data-step]');
-      if (step) {
-        const input = step.closest('.quantity').querySelector('input');
-        input.value = quantity(input) + Number(step.dataset.step);
-        updateForm(form);
-      }
-      if (event.target.closest('[data-cancel]')) {
-        closeForm(form);
-        refresh();
-        form.querySelector('summary').focus();
-      }
-    });
-    form.addEventListener('input', () => { updateForm(form); form.querySelector('[data-form-error]').textContent = ''; });
-    form.addEventListener('change', () => updateForm(form));
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      if (!form.querySelector('.options').open) return;
-      updateForm(form);
-      const item = selection(form);
-      if (!item) {
-        form.querySelector('[data-form-error]').textContent = 'Escolha o recheio de cada pastelão.';
-        const missing = [...form.querySelectorAll('.flavor-choices')].find(group => !group.querySelector(':checked'));
-        missing.querySelector('input').focus();
-        return;
-      }
-      if (editing?.cardId === id) order[editing.index] = item;
-      else order.push(item);
-      closeForm(form);
-      refresh();
-      section.scrollIntoView({ block: 'start', behavior: 'auto' });
-      section.focus({ preventScroll: true });
-      status.textContent = 'Pedido atualizado. Confira o resumo antes de enviar.';
-    });
-    form.querySelector('.options').addEventListener('toggle', () => {
-      if (form.querySelector('.options').open) forms.forEach(other => { if (other !== form) closeForm(other); });
-      else if (editing?.cardId === id) editing = null;
-      refresh();
-    });
-    form.hidden = false;
-    form.closest('.card-content').querySelector('.fallback-order').hidden = true;
-  });
-  section.querySelector('.fulfillment').insertAdjacentHTML('afterend', customerHTML('pedido'));
-  section.querySelector('.fulfillment').addEventListener('change', event => {
-    fulfillment = event.target.value === 'retirada' ? 'retirada' : 'entrega';
-    refresh();
-  });
-  const onCustomer = event => {
-    const field = event.target.closest('[data-field]');
-    if (!field) return;
-    customer[field.dataset.field] = field.value.trim();
-    syncCustomer(field);
-    renderOrder();
-  };
-  document.addEventListener('input', onCustomer);
-  document.addEventListener('change', onCustomer);
-  itemsElement.addEventListener('click', event => {
-    const remove = event.target.closest('[data-remove]');
-    const edit = event.target.closest('[data-edit]');
-    if (!remove && !edit) return;
-    forms.forEach(closeForm);
-    if (remove) {
-      order.splice(Number(remove.dataset.remove), 1);
-      refresh();
-      if (order.length) section.focus(); else document.querySelector('.options summary').focus();
-      return;
+    const s = state();
+    form.querySelector('[data-order-total]').innerHTML = totalHTML(s);
+    form.querySelector('.message-preview').hidden = !s.count;
+    form.querySelector('[data-message-preview]').textContent = s.count ? message(s) : '';
+    if (s.count) {
+      send.href = whatsapp(s);
+      send.textContent = `Enviar pedido no WhatsApp · ${money(s.total + fee())}`;
+      send.removeAttribute('aria-disabled');
+      error.textContent = '';
+    } else {
+      send.removeAttribute('href');
+      send.setAttribute('aria-disabled', 'true');
+      send.textContent = 'Enviar pedido no WhatsApp';
     }
-    const index = Number(edit.dataset.edit);
-    const item = order[index];
-    const form = forms.get(item.cardId);
-    form.elements.flavor1.value = item.duplo ? item.flavorIds[0] : item.flavorId;
-    if (item.duplo) form.elements.flavor2.value = item.flavorIds[1];
-    form.elements.notes.value = item.notes;
-    form.elements.personalization.value = item.personalization;
-    form.querySelector('.combo-count input').value = item.count;
-    form.querySelectorAll('[data-extra]').forEach(row => { row.querySelector('input').value = item.extras.find(e => e.id === row.dataset.extra)?.quantity || 0; });
-    editing = { index, cardId: item.cardId };
-    form.querySelector('.options').open = true;
-    refresh();
-    form.scrollIntoView({ block: 'start', behavior: 'auto' });
-    form.querySelector('input:checked').focus({ preventScroll: true });
+    document.querySelector('.order-bar').hidden = !s.count || formInView;
+    document.querySelector('[data-bar-total]').textContent = `Meu pedido · ${money(s.total + fee())}`;
+    document.querySelector('[data-bar-count]').textContent = `${pastelLabel(s.count)} no pedido`;
+    document.querySelector('.whatsapp-float').hidden = s.count > 0;
+  }
+  if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
+    formInView = entry.isIntersecting;
+    render();
+  }).observe(form);
+  form.addEventListener('click', event => {
+    const step = event.target.closest('[data-step]');
+    if (!step) return;
+    const input = step.closest('.quantity').querySelector('input');
+    input.value = quantity(input) + Number(step.dataset.step);
+    render();
   });
-  refresh();
+  form.addEventListener('input', event => {
+    const field = event.target.closest('[data-field]');
+    if (field) customer[field.dataset.field] = field.value.trim();
+    render();
+  });
+  form.addEventListener('change', event => {
+    if (event.target.name === 'fulfillment') fulfillment = event.target.value === 'retirada' ? 'retirada' : 'entrega';
+    const field = event.target.closest('[data-field]');
+    if (field) customer[field.dataset.field] = field.value.trim();
+    render();
+  });
+  form.addEventListener('submit', event => event.preventDefault());
+  send.addEventListener('click', event => {
+    if (state().count) return;
+    event.preventDefault();
+    error.textContent = 'Escolha a quantidade de pelo menos um recheio.';
+    form.querySelector('[data-flavor-qty] [data-step="1"]').focus();
+  });
+  form.querySelector('.fulfillment').insertAdjacentHTML('afterend', customerHTML('pedido'));
+  form.hidden = false;
+  section.querySelector('.fallback-order').hidden = true;
+  render();
 })();
