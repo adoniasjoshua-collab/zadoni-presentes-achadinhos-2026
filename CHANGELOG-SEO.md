@@ -198,3 +198,9 @@ Hipótese: title alinhado à busca real ("mensagem para cartão de presente", po
 ### F2-5 · Cestas: title
 
 Já atendido: o title de /cestas-de-presente-canaa/ já é "Cestas de Presente em Canaã dos Carajás | Com Entrega" (53), igual a og:title e twitter:title, desde 30/09/2026. Nada alterado.
+
+### F2-6 · Pastel fora do sinal da Zadoni
+
+Já atendido: o pastel não estava no menu nem nas categorias da inicial desde 09/10/2026.
+Alteração: /combos-pastel-canaa/ com `noindex, follow` (gerador e validador atualizados), fora do sitemap e sem os links no rodapé da inicial e de /presentes-canaa.html (a remoção do link no rodapé é a exceção prevista para a zona protegida). Mantido apenas o link em /links/, que já tem noindex e serve o público do Instagram. Arquivo e URL mantidos, sem redirecionamento: o 301 fica para quando o pastel tiver domínio próprio.
+Hipótese: site com tema único fortalece "floricultura" e "presentes" em Canaã. Métrica: impressões da família "floricultura"; em 15 dias a inspeção da URL deve mostrar "Excluída pela tag noindex". Avaliar em 25/11/2026.
