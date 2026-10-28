@@ -43,12 +43,6 @@ const adicionaisBuques = [
     preco: 50.00,
     observacao: "Fragrância escolhida conforme estoque",
     imagem: "assets/optimized/products/perfume-521-vip-rose-amakha-15ml.jpg"
-  },
-  {
-    id: "perfume-hinode-100ml",
-    nome: "Perfume Hinode 100 ml - 1 unidade",
-    preco: 189.00,
-    observacao: "A partir de R$ 189; fragrância e valor final confirmados no WhatsApp"
   }
 ];
 

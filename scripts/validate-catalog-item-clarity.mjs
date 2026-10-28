@@ -47,7 +47,8 @@ for (const produto of produtosLocais.filter((item) => ["Cestas", "Kits", "Mimos"
 }
 
 verificar(produtosLocais.filter((produto) => produto.categoria === "Adicionais").length === 14, "A categoria pública Adicionais deve conter 14 produtos, incluindo os novos bolos.");
-verificar(adicionais.length === 30, "As listas contextuais devem manter 30 posições de adicionais.");
+// Perfume Hinode saiu dos adicionais de buquê em 28/10/2026.
+verificar(adicionais.length === 29, "As listas contextuais devem manter 29 posições de adicionais.");
 
 for (const produto of produtosLocais) {
   const temPrecoValido = Number.isFinite(produto.preco) && produto.preco > 0;

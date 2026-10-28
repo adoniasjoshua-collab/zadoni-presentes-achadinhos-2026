@@ -210,3 +210,7 @@ Hipótese: site com tema único fortalece "floricultura" e "presentes" em Canaã
 Já atendido: /presentes-canaa-dos-carajas/, /presentes-canaa e /rosas-perfumadas-canaa/ (301 conferidos ao vivo) já estavam fora do sitemap; /links/ já tinha `noindex, follow` e já estava fora; nenhuma página de teste, agradecimento ou duplicada no sitemap. Removido nesta fase apenas /combos-pastel-canaa/ (F2-6).
 Alteração: lastmod 2026-10-28 só nas páginas alteradas (/, /presentes-canaa.html, buquês, cestas, floricultura, monte sua cesta, mensagens). Achadinhos, perfumaria, café da manhã e Natal sem alteração. Sitemap final: 18 URLs, todas 200, canonical própria e sem noindex.
 Métrica: páginas indexadas no relatório de Sitemaps do Search Console. Avaliar em 25/11/2026.
+
+### Pós-fase · Hinode fora dos adicionais de buquê
+
+Por decisão do dono em 28/10/2026, o adicional "Perfume Hinode 100 ml" (R$ 189) saiu da lista de adicionais da página de buquês (assets/data/produtos.js); versão do script trocada só em buquês para limpar o cache. Validador de clareza do catálogo ajustado para 29 adicionais. O texto do gerador da perfumaria que cita Hinode não foi alterado (página fora do escopo até 04/11; a página publicada não cita a marca).
