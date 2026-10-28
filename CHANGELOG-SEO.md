@@ -165,3 +165,14 @@ Alteração e hipótese: usuário forneceu print com latitude -6.532173 e longit
 O print mostra “R. Júlio Geraldo de Carvalho, 474 - Centro”, diferente de “Rua Asdrúbal Bentes, 453 - Centro” informado anteriormente como NAP oficial. Preservado o endereço oficial; o endereço textual exibido pelo Maps precisa de confirmação do dono antes de substituir o NAP. Não houve geocodificação reversa ou verificação independente de que o endereço e o ponto coincidem.
 
 Validação: JSON parse, latitude/longitude numéricas e correspondência entre hasMap e Como chegar aprovados. Endereço, H1, title, description e canonical preservados. Somente perfumaria e este registro alterados. Métrica: precisão do destino de Como chegar e consistência de localização. Avaliação: 04/11/2026. Sem push ou publicação.
+
+## Fase 2 · 28/10/2026 · avaliação em 25/11/2026
+
+Prompt do dono "SEO local Zadoni · Fase 2". Avaliação: últimos 28 dias x 28 dias anteriores, em 25/11/2026. Zona protegida até 15/01/2027: /, /floricultura-canaa-dos-carajas/, /buques-canaa-dos-carajas/ e /presentes-canaa.html.
+
+FASE 0 (auditoria): nenhum endereço ou CEP antigo nas páginas publicadas; "Hinode" só como adicional de buquê em assets/data/produtos.js e no gerador da perfumaria (listado ao dono, não alterado); sitemap sem URLs redirecionadas ou com noindex; /links/ já com noindex; inicial com Florist @id https://zadonipresentes.com.br/#localbusiness, sem horário nem pagamento.
+
+### F2-1 · Horário oficial (correção de NAP)
+
+Já atendido: endereço e CEP oficiais em todas as páginas. Pendência encontrada: o horário de atendimento aparecia como "das 7h às 23h", diferente do Perfil da Empresa (todos os dias, 06:00 às 23:30). Por decisão do dono, tratado como a exceção de NAP da zona protegida: troca só do horário, inclusive no texto do FAQPage já existente, em floricultura (2), buquês (3), cestas (2) e monte sua cesta (1). Nenhuma outra palavra alterada.
+Hipótese: horário igual ao do Perfil da Empresa reforça a consistência de NAP nas buscas locais. Métrica: impressões das buscas "perto de mim". Avaliar em 25/11/2026.
