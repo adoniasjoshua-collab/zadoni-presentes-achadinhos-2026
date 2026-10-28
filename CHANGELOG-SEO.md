@@ -188,3 +188,9 @@ Hipótese: conteúdo útil + preço visível + snippet de produto aumentam o CTR
 Já atendido: formas de pagamento no FAQ (Pix, cartão, dinheiro). Faltava: taxa de entrega, horário oficial e pagamento completo.
 Alteração: seção "Entrega e pagamento" antes do rodapé, com a mesma lista da floricultura e link "perguntas frequentes da floricultura" para /floricultura-canaa-dos-carajas/#faq-title (âncora do FAQ existente, sem criar id novo na zona protegida). Diff só com acréscimos.
 Hipótese: responder taxa e pagamento reduz a dúvida de quem chega por "buquê de flores" sem a cidade. Métrica: CTR e impressões de buquês (meta 300/mês). Avaliar em 25/11/2026.
+
+### F2-4 · Mensagens: title, description e frases de Natal
+
+Já atendido: H1, URL e canonical (mantidos); link para presentes de Natal no bloco "Continue escolhendo".
+Alteração: title "Mensagem para Cartão de Presente | Frases Prontas" (49), antes "Mensagens para Cartão de Presente | Zadoni Presentes"; description nova (141) replicada em og, twitter e no WebPage do JSON-LD. Ao fim da página, H2 "Mensagens de Natal para cartão de presente" com 8 frases originais (até 20 palavras), no mesmo formato de card das outras frases e também como opções do formulário, para o botão "Usar esta mensagem" funcionar; parágrafo final com links para presentes de Natal e buquês.
+Hipótese: title alinhado à busca real ("mensagem para cartão de presente", posição 6,07) sobe o CTR de 0,34%. Métrica: CTR da página, medido separado do restante do site. Avaliar em 25/11/2026.
