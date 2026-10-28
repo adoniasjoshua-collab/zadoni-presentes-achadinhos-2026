@@ -194,3 +194,7 @@ Hipótese: responder taxa e pagamento reduz a dúvida de quem chega por "buquê 
 Já atendido: H1, URL e canonical (mantidos); link para presentes de Natal no bloco "Continue escolhendo".
 Alteração: title "Mensagem para Cartão de Presente | Frases Prontas" (49), antes "Mensagens para Cartão de Presente | Zadoni Presentes"; description nova (141) replicada em og, twitter e no WebPage do JSON-LD. Ao fim da página, H2 "Mensagens de Natal para cartão de presente" com 8 frases originais (até 20 palavras), no mesmo formato de card das outras frases e também como opções do formulário, para o botão "Usar esta mensagem" funcionar; parágrafo final com links para presentes de Natal e buquês.
 Hipótese: title alinhado à busca real ("mensagem para cartão de presente", posição 6,07) sobe o CTR de 0,34%. Métrica: CTR da página, medido separado do restante do site. Avaliar em 25/11/2026.
+
+### F2-5 · Cestas: title
+
+Já atendido: o title de /cestas-de-presente-canaa/ já é "Cestas de Presente em Canaã dos Carajás | Com Entrega" (53), igual a og:title e twitter:title, desde 30/09/2026. Nada alterado.
