@@ -24,8 +24,10 @@ const duploPrice = money(data.duplo.price);
 const secondPrice = money(data.duplo.price - data.price);
 const coca = data.extras.find(e => e.id === 'refrigerante-extra');
 const lower = f => f.name.toLowerCase();
-const title = 'Combos de Pastel em Canaã dos Carajás | Zadoni';
-const description = `Pastelão por ${price} ou 2 por ${duploPrice} na Zadoni, em Canaã dos Carajás: carne com queijo, frango com queijo ou presunto com queijo. Coca lata gelada por ${money(coca.price)}. Retire sem taxa ou receba com entrega de ${money(data.delivery.price)}.`;
+const short = cents => money(cents).replace(',00', '');
+// Página noindex, divulgada só no WhatsApp e em /links/: título e descrição são o texto do preview do link.
+const title = `Bateu a fome? Pastelão crocante a partir de ${short(data.price)}`;
+const description = `Toque e escolha seu sabor: 2 por ${short(data.duplo.price)}. Entrega em Canaã ou retirada sem taxa. Carne, frango ou presunto com queijo, Coca lata gelada por ${short(coca.price)}.`;
 const social = `${site}/${data.socialImage || 'assets/img/brand/logo-zadoni-320.webp'}`;
 const whatsapp = text => `https://wa.me/${data.phone}?text=${encodeURIComponent(text)}&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=combos_pastel`;
 const contact = whatsapp('Olá, Zadoni! Tenho uma dúvida sobre os combos de pastel.');
