@@ -3,7 +3,7 @@
   "phone": "5594992993138",
   "price": 1500,
   "delivery": {
-    "price": 600,
+    "price": 700,
     "areas": [
       "toda a zona urbana de Canaã dos Carajás"
     ]
@@ -91,7 +91,7 @@
   "duplo": {
     "id": "combo-duplo",
     "name": "2 Pastelões",
-    "price": 2400,
+    "price": 2500,
     "pastels": 2,
     "drinks": 0
   },
