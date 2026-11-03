@@ -30,7 +30,7 @@ for (const id of ['combo-individual', 'combo-duplo']) {
 }
 assert.equal((html.match(/data-send-order/g) || []).length, 1, 'Exactly one send button: the order form');
 assert(!html.includes('data-bar-send'), 'Sticky bar points to the order form instead of sending');
-assert.deepEqual(data.extras.map(e => e.price), [600, 1000, 500, 200, 1000, 4000, 5500, 6900]);
+assert.deepEqual(data.extras.map(e => e.price), [600, 800, 1200, 1000, 1000, 1000, 500, 200, 1000, 4000, 5500, 6900]);
 assert.equal(new Set(data.extras.map(e => e.id)).size, data.extras.length);
 assert(!('drinks' in data), 'No drink included or swapped: Coca lata is sold apart');
 assert.equal(data.extras[0].name, 'Coca lata gelada');

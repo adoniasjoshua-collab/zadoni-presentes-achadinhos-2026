@@ -46,6 +46,30 @@
       "price": 600
     },
     {
+      "id": "suco-caju",
+      "name": "Suco natural de caju 250 ml",
+      "unit": "copo",
+      "price": 800
+    },
+    {
+      "id": "suco-abacaxi-menta",
+      "name": "Suco natural de abacaxi com menta 250 ml",
+      "unit": "copo",
+      "price": 1200
+    },
+    {
+      "id": "suco-uva",
+      "name": "Suco natural de uva 250 ml",
+      "unit": "copo",
+      "price": 1000
+    },
+    {
+      "id": "suco-acerola",
+      "name": "Suco natural de acerola 250 ml",
+      "unit": "copo",
+      "price": 1000
+    },
+    {
       "id": "caixinha",
       "name": "Caixinha personalizada",
       "unit": "caixinha",

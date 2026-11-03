@@ -23,6 +23,7 @@ const price = money(data.price);
 const duploPrice = money(data.duplo.price);
 const secondPrice = money(data.duplo.price - data.price);
 const coca = data.extras.find(e => e.id === 'refrigerante-extra');
+const drinks = data.extras.filter(e => e === coca || e.id.startsWith('suco-'));
 const lower = f => f.name.toLowerCase();
 const short = cents => money(cents).replace(',00', '');
 // Página noindex, divulgada só no WhatsApp e em /links/: título e descrição são o texto do preview do link.
@@ -61,9 +62,9 @@ ${offerPhoto(o)}<div class="card-content"><p class="eyebrow">${o.pastels === 2 ?
 // Single order form: a quantity per filling; pairs get the duo price automatically.
 const orderForm = `<form data-order-form hidden novalidate>
 <fieldset class="flavor-qty"><legend>1. Quantos de cada recheio?</legend>${data.flavors.map(flavorRow).join('')}</fieldset>
-<p class="step-title">2. Quer Coca lata gelada?</p>${extraRow(coca)}
+<p class="step-title">2. Quer bebida?</p>${drinks.map(extraRow).join('')}
 <details class="extras-options"><summary>Adicionar outros itens</summary>
-${data.extras.filter(e => e !== coca).map(extraRow).join('')}
+${data.extras.filter(e => !drinks.includes(e)).map(extraRow).join('')}
 <label class="personalization" hidden>Nome ou mensagem nas caixinhas (opcional)<textarea name="personalization" maxlength="180" rows="2"></textarea></label></details>
 <label class="notes">Observações do pedido — opcional<textarea name="notes" maxlength="300" rows="3" placeholder="Ex.: observação sobre o preparo"></textarea></label>
 <h3>3. Entrega ou retirada</h3>${fulfillment()}
