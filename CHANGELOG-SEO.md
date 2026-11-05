@@ -294,3 +294,10 @@ MÃ©trica: teste de pesquisa aprimorada da inicial (Florist sem erros). Avaliar
 
 AlteraÃ§Ã£o: em /buques-canaa-dos-carajas/, novo JSON-LD com 2 Product â€” "BuquÃª de 3 Rosas Naturais" (Offer 185.00 BRL) e "BuquÃª de 7 Rosas Naturais" (259.00 BRL), os preÃ§os visÃ­veis nos cards â€”, `seller` `https://zadonipresentes.com.br/#localbusiness`, url na seÃ§Ã£o #rosas-naturais e `image` com a foto real do primeiro card de rosas naturais (a mesma foto para os dois, porque os cards mostram as duas quantidades). Os 9 Product existentes nÃ£o mudaram; HTML visÃ­vel sem alteraÃ§Ã£o.
 MÃ©trica: teste de pesquisa aprimorada de buquÃªs (Produto sem erros). Avaliar apÃ³s a publicaÃ§Ã£o.
+
+### F3-D3 Â· Sitemap
+
+JÃ¡ atendido: /combos-pastel-canaa/, /links/, /presentes-canaa-dos-carajas/ e /rosas-perfumadas-canaa/ (301) jÃ¡ estavam fora do sitemap.
+AlteraÃ§Ã£o: removidas as 4 URLs do Achadinhos (C1); lastmod 2026-11-04 sÃ³ nas 13 pÃ¡ginas alteradas nesta rodada. /perfumaria-cosmeticos-canaa/ sem alteraÃ§Ã£o e lastmod mantido. Sitemap final com 14 URLs, XML vÃ¡lido, todas com canonical prÃ³pria e sem noindex (todas respondiam 200 na auditoria da FASE 0):
+/, /presentes-canaa.html, /buques-canaa-dos-carajas/, /cestas-de-presente-canaa/, /cesta-de-aniversario-canaa/, /floricultura-canaa-dos-carajas/, /cesta-cafe-da-manha-canaa/, /monte-sua-cesta/, /presentes-romanticos-canaa/, /revenda-chocolates-canaa/, /perfumaria-cosmeticos-canaa/, /guias-de-presentes/, /mensagens-para-acompanhar-presentes/, /presentes-de-natal-canaa-dos-carajas/.
+MÃ©trica: pÃ¡ginas indexadas no relatÃ³rio de Sitemaps do Search Console. Avaliar em 25/11/2026.
