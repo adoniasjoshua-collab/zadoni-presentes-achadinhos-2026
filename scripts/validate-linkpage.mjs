@@ -25,10 +25,11 @@ assert.ok(html.includes('../floricultura-canaa-dos-carajas/'), "Atalho direto pa
 assert.ok(html.includes('../monte-sua-cesta/'), "Atalho direto para Monte sua cesta ausente");
 assert.ok(html.includes('../presentes-canaa.html'), "Atalho para o catálogo completo ausente");
 assert.ok(html.includes('class="direct-link-badge">Mais procurado</span>'), "Destaque de Buquês ausente");
-assert.ok(html.includes("../achadinhos/"), "Destaque dos Achadinhos ausente");
-assert.ok(html.includes("../achadinhos/presentes-para-namorada/"), "Guia para namorada ausente");
-assert.ok(html.includes("../achadinhos/presentes-criativos/"), "Guia de presentes criativos ausente");
-assert.ok(html.includes("../achadinhos/presentes-de-aniversario/"), "Guia de aniversário ausente");
+// F3-C2: bio só com Zadoni — sem Achadinhos; Natal e namorada como atalhos locais; pastel mantido por decisão do dono.
+assert.ok(!html.includes("achadinhos/"), "A linkpage não deve apontar para os Achadinhos");
+assert.ok(html.includes('../presentes-de-natal-canaa-dos-carajas/'), "Atalho para presentes de Natal ausente");
+assert.ok(html.includes('../presentes-romanticos-canaa/'), "Atalho para presentes para namorada ausente");
+assert.ok(html.includes('../combos-pastel-canaa/'), "Atalho do pastel ausente");
 assert.ok(html.includes("https://wa.me/5594992993138"), "WhatsApp principal ausente");
 assert.ok(html.includes("data-bio-link="), "Links sem instrumentação própria");
 assert.ok(js.includes('"bio_click_link"'), "Evento de clique da linkpage ausente");
@@ -41,4 +42,4 @@ for (const [, href] of html.matchAll(/href="(\.\.\/[^"?#]+)"/g)) {
   assert.ok(fs.existsSync(target), `Destino interno ausente: ${href}`);
 }
 
-console.log("Linkpage validation ok: noindex, direct local links, Achadinhos and analytics preserved.");
+console.log("Linkpage validation ok: noindex, direct local links (Natal, namorada, pastel), no Achadinhos, analytics preserved.");
