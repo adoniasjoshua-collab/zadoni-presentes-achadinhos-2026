@@ -283,3 +283,9 @@ HipÃ³tese: 51 impressÃµes e 1 clique em 3 meses; tirar o pÃºblico nacional
 DecisÃ£o do dono: o botÃ£o "Bateu a fome? PastelÃ£o crocante" foi mantido (a pÃ¡gina do pastel e a /links/ jÃ¡ tÃªm noindex; o pastel Ã© divulgado por aqui).
 AlteraÃ§Ã£o: removida a seÃ§Ã£o nacional inteira (destaque "Zadoni Achadinhos" e os guias "Para namorada", "Presentes criativos" e "AniversÃ¡rio"); acrescentados os atalhos "Presentes de Natal" â†’ /presentes-de-natal-canaa-dos-carajas/ e "Presentes para namorada" â†’ /presentes-romanticos-canaa/, antes de "Ver catÃ¡logo completo", com as classes e Ã­cones que jÃ¡ existem; "Acessar o site principal" de `../index.html` para `../` (a raiz `/`). `noindex, follow` mantido. validate-linkpage passa a exigir a ausÃªncia do Achadinhos e a presenÃ§a de Natal, namorada e pastel. Celular 390 px conferido.
 HipÃ³tese: a bio leva o cliente de CanaÃ£ direto para pÃ¡ginas que vendem. MÃ©trica: cliques `bio_click_link` em presentes_natal e presentes_namorada. Avaliar em 25/11/2026.
+
+### F3-D1 Â· Dados estruturados da loja
+
+JÃ¡ atendido: a inicial jÃ¡ tem `Florist` com `@id` `https://zadonipresentes.com.br/#localbusiness` (mantido; o prompt sugeria `#loja`), nome, URL, telefone, endereÃ§o completo com CEP, horÃ¡rio 06:00â€“23:30 todos os dias, paymentAccepted, currenciesAccepted, Instagram em sameAs e image (foto real de buquÃª). Sem aggregateRating.
+AlteraÃ§Ã£o: completados sÃ³ os campos que faltavam ou estavam genÃ©ricos: `logo` (logo-zadoni-320.webp, o mesmo do Organization), `hasMap` (pin oficial), `areaServed` como City "CanaÃ£ dos CarajÃ¡s" e `priceRange` de "$$" para "R$ 39 a R$ 390" (menor presente publicado R$ 39, Mimo Ferrero; maior R$ 390, na perfumaria). NÃ£o hÃ¡ foto de fachada no repositÃ³rio, entÃ£o `image` ficou como estava. Os Product da cesta de cafÃ© (A3) e das rosas (D2) apontam `seller` para esse `@id`.
+MÃ©trica: teste de pesquisa aprimorada da inicial (Florist sem erros). Avaliar apÃ³s a publicaÃ§Ã£o.
