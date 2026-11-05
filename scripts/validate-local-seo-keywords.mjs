@@ -9,10 +9,10 @@ const pages = new Map([
   ["cestas-de-presente-canaa/index.html", "cestas de presente em canaã dos carajás"],
   ["floricultura-canaa-dos-carajas/index.html", "floricultura em canaã dos carajás"],
   ["cesta-cafe-da-manha-canaa/index.html", "cesta de café da manhã em canaã dos carajás"],
-  ["presentes-romanticos-canaa/index.html", "presentes românticos em canaã dos carajás"],
+  ["presentes-romanticos-canaa/index.html", "presente para namorada em canaã dos carajás"],
   // rosas-perfumadas-canaa/ foi consolidada em buques-canaa-dos-carajas/ (canonical + 301) em 30/09/2026.
   ["monte-sua-cesta/index.html", "monte sua cesta"],
-  ["revenda-chocolates-canaa/index.html", "revenda de chocolates em canaã dos carajás"]
+  ["revenda-chocolates-canaa/index.html", "chocolates para presente em canaã dos carajás"]
 ]);
 
 const titles = new Set();
@@ -82,6 +82,6 @@ const sharedProducts = [...floristProducts].filter((id) => bouquetProducts.has(i
 // Both storefronts intentionally offer bouquets; floricultura also offers jars.
 assert.ok(sharedProducts.length > 0, "Floricultura deve oferecer os buquês compartilhados.");
 assert.ok([...floristProducts].some(id => !bouquetProducts.has(id)), "Floricultura deve manter arranjos próprios além dos buquês.");
-assert.ok(florist.includes('rosas naturais e arranjos por encomenda antecipada'), "Floricultura deve explicar o escopo da seção de encomendas.");
+assert.ok(florist.includes('rosas naturais no mesmo dia e arranjos por encomenda'), "Floricultura deve explicar o escopo da seção de encomendas.");
 
 console.log(`SEO local validado: ${pages.size} páginas com intenção própria, metadados únicos e termos locais contextualizados.`);
