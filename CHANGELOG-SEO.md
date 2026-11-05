@@ -267,3 +267,8 @@ HipÃ³tese: o visitante local que chega pela mensagem ganha um caminho direto p
 
 AlteraÃ§Ã£o: antes de "Atendimento local para montar sua surpresa", seÃ§Ã£o `seo-copy` com H2 "Entrega e pagamento" e a lista do prompt (mesmo texto e formato da lista que jÃ¡ existe na floricultura), mais o link "cesta de cafÃ© da manhÃ£ para aniversÃ¡rio" â†’ /cesta-cafe-da-manha-canaa/. Nada removido; validate-cesta-aniversario-seo continua ok.
 HipÃ³tese: informar pagamento, taxa e retirada reduz a dÃºvida antes do WhatsApp. MÃ©trica: cliques e conversas da pÃ¡gina. Avaliar em 25/11/2026.
+
+### F3-B6 Â· Pagamento padronizado fora da zona protegida
+
+AlteraÃ§Ã£o: "Pix, cartÃ£o ou dinheiro." â†’ "Dinheiro, Pix, cartÃ£o de crÃ©dito parcelado, link de pagamento ou cartÃ£o por aproximaÃ§Ã£o." em /cestas-de-presente-canaa/ (FAQ visÃ­vel e resposta do FAQPage) e /monte-sua-cesta/ (lista "Pagamento"). Cesta de cafÃ© jÃ¡ atualizada no A3. Mantido em buquÃªs (3) e floricultura (2): zona protegida sem exceÃ§Ã£o para esse texto; trocar em 15/01/2027.
+MÃ©trica: conversas das pÃ¡ginas. Avaliar em 25/11/2026.
