@@ -214,3 +214,13 @@ Métrica: páginas indexadas no relatório de Sitemaps do Search Console. Avalia
 ### Pós-fase · Hinode fora dos adicionais de buquê
 
 Por decisão do dono em 28/10/2026, o adicional "Perfume Hinode 100 ml" (R$ 189) saiu da lista de adicionais da página de buquês (assets/data/produtos.js); versão do script trocada só em buquês para limpar o cache. Validador de clareza do catálogo ajustado para 29 adicionais. O texto do gerador da perfumaria que cita Hinode não foi alterado (página fora do escopo até 04/11; a página publicada não cita a marca).
+
+## Fase 3 Â· 04/11/2026 Â· ramo `seo/fase3-nov-2026` Â· avaliaÃ§Ã£o em 25/11/2026 e 15/01/2027
+
+DecisÃµes do dono antes da execuÃ§Ã£o: manter o botÃ£o do pastel em /links/; manter o `@id` existente da loja (`#localbusiness`) em vez de `#loja`; menu "Natal" fora da perfumaria (regra 3); "Pix, cartÃ£o ou dinheiro." mantido em buquÃªs e floricultura (zona protegida, sem exceÃ§Ã£o para esse texto); Ã¢ncoras "Presentes romÃ¢nticos" trocadas sÃ³ fora da zona protegida; Mensagens com foco local no conteÃºdo, tÃ­tulo mantido atÃ© 25/11; cartÃ£o impresso ou escrito Ã  mÃ£o conforme combinaÃ§Ã£o individual.
+
+### F3-A1 Â· Rosas naturais no mesmo dia
+
+JÃ¡ atendido: abertura da floricultura ("montados no mesmo dia com 2 horas de prazo") e os preÃ§os 3 rosas R$ 185 / 7 rosas R$ 259.
+AlteraÃ§Ã£o: buquÃªs (10 trocas) e floricultura (5 trocas) exatamente pela tabela do prompt: H2, link de navegaÃ§Ã£o interna, rÃ³tulos "Mesmo dia Â· 2h", "PeÃ§a com 2 horas de antecedÃªncia.", remoÃ§Ã£o de "A entrega rÃ¡pida mencionada na foto depende de confirmaÃ§Ã£o.". Title, description, H1, ids, Ã¢ncoras e arranjos sem alteraÃ§Ã£o. Ãšnico ajuste de redaÃ§Ã£o: em buquÃªs, depois de "as rosas naturais ficam prontas em cerca de 2 horas" a frase seguinte comeÃ§a com "Os artificiais mantÃªm o acabamento premiumâ€¦" para o sujeito continuar correto.
+HipÃ³tese: texto coerente com a meta description ("rosas naturais no mesmo dia") aumenta conversas no WhatsApp. MÃ©trica: CTR de buquÃªs e floricultura. Avaliar em 25/11/2026.
