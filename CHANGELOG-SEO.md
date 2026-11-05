@@ -301,3 +301,8 @@ JÃ¡ atendido: /combos-pastel-canaa/, /links/, /presentes-canaa-dos-carajas/ e 
 AlteraÃ§Ã£o: removidas as 4 URLs do Achadinhos (C1); lastmod 2026-11-04 sÃ³ nas 13 pÃ¡ginas alteradas nesta rodada. /perfumaria-cosmeticos-canaa/ sem alteraÃ§Ã£o e lastmod mantido. Sitemap final com 14 URLs, XML vÃ¡lido, todas com canonical prÃ³pria e sem noindex (todas respondiam 200 na auditoria da FASE 0):
 /, /presentes-canaa.html, /buques-canaa-dos-carajas/, /cestas-de-presente-canaa/, /cesta-de-aniversario-canaa/, /floricultura-canaa-dos-carajas/, /cesta-cafe-da-manha-canaa/, /monte-sua-cesta/, /presentes-romanticos-canaa/, /revenda-chocolates-canaa/, /perfumaria-cosmeticos-canaa/, /guias-de-presentes/, /mensagens-para-acompanhar-presentes/, /presentes-de-natal-canaa-dos-carajas/.
 MÃ©trica: pÃ¡ginas indexadas no relatÃ³rio de Sitemaps do Search Console. Avaliar em 25/11/2026.
+
+### F3-D4 Â· Texto alternativo das imagens
+
+VerificaÃ§Ã£o: nas pÃ¡ginas alteradas, as Ãºnicas imagens com `alt` vazio sÃ£o a logo do cabeÃ§alho, decorativa porque o nome "Zadoni Presentes" vem escrito ao lado (mantida; validate-brand-identity ok). Nenhuma foto de produto tinha `alt` vazio, "imagem", "foto" ou nome de arquivo.
+AlteraÃ§Ã£o: na pÃ¡gina de Natal, as 3 fotos da seÃ§Ã£o "Ideias" usavam o tÃ­tulo do card como `alt` ("Cestas para compartilhar", "Flores com um toque afetivo", "Chocolates e kits romÃ¢nticos"), sem descrever o produto. Passaram a usar o nome do produto da foto, igual ao catÃ¡logo: "Cesta RomÃ¢ntica com Vinho San Martin", "BuquÃª Te Amo RomÃ¢ntico", "Box Amor Perfeito". Nenhuma menÃ§Ã£o nova a "CanaÃ£ dos CarajÃ¡s" em `alt`.
