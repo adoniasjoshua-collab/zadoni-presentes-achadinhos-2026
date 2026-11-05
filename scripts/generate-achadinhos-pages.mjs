@@ -114,6 +114,7 @@ function head(page, prefix) {
   const achadinhosCssVersion = "20260825-birthday-aggregator-1";
   return `<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
     <meta name="description" content="${escapeHtml(page.description)}">
     <meta name="author" content="Zadoni Presentes">
     <meta name="theme-color" content="#4b1745">

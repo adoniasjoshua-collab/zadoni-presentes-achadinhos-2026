@@ -272,3 +272,8 @@ HipÃ³tese: informar pagamento, taxa e retirada reduz a dÃºvida antes do What
 
 AlteraÃ§Ã£o: "Pix, cartÃ£o ou dinheiro." â†’ "Dinheiro, Pix, cartÃ£o de crÃ©dito parcelado, link de pagamento ou cartÃ£o por aproximaÃ§Ã£o." em /cestas-de-presente-canaa/ (FAQ visÃ­vel e resposta do FAQPage) e /monte-sua-cesta/ (lista "Pagamento"). Cesta de cafÃ© jÃ¡ atualizada no A3. Mantido em buquÃªs (3) e floricultura (2): zona protegida sem exceÃ§Ã£o para esse texto; trocar em 15/01/2027.
 MÃ©trica: conversas das pÃ¡ginas. Avaliar em 25/11/2026.
+
+### F3-C1 Â· Achadinhos fora do Google e fora do caminho do cliente local
+
+AlteraÃ§Ã£o: `<meta name="robots" content="noindex, follow">` nas 4 pÃ¡ginas (/achadinhos/, presentes-para-namorada, presentes-criativos, presentes-de-aniversario) e no gerador scripts/generate-achadinhos-pages.mjs, para nÃ£o se perder numa nova geraÃ§Ã£o; as 4 URLs saÃ­ram do sitemap. Inicial (exceÃ§Ã£o autorizada): removidos o card "Explorar Zadoni Achadinhos" (div `ux-national`), a seÃ§Ã£o inteira "Zadoni Achadinhos: ideias para escolher presentes" com o botÃ£o "Explorar os Achadinhos" e o item de rodapÃ© "Guias de presentes â€” Achadinhos" (esse item sÃ³ existia no rodapÃ© da inicial). O link do guia de presentes saiu no B3; Mensagens nÃ£o tinha link; /links/ fica para o C2. ConteÃºdo interno do Achadinhos sem alteraÃ§Ã£o; pÃ¡ginas nÃ£o apagadas. Validadores: validate-achadinhos-seo exige noindex e ausÃªncia no sitemap; validate-gift-cluster exige que Natal, guia e mensagens nÃ£o linkem o Achadinhos.
+HipÃ³tese: 51 impressÃµes e 1 clique em 3 meses; tirar o pÃºblico nacional deixa o site focado em CanaÃ£. MÃ©trica: as 4 URLs como "ExcluÃ­da pela tag noindex" em atÃ© 3 semanas. DecisÃ£o do 301 em 15/01/2027.

@@ -96,7 +96,9 @@ for (const page of pages) {
   assert(content.includes(`property="og:url" content="${page.canonical}"`), `${page.file}: og:url incorreta`);
   assert(/property="og:image" content="https:\/\//i.test(content), `${page.file}: og:image absoluta ausente`);
   assert(/name="twitter:card" content="summary_large_image"/i.test(content), `${page.file}: Twitter Card ausente`);
-  assert(sitemap.includes(`<loc>${page.canonical}</loc>`), `${page.file}: canonical ausente do sitemap`);
+  // F3-C1: Achadinhos fora do Google (noindex, follow) e fora do sitemap.
+  assert(!sitemap.includes(`<loc>${page.canonical}</loc>`), `${page.file}: não deve estar no sitemap`);
+  assert(content.includes('<meta name="robots" content="noindex, follow">'), `${page.file}: noindex ausente`);
 
   assert(!normalized.includes("canaa dos carajas"), `${page.file}: referência local encontrada`);
   assert(!/name="geo\.(placename|region)"/i.test(content), `${page.file}: geo tag local encontrada`);

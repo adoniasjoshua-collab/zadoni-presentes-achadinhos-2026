@@ -8,7 +8,7 @@ const site = 'https://zadonipresentes.com.br';
 const pages = ['presentes-de-natal-canaa-dos-carajas', 'guias-de-presentes', 'mensagens-para-acompanhar-presentes'];
 const required = [
   ['cestas-de-presente-canaa/', 'cesta-cafe-da-manha-canaa/', 'presentes-romanticos-canaa/', 'buques-canaa-dos-carajas/#novos-buques-title', 'monte-sua-cesta/', 'guias-de-presentes/', 'mensagens-para-acompanhar-presentes/'],
-  ['presentes-canaa.html', 'achadinhos/presentes-para-namorada/', 'presentes-romanticos-canaa/', 'cesta-de-aniversario-canaa/', 'buques-canaa-dos-carajas/', 'cestas-de-presente-canaa/', 'presentes-de-natal-canaa-dos-carajas/', 'mensagens-para-acompanhar-presentes/'],
+  ['presentes-canaa.html', 'presentes-romanticos-canaa/', 'cesta-de-aniversario-canaa/', 'buques-canaa-dos-carajas/', 'cestas-de-presente-canaa/', 'presentes-de-natal-canaa-dos-carajas/', 'mensagens-para-acompanhar-presentes/'],
   ['guias-de-presentes/', 'presentes-de-natal-canaa-dos-carajas/', 'presentes-romanticos-canaa/', 'cesta-de-aniversario-canaa/']
 ];
 const read = p => fs.readFileSync(path.join(root, p), 'utf8').replaceAll('\r\n', '\n');
@@ -27,6 +27,7 @@ for (const [index, slug] of pages.entries()) {
   titles.add(title); descriptions.add(description);
   for (const key of ['og:title', 'og:description', 'og:url', 'og:image', 'twitter:card', 'twitter:title', 'twitter:description', 'twitter:image']) assert(html.includes(`="${key}"`));
   assert(html.includes('lang="pt-BR"'));
+  assert(!/href="[^"]*achadinhos\//.test(html), slug + ': no links to Achadinhos (F3-C1)');
   assert(!/noindex|"@type":\s*"Product"|entrega imediata|melhor preço|disponível hoje|entrega garantida/i.test(html));
   for (const target of required[index]) assert(html.includes(`href="../${target}"`), slug + ': required link ' + target);
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map(m => m[1]);
