@@ -289,3 +289,8 @@ HipÃ³tese: a bio leva o cliente de CanaÃ£ direto para pÃ¡ginas que vendem.
 JÃ¡ atendido: a inicial jÃ¡ tem `Florist` com `@id` `https://zadonipresentes.com.br/#localbusiness` (mantido; o prompt sugeria `#loja`), nome, URL, telefone, endereÃ§o completo com CEP, horÃ¡rio 06:00â€“23:30 todos os dias, paymentAccepted, currenciesAccepted, Instagram em sameAs e image (foto real de buquÃª). Sem aggregateRating.
 AlteraÃ§Ã£o: completados sÃ³ os campos que faltavam ou estavam genÃ©ricos: `logo` (logo-zadoni-320.webp, o mesmo do Organization), `hasMap` (pin oficial), `areaServed` como City "CanaÃ£ dos CarajÃ¡s" e `priceRange` de "$$" para "R$ 39 a R$ 390" (menor presente publicado R$ 39, Mimo Ferrero; maior R$ 390, na perfumaria). NÃ£o hÃ¡ foto de fachada no repositÃ³rio, entÃ£o `image` ficou como estava. Os Product da cesta de cafÃ© (A3) e das rosas (D2) apontam `seller` para esse `@id`.
 MÃ©trica: teste de pesquisa aprimorada da inicial (Florist sem erros). Avaliar apÃ³s a publicaÃ§Ã£o.
+
+### F3-D2 Â· Product das rosas naturais
+
+AlteraÃ§Ã£o: em /buques-canaa-dos-carajas/, novo JSON-LD com 2 Product â€” "BuquÃª de 3 Rosas Naturais" (Offer 185.00 BRL) e "BuquÃª de 7 Rosas Naturais" (259.00 BRL), os preÃ§os visÃ­veis nos cards â€”, `seller` `https://zadonipresentes.com.br/#localbusiness`, url na seÃ§Ã£o #rosas-naturais e `image` com a foto real do primeiro card de rosas naturais (a mesma foto para os dois, porque os cards mostram as duas quantidades). Os 9 Product existentes nÃ£o mudaram; HTML visÃ­vel sem alteraÃ§Ã£o.
+MÃ©trica: teste de pesquisa aprimorada de buquÃªs (Produto sem erros). Avaliar apÃ³s a publicaÃ§Ã£o.
