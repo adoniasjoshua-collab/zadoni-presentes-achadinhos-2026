@@ -251,3 +251,8 @@ HipÃ³tese: "presente para namorada" Ã© a busca real; "presentes romÃ¢ntico
 
 AlteraÃ§Ã£o: /revenda-chocolates-canaa/ (URL mantida) com title "Chocolates para Presente em CanaÃ£ dos CarajÃ¡s | Entrega" (55) e description nova (136) em meta, og, twitter e WebPage; H1, breadcrumb visÃ­vel e BreadcrumbList "Chocolates para Presente em CanaÃ£ dos CarajÃ¡s". Trocas no texto que descreve a pÃ¡gina (todas reportadas): H2 "DÃºvidas sobre a revenda de chocolates" â†’ "DÃºvidas sobre chocolates para presente"; parÃ¡grafo "A revenda local trabalha conforme o estoqueâ€¦" â†’ "A Zadoni trabalha conforme o estoqueâ€¦". NÃ£o sobrou "revenda" visÃ­vel; permanece sÃ³ no caminho da URL e das imagens. Links de entrada jÃ¡ usavam o texto "Chocolates".
 HipÃ³tese: o nome "revenda" atrai quem compra para revender; "chocolates para presente" atrai quem compra presente. MÃ©trica: consultas (some "revenda", surge "chocolate para presente"). Avaliar em 25/11/2026.
+
+### F3-B3 Â· Guia de presentes com foco em CanaÃ£
+
+AlteraÃ§Ã£o: title "Como Escolher o Presente Certo em CanaÃ£ | Zadoni" (48) em title, og:title e twitter:title (H1, URL e nome do WebPage mantidos). O parÃ¡grafo que apontava para /achadinhos/presentes-para-namorada/ virou "Veja tambÃ©m os presentes para namorada em CanaÃ£ dos CarajÃ¡s." com link relativo `../presentes-romanticos-canaa/`, no mesmo padrÃ£o dos outros links do site. Com isso, o guia nÃ£o tem mais links para o Achadinhos (C1).
+HipÃ³tese: o guia passa a levar o visitante para a pÃ¡gina local de namorada em vez de uma pÃ¡gina nacional. MÃ©trica: cliques do guia e cliques internos para namorada. Avaliar em 25/11/2026.
