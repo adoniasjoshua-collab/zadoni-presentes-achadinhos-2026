@@ -21,7 +21,9 @@ for (const page of pages) {
   const current = nav.match(/aria-current="page"/g) || [];
 
   assert.ok(nav, `${page}: menu principal ausente`);
-  assert.equal(links.length, 6, `${page}: o menu principal deve ter seis opções`);
+  // F3-A2: "Natal" logo depois de "Cestas"; a inicial também tem "Perfumaria".
+  assert.equal(links.length, page === "index.html" ? 8 : 7, `${page}: quantidade de opções do menu principal`);
+  assert.match(nav, /cestas-de-presente-canaa\/"[^>]*>Cestas<\/a><\/li>\s*<li><a href="(?:\.\.\/)?presentes-de-natal-canaa-dos-carajas\/">Natal<\/a><\/li>/, `${page}: "Natal" deve vir logo depois de "Cestas"`);
   assert.ok(html.includes('aria-controls="nav-menu"'), `${page}: botão sem aria-controls`);
   assert.ok(current.length <= 1, `${page}: mais de uma opção marcada como atual`);
 }
@@ -35,4 +37,4 @@ const css = fs.readFileSync("assets/css/style.css", "utf8");
 const desktopNav = css.match(/@media \(min-width: 1100px\) \{[\s\S]*?\.nav-menu \{[\s\S]*?display: flex !important;/);
 assert.ok(desktopNav, "O menu desktop deve iniciar somente em telas largas");
 
-console.log(`Navigation UX validation ok: ${pages.length} pages, six-item menu, accessible control and tracked Home WhatsApp links.`);
+console.log(`Navigation UX validation ok: ${pages.length} pages, menu with Natal after Cestas, accessible control and tracked Home WhatsApp links.`);
