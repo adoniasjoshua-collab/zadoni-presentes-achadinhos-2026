@@ -306,3 +306,8 @@ MÃ©trica: pÃ¡ginas indexadas no relatÃ³rio de Sitemaps do Search Console. 
 
 VerificaÃ§Ã£o: nas pÃ¡ginas alteradas, as Ãºnicas imagens com `alt` vazio sÃ£o a logo do cabeÃ§alho, decorativa porque o nome "Zadoni Presentes" vem escrito ao lado (mantida; validate-brand-identity ok). Nenhuma foto de produto tinha `alt` vazio, "imagem", "foto" ou nome de arquivo.
 AlteraÃ§Ã£o: na pÃ¡gina de Natal, as 3 fotos da seÃ§Ã£o "Ideias" usavam o tÃ­tulo do card como `alt` ("Cestas para compartilhar", "Flores com um toque afetivo", "Chocolates e kits romÃ¢nticos"), sem descrever o produto. Passaram a usar o nome do produto da foto, igual ao catÃ¡logo: "Cesta RomÃ¢ntica com Vinho San Martin", "BuquÃª Te Amo RomÃ¢ntico", "Box Amor Perfeito". Nenhuma menÃ§Ã£o nova a "CanaÃ£ dos CarajÃ¡s" em `alt`.
+
+### 08/11/2026 · Mensagens: description com Canaã no início
+
+Decisão do dono: priorizar o tráfego local e não esperar 25/11. Antes: "Frases curtas para cartão de aniversário, Natal, namoro e casamento. Copie a sua e envie junto com um presente entregue em Canaã dos Carajás." Depois (139 caracteres): "Frases prontas para cartão de presente em Canaã dos Carajás: aniversário, Natal e namoro. Copie a sua e envie com buquê ou cesta da Zadoni." Aplicada em meta, og, twitter e WebPage do JSON-LD; lastmod 2026-11-08. Title e H1 sem alteração.
+Hipótese: Canaã e os produtos no começo do texto atraem o clique do visitante local. Métrica: CTR da página. Atenção: em 25/11 o ciclo mistura as duas descriptions (até 07/11 a antiga); comparar a partir de 08/11.
