@@ -311,3 +311,8 @@ Alteração: na página de Natal, as 3 fotos da seção "Ideias" usavam o títul
 
 Decisão do dono: priorizar o tráfego local e não esperar 25/11. Antes: "Frases curtas para cartão de aniversário, Natal, namoro e casamento. Copie a sua e envie junto com um presente entregue em Canaã dos Carajás." Depois (139 caracteres): "Frases prontas para cartão de presente em Canaã dos Carajás: aniversário, Natal e namoro. Copie a sua e envie com buquê ou cesta da Zadoni." Aplicada em meta, og, twitter e WebPage do JSON-LD; lastmod 2026-11-08. Title e H1 sem alteração.
 Hipótese: Canaã e os produtos no começo do texto atraem o clique do visitante local. Métrica: CTR da página. Atenção: em 25/11 o ciclo mistura as duas descriptions (até 07/11 a antiga); comparar a partir de 08/11.
+
+### 08/11/2026 · Mensagens: title com marca e cidade
+
+Decisão do dono, para focar o clique no público local. Antes: "Mensagem para Cartão de Presente | Frases Prontas". Depois (59 caracteres): "Mensagem para Cartão de Presente | Zadoni Canaã dos Carajás", em title, og:title e twitter:title. H1 e URL sem alteração; lastmod já em 2026-11-08.
+Hipótese: a busca principal continua no começo do título, e a cidade com a marca filtra o clique para quem é de Canaã. O CTR nacional pode cair. Métrica: cliques, consultas com "Canaã" e conversas com "mensagens para cartão no site". Comparar a partir de 08/11/2026; decidir noindex ou manutenção em 25/11/2026.
