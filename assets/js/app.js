@@ -1011,6 +1011,32 @@
     });
 
     inicializarTrackingLinks();
+    destacarBotoesWhatsApp();
+  }
+
+  // 18/11/2026: com os adicionais desligados, o botão do WhatsApp é a única ação do card.
+  // Cada botão brilha uma única vez ao entrar na tela (sem pulsar em loop); quem pede
+  // menos movimento no aparelho não vê animação nenhuma.
+  var observadorBotoesWhatsApp = null;
+
+  function destacarBotoesWhatsApp() {
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    if (!observadorBotoesWhatsApp) {
+      observadorBotoesWhatsApp = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (!entrada.isIntersecting) return;
+          entrada.target.classList.add("btn-whatsapp-produto--brilho");
+          observadorBotoesWhatsApp.unobserve(entrada.target);
+        });
+      }, { threshold: 0.9 });
+    }
+
+    document.querySelectorAll(".btn-whatsapp-produto:not([data-brilho-observado])").forEach(function (botao) {
+      botao.dataset.brilhoObservado = "true";
+      observadorBotoesWhatsApp.observe(botao);
+    });
   }
 
   function categoriaCombina(produto, categoria) {
@@ -1333,6 +1359,7 @@
     inicializarExplicacoesRecolhiveisMobile();
     inicializarAtalhoModelosMobile();
     inicializarTrackingLinks();
+    destacarBotoesWhatsApp();
   }
 
   function exporFuncoesGlobais() {

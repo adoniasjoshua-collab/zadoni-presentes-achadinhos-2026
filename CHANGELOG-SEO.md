@@ -373,3 +373,9 @@ Decisão do dono, retomando a regra "buquês naturais premium primeiro": na Flor
 ### 18/11/2026 · Preços: 7 rosas naturais R$ 259 → R$ 297; Buquê Te Amo Romântico R$ 189 → R$ 220
 
 Informados pelo dono. 7 rosas: Buquês e Floricultura (texto, cartões, WhatsApp, FAQ visível e FAQPage, Product do JSON-LD), 26 trocas, nenhum 259 restante. Te Amo Romântico: cartão, mensagem de WhatsApp e Product do JSON-LD em Buquês, Floricultura, Catálogo, Namorada e Rosas perfumadas, e produtos.js (id 16); na página de Natal ele aparece só como ideia, sem preço. A "Cesta Te Amo com Ursinho e Rosas" (R$ 290) é outro produto e não mudou.
+
+### 18/11/2026 · Adicionais ainda visíveis no ar: cache da CDN; botão do WhatsApp com ícone
+
+O dono viu "Monte sua cesta: N opções" e "Total estimado" nas cestas depois do commit 56ff11d. Causa: a CDN do Hostinger (hcdn) continuava servindo aos navegadores um app.js de 26/09 (b9e5ec4) no mesmo endereço `app.js?v=20260920-...`, mesmo com o arquivo novo no servidor (Chrome com perfil limpo recebeu a versão antiga; curl sem cabeçalhos de navegador recebeu a nova). Correção: versão nova no endereço dos scripts, `app.js?v=20261118-so-whatsapp-1` e `style.css?v=20261118-botao-whatsapp-1`, em 19 páginas e nos geradores e validadores que citam a versão. Só o atributo `src`/`href` desses dois arquivos mudou no HTML: title, meta, H1, canonical, textos, links e imagens sem mudança.
+Botão do WhatsApp dos cartões (única ação do cartão): ícone do WhatsApp à esquerda do texto e um brilho único (1,1 s) quando o botão aparece na tela, sem repetição; quem pede menos movimento no aparelho não vê animação. Sem pulsar em loop (cansa, parece anúncio e disputa atenção com a foto e o preço).
+Métrica: taxa de clique no WhatsApp por cartão e conversas com linha "Origem". Avaliar junto com a desativação dos adicionais em 16/12/2026.

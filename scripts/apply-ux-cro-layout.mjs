@@ -98,7 +98,7 @@ export function refineLayout(source, page) {
   }
   const prefix = page.includes('/') ? '../' : '';
   return source.replace('<body>', '<body data-ux-cro="20260919">')
-    .replace(/assets\/js\/app\.js\?v=[^"\s]+/g, 'assets/js/app.js?v=20260920-buques-entrega-rapida-1')
+    .replace(/assets\/js\/app\.js\?v=[^"\s]+/g, 'assets/js/app.js?v=20261118-so-whatsapp-1')
     .replace('</head>', `<link rel="stylesheet" href="${prefix}assets/css/ux-cro.css?v=20260920-natural-bouquet-trio">\n</head>`)
     .replace('</body>', `<script src="${prefix}assets/js/ux-cro.js?v=20260923-cafe-caixinha" defer></script>\n</body>`)
     .replace(/[ \t]+\r?\n/g, '\n');
