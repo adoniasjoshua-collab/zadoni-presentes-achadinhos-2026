@@ -369,3 +369,7 @@ Pedido do dono. Auditoria em 15 páginas (celular 390 px e computador 1440 px), 
 ### 18/11/2026 · Floricultura: rosas naturais de volta ao topo; 3 rosas naturais R$ 185 → R$ 197
 
 Decisão do dono, retomando a regra "buquês naturais premium primeiro": na Floricultura, a seção de novidades (vasos de R$ 67 a R$ 79 e antúrios sob consulta) desceu para logo abaixo de "Rosas naturais no mesmo dia e arranjos por encomenda". Agora a página começa pelos 3 buquês de rosas naturais. Preço do buquê com 3 rosas naturais: R$ 185 → R$ 197 em Buquês e Floricultura (texto do topo, 3 cartões, mensagens de WhatsApp, FAQ visível e FAQPage, Product do JSON-LD). O buquê com 7 rosas segue R$ 259. Title, description, H1 e URL sem mudança.
+
+### 18/11/2026 · Preços: 7 rosas naturais R$ 259 → R$ 297; Buquê Te Amo Romântico R$ 189 → R$ 220
+
+Informados pelo dono. 7 rosas: Buquês e Floricultura (texto, cartões, WhatsApp, FAQ visível e FAQPage, Product do JSON-LD), 26 trocas, nenhum 259 restante. Te Amo Romântico: cartão, mensagem de WhatsApp e Product do JSON-LD em Buquês, Floricultura, Catálogo, Namorada e Rosas perfumadas, e produtos.js (id 16); na página de Natal ele aparece só como ideia, sem preço. A "Cesta Te Amo com Ursinho e Rosas" (R$ 290) é outro produto e não mudou.

@@ -406,7 +406,7 @@ const produtosLocais = [
     nome: "Buquê Te Amo Romântico",
     categoria: "Flores",
     descricao: "Buquê romântico para surpreender com uma mensagem direta e especial.",
-    preco: 189.00,
+    preco: 220.00,
     imagem: "assets/optimized/products/buque-te-amo-romantico.jpg",
     destaque: true,
     adicionaisOpcionais: adicionaisBuques,
