@@ -76,7 +76,7 @@
       `▶ *TOTAL: ${money(s.total + fee())}*`);
     const details = customerLines();
     if (details.length) lines.push('', '*DADOS DO CLIENTE*', ...details);
-    lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?', '_Origem: página do pastelão_');
+    lines.push('', fulfillment === 'entrega' ? 'Pode confirmar a disponibilidade e o horário de entrega?' : 'Pode confirmar a disponibilidade, o local e o horário de retirada?');
     return lines.join('\n');
   }
   function whatsapp(s) {

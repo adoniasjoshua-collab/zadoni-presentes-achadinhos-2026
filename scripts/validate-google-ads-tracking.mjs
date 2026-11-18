@@ -17,6 +17,7 @@ const pages = [
   "monte-sua-cesta/index.html",
   "presentes-romanticos-canaa/index.html",
   "rosas-perfumadas-canaa/index.html",
+  "revenda-chocolates-canaa/index.html",
   "404.html"
 ];
 
