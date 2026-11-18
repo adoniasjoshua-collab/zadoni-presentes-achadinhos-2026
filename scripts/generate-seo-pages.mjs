@@ -745,7 +745,7 @@ function socialProofHtml(prefix = "") {
 function scripts(prefix, schemas) {
   return `<script src="${prefix}assets/data/produtos.js?v=20260923-kit-chandon" defer></script>
     <script src="${prefix}assets/js/app.js?v=20261118-so-whatsapp-1" defer></script>
-    <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20260727-google-ads" defer></script>
+    <script src="${prefix}assets/js/google-ads-whatsapp.js?v=20261117-origem-1" defer></script>
     ${jsonLd(schemas)}`;
 }
 
