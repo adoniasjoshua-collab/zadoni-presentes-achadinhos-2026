@@ -365,3 +365,7 @@ Pedido do dono. Auditoria em 15 páginas (celular 390 px e computador 1440 px), 
 - Removido: "Buquê delicado com rosa vermelha" das galerias de Buquês e Floricultura (o próprio original está cortado na lateral); 2 arquivos apagados.
 - Mantida até chegar foto nova: Cestinha de Café na Caixa (R$ 100, base do "a partir de" da página de café; o original já é fechado demais).
 - validate-photo-galleries: contagens desatualizadas corrigidas para o estado real (buquês 12, floricultura 2, cestas 20, aniversário 16; 46 arquivos). Passou por completo.
+
+### 18/11/2026 · Floricultura: rosas naturais de volta ao topo; 3 rosas naturais R$ 185 → R$ 197
+
+Decisão do dono, retomando a regra "buquês naturais premium primeiro": na Floricultura, a seção de novidades (vasos de R$ 67 a R$ 79 e antúrios sob consulta) desceu para logo abaixo de "Rosas naturais no mesmo dia e arranjos por encomenda". Agora a página começa pelos 3 buquês de rosas naturais. Preço do buquê com 3 rosas naturais: R$ 185 → R$ 197 em Buquês e Floricultura (texto do topo, 3 cartões, mensagens de WhatsApp, FAQ visível e FAQPage, Product do JSON-LD). O buquê com 7 rosas segue R$ 259. Title, description, H1 e URL sem mudança.
