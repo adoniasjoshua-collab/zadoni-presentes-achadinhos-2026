@@ -33,7 +33,8 @@ function caminhoImagemExiste(imagem) {
   return !imagem || fs.existsSync(path.join(root, imagem));
 }
 
-verificar(produtosLocais.filter((produto) => produto.destaque).length === 39, "A categoria Destaques deve conter 39 produtos.");
+// 18/11/2026: saíram os Jarros Flor Natural Laço Vermelho e Rosa (ids 26 e 27, destaques), foto com logo de outra floricultura.
+verificar(produtosLocais.filter((produto) => produto.destaque).length === 37, "A categoria Destaques deve conter 37 produtos.");
 verificar(catalogHtml.includes('id="catalog-results-count"'), "O catalogo deve exibir a contagem de resultados dos filtros.");
 verificar(appSource.includes("atualizarContagemProdutos(lista, categoria)"), "A contagem dos filtros deve ser atualizada pelo aplicativo.");
 verificar(adicionaisCestasCafe.length === 22, "Cestas de cafe devem oferecer 22 adicionais sem repetir o mini bolo.");

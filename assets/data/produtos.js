@@ -517,26 +517,6 @@ const produtosLocais = [
     whatsappMensagem: "Ola! Tenho interesse no Jarro Flores Naturais Vermelho."
   },
   {
-    id: 26,
-    nome: "Jarro Flor Natural Laço Vermelho",
-    categoria: "Mimos",
-    descricao: "Jarro com flor natural vermelha, embalagem delicada e laço vermelho pronto para presente.",
-    preco: 89.00,
-    imagem: "assets/optimized/products/jarro-flor-natural-laco-vermelho.jpg",
-    destaque: true,
-    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laço Vermelho."
-  },
-  {
-    id: 27,
-    nome: "Jarro Flor Natural Laço Rosa",
-    categoria: "Mimos",
-    descricao: "Jarro com flor natural rosa, embalagem delicada e laço pink para um mimo cheio de carinho.",
-    preco: 89.00,
-    imagem: "assets/optimized/products/jarro-flor-natural-laco-rosa.jpg",
-    destaque: true,
-    whatsappMensagem: "Ola! Tenho interesse no Jarro Flor Natural Laço Rosa."
-  },
-  {
     id: 28,
     nome: "Perfume de Bolso Asadiyy 15ml",
     categoria: "Perfumes",

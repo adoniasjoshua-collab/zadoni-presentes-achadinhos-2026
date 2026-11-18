@@ -30,8 +30,8 @@ Observação: valores do catálogo estão em reais. Valores do montador foram co
 | [x] | 23 | Cestinha Virginia Mimo Delicado | Cestas | R$ 139,00 |  | Mantido em 17/08/2026. |
 | [x] | 24 | Kit Ferrari Presente Premium | Kits | R$ 297,00 |  | Mantido em 17/08/2026. |
 | [x] | 25 | Jarro Flores Naturais Vermelho | Mimos | R$ 75,00 |  | Mantido em 17/08/2026. |
-| [x] | 26 | Jarro Flor Natural Laco Vermelho | Mimos | R$ 89,00 |  | Mantido em 17/08/2026. |
-| [x] | 27 | Jarro Flor Natural Laco Rosa | Mimos | R$ 89,00 |  | Mantido em 17/08/2026. |
+| [x] | 26 | Jarro Flor Natural Laco Vermelho | Mimos | R$ 89,00 |  | Removido em 18/11/2026: foto com logo da Floricultura Loucura de Amor. |
+| [x] | 27 | Jarro Flor Natural Laco Rosa | Mimos | R$ 89,00 |  | Removido em 18/11/2026: foto com logo da Floricultura Loucura de Amor. |
 | [x] | 28 | Perfume de Bolso Asadiyy 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
 | [x] | 29 | Perfume de Bolso Chic Woman 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
 | [x] | 30 | Perfume de Bolso Fortune 15ml | Perfumes | R$ 47,00 | R$ 50,00 | Alterado em 17/08/2026. |
