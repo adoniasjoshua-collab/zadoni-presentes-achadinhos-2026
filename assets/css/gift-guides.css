@@ -75,3 +75,4 @@
 /* 18/11/2026: cards da secao Novidades (galeria do site) dentro das paginas-guia. */
 .gift-site .seo-gallery-item .local-badge { color: #4f1d38; background: #f7ecee; }
 .gift-site main a.seo-gallery-cta { color: #fff; text-decoration: none; }
+.gift-site .seo-gallery-item img { width: 100%; height: auto; max-height: none; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; }

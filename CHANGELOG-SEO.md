@@ -356,3 +356,12 @@ Decisão do dono após o Search Console (28 dias: 118 cliques, 5,17 mil impress�
 - Aniversário: title "Cesta de Aniversário em Canaã dos Carajás | Com Entrega" → "Cesta de Aniversário em Canaã dos Carajás | Novos Modelos" (57); description → "Cestas de aniversário com ursinho, bolo, flores e balão e entrega em Canaã dos Carajás. Modelos novos com preço e bolos a partir de R$ 99." (138). Aplicado em title, meta, og e twitter. H1 e URL sem mudança. Sem "a partir de" para cestas, porque há modelos sem preço publicado.
 - Namorada e Chocolates: seção "Entrega e pagamento" com o mesmo texto oficial das outras páginas (atendimento 6h–23h30, entrega todos os dias em horário combinado, taxa R$ 10 na zona urbana, dinheiro, Pix, cartão de crédito parcelado, link de pagamento ou aproximação, retirada na loja).
 Métrica: CTR e cliques de /cesta-de-aniversario-canaa/ a partir de 18/11. Avaliar em 16/12/2026.
+
+### 18/11/2026 · Fotos de produto cortadas: corrigidas ou removidas
+
+Pedido do dono. Auditoria em 15 páginas (celular 390 px e computador 1440 px), 190 fotos de produto únicas: medida a área escondida pelo enquadramento do cartão e revisão visual de cada arquivo.
+- Enquadramento do site: só a página de Natal cortava (as 2 novidades perdiam 50%, por regra antiga de altura fixa de 300 px). gift-guides.css ganhou a regra 4:5 da galeria (v=20261118-fotos). Depois disso, nenhuma foto perde 15% ou mais em nenhuma página.
+- Recortadas no mesmo arquivo (mesmo nome e tamanho, HTML sem mudança), a partir do melhor original: Rosas Naturais embalagem rosa (faixa de anúncio e botão de vídeo), embalagem preta (painel de texto lateral) e embalagem vermelha (textos laterais); Girassóis Preto e Dourado (legenda na base); Rosas Vermelhas e Brancas (título e legenda); cesta com copo térmico da página de café (título "CESTAS" no topo, 5 arquivos); Cesta Vermelha com Ursinho e Coração (etiqueta "155,00" impressa).
+- Removido: "Buquê delicado com rosa vermelha" das galerias de Buquês e Floricultura (o próprio original está cortado na lateral); 2 arquivos apagados.
+- Mantida até chegar foto nova: Cestinha de Café na Caixa (R$ 100, base do "a partir de" da página de café; o original já é fechado demais).
+- validate-photo-galleries: contagens desatualizadas corrigidas para o estado real (buquês 12, floricultura 2, cestas 20, aniversário 16; 46 arquivos). Passou por completo.
