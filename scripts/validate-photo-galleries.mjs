@@ -18,7 +18,19 @@ const pages = new Map([
 const referencedAssets = new Set();
 
 for (const [page, expected] of pages) {
-  const source = fs.readFileSync(path.join(root, page), "utf8");
+  const full = fs.readFileSync(path.join(root, page), "utf8");
+  // 18/11/2026: the "Novidades" blocks (new owner photos) are checked separately below.
+  const novidades = full.match(/<!-- novidades:\w+:inicio -->[\s\S]*?<!-- novidades:\w+:fim -->/g) || [];
+  const source = novidades.reduce((text, block) => text.replace(block, ""), full);
+  for (const block of novidades) {
+    for (const img of block.match(/<img [^>]+>/g) || []) {
+      assert.match(img, /alt="[^"]{12,}"/, `${page}: novidade sem texto alternativo descritivo`);
+      assert.match(img, /width="720" height="900"/, `${page}: novidade sem dimensoes reservadas`);
+    }
+    for (const [, url] of block.matchAll(/(?:src|srcset)="(\.\.\/assets\/img\/novidades\/[^" ]+)/g)) {
+      assert.ok(fs.existsSync(path.join(root, url.replace(/^\.\.\//, ""))), `${page}: imagem de novidade ausente ${url}`);
+    }
+  }
   const galleryCount = (source.match(/class="seo-gallery-item"/g) || []).length;
   const deliveryCount = (source.match(/class="entrega-real-card"/g) || []).length;
 
