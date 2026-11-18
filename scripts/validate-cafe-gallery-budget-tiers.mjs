@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 
 const pagePath = "cesta-cafe-da-manha-canaa/index.html";
-const source = fs.readFileSync(pagePath, "utf8");
+// 18/11/2026: a secao "Novidades" (fotos novas do dono) e validada em validate-photo-galleries.
+const source = fs.readFileSync(pagePath, "utf8").replace(/<!-- novidades:\w+:inicio -->[\s\S]*?<!-- novidades:\w+:fim -->\r?\n?/g, "");
 const css = fs.readFileSync("assets/css/style.css", "utf8");
 const generator = fs.readFileSync("scripts/generate-seo-pages.mjs", "utf8");
 const app = fs.readFileSync("assets/js/app.js", "utf8");

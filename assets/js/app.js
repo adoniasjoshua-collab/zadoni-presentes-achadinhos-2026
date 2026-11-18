@@ -9,6 +9,9 @@
     moeda: "BRL",
     locale: "pt-BR"
   };
+  // 18/11/2026: decisão do dono. Em 90 dias, os botões e painéis de adicionais não trouxeram pedidos;
+  // cada cesta ou buquê fica só com o botão do WhatsApp. Para religar, troque para true.
+  var MOSTRAR_ADICIONAIS = false;
 
   function getProdutosLocais() {
     return typeof produtosLocais !== "undefined" && Array.isArray(produtosLocais)
@@ -595,6 +598,10 @@
   function inicializarAdicionaisGaleriaCafe() {
     var painel = document.getElementById("cafe-gallery-addons");
     var destino = document.getElementById("cafe-gallery-addons-options");
+    if (!MOSTRAR_ADICIONAIS) {
+      if (painel) painel.hidden = true;
+      return;
+    }
     if (!painel || !destino || painel.dataset.initialized === "true") return;
 
     var lista = obterAdicionaisCafeGaleria();
@@ -632,6 +639,7 @@
   }
 
   function inicializarAdicionaisModelosGaleria() {
+    if (!MOSTRAR_ADICIONAIS) return;
     var caminho = removerAcentos(window.location.pathname);
     var configuracao = null;
 
@@ -713,6 +721,13 @@
   }
 
   function inicializarAdicionaisCardsSeo() {
+    if (!MOSTRAR_ADICIONAIS) {
+      // Links "Escolher adicionais" escritos no HTML dos cartões: some junto, fica só o WhatsApp.
+      document.querySelectorAll(".seo-products .produto-acoes a.btn-secondary").forEach(function (link) {
+        if (removerAcentos(link.textContent).includes("adicion")) link.hidden = true;
+      });
+      return;
+    }
     var produtos = getProdutosLocais();
 
     document.querySelectorAll(".seo-products .seo-product-card[data-produto-id]").forEach(function (card) {
@@ -915,7 +930,7 @@
           : "Valor do buquê sob consulta";
     }
 
-    var adicionais = criarAdicionaisProduto(produto, atualizarLinkWhatsApp);
+    var adicionais = MOSTRAR_ADICIONAIS ? criarAdicionaisProduto(produto, atualizarLinkWhatsApp) : null;
 
     whatsapp.addEventListener("click", function () {
       atualizarLinkWhatsApp();
