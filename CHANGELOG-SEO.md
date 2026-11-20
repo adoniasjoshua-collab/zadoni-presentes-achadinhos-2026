@@ -393,3 +393,4 @@ Métrica: impressões e cliques da Floricultura no Search Console a partir de 18
 - Buquês (zona protegida, só acréscimo): fim de "Entrega e pagamento" → "Vai presentear no fim de ano? Veja os presentes de Natal com preço."
 - Cesta de café (zona protegida, só acréscimo): fim de "Perguntas frequentes", a última seção de conteúdo antes do bloco de atendimento → "Que tal uma manhã de Natal diferente? Veja as opções de presentes de Natal."
 - Cesta de aniversário: fim de "Entrega e pagamento" → "Veja também os presentes de Natal da Zadoni."
+- Presentes românticos: fim de "Entrega e pagamento" → "Veja também os presentes de Natal da Zadoni."
