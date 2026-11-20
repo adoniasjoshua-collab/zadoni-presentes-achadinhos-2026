@@ -395,3 +395,5 @@ Métrica: impressões e cliques da Floricultura no Search Console a partir de 18
 - Cesta de aniversário: fim de "Entrega e pagamento" → "Veja também os presentes de Natal da Zadoni."
 - Presentes românticos: fim de "Entrega e pagamento" → "Veja também os presentes de Natal da Zadoni."
 - Chocolates: fim de "Dúvidas sobre chocolates para presente", a última seção → "Veja também os presentes de Natal da Zadoni."
+
+**SEO INS-H6 · Mensagem do WhatsApp das rosas naturais.** Nos 12 links dos cards de rosas naturais (6 em Floricultura, 6 em Buquês), a linha pré-preenchida "Categoria: Flores naturais por encomenda" virou "Categoria: Rosas naturais no mesmo dia", igual ao que o card mostra. Só o texto dentro do link do WhatsApp mudou: nada visível na página, sem mudança de preço, id, âncora ou imagem. Hipótese: menos confusão entre o card ("mesmo dia") e a mensagem que o cliente envia. Métrica: conversas com "Origem: … › floricultura/buquês" que pedem rosas para o mesmo dia. Avaliar em 16/12/2026.
