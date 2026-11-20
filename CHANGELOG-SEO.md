@@ -394,3 +394,4 @@ Métrica: impressões e cliques da Floricultura no Search Console a partir de 18
 - Cesta de café (zona protegida, só acréscimo): fim de "Perguntas frequentes", a última seção de conteúdo antes do bloco de atendimento → "Que tal uma manhã de Natal diferente? Veja as opções de presentes de Natal."
 - Cesta de aniversário: fim de "Entrega e pagamento" → "Veja também os presentes de Natal da Zadoni."
 - Presentes românticos: fim de "Entrega e pagamento" → "Veja também os presentes de Natal da Zadoni."
+- Chocolates: fim de "Dúvidas sobre chocolates para presente", a última seção → "Veja também os presentes de Natal da Zadoni."
