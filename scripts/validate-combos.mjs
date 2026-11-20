@@ -39,7 +39,8 @@ assert(html.includes('<meta name="robots" content="noindex, follow">'), 'SEO F2-
 assert(html.includes(`rel="canonical" href="https://zadonipresentes.com.br/${slug}/"`));
 assert(!read('sitemap.xml').includes(`/${slug}/`), 'SEO F2-6: pastel page is out of the sitemap');
 for (const file of ['index.html', 'presentes-canaa.html']) assert(!read(file).includes(`href="${slug}/"`), 'SEO F2-6: no link from Zadoni pages: ' + file);
-assert(read('links/index.html').includes(`href="../${slug}/"`), 'Bio links page (noindex) keeps the pastel link');
+// 20/11/2026 (INS-H5): pastel pausado; o dono tirou o atalho da página de links da bio.
+assert(!read('links/index.html').includes(`href="../${slug}/"`), 'Bio links page has no pastel link while the pastel is paused');
 assert(html.includes('AW-16938428518') && html.includes('fbq('), 'Released page keeps the shared Google Ads and Meta tracking');
 const schema = JSON.parse(html.match(/type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
 assert.deepEqual(schema['@graph'].map(s => s['@type']), ['CollectionPage', 'BreadcrumbList', 'ItemList']);

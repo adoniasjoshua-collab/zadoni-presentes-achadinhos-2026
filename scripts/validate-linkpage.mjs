@@ -36,11 +36,12 @@ assert.ok(html.includes('../floricultura-canaa-dos-carajas/'), "Atalho direto pa
 assert.ok(html.includes('../monte-sua-cesta/'), "Atalho direto para Monte sua cesta ausente");
 assert.ok(html.includes('../presentes-canaa.html'), "Atalho para o catálogo completo ausente");
 assert.match(html, /<a class="pick-hero[^"]*" href="\.\.\/cesta-de-aniversario-canaa\/"[\s\S]*?class="pick-badge">/, "Cesta de aniversário deve ser o cartão em destaque");
-// F3-C2: bio só com Zadoni — sem Achadinhos; Natal e namorada como atalhos locais; pastel mantido por decisão do dono.
+// F3-C2: bio só com Zadoni — sem Achadinhos; Natal e namorada como atalhos locais.
+// 20/11/2026 (INS-H5): pastel pausado, atalho removido por decisão do dono.
 assert.ok(!html.includes("achadinhos/"), "A linkpage não deve apontar para os Achadinhos");
 assert.ok(html.includes('../presentes-de-natal-canaa-dos-carajas/'), "Atalho para presentes de Natal ausente");
 assert.ok(html.includes('../presentes-romanticos-canaa/'), "Atalho para presentes para namorada ausente");
-assert.ok(html.includes('../combos-pastel-canaa/'), "Atalho do pastel ausente");
+assert.ok(!html.includes('combos-pastel-canaa/'), "A linkpage não deve apontar para o pastel enquanto ele estiver pausado");
 assert.ok(html.includes("https://wa.me/5594992993138"), "WhatsApp principal ausente");
 assert.ok(html.includes("data-bio-link="), "Links sem instrumentação própria");
 assert.ok(js.includes('"bio_click_link"'), "Evento de clique da linkpage ausente");
