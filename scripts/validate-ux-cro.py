@@ -27,8 +27,7 @@ cluster_paths = set() if historical else {
     'presentes-de-natal-canaa-dos-carajas/index.html',
     'guias-de-presentes/index.html',
     'mensagens-para-acompanhar-presentes/index.html',
-    'combos-pastel-canaa/index.html',
-}
+}  # 24/11/2026: combos-pastel-canaa/ removido do site por decisão do dono
 # Accept only the requested additions (gift cluster 26/09, combos 28/09). All previous entries, metadata,
 # ordering and protected files must still match the immutable release snapshot.
 protected_after = dict(after['protectedFiles'])
@@ -44,8 +43,8 @@ if not historical:
     protected_after['sitemap.xml'] = sitemap
 if before['protectedFiles'] != protected_after:
     failures.append('Protected data, robots, sitemap or redirects changed')
-if not historical and '<meta name="robots" content="noindex, follow">' not in (ROOT / 'combos-pastel-canaa/index.html').read_text(encoding='utf-8'):
-    failures.append('Combos page must be noindex (SEO F2-6)')
+if not historical and (ROOT / 'combos-pastel-canaa/index.html').exists():
+    failures.append('Pastel page was removed on 24/11/2026 by owner decision and must not come back')
 if set(before['pages']) | cluster_paths != set(after['pages']):
     failures.append('Public HTML paths changed')
 for page, old in before['pages'].items():
