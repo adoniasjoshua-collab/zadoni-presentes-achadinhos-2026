@@ -177,6 +177,30 @@
   if (window.__zadoniGoogleAdsWhatsAppTrackingInitialized) return;
   window.__zadoniGoogleAdsWhatsAppTrackingInitialized = true;
 
+  // GA4 (G-5H81G3277H, carregado pela mesma tag Google): um evento whatsapp_click por clique,
+  // com a página, o nome do card ou o texto do botão e a origem. Nunca envia o link do WhatsApp
+  // nem o texto da mensagem, e não atrasa a abertura do WhatsApp (beacon, sem callback).
+  function clickLabel(link) {
+    var card = link.closest ? link.closest("figure, article, .produto-card, .seo-gallery-item") : null;
+    var name = card && card.querySelector ? card.querySelector(".produto-nome, figcaption span, h3") : null;
+    var text = (name && name.textContent) || link.getAttribute("aria-label") || link.textContent || "";
+    return text.replace(/\s+/g, " ").trim().slice(0, 100);
+  }
+
+  function reportWhatsAppClick(link) {
+    if (typeof window.gtag !== "function") return;
+    var origem = "";
+    try { origem = window.__zadoniWhatsAppOrigin.line().replace(/^Origem: /, ""); } catch (error) {}
+    try {
+      window.gtag("event", "whatsapp_click", {
+        page_path: window.location.pathname,
+        link_text: clickLabel(link),
+        origem: origem.slice(0, 100),
+        transport_type: "beacon"
+      });
+    } catch (error) {}
+  }
+
   window.gtag_report_conversion = function gtag_report_conversion(url, openInNewTab) {
     var navigated = false;
 
@@ -219,6 +243,8 @@
       href.indexOf("web.whatsapp.com/") !== -1;
 
     if (!isWhatsApp) return;
+
+    reportWhatsAppClick(link);
 
     var openInNewTab = String(link.target || "").toLowerCase() === "_blank";
 
