@@ -431,3 +431,9 @@ Métrica: impressões e cliques da Floricultura no Search Console a partir de 18
 | 23/11/2026 | PROD-NOV-21 · Bless Cacau Show Zero Lactose 160 g (R$ 97) | /revenda-chocolates-canaa/ | Itens de Natal Cacau Show com preço trazem buscas de chocolate para presente | Impressões da página e conversas com o produto | 10/12/2026 |
 
 Pendência do dono: o Perfil do Google mostra a Cesta Romântica com Rosas, Ursinho e Chocolates a R$ 379; o preço confirmado é R$ 290. Atualizar o Perfil para o preço ficar igual em todos os canais. Sitemap: `<lastmod>` 2026-11-23 nas 5 páginas alteradas.
+
+### 23/11/2026 · Capa e descrição de compartilhamento da inicial (aprovado pelo dono)
+
+| Data | Item | Página | Hipótese | Métrica | Avaliar em |
+|---|---|---|---|---|---|
+| 23/11/2026 | Capa de compartilhamento (og:image) trocada no mesmo arquivo `og-home-presentes-1200x630.jpg` (antes: colagem de 4 fotos; agora: buquê de rosas naturais Zadoni no centro, logo, "Floricultura e Presentes", Canaã dos Carajás (PA) e 3 frases oficiais). Tag com `?v=20261123` para o WhatsApp e o Facebook buscarem a capa nova; `og:image:alt` e `twitter:image:alt` novos. `og:description` e `twitter:description` novas, sem bairro. Title, meta description, H1, canonical e caminho da imagem inalterados | / | Prévia do link com marca e produto principal aumenta cliques em links compartilhados no WhatsApp e no Instagram | Sessões com origem WhatsApp/Instagram na inicial (GA4) e conversas iniciadas pelo link | 10/12/2026 |
