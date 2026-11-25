@@ -27,12 +27,17 @@
     return { fundo: cor(e.fundo), texto: cor(e.texto), destaque: cor(e.destaque) };
   }
 
+  // Pedido anônimo: o campo "De" some e o nome de quem envia não vai para o cartão nem para o resumo.
+  const anonimo = field('cartao-anonimo');
+  const campoDe = field('cartao-de').closest('.gift-field');
+  const avisoAnonimo = document.querySelector('[data-cartao-anonimo-aviso]');
   function dados() {
     return {
       ocasiao: field('cartao-ocasiao').value,
       frase: field('cartao-frase').value.trim(),
       para: field('cartao-para').value.trim(),
-      de: field('cartao-de').value.trim()
+      de: anonimo.checked ? '' : field('cartao-de').value.trim(),
+      anonimo: anonimo.checked
     };
   }
   function assinatura(d) { return d.de ? 'Com carinho, ' + d.de : 'Com carinho'; }
@@ -53,16 +58,21 @@
     const linhas = [
       '▸ Ocasião: ' + d.ocasiao,
       '▸ Frase do cartão: “' + (d.frase || 'quero ajuda para escolher') + '”',
-      '▸ De: ' + (d.de || 'não informado'),
+      '▸ De: ' + (d.anonimo ? '(anônimo)' : (d.de || 'não informado')),
       '▸ Para: ' + (d.para || 'não informado'),
       '▸ Presente: ' + presente(),
       '▸ Entrega: ' + field('cartao-entrega').value
     ];
+    if (d.anonimo) {
+      linhas.push('', 'PEDIDO ANÔNIMO: não colocar o nome de quem envia no cartão nem na entrega. De: (anônimo) / Para: ' + (d.para || 'não informado'));
+    }
     return 'Olá, Zadoni! Quero um presente com cartão.\n\n' + linhas.join('\n') + '\n\nPodem confirmar o pedido e o valor?';
   }
 
   function render() {
     const d = dados(), e = estiloAtual();
+    campoDe.hidden = d.anonimo;
+    avisoAnonimo.hidden = !d.anonimo;
     const texto = textoPedido(d);
     resumoTexto.textContent = texto;
     enviar.href = 'https://wa.me/5594992993138?text=' + encodeURIComponent(texto) + UTM;
