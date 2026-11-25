@@ -105,6 +105,69 @@
     outDe.textContent = assinatura(d);
   }
 
+  // Frases sugeridas por ocasião (as da própria página; desculpas ganhou duas novas, sem prometer
+  // que a mensagem resolve o conflito). O campo é remontado a cada troca de ocasião, porque o
+  // iPhone ignora <option hidden>. O texto que a pessoa já escreveu nunca é apagado.
+  const FRASES = {
+    'Romântico': [
+      'Você faz os dias comuns virarem boas lembranças. Este carinho é para você.',
+      'Entre tantos planos, meu preferido continua sendo dividir a vida com você.',
+      'Gosto do nosso jeito de rir, conversar e cuidar um do outro.',
+      'Com você, até os dias simples ficam especiais.',
+      'Meu lugar favorito é ao seu lado.',
+      'Você deixa a minha vida mais leve e mais bonita.'
+    ],
+    'Aniversário': [
+      'Que seu novo ano tenha espaço para os sonhos e para as pequenas alegrias.',
+      'Que o seu novo ano venha cheio de motivos para sorrir.',
+      'Hoje o dia é seu: aproveite cada pedacinho dele.',
+      'Parabéns! Que nunca falte gente boa e mesa cheia ao seu redor.'
+    ],
+    'Pedido de desculpas': [
+      'Sinto muito pelo que fiz. Quero te ouvir e cuidar melhor das minhas atitudes.',
+      'Errei e reconheço. Quero conversar com calma e fazer diferente.',
+      'Você é importante para mim. Me desculpe pelo que eu fiz.'
+    ],
+    'Natal': [
+      'Neste Natal, deixo aqui um carinho e o desejo de bons momentos juntos.',
+      'Que o Natal encha a sua casa de paz e de abraços.',
+      'Neste Natal, o meu presente vai com um carinho enorme.',
+      'Feliz Natal! Que o próximo ano seja leve e cheio de alegrias.',
+      'Que a nossa mesa continue cheia de risadas, abraços e histórias para contar. Feliz Natal, família!',
+      'Mãe, seu cuidado é o melhor presente que eu já ganhei. Feliz Natal!',
+      'Meu Natal fica mais bonito com você por perto. Que venham muitos outros juntos.',
+      'Amizade como a sua é presente o ano inteiro. Feliz Natal e um ano novo cheio de alegrias!',
+      'Sua parceria deixou o ano mais leve. Que o Natal traga descanso e boas conquistas.',
+      'Mesmo longe, você está nos meus pensamentos. Este presente vai com um abraço apertado de Natal.',
+      'Vó e vô, o Natal tem o cheiro e o gosto da casa de vocês. Amo vocês!',
+      'Amigo secreto revelado: escolhi este presente pensando em você. Feliz Natal!'
+    ],
+    'Agradecimento': [
+      'Seu cuidado fez diferença para mim. Este presente é meu jeito de agradecer.',
+      'Um presente pequeno para quem faz uma diferença enorme.',
+      'Que bom ter você por perto nos dias bons e nos difíceis.'
+    ],
+    'Outra ocasião': [
+      'Mãe, cada abraço seu é um presente.',
+      'Tudo de bom em mim começou com você.',
+      'Seu amor é a minha casa, em qualquer lugar.',
+      'Amizade como a sua a gente guarda para a vida toda.',
+      'Que bom ter você por perto nos dias bons e nos difíceis.',
+      'Um presente pequeno para quem faz uma diferença enorme.'
+    ]
+  };
+  function montarSugestoes() {
+    const ocasiao = field('cartao-ocasiao').value;
+    const lista = FRASES[ocasiao] || FRASES['Outra ocasião'];
+    const sel = field('cartao-sugestao');
+    const atual = sel.value;
+    sel.textContent = '';
+    sel.append(new Option('Escolha uma das ' + lista.length + ' frases ou escreva a sua', ''));
+    lista.forEach(frase => sel.append(new Option(frase, frase)));
+    sel.value = lista.includes(atual) ? atual : '';
+  }
+  field('cartao-ocasiao').addEventListener('change', montarSugestoes);
+
   // Caminho principal da página: tocar numa frase (botões "Usar no cartão") preenche o criador.
   // Captura no document para o clique não chegar ao quiz (gift-guides.js), que usa os mesmos botões.
   const status = document.querySelector('[data-cartao-status]');
@@ -118,9 +181,10 @@
     const frase = botao.dataset.cartaoUsar || botao.dataset.useMessage || '';
     const ocasiao = botao.dataset.cartaoOcasiao || ocasiaoDoQuiz[botao.dataset.messageOccasion] || '';
     field('cartao-frase').value = frase;
+    if (ocasiao && [...field('cartao-ocasiao').options].some(o => o.value === ocasiao)) field('cartao-ocasiao').value = ocasiao;
+    montarSugestoes();
     const sugestao = field('cartao-sugestao');
     sugestao.value = [...sugestao.options].some(o => o.value === frase) ? frase : '';
-    if (ocasiao && [...field('cartao-ocasiao').options].some(o => o.value === ocasiao)) field('cartao-ocasiao').value = ocasiao;
     render();
     if (status) status.textContent = 'Frase escolhida. Agora coloque os nomes e escolha o presente.';
     // Foco antes da rolagem: um focus() depois de scrollIntoView cancela a rolagem suave do site.
@@ -179,6 +243,7 @@
     }, 'image/png');
   });
 
+  montarSugestoes();
   render();
   form.hidden = false;
   preview.hidden = false;
