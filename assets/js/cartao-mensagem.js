@@ -50,11 +50,25 @@
   const UTM = '&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=cartao_pedido';
   // A mensagem só é impressa junto com um presente: sem presente escolhido, o botão de envio fica oculto.
   const semPresente = resumo.querySelector('[data-cartao-sem-presente]');
+  // Os 6 mais pedidos trazem nome, preço e foto (data-*); as categorias levam só ao link da página.
+  const fotoPresente = form.querySelector('[data-cartao-presente-foto]');
   function presente() {
     const sel = field('cartao-presente');
     const opt = sel.options[sel.selectedIndex];
     if (!sel.value) return 'não escolhido';
-    return opt.textContent + ' (' + new URL(sel.value, 'https://zadonipresentes.com.br/mensagens-para-acompanhar-presentes/').href + ')';
+    const link = new URL(sel.value, 'https://zadonipresentes.com.br/mensagens-para-acompanhar-presentes/').href;
+    if (opt.dataset.nome) return opt.dataset.nome + ' · ' + opt.dataset.preco + ' (' + link + ')';
+    return opt.textContent + ' (' + link + ')';
+  }
+  function mostrarFoto() {
+    const opt = field('cartao-presente').selectedOptions[0];
+    const temFoto = Boolean(opt && opt.dataset.foto);
+    fotoPresente.style.display = temFoto ? 'flex' : 'none';
+    if (!temFoto) return;
+    const img = fotoPresente.querySelector('img');
+    if (img.getAttribute('src') !== opt.dataset.foto) img.src = opt.dataset.foto;
+    img.alt = opt.dataset.nome;
+    fotoPresente.querySelector('span').textContent = opt.dataset.nome + ' · ' + opt.dataset.preco;
   }
   function textoPedido(d) {
     const linhas = [
@@ -79,6 +93,7 @@
     const texto = textoPedido(d);
     resumoTexto.textContent = texto;
     enviar.href = 'https://wa.me/5594992993138?text=' + encodeURIComponent(texto) + UTM;
+    mostrarFoto();
     const temPresente = Boolean(field('cartao-presente').value);
     enviar.style.display = temPresente ? '' : 'none';
     semPresente.style.display = temPresente ? 'none' : '';
