@@ -63,7 +63,7 @@
       '▸ De: ' + (d.anonimo ? '(anônimo)' : (d.de || 'não informado')),
       '▸ Para: ' + (d.para || 'não informado'),
       '▸ Presente: ' + presente(),
-      '▸ Cartão: impresso, vai junto com o presente',
+      '▸ Cartão impresso: taxa de R$ 10,00, vai junto com o presente',
       '▸ Entrega: ' + field('cartao-entrega').value
     ];
     if (d.anonimo) {
