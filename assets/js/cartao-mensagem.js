@@ -37,8 +37,35 @@
   }
   function assinatura(d) { return d.de ? 'Com carinho, ' + d.de : 'Com carinho'; }
 
+  // Resumo do pedido: os nomes e a frase vão só no texto do WhatsApp (encodeURIComponent).
+  // Sem emojis fora do BMP: no wa.me eles chegam como "�" no WhatsApp.
+  const resumo = document.querySelector('[data-cartao-resumo]');
+  const resumoTexto = resumo.querySelector('[data-cartao-texto]');
+  const enviar = resumo.querySelector('[data-cartao-enviar]');
+  const UTM = '&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=cartao_pedido';
+  function presente() {
+    const sel = field('cartao-presente');
+    const opt = sel.options[sel.selectedIndex];
+    if (!sel.value) return 'Ainda não escolhi';
+    return opt.textContent + ' (' + new URL(sel.value, 'https://zadonipresentes.com.br/mensagens-para-acompanhar-presentes/').href + ')';
+  }
+  function textoPedido(d) {
+    const linhas = [
+      '▸ Ocasião: ' + d.ocasiao,
+      '▸ Frase do cartão: “' + (d.frase || 'quero ajuda para escolher') + '”',
+      '▸ De: ' + (d.de || 'não informado'),
+      '▸ Para: ' + (d.para || 'não informado'),
+      '▸ Presente: ' + presente(),
+      '▸ Entrega: ' + field('cartao-entrega').value
+    ];
+    return 'Olá, Zadoni! Quero um presente com cartão.\n\n' + linhas.join('\n') + '\n\nPodem confirmar o pedido e o valor?';
+  }
+
   function render() {
     const d = dados(), e = estiloAtual();
+    const texto = textoPedido(d);
+    resumoTexto.textContent = texto;
+    enviar.href = 'https://wa.me/5594992993138?text=' + encodeURIComponent(texto) + UTM;
     preview.style.background = e.fundo;
     preview.style.color = e.texto;
     preview.style.borderColor = e.destaque;
@@ -101,4 +128,5 @@
   render();
   form.hidden = false;
   preview.hidden = false;
+  resumo.hidden = false;
 })();
