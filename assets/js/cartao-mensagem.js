@@ -48,10 +48,12 @@
   const resumoTexto = resumo.querySelector('[data-cartao-texto]');
   const enviar = resumo.querySelector('[data-cartao-enviar]');
   const UTM = '&utm_source=site&utm_medium=whatsapp&utm_campaign=seo_local&utm_content=cartao_pedido';
+  // A mensagem só é impressa junto com um presente: sem presente escolhido, o botão de envio fica oculto.
+  const semPresente = resumo.querySelector('[data-cartao-sem-presente]');
   function presente() {
     const sel = field('cartao-presente');
     const opt = sel.options[sel.selectedIndex];
-    if (!sel.value) return 'Ainda não escolhi';
+    if (!sel.value) return 'não escolhido';
     return opt.textContent + ' (' + new URL(sel.value, 'https://zadonipresentes.com.br/mensagens-para-acompanhar-presentes/').href + ')';
   }
   function textoPedido(d) {
@@ -77,6 +79,9 @@
     const texto = textoPedido(d);
     resumoTexto.textContent = texto;
     enviar.href = 'https://wa.me/5594992993138?text=' + encodeURIComponent(texto) + UTM;
+    const temPresente = Boolean(field('cartao-presente').value);
+    enviar.style.display = temPresente ? '' : 'none';
+    semPresente.style.display = temPresente ? 'none' : '';
     preview.style.background = e.fundo;
     preview.style.color = e.texto;
     preview.style.borderColor = e.destaque;
