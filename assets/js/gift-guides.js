@@ -67,21 +67,58 @@
     }
   }
 
+  // Sugestão de página a partir das respostas. As opções estão escritas no HTML
+  // ([data-gift-suggestions]); aqui só se escolhe qual delas mostrar no resumo.
+  const romanticRecipients = ['Namorada', 'Esposa', 'Namorado / parceiro', 'Marido'];
+  function suggestionKey(data) {
+    const recipient = data.get('recipient'), occasion = data.get('occasion'), style = data.get('style');
+    if (occasion === 'Natal') return 'natal';
+    if (occasion === 'Aniversário') return 'aniversario';
+    if (romanticRecipients.includes(recipient) || occasion === 'Surpresa romântica') return 'romanticos';
+    if (recipient === 'Mãe' || style === 'Flores') return 'buques';
+    if (style === 'Café da manhã') return 'cafe';
+    return 'cestas';
+  }
+  function suggestionLink(data) {
+    const item = document.querySelector('[data-gift-suggestions] [data-suggest="' + suggestionKey(data) + '"] a');
+    return item ? { name: item.textContent.trim(), href: item.href } : null;
+  }
+
+  // Sem emojis fora do BMP: no wa.me eles chegam como "�" no WhatsApp.
   function summarize() {
     const data = new FormData(form);
     const chosen = data.get('message') === 'Escrever minha mensagem'
       ? String(data.get('custom-message') || '').trim() : data.get('message');
+    const suggestion = suggestionLink(data);
     return 'Olá, Zadoni! Quero ajuda para escolher um presente.\n\n' + [
-      '🎁 Para: ' + data.get('recipient'),
-      '✨ Ocasião: ' + data.get('occasion'),
-      '🎨 Estilo: ' + data.get('style'),
-      '💰 Faixa desejada: ' + data.get('budget'),
-      '💌 Mensagem escolhida: “' + chosen + '”',
-      '📍 Entrega ou retirada: ' + data.get('fulfillment'),
-      '📅 Data desejada: ' + (data.get('desired-date') || 'A combinar'),
-      '🔎 Categoria de interesse: ' + (category || 'Quero sugestões'),
-      '📝 Observação: ' + (String(data.get('notes') || '').trim() || 'Não informada')
+      '▸ Para: ' + data.get('recipient'),
+      '▸ Ocasião: ' + data.get('occasion'),
+      '▸ Estilo: ' + data.get('style'),
+      '▸ Faixa desejada: ' + data.get('budget'),
+      '▸ Mensagem escolhida: “' + chosen + '”',
+      '▸ Entrega: ' + data.get('fulfillment'),
+      '▸ Data desejada: ' + (data.get('desired-date') || 'A combinar'),
+      '▸ Categoria de interesse: ' + (category || 'Quero sugestões'),
+      '▸ Sugestão do site: ' + (suggestion ? suggestion.name : 'Quero sugestões da Zadoni'),
+      '▸ Observação: ' + (String(data.get('notes') || '').trim() || 'Não informada')
     ].join('\n');
+  }
+
+  const vilaNotice = form.querySelector('[data-vila-aviso]');
+  function refreshVila() {
+    if (vilaNotice) vilaNotice.hidden = form.elements.namedItem('fulfillment').value !== 'Entrega em vila';
+  }
+  const suggestionOut = result.querySelector('[data-gift-suggestion]');
+  function showSuggestion() {
+    if (!suggestionOut) return;
+    const suggestion = suggestionLink(new FormData(form));
+    suggestionOut.textContent = '';
+    suggestionOut.hidden = !suggestion;
+    if (!suggestion) return;
+    const link = document.createElement('a');
+    link.href = suggestion.href;
+    link.textContent = suggestion.name;
+    suggestionOut.append('Sugestão para você: ', link, '. Veja os modelos com preço antes de enviar.');
   }
 
   function invalidate() {
@@ -89,6 +126,7 @@
     send.href = baseURL.href;
     status.textContent = '';
     refreshMessage();
+    refreshVila();
     savePreferences();
   }
   form.addEventListener('input', invalidate);
@@ -106,6 +144,7 @@
     url.searchParams.set('text', text);
     preview.textContent = text;
     send.href = url.href;
+    showSuggestion();
     result.hidden = false;
     status.textContent = 'Resumo pronto. Confira os detalhes antes de abrir o WhatsApp.';
     result.querySelector('h3').focus();
@@ -136,6 +175,7 @@
     }, 0);
   });
   refreshMessage();
+  refreshVila();
   savePreferences();
   form.hidden = false;
 })();
