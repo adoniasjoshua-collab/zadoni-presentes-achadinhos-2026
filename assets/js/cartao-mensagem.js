@@ -90,6 +90,29 @@
     outDe.textContent = assinatura(d);
   }
 
+  // Caminho principal da página: tocar numa frase (botões "Usar no cartão") preenche o criador.
+  // Captura no document para o clique não chegar ao quiz (gift-guides.js), que usa os mesmos botões.
+  const status = document.querySelector('[data-cartao-status]');
+  const ocasiaoDoQuiz = { 'Surpresa romântica': 'Romântico', 'Aniversário': 'Aniversário', 'Natal': 'Natal',
+    'Agradecimento': 'Agradecimento', 'Pedido de desculpas': 'Pedido de desculpas' };
+  document.addEventListener('click', function (event) {
+    const botao = event.target.closest ? event.target.closest('[data-cartao-usar], [data-use-message]') : null;
+    if (!botao) return;
+    event.stopPropagation();
+    event.preventDefault();
+    const frase = botao.dataset.cartaoUsar || botao.dataset.useMessage || '';
+    const ocasiao = botao.dataset.cartaoOcasiao || ocasiaoDoQuiz[botao.dataset.messageOccasion] || '';
+    field('cartao-frase').value = frase;
+    const sugestao = field('cartao-sugestao');
+    sugestao.value = [...sugestao.options].some(o => o.value === frase) ? frase : '';
+    if (ocasiao && [...field('cartao-ocasiao').options].some(o => o.value === ocasiao)) field('cartao-ocasiao').value = ocasiao;
+    render();
+    if (status) status.textContent = 'Frase escolhida. Agora coloque os nomes e escolha o presente.';
+    // Foco antes da rolagem: um focus() depois de scrollIntoView cancela a rolagem suave do site.
+    field('cartao-para').focus({ preventScroll: true });
+    document.getElementById('criar-cartao').scrollIntoView({ block: 'start' });
+  }, true);
+
   field('cartao-sugestao').addEventListener('change', function () {
     if (this.value) field('cartao-frase').value = this.value;
     render();
