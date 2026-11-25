@@ -115,24 +115,31 @@
       'Gosto do nosso jeito de rir, conversar e cuidar um do outro.',
       'Com você, até os dias simples ficam especiais.',
       'Meu lugar favorito é ao seu lado.',
-      'Você deixa a minha vida mais leve e mais bonita.'
+      'Você deixa a minha vida mais leve e mais bonita.',
+      'Tantos anos depois, você ainda é a minha melhor escolha.',
+      'Cada dia ao seu lado é um presente. Te amo.'
     ],
     'Aniversário': [
       'Que seu novo ano tenha espaço para os sonhos e para as pequenas alegrias.',
       'Que o seu novo ano venha cheio de motivos para sorrir.',
       'Hoje o dia é seu: aproveite cada pedacinho dele.',
-      'Parabéns! Que nunca falte gente boa e mesa cheia ao seu redor.'
+      'Parabéns! Que nunca falte gente boa e mesa cheia ao seu redor.',
+      'Mãe, feliz aniversário! O mundo fica melhor com você nele.',
+      'Pai, feliz aniversário! Seu exemplo me guia todos os dias.',
+      'Feliz aniversário! Que bom comemorar mais um ano da nossa amizade.',
+      'Parabéns pelo seu dia! Que o novo ano traga muitas conquistas.'
     ],
     'Pedido de desculpas': [
       'Sinto muito pelo que fiz. Quero te ouvir e cuidar melhor das minhas atitudes.',
       'Errei e reconheço. Quero conversar com calma e fazer diferente.',
-      'Você é importante para mim. Me desculpe pelo que eu fiz.'
+      'Você é importante para mim. Me desculpe pelo que eu fiz.',
+      'Eu errei com você. Quero cuidar melhor de nós dois.',
+      'Nossa amizade vale mais que qualquer discussão. Me desculpe.',
+      'Família é para sempre. Me desculpe pelo que eu disse.'
     ],
     'Natal': [
       'Neste Natal, deixo aqui um carinho e o desejo de bons momentos juntos.',
       'Que o Natal encha a sua casa de paz e de abraços.',
-      'Neste Natal, o meu presente vai com um carinho enorme.',
-      'Feliz Natal! Que o próximo ano seja leve e cheio de alegrias.',
       'Que a nossa mesa continue cheia de risadas, abraços e histórias para contar. Feliz Natal, família!',
       'Mãe, seu cuidado é o melhor presente que eu já ganhei. Feliz Natal!',
       'Meu Natal fica mais bonito com você por perto. Que venham muitos outros juntos.',
@@ -145,7 +152,11 @@
     'Agradecimento': [
       'Seu cuidado fez diferença para mim. Este presente é meu jeito de agradecer.',
       'Um presente pequeno para quem faz uma diferença enorme.',
-      'Que bom ter você por perto nos dias bons e nos difíceis.'
+      'Que bom ter você por perto nos dias bons e nos difíceis.',
+      'Professora, gratidão por ensinar com tanto carinho e paciência.',
+      'Seu apoio deixou o meu ano mais leve. Gratidão, de coração.',
+      'Mãe, gratidão por tudo o que você faz, todos os dias.',
+      'Você esteve comigo quando eu mais precisei. Nunca vou esquecer.'
     ],
     'Outra ocasião': [
       'Mãe, cada abraço seu é um presente.',
@@ -153,7 +164,9 @@
       'Seu amor é a minha casa, em qualquer lugar.',
       'Amizade como a sua a gente guarda para a vida toda.',
       'Que bom ter você por perto nos dias bons e nos difíceis.',
-      'Um presente pequeno para quem faz uma diferença enorme.'
+      'Um presente pequeno para quem faz uma diferença enorme.',
+      'Não precisa de data especial: lembrei de você e quis te fazer sorrir.',
+      'Só passando para dizer que você é importante para mim.'
     ]
   };
   function montarSugestoes() {
